@@ -5580,8 +5580,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </section>
 </div>
 
-<!-- SLIDE 19: Brain-Expansion Why -->
-<div class="casey-slide ds-focus" id="cs-19">
+<!-- SLIDE 19: Brain-Expansion Why (Chesky) — ID cs-20 so Founder shows first -->
+<div class="casey-slide ds-focus" id="cs-20">
 <section style="position:relative;min-height:100%;width:100%">
 <div class="orb orb-g" style="width:600px;height:600px;top:10%;right:-20%;opacity:0.3"></div>
 <div class="inner" style="text-align:center;max-width:760px">
@@ -5623,8 +5623,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </section>
 </div>
 
-<!-- SLIDE 20: Founder Journey -->
-<div class="casey-slide ds-focus" id="cs-20">
+<!-- SLIDE 20: Founder Journey — ID cs-19 so it shows before Chesky -->
+<div class="casey-slide ds-focus" id="cs-19">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Founder</div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:800px">
@@ -5711,19 +5711,19 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <line class="ga-line l-right" x1="270" y1="50" x2="270" y2="200" stroke="#D4A843" stroke-width="2" style="--len:150"/>
       <line class="ga-line l-bottom" x1="270" y1="200" x2="70" y2="200" stroke="#D4A843" stroke-width="2" style="--len:200"/>
       <line class="ga-line l-left" x1="70" y1="200" x2="70" y2="50" stroke="#D4A843" stroke-width="2" style="--len:150"/>
-      <!-- Envelope flap (top quadrant shaded) -->
+      <!-- Teal cross-connections (BEHIND the flap) -->
+      <line class="ga-fill2" x1="70" y1="200" x2="270" y2="50" stroke="#43B8A0" stroke-width="0.8" opacity="0.2"/>
+      <line class="ga-fill2" x1="270" y1="200" x2="70" y2="50" stroke="#43B8A0" stroke-width="0.8" opacity="0.15"/>
+      <!-- Inner V (bottom quadrant lines) -->
+      <path class="ga-glow" d="M70 200 L170 155 L270 200" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
+      <!-- Envelope flap (top quadrant shaded — ON TOP of teal) -->
       <g class="ga-fill">
         <path d="M70 50 L170 140 L270 50 Z" fill="url(#ga-fl)" opacity="0.85"/>
         <path d="M76 53 L170 134 L264 53" fill="none" stroke="#fff" stroke-width="0.4" opacity="0.1"/>
       </g>
-      <!-- Cross-connection lines (the exchange) -->
+      <!-- Cross-connection lines (flap edges) -->
       <line class="ga-line l-flap1" x1="70" y1="50" x2="170" y2="140" stroke="#D4A843" stroke-width="2" stroke-linecap="round" style="--len:140"/>
       <line class="ga-line l-flap2" x1="270" y1="50" x2="170" y2="140" stroke="#D4A843" stroke-width="2" stroke-linecap="round" style="--len:140"/>
-      <!-- Inner V (bottom quadrant lines) -->
-      <path class="ga-glow" d="M70 200 L170 155 L270 200" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
-      <!-- Teal cross-connections -->
-      <line class="ga-fill2" x1="70" y1="200" x2="270" y2="50" stroke="#43B8A0" stroke-width="0.8" opacity="0.2"/>
-      <line class="ga-fill2" x1="270" y1="200" x2="70" y2="50" stroke="#43B8A0" stroke-width="0.8" opacity="0.15"/>
       <!-- Center node (where value meets) -->
       <circle class="ga-glow" cx="170" cy="125" r="8" fill="rgba(212,168,83,0.2)" stroke="rgba(212,168,83,0.3)" stroke-width="1"/>
       <circle class="ga-highlight" cx="170" cy="125" r="3" fill="#D4A843" opacity="0"/>
@@ -6306,16 +6306,38 @@ function startCourtForm() {
     courtFormFrame++;
 
     // --- GRAPH (left side) ---
-    // Draw edges
+    // Draw edges with bidirectional value arrows
     edges.forEach(([a, b]) => {
       const pa = people[a], pb = people[b];
       const sel = pa.selected || pb.selected;
+      const mx = (pa.x + pb.x) / 2, my = (pa.y + pb.y) / 2;
+      // Main line
       ctx.beginPath();
       ctx.moveTo(pa.x, pa.y);
       ctx.lineTo(pb.x, pb.y);
-      ctx.strokeStyle = sel ? 'rgba(212,168,83,0.06)' : 'rgba(232,224,208,0.06)';
-      ctx.lineWidth = 0.8;
+      ctx.strokeStyle = sel ? 'rgba(212,168,83,0.1)' : 'rgba(232,224,208,0.12)';
+      ctx.lineWidth = 1;
       ctx.stroke();
+      // Give arrow (a→b) — slight offset
+      if (!sel) {
+        const dx = pb.x - pa.x, dy = pb.y - pa.y;
+        const len = Math.sqrt(dx * dx + dy * dy);
+        const nx = -dy / len * 2, ny = dx / len * 2;
+        ctx.beginPath();
+        ctx.moveTo(pa.x + nx, pa.y + ny);
+        ctx.lineTo(mx + nx, my + ny);
+        ctx.strokeStyle = pa.color;
+        ctx.globalAlpha = 0.15;
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+        // Take arrow (b→a) — opposite offset
+        ctx.beginPath();
+        ctx.moveTo(pb.x - nx, pb.y - ny);
+        ctx.lineTo(mx - nx, my - ny);
+        ctx.strokeStyle = pb.color;
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+      }
     });
     // Draw people
     people.forEach((p, i) => {
@@ -6340,28 +6362,50 @@ function startCourtForm() {
       ctx.globalAlpha = 1;
     });
 
-    // --- COURT (right side) ---
-    // Court outline
-    ctx.strokeStyle = 'rgba(232,224,208,0.12)';
+    // --- COURT (right side — pickleball court) ---
+    const cx2 = courtX + courtW / 2, cy2 = courtY + courtH / 2;
+    // Court surface
+    ctx.fillStyle = 'rgba(45,90,61,0.08)';
+    ctx.fillRect(courtX, courtY, courtW, courtH);
+    // Outer boundary
+    ctx.strokeStyle = 'rgba(232,224,208,0.2)';
     ctx.lineWidth = 1.5;
     ctx.strokeRect(courtX, courtY, courtW, courtH);
-    // Net line
+    // Net line (center, dashed)
     ctx.beginPath();
-    ctx.moveTo(courtX + courtW / 2, courtY);
-    ctx.lineTo(courtX + courtW / 2, courtY + courtH);
-    ctx.strokeStyle = 'rgba(232,224,208,0.06)';
+    ctx.moveTo(cx2, courtY);
+    ctx.lineTo(cx2, courtY + courtH);
+    ctx.strokeStyle = 'rgba(232,224,208,0.15)';
+    ctx.lineWidth = 2;
+    ctx.setLineDash([4, 4]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    // Kitchen/NVZ lines (7-foot zones on each side of net)
+    const kitchenW = courtW * 0.22;
+    ctx.strokeStyle = 'rgba(232,224,208,0.1)';
     ctx.lineWidth = 1;
+    ctx.strokeRect(cx2 - kitchenW, courtY, kitchenW, courtH);
+    ctx.strokeRect(cx2, courtY, kitchenW, courtH);
+    // Service line (horizontal center)
+    ctx.beginPath();
+    ctx.moveTo(courtX, cy2);
+    ctx.lineTo(cx2 - kitchenW, cy2);
+    ctx.strokeStyle = 'rgba(232,224,208,0.06)';
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(cx2 + kitchenW, cy2);
+    ctx.lineTo(courtX + courtW, cy2);
     ctx.stroke();
     // Court label
     ctx.fillStyle = 'rgba(232,224,208,0.15)';
     ctx.font = '9px Manrope, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('COURT', courtX + courtW / 2, courtY - 8);
+    ctx.fillText('COURT', cx2, courtY - 8);
 
     // --- PHASE LOGIC ---
     phaseTimer++;
 
-    if (phase === 'idle' && phaseTimer > 40) {
+    if (phase === 'idle' && phaseTimer > 80) {
       phase = 'selecting';
       phaseTimer = 0;
       selected = pickFour();
@@ -6369,18 +6413,18 @@ function startCourtForm() {
       round++;
     }
 
-    if (phase === 'selecting' && phaseTimer > 30) {
+    if (phase === 'selecting' && phaseTimer > 50) {
       phase = 'moving';
       phaseTimer = 0;
     }
 
     if (phase === 'moving') {
-      const t = phaseTimer / 40;
+      const t = phaseTimer / 60;
       selected.forEach((pi, si) => {
         people[pi].x = lerp(people[pi].hx, courtSlots[si][0], t);
         people[pi].y = lerp(people[pi].hy, courtSlots[si][1], t);
       });
-      if (phaseTimer >= 40) {
+      if (phaseTimer >= 60) {
         phase = 'showing';
         phaseTimer = 0;
         score = 75 + Math.floor(Math.random() * 22);
@@ -6456,7 +6500,7 @@ function startCourtForm() {
       ctx.fillStyle = grd;
       ctx.fillRect(barX, barY, fillW, barH);
 
-      if (phaseTimer > 120) {
+      if (phaseTimer > 180) {
         phase = 'returning';
         phaseTimer = 0;
         if (scoreEl) scoreEl.style.opacity = '0';
