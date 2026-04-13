@@ -5005,7 +5005,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
       <!-- RIGHT: Data drip digitization -->
       <div style="flex:1;min-width:280px;max-width:420px;background:rgba(61,255,122,0.02);border:1px solid rgba(61,255,122,0.1);border-radius:16px;padding:24px;text-align:center;position:relative;overflow:hidden">
-        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-bottom:12px">The New Way</div>
+        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-bottom:12px">The Correct Way</div>
 
         <!-- Central person being digitized -->
         <svg id="dataDripSvg" width="100%" height="280" viewBox="0 0 440 280" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -5027,70 +5027,97 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
             <animate attributeName="r" values="33;40;33" dur="3s" repeatCount="indefinite"/>
             <animate attributeName="opacity" values="0.1;0.03;0.1" dur="3s" repeatCount="indefinite"/>
           </circle>
-          <!-- Person body — PARTICLE CLOUD (dots forming a human shape) -->
+          <!-- Person body — DENSE DIGITAL PARTICLE CLOUD (every dot fades in/out) -->
           <g filter="url(#digiGlow)">
-            <!-- Head — cluster of dots in circle shape -->
-            <circle cx="220" cy="110" r="1.8" fill="#E8CC60" opacity="0.9"/>
-            <circle cx="216" cy="108" r="1.3" fill="#D4A843" opacity="0.7"/>
-            <circle cx="224" cy="108" r="1.3" fill="#D4A843" opacity="0.7"/>
-            <circle cx="214" cy="112" r="1.5" fill="#E8CC60" opacity="0.6"/>
-            <circle cx="226" cy="112" r="1.5" fill="#E8CC60" opacity="0.6"/>
-            <circle cx="218" cy="105" r="1" fill="#D4A843" opacity="0.5"/>
-            <circle cx="222" cy="105" r="1" fill="#D4A843" opacity="0.5"/>
-            <circle cx="220" cy="115" r="1.2" fill="#D4A843" opacity="0.5"/>
-            <circle cx="216" cy="116" r="1" fill="#E8CC60" opacity="0.7"><animate attributeName="opacity" values="0.7;0.3;0.7" dur="2s" repeatCount="indefinite"/></circle>
-            <circle cx="224" cy="116" r="1" fill="#E8CC60" opacity="0.7"><animate attributeName="opacity" values="0.7;0.3;0.7" dur="2s" repeatCount="indefinite" begin="0.3s"/></circle>
-            <!-- Neck -->
-            <circle cx="220" cy="120" r="1" fill="#D4A843" opacity="0.6"/>
-            <circle cx="220" cy="123" r="1.2" fill="#D4A843" opacity="0.5"/>
-            <!-- Torso — column of dots -->
-            <circle cx="220" cy="127" r="1.5" fill="#D4A843" opacity="0.7"/>
-            <circle cx="218" cy="131" r="1.2" fill="#E8CC60" opacity="0.5"/>
-            <circle cx="222" cy="131" r="1.2" fill="#E8CC60" opacity="0.5"/>
-            <circle cx="220" cy="135" r="1.8" fill="#D4A843" opacity="0.7"/>
-            <circle cx="216" cy="138" r="1" fill="#D4A843" opacity="0.4"/>
-            <circle cx="224" cy="138" r="1" fill="#D4A843" opacity="0.4"/>
-            <circle cx="220" cy="141" r="1.5" fill="#E8CC60" opacity="0.6"/>
-            <circle cx="220" cy="146" r="1.8" fill="#D4A843" opacity="0.7"/>
-            <circle cx="217" cy="150" r="1.2" fill="#D4A843" opacity="0.5"/>
-            <circle cx="223" cy="150" r="1.2" fill="#D4A843" opacity="0.5"/>
-            <circle cx="220" cy="154" r="1.5" fill="#E8CC60" opacity="0.6"/>
-            <circle cx="220" cy="159" r="1.3" fill="#D4A843" opacity="0.5"/>
-            <circle cx="220" cy="164" r="1.5" fill="#D4A843" opacity="0.6"/>
-            <circle cx="220" cy="169" r="1.8" fill="#E8CC60" opacity="0.7"/>
-            <!-- Left arm — dots trailing left -->
-            <circle cx="216" cy="133" r="1" fill="#D4A843" opacity="0.5"/>
-            <circle cx="212" cy="136" r="1.2" fill="#D4A843" opacity="0.45"/>
-            <circle cx="208" cy="139" r="1" fill="#E8CC60" opacity="0.4"/>
-            <circle cx="204" cy="141" r="1.3" fill="#D4A843" opacity="0.4"/>
-            <circle cx="200" cy="143" r="1" fill="#D4A843" opacity="0.35"/>
-            <circle cx="196" cy="144" r="1.5" fill="#E8CC60" opacity="0.3"/>
-            <!-- Right arm — dots trailing right -->
-            <circle cx="224" cy="133" r="1" fill="#D4A843" opacity="0.5"/>
-            <circle cx="228" cy="136" r="1.2" fill="#D4A843" opacity="0.45"/>
-            <circle cx="232" cy="139" r="1" fill="#E8CC60" opacity="0.4"/>
-            <circle cx="236" cy="141" r="1.3" fill="#D4A843" opacity="0.4"/>
-            <circle cx="240" cy="143" r="1" fill="#D4A843" opacity="0.35"/>
-            <circle cx="244" cy="144" r="1.5" fill="#E8CC60" opacity="0.3"/>
-            <!-- Left leg — dots trailing down-left -->
-            <circle cx="218" cy="173" r="1.2" fill="#D4A843" opacity="0.5"/>
-            <circle cx="215" cy="178" r="1" fill="#E8CC60" opacity="0.45"/>
-            <circle cx="212" cy="183" r="1.3" fill="#D4A843" opacity="0.4"/>
-            <circle cx="209" cy="188" r="1" fill="#D4A843" opacity="0.35"/>
-            <circle cx="206" cy="193" r="1.2" fill="#E8CC60" opacity="0.3"/>
-            <circle cx="203" cy="198" r="1.5" fill="#D4A843" opacity="0.25"/>
-            <!-- Right leg — dots trailing down-right -->
-            <circle cx="222" cy="173" r="1.2" fill="#D4A843" opacity="0.5"/>
-            <circle cx="225" cy="178" r="1" fill="#E8CC60" opacity="0.45"/>
-            <circle cx="228" cy="183" r="1.3" fill="#D4A843" opacity="0.4"/>
-            <circle cx="231" cy="188" r="1" fill="#D4A843" opacity="0.35"/>
-            <circle cx="234" cy="193" r="1.2" fill="#E8CC60" opacity="0.3"/>
-            <circle cx="237" cy="198" r="1.5" fill="#D4A843" opacity="0.25"/>
-            <!-- Floating ambient particles around the figure -->
-            <circle cx="210" cy="125" r="0.8" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.6;0" dur="2.5s" repeatCount="indefinite"/></circle>
-            <circle cx="232" cy="148" r="0.8" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.6;0" dur="3s" repeatCount="indefinite" begin="0.8s"/></circle>
-            <circle cx="208" cy="155" r="0.8" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.6;0" dur="2.2s" repeatCount="indefinite" begin="1.5s"/></circle>
-            <circle cx="230" cy="125" r="0.8" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.6;0" dur="2.8s" repeatCount="indefinite" begin="0.4s"/></circle>
+            <!-- HEAD — dense dot cluster forming a circle -->
+            <circle cx="220" cy="107" r="1.6" fill="#E8CC60"><animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.8s" repeatCount="indefinite"/></circle>
+            <circle cx="217" cy="105" r="1.1" fill="#D4A843"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.3s" repeatCount="indefinite" begin="0.4s"/></circle>
+            <circle cx="223" cy="105" r="1.1" fill="#D4A843"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="2.1s" repeatCount="indefinite" begin="0.8s"/></circle>
+            <circle cx="215" cy="108" r="1.3" fill="#E8CC60"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.5s" repeatCount="indefinite" begin="0.2s"/></circle>
+            <circle cx="225" cy="108" r="1.3" fill="#E8CC60"><animate attributeName="opacity" values="0.7;0.25;0.7" dur="1.9s" repeatCount="indefinite" begin="1.1s"/></circle>
+            <circle cx="214" cy="111" r="1.0" fill="#D4A843"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.7s" repeatCount="indefinite" begin="0.6s"/></circle>
+            <circle cx="226" cy="111" r="1.0" fill="#D4A843"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="2.0s" repeatCount="indefinite" begin="1.3s"/></circle>
+            <circle cx="220" cy="113" r="1.2" fill="#E8CC60"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.4s" repeatCount="indefinite" begin="0.9s"/></circle>
+            <circle cx="217" cy="113" r="0.9" fill="#D4A843"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="1.7s" repeatCount="indefinite" begin="1.5s"/></circle>
+            <circle cx="223" cy="113" r="0.9" fill="#D4A843"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="2.2s" repeatCount="indefinite" begin="0.3s"/></circle>
+            <circle cx="220" cy="103" r="0.8" fill="#E8CC60"><animate attributeName="opacity" values="0.4;0.05;0.4" dur="2.6s" repeatCount="indefinite" begin="1.0s"/></circle>
+            <circle cx="216" cy="104" r="0.7" fill="#D4A843"><animate attributeName="opacity" values="0.35;0.05;0.35" dur="3.0s" repeatCount="indefinite" begin="0.7s"/></circle>
+            <circle cx="224" cy="104" r="0.7" fill="#D4A843"><animate attributeName="opacity" values="0.35;0.05;0.35" dur="2.8s" repeatCount="indefinite" begin="1.4s"/></circle>
+            <circle cx="219" cy="109" r="1.4" fill="#E8CC60"><animate attributeName="opacity" values="0.85;0.25;0.85" dur="2.0s" repeatCount="indefinite" begin="0.5s"/></circle>
+            <circle cx="221" cy="106" r="1.0" fill="#D4A843"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.3s" repeatCount="indefinite" begin="1.2s"/></circle>
+            <!-- NECK -->
+            <circle cx="220" cy="117" r="0.9" fill="#D4A843"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="2.1s" repeatCount="indefinite" begin="0.3s"/></circle>
+            <circle cx="219" cy="120" r="1.0" fill="#E8CC60"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.4s" repeatCount="indefinite" begin="0.9s"/></circle>
+            <circle cx="221" cy="119" r="0.7" fill="#D4A843"><animate attributeName="opacity" values="0.4;0.08;0.4" dur="1.9s" repeatCount="indefinite" begin="1.6s"/></circle>
+            <!-- TORSO — dense column with width -->
+            <circle cx="220" cy="124" r="1.4" fill="#D4A843"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.2s" repeatCount="indefinite" begin="0.1s"/></circle>
+            <circle cx="218" cy="127" r="1.1" fill="#E8CC60"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="2.5s" repeatCount="indefinite" begin="0.7s"/></circle>
+            <circle cx="222" cy="127" r="1.1" fill="#E8CC60"><animate attributeName="opacity" values="0.55;0.1;0.55" dur="2.0s" repeatCount="indefinite" begin="1.3s"/></circle>
+            <circle cx="220" cy="130" r="1.5" fill="#D4A843"><animate attributeName="opacity" values="0.75;0.2;0.75" dur="1.8s" repeatCount="indefinite" begin="0.4s"/></circle>
+            <circle cx="217" cy="133" r="1.0" fill="#E8CC60"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.6s" repeatCount="indefinite" begin="1.0s"/></circle>
+            <circle cx="223" cy="133" r="1.0" fill="#E8CC60"><animate attributeName="opacity" values="0.5;0.12;0.5" dur="2.3s" repeatCount="indefinite" begin="0.6s"/></circle>
+            <circle cx="220" cy="136" r="1.6" fill="#D4A843"><animate attributeName="opacity" values="0.7;0.18;0.7" dur="2.1s" repeatCount="indefinite" begin="1.5s"/></circle>
+            <circle cx="216" cy="138" r="0.9" fill="#D4A843"><animate attributeName="opacity" values="0.4;0.08;0.4" dur="2.7s" repeatCount="indefinite" begin="0.2s"/></circle>
+            <circle cx="224" cy="138" r="0.9" fill="#D4A843"><animate attributeName="opacity" values="0.45;0.1;0.45" dur="1.9s" repeatCount="indefinite" begin="0.8s"/></circle>
+            <circle cx="220" cy="141" r="1.3" fill="#E8CC60"><animate attributeName="opacity" values="0.65;0.15;0.65" dur="2.4s" repeatCount="indefinite" begin="1.1s"/></circle>
+            <circle cx="219" cy="145" r="1.5" fill="#D4A843"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.0s" repeatCount="indefinite" begin="0.5s"/></circle>
+            <circle cx="221" cy="144" r="1.0" fill="#E8CC60"><animate attributeName="opacity" values="0.5;0.12;0.5" dur="2.8s" repeatCount="indefinite" begin="1.4s"/></circle>
+            <circle cx="217" cy="148" r="1.1" fill="#D4A843"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.2s" repeatCount="indefinite" begin="0.3s"/></circle>
+            <circle cx="223" cy="148" r="1.1" fill="#D4A843"><animate attributeName="opacity" values="0.45;0.08;0.45" dur="2.5s" repeatCount="indefinite" begin="0.9s"/></circle>
+            <circle cx="220" cy="152" r="1.4" fill="#E8CC60"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="1.7s" repeatCount="indefinite" begin="1.2s"/></circle>
+            <circle cx="220" cy="157" r="1.2" fill="#D4A843"><animate attributeName="opacity" values="0.55;0.12;0.55" dur="2.3s" repeatCount="indefinite" begin="0.6s"/></circle>
+            <circle cx="218" cy="155" r="0.8" fill="#E8CC60"><animate attributeName="opacity" values="0.4;0.08;0.4" dur="2.6s" repeatCount="indefinite" begin="1.8s"/></circle>
+            <circle cx="222" cy="155" r="0.8" fill="#E8CC60"><animate attributeName="opacity" values="0.4;0.06;0.4" dur="2.1s" repeatCount="indefinite" begin="0.1s"/></circle>
+            <circle cx="220" cy="162" r="1.3" fill="#D4A843"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="2.4s" repeatCount="indefinite" begin="0.7s"/></circle>
+            <circle cx="220" cy="167" r="1.5" fill="#E8CC60"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="1.9s" repeatCount="indefinite" begin="1.3s"/></circle>
+            <!-- LEFT ARM — dots trailing outward, fading at tips -->
+            <circle cx="216" cy="130" r="1.0" fill="#D4A843"><animate attributeName="opacity" values="0.55;0.1;0.55" dur="2.3s" repeatCount="indefinite" begin="0.2s"/></circle>
+            <circle cx="213" cy="133" r="1.1" fill="#E8CC60"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.0s" repeatCount="indefinite" begin="0.8s"/></circle>
+            <circle cx="210" cy="135" r="0.9" fill="#D4A843"><animate attributeName="opacity" values="0.45;0.08;0.45" dur="2.5s" repeatCount="indefinite" begin="1.4s"/></circle>
+            <circle cx="207" cy="137" r="1.2" fill="#E8CC60"><animate attributeName="opacity" values="0.4;0.06;0.4" dur="2.2s" repeatCount="indefinite" begin="0.5s"/></circle>
+            <circle cx="204" cy="139" r="0.8" fill="#D4A843"><animate attributeName="opacity" values="0.35;0.05;0.35" dur="2.7s" repeatCount="indefinite" begin="1.1s"/></circle>
+            <circle cx="201" cy="140" r="1.0" fill="#E8CC60"><animate attributeName="opacity" values="0.3;0.04;0.3" dur="1.8s" repeatCount="indefinite" begin="1.7s"/></circle>
+            <circle cx="198" cy="141" r="0.7" fill="#D4A843"><animate attributeName="opacity" values="0.25;0.03;0.25" dur="2.4s" repeatCount="indefinite" begin="0.3s"/></circle>
+            <circle cx="195" cy="142" r="1.1" fill="#E8CC60"><animate attributeName="opacity" values="0.2;0.02;0.2" dur="2.6s" repeatCount="indefinite" begin="0.9s"/></circle>
+            <!-- RIGHT ARM — dots trailing outward -->
+            <circle cx="224" cy="130" r="1.0" fill="#D4A843"><animate attributeName="opacity" values="0.55;0.1;0.55" dur="2.1s" repeatCount="indefinite" begin="0.6s"/></circle>
+            <circle cx="227" cy="133" r="1.1" fill="#E8CC60"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.4s" repeatCount="indefinite" begin="1.2s"/></circle>
+            <circle cx="230" cy="135" r="0.9" fill="#D4A843"><animate attributeName="opacity" values="0.45;0.08;0.45" dur="1.9s" repeatCount="indefinite" begin="0.1s"/></circle>
+            <circle cx="233" cy="137" r="1.2" fill="#E8CC60"><animate attributeName="opacity" values="0.4;0.06;0.4" dur="2.6s" repeatCount="indefinite" begin="0.7s"/></circle>
+            <circle cx="236" cy="139" r="0.8" fill="#D4A843"><animate attributeName="opacity" values="0.35;0.05;0.35" dur="2.3s" repeatCount="indefinite" begin="1.5s"/></circle>
+            <circle cx="239" cy="140" r="1.0" fill="#E8CC60"><animate attributeName="opacity" values="0.3;0.04;0.3" dur="2.0s" repeatCount="indefinite" begin="0.4s"/></circle>
+            <circle cx="242" cy="141" r="0.7" fill="#D4A843"><animate attributeName="opacity" values="0.25;0.03;0.25" dur="2.8s" repeatCount="indefinite" begin="1.0s"/></circle>
+            <circle cx="245" cy="142" r="1.1" fill="#E8CC60"><animate attributeName="opacity" values="0.2;0.02;0.2" dur="2.2s" repeatCount="indefinite" begin="1.6s"/></circle>
+            <!-- LEFT LEG — dots trailing down-left -->
+            <circle cx="218" cy="170" r="1.1" fill="#D4A843"><animate attributeName="opacity" values="0.55;0.1;0.55" dur="2.1s" repeatCount="indefinite" begin="0.3s"/></circle>
+            <circle cx="216" cy="174" r="0.9" fill="#E8CC60"><animate attributeName="opacity" values="0.5;0.08;0.5" dur="2.5s" repeatCount="indefinite" begin="0.9s"/></circle>
+            <circle cx="214" cy="178" r="1.2" fill="#D4A843"><animate attributeName="opacity" values="0.45;0.08;0.45" dur="1.8s" repeatCount="indefinite" begin="1.5s"/></circle>
+            <circle cx="212" cy="182" r="0.8" fill="#E8CC60"><animate attributeName="opacity" values="0.4;0.06;0.4" dur="2.3s" repeatCount="indefinite" begin="0.5s"/></circle>
+            <circle cx="210" cy="186" r="1.0" fill="#D4A843"><animate attributeName="opacity" values="0.35;0.05;0.35" dur="2.7s" repeatCount="indefinite" begin="1.1s"/></circle>
+            <circle cx="208" cy="190" r="0.7" fill="#E8CC60"><animate attributeName="opacity" values="0.3;0.04;0.3" dur="2.0s" repeatCount="indefinite" begin="1.7s"/></circle>
+            <circle cx="206" cy="194" r="1.1" fill="#D4A843"><animate attributeName="opacity" values="0.25;0.03;0.25" dur="2.4s" repeatCount="indefinite" begin="0.2s"/></circle>
+            <circle cx="204" cy="198" r="0.9" fill="#E8CC60"><animate attributeName="opacity" values="0.2;0.02;0.2" dur="2.6s" repeatCount="indefinite" begin="0.8s"/></circle>
+            <!-- RIGHT LEG — dots trailing down-right -->
+            <circle cx="222" cy="170" r="1.1" fill="#D4A843"><animate attributeName="opacity" values="0.55;0.1;0.55" dur="2.4s" repeatCount="indefinite" begin="0.7s"/></circle>
+            <circle cx="224" cy="174" r="0.9" fill="#E8CC60"><animate attributeName="opacity" values="0.5;0.08;0.5" dur="1.9s" repeatCount="indefinite" begin="1.3s"/></circle>
+            <circle cx="226" cy="178" r="1.2" fill="#D4A843"><animate attributeName="opacity" values="0.45;0.08;0.45" dur="2.2s" repeatCount="indefinite" begin="0.4s"/></circle>
+            <circle cx="228" cy="182" r="0.8" fill="#E8CC60"><animate attributeName="opacity" values="0.4;0.06;0.4" dur="2.7s" repeatCount="indefinite" begin="1.0s"/></circle>
+            <circle cx="230" cy="186" r="1.0" fill="#D4A843"><animate attributeName="opacity" values="0.35;0.05;0.35" dur="2.0s" repeatCount="indefinite" begin="1.6s"/></circle>
+            <circle cx="232" cy="190" r="0.7" fill="#E8CC60"><animate attributeName="opacity" values="0.3;0.04;0.3" dur="2.5s" repeatCount="indefinite" begin="0.2s"/></circle>
+            <circle cx="234" cy="194" r="1.1" fill="#D4A843"><animate attributeName="opacity" values="0.25;0.03;0.25" dur="1.8s" repeatCount="indefinite" begin="0.8s"/></circle>
+            <circle cx="236" cy="198" r="0.9" fill="#E8CC60"><animate attributeName="opacity" values="0.2;0.02;0.2" dur="2.3s" repeatCount="indefinite" begin="1.4s"/></circle>
+            <!-- FLOATING AMBIENT DATA PARTICLES — scattered around the figure -->
+            <circle cx="210" cy="122" r="0.6" fill="#3dff7a"><animate attributeName="opacity" values="0;0.7;0" dur="2.5s" repeatCount="indefinite"/></circle>
+            <circle cx="232" cy="145" r="0.6" fill="#3dff7a"><animate attributeName="opacity" values="0;0.6;0" dur="3.0s" repeatCount="indefinite" begin="0.8s"/></circle>
+            <circle cx="207" cy="152" r="0.5" fill="#3dff7a"><animate attributeName="opacity" values="0;0.5;0" dur="2.2s" repeatCount="indefinite" begin="1.5s"/></circle>
+            <circle cx="231" cy="122" r="0.6" fill="#3dff7a"><animate attributeName="opacity" values="0;0.6;0" dur="2.8s" repeatCount="indefinite" begin="0.4s"/></circle>
+            <circle cx="198" cy="135" r="0.5" fill="#3dff7a"><animate attributeName="opacity" values="0;0.4;0" dur="3.2s" repeatCount="indefinite" begin="1.2s"/></circle>
+            <circle cx="243" cy="135" r="0.5" fill="#3dff7a"><animate attributeName="opacity" values="0;0.4;0" dur="2.6s" repeatCount="indefinite" begin="0.6s"/></circle>
+            <circle cx="215" cy="165" r="0.5" fill="#3dff7a"><animate attributeName="opacity" values="0;0.5;0" dur="2.9s" repeatCount="indefinite" begin="1.8s"/></circle>
+            <circle cx="226" cy="162" r="0.5" fill="#3dff7a"><animate attributeName="opacity" values="0;0.5;0" dur="2.1s" repeatCount="indefinite" begin="0.3s"/></circle>
+            <circle cx="220" cy="100" r="0.4" fill="#3dff7a"><animate attributeName="opacity" values="0;0.3;0" dur="3.5s" repeatCount="indefinite" begin="1.0s"/></circle>
+            <circle cx="212" cy="142" r="0.4" fill="#E8CC60"><animate attributeName="opacity" values="0;0.5;0" dur="2.7s" repeatCount="indefinite" begin="0.7s"/></circle>
+            <circle cx="228" cy="150" r="0.4" fill="#E8CC60"><animate attributeName="opacity" values="0;0.5;0" dur="2.3s" repeatCount="indefinite" begin="1.6s"/></circle>
           </g>
           <!-- Scan line sweeping over the figure -->
           <line x1="200" y1="110" x2="240" y2="110" stroke="#3dff7a" stroke-width="1" opacity="0">
@@ -5103,8 +5130,15 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
           <circle cx="226" cy="155" r="1" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.8;0" dur="2.5s" repeatCount="indefinite" begin="0.5s"/></circle>
           <circle cx="218" cy="168" r="1" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.8;0" dur="1.8s" repeatCount="indefinite" begin="1s"/></circle>
           <circle cx="208" cy="135" r="1" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.8;0" dur="2.2s" repeatCount="indefinite" begin="0.3s"/></circle>
-          <!-- YOU label -->
-          <text x="220" y="220" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="#D4A843" font-weight="700" letter-spacing="2" opacity="0.8">YOU</text>
+          <!-- YOU label + visual connection to bottom tagline -->
+          <text x="220" y="215" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="#D4A843" font-weight="700" letter-spacing="2" opacity="0.8">YOU</text>
+          <!-- Downward data trail: dots flowing from YOU toward bottom text -->
+          <circle cx="220" cy="230" r="1.5" fill="#3dff7a" opacity="0.5"><animate attributeName="opacity" values="0.5;0.15;0.5" dur="2s" repeatCount="indefinite"/></circle>
+          <circle cx="220" cy="240" r="1.2" fill="#3dff7a" opacity="0.35"><animate attributeName="opacity" values="0.35;0.1;0.35" dur="2s" repeatCount="indefinite" begin="0.3s"/></circle>
+          <circle cx="220" cy="249" r="1" fill="#3dff7a" opacity="0.25"><animate attributeName="opacity" values="0.25;0.08;0.25" dur="2s" repeatCount="indefinite" begin="0.6s"/></circle>
+          <circle cx="220" cy="257" r="0.8" fill="#3dff7a" opacity="0.15"><animate attributeName="opacity" values="0.15;0.05;0.15" dur="2s" repeatCount="indefinite" begin="0.9s"/></circle>
+          <!-- Subtle bracket/arrow pointing down -->
+          <path d="M210 224 L220 232 L230 224" stroke="#3dff7a" stroke-width="0.8" fill="none" opacity="0.3"/>
 
           <!-- Person 1: top-left (teal) -->
           <g>
@@ -5175,7 +5209,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
           <text x="340" y="280" font-family="Manrope,sans-serif" font-size="7" fill="#4ae8c1" opacity="0.6" text-anchor="middle">says &quot;best group&quot;</text>
         </svg>
 
-        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-top:8px">Digitized by the people who know you.</div>
+        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-top:8px">Digitized by the people who experience you.</div>
       </div>
     </div>
   </div>
@@ -5341,7 +5375,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div class="inner" style="padding-top:56px;text-align:center;max-width:800px">
 
   <div class="display" style="font-size:clamp(1.4rem,3vw,2.2rem);margin-bottom:8px">Every interaction trains it.<br><em>It never stops getting smarter.</em></div>
-  <div style="font-size:0.72rem;color:rgba(237,233,224,.35);margin-bottom:28px">Domain experts + players + AI = a self-improving coordination engine</div>
+  <div style="font-size:0.72rem;color:rgba(237,233,224,.35);margin-bottom:28px">Domain experts + players + communities + AI = a self-improving coordination engine</div>
 
   <!-- Flywheel visualization -->
   <div style="position:relative;width:min(440px,85vw);height:min(440px,85vw);margin:0 auto">
@@ -5370,8 +5404,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <!-- Inner ring: Domain expert inputs -->
       <g>
         <circle cx="220" cy="140" r="14" fill="rgba(212,168,83,0.08)" stroke="#D4A843" stroke-width="1.5"/>
-        <text x="220" y="115" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7" fill="#D4A843" font-weight="600">Krista</text>
-        <text x="220" y="124" text-anchor="middle" font-family="Manrope,sans-serif" font-size="6" fill="rgba(212,168,83,0.4)">domain expert</text>
+        <text x="220" y="113" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" fill="#D4A843" font-weight="600">Krista</text>
+        <text x="220" y="124" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" fill="rgba(212,168,83,0.5)">domain expert</text>
         <!-- Arrow to center -->
         <line x1="220" y1="154" x2="220" y2="178" stroke="#D4A843" stroke-width="1" opacity="0.3" stroke-dasharray="3 3">
           <animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1.5s" repeatCount="indefinite"/>
@@ -5379,8 +5413,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       </g>
       <g>
         <circle cx="300" cy="220" r="14" fill="rgba(212,168,83,0.08)" stroke="#D4A843" stroke-width="1.5"/>
-        <text x="330" y="210" font-family="Manrope,sans-serif" font-size="7" fill="#D4A843" font-weight="600">Overrides</text>
-        <text x="330" y="219" font-family="Manrope,sans-serif" font-size="6" fill="rgba(212,168,83,0.4)">corrections</text>
+        <text x="330" y="210" font-family="Manrope,sans-serif" font-size="10" fill="#D4A843" font-weight="600">Overrides</text>
+        <text x="330" y="221" font-family="Manrope,sans-serif" font-size="8" fill="rgba(212,168,83,0.5)">corrections</text>
         <line x1="286" y1="220" x2="262" y2="220" stroke="#D4A843" stroke-width="1" opacity="0.3" stroke-dasharray="3 3">
           <animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1.8s" repeatCount="indefinite"/>
         </line>
@@ -5389,22 +5423,22 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <!-- Middle ring: Player behavior signals -->
       <g>
         <circle cx="120" cy="130" r="10" fill="rgba(73,180,160,0.08)" stroke="#43B8A0" stroke-width="1.2"/>
-        <text x="95" y="120" font-family="Manrope,sans-serif" font-size="6" fill="#43B8A0" opacity="0.6">RSVPs</text>
+        <text x="95" y="120" font-family="Manrope,sans-serif" font-size="9" fill="#43B8A0" opacity="0.7">RSVPs</text>
         <circle r="2" fill="#43B8A0" opacity="0.6"><animateMotion dur="2s" repeatCount="indefinite" path="M120,130 L195,200"/></circle>
       </g>
       <g>
         <circle cx="320" cy="130" r="10" fill="rgba(73,180,160,0.08)" stroke="#43B8A0" stroke-width="1.2"/>
-        <text x="345" y="120" font-family="Manrope,sans-serif" font-size="6" fill="#43B8A0" opacity="0.6">referrals</text>
+        <text x="345" y="120" font-family="Manrope,sans-serif" font-size="9" fill="#43B8A0" opacity="0.7">referrals</text>
         <circle r="2" fill="#43B8A0" opacity="0.6"><animateMotion dur="2.3s" repeatCount="indefinite" path="M320,130 L245,200"/></circle>
       </g>
       <g>
         <circle cx="100" cy="280" r="10" fill="rgba(73,180,160,0.08)" stroke="#43B8A0" stroke-width="1.2"/>
-        <text x="72" y="296" font-family="Manrope,sans-serif" font-size="6" fill="#43B8A0" opacity="0.6">chat signals</text>
+        <text x="72" y="296" font-family="Manrope,sans-serif" font-size="9" fill="#43B8A0" opacity="0.7">chat signals</text>
         <circle r="2" fill="#43B8A0" opacity="0.6"><animateMotion dur="1.8s" repeatCount="indefinite" path="M100,280 L200,235"/></circle>
       </g>
       <g>
         <circle cx="340" cy="300" r="10" fill="rgba(73,180,160,0.08)" stroke="#43B8A0" stroke-width="1.2"/>
-        <text x="358" y="310" font-family="Manrope,sans-serif" font-size="6" fill="#43B8A0" opacity="0.6">group outcomes</text>
+        <text x="358" y="310" font-family="Manrope,sans-serif" font-size="9" fill="#43B8A0" opacity="0.7">group outcomes</text>
         <circle r="2" fill="#43B8A0" opacity="0.6"><animateMotion dur="2.5s" repeatCount="indefinite" path="M340,300 L240,235"/></circle>
       </g>
 
@@ -5426,12 +5460,12 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <line x1="220" y1="260" x2="220" y2="290" stroke="#3dff7a" stroke-width="1" opacity="0.2" stroke-dasharray="3 3">
         <animate attributeName="stroke-dashoffset" from="-12" to="0" dur="1.5s" repeatCount="indefinite"/>
       </line>
-      <text x="220" y="310" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7" fill="#3dff7a" opacity="0.5">better groups out</text>
+      <text x="220" y="310" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" fill="#3dff7a" opacity="0.6">better groups out</text>
 
       <line x1="178" y1="220" x2="150" y2="220" stroke="#3dff7a" stroke-width="1" opacity="0.2" stroke-dasharray="3 3">
         <animate attributeName="stroke-dashoffset" from="-12" to="0" dur="1.8s" repeatCount="indefinite"/>
       </line>
-      <text x="130" y="215" text-anchor="end" font-family="Manrope,sans-serif" font-size="7" fill="#3dff7a" opacity="0.5">smarter matches</text>
+      <text x="130" y="215" text-anchor="end" font-family="Manrope,sans-serif" font-size="10" fill="#3dff7a" opacity="0.6">smarter matches</text>
     </svg>
   </div>
 
@@ -5446,7 +5480,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:40px 20px;box-sizing:border-box">
 
     <div style="font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,38px);font-weight:900;color:var(--cream);text-align:center;margin-bottom:32px">
-      The epicenter for solving<br>autonomous social coordination.
+      Zero to one starts here.
     </div>
 
     <!-- Concentric rings visualization -->
@@ -5475,7 +5509,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <!-- SLIDE 16 -->
 <div class="casey-slide ds-main" id="cs-16">
 <div class="slide" data-slide="9" data-section="main">
-  <div class="section-label anim-up">The Perfect Outlier Wedge</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,168,83,0.85);z-index:10;">The Perfect Outlier Wedge</div>
   <h1 class="slide-title anim-up-d1">Pickleball is the lowest-risk path to the world's first autonomous social coordination network.</h1>
   <p class="subtitle anim-up-d1" style="color:var(--accent); font-style:italic; margin-bottom:0.6rem;">19.8M US players. ~1M rated. The other 18.8M coordinate through texts, group chats, and open plays that don&rsquo;t get smarter.</p>
   <p class="anim-up-d1" style="font-size:0.65rem; color:var(--text-dim); margin-bottom:1.2rem; font-style:normal;">SFIA 2025 &middot; DUPR public data</p>
@@ -5551,6 +5585,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
 <!-- SLIDE 17 -->
 <div class="casey-slide ds-measure" id="cs-17">
+<div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,168,83,0.85);z-index:10;">The Insight</div>
 <div class="stg">
       <div class="h" style="font-size:clamp(24px,5vw,42px);">For the first time, we can <em class="ember">understand</em></div>
       <div style="display:flex; align-items:center; justify-content:center; gap:48px; margin-top:40px; flex-wrap:wrap;">
@@ -5624,6 +5659,9 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div class="orb orb-g" style="width:600px;height:600px;top:10%;right:-20%;opacity:0.3"></div>
 <div class="inner" style="text-align:center;max-width:760px">
 
+  <!-- GnT Logo -->
+  <div style="margin-bottom:28px"><img src="data:image/png;base64,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" style="height:48px;opacity:0.9" alt="GnT"/></div>
+
   <div style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.2vw,2.6rem);font-weight:700;font-style:italic;color:rgba(237,233,224,.85);line-height:1.4;margin-bottom:32px">
     &ldquo;Getting people connecting in the real world is the ultimate promise of the internet.&rdquo;
   </div>
@@ -5632,7 +5670,6 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
   <div style="width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold,#caa54a),transparent);margin:36px auto"></div>
 
-  <div style="font-size:0.55rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(237,233,224,.2);margin-bottom:12px">Ultra-rare opportunity</div>
   <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:24px">
     <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:10px 16px;text-align:center">
       <div style="font-size:0.65rem;color:rgba(237,233,224,.5)">Max lived problem</div>
@@ -5664,7 +5701,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <!-- SLIDE 20: Founder Journey — ID cs-19 so it shows before Chesky -->
 <div class="casey-slide ds-focus" id="cs-19">
 <section style="position:relative;min-height:100%;width:100%">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Founder</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Founder Dave Velardo</div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:800px">
   <div class="display" style="font-size:clamp(1.2rem,2.5vw,1.8rem);margin-bottom:8px">I turned down an acquisition because I knew the answer wasn&rsquo;t another skill rating system.</div>
   <div style="font-size:0.72rem;color:rgba(237,233,224,.35);margin-bottom:28px">Years of watching who people choose, who they avoid, and what no software has ever captured.</div>
@@ -5685,7 +5722,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <div style="text-align:center;min-width:100px;position:relative;z-index:1">
       <div style="width:10px;height:10px;border-radius:50%;background:var(--gold,#caa54a);margin:7px auto 8px"></div>
       <div style="font-size:0.65rem;font-weight:700;color:var(--gold,#caa54a)">2022</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.35);margin-top:2px">Built NEPC to<br>live the problem</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.35);margin-top:2px">Built New England Pickleball Club<br>to live the problem</div>
     </div>
     <div style="text-align:center;min-width:100px;position:relative;z-index:1">
       <div style="width:10px;height:10px;border-radius:50%;background:var(--gold,#caa54a);margin:7px auto 8px"></div>
@@ -6303,13 +6340,13 @@ function startCourtForm() {
     if (i % 3 === 0) edges.push([i, (i + 4) % 16]);
   }
 
-  // Court positions (right side)
-  const courtX = 520, courtY = 90, courtW = 220, courtH = 160;
+  // Court positions (right side) — real pickleball 44'×20' = 2.2:1 ratio
+  const courtX = 505, courtY = 105, courtW = 250, courtH = 114;
   const courtSlots = [
-    [courtX + 55, courtY + 45],
-    [courtX + 165, courtY + 45],
-    [courtX + 55, courtY + 115],
-    [courtX + 165, courtY + 115]
+    [courtX + 45, courtY + 30],
+    [courtX + 205, courtY + 30],
+    [courtX + 45, courtY + 84],
+    [courtX + 205, courtY + 84]
   ];
 
   // Value exchange labels
@@ -6418,13 +6455,13 @@ function startCourtForm() {
     ctx.setLineDash([4, 4]);
     ctx.stroke();
     ctx.setLineDash([]);
-    // Kitchen/NVZ lines (7-foot zones on each side of net)
-    const kitchenW = courtW * 0.22;
+    // Kitchen/NVZ lines (7-foot zones on each side of net — 7/22 ≈ 32% of half-court)
+    const kitchenW = courtW * 0.16;
     ctx.strokeStyle = 'rgba(232,224,208,0.1)';
     ctx.lineWidth = 1;
     ctx.strokeRect(cx2 - kitchenW, courtY, kitchenW, courtH);
     ctx.strokeRect(cx2, courtY, kitchenW, courtH);
-    // Service line (horizontal center)
+    // Centerline — divides service boxes on each half (baseline to kitchen)
     ctx.beginPath();
     ctx.moveTo(courtX, cy2);
     ctx.lineTo(cx2 - kitchenW, cy2);
@@ -6434,11 +6471,6 @@ function startCourtForm() {
     ctx.moveTo(cx2 + kitchenW, cy2);
     ctx.lineTo(courtX + courtW, cy2);
     ctx.stroke();
-    // Court label
-    ctx.fillStyle = 'rgba(232,224,208,0.15)';
-    ctx.font = '9px Manrope, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText('COURT', cx2, courtY - 8);
 
     // --- PHASE LOGIC ---
     phaseTimer++;
@@ -6494,13 +6526,15 @@ function startCourtForm() {
         ctx.stroke();
         ctx.setLineDash([]);
         ctx.globalAlpha = 1;
-        // Label at midpoint
+        // Midpoint pulse dot instead of overlapping text labels
         if (vl.progress > 0.8) {
           const lx = (a[0] + b[0]) / 2, ly = (a[1] + b[1]) / 2;
-          ctx.fillStyle = 'rgba(232,224,208,0.3)';
-          ctx.font = '7px Manrope, sans-serif';
-          ctx.textAlign = 'center';
-          ctx.fillText(vl.label, lx, ly - 4);
+          ctx.beginPath();
+          ctx.arc(lx, ly, 2, 0, Math.PI * 2);
+          ctx.fillStyle = people[selected[vl.a]].color;
+          ctx.globalAlpha = 0.4 + 0.2 * Math.sin(courtFormFrame * 0.08 + vi);
+          ctx.fill();
+          ctx.globalAlpha = 1;
         }
       });
 
