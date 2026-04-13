@@ -5622,12 +5622,52 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div class="stg">
       <div class="h" style="font-size:clamp(24px,5vw,42px);">For the first time, we can <em class="ember">understand</em></div>
       <div style="display:flex; align-items:center; justify-content:center; gap:48px; margin-top:40px; flex-wrap:wrap;">
-        <div style="text-align:center;">
+        <div style="text-align:center;max-width:380px;">
+          <!-- Graphic: person with unique colored data dots -->
+          <svg width="120" height="100" viewBox="0 0 120 100" fill="none" style="margin-bottom:12px">
+            <circle cx="60" cy="28" r="12" fill="none" stroke="#43B8A0" stroke-width="1.5"/>
+            <line x1="60" y1="40" x2="60" y2="68" stroke="#43B8A0" stroke-width="1.5"/>
+            <line x1="48" y1="52" x2="72" y2="52" stroke="#43B8A0" stroke-width="1.5"/>
+            <line x1="60" y1="68" x2="50" y2="85" stroke="#43B8A0" stroke-width="1.5"/>
+            <line x1="60" y1="68" x2="70" y2="85" stroke="#43B8A0" stroke-width="1.5"/>
+            <!-- Unique attribute dots radiating out -->
+            <circle cx="82" cy="24" r="4" fill="#f0c040"><animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></circle>
+            <circle cx="88" cy="44" r="3.5" fill="#e85a7a"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.3s" repeatCount="indefinite" begin="0.4s"/></circle>
+            <circle cx="78" cy="62" r="3" fill="#64b5f6"><animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite" begin="0.8s"/></circle>
+            <circle cx="36" cy="22" r="3.5" fill="#c76bdb"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.1s" repeatCount="indefinite" begin="1.2s"/></circle>
+            <circle cx="32" cy="48" r="4" fill="#4ae8c1"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite" begin="0.6s"/></circle>
+            <circle cx="40" cy="72" r="3" fill="#f59e0b"><animate attributeName="opacity" values="0.4;1;0.4" dur="1.9s" repeatCount="indefinite" begin="1.0s"/></circle>
+          </svg>
           <div style="font-family:'Playfair Display',serif; font-size:clamp(24px,4.5vw,38px); font-weight:700; color:var(--teal);">what makes each person unique</div>
           <div style="font-size:14px; color:var(--text-dim); margin-top:8px;">Not demographics. Not rating.<br>What they actually bring to a room.</div>
         </div>
         <div style="font-size:28px; color:var(--text-dim); opacity:0.4;">&amp;</div>
-        <div style="text-align:center;">
+        <div style="text-align:center;max-width:380px;">
+          <!-- Graphic: two people with value exchange -->
+          <svg width="160" height="100" viewBox="0 0 160 100" fill="none" style="margin-bottom:12px">
+            <!-- Person A -->
+            <circle cx="40" cy="28" r="12" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+            <line x1="40" y1="40" x2="40" y2="68" stroke="#f59e0b" stroke-width="1.5"/>
+            <line x1="28" y1="52" x2="52" y2="52" stroke="#f59e0b" stroke-width="1.5"/>
+            <line x1="40" y1="68" x2="32" y2="85" stroke="#f59e0b" stroke-width="1.5"/>
+            <line x1="40" y1="68" x2="48" y2="85" stroke="#f59e0b" stroke-width="1.5"/>
+            <!-- Person B -->
+            <circle cx="120" cy="28" r="12" fill="none" stroke="#D46B7E" stroke-width="1.5"/>
+            <line x1="120" y1="40" x2="120" y2="68" stroke="#D46B7E" stroke-width="1.5"/>
+            <line x1="108" y1="52" x2="132" y2="52" stroke="#D46B7E" stroke-width="1.5"/>
+            <line x1="120" y1="68" x2="112" y2="85" stroke="#D46B7E" stroke-width="1.5"/>
+            <line x1="120" y1="68" x2="128" y2="85" stroke="#D46B7E" stroke-width="1.5"/>
+            <!-- Value arrows A→B -->
+            <line x1="55" y1="38" x2="103" y2="38" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4 3" opacity="0.5">
+              <animate attributeName="stroke-dashoffset" from="0" to="-14" dur="1.5s" repeatCount="indefinite"/>
+            </line>
+            <circle r="3" fill="#f59e0b" opacity="0.8"><animateMotion dur="1.5s" repeatCount="indefinite" path="M55,38 L103,38"/></circle>
+            <!-- Value arrows B→A -->
+            <line x1="105" y1="52" x2="55" y2="52" stroke="#D46B7E" stroke-width="1" stroke-dasharray="4 3" opacity="0.5">
+              <animate attributeName="stroke-dashoffset" from="0" to="-14" dur="1.8s" repeatCount="indefinite"/>
+            </line>
+            <circle r="3" fill="#D46B7E" opacity="0.8"><animateMotion dur="1.8s" repeatCount="indefinite" path="M105,52 L55,52"/></circle>
+          </svg>
           <div style="font-family:'Playfair Display',serif; font-size:clamp(24px,4.5vw,38px); font-weight:700; color:var(--warm);">what they&rsquo;re worth to each other</div>
           <div style="font-size:14px; color:var(--text-dim); margin-top:8px;">Not followers. Not likes.<br>Real human value &mdash; measured by what people choose.</div>
         </div>
@@ -5672,12 +5712,14 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <div style="font-size:0.55rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(237,233,224,.3);margin-bottom:4px">2004</div>
       <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:rgba(237,233,224,.7)">Facebook</div>
       <div style="font-size:0.72rem;color:rgba(237,233,224,.35);margin-top:2px">college communities</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.2);margin-top:6px;font-style:italic">digital connection</div>
     </div>
     <div style="font-size:1.2rem;color:var(--gold,#caa54a);opacity:0.4">&#10230;</div>
     <div style="text-align:center">
       <div style="font-size:0.55rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold,#caa54a);margin-bottom:4px">2026</div>
       <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--gold,#caa54a)">Give &lsquo;n Take</div>
       <div style="font-size:0.72rem;color:rgba(237,233,224,.5);margin-top:2px">pickleball communities</div>
+      <div style="font-size:0.55rem;color:var(--gold,#caa54a);margin-top:6px;font-style:italic;opacity:0.6">real-world connection</div>
     </div>
   </div>
 
