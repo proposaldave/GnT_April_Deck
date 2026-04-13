@@ -5295,9 +5295,115 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </div>
 
 
-<!-- SLIDE 14 -->
-<div class="casey-slide ds-intro" id="cs-14">
-<div class="back-btn" onclick="goTo(7)">← Ground Zero</div>
+<!-- SLIDE 14: Self-Improving Intelligence -->
+<div class="casey-slide ds-focus" id="cs-14">
+<section style="position:relative;min-height:100%;width:100%">
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">The Intelligence</div>
+<div class="orb orb-g" style="width:500px;height:500px;top:-10%;right:-15%"></div>
+<div class="inner" style="padding-top:56px;text-align:center;max-width:800px">
+
+  <div class="display" style="font-size:clamp(1.4rem,3vw,2.2rem);margin-bottom:8px">Every interaction trains it.<br><em>It never stops getting smarter.</em></div>
+  <div style="font-size:0.72rem;color:rgba(237,233,224,.35);margin-bottom:28px">Domain experts + players + AI = a self-improving coordination engine</div>
+
+  <!-- Flywheel visualization -->
+  <div style="position:relative;width:min(440px,85vw);height:min(440px,85vw);margin:0 auto">
+    <svg viewBox="0 0 440 440" width="100%" height="100%">
+      <!-- Outer ring (rotating) -->
+      <circle cx="220" cy="220" r="190" fill="none" stroke="rgba(212,168,83,0.08)" stroke-width="1" stroke-dasharray="6 4">
+        <animateTransform attributeName="transform" type="rotate" from="0 220 220" to="360 220 220" dur="30s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Middle ring -->
+      <circle cx="220" cy="220" r="140" fill="none" stroke="rgba(73,180,160,0.08)" stroke-width="1" stroke-dasharray="4 3">
+        <animateTransform attributeName="transform" type="rotate" from="360 220 220" to="0 220 220" dur="20s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Inner ring -->
+      <circle cx="220" cy="220" r="80" fill="none" stroke="rgba(212,168,83,0.12)" stroke-width="1.5"/>
+
+      <!-- Center: GnT brain -->
+      <circle cx="220" cy="220" r="40" fill="rgba(212,168,83,0.06)" stroke="#D4A843" stroke-width="2"/>
+      <text x="220" y="215" text-anchor="middle" font-family="'Playfair Display',serif" font-size="14" fill="#D4A843" font-weight="700">GnT</text>
+      <text x="220" y="232" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" fill="rgba(212,168,83,0.6)" font-weight="600">INTELLIGENCE</text>
+      <!-- Pulse -->
+      <circle cx="220" cy="220" r="40" fill="none" stroke="#D4A843" stroke-width="0.5" opacity="0">
+        <animate attributeName="r" values="40;55;40" dur="2.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.2;0;0.2" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+
+      <!-- Inner ring: Domain expert inputs -->
+      <g>
+        <circle cx="220" cy="140" r="14" fill="rgba(212,168,83,0.08)" stroke="#D4A843" stroke-width="1.5"/>
+        <text x="220" y="115" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7" fill="#D4A843" font-weight="600">Krista</text>
+        <text x="220" y="124" text-anchor="middle" font-family="Manrope,sans-serif" font-size="6" fill="rgba(212,168,83,0.4)">domain expert</text>
+        <!-- Arrow to center -->
+        <line x1="220" y1="154" x2="220" y2="178" stroke="#D4A843" stroke-width="1" opacity="0.3" stroke-dasharray="3 3">
+          <animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1.5s" repeatCount="indefinite"/>
+        </line>
+      </g>
+      <g>
+        <circle cx="300" cy="220" r="14" fill="rgba(212,168,83,0.08)" stroke="#D4A843" stroke-width="1.5"/>
+        <text x="330" y="210" font-family="Manrope,sans-serif" font-size="7" fill="#D4A843" font-weight="600">Overrides</text>
+        <text x="330" y="219" font-family="Manrope,sans-serif" font-size="6" fill="rgba(212,168,83,0.4)">corrections</text>
+        <line x1="286" y1="220" x2="262" y2="220" stroke="#D4A843" stroke-width="1" opacity="0.3" stroke-dasharray="3 3">
+          <animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1.8s" repeatCount="indefinite"/>
+        </line>
+      </g>
+
+      <!-- Middle ring: Player behavior signals -->
+      <g>
+        <circle cx="120" cy="130" r="10" fill="rgba(73,180,160,0.08)" stroke="#43B8A0" stroke-width="1.2"/>
+        <text x="95" y="120" font-family="Manrope,sans-serif" font-size="6" fill="#43B8A0" opacity="0.6">RSVPs</text>
+        <circle r="2" fill="#43B8A0" opacity="0.6"><animateMotion dur="2s" repeatCount="indefinite" path="M120,130 L195,200"/></circle>
+      </g>
+      <g>
+        <circle cx="320" cy="130" r="10" fill="rgba(73,180,160,0.08)" stroke="#43B8A0" stroke-width="1.2"/>
+        <text x="345" y="120" font-family="Manrope,sans-serif" font-size="6" fill="#43B8A0" opacity="0.6">referrals</text>
+        <circle r="2" fill="#43B8A0" opacity="0.6"><animateMotion dur="2.3s" repeatCount="indefinite" path="M320,130 L245,200"/></circle>
+      </g>
+      <g>
+        <circle cx="100" cy="280" r="10" fill="rgba(73,180,160,0.08)" stroke="#43B8A0" stroke-width="1.2"/>
+        <text x="72" y="296" font-family="Manrope,sans-serif" font-size="6" fill="#43B8A0" opacity="0.6">chat signals</text>
+        <circle r="2" fill="#43B8A0" opacity="0.6"><animateMotion dur="1.8s" repeatCount="indefinite" path="M100,280 L200,235"/></circle>
+      </g>
+      <g>
+        <circle cx="340" cy="300" r="10" fill="rgba(73,180,160,0.08)" stroke="#43B8A0" stroke-width="1.2"/>
+        <text x="358" y="310" font-family="Manrope,sans-serif" font-size="6" fill="#43B8A0" opacity="0.6">group outcomes</text>
+        <circle r="2" fill="#43B8A0" opacity="0.6"><animateMotion dur="2.5s" repeatCount="indefinite" path="M340,300 L240,235"/></circle>
+      </g>
+
+      <!-- Outer ring: Players -->
+      <g>
+        <circle cx="220" cy="30" r="8" fill="none" stroke="rgba(232,224,208,0.2)" stroke-width="1"/>
+        <circle cx="120" cy="60" r="8" fill="none" stroke="rgba(232,224,208,0.15)" stroke-width="1"/>
+        <circle cx="60" cy="160" r="8" fill="none" stroke="rgba(232,224,208,0.15)" stroke-width="1"/>
+        <circle cx="60" cy="300" r="8" fill="none" stroke="rgba(232,224,208,0.15)" stroke-width="1"/>
+        <circle cx="140" cy="400" r="8" fill="none" stroke="rgba(232,224,208,0.15)" stroke-width="1"/>
+        <circle cx="300" cy="400" r="8" fill="none" stroke="rgba(232,224,208,0.15)" stroke-width="1"/>
+        <circle cx="380" cy="300" r="8" fill="none" stroke="rgba(232,224,208,0.15)" stroke-width="1"/>
+        <circle cx="380" cy="160" r="8" fill="none" stroke="rgba(232,224,208,0.15)" stroke-width="1"/>
+        <circle cx="320" cy="60" r="8" fill="none" stroke="rgba(232,224,208,0.15)" stroke-width="1"/>
+        <text x="220" y="18" text-anchor="middle" font-family="Manrope,sans-serif" font-size="6" fill="rgba(232,224,208,0.2)">players</text>
+      </g>
+
+      <!-- Output arrows (going back out) -->
+      <line x1="220" y1="260" x2="220" y2="290" stroke="#3dff7a" stroke-width="1" opacity="0.2" stroke-dasharray="3 3">
+        <animate attributeName="stroke-dashoffset" from="-12" to="0" dur="1.5s" repeatCount="indefinite"/>
+      </line>
+      <text x="220" y="310" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7" fill="#3dff7a" opacity="0.5">better groups out</text>
+
+      <line x1="178" y1="220" x2="150" y2="220" stroke="#3dff7a" stroke-width="1" opacity="0.2" stroke-dasharray="3 3">
+        <animate attributeName="stroke-dashoffset" from="-12" to="0" dur="1.8s" repeatCount="indefinite"/>
+      </line>
+      <text x="130" y="215" text-anchor="end" font-family="Manrope,sans-serif" font-size="7" fill="#3dff7a" opacity="0.5">smarter matches</text>
+    </svg>
+  </div>
+
+</div>
+</section>
+</div>
+
+<!-- SLIDE 15 (was 14 — Ground Zero) -->
+<div class="casey-slide ds-intro" id="cs-15">
+<div class="back-btn" onclick="goTo(8)">← Ground Zero</div>
 
   <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:40px 20px;box-sizing:border-box">
 
@@ -5328,8 +5434,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </div>
 
 
-<!-- SLIDE 15 -->
-<div class="casey-slide ds-main" id="cs-15">
+<!-- SLIDE 16 -->
+<div class="casey-slide ds-main" id="cs-16">
 <div class="slide" data-slide="9" data-section="main">
   <div class="section-label anim-up">The Perfect Outlier Wedge</div>
   <h1 class="slide-title anim-up-d1">Pickleball is the lowest-risk path to the world's first autonomous social coordination network.</h1>
@@ -5405,8 +5511,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </div>
 </div>
 
-<!-- SLIDE 16 -->
-<div class="casey-slide ds-measure" id="cs-16">
+<!-- SLIDE 17 -->
+<div class="casey-slide ds-measure" id="cs-17">
 <div class="stg">
       <div class="h" style="font-size:clamp(24px,5vw,42px);">For the first time, we can <em class="ember">understand</em></div>
       <div style="display:flex; align-items:center; justify-content:center; gap:48px; margin-top:40px; flex-wrap:wrap;">
@@ -5417,15 +5523,15 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         <div style="font-size:28px; color:var(--text-dim); opacity:0.4;">&amp;</div>
         <div style="text-align:center;">
           <div style="font-family:'Playfair Display',serif; font-size:clamp(24px,4.5vw,38px); font-weight:700; color:var(--warm);">what they&rsquo;re worth to each other</div>
-          <div style="font-size:14px; color:var(--text-dim); margin-top:8px;">Not followers. Not likes.<br>Real value &mdash; measured by what people choose.</div>
+          <div style="font-size:14px; color:var(--text-dim); margin-top:8px;">Not followers. Not likes.<br>Real human value &mdash; measured by what people choose.</div>
         </div>
       </div>
     </div>
   
 </div>
 
-<!-- SLIDE 17: The Next Great Network -->
-<div class="casey-slide ds-focus" id="cs-17">
+<!-- SLIDE 18: The Next Great Network -->
+<div class="casey-slide ds-focus" id="cs-18">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Opportunity Size</div>
 <div class="orb orb-g" style="width:500px;height:500px;top:-5%;left:-15%"></div>
@@ -5449,11 +5555,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <!-- GnT result -->
     <div style="text-align:left;max-width:320px">
       <div style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--gold,#caa54a);font-style:italic;line-height:1.2;margin-bottom:10px">
-        Autonomous<br>Social Coordination
+        Autonomous<br>Human Value<br>Coordination
       </div>
-      <p style="font-size:0.82rem;color:rgba(237,233,224,.4);line-height:1.5;margin:0">
-        Every platform era built a new graph. <strong style="color:rgba(237,233,224,.85)">GnT builds the one that connects us for real.</strong>
-      </p>
     </div>
   </div>
 
@@ -5477,8 +5580,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </section>
 </div>
 
-<!-- SLIDE 18: Brain-Expansion Why -->
-<div class="casey-slide ds-focus" id="cs-18">
+<!-- SLIDE 19: Brain-Expansion Why -->
+<div class="casey-slide ds-focus" id="cs-19">
 <section style="position:relative;min-height:100%;width:100%">
 <div class="orb orb-g" style="width:600px;height:600px;top:10%;right:-20%;opacity:0.3"></div>
 <div class="inner" style="text-align:center;max-width:760px">
@@ -5520,8 +5623,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </section>
 </div>
 
-<!-- SLIDE 19: Founder Journey -->
-<div class="casey-slide ds-focus" id="cs-19">
+<!-- SLIDE 20: Founder Journey -->
+<div class="casey-slide ds-focus" id="cs-20">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Founder</div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:800px">
@@ -5581,8 +5684,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </section>
 </div>
 
-<!-- SLIDE 20: Animated Logo Closer -->
-<div class="casey-slide ds-focus" id="cs-20">
+<!-- SLIDE 21: Animated Logo Closer -->
+<div class="casey-slide ds-focus" id="cs-21">
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
 <div style="display:flex;flex-direction:column;align-items:center;justify-content:center">
   <div class="gnt-anim" id="gntLogoAnim">
@@ -5878,7 +5981,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <nav class="casey-nav" id="cnav"></nav>
 
 <script>
-const TOTAL = 20;
+const TOTAL = 21;
 const APPENDIX_TOTAL = 7;
 let current = 1;
 let inAppendix = false;
@@ -5900,8 +6003,8 @@ function caseyGo(n) {
   // magic background disabled
   if (n === 10) animateIntroTeaser();
   if (n === 8) animateIntroOrbit();
-  if (n === 14) animateIntroExpansion();
-  if (n === 20) replayGntLogo();
+  if (n === 15) animateIntroExpansion();
+  if (n === 21) replayGntLogo();
 }
 
 function enterAppendix() {
@@ -5959,6 +6062,7 @@ const slideLabels = [
   'How it Started at NEPC',
   'Current Phase: HITL',
   'The Leap',
+  'The Intelligence',
   'Ground Zero',
   'The Perfect Outlier Wedge',
   'Understand',
