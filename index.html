@@ -4959,29 +4959,10 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
         <span data-color="#e04040" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#e04040;transition:all 0.4s ease">make it abundant</span>
       </div>
-      <!-- Abstract network graph -->
-      <div style="margin-top:28px">
-        <svg viewBox="0 0 360 160" width="400" height="180" xmlns="http://www.w3.org/2000/svg">
-          <!-- Connection lines (animate) -->
-          <line x1="60" y1="50" x2="180" y2="80" stroke="#D4A843" stroke-width="1" opacity="0.2"><animate attributeName="opacity" values="0.1;0.3;0.1" dur="3s" repeatCount="indefinite"/></line>
-          <line x1="60" y1="50" x2="140" y2="120" stroke="#43B8A0" stroke-width="0.8" opacity="0.15"><animate attributeName="opacity" values="0.08;0.2;0.08" dur="4s" repeatCount="indefinite"/></line>
-          <line x1="180" y1="80" x2="300" y2="40" stroke="#D4A843" stroke-width="1" opacity="0.2"><animate attributeName="opacity" values="0.1;0.25;0.1" dur="3.5s" repeatCount="indefinite"/></line>
-          <line x1="180" y1="80" x2="140" y2="120" stroke="#D46B7E" stroke-width="0.8" opacity="0.15"/>
-          <line x1="180" y1="80" x2="260" y2="130" stroke="#5B8FD4" stroke-width="0.8" opacity="0.12"/>
-          <line x1="300" y1="40" x2="260" y2="130" stroke="#43B8A0" stroke-width="0.8" opacity="0.12"/>
-          <line x1="140" y1="120" x2="260" y2="130" stroke="#D4A843" stroke-width="0.6" opacity="0.1" stroke-dasharray="3 4"/>
-          <line x1="60" y1="50" x2="300" y2="40" stroke="rgba(255,255,255,0.04)" stroke-width="0.5" stroke-dasharray="4 6"/>
-          <!-- Nodes (people) -->
-          <g><circle cx="60" cy="50" r="14" fill="rgba(212,168,83,0.06)" stroke="#D4A843" stroke-width="1.5"/><circle cx="60" cy="46" r="5" fill="none" stroke="#D4A843" stroke-width="1" opacity="0.7"/><line x1="60" y1="51" x2="60" y2="60" stroke="#D4A843" stroke-width="0.8" opacity="0.5"/></g>
-          <g><circle cx="180" cy="80" r="18" fill="rgba(212,168,83,0.08)" stroke="#D4A843" stroke-width="2"/><circle cx="180" cy="75" r="6" fill="none" stroke="#D4A843" stroke-width="1.2" opacity="0.8"/><line x1="180" y1="81" x2="180" y2="92" stroke="#D4A843" stroke-width="1" opacity="0.6"/><circle cx="180" cy="80" r="18" fill="none" stroke="#D4A843" stroke-width="0.5" opacity="0"><animate attributeName="r" values="18;28;18" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.15;0" dur="3s" repeatCount="indefinite"/></circle></g>
-          <g><circle cx="300" cy="40" r="13" fill="rgba(212,104,126,0.06)" stroke="#D46B7E" stroke-width="1.5"/><circle cx="300" cy="36" r="5" fill="none" stroke="#D46B7E" stroke-width="1" opacity="0.7"/><line x1="300" y1="41" x2="300" y2="49" stroke="#D46B7E" stroke-width="0.8" opacity="0.5"/></g>
-          <g><circle cx="140" cy="120" r="12" fill="rgba(67,184,160,0.06)" stroke="#43B8A0" stroke-width="1.5"/><circle cx="140" cy="116" r="4.5" fill="none" stroke="#43B8A0" stroke-width="1" opacity="0.7"/><line x1="140" y1="121" x2="140" y2="128" stroke="#43B8A0" stroke-width="0.8" opacity="0.5"/></g>
-          <g><circle cx="260" cy="130" r="11" fill="rgba(91,143,212,0.06)" stroke="#5B8FD4" stroke-width="1.5"/><circle cx="260" cy="126" r="4" fill="none" stroke="#5B8FD4" stroke-width="1" opacity="0.7"/><line x1="260" y1="131" x2="260" y2="137" stroke="#5B8FD4" stroke-width="0.8" opacity="0.5"/></g>
-          <!-- Flowing particles on connections -->
-          <circle r="2" fill="#D4A843" opacity="0.6"><animateMotion dur="2.5s" repeatCount="indefinite" path="M60,50 L180,80"/></circle>
-          <circle r="1.5" fill="#43B8A0" opacity="0.5"><animateMotion dur="3s" repeatCount="indefinite" path="M140,120 L180,80"/></circle>
-          <circle r="1.5" fill="#D46B7E" opacity="0.5"><animateMotion dur="2.8s" repeatCount="indefinite" path="M300,40 L180,80"/></circle>
-        </svg>
+      <!-- Community-to-Court animation -->
+      <div style="margin-top:20px;position:relative">
+        <canvas id="courtFormCanvas" width="800" height="340" style="width:min(700px,90vw);height:auto;display:block;margin:0 auto"></canvas>
+        <div id="courtFormScore" style="text-align:center;margin-top:8px;font-family:'Playfair Display',serif;font-size:clamp(14px,2vw,20px);font-weight:700;color:#3dff7a;opacity:0;transition:opacity 0.4s">&nbsp;</div>
       </div>
     </div>
   </div>
@@ -5875,6 +5856,7 @@ function caseyGo(n) {
   document.getElementById('cbar').style.width = ((n / TOTAL) * 100) + '%';
   document.getElementById('ccount').textContent = n + ' / ' + TOTAL;
   current = n;
+  if (n === 9) startCourtForm(); else stopCourtForm();
   // magic background disabled
   if (n === 10) animateIntroTeaser();
   if (n === 8) animateIntroOrbit();
@@ -6102,6 +6084,263 @@ function animateIntroOrbit() {
   });
 }
 window.addEventListener('resize', () => { if (current === 8) animateIntroOrbit(); });
+
+// ===== COURT FORMATION ANIMATION (slide 9) =====
+let courtFormRunning = false, courtFormFrame = 0;
+function startCourtForm() {
+  if (courtFormRunning) return;
+  courtFormRunning = true;
+  const c = document.getElementById('courtFormCanvas');
+  const scoreEl = document.getElementById('courtFormScore');
+  if (!c) return;
+  const ctx = c.getContext('2d');
+  const W = c.width, H = c.height;
+
+  // Community — 16 people in a network graph
+  const pColors = ['#D4A843','#D46B7E','#43B8A0','#5B8FD4','#E8CC60','#c76bdb','#4ae8c1','#e85a7a',
+                   '#f0c040','#ff8a65','#81c784','#64b5f6','#ce93d8','#a5d6a7','#f48fb1','#4fc3f7'];
+  const pNames = ['Alex','Sam','Jordan','Pat','Chris','Morgan','Taylor','Riley',
+                  'Casey','Jamie','Quinn','Avery','Drew','Blake','Sage','Reese'];
+  const people = [];
+  // Arrange in a loose circle on the left
+  const gcx = 160, gcy = 160, gr = 110;
+  for (let i = 0; i < 16; i++) {
+    const angle = (i / 16) * Math.PI * 2 - Math.PI / 2;
+    const jx = (Math.random() - 0.5) * 20, jy = (Math.random() - 0.5) * 20;
+    people.push({
+      hx: gcx + Math.cos(angle) * gr + jx, hy: gcy + Math.sin(angle) * gr + jy, // home
+      x: gcx + Math.cos(angle) * gr + jx, y: gcy + Math.sin(angle) * gr + jy,
+      color: pColors[i], name: pNames[i], r: 8, selected: false, onCourt: false
+    });
+  }
+
+  // Connections between neighbors
+  const edges = [];
+  for (let i = 0; i < 16; i++) {
+    edges.push([i, (i + 1) % 16]);
+    if (i % 3 === 0) edges.push([i, (i + 4) % 16]);
+  }
+
+  // Court positions (right side)
+  const courtX = 520, courtY = 90, courtW = 220, courtH = 160;
+  const courtSlots = [
+    [courtX + 55, courtY + 45],
+    [courtX + 165, courtY + 45],
+    [courtX + 55, courtY + 115],
+    [courtX + 165, courtY + 115]
+  ];
+
+  // Value exchange labels
+  const valueLabels = [
+    ['lifts energy','welcomes','competitive match','great rally partner'],
+    ['funny','reliable','pushes you','positive attitude'],
+    ['makes you better','encouraging','calm presence','good communicator']
+  ];
+
+  let phase = 'idle'; // idle, selecting, moving, showing, returning
+  let phaseTimer = 0;
+  let selected = [];
+  let valueLines = [];
+  let score = 0;
+  let round = 0;
+
+  function pickFour() {
+    const indices = [];
+    const pool = [...Array(16).keys()];
+    for (let i = 0; i < 4; i++) {
+      const idx = Math.floor(Math.random() * pool.length);
+      indices.push(pool.splice(idx, 1)[0]);
+    }
+    return indices;
+  }
+
+  function lerp(a, b, t) { return a + (b - a) * Math.min(1, t); }
+
+  function draw() {
+    if (!courtFormRunning) return;
+    ctx.clearRect(0, 0, W, H);
+    courtFormFrame++;
+
+    // --- GRAPH (left side) ---
+    // Draw edges
+    edges.forEach(([a, b]) => {
+      const pa = people[a], pb = people[b];
+      const sel = pa.selected || pb.selected;
+      ctx.beginPath();
+      ctx.moveTo(pa.x, pa.y);
+      ctx.lineTo(pb.x, pb.y);
+      ctx.strokeStyle = sel ? 'rgba(212,168,83,0.06)' : 'rgba(232,224,208,0.06)';
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+    });
+    // Draw people
+    people.forEach((p, i) => {
+      const dim = p.selected ? 1 : (phase === 'showing' ? 0.25 : 0.6);
+      // Head
+      ctx.beginPath();
+      ctx.arc(p.x, p.y - 4, p.r * 0.55, 0, Math.PI * 2);
+      ctx.strokeStyle = p.color;
+      ctx.globalAlpha = dim;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      // Body
+      ctx.beginPath();
+      ctx.moveTo(p.x, p.y + p.r * 0.1);
+      ctx.lineTo(p.x, p.y + p.r * 1.4);
+      ctx.stroke();
+      // Arms
+      ctx.beginPath();
+      ctx.moveTo(p.x - p.r * 0.7, p.y + p.r * 0.7);
+      ctx.lineTo(p.x + p.r * 0.7, p.y + p.r * 0.7);
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+    });
+
+    // --- COURT (right side) ---
+    // Court outline
+    ctx.strokeStyle = 'rgba(232,224,208,0.12)';
+    ctx.lineWidth = 1.5;
+    ctx.strokeRect(courtX, courtY, courtW, courtH);
+    // Net line
+    ctx.beginPath();
+    ctx.moveTo(courtX + courtW / 2, courtY);
+    ctx.lineTo(courtX + courtW / 2, courtY + courtH);
+    ctx.strokeStyle = 'rgba(232,224,208,0.06)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    // Court label
+    ctx.fillStyle = 'rgba(232,224,208,0.15)';
+    ctx.font = '9px Manrope, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('COURT', courtX + courtW / 2, courtY - 8);
+
+    // --- PHASE LOGIC ---
+    phaseTimer++;
+
+    if (phase === 'idle' && phaseTimer > 40) {
+      phase = 'selecting';
+      phaseTimer = 0;
+      selected = pickFour();
+      selected.forEach(i => { people[i].selected = true; });
+      round++;
+    }
+
+    if (phase === 'selecting' && phaseTimer > 30) {
+      phase = 'moving';
+      phaseTimer = 0;
+    }
+
+    if (phase === 'moving') {
+      const t = phaseTimer / 40;
+      selected.forEach((pi, si) => {
+        people[pi].x = lerp(people[pi].hx, courtSlots[si][0], t);
+        people[pi].y = lerp(people[pi].hy, courtSlots[si][1], t);
+      });
+      if (phaseTimer >= 40) {
+        phase = 'showing';
+        phaseTimer = 0;
+        score = 75 + Math.floor(Math.random() * 22);
+        const vSet = valueLabels[round % valueLabels.length];
+        valueLines = [];
+        for (let i = 0; i < 4; i++) {
+          for (let j = i + 1; j < 4; j++) {
+            valueLines.push({ a: i, b: j, label: vSet[(i + j) % vSet.length], progress: 0 });
+          }
+        }
+        if (scoreEl) { scoreEl.textContent = score + '% compatibility'; scoreEl.style.opacity = '1'; }
+      }
+    }
+
+    if (phase === 'showing') {
+      // Draw value exchange lines between court players
+      valueLines.forEach((vl, vi) => {
+        vl.progress = Math.min(1, (phaseTimer - vi * 5) / 20);
+        if (vl.progress <= 0) return;
+        const a = courtSlots[vl.a], b = courtSlots[vl.b];
+        const mx = lerp(a[0], b[0], vl.progress), my = lerp(a[1], b[1], vl.progress);
+        ctx.beginPath();
+        ctx.moveTo(a[0], a[1]);
+        ctx.lineTo(mx, my);
+        ctx.strokeStyle = people[selected[vl.a]].color;
+        ctx.globalAlpha = 0.3;
+        ctx.lineWidth = 1;
+        ctx.setLineDash([3, 3]);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.globalAlpha = 1;
+        // Label at midpoint
+        if (vl.progress > 0.8) {
+          const lx = (a[0] + b[0]) / 2, ly = (a[1] + b[1]) / 2;
+          ctx.fillStyle = 'rgba(232,224,208,0.3)';
+          ctx.font = '7px Manrope, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText(vl.label, lx, ly - 4);
+        }
+      });
+
+      // Draw selected people on court (bigger, brighter)
+      selected.forEach((pi, si) => {
+        const p = people[pi];
+        // Head
+        ctx.beginPath();
+        ctx.arc(p.x, p.y - 6, 10, 0, Math.PI * 2);
+        ctx.strokeStyle = p.color;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        // Body
+        ctx.beginPath(); ctx.moveTo(p.x, p.y + 4); ctx.lineTo(p.x, p.y + 22); ctx.stroke();
+        // Arms
+        ctx.beginPath(); ctx.moveTo(p.x - 10, p.y + 12); ctx.lineTo(p.x + 10, p.y + 12); ctx.stroke();
+        // Legs
+        ctx.beginPath(); ctx.moveTo(p.x, p.y + 22); ctx.lineTo(p.x - 8, p.y + 35); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(p.x, p.y + 22); ctx.lineTo(p.x + 8, p.y + 35); ctx.stroke();
+        // Name
+        ctx.fillStyle = p.color;
+        ctx.font = '600 9px Manrope, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(p.name, p.x, p.y + 46);
+      });
+
+      // Quality bar at bottom of court
+      const barX = courtX + 10, barY = courtY + courtH + 14, barW = courtW - 20, barH = 6;
+      ctx.fillStyle = 'rgba(232,224,208,0.06)';
+      ctx.fillRect(barX, barY, barW, barH);
+      const fillW = barW * Math.min(1, phaseTimer / 30) * (score / 100);
+      const grd = ctx.createLinearGradient(barX, 0, barX + fillW, 0);
+      grd.addColorStop(0, '#43B8A0');
+      grd.addColorStop(1, '#3dff7a');
+      ctx.fillStyle = grd;
+      ctx.fillRect(barX, barY, fillW, barH);
+
+      if (phaseTimer > 120) {
+        phase = 'returning';
+        phaseTimer = 0;
+        if (scoreEl) scoreEl.style.opacity = '0';
+      }
+    }
+
+    if (phase === 'returning') {
+      const t = phaseTimer / 30;
+      selected.forEach(pi => {
+        people[pi].x = lerp(people[pi].x, people[pi].hx, t);
+        people[pi].y = lerp(people[pi].y, people[pi].hy, t);
+      });
+      if (phaseTimer >= 30) {
+        selected.forEach(pi => {
+          people[pi].selected = false;
+          people[pi].x = people[pi].hx;
+          people[pi].y = people[pi].hy;
+        });
+        phase = 'idle';
+        phaseTimer = 0;
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+function stopCourtForm() { courtFormRunning = false; }
 
 // ===== DIGITIZE CYCLE (slide 9) =====
 let digiTimer = null;
