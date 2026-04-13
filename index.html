@@ -4603,6 +4603,31 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 .gnt-anim.playing .ga-breathe{animation:gntBreathe 4s ease-in-out 3.0s infinite}
 .gnt-anim .ga-text{opacity:0;transition:opacity 0.6s ease}
 .gnt-anim.playing .ga-text{opacity:1;transition-delay:3.0s}
+
+/* ======== MOBILE RESPONSIVE ======== */
+@media (max-width: 768px) {
+  .casey-nav { padding:6px 10px; gap:4px; bottom:12px; }
+  .casey-dot { width:8px; height:8px; }
+  .casey-dot.on { width:18px; }
+  .casey-count { font-size:9px; top:8px; right:12px; }
+  .teaser-container { padding:0 16px !important; }
+  .teaser-question { font-size:clamp(18px,5vw,28px) !important; }
+  .inner { padding:0 16px !important; }
+  .display { font-size:clamp(1rem,4vw,1.6rem) !important; }
+  .section-label { font-size:0.65rem !important; }
+  .h { font-size:clamp(18px,4.5vw,28px) !important; }
+  .back-btn { font-size:11px !important; top:8px !important; left:12px !important; }
+  .node-overlay { padding:20px !important; }
+  #appendixBtn { font-size:8px !important; padding:4px 10px !important; }
+}
+@media (max-width: 480px) {
+  .casey-nav { padding:4px 6px; gap:3px; bottom:8px; }
+  .casey-dot { width:6px; height:6px; }
+  .casey-dot.on { width:14px; }
+  .graph-slide { width:95% !important; }
+  .graph-container { width:min(300px,85vw) !important; height:min(300px,85vw) !important; }
+  .wedge-grid { grid-template-columns:1fr !important; }
+}
 </style>
 </head>
 <body>
@@ -4637,8 +4662,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
   <div class="sm-slide-container">
     <div class="sm-headline-big">
-      Social media is a very narrow view<br>
-      of <strong style="font-weight:700">human connection</strong> technology.
+      Social media is a very narrow view of<br>
+      <strong style="font-weight:700;font-size:clamp(28px,5vw,48px)">Human Connection Technology.</strong>
     </div>
 
     <div class="sm-shift">
@@ -4891,15 +4916,15 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <div class="stg">
       <div class="h" style="font-size:clamp(22px,3.8vw,36px);max-width:1000px;">When you digitize what we mean to each other, you can:</div>
       <div id="digitizeList" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:20px">
-        <span class="digi-item" data-color="#5bc4c0" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#5bc4c0;transition:all 0.4s ease">graph it</span>
+        <span data-color="#5bc4c0" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#5bc4c0;transition:all 0.4s ease">graph it</span>
         <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
-        <span class="digi-item" data-color="#f59e0b" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#f59e0b;transition:all 0.4s ease">orchestrate it</span>
+        <span data-color="#f59e0b" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#f59e0b;transition:all 0.4s ease">orchestrate it</span>
         <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
-        <span class="digi-item" data-color="#f59e0b" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#f59e0b;transition:all 0.4s ease">sell it</span>
+        <span data-color="#f59e0b" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#f59e0b;transition:all 0.4s ease">sell it</span>
         <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
-        <span class="digi-item" data-color="#5bc4c0" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#5bc4c0;transition:all 0.4s ease">automate it</span>
+        <span data-color="#5bc4c0" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#5bc4c0;transition:all 0.4s ease">automate it</span>
         <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
-        <span class="digi-item" data-color="#e04040" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#e04040;transition:all 0.4s ease">make it abundant</span>
+        <span data-color="#e04040" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#e04040;transition:all 0.4s ease">make it abundant</span>
       </div>
       <!-- Abstract network graph -->
       <div style="margin-top:28px">
@@ -4929,107 +4954,103 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   </div>
 </div>
 
-<!-- SLIDE 10 -->
+<!-- SLIDE 10: The Teaser (3.0 vs Data Drip) -->
 <div class="casey-slide ds-intro" id="cs-10">
-<div class="back-btn" onclick="goTo(4)">← The Perfect Outlier Wedge</div>
 
-  <div class="s3-combined">
-    <!-- Top: Pickleball hero -->
-    <div class="s3-top-row">
-      <div class="s3-left">
-        <div class="s3-hero">
-          <span class="fastest">Fastest-growing sport in U.S. history</span>
-          Pickleball
-        </div>
-      </div>
+  <div class="teaser-container" style="max-width:900px">
+    <div class="teaser-question" style="margin-bottom:24px">
+      What replaces skill ratings'<br>
+      <span style="color:var(--red)">100-year reign?</span>
     </div>
 
-    <!-- Timeline -->
-    <div class="timeline-strip" id="timelineStrip">
-      <div class="timeline-era" data-delay="0">
-        <div class="tl-year">1920s</div>
-        <div class="tl-bar"></div>
-        <div class="tl-label">Tennis adopts<br>skill ratings</div>
-      </div>
-      <div class="timeline-era" data-delay="1">
-        <div class="tl-year">1970s</div>
-        <div class="tl-bar"></div>
-        <div class="tl-label">NTRP becomes<br>the standard</div>
-      </div>
-      <div class="timeline-era" data-delay="2">
-        <div class="tl-year">2010s</div>
-        <div class="tl-bar"></div>
-        <div class="tl-label">Pickleball explosion<br>begins</div>
-      </div>
-      <div class="timeline-era" data-delay="3">
-        <div class="tl-year">2020s</div>
-        <div class="tl-bar"></div>
-        <div class="tl-label">DUPR arrives —<br>still just a number</div>
-      </div>
-    </div>
+    <div style="display:flex;align-items:stretch;gap:24px;justify-content:center;flex-wrap:wrap">
 
-    <!-- WRONG box -->
-    <div class="wrong-assumption-box" id="wrongBox">
-      <div class="wrong-quote-mark">"</div>
-      <div class="wrong-assumption-text">
-        Matching players based on <span style="color:var(--red);font-weight:700">competitive skill ratings data.</span>
+      <!-- LEFT: One number -->
+      <div style="flex:1;min-width:200px;max-width:340px;background:rgba(224,64,64,0.04);border:1px solid rgba(224,64,64,0.15);border-radius:16px;padding:32px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center">
+        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red,#e04040);margin-bottom:16px">The Old Way</div>
+        <!-- Person with number -->
+        <svg width="120" height="140" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="60" cy="32" r="18" fill="none" stroke="rgba(232,224,208,0.25)" stroke-width="2"/>
+          <circle cx="54" cy="28" r="2" fill="rgba(232,224,208,0.2)"/>
+          <circle cx="66" cy="28" r="2" fill="rgba(232,224,208,0.2)"/>
+          <path d="M54 36 Q60 40 66 36" stroke="rgba(232,224,208,0.15)" stroke-width="1.2" fill="none"/>
+          <line x1="60" y1="50" x2="60" y2="90" stroke="rgba(232,224,208,0.2)" stroke-width="2"/>
+          <line x1="42" y1="70" x2="78" y2="70" stroke="rgba(232,224,208,0.2)" stroke-width="2"/>
+          <line x1="60" y1="90" x2="45" y2="120" stroke="rgba(232,224,208,0.2)" stroke-width="2"/>
+          <line x1="60" y1="90" x2="75" y2="120" stroke="rgba(232,224,208,0.2)" stroke-width="2"/>
+        </svg>
+        <div style="font-family:'Playfair Display',serif;font-size:clamp(48px,8vw,72px);font-weight:900;color:var(--red,#e04040);margin:8px 0;line-height:1">3.0</div>
+        <div style="font-size:0.72rem;color:rgba(232,224,208,0.4)">One number. One dimension.</div>
+        <div style="font-size:0.6rem;color:rgba(232,224,208,0.25);margin-top:4px">That&rsquo;s all anyone knows about you.</div>
       </div>
-      <div class="wrong-stamp">INCORRECT PARADIGM</div>
-    </div>
 
-    <!-- Bottom -->
-    <div class="wrong-bottom">
-      <span style="color:var(--cream)">Pickleball is a wildly social sport. 85% of play is social.</span> <span style="color:rgba(232,224,208,0.35)">The system treats them like competitors.</span>
+      <!-- ARROW -->
+      <div style="display:flex;align-items:center;font-size:1.5rem;color:var(--gold,#caa54a);opacity:0.3">&#10230;</div>
+
+      <!-- RIGHT: Data drip digitization -->
+      <div style="flex:1;min-width:280px;max-width:420px;background:rgba(61,255,122,0.02);border:1px solid rgba(61,255,122,0.1);border-radius:16px;padding:24px;text-align:center;position:relative;overflow:hidden">
+        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-bottom:12px">The New Way</div>
+
+        <!-- Central person being digitized -->
+        <svg id="dataDripSvg" width="100%" height="220" viewBox="0 0 380 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Central person (larger, glowing) -->
+          <circle cx="190" cy="90" r="22" fill="rgba(212,168,83,0.08)" stroke="#D4A843" stroke-width="2"/>
+          <circle cx="190" cy="82" r="8" fill="none" stroke="#D4A843" stroke-width="1.5" opacity="0.8"/>
+          <line x1="190" y1="98" x2="190" y2="130" stroke="#D4A843" stroke-width="1.5" opacity="0.6"/>
+          <line x1="175" y1="112" x2="205" y2="112" stroke="#D4A843" stroke-width="1.5" opacity="0.6"/>
+          <!-- Glow -->
+          <circle cx="190" cy="100" r="30" fill="none" stroke="#D4A843" stroke-width="0.5" opacity="0.15">
+            <animate attributeName="r" values="28;36;28" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.15;0.05;0.15" dur="3s" repeatCount="indefinite"/>
+          </circle>
+
+          <!-- Surrounding people with data lines flowing IN -->
+          <!-- Person 1: top-left -->
+          <g><circle cx="60" cy="30" r="6" fill="none" stroke="#43B8A0" stroke-width="1.2"/><circle cx="60" cy="26" r="2.5" fill="none" stroke="#43B8A0" stroke-width="0.8" opacity="0.7"/><line x1="60" y1="36" x2="60" y2="46" stroke="#43B8A0" stroke-width="0.8" opacity="0.5"/></g>
+          <line x1="70" y1="38" x2="170" y2="85" stroke="#43B8A0" stroke-width="0.8" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.5s" repeatCount="indefinite"/></line>
+          <circle r="2" fill="#43B8A0" opacity="0.7"><animateMotion dur="1.8s" repeatCount="indefinite" path="M70,38 L170,85"/></circle>
+          <text x="52" y="58" font-family="Manrope,sans-serif" font-size="6" fill="#43B8A0" opacity="0.5">invites you back</text>
+
+          <!-- Person 2: top-right -->
+          <g><circle cx="320" cy="30" r="6" fill="none" stroke="#D46B7E" stroke-width="1.2"/><circle cx="320" cy="26" r="2.5" fill="none" stroke="#D46B7E" stroke-width="0.8" opacity="0.7"/><line x1="320" y1="36" x2="320" y2="46" stroke="#D46B7E" stroke-width="0.8" opacity="0.5"/></g>
+          <line x1="310" y1="38" x2="210" y2="85" stroke="#D46B7E" stroke-width="0.8" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.8s" repeatCount="indefinite"/></line>
+          <circle r="2" fill="#D46B7E" opacity="0.7"><animateMotion dur="2s" repeatCount="indefinite" path="M310,38 L210,85"/></circle>
+          <text x="296" y="58" font-family="Manrope,sans-serif" font-size="6" fill="#D46B7E" opacity="0.5">picks you first</text>
+
+          <!-- Person 3: left -->
+          <g><circle cx="30" cy="120" r="6" fill="none" stroke="#5B8FD4" stroke-width="1.2"/><circle cx="30" cy="116" r="2.5" fill="none" stroke="#5B8FD4" stroke-width="0.8" opacity="0.7"/><line x1="30" y1="126" x2="30" y2="136" stroke="#5B8FD4" stroke-width="0.8" opacity="0.5"/></g>
+          <line x1="42" y1="120" x2="168" y2="95" stroke="#5B8FD4" stroke-width="0.8" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="2.2s" repeatCount="indefinite"/></line>
+          <circle r="2" fill="#5B8FD4" opacity="0.7"><animateMotion dur="2.2s" repeatCount="indefinite" path="M42,120 L168,95"/></circle>
+          <text x="14" y="148" font-family="Manrope,sans-serif" font-size="6" fill="#5B8FD4" opacity="0.5">rates you ★★★★★</text>
+
+          <!-- Person 4: right -->
+          <g><circle cx="350" cy="120" r="6" fill="none" stroke="#E8CC60" stroke-width="1.2"/><circle cx="350" cy="116" r="2.5" fill="none" stroke="#E8CC60" stroke-width="0.8" opacity="0.7"/><line x1="350" y1="126" x2="350" y2="136" stroke="#E8CC60" stroke-width="0.8" opacity="0.5"/></g>
+          <line x1="338" y1="120" x2="212" y2="95" stroke="#E8CC60" stroke-width="0.8" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.6s" repeatCount="indefinite"/></line>
+          <circle r="2" fill="#E8CC60" opacity="0.7"><animateMotion dur="1.6s" repeatCount="indefinite" path="M338,120 L212,95"/></circle>
+          <text x="322" y="148" font-family="Manrope,sans-serif" font-size="6" fill="#E8CC60" opacity="0.5">never cancels</text>
+
+          <!-- Person 5: bottom-left -->
+          <g><circle cx="90" cy="195" r="6" fill="none" stroke="#c76bdb" stroke-width="1.2"/><circle cx="90" cy="191" r="2.5" fill="none" stroke="#c76bdb" stroke-width="0.8" opacity="0.7"/><line x1="90" y1="201" x2="90" y2="211" stroke="#c76bdb" stroke-width="0.8" opacity="0.5"/></g>
+          <line x1="100" y1="190" x2="180" y2="110" stroke="#c76bdb" stroke-width="0.8" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="2s" repeatCount="indefinite"/></line>
+          <circle r="2" fill="#c76bdb" opacity="0.7"><animateMotion dur="2s" repeatCount="indefinite" path="M100,190 L180,110"/></circle>
+          <text x="64" y="216" font-family="Manrope,sans-serif" font-size="6" fill="#c76bdb" opacity="0.5">refers friends</text>
+
+          <!-- Person 6: bottom-right -->
+          <g><circle cx="290" cy="195" r="6" fill="none" stroke="#4ae8c1" stroke-width="1.2"/><circle cx="290" cy="191" r="2.5" fill="none" stroke="#4ae8c1" stroke-width="0.8" opacity="0.7"/><line x1="290" y1="201" x2="290" y2="211" stroke="#4ae8c1" stroke-width="0.8" opacity="0.5"/></g>
+          <line x1="280" y1="190" x2="200" y2="110" stroke="#4ae8c1" stroke-width="0.8" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.4s" repeatCount="indefinite"/></line>
+          <circle r="2" fill="#4ae8c1" opacity="0.7"><animateMotion dur="1.4s" repeatCount="indefinite" path="M280,190 L200,110"/></circle>
+          <text x="264" y="216" font-family="Manrope,sans-serif" font-size="6" fill="#4ae8c1" opacity="0.5">says "best group"</text>
+        </svg>
+
+        <div style="font-size:0.72rem;color:rgba(232,224,208,0.5);margin-top:4px">Who you are, digitized by the people who experience you.</div>
+        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-top:6px">100&times; more data. From the people who know.</div>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- SLIDE 11 -->
-<div class="casey-slide ds-intro" id="cs-11">
-<div class="back-btn" onclick="goTo(10)">← New Paradigm</div>
-
-  <div class="teaser-container">
-    <div class="teaser-question">
-      What replaces skill ratings'<br>
-      <span style="color:var(--red)">100-year reign?</span>
-    </div>
-
-    <!-- Visual: old paradigm crumbling → new paradigm emerging -->
-    <div style="display:flex;align-items:center;gap:32px;margin:10px 0 20px">
-      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0.85">
-        <div style="font-size:48px;filter:grayscale(1) opacity(0.6)">📊</div>
-        <div style="font-size:14px;color:var(--red);font-weight:700;letter-spacing:1px;text-transform:uppercase">Skill Rating</div>
-        <div style="font-size:12px;color:rgba(232,224,208,0.6)">One number.<br>One dimension.</div>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-        <div style="font-size:24px;color:rgba(232,224,208,0.15)">→</div>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
-        <div style="width:64px;height:64px;border-radius:50%;background:radial-gradient(circle,rgba(45,90,61,0.4) 0%,transparent 70%);border:1.5px solid rgba(74,140,94,0.5);display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(61,255,122,0.12)">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-            <circle cx="16" cy="10" r="3" fill="#4a8c5e" opacity="0.8"/>
-            <circle cx="8" cy="20" r="2.5" fill="#d4a853" opacity="0.7"/>
-            <circle cx="24" cy="20" r="2.5" fill="#e88a4a" opacity="0.7"/>
-            <circle cx="12" cy="26" r="2" fill="#c76bdb" opacity="0.6"/>
-            <circle cx="20" cy="26" r="2" fill="#4ae8c1" opacity="0.6"/>
-            <line x1="16" y1="10" x2="8" y2="20" stroke="#3dff7a" stroke-width="0.8" opacity="0.4"/>
-            <line x1="16" y1="10" x2="24" y2="20" stroke="#3dff7a" stroke-width="0.8" opacity="0.4"/>
-            <line x1="8" y1="20" x2="12" y2="26" stroke="#3dff7a" stroke-width="0.6" opacity="0.3"/>
-            <line x1="24" y1="20" x2="20" y2="26" stroke="#3dff7a" stroke-width="0.6" opacity="0.3"/>
-            <line x1="8" y1="20" x2="24" y2="20" stroke="#3dff7a" stroke-width="0.6" opacity="0.25" stroke-dasharray="2 2"/>
-          </svg>
-        </div>
-        <div style="font-size:12px;color:rgba(232,224,208,0.7);text-align:center">Our private thoughts and feelings<br>about each other.</div>
-        <div style="font-size:14px;color:var(--green-glow);font-weight:700;letter-spacing:1px;text-transform:uppercase">Human Connection, Digitized</div>
-        <!-- cultural shift line removed -->
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- SLIDE 12 (Krista pours in everything) -->
-<div class="casey-slide ds-focus" id="cs-12">
+<div class="casey-slide ds-focus" id="cs-11">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">How It Starts</div>
 <section id="s3b">
 <div class="orb orb-m" style="width:500px;height:500px;top:-10%;left:20%"></div>
@@ -5082,8 +5103,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </section>
 </div>
 
-<!-- SLIDE 13 -->
-<div class="casey-slide ds-focus" id="cs-13">
+<!-- SLIDE 12 -->
+<div class="casey-slide ds-focus" id="cs-12">
 <section id="s4" style="position:relative">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Human-in-the-Loop</div>
 <div class="orb orb-g" style="width:400px;height:400px;top:8%;right:-10%"></div>
@@ -5106,8 +5127,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
 </div>
 
-<!-- SLIDE 14 (Everyone gets one over SMS) -->
-<div class="casey-slide ds-focus" id="cs-14">
+<!-- SLIDE 13 -->
+<div class="casey-slide ds-focus" id="cs-13">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">The Leap</div>
 <div class="orb orb-b" style="width:550px;height:550px;top:-8%;left:20%"></div>
@@ -5187,9 +5208,9 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </div>
 
 
-<!-- SLIDE 15 -->
-<div class="casey-slide ds-intro" id="cs-15">
-<div class="back-btn" onclick="goTo(8)">← Ground Zero</div>
+<!-- SLIDE 14 -->
+<div class="casey-slide ds-intro" id="cs-14">
+<div class="back-btn" onclick="goTo(7)">← Ground Zero</div>
 
   <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:40px 20px;box-sizing:border-box">
 
@@ -5220,8 +5241,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </div>
 
 
-<!-- SLIDE 16 -->
-<div class="casey-slide ds-main" id="cs-16">
+<!-- SLIDE 15 -->
+<div class="casey-slide ds-main" id="cs-15">
 <div class="slide" data-slide="9" data-section="main">
   <div class="section-label anim-up">The Perfect Outlier Wedge</div>
   <h1 class="slide-title anim-up-d1">Pickleball is the lowest-risk path to the world's first autonomous social coordination network.</h1>
@@ -5297,8 +5318,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </div>
 </div>
 
-<!-- SLIDE 17 -->
-<div class="casey-slide ds-measure" id="cs-17">
+<!-- SLIDE 16 -->
+<div class="casey-slide ds-measure" id="cs-16">
 <div class="stg">
       <div class="h" style="font-size:clamp(24px,5vw,42px);">For the first time, we can <em class="ember">understand</em></div>
       <div style="display:flex; align-items:center; justify-content:center; gap:48px; margin-top:40px; flex-wrap:wrap;">
@@ -5316,8 +5337,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   
 </div>
 
-<!-- SLIDE 18: The Next Great Network -->
-<div class="casey-slide ds-focus" id="cs-18">
+<!-- SLIDE 17: The Next Great Network -->
+<div class="casey-slide ds-focus" id="cs-17">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Opportunity Size</div>
 <div class="orb orb-g" style="width:500px;height:500px;top:-5%;left:-15%"></div>
@@ -5369,8 +5390,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </section>
 </div>
 
-<!-- SLIDE 19: Brain-Expansion Why -->
-<div class="casey-slide ds-focus" id="cs-19">
+<!-- SLIDE 18: Brain-Expansion Why -->
+<div class="casey-slide ds-focus" id="cs-18">
 <section style="position:relative;min-height:100%;width:100%">
 <div class="orb orb-g" style="width:600px;height:600px;top:10%;right:-20%;opacity:0.3"></div>
 <div class="inner" style="text-align:center;max-width:760px">
@@ -5412,8 +5433,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </section>
 </div>
 
-<!-- SLIDE 20: Founder Journey -->
-<div class="casey-slide ds-focus" id="cs-20">
+<!-- SLIDE 19: Founder Journey -->
+<div class="casey-slide ds-focus" id="cs-19">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Founder</div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:800px">
@@ -5473,8 +5494,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </section>
 </div>
 
-<!-- SLIDE 21: Animated Logo Closer -->
-<div class="casey-slide ds-focus" id="cs-21">
+<!-- SLIDE 20: Animated Logo Closer -->
+<div class="casey-slide ds-focus" id="cs-20">
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
 <div style="display:flex;flex-direction:column;align-items:center;justify-content:center">
   <div class="gnt-anim" id="gntLogoAnim">
@@ -5752,11 +5773,26 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </section>
 </div>
 
+<!-- APPENDIX SLIDE 7: Wrong Paradigm -->
+<div class="casey-slide ds-intro appendix-slide" id="cs-a7" style="display:none">
+  <div class="s3-combined">
+    <div class="s3-top-row"><div class="s3-left"><div class="s3-hero"><span class="fastest">Fastest-growing sport in U.S. history</span>Pickleball</div></div></div>
+    <div class="timeline-strip">
+      <div class="timeline-era show"><div class="tl-year">1920s</div><div class="tl-bar"></div><div class="tl-label">Tennis adopts<br>skill ratings</div></div>
+      <div class="timeline-era show"><div class="tl-year">1970s</div><div class="tl-bar"></div><div class="tl-label">NTRP becomes<br>the standard</div></div>
+      <div class="timeline-era show"><div class="tl-year">2010s</div><div class="tl-bar"></div><div class="tl-label">Pickleball explosion<br>begins</div></div>
+      <div class="timeline-era show"><div class="tl-year">2020s</div><div class="tl-bar"></div><div class="tl-label">DUPR arrives &mdash;<br>still just a number</div></div>
+    </div>
+    <div class="wrong-assumption-box show"><div class="wrong-quote-mark">&ldquo;</div><div class="wrong-assumption-text">Matching players based on <span style="color:var(--red);font-weight:700">competitive skill ratings data.</span></div><div class="wrong-stamp">INCORRECT PARADIGM</div></div>
+    <div class="wrong-bottom"><span style="color:var(--cream)">Pickleball is a wildly social sport. 85% of play is social.</span> <span style="color:rgba(232,224,208,0.35)">The system treats them like competitors.</span></div>
+  </div>
+</div>
+
 <nav class="casey-nav" id="cnav"></nav>
 
 <script>
-const TOTAL = 21;
-const APPENDIX_TOTAL = 6;
+const TOTAL = 20;
+const APPENDIX_TOTAL = 7;
 let current = 1;
 let inAppendix = false;
 let appendixCurrent = 1;
@@ -5774,12 +5810,10 @@ function caseyGo(n) {
   document.getElementById('ccount').textContent = n + ' / ' + TOTAL;
   current = n;
   if (n === 7) startMagic(); else stopMagic();
-  if (n === 9) startDigiCycle(); else stopDigiCycle();
-  if (n === 10) animateIntroTimeline();
-  if (n === 11) animateIntroTeaser();
+  if (n === 10) animateIntroTeaser();
   if (n === 8) animateIntroOrbit();
-  if (n === 15) animateIntroExpansion();
-  if (n === 21) replayGntLogo();
+  if (n === 14) animateIntroExpansion();
+  if (n === 20) replayGntLogo();
 }
 
 function enterAppendix() {
@@ -5833,7 +5867,6 @@ const slideLabels = [
   'The Future',
   'Invitation-Feed',
   'Human Value Marketplace',
-  'Wrong Paradigm',
   'The Teaser',
   'How It Starts',
   'Human-in-the-Loop',
@@ -5900,6 +5933,20 @@ document.addEventListener('wheel', e => {
   else if (e.deltaY < 0) { if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1); }
   setTimeout(() => { wheelLock = false; }, 400);
 }, { passive: false });
+
+// Touch swipe nav
+let touchStartX = 0, touchStartY = 0, touchLock = false;
+document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; touchStartY = e.touches[0].clientY; }, { passive: true });
+document.addEventListener('touchend', e => {
+  if (touchLock) return;
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  const dy = e.changedTouches[0].clientY - touchStartY;
+  if (Math.abs(dx) < 50 || Math.abs(dy) > Math.abs(dx)) return;
+  touchLock = true;
+  if (dx < 0) { if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1); }
+  else { if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1); }
+  setTimeout(() => { touchLock = false; }, 400);
+}, { passive: true });
 
 // TEXT SELECTION FIX: force pointer-events correctly on every slide change
 function fixTextSelection() {
