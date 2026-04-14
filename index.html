@@ -5035,8 +5035,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   <g id="trappedParticles" clip-path="url(#mindClip)"></g>
 </svg>
 
-<div class="inner" style="position:relative;z-index:2;justify-self:flex-start;align-self:center;padding-left:60px;margin-right:auto;max-width:620px">
-  <div class="display" style="text-align:left">The most valuable,<br>networkable, untapped<br>dataset on the planet<br>is <em>trapped inside<br>all of our heads.</em></div>
+<div class="inner" style="position:relative;z-index:2">
+  <div class="display">The most valuable,<br>networkable, untapped<br>dataset on the planet<br>is <em>trapped inside<br>all of our heads.</em></div>
 </div>
 
 <script>
@@ -5361,65 +5361,27 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
           <!-- Subtle bracket/arrow pointing down -->
           <path d="M210 224 L220 232 L230 224" stroke="#3dff7a" stroke-width="0.8" fill="none" opacity="0.3"/>
 
-          <!-- Person 1: top-left (teal) -->
-          <g>
-            <circle cx="65" cy="30" r="10" fill="none" stroke="#43B8A0" stroke-width="1.8"/>
-            <line x1="65" y1="40" x2="65" y2="68" stroke="#43B8A0" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="50" y1="52" x2="80" y2="52" stroke="#43B8A0" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="65" y1="68" x2="53" y2="86" stroke="#43B8A0" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="65" y1="68" x2="77" y2="86" stroke="#43B8A0" stroke-width="1.5" stroke-linecap="round"/>
-          </g>
+          <!-- Person 1: top-left (teal) — digitized via JS buildMiniDigiPerson below -->
           <line x1="80" y1="50" x2="200" y2="125" stroke="#43B8A0" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.5s" repeatCount="indefinite"/></line>
           <circle r="2.5" fill="#43B8A0" opacity="0.8"><animateMotion dur="1.8s" repeatCount="indefinite" path="M80,50 L200,125"/></circle>
 
-          <!-- Person 2: top-right (pink) -->
-          <g>
-            <circle cx="375" cy="30" r="10" fill="none" stroke="#D46B7E" stroke-width="1.8"/>
-            <line x1="375" y1="40" x2="375" y2="68" stroke="#D46B7E" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="360" y1="52" x2="390" y2="52" stroke="#D46B7E" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="375" y1="68" x2="363" y2="86" stroke="#D46B7E" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="375" y1="68" x2="387" y2="86" stroke="#D46B7E" stroke-width="1.5" stroke-linecap="round"/>
-          </g>
+          <!-- Person 2: top-right (pink) — digitized via JS -->
           <line x1="360" y1="50" x2="240" y2="125" stroke="#D46B7E" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.8s" repeatCount="indefinite"/></line>
           <circle r="2.5" fill="#D46B7E" opacity="0.8"><animateMotion dur="2s" repeatCount="indefinite" path="M360,50 L240,125"/></circle>
 
-          <!-- Person 3: left (blue) -->
-          <g>
-            <circle cx="22" cy="148" r="10" fill="none" stroke="#5B8FD4" stroke-width="1.8"/>
-            <line x1="22" y1="158" x2="22" y2="186" stroke="#5B8FD4" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="7" y1="170" x2="37" y2="170" stroke="#5B8FD4" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="22" y1="186" x2="10" y2="204" stroke="#5B8FD4" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="22" y1="186" x2="34" y2="204" stroke="#5B8FD4" stroke-width="1.5" stroke-linecap="round"/>
-          </g>
+          <!-- Person 3: left (blue) — digitized via JS -->
           <line x1="38" y1="155" x2="200" y2="140" stroke="#5B8FD4" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="2.2s" repeatCount="indefinite"/></line>
           <circle r="2.5" fill="#5B8FD4" opacity="0.8"><animateMotion dur="2.2s" repeatCount="indefinite" path="M38,155 L200,140"/></circle>
 
-          <!-- Person 4: right (yellow) -->
-          <g>
-            <circle cx="418" cy="148" r="10" fill="none" stroke="#E8CC60" stroke-width="1.8"/>
-            <line x1="418" y1="158" x2="418" y2="186" stroke="#E8CC60" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="403" y1="170" x2="433" y2="170" stroke="#E8CC60" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="418" y1="186" x2="406" y2="204" stroke="#E8CC60" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="418" y1="186" x2="430" y2="204" stroke="#E8CC60" stroke-width="1.5" stroke-linecap="round"/>
-          </g>
+          <!-- Person 4: right (yellow) — digitized via JS -->
           <line x1="402" y1="155" x2="240" y2="140" stroke="#E8CC60" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.6s" repeatCount="indefinite"/></line>
           <circle r="2.5" fill="#E8CC60" opacity="0.8"><animateMotion dur="1.6s" repeatCount="indefinite" path="M402,155 L240,140"/></circle>
 
-          <!-- Person 5: bottom-left (purple) -->
-          <g>
-            <circle cx="100" cy="240" r="10" fill="none" stroke="#c76bdb" stroke-width="1.8"/>
-            <line x1="100" y1="250" x2="100" y2="270" stroke="#c76bdb" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="85" y1="258" x2="115" y2="258" stroke="#c76bdb" stroke-width="1.5" stroke-linecap="round"/>
-          </g>
+          <!-- Person 5: bottom-left (purple) — digitized via JS -->
           <line x1="112" y1="238" x2="210" y2="175" stroke="#c76bdb" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="2s" repeatCount="indefinite"/></line>
           <circle r="2.5" fill="#c76bdb" opacity="0.8"><animateMotion dur="2s" repeatCount="indefinite" path="M112,238 L210,175"/></circle>
 
-          <!-- Person 6: bottom-right (mint) -->
-          <g>
-            <circle cx="340" cy="240" r="10" fill="none" stroke="#4ae8c1" stroke-width="1.8"/>
-            <line x1="340" y1="250" x2="340" y2="270" stroke="#4ae8c1" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="325" y1="258" x2="355" y2="258" stroke="#4ae8c1" stroke-width="1.5" stroke-linecap="round"/>
-          </g>
+          <!-- Person 6: bottom-right (mint) — digitized via JS -->
           <line x1="328" y1="238" x2="230" y2="175" stroke="#4ae8c1" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.4s" repeatCount="indefinite"/></line>
           <circle r="2.5" fill="#4ae8c1" opacity="0.8"><animateMotion dur="1.4s" repeatCount="indefinite" path="M328,238 L230,175"/></circle>
         </svg>
@@ -5566,10 +5528,123 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
           label.setAttribute('opacity', '0.9');
           label.textContent = 'YOU';
           fig.appendChild(label);
+
+          // ======= OUTER DIGITIZED PEOPLE + BIDIRECTIONAL FLOW =======
+          // Each outer person is also digitized (not a stick figure) — that's Give 'n Take:
+          // how you experience them (gold dots flowing outward) AND
+          // how they experience you (their-color dots flowing inward, existing HTML animations).
+          const svg = fig.ownerSVGElement;
+          if (svg) {
+            function buildMiniDigiPerson(parent, cx, cy, primaryColor) {
+              const accents = [primaryColor, primaryColor, primaryColor, primaryColor, '#D4A843', '#3dff7a', '#f0c040', '#ce93d8'];
+              const pts = [];
+              // HEAD — hex grid in small circle
+              const hSpacing = 1.4, headR = 3.0;
+              for (let r = -2; r <= 2; r++) {
+                for (let col = -2; col <= 2; col++) {
+                  const x = cx + col*hSpacing + (r%2 ? hSpacing/2 : 0);
+                  const y = (cy-16) + r*hSpacing*0.866;
+                  const dx = x-cx, dy = y-(cy-16);
+                  if (dx*dx + dy*dy <= headR*headR) pts.push({x, y, part:'head'});
+                }
+              }
+              // NECK
+              pts.push({x: cx-0.7, y: cy-11, part:'neck'});
+              pts.push({x: cx+0.7, y: cy-11, part:'neck'});
+              // TORSO — 3 cols × 3 rows
+              for (let r = 0; r < 3; r++) {
+                [-1.6, 0, 1.6].forEach(dx => pts.push({x: cx+dx, y: cy-9 + r*2.2, part:'torso'}));
+              }
+              // ARMS — 3 segments each
+              for (let i = 0; i < 3; i++) {
+                const t = i / 2;
+                pts.push({x: cx - 2 - t*5, y: cy-7 + t*3, part:'arm-l'});
+                pts.push({x: cx + 2 + t*5, y: cy-7 + t*3, part:'arm-r'});
+              }
+              // LEGS — 4 segments each
+              for (let i = 0; i < 4; i++) {
+                const t = i / 3;
+                pts.push({x: cx - 1.2 - t*1.5, y: cy-2 + t*10, part:'leg-l'});
+                pts.push({x: cx + 1.2 + t*1.5, y: cy-2 + t*10, part:'leg-r'});
+              }
+              // Wireframe lines between nearby same-part points
+              const MAX_D2 = 2.5 * 2.5;
+              for (let i = 0; i < pts.length; i++) {
+                for (let j = i+1; j < pts.length; j++) {
+                  const a = pts[i], b = pts[j];
+                  if (a.part !== b.part) continue;
+                  const dx = a.x - b.x, dy = a.y - b.y;
+                  const d2 = dx*dx + dy*dy;
+                  if (d2 > 0 && d2 < MAX_D2) {
+                    const ln = document.createElementNS(NS, 'line');
+                    ln.setAttribute('x1', a.x.toFixed(1));
+                    ln.setAttribute('y1', a.y.toFixed(1));
+                    ln.setAttribute('x2', b.x.toFixed(1));
+                    ln.setAttribute('y2', b.y.toFixed(1));
+                    ln.setAttribute('stroke', primaryColor);
+                    ln.setAttribute('stroke-width', '0.25');
+                    ln.setAttribute('opacity', '0.22');
+                    parent.appendChild(ln);
+                  }
+                }
+              }
+              // Dots (multi-color biased toward primary)
+              pts.forEach(p => {
+                const isNode = Math.random() < 0.2;
+                const radius = isNode ? (0.75 + Math.random()*0.25) : (0.5 + Math.random()*0.2);
+                const color = accents[Math.floor(Math.random()*accents.length)];
+                const dur = (1.6 + Math.random()*1.6).toFixed(2);
+                const delay = (Math.random()*2.5).toFixed(2);
+                const maxOp = isNode ? (0.8 + Math.random()*0.2).toFixed(2) : (0.5 + Math.random()*0.25).toFixed(2);
+                const minOp = (0.15 + Math.random()*0.15).toFixed(2);
+                const c = document.createElementNS(NS, 'circle');
+                c.setAttribute('cx', p.x.toFixed(1));
+                c.setAttribute('cy', p.y.toFixed(1));
+                c.setAttribute('r', radius.toFixed(2));
+                c.setAttribute('fill', color);
+                const an = document.createElementNS(NS, 'animate');
+                an.setAttribute('attributeName', 'opacity');
+                an.setAttribute('values', minOp + ';' + maxOp + ';' + minOp);
+                an.setAttribute('dur', dur + 's');
+                an.setAttribute('repeatCount', 'indefinite');
+                an.setAttribute('begin', delay + 's');
+                c.appendChild(an);
+                parent.appendChild(c);
+              });
+            }
+
+            const outerPeople = [
+              { cx: 65,  cy: 50,  color: '#43B8A0', linePath: 'M80,50 L200,125',   dur: 1.8 },
+              { cx: 375, cy: 50,  color: '#D46B7E', linePath: 'M360,50 L240,125',  dur: 2.0 },
+              { cx: 22,  cy: 168, color: '#5B8FD4', linePath: 'M38,155 L200,140',  dur: 2.2 },
+              { cx: 418, cy: 168, color: '#E8CC60', linePath: 'M402,155 L240,140', dur: 1.6 },
+              { cx: 100, cy: 250, color: '#c76bdb', linePath: 'M112,238 L210,175', dur: 2.0 },
+              { cx: 340, cy: 250, color: '#4ae8c1', linePath: 'M328,238 L230,175', dur: 1.4 }
+            ];
+
+            outerPeople.forEach(person => {
+              buildMiniDigiPerson(svg, person.cx, person.cy, person.color);
+              // Outbound flow dot: center → outer ("how YOU experience THEM", gold = the YOU figure's aura leaving)
+              const coords = person.linePath.match(/[\d.]+,[\d.]+/g);
+              if (!coords || coords.length < 2) return;
+              const revPath = 'M' + coords[1] + ' L' + coords[0];
+              const outDot = document.createElementNS(NS, 'circle');
+              outDot.setAttribute('r', '1.9');
+              outDot.setAttribute('fill', '#D4A843');
+              outDot.setAttribute('opacity', '0.7');
+              const motion = document.createElementNS(NS, 'animateMotion');
+              motion.setAttribute('dur', person.dur + 's');
+              motion.setAttribute('repeatCount', 'indefinite');
+              motion.setAttribute('path', revPath);
+              motion.setAttribute('begin', (person.dur * 0.5).toFixed(2) + 's');
+              outDot.appendChild(motion);
+              svg.appendChild(outDot);
+            });
+          }
         })();
         </script>
 
-        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-top:8px">Digitized by the people<br>who experience you</div>
+        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-top:8px">How you experience them.<br>How they experience you.</div>
       </div>
     </div>
   </div>
