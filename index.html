@@ -6038,13 +6038,13 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     const panel = document.createElement('div');
     // Fixed height matches cardWrap min-height; flex column so row = full height
     panel.style.cssText = 'width:44px;height:42px;display:flex;align-items:flex-end;justify-content:center;gap:3px;padding:2px 3px 2px 1px;flex-shrink:0';
-    const COLORS = ['#3dff7a', '#f0c040', '#e88a4a', '#c76bdb'];  // green, gold, coral, purple
+    const COLORS = ['#3dff7a', '#f0c040', '#c76bdb'];  // green, gold, purple — 3 distinct
     const MAX_H = 36;  // px — max bar height inside the 42px panel (minus padding)
-    for (let i = 0; i < 4; i++){
+    for (let i = 0; i < 3; i++){
       const v = 0.30 + rand() * 0.68;  // 0.30 - 0.98
       const h = Math.max(4, v * MAX_H);
       const bar = document.createElement('div');
-      bar.style.cssText = 'width:5.5px;height:' + h.toFixed(1) + 'px;background:' + COLORS[i] + ';border-radius:1px;box-shadow:0 0 3px ' + COLORS[i] + '55;opacity:0.92';
+      bar.style.cssText = 'width:6px;height:' + h.toFixed(1) + 'px;background:' + COLORS[i] + ';border-radius:1px;box-shadow:0 0 3px ' + COLORS[i] + '55;opacity:0.92';
       panel.appendChild(bar);
     }
     return panel;
