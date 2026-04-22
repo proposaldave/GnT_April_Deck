@@ -6028,9 +6028,9 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   function buildExperienceBars(seed){
     const rand = mulberry(seed + 777);
     const DIMS = [
-      { label: 'VIBE' },
-      { label: 'BOND' },
-      { label: 'FIT'  }
+      { label: 'PLAY' },  // quality of the game itself (right challenge / skill match)
+      { label: 'BOND' },  // social chemistry with the 3 partners
+      { label: 'JOY'  }   // her net emotional takeaway
     ];
     function colorFor(v){
       if (v >= 0.68) return '#3dff7a';   // green -- good
