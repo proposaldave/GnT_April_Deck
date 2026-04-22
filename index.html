@@ -4884,14 +4884,14 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div style="position:absolute;top:28px;left:48px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(245,158,11,0.5);z-index:5;">Give 'n Take</div>
 <div class="s on">
     <div class="stg">
-      <svg viewBox="0 0 52 48" width="220" height="203" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:32px;">
+      <svg viewBox="0 0 56 48" width="237" height="203" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:32px;">
         <g opacity="0.95">
           <path d="M 10 4 L 6 11 L 8.5 11 L 8.5 16 L 11.5 16 L 11.5 11 L 14 11 Z" fill="#5B8FD4"/>
-          <path d="M 42 16 L 46 9 L 43.5 9 L 43.5 4 L 40.5 4 L 40.5 9 L 38 9 Z" fill="#e04040"/>
+          <path d="M 47 16 L 51 9 L 48.5 9 L 48.5 4 L 45.5 4 L 45.5 9 L 43 9 Z" fill="#e04040"/>
         </g>
         <text x="2" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#5B8FD4">G</text>
         <text x="20" y="42" font-family="Playfair Display, Georgia, serif" font-size="22" font-weight="900" font-style="italic" fill="#e8e0d0" opacity="0.85">n</text>
-        <text x="34" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#e04040">T</text>
+        <text x="38" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#e04040">T</text>
       </svg>
 
       <div class="h" style="font-size:clamp(28px,5vw,48px); max-width:860px;font-style:italic;">Autonomous human connection</div>
@@ -6718,16 +6718,16 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
 <div style="display:flex;flex-direction:column;align-items:center;justify-content:center">
   <div id="gntLogoAnim">
-    <svg viewBox="0 0 52 48" width="340" height="314" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 56 48" width="366" height="314" xmlns="http://www.w3.org/2000/svg">
       <g opacity="0.95">
         <!-- Give arrow (blue, up) -->
         <path d="M 10 4 L 6 11 L 8.5 11 L 8.5 16 L 11.5 16 L 11.5 11 L 14 11 Z" fill="#5B8FD4"/>
         <!-- Take arrow (red, down) -->
-        <path d="M 42 16 L 46 9 L 43.5 9 L 43.5 4 L 40.5 4 L 40.5 9 L 38 9 Z" fill="#e04040"/>
+        <path d="M 47 16 L 51 9 L 48.5 9 L 48.5 4 L 45.5 4 L 45.5 9 L 43 9 Z" fill="#e04040"/>
       </g>
       <text x="2" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#5B8FD4">G</text>
       <text x="20" y="42" font-family="Playfair Display, Georgia, serif" font-size="22" font-weight="900" font-style="italic" fill="#e8e0d0" opacity="0.85">n</text>
-      <text x="34" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#e04040">T</text>
+      <text x="38" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#e04040">T</text>
     </svg>
   </div>
   <div class="ga-text" style="text-align:center;margin-top:24px;opacity:0" id="gntLogoText">
@@ -9263,17 +9263,17 @@ window.addEventListener('resize',drawLoop);
 <!-- GnT brand mark: injected into top-right of every slide -->
 <script>
 (function injectGntBrand(){
-  const svg = '<svg width="52" height="48" viewBox="0 0 52 48" xmlns="http://www.w3.org/2000/svg" style="display:block">'
+  const svg = '<svg width="56" height="48" viewBox="0 0 56 48" xmlns="http://www.w3.org/2000/svg" style="display:block">'
     + '<g opacity="0.9">'
     // Up arrow (left, near G) — blue = "give"
     + '<path d="M 10 4 L 6 11 L 8.5 11 L 8.5 16 L 11.5 16 L 11.5 11 L 14 11 Z" fill="#5B8FD4"/>'
     // Down arrow (right, near T) — red = "take"
-    + '<path d="M 42 16 L 46 9 L 43.5 9 L 43.5 4 L 40.5 4 L 40.5 9 L 38 9 Z" fill="#e04040"/>'
+    + '<path d="M 47 16 L 51 9 L 48.5 9 L 48.5 4 L 45.5 4 L 45.5 9 L 43 9 Z" fill="#e04040"/>'
     + '</g>'
-    // GnT wordmark
+    // GnT wordmark — n at x=20 sits halfway between G (x=2) and T (x=38)
     + '<text x="2" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#5B8FD4">G</text>'
     + '<text x="20" y="42" font-family="Playfair Display, Georgia, serif" font-size="22" font-weight="900" font-style="italic" fill="#e8e0d0" opacity="0.8">n</text>'
-    + '<text x="34" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#e04040">T</text>'
+    + '<text x="38" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#e04040">T</text>'
     + '</svg>';
   function add(){
     document.querySelectorAll('.casey-slide').forEach(slide => {
