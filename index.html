@@ -4888,35 +4888,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </div>
 
 
-<!-- SLIDE 1: GR circle monogram hero (NEW). Old wordmark moved to cs-1c. -->
+<!-- SLIDE 1: GnT Title (wordmark) -->
 <div class="casey-slide ds-measure active" id="cs-1">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Give 'n Receive</div>
-<div class="s on">
-    <div class="stg">
-      <!-- GR circle monogram — matches Dave's reference: solid black circle, lowercase 'gr' ligature.
-           Letters tinted with brand colors per Dave's "we don't want just black and white". -->
-      <style>
-        @keyframes csGrCircleIn { 0%{opacity:0;transform:scale(0.7) rotate(-6deg)} 60%{opacity:1;transform:scale(1.04) rotate(2deg)} 100%{opacity:1;transform:scale(1) rotate(0)} }
-        @keyframes csGrBreath   { 0%,100%{transform:scale(1)} 50%{transform:scale(1.02)} }
-        .cs1-gr-wrap  { animation: csGrCircleIn 1.0s cubic-bezier(.22,.72,.36,1.18) 0.2s both; transform-origin:50% 50%; }
-        .cs1-gr-inner { animation: csGrBreath 5s ease-in-out 2s infinite; transform-origin:50% 50%; }
-      </style>
-      <div class="cs1-gr-wrap" style="display:flex;justify-content:center;align-items:center;margin:0 auto 36px auto">
-        <div class="cs1-gr-inner" style="display:inline-block;position:relative;width:280px;height:280px;border-radius:50%;background:#000;box-shadow:0 8px 28px rgba(0,0,0,0.6),0 0 0 1px rgba(232,224,208,0.08) inset">
-          <!-- 'gr' ligature — tight kerning so they read as one shape, like the reference -->
-          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-54%);font-family:'Manrope','Inter','Avenir Next',system-ui,sans-serif;font-size:200px;font-weight:600;line-height:1;letter-spacing:-0.18em;white-space:nowrap;display:flex;align-items:baseline">
-            <span style="color:#5B8FD4">g</span><span style="color:#e04040">r</span>
-          </div>
-        </div>
-      </div>
-      <div class="h" style="display:block;font-family:'Manrope','Inter',system-ui,sans-serif;font-size:clamp(15px,2.4vw,28px);font-style:normal;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:rgba(232,224,208,0.78);margin:0 auto;text-align:center;white-space:nowrap;max-width:none">Abundant, autonomous human connection</div>
-      <div class="divider" style="margin:28px auto 20px;"></div>
-    </div>
-  </div>
-</div>
-
-<!-- SLIDE 1c: Old wordmark title (Give n Receive) — kept as fallback per Dave. -->
-<div class="casey-slide ds-measure" id="cs-1c">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Give 'n Receive</div>
 <div class="s on">
     <div class="stg">
@@ -4943,7 +4916,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   <div class="sm-slide-container" style="max-width:1180px">
     <div class="sm-headline-big" style="font-size:clamp(22px,3.4vw,42px);max-width:1140px;line-height:1.3;font-weight:500">
       <div>And yet, real human connection has stayed invisible to technology.</div>
-      <div style="margin-top:0.55em">We&rsquo;re digitized and solving everything except <strong style="font-weight:700">the thing that matters most</strong>.</div>
+      <div style="margin-top:0.55em">We&rsquo;re digitizing and solving everything except <strong style="font-weight:700">the thing that matters most</strong>.</div>
     </div>
 
     <div class="sm-shift">
@@ -4979,6 +4952,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
             <circle cx="44" cy="69" r="2.1" fill="#d4a853" opacity="0.78"/>
             <circle cx="68" cy="50" r="2.3" fill="#d4a853" opacity="0.92"/>
             <circle cx="88" cy="22" r="2.6" fill="#f0c040"/>
+            <!-- AI: clean axis label below the baseline, tracked small caps -->
+            <text x="56" y="90" font-family="'Manrope',Inter,sans-serif" font-size="4.2" font-weight="800" fill="#3dff7a" letter-spacing="0.5em" text-anchor="middle" opacity="0.85">AI</text>
           </svg>
         </div>
         <div class="sm-label" style="color:rgba(212,168,83,0.9);font-style:italic;font-size:1.55rem;text-align:center;max-width:200px;line-height:1.25;font-weight:600">The need</div>
@@ -7843,7 +7818,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 // ACT 3 (golden data): cs-6 Data Exists → cs-7 Cost of Honesty → cs-8 Cultural Shift → cs-8b Measurement Leap → cs-9 Invitation Feed
 // ACT 4+: cs-10 through cs-26 unchanged
 const SLIDE_ORDER = [
-  'cs-1','cs-1c','cs-1b','cs-2','cs-3','cs-11',
+  'cs-1','cs-1b','cs-2','cs-3','cs-11',
   'cs-4','cs-6','cs-7','cs-8','cs-8b','cs-10','cs-11b','cs-19','cs-12','cs-13',
   'cs-14','cs-9','cs-15','cs-16','cs-16b','cs-17','cs-18','cs-20','cs-21','cs-23',
   'cs-24','cs-25','cs-26'
@@ -7928,9 +7903,8 @@ function appendixGo(n) {
 // Slide labels for tooltips. Must mirror SLIDE_ORDER.length + 1 (index 0 placeholder).
 const slideLabels = [
   '', // 0 placeholder
-  "Give 'n Receive · GR mark",                          //  1 cs-1
-  "Give 'n Receive · wordmark",                         //  2 cs-1c
-  'The Gap · relationships, uninfrastructured',      //  3 cs-1b
+  "Give 'n Receive",                                    //  1 cs-1
+  'The Gap · relationships, uninfrastructured',      //  2 cs-1b
   'The Previous Era · social media narrow view',     //  3 cs-2
   '24 Rounds · Each one is a shape',                 //  4 cs-3
   'Matchmaking in Social Sports Communities',        //  6 cs-4
