@@ -4918,7 +4918,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Human connection is unsolved</div>
 
   <div class="sm-slide-container" style="max-width:1180px">
-    <div class="sm-headline-big" style="font-size:clamp(15px,2.3vw,28px);max-width:1100px;line-height:1.25">
+    <div class="sm-headline-big" style="font-size:clamp(22px,3.4vw,42px);max-width:1140px;line-height:1.22;font-weight:500">
       And yet, human connection has stayed invisible to technology.<br>
       <strong style="font-weight:700">Unmeasured, and unsolved.</strong>
     </div>
@@ -4941,7 +4941,29 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         </div>
         <div class="sm-label" style="color:rgba(232,224,208,0.4);font-size:1.45rem">Scroll alone</div>
       </div>
-      <div class="sm-arrow" style="color:#9aa0a6 !important;font-size:62px !important;opacity:0.7;font-weight:300">→</div>
+      <div class="sm-arrow" style="color:#9aa0a6 !important;font-size:48px !important;opacity:0.6;font-weight:300">→</div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:18px">
+        <div style="width:148px;height:148px;border-radius:50%;border:2px dashed rgba(212,168,83,0.55);display:flex;align-items:center;justify-content:center;background:rgba(212,168,83,0.04);box-shadow:0 0 32px rgba(212,168,83,0.18)">
+          <svg width="104" height="84" viewBox="0 0 110 92" xmlns="http://www.w3.org/2000/svg" style="overflow:visible;filter:drop-shadow(0 0 14px rgba(212,168,83,0.4))">
+            <!-- baseline (faint dashed gold) -->
+            <line x1="6" y1="82" x2="106" y2="82" stroke="rgba(212,168,83,0.35)" stroke-width="0.8" stroke-dasharray="2 3"/>
+            <!-- parabolic rise curve: flat-then-vertical -->
+            <path d="M 8 78 Q 60 78 100 8" stroke="#d4a853" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- arrowhead at top-right tip -->
+            <path d="M 100 8 L 91 13 M 100 8 L 96 18" stroke="#d4a853" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- 4 data points along the curve, brightening as it climbs -->
+            <circle cx="22" cy="76" r="2" fill="#d4a853" opacity="0.65"/>
+            <circle cx="44" cy="69" r="2.1" fill="#d4a853" opacity="0.78"/>
+            <circle cx="68" cy="50" r="2.3" fill="#d4a853" opacity="0.92"/>
+            <circle cx="88" cy="22" r="2.6" fill="#f0c040"/>
+            <!-- AI emphasis: clean italic label sitting in the empty space the curve sweeps over -->
+            <text x="46" y="68" font-family="'Playfair Display', Georgia, serif" font-style="italic" font-size="12" font-weight="700" fill="#3dff7a" letter-spacing="0.04em" text-anchor="middle" filter="drop-shadow(0 0 4px rgba(61,255,122,0.5))">AI</text>
+            <text x="46" y="78" font-family="'Manrope',Inter,sans-serif" font-size="3.6" font-weight="700" fill="rgba(61,255,122,0.7)" letter-spacing="0.32em" text-anchor="middle">ERA</text>
+          </svg>
+        </div>
+        <div class="sm-label" style="color:rgba(212,168,83,0.9);font-style:italic;font-size:1.55rem;text-align:center;max-width:200px;line-height:1.25;font-weight:600">The need</div>
+      </div>
+      <div class="sm-arrow" style="color:#9aa0a6 !important;font-size:48px !important;opacity:0.6;font-weight:300">→</div>
       <div class="sm-to" style="gap:18px">
         <style>
           @keyframes liveItHeartbeat {
@@ -4976,13 +4998,6 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
             <!-- Right person -->
             <circle cx="52" cy="38" r="3.5" fill="#2dd4bf" opacity="0.8"/>
             <path d="M52 42 L52 52 M48 46 L56 46" stroke="#2dd4bf" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
-            <!-- GnR wax-seal — brand mark on the envelope -->
-            <g transform="translate(60, 28)">
-              <circle r="5" fill="rgba(6,6,9,0.7)" stroke="#f59e0b" stroke-width="0.55" opacity="0.95"/>
-              <text x="0" y="0" font-family="Playfair Display, Georgia, serif" font-size="3.6" font-weight="800" text-anchor="middle" dominant-baseline="middle" letter-spacing="-0.05">
-                <tspan fill="#5B8FD4">G</tspan><tspan fill="#e8e0d0" font-style="italic" font-weight="500">n</tspan><tspan fill="#e04040">R</tspan>
-              </text>
-            </g>
           </svg>
         </div>
         <div class="sm-label" style="color:var(--gold);font-style:italic;font-size:1.45rem">Feel good together</div>
@@ -5319,18 +5334,58 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Opportunity Size</div>
   <div style="padding:60px 48px;text-align:center;max-width:1120px;margin:0 auto;width:100%">
-    <!-- HEADLINE — just one word: Abundance. Hero treatment. Reveals FIRST. -->
-    <div class="uw-abundance" style="font-family:'Playfair Display',serif;font-size:clamp(5rem,13vw,10.5rem);font-weight:900;line-height:1;letter-spacing:-0.04em;margin-bottom:72px;background:linear-gradient(180deg,#f0c040 0%,#d4a853 55%,#e88a4a 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:0 0 60px rgba(212,168,83,0.22)">
-      Abundance
+    <!-- HEADLINE — just one word: Abundance. Hero treatment. Reveals FIRST.
+         Each letter cascades in with scale + slight rotation, then the whole word breathes,
+         then a gold-burst halo radiates out behind it before bars appear. -->
+    <div class="uw-abundance" aria-label="Abundance" style="font-family:'Playfair Display',serif;font-size:clamp(5rem,13vw,10.5rem);font-weight:900;line-height:1;letter-spacing:-0.04em;margin-bottom:72px;background:linear-gradient(180deg,#f0c040 0%,#d4a853 55%,#e88a4a 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:0 0 60px rgba(212,168,83,0.22);position:relative;display:inline-block">
+      <span class="uw-burst" aria-hidden="true"></span>
+      <span class="uw-l" style="--i:0">A</span><span class="uw-l" style="--i:1">b</span><span class="uw-l" style="--i:2">u</span><span class="uw-l" style="--i:3">n</span><span class="uw-l" style="--i:4">d</span><span class="uw-l" style="--i:5">a</span><span class="uw-l" style="--i:6">n</span><span class="uw-l" style="--i:7">c</span><span class="uw-l" style="--i:8">e</span>
     </div>
 
     <!-- TECH-ERA STACK: company logos -> the resource each era unlocked. Reveals AFTER Abundance. -->
     <style>
-      @keyframes uwAbundanceIn { from { opacity:0; transform:scale(0.94); } to { opacity:1; transform:scale(1); } }
+      /* Per-letter cascade: drop in from above, scale up, slight tilt, gold haze. */
+      @keyframes uwLetterIn {
+        0%   { opacity:0; transform: translateY(-110%) scale(0.35) rotate(-8deg); filter: blur(8px); }
+        55%  { opacity:1; transform: translateY(8%)    scale(1.12) rotate(2deg);  filter: blur(0); }
+        100% { opacity:1; transform: translateY(0)     scale(1)    rotate(0);     filter: blur(0); }
+      }
+      /* Whole word breathes once the letters are seated */
+      @keyframes uwAbundanceBreath {
+        0%,100% { transform: scale(1); }
+        50%     { transform: scale(1.025); }
+      }
+      /* Gold-burst halo expanding behind the word right as the last letter lands */
+      @keyframes uwBurst {
+        0%   { opacity:0; transform: translate(-50%,-50%) scale(0.2); }
+        30%  { opacity:0.85; }
+        100% { opacity:0; transform: translate(-50%,-50%) scale(2.6); }
+      }
       @keyframes uwBarsIn      { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
       @keyframes unleashBarFill { from { width: 0%; } }
-      .uw-abundance { animation: uwAbundanceIn 1.1s cubic-bezier(.22,.61,.36,1) 0.15s both; }
-      .uw-bars-wrap { animation: uwBarsIn 0.9s cubic-bezier(.22,.61,.36,1) 1.2s both; }
+
+      .uw-abundance { animation: uwAbundanceBreath 5s ease-in-out 2.4s infinite; }
+      .uw-abundance .uw-l {
+        display:inline-block;
+        opacity:0;
+        animation: uwLetterIn 0.95s cubic-bezier(.22,.72,.36,1.18) both;
+        animation-delay: calc(0.18s + (var(--i) * 0.075s));
+        transform-origin: 50% 100%;
+        will-change: transform, opacity, filter;
+      }
+      .uw-abundance .uw-burst {
+        position:absolute;
+        left:50%; top:50%;
+        width: 120%; height: 220%;
+        border-radius: 50%;
+        background: radial-gradient(ellipse at center, rgba(240,192,64,0.55) 0%, rgba(212,168,83,0.32) 28%, rgba(232,138,74,0.12) 55%, transparent 75%);
+        filter: blur(8px);
+        pointer-events:none;
+        z-index:-1;
+        opacity:0;
+        animation: uwBurst 1.4s cubic-bezier(.22,.61,.36,1) 1.0s both;
+      }
+      .uw-bars-wrap { animation: uwBarsIn 0.9s cubic-bezier(.22,.61,.36,1) 2.0s both; }
       .uw-row {
         display:grid;
         grid-template-columns: 220px 1fr 180px;
@@ -5760,11 +5815,10 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <div style="font-size:0.54rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(237,233,224,.42);margin-bottom:6px">Before the session</div>
       <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#5B8FD4;margin-bottom:12px">Invitation Feed</div>
       <div style="font-family:'Playfair Display',serif;font-size:0.92rem;font-weight:700;color:var(--cream,#e8e0d0);line-height:1.4;margin-bottom:10px">
-        <span style="color:var(--gold,#caa54a)">Today, 400 people</span> have a <em style="font-style:italic">personalized Give &lsquo;n Receive invitation feed.</em><br>
-        <span style="font-weight:500;color:rgba(237,233,224,0.65);font-size:0.84rem">In the future, <em style="font-style:italic;color:rgba(237,233,224,0.85)">everyone</em> will.</span>
+        <span style="color:var(--gold,#caa54a)">Today, 400 people</span> have a <em style="font-style:italic">personalized Give &lsquo;n Receive invitation feed.</em>
       </div>
-      <div style="font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(91,143,212,0.85);padding-top:10px;border-top:1px solid rgba(91,143,212,0.2);margin-top:4px">
-        Every RSVP is a data point
+      <div style="font-family:'Playfair Display',serif;font-size:0.78rem;font-weight:600;font-style:italic;color:rgba(237,233,224,0.78);padding-top:10px;border-top:1px solid rgba(91,143,212,0.2);margin-top:4px;letter-spacing:0.01em">
+        In the future, <span style="color:#5B8FD4;font-weight:700">everyone</span> will.
       </div>
     </div>
 
@@ -5843,7 +5897,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     </svg>
   </div>
   <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.5vw,1.8rem);color:var(--cream,#e8e0d0);line-height:1.2;margin-bottom:8px;font-weight:700;max-width:980px;margin-left:auto;margin-right:auto">
-    <span style="color:var(--green-glow,#3dff7a);font-weight:900">24</span> rounds per week per player. <span style="color:var(--cream)">Each one is</span> <em style="color:var(--green-glow,#3dff7a);font-style:italic;font-weight:900">it's own social experiment.</em>
+    <span style="color:var(--green-glow,#3dff7a);font-weight:900">24</span> rounds per week per player. <span style="color:var(--cream)">Each one is</span> <em style="color:var(--green-glow,#3dff7a);font-style:italic;font-weight:900">it's own human connection experience and experiment.</em>
   </div>
 
   <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.34em;text-transform:uppercase;margin:2px auto 14px;color:rgba(212,168,83,0.88)">
@@ -6027,16 +6081,16 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         armR.setAttribute('stroke', col); armR.setAttribute('stroke-width','0.65');
         armR.setAttribute('stroke-linecap','round');
         svg.appendChild(armR);
-        // Paddle (small rounded rect rotated to match arm angle)
+        // Paddle (rounded rect rotated to match arm angle) — sized for clear pickleball-paddle read
         const paddle = document.createElementNS(NS,'rect');
-        paddle.setAttribute('x', (cx+1.5).toFixed(2));
-        paddle.setAttribute('y', (cy-3.5).toFixed(2));
-        paddle.setAttribute('width','1.6');
-        paddle.setAttribute('height','2.0');
-        paddle.setAttribute('rx','0.5');
+        paddle.setAttribute('x', (cx+1.4).toFixed(2));
+        paddle.setAttribute('y', (cy-4.2).toFixed(2));
+        paddle.setAttribute('width','2.4');
+        paddle.setAttribute('height','3.0');
+        paddle.setAttribute('rx','0.7');
         paddle.setAttribute('fill',col);
         paddle.setAttribute('opacity','0.95');
-        paddle.setAttribute('transform','rotate(30 '+(cx+2.3)+' '+(cy-2.5)+')');
+        paddle.setAttribute('transform','rotate(30 '+(cx+2.6)+' '+(cy-2.7)+')');
         svg.appendChild(paddle);
         // Legs
         const legL = document.createElementNS(NS,'line');
@@ -7538,7 +7592,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       </div>
       <div style="display:grid;grid-template-columns:170px 1fr 150px;gap:18px;align-items:center;margin-bottom:12px">
         <div style="font-family:'DM Sans',sans-serif;font-size:1rem;color:rgba(232,224,208,0.7);text-align:right">Nutrition</div>
-        <div style="position:relative;height:14px;background:rgba(255,255,255,0.04);border-radius:3px"><div style="width:9%;height:100%;background:#869b5a;border-radius:3px;opacity:0.55"></div></div>
+        <div style="position:relative;height:14px;background:rgba(255,255,255,0.04);border-radius:3px"><div style="width:11.5%;height:100%;background:#869b5a;border-radius:3px;opacity:0.55"></div></div>
         <div style="font-family:'Manrope',sans-serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,224,208,0.45)"></div>
       </div>
       <div style="display:grid;grid-template-columns:170px 1fr 150px;gap:18px;align-items:center">
@@ -7769,8 +7823,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 // ACT 3 (golden data): cs-6 Data Exists → cs-7 Cost of Honesty → cs-8 Cultural Shift → cs-8b Measurement Leap → cs-9 Invitation Feed
 // ACT 4+: cs-10 through cs-26 unchanged
 const SLIDE_ORDER = [
-  'cs-1','cs-1b','cs-2','cs-3',
-  'cs-4','cs-6','cs-7','cs-8','cs-8b','cs-10','cs-11','cs-11b','cs-19','cs-12','cs-13',
+  'cs-1','cs-1b','cs-2','cs-3','cs-11',
+  'cs-4','cs-6','cs-7','cs-8','cs-8b','cs-10','cs-11b','cs-19','cs-12','cs-13',
   'cs-14','cs-9','cs-15','cs-16','cs-16b','cs-17','cs-18','cs-20','cs-21','cs-23',
   'cs-24','cs-25','cs-26'
 ];
