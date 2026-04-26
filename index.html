@@ -4893,48 +4893,20 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Give 'n Receive</div>
 <div class="s on">
     <div class="stg">
-      <!-- GR circle monogram — colored brand version. Black circle, gold rim, blue 'g' + italic cream 'n' + red 'r'. -->
+      <!-- GR circle monogram — matches Dave's reference: solid black circle, lowercase 'gr' ligature.
+           Letters tinted with brand colors per Dave's "we don't want just black and white". -->
       <style>
         @keyframes csGrCircleIn { 0%{opacity:0;transform:scale(0.7) rotate(-6deg)} 60%{opacity:1;transform:scale(1.04) rotate(2deg)} 100%{opacity:1;transform:scale(1) rotate(0)} }
         @keyframes csGrBreath   { 0%,100%{transform:scale(1)} 50%{transform:scale(1.02)} }
-        @keyframes csGrRimSpin  { from{stroke-dashoffset:0} to{stroke-dashoffset:600} }
-        .cs1-gr-wrap { animation: csGrCircleIn 1.0s cubic-bezier(.22,.72,.36,1.18) 0.2s both; transform-origin:50% 50%; }
+        .cs1-gr-wrap  { animation: csGrCircleIn 1.0s cubic-bezier(.22,.72,.36,1.18) 0.2s both; transform-origin:50% 50%; }
         .cs1-gr-inner { animation: csGrBreath 5s ease-in-out 2s infinite; transform-origin:50% 50%; }
       </style>
       <div class="cs1-gr-wrap" style="display:flex;justify-content:center;align-items:center;margin:0 auto 36px auto">
-        <div class="cs1-gr-inner" style="display:inline-block">
-          <svg viewBox="0 0 200 200" width="280" height="280" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 8px 28px rgba(212,168,83,0.18))">
-            <defs>
-              <radialGradient id="grBg" cx="50%" cy="38%" r="65%">
-                <stop offset="0%" stop-color="#181822"/>
-                <stop offset="60%" stop-color="#0a0a10"/>
-                <stop offset="100%" stop-color="#050507"/>
-              </radialGradient>
-              <linearGradient id="grRim" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#5B8FD4"/>
-                <stop offset="50%" stop-color="#d4a853"/>
-                <stop offset="100%" stop-color="#e04040"/>
-              </linearGradient>
-              <linearGradient id="grShine" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="rgba(255,255,255,0.12)"/>
-                <stop offset="50%" stop-color="rgba(255,255,255,0)"/>
-                <stop offset="100%" stop-color="rgba(0,0,0,0.18)"/>
-              </linearGradient>
-            </defs>
-            <!-- Outer rim (color gradient) -->
-            <circle cx="100" cy="100" r="96" fill="url(#grBg)" stroke="url(#grRim)" stroke-width="2.4"/>
-            <!-- Inner shine for depth -->
-            <circle cx="100" cy="100" r="94" fill="url(#grShine)" stroke="none"/>
-            <!-- 'g' (blue) -->
-            <text x="62" y="135" font-family="'Playfair Display', Georgia, serif" font-weight="500" font-size="118" fill="#5B8FD4" letter-spacing="-6" text-anchor="middle">g</text>
-            <!-- italic 'n' (cream) — small, tucked between -->
-            <text x="100" y="118" font-family="'Playfair Display', Georgia, serif" font-style="italic" font-weight="400" font-size="44" fill="#e8e0d0" text-anchor="middle">n</text>
-            <!-- 'r' (red) -->
-            <text x="138" y="135" font-family="'Playfair Display', Georgia, serif" font-weight="500" font-size="118" fill="#e04040" letter-spacing="-6" text-anchor="middle">r</text>
-            <!-- Tiny anchor dots flanking the 'n' (mirrors the wordmark arc anchors) -->
-            <circle cx="84"  cy="92" r="1.6" fill="#5B8FD4" opacity="0.9"/>
-            <circle cx="116" cy="92" r="1.6" fill="#e04040" opacity="0.95"/>
-          </svg>
+        <div class="cs1-gr-inner" style="display:inline-block;position:relative;width:280px;height:280px;border-radius:50%;background:#000;box-shadow:0 8px 28px rgba(0,0,0,0.6),0 0 0 1px rgba(232,224,208,0.08) inset">
+          <!-- 'gr' ligature — tight kerning so they read as one shape, like the reference -->
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-54%);font-family:'Manrope','Inter','Avenir Next',system-ui,sans-serif;font-size:200px;font-weight:600;line-height:1;letter-spacing:-0.18em;white-space:nowrap;display:flex;align-items:baseline">
+            <span style="color:#5B8FD4">g</span><span style="color:#e04040">r</span>
+          </div>
         </div>
       </div>
       <div class="h" style="display:block;font-family:'Manrope','Inter',system-ui,sans-serif;font-size:clamp(15px,2.4vw,28px);font-style:normal;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:rgba(232,224,208,0.78);margin:0 auto;text-align:center;white-space:nowrap;max-width:none">Abundant, autonomous human connection</div>
