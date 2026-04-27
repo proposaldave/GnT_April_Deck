@@ -6921,81 +6921,83 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div class="orb orb-g" style="width:500px;height:500px;top:-10%;right:-15%"></div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:800px">
 
-  <div class="display" style="font-size:clamp(1.4rem,3vw,2.2rem);margin-bottom:8px">Every interaction trains it.<br><em>It never stops getting smarter.</em></div>
-  <div style="font-size:0.72rem;color:rgba(237,233,224,.6);margin-bottom:28px">Domain experts + players + communities + AI = a self-improving coordination engine</div>
+  <div class="display" style="font-size:clamp(1.7rem,3.6vw,2.8rem);margin-bottom:10px;line-height:1.15;font-weight:700">Every interaction trains it.<br><em style="color:#d4a853">It never stops getting smarter.</em></div>
+  <div style="font-size:0.92rem;color:rgba(237,233,224,.78);margin-bottom:24px;font-style:italic;font-family:'Playfair Display',serif">Domain experts + players + communities + AI = a self-improving coordination engine</div>
 
   <!-- Flywheel visualization -->
-  <div style="position:relative;width:min(440px,85vw);height:min(440px,85vw);margin:0 auto">
+  <div style="position:relative;width:min(540px,90vw);height:min(540px,90vw);margin:0 auto;filter:drop-shadow(0 0 24px rgba(212,168,83,0.18))">
     <svg viewBox="0 0 440 440" width="100%" height="100%">
       <!-- Outer ring (rotating) -->
-      <circle cx="220" cy="220" r="190" fill="none" stroke="rgba(212,168,83,0.08)" stroke-width="1" stroke-dasharray="6 4">
+      <circle cx="220" cy="220" r="190" fill="none" stroke="rgba(212,168,83,0.32)" stroke-width="1.4" stroke-dasharray="6 4">
         <animateTransform attributeName="transform" type="rotate" from="0 220 220" to="360 220 220" dur="30s" repeatCount="indefinite"/>
       </circle>
       <!-- Middle ring -->
-      <circle cx="220" cy="220" r="140" fill="none" stroke="rgba(73,180,160,0.08)" stroke-width="1" stroke-dasharray="4 3">
+      <circle cx="220" cy="220" r="140" fill="none" stroke="rgba(73,180,160,0.36)" stroke-width="1.2" stroke-dasharray="4 3">
         <animateTransform attributeName="transform" type="rotate" from="360 220 220" to="0 220 220" dur="20s" repeatCount="indefinite"/>
       </circle>
       <!-- Inner ring -->
-      <circle cx="220" cy="220" r="80" fill="none" stroke="rgba(212,168,83,0.12)" stroke-width="1.5"/>
+      <circle cx="220" cy="220" r="80" fill="none" stroke="rgba(212,168,83,0.5)" stroke-width="1.8"/>
 
       <!-- Center: GnT brain -->
-      <circle cx="220" cy="220" r="40" fill="rgba(212,168,83,0.06)" stroke="#D4A843" stroke-width="2"/>
-      <text x="220" y="215" text-anchor="middle" font-family="'Playfair Display',serif" font-size="14" fill="#D4A843" font-weight="700">GnT</text>
-      <text x="220" y="232" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" fill="rgba(212,168,83,0.6)" font-weight="600">INTELLIGENCE</text>
+      <circle cx="220" cy="220" r="46" fill="rgba(212,168,83,0.14)" stroke="#d4a853" stroke-width="2.4" filter="drop-shadow(0 0 14px rgba(212,168,83,0.45))"/>
+      <text x="208" y="225" text-anchor="middle" font-family="'Playfair Display',serif" font-size="22" font-weight="900" fill="#5B8FD4">G</text>
+      <text x="220" y="225" text-anchor="middle" font-family="'Playfair Display',serif" font-size="17" font-weight="500" font-style="italic" fill="#e8e0d0">n</text>
+      <text x="232" y="225" text-anchor="middle" font-family="'Playfair Display',serif" font-size="22" font-weight="900" fill="#e04040">R</text>
+      <text x="220" y="244" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8.5" font-weight="700" letter-spacing="2.2" fill="#d4a853">INTELLIGENCE</text>
       <!-- Pulse -->
-      <circle cx="220" cy="220" r="40" fill="none" stroke="#D4A843" stroke-width="0.5" opacity="0">
-        <animate attributeName="r" values="40;55;40" dur="2.5s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.2;0;0.2" dur="2.5s" repeatCount="indefinite"/>
+      <circle cx="220" cy="220" r="46" fill="none" stroke="#d4a853" stroke-width="0.8" opacity="0">
+        <animate attributeName="r" values="46;64;46" dur="2.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;0;0.5" dur="2.5s" repeatCount="indefinite"/>
       </circle>
 
       <!-- SIGNAL RING: 8 inputs feeding the intelligence — everyone contributes -->
       <!-- 1. RSVPs (top) -->
       <g>
-        <circle cx="220" cy="90" r="10" fill="rgba(73,180,160,0.08)" stroke="#43B8A0" stroke-width="1.2"/>
-        <text x="220" y="75" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="#43B8A0" opacity="0.8">RSVPs</text>
-        <circle r="2.5" fill="#43B8A0" opacity="0.7"><animateMotion dur="1.8s" repeatCount="indefinite" path="M220,100 L220,178"/></circle>
+        <circle cx="220" cy="90" r="12" fill="rgba(61,255,122,0.18)" stroke="#3dff7a" stroke-width="1.6"/>
+        <text x="220" y="72" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="0.04em" fill="#3dff7a">RSVPs</text>
+        <circle r="3" fill="#3dff7a" filter="drop-shadow(0 0 4px #3dff7a)"><animateMotion dur="1.8s" repeatCount="indefinite" path="M220,100 L220,176"/></circle>
       </g>
       <!-- 2. Group ratings (top-right) -->
       <g>
-        <circle cx="330" cy="120" r="10" fill="rgba(73,180,160,0.08)" stroke="#43B8A0" stroke-width="1.2"/>
-        <text x="355" y="110" font-family="Manrope,sans-serif" font-size="9" fill="#43B8A0" opacity="0.8">group ratings</text>
-        <circle r="2.5" fill="#43B8A0" opacity="0.7"><animateMotion dur="2.1s" repeatCount="indefinite" path="M325,128 L248,205"/></circle>
+        <circle cx="330" cy="120" r="12" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.6"/>
+        <text x="358" y="115" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="0.04em" fill="#5B8FD4">group ratings</text>
+        <circle r="3" fill="#5B8FD4" filter="drop-shadow(0 0 4px #5B8FD4)"><animateMotion dur="2.1s" repeatCount="indefinite" path="M323,128 L246,205"/></circle>
       </g>
       <!-- 3. Cancellations (right) -->
       <g>
-        <circle cx="350" cy="220" r="10" fill="rgba(73,180,160,0.08)" stroke="#43B8A0" stroke-width="1.2"/>
-        <text x="375" y="215" font-family="Manrope,sans-serif" font-size="9" fill="#43B8A0" opacity="0.8">cancels</text>
-        <circle r="2.5" fill="#43B8A0" opacity="0.7"><animateMotion dur="2.3s" repeatCount="indefinite" path="M340,220 L262,220"/></circle>
+        <circle cx="350" cy="220" r="12" fill="rgba(232,138,74,0.18)" stroke="#e88a4a" stroke-width="1.6"/>
+        <text x="378" y="225" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="0.04em" fill="#e88a4a">cancels</text>
+        <circle r="3" fill="#e88a4a" filter="drop-shadow(0 0 4px #e88a4a)"><animateMotion dur="2.3s" repeatCount="indefinite" path="M338,220 L260,220"/></circle>
       </g>
       <!-- 4. Referrals (bottom-right) -->
       <g>
-        <circle cx="330" cy="320" r="10" fill="rgba(73,180,160,0.08)" stroke="#43B8A0" stroke-width="1.2"/>
-        <text x="355" y="330" font-family="Manrope,sans-serif" font-size="9" fill="#43B8A0" opacity="0.8">referrals</text>
-        <circle r="2.5" fill="#43B8A0" opacity="0.7"><animateMotion dur="1.9s" repeatCount="indefinite" path="M325,312 L248,238"/></circle>
+        <circle cx="330" cy="320" r="12" fill="rgba(212,107,126,0.18)" stroke="#D46B7E" stroke-width="1.6"/>
+        <text x="358" y="335" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="0.04em" fill="#D46B7E">referrals</text>
+        <circle r="3" fill="#D46B7E" filter="drop-shadow(0 0 4px #D46B7E)"><animateMotion dur="1.9s" repeatCount="indefinite" path="M323,312 L246,235"/></circle>
       </g>
       <!-- 5. Chat signals (bottom) -->
       <g>
-        <circle cx="220" cy="350" r="10" fill="rgba(73,180,160,0.08)" stroke="#43B8A0" stroke-width="1.2"/>
-        <text x="220" y="372" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="#43B8A0" opacity="0.8">chat signals</text>
-        <circle r="2.5" fill="#43B8A0" opacity="0.7"><animateMotion dur="2.0s" repeatCount="indefinite" path="M220,340 L220,262"/></circle>
+        <circle cx="220" cy="350" r="12" fill="rgba(199,107,219,0.18)" stroke="#c76bdb" stroke-width="1.6"/>
+        <text x="220" y="378" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="0.04em" fill="#c76bdb">chat signals</text>
+        <circle r="3" fill="#c76bdb" filter="drop-shadow(0 0 4px #c76bdb)"><animateMotion dur="2.0s" repeatCount="indefinite" path="M220,338 L220,262"/></circle>
       </g>
       <!-- 6. Group outcomes (bottom-left) -->
       <g>
-        <circle cx="110" cy="320" r="10" fill="rgba(73,180,160,0.08)" stroke="#43B8A0" stroke-width="1.2"/>
-        <text x="82" y="330" font-family="Manrope,sans-serif" font-size="9" fill="#43B8A0" opacity="0.8" text-anchor="end">group outcomes</text>
-        <circle r="2.5" fill="#43B8A0" opacity="0.7"><animateMotion dur="2.4s" repeatCount="indefinite" path="M118,312 L195,238"/></circle>
+        <circle cx="110" cy="320" r="12" fill="rgba(74,232,193,0.18)" stroke="#4ae8c1" stroke-width="1.6"/>
+        <text x="80" y="335" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="0.04em" fill="#4ae8c1" text-anchor="end">group outcomes</text>
+        <circle r="3" fill="#4ae8c1" filter="drop-shadow(0 0 4px #4ae8c1)"><animateMotion dur="2.4s" repeatCount="indefinite" path="M118,312 L194,235"/></circle>
       </g>
       <!-- 7. Repeat requests (left) -->
       <g>
-        <circle cx="90" cy="220" r="10" fill="rgba(73,180,160,0.08)" stroke="#43B8A0" stroke-width="1.2"/>
-        <text x="65" y="235" font-family="Manrope,sans-serif" font-size="9" fill="#43B8A0" opacity="0.8" text-anchor="end">repeat requests</text>
-        <circle r="2.5" fill="#43B8A0" opacity="0.7"><animateMotion dur="2.2s" repeatCount="indefinite" path="M100,220 L178,220"/></circle>
+        <circle cx="90" cy="220" r="12" fill="rgba(240,192,64,0.18)" stroke="#f0c040" stroke-width="1.6"/>
+        <text x="62" y="225" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="0.04em" fill="#f0c040" text-anchor="end">repeat requests</text>
+        <circle r="3" fill="#f0c040" filter="drop-shadow(0 0 4px #f0c040)"><animateMotion dur="2.2s" repeatCount="indefinite" path="M102,220 L178,220"/></circle>
       </g>
       <!-- 8. Expert overrides (top-left) — Krista is ONE of many, same visual weight -->
       <g>
-        <circle cx="110" cy="120" r="10" fill="rgba(212,168,83,0.08)" stroke="#D4A843" stroke-width="1.2"/>
-        <text x="82" y="110" font-family="Manrope,sans-serif" font-size="9" fill="#D4A843" opacity="0.8" text-anchor="end">expert overrides</text>
-        <circle r="2.5" fill="#D4A843" opacity="0.7"><animateMotion dur="2.0s" repeatCount="indefinite" path="M118,128 L195,205"/></circle>
+        <circle cx="110" cy="120" r="12" fill="rgba(212,168,83,0.22)" stroke="#d4a853" stroke-width="1.8"/>
+        <text x="80" y="115" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="0.04em" fill="#d4a853" text-anchor="end">expert overrides</text>
+        <circle r="3" fill="#d4a853" filter="drop-shadow(0 0 4px #d4a853)"><animateMotion dur="2.0s" repeatCount="indefinite" path="M118,128 L194,205"/></circle>
       </g>
 
       <!-- Outer ring: Many players (all equal, all feeding in) -->
@@ -7014,19 +7016,19 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         <circle cx="395" cy="180" r="6" fill="none" stroke="rgba(232,224,208,0.2)" stroke-width="1"/>
         <circle cx="360" cy="100" r="6" fill="none" stroke="rgba(232,224,208,0.2)" stroke-width="1"/>
         <circle cx="295" cy="48" r="6" fill="none" stroke="rgba(232,224,208,0.2)" stroke-width="1"/>
-        <text x="220" y="18" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="rgba(232,224,208,0.35)">every player, every interaction</text>
+        <text x="220" y="18" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="0.06em" fill="rgba(232,224,208,0.7)">every player, every interaction</text>
       </g>
 
       <!-- Output arrows -->
-      <line x1="220" y1="260" x2="220" y2="290" stroke="#3dff7a" stroke-width="1" opacity="0.25" stroke-dasharray="3 3">
+      <line x1="220" y1="260" x2="220" y2="290" stroke="#3dff7a" stroke-width="1.6" opacity="0.7" stroke-dasharray="3 3">
         <animate attributeName="stroke-dashoffset" from="-12" to="0" dur="1.5s" repeatCount="indefinite"/>
       </line>
-      <text x="270" y="282" font-family="Manrope,sans-serif" font-size="10" fill="#3dff7a" opacity="0.6">better groups out</text>
+      <text x="270" y="282" font-family="Manrope,sans-serif" font-size="11" font-weight="700" fill="#3dff7a">better groups out</text>
 
-      <line x1="200" y1="258" x2="180" y2="290" stroke="#3dff7a" stroke-width="1" opacity="0.25" stroke-dasharray="3 3">
+      <line x1="200" y1="258" x2="180" y2="290" stroke="#3dff7a" stroke-width="1.6" opacity="0.7" stroke-dasharray="3 3">
         <animate attributeName="stroke-dashoffset" from="-12" to="0" dur="1.8s" repeatCount="indefinite"/>
       </line>
-      <text x="160" y="305" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" fill="#3dff7a" opacity="0.6">smarter matches</text>
+      <text x="160" y="305" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="700" fill="#3dff7a">smarter matches</text>
     </svg>
   </div>
 
