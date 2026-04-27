@@ -5622,7 +5622,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
 <!-- Matchmaking / Correct Data — nav pos 5 (moved from 11 per Apr feedback — lands right after Pickleball 24-experiments wedge, answers "measurable by what?") -->
 <div class="casey-slide ds-intro" id="cs-4">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">New Matchmaking Paradigm</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Your feelings, digitized</div>
 
   <div class="teaser-container" style="max-width:900px">
     <div class="teaser-question" style="margin-bottom:24px">
@@ -5676,68 +5676,193 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         // Re-runs on every entry to cs-4 via animateCs4Court() called from caseyGo.
         window.animateCs4Court = function(){
           const group = document.getElementById('cs4CourtGroup');
+          const svg = document.getElementById('cs4CourtSvg');
           if (!group) return;
           group.innerHTML = '';
           const NS = 'http://www.w3.org/2000/svg';
 
-          // --- Shoulders (subtle, behind neck) ---
+          // ============================================================
+          // GRADIENT + FILTER DEFS — recreated each render so they live with the group
+          // ============================================================
+          const defs = document.createElementNS(NS,'defs');
+          defs.innerHTML = `
+            <radialGradient id="cs4HeadGlow" cx="50%" cy="48%" r="58%">
+              <stop offset="0%" stop-color="rgba(232,224,208,0.14)"/>
+              <stop offset="55%" stop-color="rgba(232,224,208,0.04)"/>
+              <stop offset="100%" stop-color="rgba(232,224,208,0)"/>
+            </radialGradient>
+            <linearGradient id="cs4HeadStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#5B8FD4"/>
+              <stop offset="40%" stop-color="#d4a853"/>
+              <stop offset="70%" stop-color="#e88a4a"/>
+              <stop offset="100%" stop-color="#e04040"/>
+            </linearGradient>
+            <radialGradient id="cs4BrainGlow" cx="50%" cy="42%" r="42%">
+              <stop offset="0%" stop-color="rgba(212,168,83,0.32)"/>
+              <stop offset="60%" stop-color="rgba(212,168,83,0.06)"/>
+              <stop offset="100%" stop-color="rgba(212,168,83,0)"/>
+            </radialGradient>
+            <filter id="cs4Soft" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="0.8"/>
+            </filter>
+            <filter id="cs4Glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="3" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          `;
+          group.appendChild(defs);
+
+          // ============================================================
+          // SOFT DROP-SHADOW UNDER THE HEAD (depth)
+          // ============================================================
+          const shadow = document.createElementNS(NS,'ellipse');
+          shadow.setAttribute('cx','220'); shadow.setAttribute('cy','248');
+          shadow.setAttribute('rx','78'); shadow.setAttribute('ry','5');
+          shadow.setAttribute('fill','rgba(0,0,0,0.55)');
+          shadow.setAttribute('filter','url(#cs4Soft)');
+          shadow.setAttribute('opacity','0.6');
+          group.appendChild(shadow);
+
+          // ============================================================
+          // SHOULDERS + NECK (subtle, behind glow)
+          // ============================================================
           const shoulders = document.createElementNS(NS,'path');
           shoulders.setAttribute('d', 'M 110 272 Q 110 240 178 230 L 262 230 Q 330 240 330 272 Z');
-          shoulders.setAttribute('fill','rgba(232,224,208,0.04)');
-          shoulders.setAttribute('stroke','rgba(232,224,208,0.32)');
-          shoulders.setAttribute('stroke-width','1.4');
+          shoulders.setAttribute('fill','rgba(232,224,208,0.03)');
+          shoulders.setAttribute('stroke','rgba(232,224,208,0.22)');
+          shoulders.setAttribute('stroke-width','1.2');
           shoulders.setAttribute('stroke-linejoin','round');
           group.appendChild(shoulders);
 
-          // --- Neck ---
           const neck = document.createElementNS(NS,'path');
           neck.setAttribute('d','M 198 200 L 198 232 L 242 232 L 242 200 Q 220 212 198 200 Z');
-          neck.setAttribute('fill','rgba(232,224,208,0.04)');
-          neck.setAttribute('stroke','rgba(232,224,208,0.4)');
-          neck.setAttribute('stroke-width','1.4');
+          neck.setAttribute('fill','rgba(232,224,208,0.03)');
+          neck.setAttribute('stroke','rgba(232,224,208,0.28)');
+          neck.setAttribute('stroke-width','1.2');
           neck.setAttribute('stroke-linejoin','round');
           group.appendChild(neck);
 
-          // --- Head (oval, front view) ---
+          // ============================================================
+          // HEAD (oval) — soft fill + aurora-gradient stroke
+          // ============================================================
+          const headBg = document.createElementNS(NS,'ellipse');
+          headBg.setAttribute('cx','220'); headBg.setAttribute('cy','118');
+          headBg.setAttribute('rx','100'); headBg.setAttribute('ry','92');
+          headBg.setAttribute('fill','url(#cs4HeadGlow)');
+          headBg.setAttribute('stroke','none');
+          group.appendChild(headBg);
+
           const head = document.createElementNS(NS,'ellipse');
           head.setAttribute('cx','220'); head.setAttribute('cy','118');
-          head.setAttribute('rx','96'); head.setAttribute('ry','88');
-          head.setAttribute('fill','rgba(232,224,208,0.05)');
-          head.setAttribute('stroke','rgba(232,224,208,0.55)');
-          head.setAttribute('stroke-width','1.8');
+          head.setAttribute('rx','100'); head.setAttribute('ry','92');
+          head.setAttribute('fill','none');
+          head.setAttribute('stroke','url(#cs4HeadStroke)');
+          head.setAttribute('stroke-width','2.2');
+          head.setAttribute('opacity','0');
+          const headFade = document.createElementNS(NS,'animate');
+          headFade.setAttribute('attributeName','opacity');
+          headFade.setAttribute('values','0;0.95');
+          headFade.setAttribute('dur','0.9s');
+          headFade.setAttribute('begin','0s');
+          headFade.setAttribute('fill','freeze');
+          head.appendChild(headFade);
           group.appendChild(head);
 
-          // Subtle inner brain contour — soft dashed arc on the left side of the head,
-          // hints "this is the mind region" without competing with the thought bubbles.
-          const brain = document.createElementNS(NS,'path');
-          brain.setAttribute('d', 'M 168 70 Q 138 110 152 170');
-          brain.setAttribute('fill','none');
-          brain.setAttribute('stroke','rgba(212,168,83,0.18)');
-          brain.setAttribute('stroke-width','1');
-          brain.setAttribute('stroke-dasharray','2 4');
-          group.appendChild(brain);
-          const brain2 = document.createElementNS(NS,'path');
-          brain2.setAttribute('d', 'M 272 70 Q 302 110 288 170');
-          brain2.setAttribute('fill','none');
-          brain2.setAttribute('stroke','rgba(212,168,83,0.18)');
-          brain2.setAttribute('stroke-width','1');
-          brain2.setAttribute('stroke-dasharray','2 4');
-          group.appendChild(brain2);
+          // ============================================================
+          // INNER BRAIN GLOW (warm gold core)
+          // ============================================================
+          const brainGlow = document.createElementNS(NS,'ellipse');
+          brainGlow.setAttribute('cx','220'); brainGlow.setAttribute('cy','116');
+          brainGlow.setAttribute('rx','82'); brainGlow.setAttribute('ry','74');
+          brainGlow.setAttribute('fill','url(#cs4BrainGlow)');
+          brainGlow.setAttribute('opacity','0');
+          const bgFade = document.createElementNS(NS,'animate');
+          bgFade.setAttribute('attributeName','opacity');
+          bgFade.setAttribute('values','0;1');
+          bgFade.setAttribute('dur','1.2s');
+          bgFade.setAttribute('begin','0.4s');
+          bgFade.setAttribute('fill','freeze');
+          brainGlow.appendChild(bgFade);
+          // gentle pulse
+          const bgPulse = document.createElementNS(NS,'animate');
+          bgPulse.setAttribute('attributeName','opacity');
+          bgPulse.setAttribute('values','1;0.72;1');
+          bgPulse.setAttribute('dur','5s');
+          bgPulse.setAttribute('begin','1.6s');
+          bgPulse.setAttribute('repeatCount','indefinite');
+          brainGlow.appendChild(bgPulse);
+          group.appendChild(brainGlow);
 
-          // --- 4 thought-bubbles inside the head (other players in her mind) ---
-          // Each bubble: outer color ring + tiny silhouette + outward data-pulse ring.
-          // dimCount = the 4-6 distinct thoughts/dimensions she carries about that player
-          // (skill match, partner-fit, energy, communication, fun, "would play again" etc).
+          // ============================================================
+          // BACKGROUND SPARKLE PARTICLES floating inside the head
+          // ============================================================
+          const sparkleCount = 14;
+          for (let i = 0; i < sparkleCount; i++){
+            const angle = (Math.PI * 2 * i / sparkleCount) + (Math.random() * 0.4);
+            const radius = 35 + Math.random() * 45;
+            const sx = 220 + Math.cos(angle) * radius;
+            const sy = 118 + Math.sin(angle) * radius * 0.85;
+            const sp = document.createElementNS(NS,'circle');
+            sp.setAttribute('cx', sx.toFixed(1));
+            sp.setAttribute('cy', sy.toFixed(1));
+            sp.setAttribute('r', (0.7 + Math.random() * 0.6).toFixed(2));
+            sp.setAttribute('fill', '#e8e0d0');
+            sp.setAttribute('opacity','0');
+            const tw = document.createElementNS(NS,'animate');
+            tw.setAttribute('attributeName','opacity');
+            tw.setAttribute('values','0;0.6;0.15;0.55;0');
+            tw.setAttribute('dur',(3 + Math.random()*2.5).toFixed(2)+'s');
+            tw.setAttribute('begin',(0.8 + Math.random()*1.6).toFixed(2)+'s');
+            tw.setAttribute('repeatCount','indefinite');
+            sp.appendChild(tw);
+            group.appendChild(sp);
+          }
+
+          // ============================================================
+          // 4 THOUGHT-BUBBLES (other players in YOUR head)
+          // Each: outer halo + main bubble + mini-portrait (head+shoulders silhouette)
+          // ============================================================
           const thoughts = [
-            { cx: 175, cy: 92,  color: '#f0c040', begin: 0.0,  dimCount: 5 },   // gold (top-left)
-            { cx: 268, cy: 86,  color: '#5B8FD4', begin: 0.55, dimCount: 6 },   // blue (top-right)
-            { cx: 168, cy: 160, color: '#D46B7E', begin: 1.10, dimCount: 4 },   // pink (bottom-left)
-            { cx: 268, cy: 156, color: '#c76bdb', begin: 1.65, dimCount: 5 }    // purple (bottom-right)
+            { cx: 175, cy: 92,  color: '#f0c040', begin: 1.2,  dimCount: 5 },   // gold
+            { cx: 268, cy: 86,  color: '#5B8FD4', begin: 1.5,  dimCount: 6 },   // blue
+            { cx: 168, cy: 160, color: '#D46B7E', begin: 1.8,  dimCount: 4 },   // pink
+            { cx: 268, cy: 156, color: '#c76bdb', begin: 2.1,  dimCount: 5 }    // purple
           ];
-          const R = 19;
+          const R = 21;
 
-          thoughts.forEach(t => {
-            // Outward-pulsing data ring (signal escaping the impression)
+          // ============================================================
+          // CONNECTION LINES between bubbles — relationships exist between
+          // the players in YOUR mind too. Faint, draw-in over time.
+          // ============================================================
+          const pairs = [[0,1],[0,2],[1,3],[2,3],[0,3],[1,2]];
+          pairs.forEach((pair, idx) => {
+            const a = thoughts[pair[0]], b = thoughts[pair[1]];
+            const dx = b.cx - a.cx, dy = b.cy - a.cy;
+            const len = Math.sqrt(dx*dx + dy*dy);
+            // shorten ends so lines don't overlap bubbles
+            const ax = a.cx + (dx/len) * R, ay = a.cy + (dy/len) * R;
+            const bx = b.cx - (dx/len) * R, by = b.cy - (dy/len) * R;
+            const line = document.createElementNS(NS,'line');
+            line.setAttribute('x1', ax.toFixed(1));
+            line.setAttribute('y1', ay.toFixed(1));
+            line.setAttribute('x2', bx.toFixed(1));
+            line.setAttribute('y2', by.toFixed(1));
+            line.setAttribute('stroke','rgba(212,168,83,0.28)');
+            line.setAttribute('stroke-width','0.7');
+            line.setAttribute('stroke-dasharray','2 3');
+            line.setAttribute('opacity','0');
+            const lFade = document.createElementNS(NS,'animate');
+            lFade.setAttribute('attributeName','opacity');
+            lFade.setAttribute('values','0;0.55');
+            lFade.setAttribute('dur','1.4s');
+            lFade.setAttribute('begin', (3.6 + idx * 0.18).toFixed(2)+'s');
+            lFade.setAttribute('fill','freeze');
+            line.appendChild(lFade);
+            group.appendChild(line);
+          });
+
+          thoughts.forEach((t, ti) => {
+            // Outward pulsing data ring
             const glow = document.createElementNS(NS,'circle');
             glow.setAttribute('cx', t.cx); glow.setAttribute('cy', t.cy);
             glow.setAttribute('r', R);
@@ -5747,78 +5872,95 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
             glow.setAttribute('opacity','0');
             const glowR = document.createElementNS(NS,'animate');
             glowR.setAttribute('attributeName','r');
-            glowR.setAttribute('values', R+';'+(R+12)+';'+(R+22));
-            glowR.setAttribute('dur','2.8s');
+            glowR.setAttribute('values', R+';'+(R+12)+';'+(R+24));
+            glowR.setAttribute('dur','3.2s');
             glowR.setAttribute('repeatCount','indefinite');
-            glowR.setAttribute('begin', t.begin+'s');
+            glowR.setAttribute('begin', (t.begin + 0.6)+'s');
             glow.appendChild(glowR);
             const glowO = document.createElementNS(NS,'animate');
             glowO.setAttribute('attributeName','opacity');
             glowO.setAttribute('values','0.55;0.22;0');
-            glowO.setAttribute('dur','2.8s');
+            glowO.setAttribute('dur','3.2s');
             glowO.setAttribute('repeatCount','indefinite');
-            glowO.setAttribute('begin', t.begin+'s');
+            glowO.setAttribute('begin', (t.begin + 0.6)+'s');
             glow.appendChild(glowO);
             group.appendChild(glow);
 
-            // Outer ring (the bubble itself, gently pulsing in opacity)
+            // Pre-bubble entrance: scale-in pop
+            const bubbleG = document.createElementNS(NS,'g');
+            bubbleG.setAttribute('transform-origin', t.cx + ' ' + t.cy);
+            bubbleG.setAttribute('opacity','0');
+            const bIn = document.createElementNS(NS,'animateTransform');
+            bIn.setAttribute('attributeName','transform');
+            bIn.setAttribute('type','scale');
+            bIn.setAttribute('from','0');
+            bIn.setAttribute('to','1');
+            bIn.setAttribute('dur','0.55s');
+            bIn.setAttribute('begin', t.begin+'s');
+            bIn.setAttribute('fill','freeze');
+            bIn.setAttribute('additive','sum');
+            bubbleG.appendChild(bIn);
+            const bO = document.createElementNS(NS,'animate');
+            bO.setAttribute('attributeName','opacity');
+            bO.setAttribute('values','0;1');
+            bO.setAttribute('dur','0.55s');
+            bO.setAttribute('begin', t.begin+'s');
+            bO.setAttribute('fill','freeze');
+            bubbleG.appendChild(bO);
+
+            // Outer bubble background (soft dark fill so portrait reads on light bg)
+            const ringBg = document.createElementNS(NS,'circle');
+            ringBg.setAttribute('cx', t.cx); ringBg.setAttribute('cy', t.cy); ringBg.setAttribute('r', R);
+            ringBg.setAttribute('fill','rgba(6,6,9,0.78)');
+            ringBg.setAttribute('stroke','none');
+            bubbleG.appendChild(ringBg);
+
+            // Outer bubble ring (bubble color, breathing)
             const ring = document.createElementNS(NS,'circle');
             ring.setAttribute('cx', t.cx); ring.setAttribute('cy', t.cy); ring.setAttribute('r', R);
-            ring.setAttribute('fill','rgba(6,6,9,0.55)');
+            ring.setAttribute('fill','none');
             ring.setAttribute('stroke', t.color);
             ring.setAttribute('stroke-width','1.7');
+            ring.setAttribute('filter','url(#cs4Glow)');
             const ringAnim = document.createElementNS(NS,'animate');
             ringAnim.setAttribute('attributeName','opacity');
-            ringAnim.setAttribute('values','0.6;1;0.6');
-            ringAnim.setAttribute('dur','2.8s');
+            ringAnim.setAttribute('values','0.72;1;0.72');
+            ringAnim.setAttribute('dur','3.2s');
             ringAnim.setAttribute('repeatCount','indefinite');
-            ringAnim.setAttribute('begin', t.begin+'s');
+            ringAnim.setAttribute('begin', (t.begin + 0.6)+'s');
             ring.appendChild(ringAnim);
-            group.appendChild(ring);
+            bubbleG.appendChild(ring);
 
-            // Tiny silhouette inside the bubble: head + shoulder line, in the bubble's color.
+            // Mini-portrait: head circle + stylized shoulders, in bubble color
             const sHead = document.createElementNS(NS,'circle');
-            sHead.setAttribute('cx', t.cx); sHead.setAttribute('cy', t.cy - 4);
-            sHead.setAttribute('r', 4.3);
+            sHead.setAttribute('cx', t.cx); sHead.setAttribute('cy', t.cy - 5);
+            sHead.setAttribute('r', 5);
             sHead.setAttribute('fill', t.color);
             sHead.setAttribute('opacity','0.95');
-            group.appendChild(sHead);
+            bubbleG.appendChild(sHead);
             const sBody = document.createElementNS(NS,'path');
-            sBody.setAttribute('d', 'M '+(t.cx-7)+' '+(t.cy+9)+' Q '+t.cx+' '+(t.cy+1.5)+' '+(t.cx+7)+' '+(t.cy+9));
+            sBody.setAttribute('d', 'M '+(t.cx-8.5)+' '+(t.cy+10)+' Q '+t.cx+' '+(t.cy+1.5)+' '+(t.cx+8.5)+' '+(t.cy+10));
             sBody.setAttribute('fill','none');
             sBody.setAttribute('stroke', t.color);
-            sBody.setAttribute('stroke-width','1.7');
+            sBody.setAttribute('stroke-width','2');
             sBody.setAttribute('stroke-linecap','round');
-            sBody.setAttribute('opacity','0.92');
-            group.appendChild(sBody);
+            sBody.setAttribute('opacity','0.95');
+            bubbleG.appendChild(sBody);
 
-            // --- 4-6 "dimension" dots — the distinct thoughts she carries about THIS player.
-            // Placed ABOVE top bubbles, BELOW bottom bubbles. Subtle arc curve. Stagger pulse.
+            group.appendChild(bubbleG);
+
+            // Dimension constellation — same per-bubble logic as before but tighter
             const isTop = t.cy < 120;
-            const dimYBase = isTop ? t.cy - 30 : t.cy + 30;
-            const stem = document.createElementNS(NS,'line');
-            stem.setAttribute('x1', t.cx);
-            stem.setAttribute('y1', t.cy + (isTop ? -R : R));
-            stem.setAttribute('x2', t.cx);
-            stem.setAttribute('y2', dimYBase + (isTop ? 4 : -4));
-            stem.setAttribute('stroke', t.color);
-            stem.setAttribute('stroke-width','0.8');
-            stem.setAttribute('opacity','0.4');
-            stem.setAttribute('stroke-dasharray','1.5 2');
-            group.appendChild(stem);
-            // Sequential pop-in: each dimension dot appears one at a time AFTER the
-            // bubble lands, with a small spark-ring burst — so the viewer can SEE the
-            // count grow (1...2...3...4...5...6) for each player. Then continuous pulse.
+            const dimYBase = isTop ? t.cy - 32 : t.cy + 32;
             for (let i = 0; i < t.dimCount; i++){
               const mid = (t.dimCount - 1) / 2;
-              const dx = (i - mid) * 6.4;
-              const arc = Math.abs(i - mid) * 1.05 * (isTop ? 1 : -1);  // gentle bow
+              const dx = (i - mid) * 6.6;
+              const arc = Math.abs(i - mid) * 1.1 * (isTop ? 1 : -1);
               const cxDot = t.cx + dx;
               const cyDot = dimYBase + arc;
-              const popIn = (t.begin + 1.55 + i * 0.34);
-              const popDur = 0.45;
+              const popIn = (t.begin + 0.85 + i * 0.22);
 
-              // Spark ring — expands outward + fades when the dot lands.
+              // Star spark — twinkle outward as the dimension "lands"
               const spark = document.createElementNS(NS,'circle');
               spark.setAttribute('cx', cxDot); spark.setAttribute('cy', cyDot);
               spark.setAttribute('r','0');
@@ -5828,62 +5970,122 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
               spark.setAttribute('opacity','0');
               const sparkR = document.createElementNS(NS,'animate');
               sparkR.setAttribute('attributeName','r');
-              sparkR.setAttribute('values','0;11');
-              sparkR.setAttribute('dur','0.75s');
+              sparkR.setAttribute('values','0;13');
+              sparkR.setAttribute('dur','0.7s');
               sparkR.setAttribute('begin',popIn.toFixed(2)+'s');
               sparkR.setAttribute('fill','freeze');
               spark.appendChild(sparkR);
               const sparkO = document.createElementNS(NS,'animate');
               sparkO.setAttribute('attributeName','opacity');
-              sparkO.setAttribute('values','0.9;0');
-              sparkO.setAttribute('dur','0.75s');
+              sparkO.setAttribute('values','0.95;0');
+              sparkO.setAttribute('dur','0.7s');
               sparkO.setAttribute('begin',popIn.toFixed(2)+'s');
               sparkO.setAttribute('fill','freeze');
               spark.appendChild(sparkO);
               group.appendChild(spark);
 
-              // The dot itself — starts at r=0, opacity=0, pops to full size, then pulses.
+              // The dimension star — pops in then twinkles forever
               const dot = document.createElementNS(NS,'circle');
               dot.setAttribute('cx', cxDot); dot.setAttribute('cy', cyDot);
               dot.setAttribute('r','0');
               dot.setAttribute('fill', t.color);
               dot.setAttribute('opacity','0');
+              dot.setAttribute('filter','url(#cs4Glow)');
               const aR = document.createElementNS(NS,'animate');
               aR.setAttribute('attributeName','r');
-              aR.setAttribute('values','0;3.4;2.5');
+              aR.setAttribute('values','0;3.6;2.6');
               aR.setAttribute('keyTimes','0;0.65;1');
-              aR.setAttribute('dur',popDur+'s');
+              aR.setAttribute('dur','0.45s');
               aR.setAttribute('begin',popIn.toFixed(2)+'s');
               aR.setAttribute('fill','freeze');
               dot.appendChild(aR);
               const aO1 = document.createElementNS(NS,'animate');
               aO1.setAttribute('attributeName','opacity');
               aO1.setAttribute('values','0;1');
-              aO1.setAttribute('dur',popDur+'s');
+              aO1.setAttribute('dur','0.45s');
               aO1.setAttribute('begin',popIn.toFixed(2)+'s');
               aO1.setAttribute('fill','freeze');
               dot.appendChild(aO1);
               const aO2 = document.createElementNS(NS,'animate');
               aO2.setAttribute('attributeName','opacity');
-              aO2.setAttribute('values','1;0.55;1');
-              aO2.setAttribute('dur','2.2s');
-              aO2.setAttribute('begin',(popIn+popDur).toFixed(2)+'s');
+              aO2.setAttribute('values','1;0.42;1');
+              aO2.setAttribute('dur',(2 + i * 0.3).toFixed(2)+'s');
+              aO2.setAttribute('begin',(popIn+0.45).toFixed(2)+'s');
               aO2.setAttribute('repeatCount','indefinite');
               dot.appendChild(aO2);
               group.appendChild(dot);
             }
           });
 
-          // YOU label below the head — the brain belongs to one player ("you").
+          // ============================================================
+          // SIGNAL BEAMS — pulses of light shooting OUT through the head perimeter,
+          // as if signals from each player are escaping into the network.
+          // 4 beams (one per bubble color), staggered, looping.
+          // ============================================================
+          const beamColors = ['#f0c040','#5B8FD4','#D46B7E','#c76bdb'];
+          beamColors.forEach((col, i) => {
+            const angle = (Math.PI * 2 * i / 4) - Math.PI/2;  // start top, then quarter turns
+            const fromR = 96, toR = 138;
+            const fx = 220 + Math.cos(angle) * fromR;
+            const fy = 118 + Math.sin(angle) * fromR * 0.92;
+            const tx = 220 + Math.cos(angle) * toR;
+            const ty = 118 + Math.sin(angle) * toR * 0.92;
+            const beam = document.createElementNS(NS,'line');
+            beam.setAttribute('x1', fx.toFixed(1));
+            beam.setAttribute('y1', fy.toFixed(1));
+            beam.setAttribute('x2', fx.toFixed(1));
+            beam.setAttribute('y2', fy.toFixed(1));
+            beam.setAttribute('stroke', col);
+            beam.setAttribute('stroke-width','1.4');
+            beam.setAttribute('stroke-linecap','round');
+            beam.setAttribute('opacity','0');
+            beam.setAttribute('filter','url(#cs4Glow)');
+            // Animate x2/y2 outward each cycle
+            const bx = document.createElementNS(NS,'animate');
+            bx.setAttribute('attributeName','x2');
+            bx.setAttribute('values', fx.toFixed(1)+';'+tx.toFixed(1));
+            bx.setAttribute('dur','1.4s');
+            bx.setAttribute('begin', (4.6 + i * 0.55)+'s;cs4BeamCycle.end+'+(0.55*i).toFixed(2)+'s');
+            bx.setAttribute('repeatCount','1');
+            beam.appendChild(bx);
+            const by = document.createElementNS(NS,'animate');
+            by.setAttribute('attributeName','y2');
+            by.setAttribute('values', fy.toFixed(1)+';'+ty.toFixed(1));
+            by.setAttribute('dur','1.4s');
+            by.setAttribute('begin', (4.6 + i * 0.55)+'s;cs4BeamCycle.end+'+(0.55*i).toFixed(2)+'s');
+            by.setAttribute('repeatCount','1');
+            beam.appendChild(by);
+            const bO = document.createElementNS(NS,'animate');
+            bO.setAttribute('attributeName','opacity');
+            bO.setAttribute('values','0;0.85;0');
+            bO.setAttribute('dur','1.4s');
+            bO.setAttribute('begin', (4.6 + i * 0.55)+'s;cs4BeamCycle.end+'+(0.55*i).toFixed(2)+'s');
+            bO.setAttribute('repeatCount','1');
+            if (i === 3) bO.setAttribute('id','cs4BeamCycle');  // last beam triggers next cycle
+            beam.appendChild(bO);
+            group.appendChild(beam);
+          });
+
+          // ============================================================
+          // YOU label below the head
+          // ============================================================
           const youLabel = document.createElementNS(NS,'text');
           youLabel.setAttribute('x','220'); youLabel.setAttribute('y','272');
           youLabel.setAttribute('text-anchor','middle');
           youLabel.setAttribute('font-family','Manrope, sans-serif');
-          youLabel.setAttribute('font-size','18');
+          youLabel.setAttribute('font-size','20');
           youLabel.setAttribute('font-weight','800');
-          youLabel.setAttribute('letter-spacing','0.32em');
+          youLabel.setAttribute('letter-spacing','0.36em');
           youLabel.setAttribute('fill','#e88a4a');
+          youLabel.setAttribute('opacity','0');
           youLabel.textContent = 'YOU';
+          const yFade = document.createElementNS(NS,'animate');
+          yFade.setAttribute('attributeName','opacity');
+          yFade.setAttribute('values','0;1');
+          yFade.setAttribute('dur','0.6s');
+          yFade.setAttribute('begin','0.3s');
+          yFade.setAttribute('fill','freeze');
+          youLabel.appendChild(yFade);
           group.appendChild(youLabel);
         };
         // Run once on first load so the visual appears even if the slide is visited before caseyGo registers.
@@ -6577,7 +6779,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <!-- Radical Change in Player Behavior — nav pos 16 -->
 <div class="casey-slide ds-focus" id="cs-14">
 <section style="position:relative;min-height:100%;width:100%">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Traction</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Behavior change</div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:860px">
   <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3.2vw,2.4rem);font-weight:700;color:var(--cream,#e8e0d0);line-height:1.15;margin-bottom:10px">
     Radical change in <em style="color:var(--gold,#caa54a)">player behavior</em>.
@@ -6585,17 +6787,17 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   <div style="font-size:0.82rem;color:rgba(237,233,224,.55);margin-bottom:8px;font-style:italic">Your 24/7 personalized matchmaker.</div>
   <div style="font-size:0.62rem;color:rgba(237,233,224,.45);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin-bottom:32px">20,000 accepted invitations &middot; 300 active players</div>
   <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap">
-    <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px 24px;max-width:260px;text-align:left">
-      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.78rem;color:rgba(237,233,224,.6);line-height:1.5;margin-bottom:12px">&ldquo;It&rsquo;s such a psychological phenomenon &mdash; I couldn&rsquo;t fill a skill rating event on Monday at 5pm to save my soul, and now the Give 'n Receive invite has three courts all month.&rdquo;</div>
-      <div style="font-size:0.65rem;font-weight:600;color:var(--gold,#caa54a)">&mdash; GM Krista</div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(212,168,83,.18);border-radius:12px;padding:24px 28px;max-width:300px;text-align:left">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.02rem;color:#e8e0d0;line-height:1.45;margin-bottom:14px;font-weight:500">&ldquo;It&rsquo;s such a psychological phenomenon &mdash; I couldn&rsquo;t fill a skill rating event on Monday at 5pm to save my soul, and now the Give 'n Receive invite has three courts all month.&rdquo;</div>
+      <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold,#caa54a)">&mdash; GM Krista</div>
     </div>
-    <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px 24px;max-width:260px;text-align:left">
-      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.78rem;color:rgba(237,233,224,.6);line-height:1.5;margin-bottom:12px">&ldquo;Finally, I feel like a person, not a rating.&rdquo;</div>
-      <div style="font-size:0.65rem;font-weight:600;color:var(--gold,#caa54a)">&mdash; Member Laurie Relinski</div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(212,168,83,.18);border-radius:12px;padding:24px 28px;max-width:300px;text-align:left">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.18rem;color:#e8e0d0;line-height:1.45;margin-bottom:14px;font-weight:500">&ldquo;Finally, I feel like a person, not a rating.&rdquo;</div>
+      <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold,#caa54a)">&mdash; Member Laurie Relinski</div>
     </div>
-    <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px 24px;max-width:260px;text-align:left">
-      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.78rem;color:rgba(237,233,224,.6);line-height:1.5;margin-bottom:12px">&ldquo;I don&rsquo;t even check calendar events anymore.&rdquo;</div>
-      <div style="font-size:0.65rem;font-weight:600;color:var(--gold,#caa54a)">&mdash; Member Dean Taylor</div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(212,168,83,.18);border-radius:12px;padding:24px 28px;max-width:300px;text-align:left">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.18rem;color:#e8e0d0;line-height:1.45;margin-bottom:14px;font-weight:500">&ldquo;I don&rsquo;t even check calendar events anymore.&rdquo;</div>
+      <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold,#caa54a)">&mdash; Member Dean Taylor</div>
     </div>
   </div>
 </div>
@@ -6860,12 +7062,12 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
       <!-- ============ CENTER ENGINE ============ -->
       <circle cx="600" cy="220" r="110" fill="url(#aCoordEngineGlow)"/>
-      <rect x="510" y="180" width="180" height="80" rx="18" fill="rgba(20,15,8,0.96)" stroke="#d4a853" stroke-width="2" filter="drop-shadow(0 0 18px rgba(212,168,83,0.4))"/>
+      <rect x="478" y="180" width="244" height="80" rx="18" fill="rgba(20,15,8,0.96)" stroke="#d4a853" stroke-width="2" filter="drop-shadow(0 0 18px rgba(212,168,83,0.4))"/>
       <text x="600" y="208" text-anchor="middle" font-family="Manrope, sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="rgba(232,224,208,0.62)">THE ENGINE</text>
-      <text x="600" y="234" text-anchor="middle" font-family="Playfair Display, serif" font-size="22" font-weight="900" fill="#5B8FD4">G</text>
-      <text x="618" y="234" text-anchor="middle" font-family="Playfair Display, serif" font-size="18" font-weight="900" font-style="italic" fill="#e8e0d0">n</text>
-      <text x="636" y="234" text-anchor="middle" font-family="Playfair Display, serif" font-size="22" font-weight="900" fill="#e04040">T</text>
-      <text x="600" y="252" text-anchor="middle" font-family="Manrope, sans-serif" font-size="9" font-weight="700" letter-spacing="2" fill="#d4a853">LEARNS · MAXIMIZES RECIPROCITY</text>
+      <text x="586" y="234" text-anchor="middle" font-family="Playfair Display, serif" font-size="22" font-weight="900" fill="#5B8FD4">G</text>
+      <text x="602" y="234" text-anchor="middle" font-family="Playfair Display, serif" font-size="17" font-weight="900" font-style="italic" fill="#e8e0d0">n</text>
+      <text x="618" y="234" text-anchor="middle" font-family="Playfair Display, serif" font-size="22" font-weight="900" fill="#e04040">R</text>
+      <text x="600" y="252" text-anchor="middle" font-family="Manrope, sans-serif" font-size="8" font-weight="700" letter-spacing="1.4" fill="#d4a853">LEARNS · MAXIMIZES RECIPROCITY</text>
 
       <!-- Input arrow (left loop -> engine) -->
       <path d="M 445 220 L 510 220" stroke="#d4a853" stroke-width="2.2" fill="none" marker-end="url(#aCoordArrow)"/>
@@ -6915,7 +7117,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:40px 20px;box-sizing:border-box">
 
     <div style="font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,38px);font-weight:900;color:var(--cream);text-align:center;margin-bottom:32px">
-      Zero to one starts here.
+      Human connection, zero to one starts here.
     </div>
 
     <!-- Concentric rings visualization -->
@@ -8121,8 +8323,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
 const SLIDE_ORDER = [
   'cs-1','cs-1b','cs-2','cs-2b','cs-3','cs-11',
-  'cs-4','cs-7','cs-8','cs-8c','cs-8b','cs-10','cs-11b','cs-11e','cs-11c','cs-11d','cs-19','cs-12','cs-13',
-  'cs-14','cs-9','cs-15','cs-16','cs-16b','cs-17','cs-18','cs-20','cs-21','cs-23',
+  'cs-4','cs-7','cs-8','cs-8b','cs-10','cs-11b','cs-11e','cs-11d','cs-11c','cs-19','cs-12','cs-13',
+  'cs-14','cs-15','cs-16','cs-16b','cs-17','cs-18','cs-20','cs-21','cs-23',
   'cs-24','cs-25','cs-26'
 ];
 const TOTAL = SLIDE_ORDER.length; // 29 (+ cs-8c Scheduling IS measuring transition)
@@ -8151,6 +8353,19 @@ function caseyGo(n) {
   if (targetId === 'cs-17') animateIntroExpansion();
   if (targetId === 'cs-26') replayGntLogo();
   if (targetId === 'cs-4') animateCs4Court();
+  if (targetId === 'cs-8b') {
+    // Re-trigger Abundance entrance animation each time slide is shown
+    const abund = document.querySelector('#cs-8b .uw-abundance');
+    const burst = document.querySelector('#cs-8b .uw-burst');
+    const bars  = document.querySelector('#cs-8b .uw-bars-wrap');
+    [abund, burst, bars].forEach(el => {
+      if (!el) return;
+      const anim = el.style.animation;
+      el.style.animation = 'none';
+      void el.offsetWidth;  // force reflow
+      el.style.animation = '';  // restore CSS-defined animation
+    });
+  }
   if (targetId === 'cs-2') {
     const el = document.querySelector('#cs-2 .sm-live-it-heart');
     if (el) {
