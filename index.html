@@ -8445,7 +8445,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 // ACT 4+: cs-10 through cs-26 unchanged
 
 const SLIDE_ORDER = [
-  'cs-1','cs-1b','cs-1a','cs-2','cs-2b','cs-3','cs-10c','cs-11',
+  'cs-1','cs-1b','cs-2b','cs-1a','cs-3','cs-10c','cs-11',
   'cs-4','cs-7','cs-8','cs-8b','cs-10','cs-11b','cs-11e','cs-11d','cs-11c','cs-19','cs-12','cs-13',
   'cs-14','cs-15','cs-16','cs-16b','cs-17','cs-18','cs-20','cs-21','cs-23',
   'cs-24','cs-25','cs-26'
@@ -8456,10 +8456,12 @@ const TOTAL = SLIDE_ORDER.length; // 29 (+ cs-8c Scheduling IS measuring transit
 // SLIDE_ALTS: position (1-indexed in SLIDE_ORDER) -> array of alternative slide IDs to stack BELOW the primary dot.
 // Top dot = AI's FIRST CHOICE. Stacked dots = alternatives in priority order (second-best below top).
 // Empty {} = AI is locked on its first choice; no alternatives proposed.
-const SLIDE_ALTS = {};
+const SLIDE_ALTS = {
+  3: ['cs-2']  // Position 3: top = cs-2b (real-world communities + no measurement), alt = cs-2 (big tech missed)
+};
 // REVIEW_POSITION: which dot position is currently under review — turns RED ("stop light, we're stopped here").
 // Set to null when not actively reviewing.
-const REVIEW_POSITION = 2;
+const REVIEW_POSITION = 3;
 
 const APPENDIX_TOTAL = 19;
 let current = 1;
