@@ -7002,23 +7002,25 @@ html, body, html body{
   }
 
   // Build a mini-court. Every court is unique: unique partner colors + unique animation tempos per edge.
-  function makeMiniCourt(seed){
+  // scoreText (optional) marks this court as a "competitive/scored" round — what 50+ existing apps capture.
+  function makeMiniCourt(seed, scoreText){
     const rand = mulberry(seed);
     const palette = pickPalette(rand);
     const W=110, H=58;
+    const isScored = !!scoreText;
     const svg = document.createElementNS(NS,'svg');
     svg.setAttribute('viewBox','0 0 '+W+' '+H);
     svg.setAttribute('preserveAspectRatio','xMidYMid meet');
     svg.style.display='block'; svg.style.width='100%';
 
-    // Frame
+    // Frame — red for the 4 "scored" courts, green for the 20 social courts
     const f = document.createElementNS(NS,'rect');
     f.setAttribute('x','2'); f.setAttribute('y','2');
     f.setAttribute('width', W-4); f.setAttribute('height', H-4);
     f.setAttribute('rx','2');
-    f.setAttribute('fill','rgba(61,255,122,0.03)');
-    f.setAttribute('stroke','rgba(61,255,122,0.42)');
-    f.setAttribute('stroke-width','0.6');
+    f.setAttribute('fill', isScored ? 'rgba(200,70,44,0.06)' : 'rgba(61,255,122,0.03)');
+    f.setAttribute('stroke', isScored ? '#c8462c' : 'rgba(61,255,122,0.42)');
+    f.setAttribute('stroke-width', isScored ? '1.0' : '0.6');
     svg.appendChild(f);
     // Net (vertical, center) — brighter so the court reads clearly
     const net = document.createElementNS(NS,'line');
@@ -7483,15 +7485,19 @@ html, body, html body{
         <div style="font-family:'Manrope',sans-serif;font-size:0.78rem;font-weight:800;color:#2a8a4f;letter-spacing:0.06em">+$110K new revenue</div>
       </div>
     </div>
-    <!-- Two quotes -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:980px;margin:0 auto">
-      <div style="padding:20px 22px;border-radius:10px;background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.22);text-align:left">
-        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.92rem;color:#1a1612;line-height:1.45;margin-bottom:10px">&ldquo;I don&rsquo;t even check calendar events anymore.&rdquo;</div>
-        <div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#5B8FD4">&mdash; Member Dean Taylor</div>
+    <!-- Three quotes -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;max-width:1080px;margin:0 auto">
+      <div style="padding:18px 20px;border-radius:10px;background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.22);text-align:left">
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.86rem;color:#1a1612;line-height:1.45;margin-bottom:10px">&ldquo;I don&rsquo;t even check calendar events anymore.&rdquo;</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#5B8FD4">&mdash; Member Dean Taylor</div>
       </div>
-      <div style="padding:20px 22px;border-radius:10px;background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.22);text-align:left">
-        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.92rem;color:#1a1612;line-height:1.45;margin-bottom:10px">&ldquo;The GnR invite has three courts all month &mdash; the skill rating event couldn&rsquo;t fill one.&rdquo;</div>
-        <div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#5B8FD4">&mdash; Krista Trefethen, NEPC General Manager</div>
+      <div style="padding:18px 20px;border-radius:10px;background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.22);text-align:left">
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.86rem;color:#1a1612;line-height:1.45;margin-bottom:10px">&ldquo;Finally, I feel like a person, not a rating.&rdquo;</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#5B8FD4">&mdash; Member Laurie Relinski</div>
+      </div>
+      <div style="padding:18px 20px;border-radius:10px;background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.22);text-align:left">
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.86rem;color:#1a1612;line-height:1.45;margin-bottom:10px">&ldquo;The GnR invite has three courts all month &mdash; the skill rating event couldn&rsquo;t fill one.&rdquo;</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#5B8FD4">&mdash; Krista Trefethen, NEPC General Manager</div>
       </div>
     </div>
   </div>
@@ -7575,33 +7581,7 @@ html, body, html body{
 
 </div>
 
-<!-- Radical Change in Player Behavior — nav pos 16 -->
-<div class="casey-slide ds-focus" id="cs-14">
-<section style="position:relative;min-height:100%;width:100%">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Behavior change</div>
-<div class="inner" style="padding-top:56px;text-align:center;max-width:860px">
-  <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3.2vw,2.4rem);font-weight:700;color:#1a1612;line-height:1.15;margin-bottom:10px">
-    Radical change in <em style="color:#b8954a">player behavior</em>.
-  </div>
-  <div style="font-size:0.82rem;color:rgba(26,22,18,0.58);margin-bottom:8px;font-style:italic">Your 24/7 personalized matchmaker.</div>
-  <div style="font-size:0.62rem;color:rgba(26,22,18,0.5);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin-bottom:32px">20,000 accepted invitations &middot; 300 active players</div>
-  <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap">
-    <div style="background:rgba(26,22,18,0.05);border:1px solid rgba(212,168,83,.18);border-radius:12px;padding:24px 28px;max-width:300px;text-align:left">
-      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.02rem;color:#1a1612;line-height:1.45;margin-bottom:14px;font-weight:500">&ldquo;It&rsquo;s such a psychological phenomenon &mdash; I couldn&rsquo;t fill a skill rating event on Monday at 5pm to save my soul, and now the Give 'n Receive invite has three courts all month.&rdquo;</div>
-      <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#b8954a">&mdash; GM Krista</div>
-    </div>
-    <div style="background:rgba(26,22,18,0.05);border:1px solid rgba(212,168,83,.18);border-radius:12px;padding:24px 28px;max-width:300px;text-align:left">
-      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.18rem;color:#1a1612;line-height:1.45;margin-bottom:14px;font-weight:500">&ldquo;Finally, I feel like a person, not a rating.&rdquo;</div>
-      <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#b8954a">&mdash; Member Laurie Relinski</div>
-    </div>
-    <div style="background:rgba(26,22,18,0.05);border:1px solid rgba(212,168,83,.18);border-radius:12px;padding:24px 28px;max-width:300px;text-align:left">
-      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.18rem;color:#1a1612;line-height:1.45;margin-bottom:14px;font-weight:500">&ldquo;I don&rsquo;t even check calendar events anymore.&rdquo;</div>
-      <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#b8954a">&mdash; Member Dean Taylor</div>
-    </div>
-  </div>
-</div>
-</section>
-</div>
+<!-- cs-14 (Radical Change in Player Behavior / Behavior change) DELETED 2026-04-29 — content folded into cs-11e Proving Ground (Laurie quote added there). -->
 
 <!-- The Leap — nav pos 17 -->
 <div class="casey-slide ds-focus" id="cs-15">
@@ -8769,7 +8749,8 @@ html, body, html body{
   @keyframes pinkPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(1.2)}}
   .ps-kicker{position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,168,83,0.85);z-index:10}
   .ps-wrap{padding:64px 48px 48px;text-align:center;max-width:1120px;margin:0 auto;width:100%}
-  .ps-title{font-family:'Playfair Display',serif;font-size:clamp(1.55rem,3.2vw,2.5rem);font-weight:700;color:#1a1612;line-height:1.2;margin:0 auto 12px;max-width:24ch}
+  .ps-title{font-family:'Playfair Display',serif;font-size:clamp(1.55rem,3.2vw,2.5rem);font-weight:700;color:#1a1612;line-height:1.2;margin:0 auto 12px;max-width:42ch;white-space:nowrap}
+  .ps-title span{white-space:normal}
   .ps-title em{font-style:italic;color:#b8954a}
   .ps-sub{font-family:'DM Sans',sans-serif;font-size:clamp(0.82rem,1.3vw,1rem);color:rgba(26,22,18,0.7);max-width:60ch;margin:0 auto;line-height:1.55}
   .ps-divider{width:80px;height:1px;background:linear-gradient(90deg,transparent,#d4a853,transparent);margin:24px auto}
@@ -9180,18 +9161,17 @@ const TOTAL = SLIDE_ORDER.length; // 20
 // === SLIDE-BY-SLIDE REVIEW WORKFLOW ===
 const SLIDE_ALTS = {
   8:  ['cs-7'],                  // alt: Cost of Honesty whispers
-  9:  ['cs-14'],                 // alt: Radical change in player behavior
   13: ['cs-16', 'cs-16b'],       // alts: Intelligence / Autonomous (vision flavor)
   14: ['cs-16'],                 // alt: Intelligence
   15: ['cs-20']                  // alt: Perfect Outlier Wedge (TAM math angle)
 };
-const REVIEW_POSITION = 8;
+const REVIEW_POSITION = 9;
 // LOCKED_POSITIONS: slides Dave has confirmed locked. Dots turn GREEN.
 // 1=cs-1 (Title), 2=cs-1b (Good Life), 3=cs-2b (What's a community?),
-// 4=cs-11d (Secret Inside Invitation), 5=cs-11 (Scheduling is measuring),
-// 6=cs-11e (NEPC Proving Ground) [LOCKED 2026-04-29].
-// 7=cs-11c (Signal Density 645K, AI top pick) — under review with cs-3/cs-11b as alts.
-const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6, 7];
+// 4=cs-11d (Proof · the living lab), 5=cs-11 (Scheduling is measuring),
+// 6=cs-11e (NEPC Proving Ground), 7=cs-3 (Our Wedge), 8=cs-4 (Data exists in our heads).
+// All locked 2026-04-29.
+const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6, 7, 8];
 
 const APPENDIX_TOTAL = 19;
 let current = 1;
