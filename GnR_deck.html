@@ -9209,11 +9209,15 @@ const SLIDE_ORDER = [
 const TOTAL = SLIDE_ORDER.length; // 18
 
 // === SLIDE-BY-SLIDE REVIEW WORKFLOW ===
-// Rule: alts only exist for UNDER-REVIEW slots, never for LOCKED slots (locked = decided).
+// Rule: alts only exist for UNDER-REVIEW slots (never on LOCKED).
+// Alt dots at REVIEW_POSITION render RED (matching primary review dot) — these are
+// "still uncertain, multiple candidates." Alt dots at non-review positions render gold.
 const SLIDE_ALTS = {
-  13: ['cs-16', 'cs-16b'],       // alts: Intelligence / Autonomous (vision flavor)
-  14: ['cs-16'],                 // alt: Intelligence
-  15: ['cs-20']                  // alt: Perfect Outlier Wedge (TAM math angle)
+  // Slot 9 (post cs-4 "Data exists in our heads"): multiple candidates — Dave's call.
+  // Primary: cs-13 (HITL + 25% adoption stat). Alts:
+  //   cs-12 = "Krista's judgment digitized" (human-moat framing, no metric)
+  //   cs-9  = "Invitation-Feed · Choosing IS measuring" (mechanism framing)
+  9: ['cs-12', 'cs-9']
 };
 const REVIEW_POSITION = 9;
 // LOCKED_POSITIONS: slides Dave has confirmed locked. Dots turn GREEN.
@@ -9385,9 +9389,12 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
   const pos = parseInt(posKey);
   const wrap = nav.children[pos - 1];
   if (!wrap) return;
+  // If this position is the REVIEW slot, the alts are also RED (multiple uncertain options).
+  // Otherwise alts render gold (alternative-but-not-under-review).
+  const isReviewSlot = (pos === REVIEW_POSITION);
   SLIDE_ALTS[posKey].forEach((altId) => {
     const altDot = document.createElement('button');
-    altDot.className = 'casey-dot alt';
+    altDot.className = 'casey-dot alt' + (isReviewSlot ? ' review' : '');
     altDot.title = altId + ' (alt for slide ' + pos + ')';
     altDot.onclick = (e) => {
       e.stopPropagation();
