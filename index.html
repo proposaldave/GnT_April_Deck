@@ -5249,11 +5249,11 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
   <!-- Callback below the 3 cards: acknowledges the manual heroic effort that holds
        these together today, then drives home the unmeasurability punchline.
-       Dave 2026-04-28 (replaces earlier 'Unsolved — until we measure uniqueness...'). -->
-  <div style="font-family:'Playfair Display',serif;color:#e8e0d0;line-height:1.4;max-width:980px;margin:8px auto 24px">
+       Editorial serif voice (Dave 2026-04-28: previous Manrope uppercase was too stark). -->
+  <div style="font-family:'Playfair Display',Georgia,serif;color:#e8e0d0;line-height:1.4;max-width:980px;margin:8px auto 24px">
     <div style="font-size:clamp(0.95rem,1.55vw,1.25rem);font-style:italic;font-weight:500;color:rgba(232,224,208,0.85);margin-bottom:10px">But they&rsquo;re built by hand.</div>
-    <div style="font-family:'Manrope','Inter',sans-serif;font-size:clamp(0.95rem,1.5vw,1.2rem);font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:#e04040;line-height:1.3">
-      Human connection stays unsolved <span style="color:#d4a853">until we measure it</span>.
+    <div style="font-size:clamp(1.1rem,1.85vw,1.5rem);font-weight:600;color:#e8e0d0;line-height:1.35;letter-spacing:-0.005em">
+      Human connection stays <strong style="color:#e04040;font-weight:700">unsolved</strong> <em style="font-style:italic;color:#d4a853">until we measure it</em>.
     </div>
   </div>
 
@@ -6413,20 +6413,36 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <div style="font-size:0.54rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(237,233,224,.42);margin-bottom:4px">Before the room</div>
       <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#5B8FD4;margin-bottom:18px">Invitation Feed</div>
 
-      <!-- Mini Like vs Invitation comparison (compressed from cs-10c) -->
-      <div style="display:grid;grid-template-columns:1fr 1px 1fr;gap:0;margin:0 auto 14px;align-items:center;max-width:340px">
-        <div style="text-align:center;padding:6px 4px">
-          <div style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:5px;background:#1877F2;box-shadow:0 2px 8px rgba(24,119,242,0.32)">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffffff"><path d="M2 11.5C2 10.6716 2.67157 10 3.5 10H6V20H3.5C2.67157 20 2 19.3284 2 18.5V11.5Z"/><path d="M7 9.99998L11 1.99998C12.6569 1.99998 14 3.34313 14 4.99998V8.99998H19.5C20.5 8.99998 21.2333 9.93331 21 10.9333L19.4 18.9333C19.2333 19.5333 18.6 20 18 20H7V9.99998Z"/></svg>
-            <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:.72rem;font-weight:700;color:#ffffff">Like</div>
-          </div>
-        </div>
-        <div style="height:64px;background:linear-gradient(180deg,transparent,rgba(212,168,83,0.32),transparent)"></div>
-        <div style="text-align:center;padding:6px 4px">
-          <div style="display:inline-flex;align-items:center;justify-content:center;width:62px;height:42px;border:2px solid #d4a853;border-radius:6px;position:relative;background:rgba(212,168,83,0.06);box-shadow:0 0 22px rgba(212,168,83,0.22)">
-            <svg width="40" height="30" viewBox="0 0 56 42" fill="none" style="margin-top:-3px"><path d="M4 6 L28 26 L52 6" stroke="#d4a853" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </div>
+      <!-- 4 invitation envelopes in 2x2, each containing a 4-dot group cluster.
+           Direct visual parallel to RIGHT card's 4 group clusters: each invitation
+           on the LEFT = a possible group on the RIGHT. The user is choosing among them.
+           Dave 2026-04-28: "invitations to spend time with these people or these people". -->
+      <div style="margin:0 auto 18px;display:flex;align-items:center;justify-content:center">
+        <svg viewBox="0 0 56 56" width="170" height="170">
+          <!-- Invitation 1 (top-left): blue/green/red/gold group -->
+          <rect x="3" y="4" width="22" height="18" rx="2" fill="rgba(91,143,212,0.07)" stroke="rgba(91,143,212,0.55)" stroke-width="1" stroke-dasharray="2 1.5"/>
+          <path d="M3 6 L14 12 L25 6" stroke="rgba(91,143,212,0.45)" stroke-width="0.6" fill="none"/>
+          <circle cx="10" cy="16" r="1.5" fill="#5B8FD4"/><circle cx="14" cy="16" r="1.5" fill="#3dff7a"/>
+          <circle cx="10" cy="19.5" r="1.5" fill="#D46B7E"/><circle cx="14" cy="19.5" r="1.5" fill="#f0c040"/>
+
+          <!-- Invitation 2 (top-right): green/purple/teal/orange group -->
+          <rect x="31" y="4" width="22" height="18" rx="2" fill="rgba(91,143,212,0.07)" stroke="rgba(91,143,212,0.55)" stroke-width="1" stroke-dasharray="2 1.5"/>
+          <path d="M31 6 L42 12 L53 6" stroke="rgba(91,143,212,0.45)" stroke-width="0.6" fill="none"/>
+          <circle cx="38" cy="16" r="1.5" fill="#3dff7a"/><circle cx="42" cy="16" r="1.5" fill="#c76bdb"/>
+          <circle cx="38" cy="19.5" r="1.5" fill="#4ae8c1"/><circle cx="42" cy="19.5" r="1.5" fill="#ff8a65"/>
+
+          <!-- Invitation 3 (bottom-left): green/red/yellow/lavender group -->
+          <rect x="3" y="32" width="22" height="18" rx="2" fill="rgba(91,143,212,0.07)" stroke="rgba(91,143,212,0.55)" stroke-width="1" stroke-dasharray="2 1.5"/>
+          <path d="M3 34 L14 40 L25 34" stroke="rgba(91,143,212,0.45)" stroke-width="0.6" fill="none"/>
+          <circle cx="10" cy="44" r="1.5" fill="#3dff7a"/><circle cx="14" cy="44" r="1.5" fill="#e04040"/>
+          <circle cx="10" cy="47.5" r="1.5" fill="#E8CC60"/><circle cx="14" cy="47.5" r="1.5" fill="#ce93d8"/>
+
+          <!-- Invitation 4 (bottom-right): green/blue/red/purple group -->
+          <rect x="31" y="32" width="22" height="18" rx="2" fill="rgba(91,143,212,0.07)" stroke="rgba(91,143,212,0.55)" stroke-width="1" stroke-dasharray="2 1.5"/>
+          <path d="M31 34 L42 40 L53 34" stroke="rgba(91,143,212,0.45)" stroke-width="0.6" fill="none"/>
+          <circle cx="38" cy="44" r="1.5" fill="#3dff7a"/><circle cx="42" cy="44" r="1.5" fill="#64b5f6"/>
+          <circle cx="38" cy="47.5" r="1.5" fill="#D46B7E"/><circle cx="42" cy="47.5" r="1.5" fill="#c76bdb"/>
+        </svg>
       </div>
 
       <!-- The reveal — punchline absorbed from cs-10c -->
@@ -7780,9 +7796,14 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div class="casey-slide ds-focus" id="cs-18">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Founder Dave Velardo</div>
-<div class="inner" style="padding-top:56px;text-align:center;max-width:800px">
-  <div class="display" style="font-size:clamp(1.2rem,2.5vw,1.8rem);margin-bottom:8px">I turned down an acquisition because I knew the answer wasn&rsquo;t another skill rating system.</div>
-  <div style="font-size:0.72rem;color:rgba(237,233,224,.6);margin-bottom:28px">Years of watching who people choose, who they avoid, and what no software has ever captured.</div>
+<div class="inner" style="padding-top:48px;text-align:center;max-width:920px">
+  <div class="display" style="font-size:clamp(1.35rem,2.7vw,2rem);margin-bottom:14px;line-height:1.25;font-weight:700">
+    I turned down the acquisition. Built <em style="font-style:italic;color:#d4a853">New England Pickleball Club</em> instead &mdash; to figure out the new future.
+  </div>
+  <div style="font-family:'Playfair Display',serif;font-size:clamp(0.92rem,1.5vw,1.18rem);color:rgba(237,233,224,.85);margin-bottom:28px;line-height:1.5;font-style:italic;max-width:840px;margin-left:auto;margin-right:auto">
+    Real-world social communities run on <span style="color:#d4a853;font-style:italic">human connection</span>. That&rsquo;s what they are. But it&rsquo;s not measured.<br>
+    <strong style="font-weight:700;color:#3dff7a;font-style:normal">So we built the system that does.</strong>
+  </div>
 
   <!-- Timeline -->
   <div style="display:flex;align-items:flex-start;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:28px;position:relative">
@@ -8772,11 +8793,14 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 // ACT 4+: cs-10 through cs-26 unchanged
 
 const SLIDE_ORDER = [
-  // cs-10c (Invitation Feed insight) MERGED into cs-11 LEFT card on Dave 2026-04-28.
-  // The standalone slide HTML stays in place so we can revert if needed.
+  // cs-10c MERGED into cs-11 LEFT card. HTML preserved for revert.
+  // cs-10 (Human Value Marketplace) PULLED from main flow (Dave 2026-04-28) — HTML preserved
+  //   for revert; can move to appendix or much later if wanted.
+  // cs-18 (Founder Journey / About Me) MOVED UP to right after cs-8b (Abundance) per Dave —
+  //   the founder narrative lands when the 'Abundance' arc opens, before the proof slides.
   'cs-1','cs-1b','cs-2b','cs-11','cs-3',
-  'cs-4','cs-7','cs-8','cs-8b','cs-10','cs-11b','cs-11e','cs-11d','cs-11c','cs-19','cs-12','cs-13',
-  'cs-14','cs-15','cs-16','cs-16b','cs-17','cs-18','cs-20','cs-21','cs-23',
+  'cs-4','cs-7','cs-8','cs-8b','cs-18','cs-11b','cs-11e','cs-11d','cs-11c','cs-19','cs-12','cs-13',
+  'cs-14','cs-15','cs-16','cs-16b','cs-17','cs-20','cs-21','cs-23',
   'cs-24','cs-25','cs-1a','cs-26'
 ];
 const TOTAL = SLIDE_ORDER.length; // 29 (+ cs-8c Scheduling IS measuring transition)
