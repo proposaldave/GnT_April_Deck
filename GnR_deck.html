@@ -7720,16 +7720,11 @@ html, body, html body{
         <text x="220" y="72" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="700" letter-spacing="0.04em" fill="#2a8a4f">RSVPs</text>
         <circle r="3" fill="#2a8a4f" filter="drop-shadow(0 0 4px #3dff7a)"><animateMotion dur="1.8s" repeatCount="indefinite" path="M220,100 L220,176"/></circle>
       </g>
-      <!-- 2. Group ratings (top-right) -->
-      <g>
-        <circle cx="330" cy="120" r="12" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.6"/>
-        <text x="358" y="115" font-family="Manrope,sans-serif" font-size="14" font-weight="700" letter-spacing="0.04em" fill="#5B8FD4">group ratings</text>
-        <circle r="3" fill="#5B8FD4" filter="drop-shadow(0 0 4px #5B8FD4)"><animateMotion dur="2.1s" repeatCount="indefinite" path="M323,128 L246,205"/></circle>
-      </g>
-      <!-- 3. Cancellations (right) -->
+      <!-- 2. Group ratings DELETED per Dave 2026-04-29 -->
+      <!-- 3. Cancelations (right) -->
       <g>
         <circle cx="350" cy="220" r="12" fill="rgba(232,138,74,0.18)" stroke="#c8632c" stroke-width="1.6"/>
-        <text x="378" y="225" font-family="Manrope,sans-serif" font-size="14" font-weight="700" letter-spacing="0.04em" fill="#c8632c">cancels</text>
+        <text x="378" y="225" font-family="Manrope,sans-serif" font-size="14" font-weight="700" letter-spacing="0.04em" fill="#c8632c">cancelations</text>
         <circle r="3" fill="#c8632c" filter="drop-shadow(0 0 4px #e88a4a)"><animateMotion dur="2.3s" repeatCount="indefinite" path="M338,220 L260,220"/></circle>
       </g>
       <!-- 4. Partner selection (bottom-right) -->
@@ -7784,10 +7779,10 @@ html, body, html body{
         <text x="448" y="186" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#c8632c">pro lesson feedback</text>
         <circle r="2.6" fill="#c8632c"><animateMotion dur="2.5s" repeatCount="indefinite" path="M423,185 L257,213"/></circle>
       </g>
-      <!-- 12. Personality quiz — 30° (lower-right) at (406, 328) -->
+      <!-- 12. Personality quiz — 30° (lower-right) at (406, 328). Label moved BELOW circle to clear partner selection label at y=335. -->
       <g>
         <circle cx="406" cy="328" r="9" fill="rgba(122,74,140,0.18)" stroke="#7a4a8c" stroke-width="1.4"/>
-        <text x="422" y="332" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#7a4a8c">personality quiz</text>
+        <text x="406" y="362" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#7a4a8c">personality quiz</text>
         <circle r="2.6" fill="#7a4a8c"><animateMotion dur="2.2s" repeatCount="indefinite" path="M398,322 L256,250"/></circle>
       </g>
       <!-- 13. Auto-scheduler — 70° (bottom-right) at (294, 422) — NEW INPUT Dave 2026-04-29 -->
@@ -7796,10 +7791,10 @@ html, body, html body{
         <text x="310" y="442" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#2a8a4f">auto-scheduler</text>
         <circle r="2.6" fill="#2a8a4f"><animateMotion dur="2.7s" repeatCount="indefinite" path="M286,415 L235,253"/></circle>
       </g>
-      <!-- 14. Auto-research thriving communities — 110° (bottom-left) at (146, 422) — NEW INPUT Dave 2026-04-29 -->
+      <!-- 14. Auto-research thriving clubs — 110° (bottom-left) at (146, 422) — Dave 2026-04-29 -->
       <g>
         <circle cx="146" cy="422" r="9" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.4"/>
-        <text x="130" y="442" text-anchor="end" font-family="Playfair Display, serif" font-style="italic" font-size="13" font-weight="700" letter-spacing="0.02em" fill="#b8954a">auto-research thriving communities</text>
+        <text x="130" y="442" text-anchor="end" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#b8954a">auto-research thriving clubs</text>
         <circle r="2.6" fill="#b8954a"><animateMotion dur="2.8s" repeatCount="indefinite" path="M154,415 L205,253"/></circle>
       </g>
       <!-- 15. Computer vision — 150° (left-lower) at (34, 328) -->
@@ -7814,11 +7809,12 @@ html, body, html body{
         <text x="-8" y="186" text-anchor="end" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#5fa896">historical court bookings</text>
         <circle r="2.6" fill="#5fa896"><animateMotion dur="2.6s" repeatCount="indefinite" path="M17,185 L183,213"/></circle>
       </g>
-      <!-- 17. Relationship-AI — 230° (top-left) at (82, 55) -->
+      <!-- 17. Relationship-AI — moved to bottom-right next to diary per Dave 2026-04-29 (low importance).
+           Position (340, 388) — between auto-scheduler (294,422) and partner-selection (330,320). -->
       <g>
-        <circle cx="82" cy="55" r="9" fill="rgba(91,168,150,0.18)" stroke="#5fa896" stroke-width="1.4"/>
-        <text x="65" y="48" text-anchor="end" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#5fa896">relationship-AI</text>
-        <circle r="2.6" fill="#5fa896"><animateMotion dur="2.4s" repeatCount="indefinite" path="M88,63 L205,194"/></circle>
+        <circle cx="340" cy="388" r="9" fill="rgba(91,168,150,0.18)" stroke="#5fa896" stroke-width="1.4"/>
+        <text x="356" y="392" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#5fa896">relationship-AI</text>
+        <circle r="2.6" fill="#5fa896"><animateMotion dur="2.4s" repeatCount="indefinite" path="M333,381 L240,255"/></circle>
       </g>
 
       <!-- "OUTPUTS" strip and "smarter matches" deleted Dave 2026-04-29.
