@@ -22,6 +22,11 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060609;color:#f5f2e
 .casey-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.18);border:none;padding:0;cursor:pointer;transition:all 0.3s ease}
 .casey-dot:hover{background:rgba(255,255,255,0.35);transform:scale(1.2)}
 .casey-dot.on{background:#d4a853;box-shadow:0 0 12px rgba(212,168,83,0.6);width:24px;border-radius:5px}
+.casey-dot.review{background:#e04040 !important;box-shadow:0 0 14px rgba(224,64,64,0.85) !important;animation:reviewPulse 1.6s ease-in-out infinite}
+.casey-dot.review.on{background:#e04040 !important}
+.casey-dot.alt{position:absolute;left:50%;transform:translateX(-50%);top:18px;width:7px !important;height:7px !important;background:rgba(212,168,83,0.55);border:1px solid rgba(212,168,83,0.85);box-shadow:0 0 6px rgba(212,168,83,0.4)}
+.casey-dot.alt.review{background:#e04040 !important;border:1px solid #e04040 !important;box-shadow:0 0 8px rgba(224,64,64,0.95) !important}
+@keyframes reviewPulse{0%,100%{box-shadow:0 0 14px rgba(224,64,64,0.85)}50%{box-shadow:0 0 22px rgba(224,64,64,1)}}
 .casey-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#d4a853,#e04040,#3dff7a);z-index:999;transition:width 0.5s ease}
 .casey-count{position:fixed;top:12px;right:20px;font-size:12px;font-weight:600;color:rgba(232,224,208,0.7);letter-spacing:1.5px;z-index:999;font-family:'DM Sans',sans-serif}
 
@@ -8440,12 +8445,22 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 // ACT 4+: cs-10 through cs-26 unchanged
 
 const SLIDE_ORDER = [
-  'cs-1','cs-1a','cs-1b','cs-2','cs-2b','cs-3','cs-10c','cs-11',
+  'cs-1','cs-1b','cs-1a','cs-2','cs-2b','cs-3','cs-10c','cs-11',
   'cs-4','cs-7','cs-8','cs-8b','cs-10','cs-11b','cs-11e','cs-11d','cs-11c','cs-19','cs-12','cs-13',
   'cs-14','cs-15','cs-16','cs-16b','cs-17','cs-18','cs-20','cs-21','cs-23',
   'cs-24','cs-25','cs-26'
 ];
 const TOTAL = SLIDE_ORDER.length; // 29 (+ cs-8c Scheduling IS measuring transition)
+
+// === SLIDE-BY-SLIDE REVIEW WORKFLOW ===
+// SLIDE_ALTS: position (1-indexed in SLIDE_ORDER) -> array of alternative slide IDs to stack BELOW the primary dot.
+// Top dot = AI's FIRST CHOICE. Stacked dots = alternatives in priority order (second-best below top).
+// Empty {} = AI is locked on its first choice; no alternatives proposed.
+const SLIDE_ALTS = {};
+// REVIEW_POSITION: which dot position is currently under review — turns RED ("stop light, we're stopped here").
+// Set to null when not actively reviewing.
+const REVIEW_POSITION = 2;
+
 const APPENDIX_TOTAL = 19;
 let current = 1;
 let inAppendix = false;
@@ -8599,6 +8614,41 @@ for (let i = 1; i <= TOTAL; i++) {
   wrap.appendChild(tip);
   nav.appendChild(wrap);
 }
+// Inject alternative dots stacked below primary dots (slide-by-slide review workflow)
+Object.keys(SLIDE_ALTS).forEach(posKey => {
+  const pos = parseInt(posKey);
+  const wrap = nav.children[pos - 1];
+  if (!wrap) return;
+  SLIDE_ALTS[posKey].forEach((altId) => {
+    const altDot = document.createElement('button');
+    altDot.className = 'casey-dot alt';
+    altDot.title = altId + ' (alt for slide ' + pos + ')';
+    altDot.onclick = (e) => {
+      e.stopPropagation();
+      // Manual navigate to the alt slide ID — without disturbing the primary SLIDE_ORDER index
+      document.querySelectorAll('.casey-slide').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.appendix-slide').forEach(s => { s.style.display = 'none'; });
+      const target = document.getElementById(altId);
+      if (target) target.classList.add('active');
+      // Update progress bar to the position (visually we are still at slide N)
+      document.getElementById('cbar').style.width = ((pos / TOTAL) * 100) + '%';
+      document.getElementById('ccount').textContent = pos + ' / ' + TOTAL + ' (alt)';
+      // Visual: glow this alt dot, dim siblings
+      document.querySelectorAll('.casey-dot').forEach(d => d.classList.remove('on'));
+      altDot.classList.add('on');
+    };
+    wrap.appendChild(altDot);
+  });
+});
+
+// Apply REVIEW (green) marker to the position currently under review
+if (typeof REVIEW_POSITION === 'number' && REVIEW_POSITION > 0) {
+  const reviewWrap = nav.children[REVIEW_POSITION - 1];
+  if (reviewWrap) {
+    reviewWrap.querySelectorAll('.casey-dot').forEach(d => d.classList.add('review'));
+  }
+}
+
 // Add appendix button
 const abtn = document.createElement('button');
 abtn.id = 'appendixBtn';
