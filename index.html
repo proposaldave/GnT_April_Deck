@@ -6938,8 +6938,8 @@ html, body, html body{
   <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.4rem);color:#1a1612;line-height:1.2;margin-bottom:8px;font-weight:700;max-width:1100px;margin-left:auto;margin-right:auto;letter-spacing:-0.008em">
     Pickleball is the <em style="font-style:italic;color:#2a8a4f;font-weight:800">fastest-growing</em>, <em style="font-style:italic;color:#2a8a4f;font-weight:800">highest-velocity</em>,<br><em style="font-style:italic;color:#2a8a4f;font-weight:800">densest social-signal</em> community ever.
   </div>
-  <!-- Hero stick figure -->
-  <div style="display:flex;justify-content:center;margin-bottom:8px">
+  <!-- Hero stick figure (tightened spacing — closer to caption below than hero above) -->
+  <div style="display:flex;justify-content:center;margin-top:-4px;margin-bottom:-6px">
     <svg viewBox="0 0 64 112" width="86" height="150" aria-label="pickleball player">
       <circle cx="30" cy="14" r="10" fill="none" stroke="#c8632c" stroke-width="2.4"/>
       <line x1="30" y1="24" x2="30" y2="60" stroke="#c8632c" stroke-width="2.4" stroke-linecap="round"/>
@@ -6964,7 +6964,7 @@ html, body, html body{
 
   <!-- Bottom payoff line — moved from top hero (Dave 2026-04-29) -->
   <div style="font-family:'Playfair Display',serif;font-size:clamp(1.05rem,2.2vw,1.55rem);font-weight:700;font-style:italic;color:#2a8a4f;line-height:1.3;margin-top:24px;text-align:center;max-width:980px;margin-left:auto;margin-right:auto">
-    Each is it's own <span style="color:#5B8FD4">Give</span><span style="color:#1a1612;font-weight:400;font-style:italic;padding:0 3px">'n</span><span style="color:#c8462c">Receive</span> experience and experiment.
+    <span style="color:#1a1612;font-weight:800">24</span> unique <span style="color:#5B8FD4">Give</span><span style="color:#1a1612;font-weight:400;font-style:italic;padding:0 3px">'n</span><span style="color:#c8462c">Receive</span> experience-experiments.
   </div>
 </div>
 
@@ -9159,21 +9159,34 @@ const SLIDE_ORDER = [
   // Alts: cs-18 (Founder Journey — credibility), cs-19 (3x Net Profit — business case).
   // cs-11c (Signal Density 645K) REMOVED from main flow Dave 2026-04-29 — 645K vs canonical
   // ~145K is inflated; don't surface in main deck where investors will dig. Lives in HTML for appendix.
-  // 2026-04-29 v7: slides 1-7 LOCKED. cs-19 moved to late deck.
-  // Slide 8 = cs-4 ('The data exists in all our heads' — the untapped private-thoughts dataset).
-  // After WEDGE (signal density), cs-4 deepens the MOAT thesis: the data is proprietary
-  // because nobody else has access. Bridges wedge -> moat -> founder/vision later.
-  // Alts: cs-18 (Founder Journey), cs-16b (Autonomous social coordination — vision).
+  // 2026-04-29 v8: slides 1-7 LOCKED. AI-driven full reorder of remaining slides.
+  // Story arc: Wedge (7) -> Moat -> Engine -> Origin/Story -> Founder -> Vision -> TAM -> Model -> Credibility -> Ask -> Promise -> Closer.
+  // Slides moved to appendix: cs-7, cs-8, cs-14, cs-16, cs-17, cs-20, cs-21, cs-1a.
   'cs-1','cs-1b','cs-2b','cs-11d','cs-11',
-  'cs-11e','cs-3','cs-4','cs-18','cs-11b','cs-7','cs-8','cs-8b','cs-12','cs-13',
-  'cs-14','cs-15','cs-16','cs-16b','cs-17','cs-20','cs-21','cs-23','cs-19',
-  'cs-24','cs-25','cs-1a','cs-26'
+  'cs-11e','cs-3',
+  'cs-4',     //  8 Moat — data in our heads
+  'cs-13',    //  9 Engine — HITL Krista loop
+  'cs-11b',   // 10 NEPC Numbers
+  'cs-12',    // 11 Origin — How it started at NEPC
+  'cs-18',    // 12 Founder Journey
+  'cs-15',    // 13 The Leap (vision pivot)
+  'cs-16b',   // 14 Autonomous social coordination (vision climax)
+  'cs-8b',    // 15 Abundance · TAM
+  'cs-19',    // 16 3x Net Profit · Business Model
+  'cs-23',    // 17 Brian Chesky · credibility
+  'cs-24',    // 18 The Ask
+  'cs-25',    // 19 The Promise
+  'cs-26'     // 20 Closer
 ];
-const TOTAL = SLIDE_ORDER.length; // 28
+const TOTAL = SLIDE_ORDER.length; // 20
 
 // === SLIDE-BY-SLIDE REVIEW WORKFLOW ===
 const SLIDE_ALTS = {
-  8: ['cs-18', 'cs-16b']  // pos 8 alts below top pick cs-4: Founder Journey / Vision
+  8:  ['cs-7'],                  // alt: Cost of Honesty whispers
+  9:  ['cs-14'],                 // alt: Radical change in player behavior
+  13: ['cs-16', 'cs-16b'],       // alts: Intelligence / Autonomous (vision flavor)
+  14: ['cs-16'],                 // alt: Intelligence
+  15: ['cs-20']                  // alt: Perfect Outlier Wedge (TAM math angle)
 };
 const REVIEW_POSITION = 8;
 // LOCKED_POSITIONS: slides Dave has confirmed locked. Dots turn GREEN.
