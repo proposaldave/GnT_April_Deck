@@ -4905,8 +4905,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       </svg>
       <!-- Title slide tagline — bungalow lift (Dave 2026-04-26): category claim + the promise.
            Old "Abundant, autonomous human connection" moved to closing slide cs-26. -->
-      <!-- Single tagline per Dave 2026-04-28 ("too much text"). Subhead removed. -->
-      <div style="display:block;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(22px,2.8vw,38px);font-weight:500;color:#e8e0d0;margin:0 auto;text-align:center;max-width:none;line-height:1.25">Abundant, autonomous human connection</div>
+      <!-- Title tagline — substantive only (Dave 2026-04-28). The abundance vision line moves to its own slide cs-1a. -->
+      <div style="display:block;font-family:'Manrope','Inter',system-ui,sans-serif;font-size:clamp(13px,1.5vw,18px);font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:rgba(232,224,208,0.78);margin:0 auto;text-align:center;max-width:none">Our uniqueness, value, and connection to each other &mdash; <em style="font-style:italic;color:#e8e0d0">finally measured, marketable, and scalable</em></div>
       <div class="divider" style="margin:28px auto 20px;"></div>
     </div>
   </div>
@@ -8089,6 +8089,23 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </style>
 
 <!-- cs-1b (was a13): THE MISSING CATEGORY — promoted to front, between cs-1a and cs-2 -->
+<!-- Mission / Vision slide — Dave 2026-04-28: "our vision is for all our lives to run on abundant human connection." -->
+<div class="casey-slide ds-measure" id="cs-1a">
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Our vision</div>
+<div class="s on">
+  <div class="stg" style="display:flex;align-items:center;justify-content:center;min-height:80vh">
+    <div style="text-align:center;max-width:1180px;padding:0 48px">
+      <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:rgba(232,224,208,0.45);margin-bottom:24px">All our lives run on</div>
+      <div style="font-family:'Playfair Display',serif;font-size:clamp(3rem,7.5vw,6.4rem);font-weight:900;line-height:1;letter-spacing:-0.04em;background:linear-gradient(180deg,#f0c040 0%,#d4a853 55%,#e88a4a 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:0 0 60px rgba(212,168,83,0.28);margin-bottom:18px">Abundant<br>human connection</div>
+      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,1.8vw,1.4rem);color:rgba(237,233,224,0.78);max-width:780px;margin:0 auto;line-height:1.45;font-weight:500">
+        Every prior substrate of civilization &mdash; food, water, information, money &mdash; has gone abundant.<br>
+        <em style="font-style:italic;color:#d4a853">Human connection is next.</em>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
 <div class="casey-slide ds-focus" id="cs-1b">
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center">
   <div class="ps-kicker">What&rsquo;s a good life?</div>
@@ -8423,7 +8440,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 // ACT 4+: cs-10 through cs-26 unchanged
 
 const SLIDE_ORDER = [
-  'cs-1','cs-1b','cs-2','cs-2b','cs-3','cs-10c','cs-11',
+  'cs-1','cs-1a','cs-1b','cs-2','cs-2b','cs-3','cs-10c','cs-11',
   'cs-4','cs-7','cs-8','cs-8b','cs-10','cs-11b','cs-11e','cs-11d','cs-11c','cs-19','cs-12','cs-13',
   'cs-14','cs-15','cs-16','cs-16b','cs-17','cs-18','cs-20','cs-21','cs-23',
   'cs-24','cs-25','cs-26'
