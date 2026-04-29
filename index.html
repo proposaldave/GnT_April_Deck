@@ -7373,7 +7373,7 @@ html, body, html body{
      killer insight, closer is now the bridge into the operational proof slides. -->
 <div class="casey-slide ds-focus" id="cs-11d">
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10;">Inside New England Pickleball Club</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'JetBrains Mono',monospace;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.5);z-index:10;">The secret inside the invitation</div>
   <div style="padding:54px 48px;text-align:center;max-width:1180px;margin:0 auto;width:100%">
     <div style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.4vw,2.8rem);color:#1a1612;line-height:1.22;font-weight:600;margin-bottom:32px;max-width:1080px;margin-left:auto;margin-right:auto">
       When people say <em style="font-style:italic;color:#c8462c">no</em> to a group,<br>
@@ -9092,11 +9092,15 @@ html, body, html body{
 // ACT 4+: cs-10 through cs-26 unchanged
 
 const SLIDE_ORDER = [
-  // Dave 2026-04-29: AI proposing cs-3 as slide 4 (pickleball wedge, post-paper-migration).
-  // Top seed pitch logic: after "communities are unsolved," show the WEDGE before the PRODUCT.
-  // Alts cs-11 + cs-8b stacked below for Dave to swap if preferred.
-  'cs-1','cs-1b','cs-2b','cs-3','cs-11',
-  'cs-4','cs-7','cs-8','cs-8b','cs-18','cs-11d','cs-11b','cs-11e','cs-11c','cs-19','cs-12','cs-13',
+  // Dave 2026-04-29 v2: AI deep-thought slide 4 after reading older deck (GnT_Pitch_Deck 2026 v3).
+  // Old deck arc was: INDUSTRY ERROR -> JOURNEY -> SECRET INSIDE INVITATION (70/0.6) -> PROOF -> WEDGE.
+  // The 70/0.6 stat is THE single most powerful insight in the whole deck.
+  // After cs-2b ("communities run on something nothing measures"), the audience's
+  // burning question is "what does GnR measure that's different?" — cs-11d answers it.
+  // Then wedge (cs-3) and product (cs-11) follow naturally.
+  // Alts cs-3 (wedge) and cs-11 (product) stacked below for Dave to swap.
+  'cs-1','cs-1b','cs-2b','cs-11d','cs-3',
+  'cs-11','cs-4','cs-7','cs-8','cs-8b','cs-18','cs-11b','cs-11e','cs-11c','cs-19','cs-12','cs-13',
   'cs-14','cs-15','cs-16','cs-16b','cs-17','cs-20','cs-21','cs-23',
   'cs-24','cs-25','cs-1a','cs-26'
 ];
@@ -9105,15 +9109,16 @@ const TOTAL = SLIDE_ORDER.length; // 29
 // === SLIDE-BY-SLIDE REVIEW WORKFLOW ===
 // SLIDE_ALTS: position (1-indexed in SLIDE_ORDER) -> array of alt slide IDs stacked BELOW the primary dot.
 // Top dot = AI's FIRST CHOICE (matches SLIDE_ORDER). Stacked dots = alternatives in priority order.
-// Dave 2026-04-29: position 4 has alts. AI recommends cs-3 (wedge); cs-11 and cs-8b are alternates.
+// Dave 2026-04-29 v2: position 4 = cs-11d (Secret Inside the Invitation, 70/0.6).
+// Alts: cs-3 (wedge), cs-11 (product), cs-8b (opportunity size).
 const SLIDE_ALTS = {
-  4: ['cs-11', 'cs-8b']  // pos 4 alts: Core Product / Opportunity Size (below top recommendation cs-3)
+  4: ['cs-3', 'cs-11', 'cs-8b']  // pos 4 alts below top pick cs-11d
 };
-// REVIEW_POSITION: which dot position is currently under review — turns RED ("stop light, we're stopped here").
+// REVIEW_POSITION: which dot position is currently under review — turns RED.
 const REVIEW_POSITION = 4;
-// LOCKED_POSITIONS: slides Dave has confirmed locked. Dots turn GREEN. Goal = all green.
+// LOCKED_POSITIONS: slides Dave has confirmed locked. Dots turn GREEN.
 // 1=cs-1 (title), 2=cs-1b (science gap), 3=cs-2b ("What's a community?").
-// 4=cs-3 (pickleball wedge, AI's top choice) — under review with cs-11 / cs-8b as alts.
+// 4=cs-11d (Secret Inside the Invitation 70/0.6, AI's TOP CHOICE) — under review with alts.
 const LOCKED_POSITIONS = [1, 2, 3];
 
 const APPENDIX_TOTAL = 19;
@@ -9219,9 +9224,10 @@ const slideLabels = [
   "Give 'n Receive",                                    //  1 cs-1
   'Human connection · #1 predictor of fulfilling life', //  2 cs-1b
   "What's a community?",                              //  3 cs-2b
-  'Pickleball wedge · max signal density · velocity · need', //  4 cs-3 [AI recommendation 2026-04-29]
-  'Core Product · Scheduling is measuring',           //  5 cs-11
-  'Matchmaking in Social Sports Communities',        //  6 cs-4
+  'The Secret Inside the Invitation · 70/0.6',     //  4 cs-11d [AI top pick 2026-04-29 v2]
+  'Pickleball wedge · max signal density',           //  5 cs-3
+  'Core Product · Scheduling is measuring',           //  6 cs-11
+  'Matchmaking in Social Sports Communities',        //  7 cs-4
   'The Data Exists',                                 //  7 cs-6
   'The Cost of Honesty',                             //  8 cs-7
   'The Uncomfortable Cultural Shift',                //  9 cs-8
