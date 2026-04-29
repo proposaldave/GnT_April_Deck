@@ -4903,23 +4903,44 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
 
 <!-- SLIDE 1: GnT Title (wordmark) -->
-<div class="casey-slide ds-measure active" id="cs-1">
-<!-- Title slide: redundant eyebrow removed (Dave 2026-04-28). The wordmark IS the title.
-     .stg given explicit flex-centering so cluster sits at true optical center. -->
-<div class="s on">
-    <div class="stg" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;text-align:center">
-      <!-- Give n Receive wordmark — viewBox tightened to actual text bounds so xMid centers visually. -->
-      <svg viewBox="0 0 1140 220" width="660" height="127" preserveAspectRatio="xMidYMid meet" style="display:block;margin:0 auto 32px auto;max-width:88%;height:auto" xmlns="http://www.w3.org/2000/svg">
-        <!-- Decorative arc above "n" -->
-        <path d="M 375 52 Q 412 2 450 52" stroke="#e8e0d0" stroke-width="2.2" fill="none" opacity="0.45" stroke-linecap="round"/>
-        <circle cx="375" cy="52" r="3.2" fill="#5B8FD4" opacity="0.9"/>
-        <circle cx="450" cy="52" r="3.2" fill="#e04040" opacity="0.95"/>
-        <text x="0" y="175" font-family="Playfair Display, Georgia, serif" font-size="150" font-weight="500" fill="#5B8FD4" letter-spacing="-2">Give</text>
-        <text x="375" y="175" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="112" font-weight="400" fill="#e8e0d0">n</text>
-        <text x="490" y="175" font-family="Playfair Display, Georgia, serif" font-size="150" font-weight="500" fill="#e04040" letter-spacing="-2">Receive</text>
+<!-- SLIDE 1: GnR Title — PAPER design system (Dave 2026-04-28 v2)
+     The deck-wide design system this slide is meant to carry across all 30+ slides.
+     Foundation: warm cream paper background, ink Fraunces serif, original GnR brand
+     wordmark (blue Give + ink italic n + red Receive), gold leaf accent for emphasis.
+     Strict: no "No. 01" stamps, no "An operating system" subhead, no clutter.
+     Just wordmark + tagline + a single thin gold rule. -->
+<div class="casey-slide ds-measure active" id="cs-1" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Subtle paper grain -->
+  <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
+  <!-- Warm golden hour glow -->
+  <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
+  <!-- Tiny meta corners — mono, very faint -->
+  <div style="position:absolute;top:24px;left:32px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(26,22,18,0.42);z-index:10">Give 'n Receive · 2026</div>
+  <div style="position:absolute;bottom:24px;right:32px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(26,22,18,0.4);z-index:10">a16z Speedrun</div>
+  <div class="s on" style="background:transparent">
+    <div class="stg" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;text-align:center;color:#1a1612">
+      <!-- Wordmark — original GnR colors. Blue Give (exact #5B8FD4) + ink italic n + red Receive (exact #e04040).
+           The n flips from cream→ink for legibility on light bg; brand identity preserved. -->
+      <svg viewBox="0 0 1140 220" width="820" height="158" preserveAspectRatio="xMidYMid meet" style="display:block;margin:0 auto 38px auto;max-width:90%;height:auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Gold leaf arc above the n — connecting blue and red -->
+        <path d="M 375 52 Q 412 -2 450 52" stroke="#b8954a" stroke-width="2.2" fill="none" opacity="0.85" stroke-linecap="round"/>
+        <circle cx="375" cy="52" r="3.6" fill="#5B8FD4"/>
+        <circle cx="450" cy="52" r="3.6" fill="#e04040"/>
+        <text x="0" y="180" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="178" font-weight="500" fill="#5B8FD4" letter-spacing="-3">Give</text>
+        <text x="385" y="180" font-family="Fraunces, Playfair Display, Georgia, serif" font-style="italic" font-size="128" font-weight="400" fill="#1a1612">n</text>
+        <text x="500" y="180" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="178" font-weight="500" fill="#e04040" letter-spacing="-3">Receive</text>
       </svg>
-      <div style="display:block;font-family:'Manrope','Inter',system-ui,sans-serif;font-size:clamp(14px,1.6vw,20px);font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:rgba(232,224,208,0.78);margin:0 auto;text-align:center;max-width:none">Our uniqueness, value, and human connection in our real-world communities &mdash; <em style="font-style:italic;color:#e8e0d0">finally digitized</em></div>
-      <div class="divider" style="margin:28px auto 0;"></div>
+      <!-- Tagline — Fraunces italic, ink, with gold "finally digitized" emphasis -->
+      <div style="font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:clamp(20px,2vw,30px);font-weight:400;color:#1a1612;line-height:1.45;max-width:960px;margin:0 auto 22px;letter-spacing:-0.005em">
+        Our uniqueness, value, and human connection in our real-world communities &mdash; <span style="color:#b8954a;font-weight:600">finally digitized</span>.
+      </div>
+      <!-- Thin gold rule -->
+      <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:6px">
+        <div style="width:48px;height:1px;background:#b8954a"></div>
+        <div style="width:5px;height:5px;border:1px solid #b8954a;transform:rotate(45deg)"></div>
+        <div style="width:48px;height:1px;background:#b8954a"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -5165,14 +5186,11 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <div style="flex:1;min-width:240px;max-width:320px;background:linear-gradient(180deg,rgba(224,64,64,0.10) 0%,rgba(224,64,64,0.04) 100%);border:1px solid rgba(224,64,64,0.42);border-radius:18px;padding:42px 26px 36px;text-align:center;box-shadow:0 0 28px rgba(224,64,64,0.10)">
       <div style="position:relative;width:104px;height:104px;margin:0 auto 22px">
         <svg width="104" height="104" viewBox="0 0 96 96" fill="none">
-          <!-- 4 player nodes in a 2x2, with intentional pair-connections -->
-          <circle cx="26" cy="26" r="11" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="2.4"/>
-          <circle cx="70" cy="26" r="11" fill="rgba(212,107,126,0.18)" stroke="#D46B7E" stroke-width="2.4"/>
-          <circle cx="26" cy="70" r="11" fill="rgba(199,107,219,0.18)" stroke="#c76bdb" stroke-width="2.4"/>
-          <circle cx="70" cy="70" r="11" fill="rgba(74,232,193,0.18)" stroke="#4ae8c1" stroke-width="2.4"/>
-          <!-- Intentional pairings (curved arrows showing matchmaking decisions) -->
-          <path d="M 35 28 Q 48 14 61 28" stroke="rgba(212,168,83,0.55)" stroke-width="1.8" fill="none" stroke-dasharray="3 3"/>
-          <path d="M 28 35 Q 14 48 28 61" stroke="rgba(212,168,83,0.55)" stroke-width="1.8" fill="none" stroke-dasharray="3 3"/>
+          <!-- 2 player nodes — matchmaking is fundamentally a PAIR decision -->
+          <circle cx="30" cy="48" r="14" fill="rgba(91,143,212,0.20)" stroke="#5B8FD4" stroke-width="2.6"/>
+          <circle cx="66" cy="48" r="14" fill="rgba(212,107,126,0.20)" stroke="#D46B7E" stroke-width="2.6"/>
+          <!-- Pairing arc connecting them (gold dashed = matchmaking decision) -->
+          <path d="M 44 48 Q 48 32 52 48" stroke="rgba(212,168,83,0.7)" stroke-width="2" fill="none" stroke-dasharray="3 3"/>
         </svg>
         <!-- Big circle-slash overlay (universal "no" symbol) -->
         <svg width="104" height="104" viewBox="0 0 96 96" style="position:absolute;inset:0" fill="none">
@@ -5186,17 +5204,18 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <div style="flex:1;min-width:240px;max-width:320px;background:linear-gradient(180deg,rgba(224,64,64,0.10) 0%,rgba(224,64,64,0.04) 100%);border:1px solid rgba(224,64,64,0.42);border-radius:18px;padding:42px 26px 36px;text-align:center;box-shadow:0 0 28px rgba(224,64,64,0.10)">
       <div style="position:relative;width:104px;height:104px;margin:0 auto 22px">
         <svg width="104" height="104" viewBox="0 0 96 96" fill="none">
-          <!-- Orchestrated group: center node + 4 satellites connected, "the experience emerging" -->
-          <circle cx="48" cy="48" r="9" fill="rgba(212,168,83,0.20)" stroke="#d4a853" stroke-width="2.4"/>
-          <circle cx="22" cy="22" r="7" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="2"/>
-          <circle cx="74" cy="22" r="7" fill="rgba(212,107,126,0.18)" stroke="#D46B7E" stroke-width="2"/>
-          <circle cx="22" cy="74" r="7" fill="rgba(199,107,219,0.18)" stroke="#c76bdb" stroke-width="2"/>
-          <circle cx="74" cy="74" r="7" fill="rgba(74,232,193,0.18)" stroke="#4ae8c1" stroke-width="2"/>
-          <!-- Connecting lines (the orchestration) -->
-          <line x1="29" y1="29" x2="41" y2="41" stroke="rgba(232,224,208,0.36)" stroke-width="1.4"/>
-          <line x1="67" y1="29" x2="55" y2="41" stroke="rgba(232,224,208,0.36)" stroke-width="1.4"/>
-          <line x1="29" y1="67" x2="41" y2="55" stroke="rgba(232,224,208,0.36)" stroke-width="1.4"/>
-          <line x1="67" y1="67" x2="55" y2="55" stroke="rgba(232,224,208,0.36)" stroke-width="1.4"/>
+          <!-- 4 player nodes — group-experience formation = 4 players orchestrated as a group -->
+          <circle cx="26" cy="26" r="9" fill="rgba(91,143,212,0.20)" stroke="#5B8FD4" stroke-width="2.4"/>
+          <circle cx="70" cy="26" r="9" fill="rgba(212,107,126,0.20)" stroke="#D46B7E" stroke-width="2.4"/>
+          <circle cx="26" cy="70" r="9" fill="rgba(199,107,219,0.20)" stroke="#c76bdb" stroke-width="2.4"/>
+          <circle cx="70" cy="70" r="9" fill="rgba(74,232,193,0.20)" stroke="#4ae8c1" stroke-width="2.4"/>
+          <!-- Connecting orchestration lines -->
+          <line x1="35" y1="26" x2="61" y2="26" stroke="rgba(212,168,83,0.45)" stroke-width="1.4" stroke-dasharray="2 2"/>
+          <line x1="35" y1="70" x2="61" y2="70" stroke="rgba(212,168,83,0.45)" stroke-width="1.4" stroke-dasharray="2 2"/>
+          <line x1="26" y1="35" x2="26" y2="61" stroke="rgba(212,168,83,0.45)" stroke-width="1.4" stroke-dasharray="2 2"/>
+          <line x1="70" y1="35" x2="70" y2="61" stroke="rgba(212,168,83,0.45)" stroke-width="1.4" stroke-dasharray="2 2"/>
+          <line x1="33" y1="33" x2="63" y2="63" stroke="rgba(212,168,83,0.32)" stroke-width="1.2" stroke-dasharray="2 2"/>
+          <line x1="63" y1="33" x2="33" y2="63" stroke="rgba(212,168,83,0.32)" stroke-width="1.2" stroke-dasharray="2 2"/>
         </svg>
         <!-- Big circle-slash overlay -->
         <svg width="104" height="104" viewBox="0 0 96 96" style="position:absolute;inset:0" fill="none">
@@ -5516,7 +5535,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
   <div class="graph-slide">
     <div class="graph-top-text">
-      Scheduling <em style="font-style:normal;color:var(--green-glow)">is</em> measuring.<br>
+      Scheduling measures <em style="font-style:italic;color:var(--green-glow)">connection</em>.<br>
       <span style="color:rgba(232,224,208,0.3);font-size:clamp(11px,1.2vw,15px);font-family:'DM Sans',sans-serif;font-weight:500">Who chooses to spend time with who, in what groups, and why — captured through Give 'n Receive's invitation-based matchmaking system.</span>
     </div>
 
@@ -6316,7 +6335,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <!-- The Invitation — "There's no like button in the real world. There's the invitation."
      The feeling of being invited frames the Scheduling-is-measuring reveal that follows. -->
 <div class="casey-slide ds-focus" id="cs-10c">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">The Invitation</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Invitation Feed</div>
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
   <div style="padding:54px 48px;text-align:center;max-width:1080px;margin:0 auto;width:100%">
 
@@ -6337,7 +6356,6 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         <div style="display:inline-flex;align-items:center;justify-content:center;width:88px;height:60px;border:2px solid #d4a853;border-radius:8px;margin-bottom:20px;position:relative;background:rgba(212,168,83,0.06);box-shadow:0 0 28px rgba(212,168,83,0.22)">
           <svg width="56" height="42" viewBox="0 0 56 42" fill="none" style="margin-top:-4px"><path d="M4 6 L28 26 L52 6" stroke="#d4a853" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <div style="font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:#d4a853;margin-bottom:8px">The Invitation</div>
         <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;color:#e8e0d0;line-height:1.4;font-weight:600">You belong, the invitation proves it.</div>
       </div>
     </div>
@@ -6358,7 +6376,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
 <div class="inner" style="padding-top:52px;text-align:center;max-width:1100px">
   <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4.2vw,3.2rem);color:var(--cream,#e8e0d0);line-height:1.1;margin-bottom:10px;font-weight:700;letter-spacing:-0.01em">
-    <span style="color:rgba(237,233,224,0.55);font-weight:600">How?</span> Scheduling <em style="color:#3dff7a;font-style:italic">is</em> measuring.
+    <span style="color:rgba(237,233,224,0.55);font-weight:600">How?</span> Scheduling measures <em style="color:#3dff7a;font-style:italic">connection</em>.
   </div>
   <div style="font-size:1.35rem;color:rgba(237,233,224,.78);letter-spacing:0.01em;margin-bottom:14px;max-width:58ch;margin-left:auto;margin-right:auto;line-height:1.4">
     Not surveys. <em style="color:#e8e0d0;font-style:italic">Revealed</em> choices.
@@ -6451,7 +6469,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
 <div class="inner" style="padding-top:14px;text-align:center;max-width:1180px">
   <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.5vw,1.8rem);color:var(--cream,#e8e0d0);line-height:1.2;margin-bottom:14px;font-weight:700;max-width:980px;margin-left:auto;margin-right:auto">
-    <span style="color:var(--green-glow,#3dff7a);font-weight:900">24</span> rounds per week per player.<br><span style="color:var(--cream)">Each one is</span> <em style="color:var(--green-glow,#3dff7a);font-style:italic;font-weight:900">it's own human connection experience and experiment.</em>
+    <span style="color:var(--green-glow,#3dff7a);font-weight:900">3</span> sessions, <span style="color:var(--green-glow,#3dff7a);font-weight:900">24</span> rounds per week per player.<br><span style="color:var(--cream)">Each one is</span> <em style="color:var(--green-glow,#3dff7a);font-style:italic;font-weight:900">it's own human connection experience and experiment.</em>
   </div>
 
   <!-- Hero stick figure — moved to sit just above "Her reality"; paddle scaled up for clearer pickleball read -->
@@ -6797,6 +6815,137 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <!-- captures multi-dimensional social signal. Dave picks one,    -->
 <!-- deletes the rest. Inserted at nav positions 4-8.             -->
 <!-- ============================================================ -->
+
+<!-- cs-11-anim: ANIMATED ALT — "Decisions in motion" — stacked under cs-11 dot.
+     Shows real choices being captured: invitation feed where players accept/decline,
+     and a constellation forming on the right as accepted invites become a group.
+     Self-contained CSS @keyframes animation. -->
+<style>
+@keyframes cs11anim-rowin { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+@keyframes cs11anim-accept { 0%,30% { background:rgba(91,143,212,0.10); border-color:rgba(91,143,212,0.4); }
+                              40%,100% { background:rgba(212,168,83,0.18); border-color:#d4a853; box-shadow:0 0 18px rgba(212,168,83,0.45); } }
+@keyframes cs11anim-decline { 0%,30% { background:rgba(91,143,212,0.10); border-color:rgba(91,143,212,0.4); opacity:1; }
+                               40%,100% { background:rgba(180,80,80,0.10); border-color:rgba(180,80,80,0.45); opacity:0.55; } }
+@keyframes cs11anim-checkmark { 0%,30% { opacity:0; transform:scale(0.6); } 40%,100% { opacity:1; transform:scale(1); } }
+@keyframes cs11anim-decline-x { 0%,30% { opacity:0; transform:scale(0.6); } 40%,100% { opacity:1; transform:scale(1); } }
+@keyframes cs11anim-constellation { 0%,55% { opacity:0; transform:scale(0.4); } 65%,100% { opacity:1; transform:scale(1); } }
+@keyframes cs11anim-line { 0%,60% { stroke-dashoffset:100; opacity:0; } 75%,100% { stroke-dashoffset:0; opacity:1; } }
+@keyframes cs11anim-counter { 0%,30% { opacity:0; transform:translateY(6px); } 40%,100% { opacity:1; transform:translateY(0); } }
+.cs11anim-row { animation: cs11anim-rowin 0.5s ease-out forwards, var(--decision) 6s ease-in-out infinite; opacity:0; }
+.cs11anim-mark { animation: cs11anim-checkmark 6s ease-in-out infinite; opacity:0; }
+.cs11anim-x { animation: cs11anim-decline-x 6s ease-in-out infinite; opacity:0; }
+.cs11anim-star { animation: cs11anim-constellation 6s ease-in-out infinite; opacity:0; transform-origin:center; }
+.cs11anim-link { stroke-dasharray:100; animation: cs11anim-line 6s ease-in-out infinite; }
+.cs11anim-counter-num { animation: cs11anim-counter 6s ease-in-out infinite; opacity:0; }
+</style>
+<div class="casey-slide ds-focus" id="cs-11-anim">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Core Product &middot; Decisions in Motion</div>
+<div style="padding:50px 48px 36px;text-align:center;max-width:1280px;width:100%;margin:0 auto">
+  <div style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.6vw,2.8rem);color:#e8e0d0;line-height:1.15;margin-bottom:8px;font-weight:700;letter-spacing:-0.01em">
+    Every invite = a <em style="color:#5B8FD4;font-style:italic">choice</em>. Every choice = <em style="color:#3dff7a;font-style:italic">signal</em>.
+  </div>
+  <div style="font-family:'Manrope',sans-serif;font-size:.95rem;color:rgba(232,224,208,0.7);margin-bottom:30px;font-weight:500">
+    Real decisions captured, in real time. Not surveys. <em style="color:#e8e0d0;font-style:italic">Revealed</em> choices.
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.1fr 60px 1fr;gap:18px;align-items:center;max-width:1100px;margin:0 auto">
+
+    <!-- LEFT: Animated invitation feed (phone-style) -->
+    <div style="background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.32);border-radius:16px;padding:18px;text-align:left">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding:0 4px">
+        <div style="font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:#5B8FD4">Krista's Feed &middot; Today</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:.6rem;color:rgba(232,224,208,0.45)">5 INVITES</div>
+      </div>
+      <!-- Row 1 — ACCEPTED -->
+      <div class="cs11anim-row" style="display:grid;grid-template-columns:1fr 24px;gap:10px;align-items:center;padding:11px 14px;background:rgba(91,143,212,0.10);border:1.4px solid rgba(91,143,212,0.4);border-radius:9px;margin-bottom:8px;animation-delay:0.4s,0s;--decision:cs11anim-accept">
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:.92rem;color:#e8e0d0;font-weight:600;margin-bottom:2px">Doubles 4.0 &middot; Tue 6pm</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:.7rem;color:rgba(232,224,208,0.55)">w/ Sarah, Tom, Jen &middot; Court 3</div>
+        </div>
+        <svg class="cs11anim-mark" width="22" height="22" viewBox="0 0 22 22" style="animation-delay:0s"><circle cx="11" cy="11" r="10" fill="#3dff7a" opacity="0.95"/><path d="M6 11.5 L9.5 15 L16 7.5" stroke="#0a0a0a" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <!-- Row 2 — ACCEPTED -->
+      <div class="cs11anim-row" style="display:grid;grid-template-columns:1fr 24px;gap:10px;align-items:center;padding:11px 14px;background:rgba(91,143,212,0.10);border:1.4px solid rgba(91,143,212,0.4);border-radius:9px;margin-bottom:8px;animation-delay:0.8s,0s;--decision:cs11anim-accept">
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:.92rem;color:#e8e0d0;font-weight:600;margin-bottom:2px">Pickup Mixer &middot; Wed 12pm</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:.7rem;color:rgba(232,224,208,0.55)">w/ Mark, Lisa, Joe &middot; Court 1</div>
+        </div>
+        <svg class="cs11anim-mark" width="22" height="22" viewBox="0 0 22 22" style="animation-delay:0s"><circle cx="11" cy="11" r="10" fill="#3dff7a" opacity="0.95"/><path d="M6 11.5 L9.5 15 L16 7.5" stroke="#0a0a0a" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <!-- Row 3 — DECLINED -->
+      <div class="cs11anim-row" style="display:grid;grid-template-columns:1fr 24px;gap:10px;align-items:center;padding:11px 14px;background:rgba(91,143,212,0.10);border:1.4px solid rgba(91,143,212,0.4);border-radius:9px;margin-bottom:8px;animation-delay:1.2s,0s;--decision:cs11anim-decline">
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:.92rem;color:#e8e0d0;font-weight:600;margin-bottom:2px">Round Robin &middot; Thu 7pm</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:.7rem;color:rgba(232,224,208,0.55)">w/ Bob, Carol, Dan &middot; Court 5</div>
+        </div>
+        <svg class="cs11anim-x" width="22" height="22" viewBox="0 0 22 22" style="animation-delay:0s"><circle cx="11" cy="11" r="10" fill="rgba(180,80,80,0.55)"/><path d="M7 7 L15 15 M15 7 L7 15" stroke="#1a1612" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </div>
+      <!-- Row 4 — ACCEPTED -->
+      <div class="cs11anim-row" style="display:grid;grid-template-columns:1fr 24px;gap:10px;align-items:center;padding:11px 14px;background:rgba(91,143,212,0.10);border:1.4px solid rgba(91,143,212,0.4);border-radius:9px;margin-bottom:8px;animation-delay:1.6s,0s;--decision:cs11anim-accept">
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:.92rem;color:#e8e0d0;font-weight:600;margin-bottom:2px">Doubles 4.5 &middot; Fri 6pm</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:.7rem;color:rgba(232,224,208,0.55)">w/ Pat, Alex, Sam &middot; Court 2</div>
+        </div>
+        <svg class="cs11anim-mark" width="22" height="22" viewBox="0 0 22 22" style="animation-delay:0s"><circle cx="11" cy="11" r="10" fill="#3dff7a" opacity="0.95"/><path d="M6 11.5 L9.5 15 L16 7.5" stroke="#0a0a0a" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <!-- Row 5 — DECLINED -->
+      <div class="cs11anim-row" style="display:grid;grid-template-columns:1fr 24px;gap:10px;align-items:center;padding:11px 14px;background:rgba(91,143,212,0.10);border:1.4px solid rgba(91,143,212,0.4);border-radius:9px;animation-delay:2.0s,0s;--decision:cs11anim-decline">
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:.92rem;color:#e8e0d0;font-weight:600;margin-bottom:2px">Sat Open &middot; Sat 9am</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:.7rem;color:rgba(232,224,208,0.55)">w/ Mike, Kate, Jim &middot; Court 4</div>
+        </div>
+        <svg class="cs11anim-x" width="22" height="22" viewBox="0 0 22 22" style="animation-delay:0s"><circle cx="11" cy="11" r="10" fill="rgba(180,80,80,0.55)"/><path d="M7 7 L15 15 M15 7 L7 15" stroke="#1a1612" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+
+    <!-- ARROW: choice → signal -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+      <svg width="44" height="60" viewBox="0 0 44 60" fill="none">
+        <path d="M 4 30 L 40 30" stroke="#d4a853" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M 33 22 L 40 30 L 33 38" stroke="#d4a853" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#d4a853;text-align:center;line-height:1.4">choice<br>→ signal</div>
+    </div>
+
+    <!-- RIGHT: Constellation forming from accepts -->
+    <div style="background:rgba(61,255,122,0.04);border:1px solid rgba(61,255,122,0.32);border-radius:16px;padding:24px;text-align:center;height:100%;display:flex;flex-direction:column;justify-content:center;min-height:340px">
+      <div style="font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:#3dff7a;margin-bottom:18px">The Matchmaking Graph &middot; forming live</div>
+      <svg viewBox="0 0 220 220" style="width:100%;max-width:240px;margin:0 auto;display:block">
+        <!-- Connection lines (animate in after stars) -->
+        <line class="cs11anim-link" x1="110" y1="50" x2="60" y2="120" stroke="#d4a853" stroke-width="1.6" opacity="0.6"/>
+        <line class="cs11anim-link" x1="110" y1="50" x2="160" y2="120" stroke="#d4a853" stroke-width="1.6" opacity="0.6"/>
+        <line class="cs11anim-link" x1="60" y1="120" x2="160" y2="120" stroke="#d4a853" stroke-width="1.6" opacity="0.6"/>
+        <line class="cs11anim-link" x1="60" y1="120" x2="110" y2="180" stroke="#d4a853" stroke-width="1.6" opacity="0.6"/>
+        <line class="cs11anim-link" x1="160" y1="120" x2="110" y2="180" stroke="#d4a853" stroke-width="1.6" opacity="0.6"/>
+        <!-- Center hub (Krista) -->
+        <circle cx="110" cy="115" r="14" fill="rgba(212,168,83,0.25)" stroke="#d4a853" stroke-width="2.2"/>
+        <text x="110" y="119" text-anchor="middle" font-family="Manrope, sans-serif" font-size="9" font-weight="700" fill="#d4a853">K</text>
+        <!-- Stars (player nodes) — fade in after accepts -->
+        <g class="cs11anim-star" style="animation-delay:0s"><circle cx="110" cy="50" r="11" fill="rgba(91,143,212,0.25)" stroke="#5B8FD4" stroke-width="2.2"/><text x="110" y="54" text-anchor="middle" font-family="Manrope, sans-serif" font-size="8" font-weight="700" fill="#5B8FD4">S</text></g>
+        <g class="cs11anim-star" style="animation-delay:0s"><circle cx="60" cy="120" r="11" fill="rgba(212,107,126,0.25)" stroke="#D46B7E" stroke-width="2.2"/><text x="60" y="124" text-anchor="middle" font-family="Manrope, sans-serif" font-size="8" font-weight="700" fill="#D46B7E">M</text></g>
+        <g class="cs11anim-star" style="animation-delay:0s"><circle cx="160" cy="120" r="11" fill="rgba(74,232,193,0.25)" stroke="#4ae8c1" stroke-width="2.2"/><text x="160" y="124" text-anchor="middle" font-family="Manrope, sans-serif" font-size="8" font-weight="700" fill="#4ae8c1">P</text></g>
+        <g class="cs11anim-star" style="animation-delay:0s"><circle cx="110" cy="180" r="11" fill="rgba(199,107,219,0.25)" stroke="#c76bdb" stroke-width="2.2"/><text x="110" y="184" text-anchor="middle" font-family="Manrope, sans-serif" font-size="8" font-weight="700" fill="#c76bdb">A</text></g>
+      </svg>
+      <div style="font-family:'Playfair Display',serif;font-size:.85rem;color:rgba(232,224,208,0.78);margin-top:18px;font-style:italic;line-height:1.4">
+        Each accept becomes a directional edge. The graph compounds.
+      </div>
+    </div>
+  </div>
+
+  <!-- Live counter strip -->
+  <div style="display:flex;align-items:center;justify-content:center;gap:42px;margin-top:32px;padding:18px 24px;background:rgba(212,168,83,0.06);border:1px solid rgba(212,168,83,0.22);border-radius:12px;max-width:880px;margin-left:auto;margin-right:auto">
+    <div class="cs11anim-counter-num" style="text-align:center;animation-delay:0s"><div style="font-family:'Playfair Display',serif;font-size:1.7rem;color:#d4a853;font-weight:700;line-height:1">412</div><div style="font-family:'Manrope',sans-serif;font-size:.55rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(232,224,208,0.55);margin-top:4px">Invites today</div></div>
+    <div style="width:1px;height:36px;background:rgba(212,168,83,0.3)"></div>
+    <div class="cs11anim-counter-num" style="text-align:center;animation-delay:0s"><div style="font-family:'Playfair Display',serif;font-size:1.7rem;color:#3dff7a;font-weight:700;line-height:1">287</div><div style="font-family:'Manrope',sans-serif;font-size:.55rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(232,224,208,0.55);margin-top:4px">Accepts</div></div>
+    <div style="width:1px;height:36px;background:rgba(212,168,83,0.3)"></div>
+    <div class="cs11anim-counter-num" style="text-align:center;animation-delay:0s"><div style="font-family:'Playfair Display',serif;font-size:1.7rem;color:#e8866b;font-weight:700;line-height:1">125</div><div style="font-family:'Manrope',sans-serif;font-size:.55rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(232,224,208,0.55);margin-top:4px">Declines</div></div>
+    <div style="width:1px;height:36px;background:rgba(212,168,83,0.3)"></div>
+    <div class="cs11anim-counter-num" style="text-align:center;animation-delay:0s"><div style="font-family:'Playfair Display',serif;font-size:1.7rem;color:#e8e0d0;font-weight:700;line-height:1">all</div><div style="font-family:'Manrope',sans-serif;font-size:.55rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(232,224,208,0.55);margin-top:4px">Captured</div></div>
+  </div>
+</div>
+</section>
+</div>
 
 <!-- cs-3a (Variant A · Radar per court) REMOVED — merged into cs-3 -->
 <!-- cs-11b: NEPC PROOF · Already running — 60 courts/wk · $215K ARR · +5% utilization -->
@@ -8622,10 +8771,10 @@ const TOTAL = SLIDE_ORDER.length; // 29 (+ cs-8c Scheduling IS measuring transit
 // SLIDE_ALTS: position (1-indexed in SLIDE_ORDER) -> array of alternative slide IDs to stack BELOW the primary dot.
 // Top dot = AI's FIRST CHOICE. Stacked dots = alternatives in priority order (second-best below top).
 // Empty {} = AI is locked on its first choice; no alternatives proposed.
-// Title slide design variants (cs-1A..cs-1D). Dave 2026-04-28 ask: 4 jaw-dropping alt design systems
-// in completely different color/type schemes. Click gold alt-dots under slide-1 to cycle through.
-// Once Dave picks a winner, that variant replaces the primary cs-1 design.
-const SLIDE_ALTS = { 1: ['cs-1A','cs-1B','cs-1C','cs-1D'] };
+// Title slide is committed to the new "Paper" design system (Dave 2026-04-28).
+// cs-1A..cs-1D variants kept in HTML but no longer mounted as alt dots.
+// cs-11 has an animated "Decisions in motion" alt — click the gold dot under slide-6.
+const SLIDE_ALTS = { 6: ['cs-11-anim'] };
 // REVIEW_POSITION: which dot position is currently under review — turns RED ("stop light, we're stopped here").
 // Set to null when not actively reviewing.
 const REVIEW_POSITION = 5;
@@ -8647,7 +8796,8 @@ function caseyGo(n) {
   const targetId = SLIDE_ORDER[n - 1];
   const target = document.getElementById(targetId);
   if (target) target.classList.add('active');
-  document.querySelectorAll('.casey-dot').forEach((d, i) => d.classList.toggle('on', i === n - 1));
+  // Only toggle on PRIMARY dots (skip alt-stacked dots so index math matches SLIDE_ORDER)
+  document.querySelectorAll('.casey-dot:not(.alt)').forEach((d, i) => d.classList.toggle('on', i === n - 1));
   document.getElementById('cbar').style.width = ((n / TOTAL) * 100) + '%';
   document.getElementById('ccount').textContent = n + ' / ' + TOTAL;
   current = n;
