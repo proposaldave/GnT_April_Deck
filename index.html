@@ -9082,15 +9082,13 @@ html, body, html body{
 // ACT 4+: cs-10 through cs-26 unchanged
 
 const SLIDE_ORDER = [
-  // Dave 2026-04-29 v2: AI deep-thought slide 4 after reading older deck (GnT_Pitch_Deck 2026 v3).
-  // Old deck arc was: INDUSTRY ERROR -> JOURNEY -> SECRET INSIDE INVITATION (70/0.6) -> PROOF -> WEDGE.
-  // The 70/0.6 stat is THE single most powerful insight in the whole deck.
-  // After cs-2b ("communities run on something nothing measures"), the audience's
-  // burning question is "what does GnR measure that's different?" — cs-11d answers it.
-  // Then wedge (cs-3) and product (cs-11) follow naturally.
-  // Alts cs-3 (wedge) and cs-11 (product) stacked below for Dave to swap.
-  'cs-1','cs-1b','cs-2b','cs-11d','cs-3',
-  'cs-11','cs-4','cs-7','cs-8','cs-8b','cs-18','cs-11b','cs-11e','cs-11c','cs-19','cs-12','cs-13',
+  // Dave 2026-04-29: slides 1-4 LOCKED.
+  // Slide 5 under review: AI top pick = cs-11 (Core Product / Invitation Feed).
+  // YC canon: Problem -> Insight -> SOLUTION -> Traction -> Wedge -> Vision.
+  // After cs-11d's "the invitation captures it," audience demands to SEE the invitation.
+  // Alts: cs-11e (NEPC proof), cs-3 (pickleball wedge).
+  'cs-1','cs-1b','cs-2b','cs-11d','cs-11',
+  'cs-3','cs-11e','cs-11b','cs-11c','cs-4','cs-7','cs-8','cs-8b','cs-18','cs-19','cs-12','cs-13',
   'cs-14','cs-15','cs-16','cs-16b','cs-17','cs-20','cs-21','cs-23',
   'cs-24','cs-25','cs-1a','cs-26'
 ];
@@ -9098,18 +9096,17 @@ const TOTAL = SLIDE_ORDER.length; // 29
 
 // === SLIDE-BY-SLIDE REVIEW WORKFLOW ===
 // SLIDE_ALTS: position (1-indexed in SLIDE_ORDER) -> array of alt slide IDs stacked BELOW the primary dot.
-// Top dot = AI's FIRST CHOICE (matches SLIDE_ORDER). Stacked dots = alternatives in priority order.
-// Dave 2026-04-29 v2: position 4 = cs-11d (Secret Inside the Invitation, 70/0.6).
-// Alts: cs-3 (wedge), cs-11 (product), cs-8b (opportunity size).
+// Top dot = AI's FIRST CHOICE. Stacked dots = alternatives in priority order.
+// Dave 2026-04-29: position 5 under review.
 const SLIDE_ALTS = {
-  4: ['cs-3', 'cs-11']  // pos 4 alts below top pick cs-11d (cs-8b removed per Dave 2026-04-29)
+  5: ['cs-11e', 'cs-3']  // pos 5 alts: NEPC proof / pickleball wedge (below top pick cs-11)
 };
 // REVIEW_POSITION: which dot position is currently under review — turns RED.
-const REVIEW_POSITION = 4;
+const REVIEW_POSITION = 5;
 // LOCKED_POSITIONS: slides Dave has confirmed locked. Dots turn GREEN.
-// 1=cs-1 (title), 2=cs-1b (science gap), 3=cs-2b ("What's a community?").
-// 4=cs-11d (Secret Inside the Invitation 70/0.6, AI's TOP CHOICE) — under review with alts.
-const LOCKED_POSITIONS = [1, 2, 3];
+// 1=cs-1 (Title), 2=cs-1b (Good Life), 3=cs-2b (What's a community?), 4=cs-11d (Secret Inside the Invitation).
+// 5=cs-11 (Core Product, AI top pick) — under review with cs-11e/cs-3 as alts.
+const LOCKED_POSITIONS = [1, 2, 3, 4];
 
 const APPENDIX_TOTAL = 19;
 let current = 1;
@@ -9211,13 +9208,16 @@ function appendixGo(n) {
 // Slide labels for tooltips. Must mirror SLIDE_ORDER.length + 1 (index 0 placeholder).
 const slideLabels = [
   '', // 0 placeholder
-  "Give 'n Receive",                                    //  1 cs-1
-  'Human connection · #1 predictor of fulfilling life', //  2 cs-1b
-  "What's a community?",                              //  3 cs-2b
-  'The Secret Inside the Invitation · 70/0.6',     //  4 cs-11d [AI top pick 2026-04-29 v2]
-  'Pickleball wedge · max signal density',           //  5 cs-3
-  'Core Product · Scheduling is measuring',           //  6 cs-11
-  'Matchmaking in Social Sports Communities',        //  7 cs-4
+  "Give 'n Receive",                                    //  1 cs-1   [LOCKED]
+  'Human connection · #1 predictor of fulfilling life', //  2 cs-1b  [LOCKED]
+  "What's a community?",                              //  3 cs-2b  [LOCKED]
+  'The Secret Inside the Invitation · 70/0.6',     //  4 cs-11d [LOCKED 2026-04-29]
+  'Core Product · Invitation Feed',                   //  5 cs-11  [AI top pick · under review]
+  'Pickleball wedge · max signal density',           //  6 cs-3
+  'NEPC Proving Ground · Same courts, better groups', //  7 cs-11e
+  'Proof · Already running at NEPC',                 //  8 cs-11b
+  'Signal Density · 645K signals',                   //  9 cs-11c
+  'Matchmaking in Social Sports Communities',        // 10 cs-4
   'The Data Exists',                                 //  7 cs-6
   'The Cost of Honesty',                             //  8 cs-7
   'The Uncomfortable Cultural Shift',                //  9 cs-8
