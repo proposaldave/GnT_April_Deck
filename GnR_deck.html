@@ -7129,25 +7129,26 @@ html, body, html body{
       svg.appendChild(c);
     });
 
-    // SCORE CHIP — for "competitive/scored" courts: tiny scoreboard at top-center.
+    // SCORE CHIP — for "competitive/scored" courts: scoreboard at top-center.
     // Visually represents what 50+ existing apps capture. Closer line names this.
+    // Sized to be legible at 1920x1080 export and on-screen at typical viewport.
     if (isScored){
       const chipBg = document.createElementNS(NS,'rect');
-      chipBg.setAttribute('x','42'); chipBg.setAttribute('y','2.5');
-      chipBg.setAttribute('width','26'); chipBg.setAttribute('height','9');
-      chipBg.setAttribute('rx','1.5');
+      chipBg.setAttribute('x','30'); chipBg.setAttribute('y','1');
+      chipBg.setAttribute('width','50'); chipBg.setAttribute('height','13');
+      chipBg.setAttribute('rx','2.5');
       chipBg.setAttribute('fill','#1a1612');
       chipBg.setAttribute('stroke','#c8462c');
-      chipBg.setAttribute('stroke-width','0.55');
+      chipBg.setAttribute('stroke-width','0.7');
       svg.appendChild(chipBg);
       const chipText = document.createElementNS(NS,'text');
-      chipText.setAttribute('x','55'); chipText.setAttribute('y','9.2');
+      chipText.setAttribute('x','55'); chipText.setAttribute('y','11');
       chipText.setAttribute('text-anchor','middle');
       chipText.setAttribute('font-family','JetBrains Mono, monospace');
-      chipText.setAttribute('font-size','6.5');
-      chipText.setAttribute('font-weight','700');
+      chipText.setAttribute('font-size','10');
+      chipText.setAttribute('font-weight','800');
       chipText.setAttribute('fill','#f3ead8');
-      chipText.setAttribute('letter-spacing','0.4');
+      chipText.setAttribute('letter-spacing','0.6');
       chipText.textContent = scoreText;
       svg.appendChild(chipText);
     }
