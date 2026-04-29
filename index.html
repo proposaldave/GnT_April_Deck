@@ -5591,22 +5591,8 @@ html, body, html body{
     </div>
   </div>
 
-  <!-- Merge connector: 3 short stems from each card meet on a horizontal bar, then a single
-       arrow drops to "Done by hand." Visually shows all three cards funnel to one fate. -->
-  <div style="max-width:880px;margin:8px auto 0;padding:0 36px">
-    <svg viewBox="0 0 800 70" preserveAspectRatio="xMidYMid meet" width="100%" height="70" xmlns="http://www.w3.org/2000/svg" style="display:block">
-      <!-- 3 short vertical stems from card centers -->
-      <path d="M 140 4 L 140 26" stroke="#c8462c" stroke-width="2.2" stroke-linecap="round" opacity="0.9"/>
-      <path d="M 400 4 L 400 26" stroke="#c8462c" stroke-width="2.2" stroke-linecap="round" opacity="0.9"/>
-      <path d="M 660 4 L 660 26" stroke="#c8462c" stroke-width="2.2" stroke-linecap="round" opacity="0.9"/>
-      <!-- Horizontal merge bar connecting all three -->
-      <path d="M 140 26 L 660 26" stroke="#c8462c" stroke-width="2.2" stroke-linecap="round" opacity="0.9"/>
-      <!-- Single trunk down to "Done by hand." -->
-      <path d="M 400 26 L 400 56" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round" opacity="0.95"/>
-      <!-- Filled triangle arrowhead -->
-      <path d="M 390 50 L 400 64 L 410 50 Z" fill="#c8462c" stroke="#c8462c" stroke-width="0.5" stroke-linejoin="round"/>
-    </svg>
-  </div>
+  <!-- (Connector removed Dave 2026-04-29 — "better to not have it at all" per his review.
+       The proximity of the 3 cards above and "Done by hand." below speaks for itself.) -->
 
   <!-- Callback below: "Done by hand." then the diagnosis. Editorial serif. -->
   <div style="font-family:'Playfair Display',Georgia,serif;color:#1a1612;line-height:1.4;max-width:980px;margin:0 auto 24px">
@@ -7445,26 +7431,8 @@ html, body, html body{
       they don't say the <em style="font-style:italic;color:#b8954a">real</em> reason.
     </div>
 
-    <!-- Mini invitation graphic — anchors what an "invitation" is at a glance. Dave 2026-04-29. -->
-    <div style="display:flex;flex-direction:column;align-items:center;margin:0 auto 24px">
-      <div style="font-family:'Manrope',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(26,22,18,0.5);margin-bottom:8px">An invitation</div>
-      <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border:1px solid rgba(26,22,18,0.18);border-radius:11px;background:rgba(255,255,255,0.55);max-width:360px;box-shadow:0 1px 2px rgba(26,22,18,0.05),0 6px 18px rgba(26,22,18,0.06)">
-        <div style="display:flex;gap:3px;flex-shrink:0">
-          <span style="width:14px;height:14px;border-radius:50%;background:#5B8FD4;border:1.5px solid #5B8FD4"></span>
-          <span style="width:14px;height:14px;border-radius:50%;background:#D46B7E;border:1.5px solid #D46B7E"></span>
-          <span style="width:14px;height:14px;border-radius:50%;background:rgba(199,107,219,0.20);border:1.5px solid #c76bdb"></span>
-          <span style="width:14px;height:14px;border-radius:50%;background:rgba(74,232,193,0.20);border:1.5px solid #4ae8c1"></span>
-        </div>
-        <div style="flex:1;line-height:1.2;text-align:left;min-width:0">
-          <div style="font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:700;color:#1a1612">Doubles</div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:rgba(26,22,18,0.55);letter-spacing:.06em;margin-top:1px">Tonight &middot; 6:00 PM</div>
-        </div>
-        <div style="display:flex;gap:5px;flex-shrink:0">
-          <span title="Accept" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #2a8a4f;background:rgba(42,138,79,0.08);display:flex;align-items:center;justify-content:center;font-size:12px;color:#2a8a4f;font-weight:800;line-height:1">&check;</span>
-          <span title="Decline" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #c8462c;background:rgba(200,70,44,0.08);display:flex;align-items:center;justify-content:center;font-size:12px;color:#c8462c;font-weight:800;line-height:1">&times;</span>
-        </div>
-      </div>
-    </div>
+    <!-- (Mini invitation card removed Dave 2026-04-29 — "better to not have it at all".
+         Will iterate on a different visual approach if/when Dave wants one.) -->
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:980px;margin:0 auto 28px">
       <div style="padding:36px 24px;border-radius:14px;background:linear-gradient(180deg,rgba(91,143,212,0.10) 0%,rgba(91,143,212,0.04) 100%);border:1px solid rgba(91,143,212,0.32);text-align:center">
@@ -9179,13 +9147,14 @@ html, body, html body{
 // ACT 4+: cs-10 through cs-26 unchanged
 
 const SLIDE_ORDER = [
-  // Dave 2026-04-29: slides 1-4 LOCKED.
-  // Slide 5 under review: AI top pick = cs-11 (Core Product / Invitation Feed).
-  // YC canon: Problem -> Insight -> SOLUTION -> Traction -> Wedge -> Vision.
-  // After cs-11d's "the invitation captures it," audience demands to SEE the invitation.
-  // Alts: cs-11e (NEPC proof), cs-3 (pickleball wedge).
+  // Dave 2026-04-29 v3: slides 1-5 LOCKED.
+  // Slide 6 under review: AI top pick = cs-11e (NEPC Proving Ground / Same courts, better groups).
+  // YC canon: Solution -> TRACTION -> Wedge -> Vision. After product (cs-11) the audience
+  // demands proof: "and it works at NEPC right now." cs-11e has utilization lift +
+  // member quotes — the strongest proof slide.
+  // Alts: cs-11b (NEPC numbers), cs-3 (pickleball wedge).
   'cs-1','cs-1b','cs-2b','cs-11d','cs-11',
-  'cs-3','cs-11e','cs-11b','cs-11c','cs-4','cs-7','cs-8','cs-8b','cs-18','cs-19','cs-12','cs-13',
+  'cs-11e','cs-11b','cs-11c','cs-3','cs-4','cs-7','cs-8','cs-8b','cs-18','cs-19','cs-12','cs-13',
   'cs-14','cs-15','cs-16','cs-16b','cs-17','cs-20','cs-21','cs-23',
   'cs-24','cs-25','cs-1a','cs-26'
 ];
@@ -9194,16 +9163,17 @@ const TOTAL = SLIDE_ORDER.length; // 29
 // === SLIDE-BY-SLIDE REVIEW WORKFLOW ===
 // SLIDE_ALTS: position (1-indexed in SLIDE_ORDER) -> array of alt slide IDs stacked BELOW the primary dot.
 // Top dot = AI's FIRST CHOICE. Stacked dots = alternatives in priority order.
-// Dave 2026-04-29: position 5 under review.
+// Dave 2026-04-29 v3: position 6 under review with 2 alts.
 const SLIDE_ALTS = {
-  5: ['cs-11e', 'cs-3']  // pos 5 alts: NEPC proof / pickleball wedge (below top pick cs-11)
+  6: ['cs-11b', 'cs-3']  // pos 6 alts below top pick cs-11e: NEPC numbers / pickleball wedge
 };
 // REVIEW_POSITION: which dot position is currently under review — turns RED.
-const REVIEW_POSITION = 5;
+const REVIEW_POSITION = 6;
 // LOCKED_POSITIONS: slides Dave has confirmed locked. Dots turn GREEN.
-// 1=cs-1 (Title), 2=cs-1b (Good Life), 3=cs-2b (What's a community?), 4=cs-11d (Secret Inside the Invitation).
-// 5=cs-11 (Core Product, AI top pick) — under review with cs-11e/cs-3 as alts.
-const LOCKED_POSITIONS = [1, 2, 3, 4];
+// 1=cs-1 (Title), 2=cs-1b (Good Life), 3=cs-2b (What's a community?), 4=cs-11d (Secret Inside Invitation),
+// 5=cs-11 (Scheduling is measuring · Core Product · Invitation Feed) [LOCKED 2026-04-29].
+// 6=cs-11e (NEPC Proving Ground, AI top pick) — under review with cs-11b/cs-3 as alts.
+const LOCKED_POSITIONS = [1, 2, 3, 4, 5];
 
 const APPENDIX_TOTAL = 19;
 let current = 1;
