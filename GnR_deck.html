@@ -9355,9 +9355,10 @@ html, body, html body{
 
 <!-- ===== cs-fw1 · FLYWHEEL · One Loop (main deck) [Dave 2026-04-30 PM evening] ===== -->
 <style>
+  /* Opacity-only animation — DO NOT use transform here, it clobbers the SVG translate() on each node */
   #cs-fw1 .fw1-anim { opacity:0; }
-  #cs-fw1.active .fw1-anim { animation: fw1FadeIn 0.55s cubic-bezier(.45,.05,.18,1) forwards; }
-  @keyframes fw1FadeIn { from { opacity:0; transform:scale(0.94); } to { opacity:1; transform:scale(1); } }
+  #cs-fw1.active .fw1-anim { animation: fw1FadeIn 0.55s ease forwards; }
+  @keyframes fw1FadeIn { from { opacity:0; } to { opacity:1; } }
   #cs-fw1.active .fw1-engine { animation-delay: 0.25s; }
   #cs-fw1.active .fw1-n1 { animation-delay: 0.55s; }
   #cs-fw1.active .fw1-a1 { animation-delay: 0.70s; }
@@ -9453,9 +9454,10 @@ html, body, html body{
 
 <!-- ===== cs-fw2 · FLYWHEEL · Two Loops (main deck) [Dave 2026-04-30 PM evening] · adapted from cs-16b ===== -->
 <style>
+  /* Opacity-only animation — same fix as cs-fw1: transform on SVG groups would clobber translate() */
   #cs-fw2 .fw2-anim { opacity:0; }
-  #cs-fw2.active .fw2-anim { animation: fw2FadeIn 0.6s cubic-bezier(.45,.05,.18,1) forwards; }
-  @keyframes fw2FadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+  #cs-fw2.active .fw2-anim { animation: fw2FadeIn 0.6s ease forwards; }
+  @keyframes fw2FadeIn { from { opacity:0; } to { opacity:1; } }
   #cs-fw2.active .fw2-engine { animation-delay: 0.25s; }
   #cs-fw2.active .fw2-loop-l { animation-delay: 0.50s; }
   #cs-fw2.active .fw2-loop-r { animation-delay: 0.85s; }
