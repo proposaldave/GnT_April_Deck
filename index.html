@@ -9085,6 +9085,181 @@ html, body, html body{
 </section>
 </div>
 
+<!-- ============================================================================
+     MISSION SLIDE VARIANTS — 4 designs of the same mission line for Dave to review
+     [Dave 2026-04-30 PM evening · "ALL OUR LIVES TO RUN ON HUMAN CONNECTION"]
+     Pick one, the others can be deleted or moved to appendix.
+     ============================================================================ -->
+
+<!-- ===== cs-mv1 · Editorial Pull-Quote ===== -->
+<div class="casey-slide ds-focus" id="cs-mv1">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Our mission &middot; Variant A</div>
+  <div style="text-align:center;max-width:1100px;padding:0 48px">
+    <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.36em;text-transform:uppercase;color:rgba(184,149,74,0.85);margin-bottom:36px">Our mission</div>
+    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.4rem,5.2vw,4.4rem);font-weight:700;color:#1a1612;line-height:1.05;letter-spacing:-0.02em">
+      All our lives <em style="font-style:italic;font-weight:500;color:#b8954a">to run on</em><br>
+      human connection.
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-top:48px">
+      <div style="width:80px;height:1px;background:#b8954a"></div>
+      <div style="width:7px;height:7px;border:1px solid #b8954a;transform:rotate(45deg)"></div>
+      <div style="width:80px;height:1px;background:#b8954a"></div>
+    </div>
+    <div style="margin-top:22px;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1rem;color:rgba(26,22,18,0.55)">
+      <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span>
+    </div>
+  </div>
+</section>
+</div>
+
+
+<!-- ===== cs-mv2 · Manifesto Build (cinematic crescendo) ===== -->
+<style>
+  #cs-mv2 .mv2-line { opacity: 0; transform: translateY(8px); }
+  #cs-mv2.active .mv2-line { animation: mv2In 0.7s cubic-bezier(.45,.05,.18,1) forwards; }
+  @keyframes mv2In { to { opacity: 1; transform: translateY(0); } }
+  #cs-mv2.active .mv2-1 { animation-delay: 0.20s; }
+  #cs-mv2.active .mv2-2 { animation-delay: 0.55s; }
+  #cs-mv2.active .mv2-3 { animation-delay: 0.95s; }
+  #cs-mv2.active .mv2-4 { animation-delay: 1.40s; }
+  html[data-export="1"] #cs-mv2 .mv2-line { opacity: 1 !important; transform: none !important; animation: none !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-mv2">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Our mission &middot; Variant B</div>
+  <div style="text-align:center;max-width:1200px;padding:0 48px;display:flex;flex-direction:column;gap:14px;align-items:center">
+    <div class="mv2-line mv2-1" style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.05rem,1.7vw,1.45rem);color:rgba(26,22,18,0.55)">Our mission is&hellip;</div>
+    <div class="mv2-line mv2-2" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem,4vw,3.4rem);font-weight:700;color:#1a1612;line-height:1.1;letter-spacing:-0.02em;text-transform:uppercase">All our lives</div>
+    <div class="mv2-line mv2-3" style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.4rem,2.6vw,2rem);font-weight:500;color:rgba(26,22,18,0.78)">to run on</div>
+    <div class="mv2-line mv2-4" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(2.6rem,5.4vw,4.6rem);font-weight:700;color:#b8954a;line-height:1.05;letter-spacing:-0.02em">human connection.</div>
+  </div>
+</section>
+</div>
+
+
+<!-- ===== cs-mv3 · Connected Constellation (visual + mission line) ===== -->
+<style>
+  #cs-mv3 .mv3-stage { position:relative; width:min(540px,55vmin); height:min(540px,55vmin); margin:36px auto 28px; }
+  #cs-mv3 .mv3-person { position:absolute; width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(26,22,18,0.08); }
+  #cs-mv3 .mv3-person svg { width:22px; height:22px; }
+  #cs-mv3.active .mv3-person { animation: mv3PIn 0.55s cubic-bezier(.45,.05,.18,1) forwards; opacity: 0; }
+  @keyframes mv3PIn { to { opacity: 1; } }
+  #cs-mv3.active .mv3-p1 { animation-delay: 0.50s; }
+  #cs-mv3.active .mv3-p2 { animation-delay: 0.65s; }
+  #cs-mv3.active .mv3-p3 { animation-delay: 0.80s; }
+  #cs-mv3.active .mv3-p4 { animation-delay: 0.95s; }
+  #cs-mv3.active .mv3-p5 { animation-delay: 1.10s; }
+  #cs-mv3.active .mv3-p6 { animation-delay: 1.25s; }
+  #cs-mv3.active .mv3-p7 { animation-delay: 1.40s; }
+  #cs-mv3.active .mv3-p8 { animation-delay: 1.55s; }
+  #cs-mv3 .mv3-arcs path { stroke:#b8954a; fill:none; stroke-width:1.2; opacity:0; stroke-dasharray:4 3; }
+  #cs-mv3.active .mv3-arcs path { animation: mv3ArcIn 0.7s ease forwards; }
+  @keyframes mv3ArcIn { to { opacity: 0.45; } }
+  #cs-mv3.active .mv3-arcs path:nth-child(odd)  { animation-delay: 1.75s; }
+  #cs-mv3.active .mv3-arcs path:nth-child(even) { animation-delay: 1.95s; }
+  html[data-export="1"] #cs-mv3 .mv3-person { opacity: 1 !important; animation: none !important; }
+  html[data-export="1"] #cs-mv3 .mv3-arcs path { opacity: 0.45 !important; animation: none !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-mv3">
+<section style="position:relative;min-height:100%;width:100%">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Our mission &middot; Variant C</div>
+  <div class="inner" style="padding:60px 48px;text-align:center;max-width:1100px;margin:0 auto">
+
+    <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.36em;text-transform:uppercase;color:rgba(184,149,74,0.85);margin-bottom:6px">Our mission</div>
+    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.4vw,2.7rem);font-weight:700;color:#1a1612;line-height:1.15;letter-spacing:-0.018em">
+      All our lives <em style="font-style:italic;font-weight:500;color:#b8954a">to run on</em><br>
+      human connection.
+    </div>
+
+    <!-- Constellation: 8 people around a center, all connected by gold arcs -->
+    <div class="mv3-stage">
+      <svg class="mv3-arcs" viewBox="0 0 540 540" style="position:absolute;inset:0;width:100%;height:100%">
+        <path d="M 270 60 Q 100 270 270 480"/>
+        <path d="M 270 60 Q 440 270 270 480"/>
+        <path d="M 60 270 Q 270 100 480 270"/>
+        <path d="M 60 270 Q 270 440 480 270"/>
+        <path d="M 110 110 Q 270 320 430 430"/>
+        <path d="M 430 110 Q 270 320 110 430"/>
+        <path d="M 110 110 L 430 430"/>
+        <path d="M 430 110 L 110 430"/>
+        <path d="M 270 60 L 270 480"/>
+        <path d="M 60 270 L 480 270"/>
+      </svg>
+      <div class="mv3-person mv3-p1" style="left:50%;top:0%;transform:translateX(-50%);background:rgba(91,143,212,0.14);border:1.5px solid rgba(91,143,212,0.55)">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="#5B8FD4"/><path d="M3 22 Q12 15 21 22" stroke="#5B8FD4" stroke-width="2" fill="rgba(91,143,212,0.25)" stroke-linecap="round"/></svg>
+      </div>
+      <div class="mv3-person mv3-p2" style="left:78%;top:14%;background:rgba(200,70,44,0.10);border:1.5px solid rgba(200,70,44,0.55)">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="#c8462c"/><path d="M3 22 Q12 15 21 22" stroke="#c8462c" stroke-width="2" fill="rgba(200,70,44,0.25)" stroke-linecap="round"/></svg>
+      </div>
+      <div class="mv3-person mv3-p3" style="left:92%;top:46%;background:rgba(184,149,74,0.14);border:1.5px solid rgba(184,149,74,0.55)">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="#b8954a"/><path d="M3 22 Q12 15 21 22" stroke="#b8954a" stroke-width="2" fill="rgba(184,149,74,0.25)" stroke-linecap="round"/></svg>
+      </div>
+      <div class="mv3-person mv3-p4" style="left:78%;top:78%;background:rgba(74,140,94,0.14);border:1.5px solid rgba(74,140,94,0.55)">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="#4a8c5e"/><path d="M3 22 Q12 15 21 22" stroke="#4a8c5e" stroke-width="2" fill="rgba(74,140,94,0.25)" stroke-linecap="round"/></svg>
+      </div>
+      <div class="mv3-person mv3-p5" style="left:50%;top:92%;transform:translateX(-50%);background:rgba(122,74,140,0.10);border:1.5px solid rgba(122,74,140,0.55)">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="#7a4a8c"/><path d="M3 22 Q12 15 21 22" stroke="#7a4a8c" stroke-width="2" fill="rgba(122,74,140,0.25)" stroke-linecap="round"/></svg>
+      </div>
+      <div class="mv3-person mv3-p6" style="left:14%;top:78%;background:rgba(91,168,150,0.14);border:1.5px solid rgba(91,168,150,0.55)">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="#5fa896"/><path d="M3 22 Q12 15 21 22" stroke="#5fa896" stroke-width="2" fill="rgba(91,168,150,0.25)" stroke-linecap="round"/></svg>
+      </div>
+      <div class="mv3-person mv3-p7" style="left:0%;top:46%;background:rgba(180,71,92,0.10);border:1.5px solid rgba(180,71,92,0.55)">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="#b8475c"/><path d="M3 22 Q12 15 21 22" stroke="#b8475c" stroke-width="2" fill="rgba(180,71,92,0.25)" stroke-linecap="round"/></svg>
+      </div>
+      <div class="mv3-person mv3-p8" style="left:14%;top:14%;background:rgba(212,168,83,0.14);border:1.5px solid rgba(212,168,83,0.55)">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="#d4a853"/><path d="M3 22 Q12 15 21 22" stroke="#d4a853" stroke-width="2" fill="rgba(212,168,83,0.25)" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+
+    <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1rem;color:rgba(26,22,18,0.5);letter-spacing:.04em">
+      <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span>
+    </div>
+  </div>
+</section>
+</div>
+
+
+<!-- ===== cs-mv4 · Invitation Card (formal/inscription) ===== -->
+<div class="casey-slide ds-focus" id="cs-mv4">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Our mission &middot; Variant D</div>
+  <div style="display:flex;align-items:center;justify-content:center">
+    <!-- Invitation card with double border + diamond corners -->
+    <div style="position:relative;padding:80px 100px;background:rgba(255,247,224,0.55);border:2px solid #b8954a;max-width:920px;text-align:center;box-shadow:0 12px 40px rgba(26,22,18,0.08)">
+      <!-- Inner frame -->
+      <div style="position:absolute;inset:14px;border:1px solid rgba(184,149,74,0.55);pointer-events:none"></div>
+      <!-- Diamond corner accents -->
+      <div style="position:absolute;top:8px;left:8px;width:8px;height:8px;border:1px solid #b8954a;background:#fbf6ec;transform:rotate(45deg)"></div>
+      <div style="position:absolute;top:8px;right:8px;width:8px;height:8px;border:1px solid #b8954a;background:#fbf6ec;transform:rotate(45deg)"></div>
+      <div style="position:absolute;bottom:8px;left:8px;width:8px;height:8px;border:1px solid #b8954a;background:#fbf6ec;transform:rotate(45deg)"></div>
+      <div style="position:absolute;bottom:8px;right:8px;width:8px;height:8px;border:1px solid #b8954a;background:#fbf6ec;transform:rotate(45deg)"></div>
+
+      <div style="display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:30px">
+        <div style="width:60px;height:1px;background:#b8954a;opacity:0.55"></div>
+        <div style="font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.4em;text-transform:uppercase;color:#b8954a">Our mission</div>
+        <div style="width:60px;height:1px;background:#b8954a;opacity:0.55"></div>
+      </div>
+
+      <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.4vw,2.8rem);font-weight:700;color:#1a1612;line-height:1.15;letter-spacing:-0.015em">
+        All our lives <em style="font-style:italic;font-weight:500;color:#b8954a">to run on</em><br>
+        human connection.
+      </div>
+
+      <div style="margin-top:36px;display:flex;align-items:center;justify-content:center;gap:10px">
+        <div style="width:36px;height:1px;background:#b8954a;opacity:0.45"></div>
+        <div style="width:5px;height:5px;border:1px solid #b8954a;transform:rotate(45deg)"></div>
+        <div style="width:36px;height:1px;background:#b8954a;opacity:0.45"></div>
+      </div>
+      <div style="margin-top:14px;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:.92rem;color:rgba(26,22,18,0.55)">
+        <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+
 <!-- ===== cs-33 · THE ASK — moved back to APPENDIX 2026-04-30 per Dave ===== -->
 <div class="casey-slide ds-focus appendix-slide" id="cs-33" style="display:none">
 <section style="position:relative;min-height:100%;width:100%">
@@ -11557,8 +11732,12 @@ const SLIDE_ORDER = [
   'cs-a3',    // 18 Pickleball: two revenue streams (TAM)
   'cs-11b',   // 19 NEPC Numbers — receipts
   'cs-36',    // 20 10-Year North Star
-  'cs-33',    // 21 The Ask — $1.5M Seed
-  'cs-26'     // 22 Closer
+  'cs-mv1',   // 21 Mission · Variant A · Editorial Pull-Quote [REVIEW · pick one Dave 2026-04-30 PM evening]
+  'cs-mv2',   // 22 Mission · Variant B · Manifesto Build (cinematic crescendo) [REVIEW]
+  'cs-mv3',   // 23 Mission · Variant C · Connected Constellation [REVIEW]
+  'cs-mv4',   // 24 Mission · Variant D · Invitation Card [REVIEW]
+  'cs-33',    // 25 The Ask — $1.5M Seed
+  'cs-26'     // 26 Closer
   // Removed from main flow per Dave 2026-04-30 PM:
   //   cs-34 (Flywheel) → appendix · cs-30 (Why Now) → appendix · cs-32 (Distribution) → appendix
   //   cs-31 (Why We Win → archived) · cs-37 (Voice of Community → appendix)
