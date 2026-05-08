@@ -9989,16 +9989,16 @@ html, body, html body{
   <div class="c16-section-title c16-actions-title">SMARTER ACTIONS<span class="c16-tdot"></span></div>
 
   <svg class="c16-connections" viewBox="0 0 1920 1080" preserveAspectRatio="none">
-    <!-- LEFT: signals -> core (5 rows: Invitations, Rounds, Club Ops, CONCIERGE, Diary — order swap 2026-05-08 v2 per Dave: 'move diary below concierge'. Curves redrawn so colors don't cross — Concierge red curve targets upper-mid, Diary green curve targets lower-mid) -->
+    <!-- LEFT: signals -> core (5 rows in new order [Dave 2026-05-08 v3]: TEXT INVITATIONS, PHONE CALLS, ROUNDS, CLUB OPS, DIARY. Curves recolored so each row's curve matches its label color: blue, red, blue, gold, green) -->
     <path class="c16-curve" stroke="#2f7bd0" d="M575 280 C675 278 675 405 828 412"/>
-    <path class="c16-curve" stroke="#2f7bd0" d="M615 410 C705 410 706 478 805 488"/>
-    <path class="c16-curve" stroke="#b8954a" d="M618 540 C704 538 716 562 803 552"/>
-    <path class="c16-curve" stroke="#c8462c" d="M620 670 C720 670 720 622 838 618"/>
+    <path class="c16-curve" stroke="#c8462c" d="M615 410 C705 410 706 478 805 488"/>
+    <path class="c16-curve" stroke="#2f7bd0" d="M618 540 C704 538 716 562 803 552"/>
+    <path class="c16-curve" stroke="#b8954a" d="M620 670 C720 670 720 622 838 618"/>
     <path class="c16-curve" stroke="#168651" d="M620 800 C740 800 740 700 845 690"/>
     <circle class="c16-cdot" fill="#2f7bd0" cx="575" cy="280" r="6"/><circle class="c16-cdot" fill="#2f7bd0" cx="828" cy="412" r="7"/>
-    <circle class="c16-cdot" fill="#2f7bd0" cx="615" cy="410" r="6"/><circle class="c16-cdot" fill="#2f7bd0" cx="805" cy="488" r="7"/>
-    <circle class="c16-cdot" fill="#b8954a" cx="618" cy="540" r="6"/><circle class="c16-cdot" fill="#b8954a" cx="803" cy="552" r="7"/>
-    <circle class="c16-cdot" fill="#c8462c" cx="620" cy="670" r="6"/><circle class="c16-cdot" fill="#c8462c" cx="838" cy="618" r="7"/>
+    <circle class="c16-cdot" fill="#c8462c" cx="615" cy="410" r="6"/><circle class="c16-cdot" fill="#c8462c" cx="805" cy="488" r="7"/>
+    <circle class="c16-cdot" fill="#2f7bd0" cx="618" cy="540" r="6"/><circle class="c16-cdot" fill="#2f7bd0" cx="803" cy="552" r="7"/>
+    <circle class="c16-cdot" fill="#b8954a" cx="620" cy="670" r="6"/><circle class="c16-cdot" fill="#b8954a" cx="838" cy="618" r="7"/>
     <circle class="c16-cdot" fill="#168651" cx="620" cy="800" r="6"/><circle class="c16-cdot" fill="#168651" cx="845" cy="690" r="7"/>
 
     <!-- RIGHT: core -> actions -->
@@ -10015,10 +10015,16 @@ html, body, html body{
   </svg>
 
   <div class="c16-signals">
+    <!-- [Dave 2026-05-08 v3] Row order: TEXT INVITATIONS · PHONE CALLS · ROUNDS · CLUB OPS · DIARY. Phone Calls (formerly Concierge, red) moved above Rounds. Bullets trimmed: 'phone calls', 'last-minute confirms', 'auto-scheduler accepts' all removed from the row label. -->
     <div class="c16-row c16-blue">
       <div class="c16-icon"><svg viewBox="0 0 32 32"><path d="M5 15L27 5l-8 22-4-9-10-3z"/><path d="M15 18l5-5"/></svg></div>
-      <div class="c16-label">Invitations</div><div class="c16-divider"></div>
+      <div class="c16-label">Text<br>Invitations</div><div class="c16-divider"></div>
       <ul><li>RSVPs</li><li>cancellations</li><li>referrals</li></ul>
+    </div>
+    <div class="c16-row c16-red">
+      <div class="c16-icon"><svg viewBox="0 0 32 32"><path d="M7 5h6l3 6-3 2c1.4 3 3.6 5.2 6.6 6.6l2-3 6 3v6c0 1.7-1.3 3-3 3C13 28.6 3.4 19 3 6c0-.6.4-1 1-1z"/></svg></div>
+      <div class="c16-label">Phone Calls</div><div class="c16-divider"></div>
+      <ul><li>text replies</li><li>known-4 nudges</li></ul>
     </div>
     <div class="c16-row c16-blue">
       <div class="c16-icon"><svg viewBox="0 0 32 32"><circle cx="10" cy="10" r="4"/><circle cx="22" cy="10" r="4"/><path d="M7 25l18-18M7 7l18 18"/><path d="M8 25h5M19 25h5"/></svg></div>
@@ -10029,12 +10035,6 @@ html, body, html body{
       <div class="c16-icon"><svg viewBox="0 0 32 32"><rect x="6" y="8" width="20" height="18" rx="2"/><path d="M10 5v6M22 5v6M6 14h20"/><path d="M11 18h2M16 18h2M21 18h2M11 22h2M16 22h2"/></svg></div>
       <div class="c16-label">Club<br>Operations</div><div class="c16-divider"></div>
       <ul><li>historical court bookings</li><li>computer vision</li><li>external club research</li><li>academy</li></ul>
-    </div>
-    <!-- [Dave 2026-05-08 v2] Concierge moved ABOVE Diary per Dave: 'move diary below concierge' -->
-    <div class="c16-row c16-red">
-      <div class="c16-icon"><svg viewBox="0 0 32 32"><path d="M7 5h6l3 6-3 2c1.4 3 3.6 5.2 6.6 6.6l2-3 6 3v6c0 1.7-1.3 3-3 3C13 28.6 3.4 19 3 6c0-.6.4-1 1-1z"/></svg></div>
-      <div class="c16-label">Concierge</div><div class="c16-divider"></div>
-      <ul><li>phone calls</li><li>text replies</li><li>auto-scheduler accepts</li><li>last-minute confirms</li><li>known-4 nudges</li></ul>
     </div>
     <div class="c16-row c16-green">
       <div class="c16-icon"><svg viewBox="0 0 32 32"><rect x="9" y="5" width="15" height="22" rx="2"/><path d="M13 5v22M7 10h4M7 15h4M7 20h4"/></svg></div>
