@@ -21559,9 +21559,11 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // Alt-dot tooltip pulls live from the alt slide's own eyebrow text [Dave 2026-05-07 sync rule]
     const altLabel = getSlideEyebrowText(altId);
     altDot.title = altLabel ? (altLabel + ' (alt for slide ' + pos + ')') : (altId + ' (alt for slide ' + pos + ')');
-    // [Dave 2026-05-08] Nav rotated to vertical right-side. Alt dots now stack horizontally to the LEFT of the primary dot
-    // (was: below, via .top). Each alt offsets by 13px so all are clickable.
-    altDot.style.right = (18 + i * 13) + 'px';
+    // [Dave 2026-05-08 v2] Alt dots stack horizontally to the LEFT of the parent, but CENTERED around a fixed column so rows with 1/2/3 alts all align visually. Center column = right:31px (the midpoint of where a 3-alt row spans, 18→44). For N alts each offset by 13px, we center the group on column 31.
+    const numAlts = SLIDE_ALTS[posKey].length;
+    const span = (numAlts - 1) * 13;
+    const startRight = 31 - span / 2;
+    altDot.style.right = (startRight + i * 13) + 'px';
     altDot.onclick = (e) => {
       e.stopPropagation();
       // Manual navigate to the alt slide ID — without disturbing the primary SLIDE_ORDER index
