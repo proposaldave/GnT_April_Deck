@@ -408,8 +408,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
 .casey-slide.active canvas, .casey-slide.active .orb, .casey-slide.active .orb-g, .casey-slide.active .orb-b, .casey-slide.active .orb-m, .casey-slide.active .orb-1, .casey-slide.active .orb-2, .casey-slide.active .magic-bg, .casey-slide.active .magic-glow, .casey-slide.active .magic-ring, .casey-slide.active .pulse, .casey-slide.active .ring-1, .casey-slide.active .ring-2, .casey-slide.active .hv-svg, .casey-slide.active .human-visual, .casey-slide.active svg.hv-svg { pointer-events: none !important; }
 
 .casey-slide.active{opacity:1;visibility:visible;pointer-events:all;transition:opacity 0.18s ease, visibility 0s linear 0s}
-/* [Dave 2026-05-08 v3] THIN vertical nav: pill width now driven only by dot column. APPENDIX button moved OUT of .casey-nav (pulled to a separate fixed position below the strip) so it can't force the pill wider. */
-.casey-nav{position:fixed;top:90px;right:14px;display:flex;flex-direction:column;align-items:center;gap:3px;z-index:999;background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);padding:8px 4px;border-radius:10px;border:1px solid rgba(26,22,18,0.10);max-height:calc(100vh - 160px);width:fit-content}
+/* [Dave 2026-05-08 v4] THIN vertical nav. APPENDIX moved BACK inside as compact icon-only widget so it doesn't overlap Speaker Notes circle (which sits at bottom:22px right:22px). Strip tightened: gap 3→2, padding 8/4→6/3. */
+.casey-nav{position:fixed;top:90px;right:14px;display:flex;flex-direction:column;align-items:center;gap:2px;z-index:999;background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);padding:6px 3px;border-radius:10px;border:1px solid rgba(26,22,18,0.10);max-height:calc(100vh - 200px);width:fit-content}
 .casey-dot{width:7px;height:7px;border-radius:50%;background:rgba(26,22,18,0.20);border:none;padding:0;cursor:pointer;transition:all 0.3s ease;flex-shrink:0}
 .casey-dot:hover{background:rgba(255,255,255,0.35);transform:scale(1.3)}
 /* [Dave 2026-05-08] Active dot is a VERTICAL pill (was horizontal) since the strip runs top-to-bottom */
@@ -20200,7 +20200,9 @@ function enterAppendix() {
     dot.onclick = () => appendixGo(i + 1);
     nav.appendChild(dot);
   });
-  document.getElementById('appendixBtn').textContent = '← Back to Deck';
+  // [Dave 2026-05-08 v4] In appendix mode, button becomes a back-arrow icon (matches the icon-only style of normal mode).
+  document.getElementById('appendixBtn').innerHTML = '<svg width="11" height="11" viewBox="0 0 12 12" style="display:block"><path d="M9 2 L4 6 L9 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  document.getElementById('appendixBtn').title = 'Back to Deck';
   document.getElementById('appendixBtn').onclick = exitAppendix;
 }
 
@@ -20212,7 +20214,9 @@ function exitAppendix() {
   // Remove appendix dots, show main-deck dots
   nav.querySelectorAll('.casey-dot.appendix-dot').forEach(d => d.remove());
   nav.querySelectorAll('.casey-dot').forEach(d => d.style.display = '');
-  document.getElementById('appendixBtn').textContent = 'Appendix';
+  // [Dave 2026-05-08 v4] Restore original icon (down chevron + pink dot)
+  document.getElementById('appendixBtn').innerHTML = '<svg width="9" height="9" viewBox="0 0 12 12" style="display:block"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="display:block;width:5px;height:5px;border-radius:50%;background:#ff4d8f;box-shadow:0 0 7px rgba(255,77,143,0.85);margin-top:3px;animation:pinkPulse 2.2s ease-in-out infinite"></span>';
+  document.getElementById('appendixBtn').title = 'Appendix · 5 bonus slides';
   document.getElementById('appendixBtn').onclick = enterAppendix;
   caseyGo(current);
 }
@@ -20610,13 +20614,14 @@ if (typeof REVIEW_POSITION === 'number' && REVIEW_POSITION > 0) {
 const abtn = document.createElement('button');
 abtn.id = 'appendixBtn';
 abtn.innerHTML = 'Appendix <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#ff4d8f;box-shadow:0 0 10px rgba(255,77,143,0.85);margin-left:6px;vertical-align:middle;animation:pinkPulse 2.2s ease-in-out infinite" title="5 bonus slides to review (Name Validated · Mechanism · Keep Going · Bottleneck · Measurement Leap)"></span>';
-// [Dave 2026-05-08 v3] APPENDIX button pulled OUT of .casey-nav and positioned as a separate fixed element below the strip — keeps the dot pill truly thin (was getting widened to fit 'APPENDIX' word).
-abtn.style.cssText = 'position:fixed;top:calc(100vh - 60px);right:8px;font-family:var(--ui,"Manrope",sans-serif);font-size:8px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,0.45);background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);border:1px solid rgba(26,22,18,0.10);border-radius:10px;padding:5px 8px;cursor:pointer;transition:all 0.3s;white-space:nowrap;z-index:999';
-abtn.onmouseenter = () => { abtn.style.color = 'rgba(255,255,255,0.7)'; abtn.style.borderColor = 'rgba(26,22,18,0.22)'; };
-abtn.onmouseleave = () => { abtn.style.color = 'rgba(255,255,255,0.45)'; abtn.style.borderColor = 'rgba(26,22,18,0.10)'; };
+// [Dave 2026-05-08 v4] APPENDIX button moved BACK inside .casey-nav as compact icon-only widget. v3 placed it at bottom-right of viewport which overlapped the Speaker Notes circle button (also at bottom-right). v4 = collapsed to icon (▾ + pink dot) that fits the narrow column without widening the pill.
+abtn.innerHTML = '<svg width="9" height="9" viewBox="0 0 12 12" style="display:block"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="display:block;width:5px;height:5px;border-radius:50%;background:#ff4d8f;box-shadow:0 0 7px rgba(255,77,143,0.85);margin-top:3px;animation:pinkPulse 2.2s ease-in-out infinite" title="5 bonus slides"></span>';
+abtn.style.cssText = 'display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;color:rgba(255,255,255,0.55);background:transparent;border:none;border-top:1px solid rgba(255,255,255,0.15);border-radius:0;padding:6px 0 2px;cursor:pointer;margin-top:5px;transition:color 0.3s;width:100%';
+abtn.title = 'Appendix · 5 bonus slides';
+abtn.onmouseenter = () => { abtn.style.color = 'rgba(255,255,255,0.9)'; };
+abtn.onmouseleave = () => { abtn.style.color = 'rgba(255,255,255,0.55)'; };
 abtn.onclick = enterAppendix;
-// Append directly to body, NOT inside nav, so it doesn't affect pill width
-document.body.appendChild(abtn);
+nav.appendChild(abtn);
 
 document.getElementById('cbar').style.width = ((1/TOTAL)*100) + '%';
 document.getElementById('ccount').textContent = '1 / ' + TOTAL;
