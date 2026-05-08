@@ -408,15 +408,18 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
 .casey-slide.active canvas, .casey-slide.active .orb, .casey-slide.active .orb-g, .casey-slide.active .orb-b, .casey-slide.active .orb-m, .casey-slide.active .orb-1, .casey-slide.active .orb-2, .casey-slide.active .magic-bg, .casey-slide.active .magic-glow, .casey-slide.active .magic-ring, .casey-slide.active .pulse, .casey-slide.active .ring-1, .casey-slide.active .ring-2, .casey-slide.active .hv-svg, .casey-slide.active .human-visual, .casey-slide.active svg.hv-svg { pointer-events: none !important; }
 
 .casey-slide.active{opacity:1;visibility:visible;pointer-events:all;transition:opacity 0.18s ease, visibility 0s linear 0s}
-.casey-nav{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:999;background:rgba(0,0,0,0.45);backdrop-filter:blur(8px);padding:10px 16px;border-radius:20px;border:1px solid rgba(26,22,18,0.12)}
+/* [Dave 2026-05-08] Nav rotated from bottom-horizontal to right-vertical, anchored under the GnR wordmark in the top-right corner. */
+.casey-nav{position:fixed;top:90px;right:24px;display:flex;flex-direction:column;gap:6px;z-index:999;background:rgba(0,0,0,0.45);backdrop-filter:blur(8px);padding:14px 10px;border-radius:20px;border:1px solid rgba(26,22,18,0.12);max-height:calc(100vh - 130px)}
 .casey-dot{width:10px;height:10px;border-radius:50%;background:rgba(26,22,18,0.20);border:none;padding:0;cursor:pointer;transition:all 0.3s ease}
 .casey-dot:hover{background:rgba(255,255,255,0.35);transform:scale(1.2)}
-.casey-dot.on{background:#d4a853;box-shadow:0 0 12px rgba(212,168,83,0.6);width:24px;border-radius:5px}
+/* [Dave 2026-05-08] Active dot is now a VERTICAL pill (was horizontal) since the strip runs top-to-bottom */
+.casey-dot.on{background:#d4a853;box-shadow:0 0 12px rgba(212,168,83,0.6);height:24px;border-radius:5px}
 .casey-dot.review{background:#e04040 !important;box-shadow:0 0 14px rgba(224,64,64,0.85) !important;animation:reviewPulse 1.6s ease-in-out infinite}
 .casey-dot.review.on{background:#e04040 !important}
 .casey-dot.locked{background:#3dff7a !important;box-shadow:0 0 12px rgba(61,255,122,0.7) !important}
 .casey-dot.locked.on{background:#3dff7a !important;box-shadow:0 0 16px rgba(61,255,122,0.85) !important}
-.casey-dot.alt{position:absolute;left:50%;transform:translateX(-50%);top:18px;width:7px !important;height:7px !important;background:rgba(212,168,83,0.55);border:1px solid rgba(212,168,83,0.85);box-shadow:0 0 6px rgba(212,168,83,0.4)}
+/* [Dave 2026-05-08] Alt dots now stack to the LEFT of their parent dot (was below). Positioned via JS using the .right property — see the altDot.style.right loop. */
+.casey-dot.alt{position:absolute;top:50%;transform:translateY(-50%);right:18px;width:7px !important;height:7px !important;background:rgba(212,168,83,0.55);border:1px solid rgba(212,168,83,0.85);box-shadow:0 0 6px rgba(212,168,83,0.4)}
 .casey-dot.alt.review{background:#e04040 !important;border:1px solid #e04040 !important;box-shadow:0 0 8px rgba(224,64,64,0.95) !important}
 @keyframes reviewPulse{0%,100%{box-shadow:0 0 14px rgba(224,64,64,0.85)}50%{box-shadow:0 0 22px rgba(224,64,64,1)}}
 .casey-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#d4a853,#e04040,#3dff7a);z-index:999;transition:width 0.5s ease}
@@ -5140,9 +5143,10 @@ html, body, html body{
 
 /* ======== MOBILE RESPONSIVE ======== */
 @media (max-width: 768px) {
-  .casey-nav { padding:6px 10px; gap:4px; bottom:12px; }
+  /* [Dave 2026-05-08] Mobile responsive nav — vertical right-side, NOT bottom anymore. */
+  .casey-nav { padding:8px 6px; gap:4px; top:60px; right:8px; bottom:auto; left:auto; transform:none; flex-direction:column; }
   .casey-dot { width:8px; height:8px; }
-  .casey-dot.on { width:18px; }
+  .casey-dot.on { height:18px; }
   .casey-count { font-size:9px; top:8px; right:12px; }
   .teaser-container { padding:0 16px !important; }
   .teaser-question { font-size:clamp(18px,5vw,28px) !important; }
@@ -5155,9 +5159,9 @@ html, body, html body{
   #appendixBtn { font-size:8px !important; padding:4px 10px !important; }
 }
 @media (max-width: 480px) {
-  .casey-nav { padding:4px 6px; gap:3px; bottom:8px; }
+  .casey-nav { padding:6px 5px; gap:3px; top:48px; right:6px; }
   .casey-dot { width:6px; height:6px; }
-  .casey-dot.on { width:14px; }
+  .casey-dot.on { height:14px; }
   .graph-slide { width:95% !important; }
   .graph-container { width:min(300px,85vw) !important; height:min(300px,85vw) !important; }
   .wedge-grid { grid-template-columns:1fr !important; }
@@ -5190,13 +5194,18 @@ html, body, html body{
     font-size: 9px !important;
     letter-spacing: 0.15em !important;
   }
-  /* Navigation — bigger for touch, repositioned */
+  /* [Dave 2026-05-08] Navigation now vertical right-side — bigger for touch */
   .casey-nav {
-    bottom: 10px !important;
-    padding: 8px 12px !important;
+    top: 56px !important;
+    right: 8px !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    padding: 8px 6px !important;
     gap: 5px !important;
-    max-width: 92vw !important;
-    overflow-x: auto !important;
+    max-height: calc(100vh - 100px) !important;
+    overflow-y: auto !important;
+    flex-direction: column !important;
     flex-wrap: nowrap !important;
   }
   .casey-dot { width: 10px !important; height: 10px !important; min-width: 10px !important; }
@@ -5393,9 +5402,9 @@ html, body, html body{
 @media (max-width: 380px) {
   .casey-slide { padding: 10px 12px !important; padding-top: 48px !important; padding-bottom: 64px !important; }
   .h, .display { font-size: clamp(16px, 5vw, 22px) !important; }
-  .casey-nav { padding: 6px 10px !important; gap: 4px !important; }
-  .casey-dot { width: 8px !important; height: 8px !important; min-width: 8px !important; }
-  .casey-dot.on { width: 16px !important; }
+  .casey-nav { padding: 6px 5px !important; gap: 4px !important; }
+  .casey-dot { width: 8px !important; height: 8px !important; min-width: 8px !important; min-height: 8px !important; }
+  .casey-dot.on { height: 16px !important; }
   .teaser-question { font-size: 18px !important; }
   .sm-headline-big { font-size: 18px !important; }
 }
@@ -20569,9 +20578,9 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // Alt-dot tooltip pulls live from the alt slide's own eyebrow text [Dave 2026-05-07 sync rule]
     const altLabel = getSlideEyebrowText(altId);
     altDot.title = altLabel ? (altLabel + ' (alt for slide ' + pos + ')') : (altId + ' (alt for slide ' + pos + ')');
-    // Stack alts vertically below the primary dot [Dave 2026-05-07 PM]: previously all alts shared top:18px (the CSS default)
-    // and rendered ON TOP of each other — only the last was visible. Now each alt offsets by 13px so all are clickable.
-    altDot.style.top = (18 + i * 13) + 'px';
+    // [Dave 2026-05-08] Nav rotated to vertical right-side. Alt dots now stack horizontally to the LEFT of the primary dot
+    // (was: below, via .top). Each alt offsets by 13px so all are clickable.
+    altDot.style.right = (18 + i * 13) + 'px';
     altDot.onclick = (e) => {
       e.stopPropagation();
       // Manual navigate to the alt slide ID — without disturbing the primary SLIDE_ORDER index
@@ -20611,7 +20620,7 @@ if (typeof REVIEW_POSITION === 'number' && REVIEW_POSITION > 0) {
 const abtn = document.createElement('button');
 abtn.id = 'appendixBtn';
 abtn.innerHTML = 'Appendix <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#ff4d8f;box-shadow:0 0 10px rgba(255,77,143,0.85);margin-left:6px;vertical-align:middle;animation:pinkPulse 2.2s ease-in-out infinite" title="5 bonus slides to review (Name Validated · Mechanism · Keep Going · Bottleneck · Measurement Leap)"></span>';
-abtn.style.cssText = 'font-family:var(--ui,"Manrope",sans-serif);font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);background:rgba(26,22,18,0.05);border:1px solid rgba(26,22,18,0.14);border-radius:12px;padding:5px 14px;cursor:pointer;margin-left:8px;transition:all 0.3s';
+abtn.style.cssText = 'font-family:var(--ui,"Manrope",sans-serif);font-size:9px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,0.35);background:rgba(26,22,18,0.05);border:1px solid rgba(26,22,18,0.14);border-radius:10px;padding:5px 8px;cursor:pointer;margin-top:8px;transition:all 0.3s;white-space:nowrap';
 abtn.onmouseenter = () => { abtn.style.color = 'rgba(255,255,255,0.6)'; abtn.style.borderColor = 'rgba(26,22,18,0.18)'; };
 abtn.onmouseleave = () => { abtn.style.color = 'rgba(255,255,255,0.35)'; abtn.style.borderColor = 'rgba(255,255,255,0.08)'; };
 abtn.onclick = enterAppendix;
