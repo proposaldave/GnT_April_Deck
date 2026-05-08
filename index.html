@@ -10854,6 +10854,191 @@ html, body, html body{
 </section>
 </div>
 
+<!-- ============================================================================
+     SLOT 13 REVIEW · MEASUREMENT-IS-THE-NETWORK CANDIDATES (Dave 2026-05-08)
+     Brief: investor pitch needs to land that GnR turns pickleball communities
+     into human-connection social networks ON and OFF the court — by MEASURING
+     who chooses to spend time with whom. The measurement (give/receive graph)
+     organically becomes the social network. Replaces the deleted cs-frontier
+     in slot 13. Three candidates — Dave picks the strongest.
+============================================================================ -->
+
+<!-- ===== cs-measure — THE MEASUREMENT REFRAME (Dave 2026-05-08) ===== -->
+<style>
+  #cs-measure .mr-rest { opacity: 0; transition: opacity 0.7s cubic-bezier(.22,1,.36,1); pointer-events: none; }
+  #cs-measure[data-shown="1"] .mr-rest { opacity: 1; pointer-events: auto; transition-delay: 0.05s; }
+  #cs-measure .mr-hint { display: flex; align-items: center; justify-content: center; margin-top: 24px; opacity: 0.7; animation: mrHintPulse 1.8s ease-in-out infinite; transition: opacity 0.3s ease; }
+  #cs-measure[data-shown="1"] .mr-hint { opacity: 0; pointer-events: none; animation: none; }
+  @keyframes mrHintPulse { 0%, 100% { opacity: 0.4; transform: translateY(0); } 50% { opacity: 0.9; transform: translateY(4px); } }
+  html[data-export="1"] #cs-measure .mr-rest { opacity: 1 !important; pointer-events: auto !important; }
+  html[data-export="1"] #cs-measure .mr-hint { display: none !important; }
+  /* The single illustrative line of dots → web that animates in on reveal */
+  #cs-measure .mr-graph { display:flex; align-items:center; justify-content:center; gap:18px; margin-top:18px; }
+  #cs-measure .mr-graph .mr-dot { width:9px; height:9px; border-radius:50%; background:#b8954a; opacity:0.55; }
+  #cs-measure .mr-graph .mr-link { width:32px; height:1.2px; background:linear-gradient(90deg, rgba(184,149,74,0.5), rgba(91,143,212,0.5)); }
+</style>
+<div class="casey-slide ds-focus" id="cs-measure" data-shown="0" onclick="csMeasureAdvance();event.stopPropagation()" style="cursor:pointer">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The Measurement Reframe</div>
+
+  <div class="inner" style="padding:80px 56px 56px;text-align:center;max-width:1320px;margin:0 auto;width:100%">
+    <!-- Hero headline (always visible) -->
+    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem, 3.4vw, 3.3rem);font-weight:700;line-height:1.16;letter-spacing:-0.02em;color:#1a1612;max-width:1240px;margin:0 auto">
+      We don't <em style="font-style:italic;color:rgba(26,22,18,0.5);font-weight:600">build</em> a social network.<br>
+      We <span style="color:#b8954a;font-weight:800">measure who shows up for whom.</span><br>
+      <span style="font-style:italic;color:rgba(26,22,18,0.85)">That measurement</span> <span style="color:#5B8FD4;font-weight:800;font-style:italic">IS</span> <span style="font-style:italic;color:rgba(26,22,18,0.85)">the network.</span>
+    </div>
+
+    <!-- Click hint -->
+    <div class="mr-hint">
+      <span style="font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a">Click to reveal</span>
+      <svg width="14" height="14" viewBox="0 0 14 14" style="margin-left:6px"><path d="M2 5 L7 10 L12 5" fill="none" stroke="#b8954a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <!-- REVEAL: ladder of layers + closer -->
+    <div class="mr-rest" style="margin-top:42px">
+      <div style="display:flex;justify-content:center;gap:22px;flex-wrap:wrap;max-width:1200px;margin:0 auto 28px">
+        <div style="flex:1;min-width:240px;max-width:300px;padding:16px 18px;border-radius:10px;background:rgba(91,143,212,0.04);border:1px solid rgba(91,143,212,0.18);text-align:left">
+          <div style="font-family:'Manrope',sans-serif;font-size:0.55rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:rgba(91,143,212,0.85);margin-bottom:6px">1D · Skill ratings</div>
+          <div style="font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#1a1612;line-height:1.3">A number.</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.78rem;color:rgba(26,22,18,0.55);margin-top:4px;line-height:1.4">DUPR · 100-yr-old paradigm. Can't grow into a network.</div>
+        </div>
+        <div style="flex:1;min-width:240px;max-width:300px;padding:16px 18px;border-radius:10px;background:rgba(91,143,212,0.04);border:1px solid rgba(91,143,212,0.18);text-align:left">
+          <div style="font-family:'Manrope',sans-serif;font-size:0.55rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:rgba(91,143,212,0.85);margin-bottom:6px">2D · Coordination</div>
+          <div style="font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#1a1612;line-height:1.3">Who plays today.</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.78rem;color:rgba(26,22,18,0.55);margin-top:4px;line-height:1.4">CourtReserve · the wedge. Schedule, not relationship.</div>
+        </div>
+        <div style="flex:1;min-width:240px;max-width:300px;padding:16px 18px;border-radius:10px;background:rgba(184,149,74,0.10);border:1.6px solid #b8954a;text-align:left;box-shadow:0 0 0 3px rgba(184,149,74,0.06)">
+          <div style="font-family:'Manrope',sans-serif;font-size:0.55rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#8a6d2e;margin-bottom:6px">N×∞ · Reciprocity</div>
+          <div style="font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#1a1612;line-height:1.3">Who shows up for whom.</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.78rem;color:rgba(26,22,18,0.7);margin-top:4px;line-height:1.4"><span style="color:#b8954a;font-style:normal;font-weight:700">GnR</span> · the social fabric. Already a network — just rendered.</div>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid rgba(184,149,74,0.32);padding-top:20px;max-width:1080px;margin:0 auto;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.45vw,1.4rem);font-style:italic;font-weight:600;color:#1a1612;line-height:1.4;text-align:center">
+        Coordination is the wedge. Reciprocity is the graph.<br>
+        The graph is the social network — <span style="color:#c8462c;font-style:normal;font-weight:700">on the court, and off it.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="casey-pagenum"><span class="cn-cur"></span> / <span class="cn-tot"></span></div>
+  <div class="casey-wordmark"><span class="wm-g">G</span><span class="wm-n">n</span><span class="wm-r">R</span></div>
+</section>
+</div>
+
+<!-- ===== cs-byproduct — CONNECTION AS EXHAUST (Dave 2026-05-08) ===== -->
+<style>
+  #cs-byproduct .bp-rest { opacity: 0; transition: opacity 0.7s cubic-bezier(.22,1,.36,1); pointer-events: none; }
+  #cs-byproduct[data-shown="1"] .bp-rest { opacity: 1; pointer-events: auto; transition-delay: 0.05s; }
+  #cs-byproduct .bp-hint { display: flex; align-items: center; justify-content: center; margin-top: 24px; opacity: 0.7; animation: bpHintPulse 1.8s ease-in-out infinite; transition: opacity 0.3s ease; }
+  #cs-byproduct[data-shown="1"] .bp-hint { opacity: 0; pointer-events: none; animation: none; }
+  @keyframes bpHintPulse { 0%, 100% { opacity: 0.4; transform: translateY(0); } 50% { opacity: 0.9; transform: translateY(4px); } }
+  html[data-export="1"] #cs-byproduct .bp-rest { opacity: 1 !important; pointer-events: auto !important; }
+  html[data-export="1"] #cs-byproduct .bp-hint { display: none !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-byproduct" data-shown="0" onclick="csByproductAdvance();event.stopPropagation()" style="cursor:pointer">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The Byproduct</div>
+
+  <div class="inner" style="padding:80px 56px 56px;text-align:center;max-width:1320px;margin:0 auto;width:100%">
+    <!-- Hero headline (always visible) -->
+    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem, 3.3vw, 3.2rem);font-weight:700;line-height:1.18;letter-spacing:-0.018em;color:#1a1612;max-width:1240px;margin:0 auto">
+      Every other social network<br><span style="color:rgba(26,22,18,0.5);font-style:italic;font-weight:600">asks users to be social.</span><br><br>
+      <span style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.2rem,3.6vw,3.5rem)"><span style="color:#5B8FD4;font-weight:800">G</span><span style="color:#b8954a;font-weight:800;font-style:italic">n</span><span style="color:#c8462c;font-weight:800">R</span></span> <span style="color:#1a1612">captures human connection</span><br><span style="color:#b8954a;font-style:italic;font-weight:800">as exhaust.</span>
+    </div>
+
+    <!-- Click hint -->
+    <div class="bp-hint">
+      <span style="font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a">Click to reveal</span>
+      <svg width="14" height="14" viewBox="0 0 14 14" style="margin-left:6px"><path d="M2 5 L7 10 L12 5" fill="none" stroke="#b8954a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <!-- REVEAL -->
+    <div class="bp-rest" style="margin-top:38px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1140px;margin:0 auto 26px">
+        <div style="padding:20px 22px;border-radius:10px;background:rgba(200,70,44,0.04);border:1px solid rgba(200,70,44,0.22);text-align:left">
+          <div style="font-family:'Manrope',sans-serif;font-size:0.58rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#c8462c;margin-bottom:8px">Facebook · LinkedIn · Tinder</div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:#1a1612;line-height:1.35">Users opt into <em style="color:rgba(26,22,18,0.55);font-style:italic">posting · liking · swiping · following</em>.</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.85rem;color:rgba(26,22,18,0.6);margin-top:6px;line-height:1.45">Declarative signal. Performative. The work is the product.</div>
+        </div>
+        <div style="padding:20px 22px;border-radius:10px;background:rgba(184,149,74,0.10);border:1.6px solid #b8954a;text-align:left;box-shadow:0 0 0 3px rgba(184,149,74,0.06)">
+          <div style="font-family:'Manrope',sans-serif;font-size:0.58rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#8a6d2e;margin-bottom:8px">Give n Receive</div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:#1a1612;line-height:1.35">Players just <em style="color:#b8954a;font-style:italic">pick a court</em>. The graph builds itself.</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.85rem;color:rgba(26,22,18,0.7);margin-top:6px;line-height:1.45">Behavioral signal. Real reciprocity. The product is the work they were doing anyway.</div>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid rgba(184,149,74,0.32);padding-top:18px;max-width:1080px;margin:0 auto;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.45vw,1.4rem);font-style:italic;font-weight:600;color:#1a1612;line-height:1.4;text-align:center">
+        Pickleball clubs will coordinate every week — that was always going to happen.<br>
+        We just <span style="color:#b8954a;font-weight:800;font-style:normal">measure it</span>. <span style="color:#c8462c;font-style:normal;font-weight:700">On the court. And off it.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="casey-pagenum"><span class="cn-cur"></span> / <span class="cn-tot"></span></div>
+  <div class="casey-wordmark"><span class="wm-g">G</span><span class="wm-n">n</span><span class="wm-r">R</span></div>
+</section>
+</div>
+
+<!-- ===== cs-onandoff — ON THE COURT · OFF THE COURT (Dave 2026-05-08) ===== -->
+<style>
+  #cs-onandoff .oo-rest { opacity: 0; transition: opacity 0.7s cubic-bezier(.22,1,.36,1); pointer-events: none; }
+  #cs-onandoff[data-shown="1"] .oo-rest { opacity: 1; pointer-events: auto; transition-delay: 0.05s; }
+  #cs-onandoff .oo-hint { display: flex; align-items: center; justify-content: center; margin-top: 24px; opacity: 0.7; animation: ooHintPulse 1.8s ease-in-out infinite; transition: opacity 0.3s ease; }
+  #cs-onandoff[data-shown="1"] .oo-hint { opacity: 0; pointer-events: none; animation: none; }
+  @keyframes ooHintPulse { 0%, 100% { opacity: 0.4; transform: translateY(0); } 50% { opacity: 0.9; transform: translateY(4px); } }
+  html[data-export="1"] #cs-onandoff .oo-rest { opacity: 1 !important; pointer-events: auto !important; }
+  html[data-export="1"] #cs-onandoff .oo-hint { display: none !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-onandoff" data-shown="0" onclick="csOnandoffAdvance();event.stopPropagation()" style="cursor:pointer">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">On the Court &middot; Off the Court</div>
+
+  <div class="inner" style="padding:80px 56px 56px;text-align:center;max-width:1320px;margin:0 auto;width:100%">
+    <!-- Hero headline -->
+    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem, 3.4vw, 3.3rem);font-weight:700;line-height:1.16;letter-spacing:-0.02em;color:#1a1612;max-width:1260px;margin:0 auto">
+      A pickleball community's <span style="color:rgba(26,22,18,0.5);font-style:italic;font-weight:600">coordination system</span>,<br>
+      rebuilt on <span style="color:#b8954a;font-weight:800">human connection</span>,<br>
+      <span style="font-style:italic;color:#1a1612">becomes its</span> <span style="color:#5B8FD4;font-weight:800">social network.</span>
+    </div>
+
+    <!-- Click hint -->
+    <div class="oo-hint">
+      <span style="font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a">Click to reveal</span>
+      <svg width="14" height="14" viewBox="0 0 14 14" style="margin-left:6px"><path d="M2 5 L7 10 L12 5" fill="none" stroke="#b8954a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <!-- REVEAL: on-court → off-court arc -->
+    <div class="oo-rest" style="margin-top:40px">
+      <div style="display:flex;justify-content:center;align-items:stretch;gap:18px;max-width:1200px;margin:0 auto 24px;flex-wrap:wrap">
+        <div style="flex:1;min-width:280px;max-width:340px;padding:18px 20px;border-radius:10px;background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.28);text-align:left">
+          <div style="font-family:'Manrope',sans-serif;font-size:0.58rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#5B8FD4;margin-bottom:8px">On the court</div>
+          <div style="font-family:'Playfair Display',serif;font-size:0.98rem;font-weight:700;color:#1a1612;line-height:1.35">Krista builds the perfect 4 from a graph nobody else has.</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.8rem;color:rgba(26,22,18,0.62);margin-top:6px;line-height:1.45">Every game emits give &amp; receive signal. The graph thickens.</div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.4rem;color:#b8954a;font-weight:700">→</div>
+        <div style="flex:1;min-width:280px;max-width:340px;padding:18px 20px;border-radius:10px;background:rgba(184,149,74,0.10);border:1.6px solid #b8954a;text-align:left;box-shadow:0 0 0 3px rgba(184,149,74,0.06)">
+          <div style="font-family:'Manrope',sans-serif;font-size:0.58rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#8a6d2e;margin-bottom:8px">Off the court</div>
+          <div style="font-family:'Playfair Display',serif;font-size:0.98rem;font-weight:700;color:#1a1612;line-height:1.35">That same graph powers <em style="font-style:italic;color:#b8954a">invitations · gatherings · gifts · life</em>.</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.8rem;color:rgba(26,22,18,0.7);margin-top:6px;line-height:1.45">Same fabric. Same trust. Wider room.</div>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid rgba(184,149,74,0.32);padding-top:18px;max-width:1080px;margin:0 auto;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.45vw,1.4rem);font-style:italic;font-weight:600;color:#1a1612;line-height:1.4;text-align:center">
+        We don't migrate users to a new app.<br>
+        <span style="color:#c8462c;font-style:normal;font-weight:700">The system they already use becomes the network they already needed.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="casey-pagenum"><span class="cn-cur"></span> / <span class="cn-tot"></span></div>
+  <div class="casey-wordmark"><span class="wm-g">G</span><span class="wm-n">n</span><span class="wm-r">R</span></div>
+</section>
+</div>
+
+<!-- ===== END SLOT 13 REVIEW CANDIDATES ===== -->
+
 <!-- cs-25 (The Promise) merged into cs-26 (Closer) — Dave 2026-04-29 -->
 <!-- ===== cs-25 — Pickleball wedge · lowest-risk path (paper-mode, lifted from 2025slides #14). Dave 2026-04-29 ===== -->
 <div class="casey-slide ds-focus" id="cs-25">
@@ -18594,7 +18779,9 @@ const SLIDE_ORDER = [
   // cs-hc3 (radiating-figure Human Flywheel) DELETED from main flow 2026-05-06 PM v5 per Dave — replaced with cs-12m2 infinity-loop reciprocity.
   // cs-brand-V9 MOVED to slot 12 (right after cs-19) per Dave 2026-05-07 — was at slot 13.
   // cs-hc9 MOVED to appendix per Dave 2026-05-07 — 'We feel most alive when we're free, generous, spontaneously ourselves' (was slot 14)
-  // [Dave 2026-05-07 PM LATER] cs-frontier MOVED to END of APPENDIX per Dave: 'this slide design is terrible, has far too much content, and needs to be moved to the very end of the deck'.
+  // [Dave 2026-05-07 PM LATER] cs-frontier MOVED to END of APPENDIX.
+  // [Dave 2026-05-08] NEW slot 13: 'measurement-is-the-network' candidates. Brief: investor pitch needs to land that GnR turns pickleball communities into human-connection social networks ON and OFF the court — by MEASURING who chooses to spend time with whom. The graph organically becomes the network. THREE candidates as red review dots: cs-measure (primary) + cs-byproduct + cs-onandoff (alts).
+  'cs-measure', // 13 PRIMARY · The Measurement Reframe ('We don't build a social network. We measure who shows up for whom. That measurement IS the network.')
   'cs-25',    // 14 Why pickleball first ("Pickleball is the clearest path...")
   'cs-fw1',   // 15 Autonomous social coordination ('Drop GnR into any pickleball club. It just works. And compounds forever — at AI speed.') — flywheel diagram. MOVED from appendix to main per Dave 2026-05-07 PM.
   'cs-hc8',   // 16 The AI Inversion ('Most things AI makes abundant get cheaper. Connection gets more valuable.') — MOVED from appendix to main per Dave 2026-05-07 PM.
@@ -18666,6 +18853,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-07 PM v13] V16 'Open Heart' MOVED from alts to first appendix slide per Dave: 'really good but move it to the first appendix slide'. Now lives in APPENDIX_ORDER, not as alt dot.
   // [Dave 2026-05-07 PM v14] V15 'Time, Care, Ideas, Love' MOVED from alts to END of appendix per Dave: 'move this slide to the end of the appendix'. Now lives in APPENDIX_ORDER, not as alt dot.
   12: [],
+  // [Dave 2026-05-08] Slot 13 review: 3 candidates for the measurement-IS-network thesis. Primary cs-measure + 2 alts. All render as RED dots (REVIEW_POSITION=13).
+  13: ['cs-byproduct', 'cs-onandoff'],
   // cs-brand-V1 MOVED to last appendix slide per Dave 2026-05-07 PM ('move this slide to the last slide in the appendix'). Slot 12 alts now EMPTY — V8 is the lone brand-opportunity slide in main flow; brand variants V9/V15/V1 all live in appendix end.
   // cs-brand-V5 ('WHEN you're free, generous, spontaneously yourself / THEN your community rises with you / Aliveness spreads. Reciprocity compounds.') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
   // cs-brand-V2 ('When you show up fully... / What matters most comes back to you. + Networked stacked above n + n is the engine tagline') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
@@ -18680,7 +18869,7 @@ const SLIDE_ALTS = {
   // cs-brand-V13 ('What you give is you leaving a mark. / What you get is life sending it back.') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
   // cs-brand-V14 ('You get back what matters most. / Like it was meant to be.') REMOVED 2026-05-07 per Dave: 'delete this'. HTML retained as silent backup.
 };
-const REVIEW_POSITION = 0; // no slot under review per Dave 2026-05-07 PM ('red dot no longer necessary'). V8 settled as primary at slot 12; brand variants live in appendix.
+const REVIEW_POSITION = 13; // [Dave 2026-05-08] Slot 13 = NEW measurement-is-the-network candidates (cs-measure primary + cs-byproduct + cs-onandoff alts). Strategic punch for next investor pitch — pickleball coordination becomes ON+OFF-court social network because measuring human connection IS the network.
 // LOCKED_POSITIONS: emptied per Dave 2026-05-07 — green dots removed from nav, red review dot kept.
 // Locked-state still tracked in comments/git; just no longer rendered as a UI marker.
 const LOCKED_POSITIONS = [];
@@ -18892,6 +19081,49 @@ window.csOnceAdvance = function() {
 };
 window.csOnceReverse = function() {
   const slide = document.getElementById('cs-once');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown === '0') return false;
+  slide.dataset.shown = '0';
+  return true;
+};
+// cs-measure / cs-byproduct / cs-onandoff — slot 13 review candidates [Dave 2026-05-08 — measurement-IS-network thesis]
+window.csMeasureAdvance = function() {
+  const slide = document.getElementById('cs-measure');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown === '1') return false;
+  slide.dataset.shown = '1';
+  return true;
+};
+window.csMeasureReverse = function() {
+  const slide = document.getElementById('cs-measure');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown === '0') return false;
+  slide.dataset.shown = '0';
+  return true;
+};
+window.csByproductAdvance = function() {
+  const slide = document.getElementById('cs-byproduct');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown === '1') return false;
+  slide.dataset.shown = '1';
+  return true;
+};
+window.csByproductReverse = function() {
+  const slide = document.getElementById('cs-byproduct');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown === '0') return false;
+  slide.dataset.shown = '0';
+  return true;
+};
+window.csOnandoffAdvance = function() {
+  const slide = document.getElementById('cs-onandoff');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown === '1') return false;
+  slide.dataset.shown = '1';
+  return true;
+};
+window.csOnandoffReverse = function() {
+  const slide = document.getElementById('cs-onandoff');
   if (!slide || !slide.classList.contains('active')) return false;
   if (slide.dataset.shown === '0') return false;
   slide.dataset.shown = '0';
@@ -19541,7 +19773,8 @@ const slideLabels = [
   '3× net profit for your club',                     // 10 cs-19
   // cs-brand-V9 + cs-brand-V15 labels REMOVED from main 2026-05-07 PM — both moved to appendix end
   'Generational Consumer Brand Opportunity · Human Value, Finally Seen',   // 12 cs-brand-V8
-  // cs-frontier label removed from main 2026-05-07 PM — moved to LAST appendix slide per Dave: 'this slide design is terrible, has far too much content, and needs to be moved to the very end of the deck'
+  // [Dave 2026-05-08] slot 13 = measurement-is-the-network review (cs-measure primary). Alts cs-byproduct + cs-onandoff don't get separate label slots — alt-dot tooltips read from each slide's own eyebrow.
+  'Measurement Reframe · who shows up for whom',     // 13 cs-measure [NEW 2026-05-08]
   'Why pickleball first',                            // 14 cs-25
   'Autonomous social coordination',                  // 14 cs-fw1 (moved from appendix to main slot 14 per Dave 2026-05-07 PM)
   'The AI Inversion',                                // 15 cs-hc8 (moved from appendix to main slot 15 per Dave 2026-05-07 PM)
@@ -19693,6 +19926,9 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-thegap' && window.csThegapAdvance && window.csThegapAdvance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-once' && window.csOnceAdvance && window.csOnceAdvance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-frontier' && window.csFrontierAdvance && window.csFrontierAdvance()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-measure' && window.csMeasureAdvance && window.csMeasureAdvance()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-byproduct' && window.csByproductAdvance && window.csByproductAdvance()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-onandoff' && window.csOnandoffAdvance && window.csOnandoffAdvance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cAdvance   && window.cs2cAdvance())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-gnr'  && window.csGnrAdvance  && window.csGnrAdvance())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-4'    && window.cs4Advance    && window.cs4Advance())    return;
@@ -19712,6 +19948,9 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-thegap' && window.csThegapReverse && window.csThegapReverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-once' && window.csOnceReverse && window.csOnceReverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-frontier' && window.csFrontierReverse && window.csFrontierReverse()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-measure' && window.csMeasureReverse && window.csMeasureReverse()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-byproduct' && window.csByproductReverse && window.csByproductReverse()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-onandoff' && window.csOnandoffReverse && window.csOnandoffReverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cReverse   && window.cs2cReverse())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-gnr'  && window.csGnrReverse  && window.csGnrReverse())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-4'    && window.cs4Reverse    && window.cs4Reverse())    return;
@@ -19781,6 +20020,18 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-measure' && window.csMeasureAdvance && window.csMeasureAdvance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-byproduct' && window.csByproductAdvance && window.csByproductAdvance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-onandoff' && window.csOnandoffAdvance && window.csOnandoffAdvance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
   }
   else if (e.deltaY < 0) {
@@ -19827,6 +20078,18 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-measure' && window.csMeasureReverse && window.csMeasureReverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-byproduct' && window.csByproductReverse && window.csByproductReverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-onandoff' && window.csOnandoffReverse && window.csOnandoffReverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
   }
   setTimeout(() => { wheelLock = false; }, 400);
@@ -19853,6 +20116,9 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-thegap' && window.csThegapAdvance && window.csThegapAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-once' && window.csOnceAdvance && window.csOnceAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-frontier' && window.csFrontierAdvance && window.csFrontierAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-measure' && window.csMeasureAdvance && window.csMeasureAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-byproduct' && window.csByproductAdvance && window.csByproductAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-onandoff' && window.csOnandoffAdvance && window.csOnandoffAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2c'   && window.cs2cAdvance   && window.cs2cAdvance())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-gnr'  && window.csGnrAdvance  && window.csGnrAdvance())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2b'   && window.cs2bAdvance   && window.cs2bAdvance())   { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -19869,6 +20135,9 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-thegap' && window.csThegapReverse && window.csThegapReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-once' && window.csOnceReverse && window.csOnceReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-frontier' && window.csFrontierReverse && window.csFrontierReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-measure' && window.csMeasureReverse && window.csMeasureReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-byproduct' && window.csByproductReverse && window.csByproductReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-onandoff' && window.csOnandoffReverse && window.csOnandoffReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2c'   && window.cs2cReverse   && window.cs2cReverse())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-gnr'  && window.csGnrReverse  && window.csGnrReverse())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2b'   && window.cs2bReverse   && window.cs2bReverse())   { setTimeout(() => { touchLock = false; }, 400); return; }
