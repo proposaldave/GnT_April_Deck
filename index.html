@@ -17712,6 +17712,23 @@ html, body, html body{
   @keyframes a7Para { 0%,100% { filter:drop-shadow(0 0 18px rgba(212,168,83,0.4)); } 50% { filter:drop-shadow(0 0 32px rgba(212,168,83,0.7)); } }
   #cs-a7 .a7-fig    { animation:a7Glow 4s ease-in-out infinite; }
   #cs-a7 .a7-chart  { animation:a7Para 3.4s ease-in-out infinite; }
+  /* [Dave 2026-05-08] Entrance animation per Dave: '"The Last Frontier" is a very powerful visual slide because it's so simple - but it has zero animation on load which i dont love'. 4-beat cinematic entrance: eyebrow → orb (fade-scale-in) → cap-rule → caption. */
+  #cs-a7 .a7-eyebrow,
+  #cs-a7 .a7-orb,
+  #cs-a7 .a7-cap-rule,
+  #cs-a7 .a7-cap { opacity: 0; transition: opacity 0.85s cubic-bezier(.22,1,.36,1), transform 0.85s cubic-bezier(.22,1,.36,1); }
+  #cs-a7 .a7-eyebrow,
+  #cs-a7 .a7-cap-rule,
+  #cs-a7 .a7-cap { transform: translateY(22px); }
+  #cs-a7 .a7-orb { transform: translateY(22px) scale(0.92); }
+  #cs-a7.casey-entered .a7-eyebrow { opacity: 1; transform: translateY(0); transition-delay: 0.15s; }
+  #cs-a7.casey-entered .a7-orb { opacity: 1; transform: translateY(0) scale(1); transition-delay: 0.4s; }
+  #cs-a7.casey-entered .a7-cap-rule { opacity: 1; transform: translateY(0); transition-delay: 0.85s; }
+  #cs-a7.casey-entered .a7-cap { opacity: 1; transform: translateY(0); transition-delay: 1.0s; }
+  html[data-export="1"] #cs-a7 .a7-eyebrow,
+  html[data-export="1"] #cs-a7 .a7-orb,
+  html[data-export="1"] #cs-a7 .a7-cap-rule,
+  html[data-export="1"] #cs-a7 .a7-cap { opacity: 1 !important; transform: none !important; }
 </style>
 <div class="casey-slide ds-intro" id="cs-a7">
   <div class="a7-amb"></div>
@@ -18559,7 +18576,8 @@ html, body, html body{
   @keyframes tiHintPulse { 0%,100% { opacity:.6 } 50% { opacity:1 } }
 
   /* HARMONIZED BAR CHART STYLES — both charts share the same bar treatment */
-  #cs-1bm1 .ti-bar-row { display: grid; align-items: center; gap: 12px; margin-bottom: 9px; }
+  /* [Dave 2026-05-08] Row margin tightened 9→6px to free vertical space — Work added a 6th row + Sources strip was getting cut off at card bottom. */
+  #cs-1bm1 .ti-bar-row { display: grid; align-items: center; gap: 12px; margin-bottom: 6px; }
   #cs-1bm1 .ti-bar-row.ti-tech-row { grid-template-columns: 110px 1fr 130px; }
   #cs-1bm1 .ti-bar-row.ti-val-row  { grid-template-columns: 110px 1fr 130px; }
   #cs-1bm1 .ti-bar-track { position: relative; height: 10px; background: transparent; border-radius: 2px; }
@@ -18716,7 +18734,7 @@ html, body, html body{
     <!-- RIGHT slot (Values card moved LEFT per friend feedback 2026-05-04 — values is the lead beat) -->
     <div class="ti-flip-wrap" onclick="cs1bm1Toggle('right');event.stopPropagation()" style="cursor:pointer">
      <div class="ti-flip-inner ti-flip-right">
-      <div class="ti-card ti-right" style="background:rgba(200,70,44,0.06);border:1px solid rgba(200,70,44,0.22);border-top:4px solid #c8462c;border-radius:12px;padding:22px 20px 52px;display:flex;flex-direction:column;align-items:center;gap:12px;overflow:hidden">
+      <div class="ti-card ti-right" style="background:rgba(200,70,44,0.06);border:1px solid rgba(200,70,44,0.22);border-top:4px solid #c8462c;border-radius:12px;padding:18px 20px 22px;display:flex;flex-direction:column;align-items:center;gap:8px;overflow:hidden">
         <div style="font-family:'Manrope',sans-serif;font-size:0.92rem;font-weight:800;letter-spacing:0.36em;text-transform:uppercase;color:#c8462c">Values imbalance</div>
         <!-- Values chart: what culture values (filled bars) → Human Connection EMPTY void at bottom -->
         <div style="width:100%;max-width:560px;margin-top:4px">
@@ -18726,21 +18744,21 @@ html, body, html body{
             <div class="ti-bar-track"><div class="ti-bar-fill ti-bf-1" style="width:50%"></div></div>
             <div></div>
           </div>
-          <!-- "Ourselves" subtext on its own row — sized to match the bar so it visually centers under it. [Dave 2026-05-08] 'work' pulled out of this list and given its own bar above Money below. -->
+          <!-- "Ourselves" subtext on its own row — sized to match the bar so it visually centers under it. [Dave 2026-05-08] 'work' pulled out of this list and given its own bar. -->
           <div class="ti-bar-row ti-val-row" style="margin-top:-4px;margin-bottom:9px">
             <div></div>
             <div style="width:50%;text-align:center;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:0.03em;color:rgba(26,22,18,0.62);white-space:nowrap">status &middot; attention &middot; fame &middot; ego &middot; <span style="color:#1a1612;font-weight:700">rating</span></div>
             <div></div>
           </div>
-          <!-- [Dave 2026-05-08] NEW Work bar — pulled out of the Me sub-list and given its own bar above Money. -->
+          <!-- [Dave 2026-05-08 v2] Money MOVED ABOVE Work + Money bar longer per Dave: 'you can move money above work and the money bar you can make longer'. -->
           <div class="ti-bar-row ti-val-row">
-            <div style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:rgba(26,22,18,0.7);text-align:right">Work</div>
-            <div class="ti-bar-track"><div class="ti-bar-fill ti-bf-2" style="width:47%"></div></div>
+            <div style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:rgba(26,22,18,0.7);text-align:right">Money</div>
+            <div class="ti-bar-track"><div class="ti-bar-fill ti-bf-2" style="width:49%"></div></div>
             <div></div>
           </div>
           <div class="ti-bar-row ti-val-row">
-            <div style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:rgba(26,22,18,0.7);text-align:right">Money</div>
-            <div class="ti-bar-track"><div class="ti-bar-fill ti-bf-2" style="width:44%"></div></div>
+            <div style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:rgba(26,22,18,0.7);text-align:right">Work</div>
+            <div class="ti-bar-track"><div class="ti-bar-fill ti-bf-2" style="width:42%"></div></div>
             <div></div>
           </div>
           <div class="ti-bar-row ti-val-row">
@@ -18766,7 +18784,7 @@ html, body, html body{
           <!-- Headline (verdict) BELOW the chart [Dave 2026-05-07 PM v6]: reduced font-size further so line 2 fits on a single line. With 'human connection' (longer than old 'real connection'), line 2 was wrapping to 3 lines total. Now fits on 2. -->
           <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(0.95rem,1.55vw,1.3rem);font-weight:700;color:#1a1612;line-height:1.25;text-align:center;margin-top:8px;max-width:1100px;padding:0 8px">
             <span style="color:#b8954a;font-weight:800">#1 predictor of a fulfilling life</span><br>
-            is feeling <em style="font-style:italic;font-weight:500;color:#c8462c">human connection</em> — science proved it.
+            is <em style="font-family:'Playfair Display',serif;font-style:italic;font-weight:700;color:#b8954a">feeling human connection</em> — science proved it.
           </div>
           <!-- Science fields list — restored from cs-1b appendix [Dave 2026-05-03 PM] -->
           <div style="font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-top:4px;text-align:center">
