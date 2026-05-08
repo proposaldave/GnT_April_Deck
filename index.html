@@ -408,8 +408,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
 .casey-slide.active canvas, .casey-slide.active .orb, .casey-slide.active .orb-g, .casey-slide.active .orb-b, .casey-slide.active .orb-m, .casey-slide.active .orb-1, .casey-slide.active .orb-2, .casey-slide.active .magic-bg, .casey-slide.active .magic-glow, .casey-slide.active .magic-ring, .casey-slide.active .pulse, .casey-slide.active .ring-1, .casey-slide.active .ring-2, .casey-slide.active .hv-svg, .casey-slide.active .human-visual, .casey-slide.active svg.hv-svg { pointer-events: none !important; }
 
 .casey-slide.active{opacity:1;visibility:visible;pointer-events:all;transition:opacity 0.18s ease, visibility 0s linear 0s}
-/* [Dave 2026-05-08 v4] THIN vertical nav. APPENDIX moved BACK inside as compact icon-only widget so it doesn't overlap Speaker Notes circle (which sits at bottom:22px right:22px). Strip tightened: gap 3→2, padding 8/4→6/3. */
-.casey-nav{position:fixed;top:90px;right:14px;display:flex;flex-direction:column;align-items:center;gap:2px;z-index:999;background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);padding:6px 3px;border-radius:10px;border:1px solid rgba(26,22,18,0.10);max-height:calc(100vh - 200px);width:fit-content}
+/* [Dave 2026-05-08 v5] THIN vertical nav, centered under GnR wordmark. GnR mark is at right:24px width ~52px → center at right:50px. Nav width ~15px → right:42px puts its center at right:50 (lined up with GnR center). */
+.casey-nav{position:fixed;top:90px;right:42px;display:flex;flex-direction:column;align-items:center;gap:2px;z-index:999;background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);padding:6px 3px;border-radius:10px;border:1px solid rgba(26,22,18,0.10);max-height:calc(100vh - 200px);width:fit-content}
 .casey-dot{width:7px;height:7px;border-radius:50%;background:rgba(26,22,18,0.20);border:none;padding:0;cursor:pointer;transition:all 0.3s ease;flex-shrink:0}
 .casey-dot:hover{background:rgba(255,255,255,0.35);transform:scale(1.3)}
 /* [Dave 2026-05-08] Active dot is a VERTICAL pill (was horizontal) since the strip runs top-to-bottom */
@@ -11343,11 +11343,8 @@ html, body, html body{
 </style>
 <div class="casey-slide ds-focus" id="cs-onandoff" data-shown="0" onclick="csOnandoffAdvance();event.stopPropagation()" style="cursor:pointer">
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
-  <!-- [Dave 2026-05-08 v4] Eyebrow now two-line: top line = the bold claim, sub-line = the category Italic for visual rhythm. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10;line-height:1.5">
-    Coordination Becomes the Network<br>
-    <span style="font-family:'Playfair Display',serif;font-style:italic;font-weight:600;letter-spacing:0.02em;text-transform:none;color:rgba(184,149,74,0.9)">Real-world social networking</span>
-  </div>
+  <!-- [Dave 2026-05-08 v5] Simplified — top 'Coordination Becomes the Network' line removed, just keep 'Real-world social networking'. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Playfair Display',serif;font-size:.78rem;font-style:italic;font-weight:600;letter-spacing:0.02em;color:rgba(184,149,74,0.9);z-index:10">Real-world social networking</div>
 
   <!-- [Dave 2026-05-08 v3] Padding tightened further per Dave: 'content is taking up too much of the page'. -->
   <div class="inner" style="padding:32px 56px 28px;text-align:center;max-width:1320px;margin:0 auto;width:100%">
@@ -11517,6 +11514,169 @@ html, body, html body{
 </div>
 
 <!-- ===== END SLOT 13 REVIEW CANDIDATES ===== -->
+
+<!-- ============================================================================
+     MERGE CANDIDATES (cs-onandoff + cs-25) [Dave 2026-05-08]
+     Brief: 'i believe these two slides probably can be and should be merged.
+     think hard about that and try to do it, creating at least 2 brand new slides
+     for me to consider. dont delete existing slides.'
+     Two angles. cs-onandoff + cs-25 stay intact in their current slots.
+       cs-merge1 = WHY-FIRST · 5-reasons headline + on/off-court visual proof
+       cs-merge2 = MECHANISM-FIRST · the 'becomes its social network' headline +
+                   3-reason horizontal strip
+============================================================================ -->
+
+<!-- ===== cs-merge1 — WHY PICKLEBALL FIRST · powered by 'already a social network' [Dave 2026-05-08] ===== -->
+<style>
+  #cs-merge1 .m1-stage { position:relative;width:100%;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 56px 36px;text-align:center; }
+  #cs-merge1 .m1-headline { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.55rem,2.55vw,2.3rem);font-weight:700;line-height:1.18;letter-spacing:-0.018em;color:#1a1612;max-width:1180px; }
+  #cs-merge1 .m1-headline em { font-style:italic;color:#b8954a;font-weight:700; }
+  #cs-merge1 .m1-sub { margin-top:10px;font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(0.95rem,1.25vw,1.15rem);color:#c8462c;font-weight:600;line-height:1.4;max-width:1080px; }
+  #cs-merge1 .m1-svg-wrap { width:100%;max-width:1100px;margin:18px auto 16px; }
+  #cs-merge1 .m1-svg-wrap svg { width:100%;height:auto;max-height:200px;display:block;margin:0 auto; }
+  #cs-merge1 .m1-reasons { display:grid;grid-template-columns:repeat(5,1fr);gap:10px;max-width:1240px;width:100%;margin:8px auto 0; }
+  #cs-merge1 .m1-card { padding:12px 10px;border-radius:9px;background:rgba(184,149,74,0.05);border:1px solid rgba(184,149,74,0.28);text-align:center;display:flex;flex-direction:column;gap:4px; }
+  #cs-merge1 .m1-card .num { font-family:'Manrope',sans-serif;font-size:0.55rem;font-weight:800;letter-spacing:0.22em;color:#b8954a; }
+  #cs-merge1 .m1-card .text { font-family:'Playfair Display',serif;font-size:0.78rem;font-weight:700;color:#1a1612;line-height:1.28; }
+  #cs-merge1 .m1-card .text em { font-style:italic;color:#b8954a; }
+</style>
+<div class="casey-slide ds-focus" id="cs-merge1">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:#c8462c;z-index:10">Why Pickleball First &middot; Already a Social Network</div>
+  <section style="position:relative;width:100%;min-height:100%">
+    <div class="m1-stage">
+      <div class="m1-headline">
+        Pickleball is the clearest path to the world's first<br>
+        <em>autonomous social coordination network.</em>
+      </div>
+      <div class="m1-sub">Because every pickleball community is <strong style="color:#1a1612;font-style:normal;font-weight:800">already one.</strong></div>
+
+      <!-- Compact on/off-court SVG (lifted/scaled from cs-onandoff) -->
+      <div class="m1-svg-wrap">
+        <svg viewBox="0 0 1200 240" preserveAspectRatio="xMidYMid meet">
+          <text x="200" y="22" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="#5B8FD4">ON THE COURT</text>
+          <rect x="60" y="44" width="280" height="160" rx="3" fill="rgba(91,143,212,0.05)" stroke="#5B8FD4" stroke-width="1.4"/>
+          <rect x="156" y="44" width="44" height="160" fill="rgba(91,143,212,0.08)"/>
+          <rect x="200" y="44" width="44" height="160" fill="rgba(91,143,212,0.08)"/>
+          <line x1="156" y1="44" x2="156" y2="204" stroke="#5B8FD4" stroke-width="1" opacity="0.65"/>
+          <line x1="244" y1="44" x2="244" y2="204" stroke="#5B8FD4" stroke-width="1" opacity="0.65"/>
+          <line x1="200" y1="44" x2="200" y2="204" stroke="#5B8FD4" stroke-width="1.8"/>
+          <line x1="60" y1="124" x2="156" y2="124" stroke="#5B8FD4" stroke-width="0.9" opacity="0.55"/>
+          <line x1="244" y1="124" x2="340" y2="124" stroke="#5B8FD4" stroke-width="0.9" opacity="0.55"/>
+          <line x1="110" y1="82" x2="290" y2="82" stroke="#b8954a" stroke-width="1.4" opacity="0.7"/>
+          <line x1="110" y1="166" x2="290" y2="166" stroke="#c8462c" stroke-width="1.4" opacity="0.7"/>
+          <line x1="110" y1="82" x2="110" y2="166" stroke="rgba(26,22,18,0.32)" stroke-width="1" opacity="0.55"/>
+          <line x1="290" y1="82" x2="290" y2="166" stroke="rgba(26,22,18,0.32)" stroke-width="1" opacity="0.55"/>
+          <line x1="110" y1="82" x2="290" y2="166" stroke="rgba(184,149,74,0.4)" stroke-width="0.8" opacity="0.5"/>
+          <line x1="290" y1="82" x2="110" y2="166" stroke="rgba(184,149,74,0.4)" stroke-width="0.8" opacity="0.5"/>
+          <circle cx="110" cy="82" r="8" fill="#b8954a"/><circle cx="290" cy="82" r="8" fill="#5B8FD4"/>
+          <circle cx="110" cy="166" r="8" fill="#c8462c"/><circle cx="290" cy="166" r="8" fill="#1a1612"/>
+          <!-- bridge -->
+          <path d="M 360 124 L 480 124" stroke="#b8954a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <polyline points="468,116 480,124 468,132" stroke="#b8954a" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- off-court zone -->
+          <text x="800" y="22" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="#b8954a">OFF THE COURT</text>
+          <line x1="540" y1="86" x2="700" y2="68" stroke="#b8954a" stroke-width="1.4" opacity="0.6"/>
+          <line x1="700" y1="68" x2="900" y2="50" stroke="#b8954a" stroke-width="1.4" opacity="0.55"/>
+          <line x1="980" y1="106" x2="900" y2="50" stroke="#5B8FD4" stroke-width="1.4" opacity="0.6"/>
+          <line x1="980" y1="106" x2="850" y2="190" stroke="#5B8FD4" stroke-width="1.4" opacity="0.5"/>
+          <line x1="600" y1="190" x2="700" y2="156" stroke="#c8462c" stroke-width="1.4" opacity="0.6"/>
+          <line x1="600" y1="190" x2="850" y2="190" stroke="#c8462c" stroke-width="1.4" opacity="0.5"/>
+          <line x1="1090" y1="166" x2="850" y2="190" stroke="rgba(26,22,18,0.4)" stroke-width="1" opacity="0.5"/>
+          <line x1="1090" y1="166" x2="1010" y2="216" stroke="#b8954a" stroke-width="1.3" opacity="0.55"/>
+          <line x1="850" y1="190" x2="1010" y2="216" stroke="#b8954a" stroke-width="1.2" opacity="0.5"/>
+          <circle cx="540" cy="86" r="8" fill="#b8954a"/><circle cx="980" cy="106" r="8" fill="#5B8FD4"/>
+          <circle cx="600" cy="190" r="8" fill="#c8462c"/><circle cx="1090" cy="166" r="8" fill="#1a1612"/>
+          <text x="700" y="86" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="rgba(26,22,18,0.7)" font-style="italic" font-weight="600">coffee</text>
+          <text x="850" y="210" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="rgba(26,22,18,0.7)" font-style="italic" font-weight="600">home</text>
+          <text x="700" y="174" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="rgba(26,22,18,0.7)" font-style="italic" font-weight="600">gift</text>
+          <text x="900" y="74" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="rgba(26,22,18,0.7)" font-style="italic" font-weight="600">gathering</text>
+          <text x="1010" y="234" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="rgba(26,22,18,0.7)" font-style="italic" font-weight="600">party</text>
+        </svg>
+      </div>
+
+      <!-- 5 reasons compact strip (from cs-25) -->
+      <div class="m1-reasons">
+        <div class="m1-card"><div class="num">01</div><div class="text"><em>Desperately needs</em><br>GnR paradigm</div></div>
+        <div class="m1-card"><div class="num">02</div><div class="text"><em>Fastest-growing</em><br>sport in U.S. history</div></div>
+        <div class="m1-card"><div class="num">03</div><div class="text"><em>Wildly social</em><br>+ high-velocity</div></div>
+        <div class="m1-card"><div class="num">04</div><div class="text">Cold-start <em>data cracked</em></div></div>
+        <div class="m1-card"><div class="num">05</div><div class="text"><em>Already</em> a social network<br>beyond the courts</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== cs-merge2 — MECHANISM FIRST · headline 'becomes its social network' + 3 reasons inline [Dave 2026-05-08] ===== -->
+<style>
+  #cs-merge2 .m2-stage { position:relative;width:100%;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 56px 36px;text-align:center; }
+  #cs-merge2 .m2-headline { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.6rem,2.6vw,2.4rem);font-weight:700;line-height:1.16;letter-spacing:-0.02em;color:#1a1612;max-width:1240px; }
+  #cs-merge2 .m2-headline em { font-style:italic;font-weight:600;color:rgba(26,22,18,0.5); }
+  #cs-merge2 .m2-headline .gold { color:#b8954a;font-weight:800; }
+  #cs-merge2 .m2-headline .blue { color:#5B8FD4;font-weight:800; }
+  #cs-merge2 .m2-tag { margin-top:14px;font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(0.95rem,1.2vw,1.15rem);color:#c8462c;font-weight:600; }
+  #cs-merge2 .m2-tag strong { color:#1a1612;font-style:normal;font-weight:800; }
+  #cs-merge2 .m2-svg-wrap { width:100%;max-width:1100px;margin:14px auto 14px; }
+  #cs-merge2 .m2-svg-wrap svg { width:100%;height:auto;max-height:180px;display:block;margin:0 auto; }
+  #cs-merge2 .m2-reasons { display:flex;justify-content:center;gap:34px;max-width:1100px;width:100%;margin:6px auto 0;flex-wrap:wrap; }
+  #cs-merge2 .m2-reason { display:flex;align-items:center;gap:8px;font-family:'Playfair Display',serif;font-size:0.92rem;color:rgba(26,22,18,0.85);line-height:1.3 }
+  #cs-merge2 .m2-reason .dot { width:7px;height:7px;border-radius:50%;background:#b8954a;flex-shrink:0; }
+  #cs-merge2 .m2-reason em { font-style:italic;font-weight:700;color:#b8954a; }
+</style>
+<div class="casey-slide ds-focus" id="cs-merge2">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:#c8462c;z-index:10">Real-world Social Networking &middot; The Pickleball Wedge</div>
+  <section style="position:relative;width:100%;min-height:100%">
+    <div class="m2-stage">
+      <div class="m2-headline">
+        A pickleball community's <em>coordination system</em>,<br>
+        reinvented for <span class="gold">human connection</span>,<br>
+        becomes its <span class="blue">social network.</span>
+      </div>
+      <div class="m2-tag">Pickleball is the clearest path. <strong>And it's already happening.</strong></div>
+
+      <!-- Compact on/off-court SVG -->
+      <div class="m2-svg-wrap">
+        <svg viewBox="0 0 1200 220" preserveAspectRatio="xMidYMid meet">
+          <rect x="60" y="34" width="260" height="150" rx="3" fill="rgba(91,143,212,0.05)" stroke="#5B8FD4" stroke-width="1.4"/>
+          <rect x="150" y="34" width="40" height="150" fill="rgba(91,143,212,0.08)"/>
+          <rect x="190" y="34" width="40" height="150" fill="rgba(91,143,212,0.08)"/>
+          <line x1="150" y1="34" x2="150" y2="184" stroke="#5B8FD4" stroke-width="1" opacity="0.65"/>
+          <line x1="230" y1="34" x2="230" y2="184" stroke="#5B8FD4" stroke-width="1" opacity="0.65"/>
+          <line x1="190" y1="34" x2="190" y2="184" stroke="#5B8FD4" stroke-width="1.8"/>
+          <line x1="105" y1="68" x2="275" y2="68" stroke="#b8954a" stroke-width="1.4" opacity="0.7"/>
+          <line x1="105" y1="150" x2="275" y2="150" stroke="#c8462c" stroke-width="1.4" opacity="0.7"/>
+          <line x1="105" y1="68" x2="105" y2="150" stroke="rgba(26,22,18,0.32)" stroke-width="1" opacity="0.55"/>
+          <line x1="275" y1="68" x2="275" y2="150" stroke="rgba(26,22,18,0.32)" stroke-width="1" opacity="0.55"/>
+          <circle cx="105" cy="68" r="7" fill="#b8954a"/><circle cx="275" cy="68" r="7" fill="#5B8FD4"/>
+          <circle cx="105" cy="150" r="7" fill="#c8462c"/><circle cx="275" cy="150" r="7" fill="#1a1612"/>
+          <path d="M 350 109 L 460 109" stroke="#b8954a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <polyline points="448,101 460,109 448,117" stroke="#b8954a" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="520" y1="74" x2="690" y2="56" stroke="#b8954a" stroke-width="1.4" opacity="0.6"/>
+          <line x1="690" y1="56" x2="900" y2="40" stroke="#b8954a" stroke-width="1.4" opacity="0.55"/>
+          <line x1="980" y1="92" x2="900" y2="40" stroke="#5B8FD4" stroke-width="1.4" opacity="0.6"/>
+          <line x1="980" y1="92" x2="850" y2="170" stroke="#5B8FD4" stroke-width="1.4" opacity="0.5"/>
+          <line x1="600" y1="172" x2="700" y2="140" stroke="#c8462c" stroke-width="1.4" opacity="0.6"/>
+          <line x1="600" y1="172" x2="850" y2="170" stroke="#c8462c" stroke-width="1.4" opacity="0.5"/>
+          <line x1="1090" y1="148" x2="850" y2="170" stroke="rgba(26,22,18,0.4)" stroke-width="1" opacity="0.5"/>
+          <circle cx="520" cy="74" r="7" fill="#b8954a"/><circle cx="980" cy="92" r="7" fill="#5B8FD4"/>
+          <circle cx="600" cy="172" r="7" fill="#c8462c"/><circle cx="1090" cy="148" r="7" fill="#1a1612"/>
+          <text x="690" y="74" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="rgba(26,22,18,0.7)" font-style="italic" font-weight="600">coffee</text>
+          <text x="850" y="190" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="rgba(26,22,18,0.7)" font-style="italic" font-weight="600">home</text>
+          <text x="700" y="158" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="rgba(26,22,18,0.7)" font-style="italic" font-weight="600">gift</text>
+          <text x="900" y="62" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="rgba(26,22,18,0.7)" font-style="italic" font-weight="600">gathering</text>
+        </svg>
+      </div>
+
+      <!-- 3 reasons inline (compact, picked the strongest 3 from cs-25) -->
+      <div class="m2-reasons">
+        <div class="m2-reason"><span class="dot"></span><em>Fastest-growing</em> sport in U.S. history.</div>
+        <div class="m2-reason"><span class="dot"></span><em>Wildly social</em> + high-velocity coordination.</div>
+        <div class="m2-reason"><span class="dot"></span>Already a social network <em>beyond the courts.</em></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== END MERGE CANDIDATES ===== -->
 
 <!-- cs-25 (The Promise) merged into cs-26 (Closer) — Dave 2026-04-29 -->
 <!-- ===== cs-25 — Pickleball wedge · lowest-risk path (paper-mode, lifted from 2025slides #14). Dave 2026-04-29 ===== -->
@@ -19544,8 +19704,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-07 PM v13] V16 'Open Heart' MOVED from alts to first appendix slide per Dave: 'really good but move it to the first appendix slide'. Now lives in APPENDIX_ORDER, not as alt dot.
   // [Dave 2026-05-07 PM v14] V15 'Time, Care, Ideas, Love' MOVED from alts to END of appendix per Dave: 'move this slide to the end of the appendix'. Now lives in APPENDIX_ORDER, not as alt dot.
   12: [],
-  // [Dave 2026-05-08 v4] Slot 13 collapsed further: cs-measure DELETED per Dave: 'delete this' (screenshot of cs-measure 'Already a Network'). Slot 13 now has primary cs-onandoff with NO alts. HTML for cs-measure + cs-byproduct retained as silent backups (no nav dots).
-  13: [],
+  // [Dave 2026-05-08 v5] Slot 13 NEW alts: 2 merge candidates (cs-onandoff + cs-25 merged) per Dave: 'i believe these two slides probably can be and should be merged. think hard about that and try to do it, creating at least 2 brand new slides for me to consider. dont delete existing slides.' Both cs-onandoff (slot 13) and cs-25 (slot 14) stay intact. cs-merge1 + cs-merge2 are red review candidates here.
+  13: ['cs-merge1', 'cs-merge2'],
   // [Dave 2026-05-08] Founder slide alts. cs-18 moved to slot 16 (after cs-fw1) per Dave 2026-05-08, so alts now live at slot 16.
   //   cs-18-alt1 = MY WHEELHOUSE
   //   cs-18-alt2 = FINALLY · emotional / 4-loves manifesto
@@ -19564,7 +19724,7 @@ const SLIDE_ALTS = {
   // cs-brand-V13 ('What you give is you leaving a mark. / What you get is life sending it back.') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
   // cs-brand-V14 ('You get back what matters most. / Like it was meant to be.') REMOVED 2026-05-07 per Dave: 'delete this'. HTML retained as silent backup.
 };
-const REVIEW_POSITION = 16; // [Dave 2026-05-08 v3] Updated to slot 16 — cs-18 moved up one position to right after cs-fw1.
+const REVIEW_POSITION = 13; // [Dave 2026-05-08 v5] Active review shifted to slot 13 — Dave is now choosing between cs-onandoff/cs-25 MERGE candidates (cs-merge1 + cs-merge2). cs-18 alts (alt1, alt2) at slot 16 still exist but render gold (not red) since only one position can be RED at a time. Dave already saw the rule that red dots = candidates I'm asking him to pick between.
 // LOCKED_POSITIONS: emptied per Dave 2026-05-07 — green dots removed from nav, red review dot kept.
 // Locked-state still tracked in comments/git; just no longer rendered as a UI marker.
 const LOCKED_POSITIONS = [];
