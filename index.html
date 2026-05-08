@@ -9952,6 +9952,19 @@ html, body, html body{
   #cs-16 .c16-connections { position:absolute; inset:0; z-index:1; pointer-events:none; }
   #cs-16 .c16-curve { fill:none; stroke-width:1.65; stroke-linecap:round; opacity:.95; }
   #cs-16 .c16-cdot  { stroke:#fbf7ef; stroke-width:2; }
+  /* [Dave 2026-05-08] LIVE status footer — declares the slide is operating, not roadmap. Pulsing green dot + 'OPERATING LIVE AT NEPC · every signal · every action · every week'. Investor punch: 'we're literally doing this right now.' */
+  #cs-16 .c16-live { position:absolute; bottom:4.5%; left:0; right:0; text-align:center; z-index:5; }
+  #cs-16 .c16-live-pill { display:inline-flex; align-items:center; gap:14px; padding:10px 22px; border-radius:24px; background:rgba(42,138,79,0.06); border:1.4px solid rgba(42,138,79,0.32); }
+  #cs-16 .c16-live-dot-wrap { position:relative; display:inline-flex; width:10px; height:10px; flex-shrink:0; }
+  #cs-16 .c16-live-dot { position:absolute; inset:0; background:#168651; border-radius:50%; animation:c16LivePulse 1.8s ease-in-out infinite; }
+  #cs-16 .c16-live-ring { position:absolute; inset:-5px; background:rgba(22,134,81,0.35); border-radius:50%; animation:c16LiveRing 1.8s ease-out infinite; }
+  #cs-16 .c16-live-eye { font-family:'Manrope',sans-serif; font-size:0.7rem; font-weight:800; letter-spacing:0.24em; text-transform:uppercase; color:#168651; }
+  #cs-16 .c16-live-sep { width:1px; height:14px; background:rgba(22,134,81,0.32); }
+  #cs-16 .c16-live-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:0.78rem; color:rgba(26,22,18,0.7); font-weight:600; }
+  @keyframes c16LivePulse { 0%,100% { transform: scale(1); opacity:1; } 50% { transform: scale(0.82); opacity:0.85; } }
+  @keyframes c16LiveRing  { 0% { transform: scale(0.8); opacity:0.7; } 100% { transform: scale(1.9); opacity:0; } }
+  html[data-export="1"] #cs-16 .c16-live-dot,
+  html[data-export="1"] #cs-16 .c16-live-ring { animation:none !important; }
 </style>
 <!-- [Dave 2026-05-08] cs-16 REVIVED to main flow per Dave: 'bring this slide back ... bring it into the main deck'. Reframe: the natural touchpoints of a real-world community (invitations, texts, phone calls, rounds, club ops, diary, concierge) ALL train GnR. Added 5th signal row (Concierge) for phone calls + text replies + auto-scheduler accepts. -->
 <div class="casey-slide ds-focus" id="cs-16">
@@ -10049,6 +10062,19 @@ html, body, html body{
     <div class="c16-action" style="--c:#c8462c">Cancellation fills</div>
     <div class="c16-action" style="--c:#b8954a">Club-growth recommendations</div>
     <div class="c16-action" style="--c:#2f7bd0">Text Concierge + Auto-Scheduler</div>
+  </div>
+
+  <!-- [Dave 2026-05-08] LIVE status footer per Dave: 'this is a hugely gigantic slide to show the progress on these different aspects to the investor ... Literally, we're fucking doing that right fucking here.' Lands the punch: this isn't roadmap, it's operating today. -->
+  <div class="c16-live">
+    <div class="c16-live-pill">
+      <span class="c16-live-dot-wrap">
+        <span class="c16-live-ring"></span>
+        <span class="c16-live-dot"></span>
+      </span>
+      <span class="c16-live-eye">Operating live at NEPC</span>
+      <span class="c16-live-sep"></span>
+      <span class="c16-live-sub">every signal &middot; every action &middot; every week</span>
+    </div>
   </div>
 </div>
 
