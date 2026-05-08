@@ -408,12 +408,12 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
 .casey-slide.active canvas, .casey-slide.active .orb, .casey-slide.active .orb-g, .casey-slide.active .orb-b, .casey-slide.active .orb-m, .casey-slide.active .orb-1, .casey-slide.active .orb-2, .casey-slide.active .magic-bg, .casey-slide.active .magic-glow, .casey-slide.active .magic-ring, .casey-slide.active .pulse, .casey-slide.active .ring-1, .casey-slide.active .ring-2, .casey-slide.active .hv-svg, .casey-slide.active .human-visual, .casey-slide.active svg.hv-svg { pointer-events: none !important; }
 
 .casey-slide.active{opacity:1;visibility:visible;pointer-events:all;transition:opacity 0.18s ease, visibility 0s linear 0s}
-/* [Dave 2026-05-08] Nav rotated from bottom-horizontal to right-vertical, anchored under the GnR wordmark in the top-right corner. */
-.casey-nav{position:fixed;top:90px;right:24px;display:flex;flex-direction:column;gap:6px;z-index:999;background:rgba(0,0,0,0.45);backdrop-filter:blur(8px);padding:14px 10px;border-radius:20px;border:1px solid rgba(26,22,18,0.12);max-height:calc(100vh - 130px)}
-.casey-dot{width:10px;height:10px;border-radius:50%;background:rgba(26,22,18,0.20);border:none;padding:0;cursor:pointer;transition:all 0.3s ease}
-.casey-dot:hover{background:rgba(255,255,255,0.35);transform:scale(1.2)}
-/* [Dave 2026-05-08] Active dot is now a VERTICAL pill (was horizontal) since the strip runs top-to-bottom */
-.casey-dot.on{background:#d4a853;box-shadow:0 0 12px rgba(212,168,83,0.6);height:24px;border-radius:5px}
+/* [Dave 2026-05-08 v2] Vertical nav slimmed: smaller dots, tighter gap, narrower pill. Was visually dominant; now compact. */
+.casey-nav{position:fixed;top:90px;right:18px;display:flex;flex-direction:column;gap:3px;z-index:999;background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);padding:10px 6px;border-radius:14px;border:1px solid rgba(26,22,18,0.10);max-height:calc(100vh - 130px)}
+.casey-dot{width:7px;height:7px;border-radius:50%;background:rgba(26,22,18,0.20);border:none;padding:0;cursor:pointer;transition:all 0.3s ease;flex-shrink:0}
+.casey-dot:hover{background:rgba(255,255,255,0.35);transform:scale(1.3)}
+/* [Dave 2026-05-08] Active dot is a VERTICAL pill (was horizontal) since the strip runs top-to-bottom */
+.casey-dot.on{background:#d4a853;box-shadow:0 0 10px rgba(212,168,83,0.6);height:18px;border-radius:4px}
 .casey-dot.review{background:#e04040 !important;box-shadow:0 0 14px rgba(224,64,64,0.85) !important;animation:reviewPulse 1.6s ease-in-out infinite}
 .casey-dot.review.on{background:#e04040 !important}
 .casey-dot.locked{background:#3dff7a !important;box-shadow:0 0 12px rgba(61,255,122,0.7) !important}
@@ -9982,7 +9982,8 @@ html, body, html body{
 
 <div class="c16-slide">
   <div class="c16-headline">Every natural community touchpoint trains <span class="g">G</span><em>n</em><span class="r">R</span>.</div>
-  <div class="c16-subhead">Invitations &middot; texts &middot; phone calls &middot; rounds &middot; feedback. It never stops getting smarter.</div>
+  <!-- [Dave 2026-05-08] subhead 'Invitations · texts · phone calls · rounds · feedback. It never stops getting smarter.' DELETED. -->
+  <div class="c16-subhead" style="display:none"></div>
 
   <div class="c16-section-title c16-signals-title">SIGNALS<span class="c16-tdot"></span></div>
   <div class="c16-section-title c16-actions-title">SMARTER ACTIONS<span class="c16-tdot"></span></div>
@@ -10017,17 +10018,17 @@ html, body, html body{
     <div class="c16-row c16-blue">
       <div class="c16-icon"><svg viewBox="0 0 32 32"><path d="M5 15L27 5l-8 22-4-9-10-3z"/><path d="M15 18l5-5"/></svg></div>
       <div class="c16-label">Invitations</div><div class="c16-divider"></div>
-      <ul><li>RSVPs</li><li>cancellations</li></ul>
+      <ul><li>RSVPs</li><li>cancellations</li><li>referrals</li></ul>
     </div>
     <div class="c16-row c16-blue">
       <div class="c16-icon"><svg viewBox="0 0 32 32"><circle cx="10" cy="10" r="4"/><circle cx="22" cy="10" r="4"/><path d="M7 25l18-18M7 7l18 18"/><path d="M8 25h5M19 25h5"/></svg></div>
       <div class="c16-label">Rounds</div><div class="c16-divider"></div>
-      <ul><li>choose your round</li><li>favorite partner</li><li>favorite opponent</li><li>rounds feedback</li><li>competitive scores</li></ul>
+      <ul><li>rounds feedback</li><li>choose your round</li><li>favorite partner</li><li>favorite opponent</li><li>competitive scores</li></ul>
     </div>
     <div class="c16-row c16-gold">
       <div class="c16-icon"><svg viewBox="0 0 32 32"><rect x="6" y="8" width="20" height="18" rx="2"/><path d="M10 5v6M22 5v6M6 14h20"/><path d="M11 18h2M16 18h2M21 18h2M11 22h2M16 22h2"/></svg></div>
       <div class="c16-label">Club<br>Operations</div><div class="c16-divider"></div>
-      <ul><li>historical court bookings</li><li>computer vision</li><li>external club research</li><li>pro feedback</li><li>expert overrides</li></ul>
+      <ul><li>historical court bookings</li><li>computer vision</li><li>external club research</li><li>academy</li></ul>
     </div>
     <!-- [Dave 2026-05-08 v2] Concierge moved ABOVE Diary per Dave: 'move diary below concierge' -->
     <div class="c16-row c16-red">
@@ -10038,7 +10039,7 @@ html, body, html body{
     <div class="c16-row c16-green">
       <div class="c16-icon"><svg viewBox="0 0 32 32"><rect x="9" y="5" width="15" height="22" rx="2"/><path d="M13 5v22M7 10h4M7 15h4M7 20h4"/></svg></div>
       <div class="c16-label">Diary</div><div class="c16-divider"></div>
-      <ul><li>wishlist</li><li>brain dump</li><li>who gives?</li><li>personality quiz</li><li>Relationship-AI</li></ul>
+      <ul><li>who gives?</li><li>wishlist</li><li>community brain dump</li><li>personality quiz</li><li>Relationship-AI</li></ul>
     </div>
   </div>
 
@@ -10067,9 +10068,9 @@ html, body, html body{
 
   <div class="c16-actions">
     <div class="c16-action" style="--c:#168651">Smart sequential invitations</div>
-    <div class="c16-action" style="--c:#2f7bd0">Partner selection + better matches</div>
+    <div class="c16-action" style="--c:#2f7bd0">Social round foursome optimization</div>
     <div class="c16-action" style="--c:#c8462c">Cancellation fills</div>
-    <div class="c16-action" style="--c:#b8954a">Club-growth recommendations</div>
+    <div class="c16-action" style="--c:#b8954a">New events</div>
     <div class="c16-action" style="--c:#2f7bd0">Text Concierge + Auto-Scheduler</div>
   </div>
 
@@ -10081,8 +10082,7 @@ html, body, html body{
         <span class="c16-live-dot"></span>
       </span>
       <span class="c16-live-eye">Operating live at NEPC</span>
-      <span class="c16-live-sep"></span>
-      <span class="c16-live-sub">every signal &middot; every action &middot; every week</span>
+      <!-- ['every signal · every action · every week' DELETED 2026-05-08 per Dave] -->
     </div>
   </div>
 </div>
