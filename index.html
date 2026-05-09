@@ -5435,8 +5435,8 @@ html, body, html body{
      wordmark (blue Give + ink italic n + red Receive), gold leaf accent for emphasis.
      Strict: no "No. 01" stamps, no "An operating system" subhead, no clutter.
      Just wordmark + tagline + a single thin gold rule. -->
-<!-- [Dave 2026-05-09] cs-1 demoted from slot 1 to LAST appendix slide. Removed 'active' class so the new primary (cs-1m5) shows on load. data-revealed reset behavior unchanged. -->
-<div class="casey-slide ds-measure appendix-slide" id="cs-1" data-revealed="0" style="display:none;background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
+<!-- [Dave 2026-05-09] cs-1 demoted from slot 1, briefly moved to appendix, then RESTORED to main flow as slot 2 (second title slide) per Dave: 'this slide is going to be our new slide #2, a second title slide'. Active class stays off (cs-1m5 is the new slot 1 primary that loads .active); display:none lets caseyGo control visibility. appendix-slide class removed. -->
+<div class="casey-slide ds-measure" id="cs-1" data-revealed="0" style="display:none;background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
   <style>
     /* cs-1 click-reveal [Dave 2026-05-07 v3]: hide descriptor + tagline on initial load; pulsing down-arrow indicates click-to-reveal. Right-arrow / scroll / swipe-up reveals.
        v3: collapse to max-height:0 when hidden (zero layout space) so the arrow sits right beneath the wordmark.
@@ -5743,15 +5743,15 @@ html, body, html body{
         <div style="font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.86vw,.9rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:8px">The Network</div>
         <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,1.55vw,1.55rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">Sees. Measures.</div>
       </div>
-      <!-- STAGE 2 reveal: V8 caption row (give-side + receive-side) -->
+      <!-- STAGE 2 reveal: V8 caption row (give-side + receive-side) [Dave 2026-05-09: 'fuels' colored Give-blue + bold; 'Reciprocated' colored Receive-red + bold; 'back to you' demoted from bold to plain italic so the colored verbs carry the emphasis on their own] -->
       <div class="m5-stage2" style="display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1300px,92%);align-items:start">
         <div style="text-align:center">
           <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#3a73b8;line-height:1.3;margin-bottom:10px">What you give</div>
-          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700">fuels</em> the network.</div>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#5B8FD4">fuels</em> the network.</div>
         </div>
         <div style="text-align:center">
           <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#c94d32;line-height:1.3;margin-bottom:10px">Your People &middot; Your Moments</div>
-          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">Reciprocated <em style="font-style:italic;font-weight:700">back to you</em>.</div>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#c8462c">Reciprocated</em> back to you.</div>
         </div>
       </div>
       <!-- Click hint (pulsing down arrow). Hides once user advances past stage 0. -->
@@ -21378,9 +21378,11 @@ const SLIDE_ORDER = [
   // 2026-04-29 v8: slides 1-7 LOCKED. AI-driven full reorder of remaining slides.
   // Story arc: Wedge (7) -> Moat -> Engine -> Origin/Story -> Founder -> Vision -> TAM -> Model -> Credibility -> Ask -> Promise -> Closer.
   // Slides moved to appendix: cs-7, cs-8, cs-14, cs-16, cs-17, cs-20, cs-21, cs-1a.
-  // [Dave 2026-05-09] cs-1m5 PROMOTED to slot 1 primary title slide ('this is our new title slide'). Old cs-1 ('TO LEAD THE NEXT FRONTIER' click-reveal title) MOVED to last appendix slide. cs-1m6 (G·n·R Equation) ALSO MOVED to appendix.
+  // [Dave 2026-05-09] cs-1m5 PROMOTED to slot 1 primary title slide ('this is our new title slide').
+  // [Dave 2026-05-09 LATER] cs-1 RESTORED to main flow as SLOT 2 — 'this slide is going to be our new slide #2, a second title slide'. Was briefly moved to appendix end; pulled back. cs-a7 + everything below shift +1.
   'cs-1m5',   //  1 NEW TITLE · The future of real-world social communities · wordmark + click-to-reveal stages (Network line → caption row)
-  'cs-a7',    //  2 Social media is a very narrow view of human connection technology [Dave 2026-05-07: moved from appendix to main slot 2 — sets the frame right after title]
+  'cs-1',     //  2 SECOND TITLE · Original 'TO LEAD THE NEXT FRONTIER' + Give n Receive wordmark + click-revealed 'Invitation-based matchmaking for our communities'
+  'cs-a7',    //  3 Social media is a very narrow view of human connection technology [Dave 2026-05-07: moved from appendix to main slot 2 — bumped to slot 3 by cs-1 second-title insertion]
   // 2026-04-30 PM v3: cs-1b + cs-0a Values side MERGED into cs-1bm1 (and 2 alts).
   // Dave's directive: "save current two slides to appendix, then merge — try 2-3 attempts I'll pick best."
   // PRIMARY: cs-1bm1 (chart + emotional closing line — minimal merge)
@@ -21614,9 +21616,8 @@ const APPENDIX_ORDER = [
   'cs-brand-V1',  // Brand Opportunity · V1 (G/n/R + 3-pillar captions WHAT YOU GIVE / THE NETWORK / WHAT COMES BACK) — moved from slot 12 alts to appendix end per Dave 2026-05-07 PM ('move this slide to the last slide in the appendix').
   'cs-once',     // Once in Civilization · the first network for real human connection — MOVED from main slot 6 to appendix per Dave 2026-05-07 PM: 'this slide design is terrible, has far too much content, and needs to be moved to the very end of the deck'.
   'cs-frontier', // The Next Frontier · Real-world social networking — MOVED from main slot 13 to appendix per Dave 2026-05-07 PM: 'this slide design is terrible, has far too much content, and needs to be moved to the very end of the deck'.
-  // [Dave 2026-05-09] cs-1m6 (G·n·R Equation) and cs-1 (original 'TO LEAD THE NEXT FRONTIER' click-reveal title) BOTH moved to end of appendix in this order. cs-1 takes the LAST position per Dave's chronological 'move this to be the last slide in the appendix' messages — m6 first, then cs-1, so cs-1 sits at the very end.
-  'cs-1m6',      // G·n·R Equation backup — 3 big letters with V8 sub-captions
-  'cs-1',        // ORIGINAL TITLE backup · 'TO LEAD THE NEXT FRONTIER' eyebrow + Give n Receive wordmark + click-reveal 'Invitation-based matchmaking for our communities'. Now the LAST appendix slide.
+  // [Dave 2026-05-09] cs-1m6 (G·n·R Equation) → last appendix slide. cs-1 (original title) RESTORED to main flow as slot 2 ('this slide is going to be our new slide #2, a second title slide').
+  'cs-1m6',      // LAST appendix slide · G·n·R Equation — 3 big letters with V8 sub-captions
 ];
 const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 let current = 1;
