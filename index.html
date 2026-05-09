@@ -5696,18 +5696,39 @@ html, body, html body{
   </div>
 </div>
 
-<!-- ───── cs-1m5 · BRAND DEF v2 · V8 CAPTION ROW [give-side + receive-side, no galaxy] ─────
-     Lifts V8's left+right caption pair onto slide 1 with the wordmark as the visual anchor.
-     Keeps V8's give/receive duality without the particle-galaxy density.
+<!-- ───── cs-1m5 v2 · BRAND DEF · V8 caption row + Network line + click-to-reveal stages ─────
+     [Dave 2026-05-09] Eyebrow renamed: 'The future of real-world social communities'.
+     Layout: wordmark (always visible) → 'THE NETWORK / Sees. Measures. Reciprocates.' (stage 1+)
+     → V8 caption-row pair (stage 2+). Click anywhere on slide to advance. Pulsing down arrow at
+     bottom shows users it's clickable; hides once stages have started revealing.
      ───────────────────────────────────────────── -->
-<div class="casey-slide ds-measure" id="cs-1m5" style="display:none;background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
+<style>
+  #cs-1m5 { cursor:pointer }
+  /* Stage 1 reveal: 'THE NETWORK / Sees. Measures. Reciprocates.' */
+  #cs-1m5 .m5-stage1 { opacity:0;visibility:hidden;transform:translateY(8px);max-height:0;overflow:hidden;transition:opacity 0.55s ease, transform 0.55s ease, max-height 0.6s cubic-bezier(.22,1,.36,1), visibility 0s linear 0.55s }
+  #cs-1m5[data-stage="1"] .m5-stage1, #cs-1m5[data-stage="2"] .m5-stage1 { opacity:1;visibility:visible;transform:none;max-height:200px;transition:opacity 0.7s ease, transform 0.7s ease, max-height 0.7s cubic-bezier(.22,1,.36,1), visibility 0s linear 0s }
+  /* Stage 2 reveal: V8 caption row (give-side + receive-side) */
+  #cs-1m5 .m5-stage2 { opacity:0;visibility:hidden;transform:translateY(8px);max-height:0;overflow:hidden;transition:opacity 0.55s ease, transform 0.55s ease, max-height 0.6s cubic-bezier(.22,1,.36,1), visibility 0s linear 0.55s }
+  #cs-1m5[data-stage="2"] .m5-stage2 { opacity:1;visibility:visible;transform:none;max-height:300px;transition:opacity 0.75s ease 0.15s, transform 0.75s ease 0.15s, max-height 0.75s cubic-bezier(.22,1,.36,1) 0.15s, visibility 0s linear 0s }
+  /* Click hint — pulsing down arrow visible only at stage 0 */
+  #cs-1m5 .m5-hint { display:flex;align-items:center;justify-content:center;margin-top:36px;opacity:1;visibility:visible;transition:opacity 0.4s ease, visibility 0s linear 0s }
+  #cs-1m5[data-stage="1"] .m5-hint, #cs-1m5[data-stage="2"] .m5-hint { opacity:0;visibility:hidden;transition:opacity 0.4s ease, visibility 0s linear 0.4s }
+  @keyframes m5HintBob { 0%,100% { transform:translateY(0);opacity:0.85 } 50% { transform:translateY(8px);opacity:0.45 } }
+  #cs-1m5 .m5-hint svg { animation:m5HintBob 2.2s ease-in-out infinite }
+  #cs-1m5[data-stage="1"] .m5-hint svg, #cs-1m5[data-stage="2"] .m5-hint svg { animation:none }
+  /* Export mode: show all stages at final state */
+  html[data-export="1"] #cs-1m5 .m5-stage1, html[data-export="1"] #cs-1m5 .m5-stage2 { opacity:1 !important;visibility:visible !important;transform:none !important;max-height:none !important }
+  html[data-export="1"] #cs-1m5 .m5-hint { display:none !important }
+</style>
+<div class="casey-slide ds-measure" id="cs-1m5" data-stage="0" onclick="this.dataset.stage = Math.min(2, (parseInt(this.dataset.stage)||0) + 1)" style="display:none;background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
   <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
+  <!-- Eyebrow [Dave 2026-05-09: renamed from 'Generational Consumer Brand Opportunity' to 'The future of real-world social communities'] -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The future of real-world social communities</div>
   <div class="s on" style="background:transparent">
     <div class="stg" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;text-align:center;color:#1a1612;padding:0 60px">
-      <!-- Wordmark -->
-      <svg viewBox="-30 0 1140 220" width="820" height="158" preserveAspectRatio="xMidYMid meet" style="display:block;margin:0 auto 48px auto;max-width:90%;height:auto" xmlns="http://www.w3.org/2000/svg">
+      <!-- Wordmark — always visible (the simple anchor that comes in first) -->
+      <svg viewBox="-30 0 1140 220" width="820" height="158" preserveAspectRatio="xMidYMid meet" style="display:block;margin:0 auto 32px auto;max-width:90%;height:auto" xmlns="http://www.w3.org/2000/svg">
         <text x="395" y="180" text-anchor="end" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="178" font-weight="500" fill="#5B8FD4" letter-spacing="-3">Give</text>
         <text x="460" y="180" text-anchor="middle" font-family="Fraunces, Playfair Display, Georgia, serif" font-style="italic" font-size="128" font-weight="400" fill="#1a1612">n</text>
         <text x="525" y="180" text-anchor="start" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="178" font-weight="500" fill="#c8462c" letter-spacing="-3">Receive</text>
@@ -5715,8 +5736,13 @@ html, body, html body{
         <circle cx="442" cy="52" r="3.6" fill="#5B8FD4"/>
         <circle cx="498" cy="52" r="3.6" fill="#c8462c"/>
       </svg>
-      <!-- V8 caption row: LEFT (give) + RIGHT (receive) -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1300px,92%);align-items:start">
+      <!-- STAGE 1 reveal: 'The Network / Sees. Measures. Reciprocates.' (lifted from V8 center n orb) -->
+      <div class="m5-stage1" style="margin-bottom:32px">
+        <div style="font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.86vw,.9rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#b8954a;line-height:1.3;margin-bottom:8px">The Network</div>
+        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,1.55vw,1.55rem);font-weight:500;font-style:italic;color:#b8954a;line-height:1.3">Sees. Measures. Reciprocates.</div>
+      </div>
+      <!-- STAGE 2 reveal: V8 caption row (give-side + receive-side) -->
+      <div class="m5-stage2" style="display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1300px,92%);align-items:start">
         <div style="text-align:center">
           <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#3a73b8;line-height:1.3;margin-bottom:10px">What you give</div>
           <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700">fuels</em> the network.</div>
@@ -5725,6 +5751,12 @@ html, body, html body{
           <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#c94d32;line-height:1.3;margin-bottom:10px">Your People &middot; Your Moments</div>
           <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">Reciprocated <em style="font-style:italic;font-weight:700">back to you</em>.</div>
         </div>
+      </div>
+      <!-- Click hint (pulsing down arrow). Hides once user advances past stage 0. -->
+      <div class="m5-hint">
+        <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 14 4 L 14 22 M 14 22 L 6 14 M 14 22 L 22 14" fill="none" stroke="#b8954a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </div>
     </div>
   </div>
@@ -5748,7 +5780,8 @@ html, body, html body{
   #cs-1m6 .m6-letter.g { font-size:clamp(8rem,14vw,12rem);color:#5B8FD4 }
   #cs-1m6 .m6-letter.n { font-size:clamp(6rem,10vw,9rem);font-style:italic;color:#1a1612;font-weight:400 }
   #cs-1m6 .m6-letter.r { font-size:clamp(8rem,14vw,12rem);color:#c8462c }
-  #cs-1m6 .m6-arc { position:absolute;top:8%;left:50%;transform:translateX(-50%);width:clamp(70px,8vw,110px);height:30px;pointer-events:none }
+  /* Arc sits over the italic n's VISUAL center, not geometric center. The italic slant (~12°) pushes the visible top of the n right of the bounding-box midpoint. Same +10px shift as cs-1 wordmark uses (Dave 2026-05-06 PM rule). */
+  #cs-1m6 .m6-arc { position:absolute;top:8%;left:calc(50% + 10px);transform:translateX(-50%);width:clamp(70px,8vw,110px);height:30px;pointer-events:none }
   #cs-1m6 .m6-cap { margin-top:18px;display:flex;flex-direction:column;align-items:center;gap:4px }
   #cs-1m6 .m6-cap-eye { font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.86vw,.92rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;line-height:1.3 }
   #cs-1m6 .m6-cap-eye.g { color:#3a73b8 }
@@ -21436,13 +21469,13 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-07 PM v13] V16 'Open Heart' MOVED from alts to first appendix slide per Dave: 'really good but move it to the first appendix slide'. Now lives in APPENDIX_ORDER, not as alt dot.
   // [Dave 2026-05-07 PM v14] V15 'Time, Care, Ideas, Love' MOVED from alts to END of appendix per Dave: 'move this slide to the end of the appendix'. Now lives in APPENDIX_ORDER, not as alt dot.
   // [Dave 2026-05-09] Slot 1 title-slide review — RED-DOT candidates defining 'what is Give n Receive'.
-  //   cs-1m1 = Brand-led · simple wordmark + V8 hero/sub/closer + cs-1 descriptor in middle [original merge]
+  //   cs-1m1 = Brand-led merge [DELETED 2026-05-09 per Dave: 'delete this'. HTML retained as silent backup.]
   //   cs-1m2 = Two-beat stack · brand truth top, gold-rule divider, product reality bottom [original merge]
   //   cs-1m3 = Minimal merge · 'Human Value, Finally Seen.' above wordmark + 'Invitation-based matchmaking' below [DELETED 2026-05-09 per Dave: 'delete this'. HTML retained as silent backup.]
   //   cs-1m4 = BRAND DEF v1 · single line 'What you give fuels the network.' [DELETED 2026-05-09 per Dave: 'delete this'. HTML retained as silent backup.]
-  //   cs-1m5 = BRAND DEF v2 · V8 caption row pair (LEFT 'fuels the network' + RIGHT 'reciprocated back to you')
+  //   cs-1m5 = BRAND DEF v2 · V8 caption row pair w/ click-to-reveal stages [eyebrow 'The future of real-world social communities'; +Network line]
   //   cs-1m6 = BRAND DEF v3 · G·n·R Equation (3 big letters as wordmark, sub-captions define each)
-  1: ['cs-1m1', 'cs-1m2', 'cs-1m5', 'cs-1m6'],
+  1: ['cs-1m2', 'cs-1m5', 'cs-1m6'],
   12: [],
   // [Dave 2026-05-08 v6] cs-merge3 ADDED as 3rd candidate at slot 13. Dave: 'try a new slide, make it a pink dot next to the red dots, where the krista steve graphic is clickable into if we click on party and where under the court and coffee gift home party graphic, you add the five cards (identical to as you have them now) from the why pickleball first slide.' cs-merge3 = pink-dot variant (vs red for merge1+merge2).
   13: ['cs-merge1', 'cs-merge2', 'cs-merge3'],
@@ -22500,7 +22533,11 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
       document.querySelectorAll('.casey-slide').forEach(s => s.classList.remove('active'));
       document.querySelectorAll('.appendix-slide').forEach(s => { s.style.display = 'none'; });
       const target = document.getElementById(altId);
-      if (target) target.classList.add('active');
+      if (target) {
+        target.classList.add('active');
+        // [Dave 2026-05-09] Reset data-stage on entry so click-to-reveal slides (like cs-1m5) start fresh each visit instead of resuming where the user last left off.
+        if (target.dataset && target.dataset.stage !== undefined) target.dataset.stage = '0';
+      }
       // Update progress bar to the position (visually we are still at slide N)
       document.getElementById('cbar').style.width = ((pos / TOTAL) * 100) + '%';
       document.getElementById('ccount').textContent = pos + ' / ' + TOTAL + ' (alt)';
