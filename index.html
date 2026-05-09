@@ -22700,7 +22700,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   cs-merge3 = pink (newer candidate at slot 13)
     //   cs-quadrant1, cs-arch1, cs-cat1 = blue (slot 17 source-material variants)
     const isPinkAlt = (altId === 'cs-merge3');
-    const isBlueAlt = (altId === 'cs-quadrant1' || altId === 'cs-arch1' || altId === 'cs-cat1' || altId === 'cs-wedge1' || altId === 'cs-frontier1');
+    const isBlueAlt = (altId === 'cs-quadrant1' || altId === 'cs-cat1' || altId === 'cs-wedge1' || altId === 'cs-frontier1');
     altDot.className = 'casey-dot alt' + (isPinkAlt ? ' pink-alt' : (isBlueAlt ? ' blue-alt' : (isReviewSlot ? ' review' : '')));
     // Alt-dot tooltip pulls live from the alt slide's own eyebrow text [Dave 2026-05-07 sync rule]
     const altLabel = getSlideEyebrowText(altId);
