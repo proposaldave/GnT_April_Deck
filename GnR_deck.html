@@ -22291,6 +22291,7 @@ function caseyGo(n) {
     }
   }
   if (window.updateAnnotationBadge) updateAnnotationBadge();
+  if (window.renderAnnotationMarkers) renderAnnotationMarkers();
 }
 
 function enterAppendix() {
@@ -22378,6 +22379,7 @@ function appendixGo(n) {
   if (targetId === 'cs-17') animateIntroExpansion();
   if (targetId === 'cs-4') animateIntroTeaser();
   if (window.updateAnnotationBadge) updateAnnotationBadge();
+  if (window.renderAnnotationMarkers) renderAnnotationMarkers();
 }
 
 // ===== cs-a2 concentric-ring expansion (paper-mode port of intro_deck slide6, +Padel) =====
@@ -24895,7 +24897,13 @@ window.addEventListener('resize',drawLoop);
     user-select: none; border: 0;
   }
   html.annotations-enabled #annotationBtn { display: flex; }
+  html.annotation-pick-mode #annotationBtn {
+    background: #5B8FD4;
+    box-shadow: 0 0 0 4px rgba(91,143,212,0.22), 0 4px 20px rgba(0,0,0,0.18);
+  }
+  html.annotation-pick-mode .casey-slide.active { cursor: crosshair !important; }
   #annotationBtn:hover { transform: scale(1.08); background: #a83a25; }
+  html.annotation-pick-mode #annotationBtn:hover { background: #477abe; }
   #annotationBtn svg { width: 22px; height: 22px; display: block; }
   #annotationBtn.has-note::after {
     content: ''; position: absolute; top: 4px; right: 4px;
@@ -24912,6 +24920,45 @@ window.addEventListener('resize',drawLoop);
     -webkit-backdrop-filter: blur(4px);
   }
   #annotationOverlay.open { display: flex; }
+  #annotationPickHint {
+    position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%);
+    display: none; align-items: center; gap: 10px;
+    z-index: 1001;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(26,22,18,0.9);
+    color: #fff8ec;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.22);
+    pointer-events: none;
+  }
+  html.annotation-pick-mode #annotationPickHint { display: flex; }
+  .annotation-marker {
+    position: absolute;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+    background: #c8462c;
+    box-shadow: 0 0 0 3px rgba(243,234,216,0.92), 0 0 16px rgba(200,70,44,0.75);
+    border: 1px solid rgba(26,22,18,0.18);
+    cursor: pointer;
+    pointer-events: auto !important;
+  }
+  .annotation-marker::after {
+    content: attr(data-num);
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.52rem;
+    font-weight: 900;
+    color: #fff8ec;
+  }
+  .annotation-marker:hover { transform: translate(-50%,-50%) scale(1.18); }
   #annotationPanel {
     background: #fbf7ef;
     border: 1px solid rgba(200,70,44,0.34);
@@ -25080,16 +25127,19 @@ window.addEventListener('resize',drawLoop);
   /* Hide the speaker-notes UI during PDF/PPTX export */
   html[data-export="1"] #annotationBtn,
   html[data-export="1"] #annotationOverlay,
+  html[data-export="1"] #annotationPickHint,
+  html[data-export="1"] .annotation-marker,
   html[data-export="1"] #speakerNotesBtn,
   html[data-export="1"] #speakerNotesOverlay { display: none !important; }
 </style>
 
-<button id="annotationBtn" onclick="openAnnotationPanel()" title="Annotate this slide (A)" aria-label="Annotate this slide">
+<button id="annotationBtn" onclick="toggleAnnotationPickMode(event)" title="Click-to-annotate mode (A)" aria-label="Click-to-annotate mode">
   <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
     <path d="M4 20h4.8L19.2 9.6a2.1 2.1 0 0 0 0-3L17.4 4.8a2.1 2.1 0 0 0-3 0L4 15.2V20Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
     <path d="M13.6 5.6l4.8 4.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
   </svg>
 </button>
+<div id="annotationPickHint">Click anywhere on the slide to place a note</div>
 <div id="annotationOverlay" onclick="if(event.target===this) closeAnnotationPanel()">
   <div id="annotationPanel">
     <div class="close-btn" onclick="closeAnnotationPanel()">&times;</div>
@@ -25255,6 +25305,159 @@ document.addEventListener('DOMContentLoaded', function(){
   document.addEventListener('click', () => setTimeout(updateAnnotationBadge, 80));
   document.addEventListener('keydown', () => setTimeout(updateAnnotationBadge, 80));
 });
+
+// Click-to-annotate upgrade: press A or click the pen, then click any spot on the active slide.
+let annotationPickModeActive = false;
+let activeAnnotationPoint = null;
+
+function normalizeAnnotationItem(item, active) {
+  const base = item || {};
+  return {
+    slideId: base.slideId || active.id,
+    slideLabel: base.slideLabel || active.label,
+    slideTitle: base.slideTitle || active.title,
+    text: base.text || '',
+    points: Array.isArray(base.points) ? base.points : [],
+    updatedAt: base.updatedAt || ''
+  };
+}
+
+function toggleAnnotationPickMode(event) {
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  if (!annotationsAllowedHere()) return;
+  annotationPickModeActive = !annotationPickModeActive;
+  activeAnnotationPoint = null;
+  document.documentElement.classList.toggle('annotation-pick-mode', annotationPickModeActive);
+}
+
+function openAnnotationPanel(point) {
+  if (!annotationsAllowedHere()) return;
+  const active = getActiveSlideForAnnotation();
+  const item = normalizeAnnotationItem(getAnnotationStore()[active.id], active);
+  activeAnnotationPoint = point || null;
+  const pointLabel = point ? (' · ' + Math.round(point.x) + '% / ' + Math.round(point.y) + '%') : '';
+  document.getElementById('annLabel').textContent = active.label + ' · ' + active.id + pointLabel;
+  document.getElementById('annTitle').textContent = point ? 'Note at clicked spot' : (active.title || 'Mark up this slide');
+  document.getElementById('annotationText').value = point ? (point.text || '') : (item.text || '');
+  document.getElementById('annotationStatus').textContent = item.updatedAt ? ('Last saved ' + item.updatedAt) : 'Saved locally in this browser.';
+  document.getElementById('annotationOverlay').classList.add('open');
+  setTimeout(() => document.getElementById('annotationText').focus(), 40);
+}
+
+function saveAnnotation() {
+  const active = getActiveSlideForAnnotation();
+  const text = document.getElementById('annotationText').value.trim();
+  const store = getAnnotationStore();
+  const item = normalizeAnnotationItem(store[active.id], active);
+  item.slideId = active.id;
+  item.slideLabel = active.label;
+  item.slideTitle = active.title;
+  item.updatedAt = new Date().toLocaleString();
+  if (activeAnnotationPoint) {
+    const point = {
+      id: activeAnnotationPoint.id || ('ann-' + Date.now()),
+      x: activeAnnotationPoint.x,
+      y: activeAnnotationPoint.y,
+      text,
+      updatedAt: item.updatedAt
+    };
+    item.points = item.points.filter(existing => existing.id !== point.id);
+    if (text) item.points.push(point);
+  } else {
+    item.text = text;
+  }
+  if ((item.text && item.text.trim()) || item.points.some(point => point.text && point.text.trim())) store[active.id] = item;
+  else delete store[active.id];
+  setAnnotationStore(store);
+  document.getElementById('annotationStatus').textContent = text ? 'Saved.' : 'Cleared.';
+  updateAnnotationBadge();
+  renderAnnotationMarkers();
+}
+
+function updateAnnotationBadge() {
+  const btn = document.getElementById('annotationBtn');
+  if (!btn) return;
+  const active = getActiveSlideForAnnotation();
+  const item = normalizeAnnotationItem(getAnnotationStore()[active.id], active);
+  const hasNote = !!((item.text && item.text.trim()) || item.points.some(point => point.text && point.text.trim()));
+  btn.classList.toggle('has-note', hasNote);
+}
+
+function buildAnnotationPayload(onlyCurrent) {
+  const active = getActiveSlideForAnnotation();
+  const items = Object.values(getAnnotationStore())
+    .map(item => normalizeAnnotationItem(item, active))
+    .filter(item => (item.text && item.text.trim()) || item.points.some(point => point.text && point.text.trim()));
+  const selected = onlyCurrent ? items.filter(item => item.slideId === active.id) : items;
+  return {
+    deck: 'GnR_deck.html',
+    generatedAt: new Date().toISOString(),
+    activeSlide: active,
+    annotations: selected
+  };
+}
+
+function renderAnnotationMarkers() {
+  document.querySelectorAll('.annotation-marker').forEach(marker => marker.remove());
+  if (!annotationsAllowedHere()) return;
+  const activeSlide = document.querySelector('.casey-slide.active');
+  if (!activeSlide) return;
+  const active = getActiveSlideForAnnotation();
+  const item = normalizeAnnotationItem(getAnnotationStore()[active.id], active);
+  item.points.filter(point => point.text && point.text.trim()).forEach((point, index) => {
+    const marker = document.createElement('button');
+    marker.type = 'button';
+    marker.className = 'annotation-marker';
+    marker.dataset.pointId = point.id;
+    marker.dataset.num = String(index + 1);
+    marker.title = point.text;
+    marker.style.left = point.x + '%';
+    marker.style.top = point.y + '%';
+    marker.addEventListener('click', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      openAnnotationPanel(point);
+    });
+    activeSlide.appendChild(marker);
+  });
+}
+
+function handleAnnotationCapture(event) {
+  if (!annotationsAllowedHere()) return;
+  const ui = event.target.closest('#annotationBtn,#annotationOverlay,#speakerNotesBtn,#speakerNotesOverlay,#appendixBtn,.casey-nav,.annotation-marker');
+  if (ui || !annotationPickModeActive) return;
+  const slide = event.target.closest('.casey-slide.active');
+  if (!slide) return;
+  event.preventDefault();
+  event.stopPropagation();
+  const rect = slide.getBoundingClientRect();
+  const x = Math.max(0, Math.min(100, ((event.clientX - rect.left) / rect.width) * 100));
+  const y = Math.max(0, Math.min(100, ((event.clientY - rect.top) / rect.height) * 100));
+  annotationPickModeActive = false;
+  document.documentElement.classList.remove('annotation-pick-mode');
+  openAnnotationPanel({ id: 'ann-' + Date.now(), x, y, text: '' });
+}
+
+document.addEventListener('click', handleAnnotationCapture, true);
+document.addEventListener('click', () => setTimeout(renderAnnotationMarkers, 80));
+document.addEventListener('keydown', function(e){
+  if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+  if (e.key === 'a' || e.key === 'A') {
+    if (!annotationsAllowedHere()) return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    const open = document.getElementById('annotationOverlay').classList.contains('open');
+    if (open) closeAnnotationPanel(); else toggleAnnotationPickMode();
+  }
+  if (e.key === 'Escape' && annotationPickModeActive) {
+    annotationPickModeActive = false;
+    activeAnnotationPoint = null;
+    document.documentElement.classList.remove('annotation-pick-mode');
+  }
+}, true);
 
 // =============================================================================
 // SPEAKER NOTES — Dave 2026-04-30
