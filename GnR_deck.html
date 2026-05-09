@@ -33,24 +33,16 @@
 </style>
 <script>
 (function(){
-  // Set --deck-scale = min(viewportW/1920, viewportH/1080). Runs ASAP to avoid flash of unscaled content.
+  // Set --deck-scale = min(viewportW/1920, viewportH/1080). Runs SYNCHRONOUSLY in head so body has responsive styling applied BEFORE it parses (no flash of unscaled content).
   function updateDeckScale() {
     var scale = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
     document.documentElement.style.setProperty('--deck-scale', scale);
   }
-  // Add the responsive class on html (so styles activate) — use a class so we can disable in export mode by removing it.
-  function init() {
-    if (document.documentElement.dataset.export !== '1') {
-      document.documentElement.classList.add('deck-responsive');
-    }
-    updateDeckScale();
+  // Add responsive class immediately — the export-detection script earlier in head has already set data-export if applicable, so the check below is reliable.
+  if (document.documentElement.dataset.export !== '1') {
+    document.documentElement.classList.add('deck-responsive');
   }
-  // Defer until DOMContentLoaded so dataset.export (set by export-detection script earlier) is final.
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  updateDeckScale();
   window.addEventListener('resize', updateDeckScale);
   window.addEventListener('orientationchange', function(){ setTimeout(updateDeckScale, 100); });
 })();
