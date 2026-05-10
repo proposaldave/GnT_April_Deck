@@ -5867,6 +5867,144 @@ window.cs1m5Reverse = function() {
 };
 </script>
 
+<!-- ───── cs-1m8 · TITLE w/ HUMAN-TRUTH OPENER [Dave 2026-05-09 — RED DOT REVIEW] ─────
+     Dave's brief: 'one of the most incredible truths about human beings is that we feel our best
+     when we're generous to others... we feel most fulfilled when we have an open heart, being
+     generous, giving, connecting with others.' He wants slide 1 to lead with this human truth as
+     the way to introduce the company — zooming in on 'Give' as the human-nature claim — before
+     the product reveal.
+
+     Stage 0: full Give n Receive wordmark + pulsing arrow (same as cs-1m5).
+     Stage 1 NEW: human-truth statement appears below wordmark — 'We feel our best when we give.
+                  Science says so.' Wordmark stays intact. Arrow keeps pulsing.
+     Stage 2: human truth fades; wordmark splits via grid (G in left col, R in right col, n centered);
+              caption row + Network line reveal together (same final layout as cs-1m5 stage 1).
+
+     Easy to revert: this is added as an alt on slot 1. cs-1m5 stays as primary. Removing 'cs-1m8'
+     from SLIDE_ALTS[1] reverts entirely. HTML retained as silent backup.
+     ───────────────────────────────────────────── -->
+<style>
+  #cs-1m8 { cursor:pointer }
+  /* Wordmark — same structure as cs-1m5 (G/ive/n/R/eceive flex, then grid at stage 2) */
+  #cs-1m8 .m8-wordmark { position:relative;display:flex;align-items:baseline;justify-content:center;width:auto;margin:0 auto 32px auto;line-height:1 }
+  #cs-1m8 .wm-letter { display:inline-block;font-family:'Fraunces','Playfair Display',Georgia,serif;line-height:1;transition: transform 1.4s cubic-bezier(.22,1,.36,1), opacity 0.7s ease, padding 1.4s cubic-bezier(.22,1,.36,1) }
+  #cs-1m8 .wm-G { font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px;transform-origin:right center }
+  #cs-1m8 .wm-ive { font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px;transform-origin:left center }
+  #cs-1m8 .wm-n-wrap { display:inline-flex;position:relative;align-items:baseline;justify-content:center;padding:0 40px;transform-origin:center bottom;transition:transform 1.4s cubic-bezier(.22,1,.36,1) }
+  #cs-1m8 .wm-n { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:128px;font-weight:400;font-style:italic;color:#1a1612;line-height:1 }
+  #cs-1m8 .wm-eceive { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:right center }
+  #cs-1m8 .wm-R { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:left center }
+  #cs-1m8 .wm-arc { position:absolute;left:50%;top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition: transform 1.4s cubic-bezier(.22,1,.36,1) }
+  /* STAGE 1 reveal: HUMAN TRUTH — 'We feel our best when we give. Science says so.' */
+  #cs-1m8 .m8-truth { opacity:0;visibility:hidden;transform:translateY(8px);max-height:0;overflow:hidden;transition:opacity 0.55s ease, transform 0.55s ease, max-height 0.6s cubic-bezier(.22,1,.36,1), visibility 0s linear 0.55s }
+  #cs-1m8[data-stage="1"] .m8-truth { opacity:1;visibility:visible;transform:none;max-height:200px;transition:opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s, max-height 0.7s cubic-bezier(.22,1,.36,1) 0.15s, visibility 0s linear 0s }
+  /* At stage 2, truth fades out so it doesn't compete with the caption row */
+  #cs-1m8[data-stage="2"] .m8-truth { opacity:0;visibility:hidden;transform:translateY(-8px);max-height:0;transition:opacity 0.4s ease, transform 0.4s ease, max-height 0.5s cubic-bezier(.22,1,.36,1), visibility 0s linear 0.4s }
+  /* STAGE 2: split wordmark via grid (same as cs-1m5) + caption row + Network line */
+  #cs-1m8[data-stage="2"] .m8-wordmark {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 140px !important;
+    width: min(1300px, 92%) !important;
+    margin: 0 auto 32px auto !important;
+    position: relative !important;
+  }
+  #cs-1m8[data-stage="2"] .wm-ive, #cs-1m8[data-stage="2"] .wm-eceive { display: none !important }
+  #cs-1m8[data-stage="2"] .wm-G { grid-column: 1; justify-self: center; transform: scale(1.4); transform-origin: center bottom }
+  #cs-1m8[data-stage="2"] .wm-R { grid-column: 2; justify-self: center; transform: scale(1.4); transform-origin: center bottom }
+  #cs-1m8[data-stage="2"] .wm-n-wrap { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%) scale(1.3); transform-origin: center bottom; z-index: 2 }
+  #cs-1m8[data-stage="2"] .wm-arc { transform: translateX(-50%) translateY(-12px) scale(1.3) }
+  /* Caption row + Network line reveal at stage 2 simultaneously, delayed for split */
+  #cs-1m8 .m8-caption { opacity:0;visibility:hidden;transform:translateY(8px);max-height:0;overflow:hidden;transition:opacity 0.55s ease, transform 0.55s ease, max-height 0.6s cubic-bezier(.22,1,.36,1), visibility 0s linear 0.55s }
+  #cs-1m8[data-stage="2"] .m8-caption { opacity:1;visibility:visible;transform:none;max-height:300px;transition:opacity 0.75s ease 0.6s, transform 0.75s ease 0.6s, max-height 0.75s cubic-bezier(.22,1,.36,1) 0.6s, visibility 0s linear 0.6s }
+  #cs-1m8 .m8-network { opacity:0;visibility:hidden;transform:translateY(8px);max-height:0;overflow:hidden;transition:opacity 0.55s ease, transform 0.55s ease, max-height 0.6s cubic-bezier(.22,1,.36,1), visibility 0s linear 0.55s }
+  #cs-1m8[data-stage="2"] .m8-network { opacity:1;visibility:visible;transform:none;max-height:200px;transition:opacity 0.75s ease 0.6s, transform 0.75s ease 0.6s, max-height 0.75s cubic-bezier(.22,1,.36,1) 0.6s, visibility 0s linear 0.6s }
+  /* Pulsing arrow visible at stages 0 and 1, hides at stage 2 */
+  #cs-1m8 .m8-hint { display:flex;align-items:center;justify-content:center;margin-top:36px;opacity:1;visibility:visible;transform:translateX(-92px);transition:opacity 0.4s ease, visibility 0s linear 0s }
+  #cs-1m8[data-stage="2"] .m8-hint { opacity:0;visibility:hidden;transition:opacity 0.4s ease, visibility 0s linear 0.4s }
+  @keyframes m8HintBob { 0%,100% { transform:translateY(0);opacity:0.85 } 50% { transform:translateY(8px);opacity:0.45 } }
+  #cs-1m8 .m8-hint svg { animation:m8HintBob 2.2s ease-in-out infinite }
+  #cs-1m8[data-stage="2"] .m8-hint svg { animation:none }
+  /* Export mode: jump to terminal state (stage 2 layout, all reveals visible) */
+  html[data-export="1"] #cs-1m8 .m8-wordmark { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 140px !important; width: min(1300px, 92%) !important; margin: 0 auto 32px auto !important; position: relative !important }
+  html[data-export="1"] #cs-1m8 .wm-ive, html[data-export="1"] #cs-1m8 .wm-eceive { display: none !important }
+  html[data-export="1"] #cs-1m8 .wm-G { grid-column: 1 !important; justify-self: center !important; transform: scale(1.4) !important; transform-origin: center bottom !important }
+  html[data-export="1"] #cs-1m8 .wm-R { grid-column: 2 !important; justify-self: center !important; transform: scale(1.4) !important; transform-origin: center bottom !important }
+  html[data-export="1"] #cs-1m8 .wm-n-wrap { position: absolute !important; left: 50% !important; bottom: 0 !important; transform: translateX(-50%) scale(1.3) !important; transform-origin: center bottom !important; z-index: 2 !important }
+  html[data-export="1"] #cs-1m8 .wm-arc { transform: translateX(-50%) translateY(-12px) scale(1.3) !important }
+  html[data-export="1"] #cs-1m8 .m8-truth { display:none !important }
+  html[data-export="1"] #cs-1m8 .m8-caption, html[data-export="1"] #cs-1m8 .m8-network { opacity:1 !important;visibility:visible !important;transform:none !important;max-height:none !important }
+  html[data-export="1"] #cs-1m8 .m8-hint { display:none !important }
+</style>
+<div class="casey-slide ds-measure" id="cs-1m8" data-stage="0" onclick="this.dataset.stage = Math.min(2, (parseInt(this.dataset.stage)||0) + 1)" style="display:none;background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
+  <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
+  <!-- Eyebrow same as cs-1m5: 'Brand' (slot 1 has been simplified to one-word eyebrow) -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand</div>
+  <div class="s on" style="background:transparent">
+    <div class="stg" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;text-align:center;color:#1a1612;padding:0 60px">
+      <!-- Wordmark — same span structure as cs-1m5: G/ive/n/R/eceive renders 'Give n Receive' -->
+      <div class="m8-wordmark">
+        <span class="wm-letter wm-G">G</span><span class="wm-letter wm-ive">ive</span><span class="wm-n-wrap"><svg class="wm-arc" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><path d="M 4 26 Q 30 -2 56 26" stroke="#b8954a" stroke-width="2.2" fill="none" opacity="0.85" stroke-linecap="round"/><circle cx="4" cy="26" r="3.4" fill="#5B8FD4"/><circle cx="56" cy="26" r="3.4" fill="#c8462c"/></svg><span class="wm-n">n</span></span><span class="wm-letter wm-R">R</span><span class="wm-letter wm-eceive">eceive</span>
+      </div>
+      <!-- STAGE 1 reveal: human truth statement (NEW). Zooms in on 'Give' as the way humans are wired — feel-best-when-generous claim. Fades out at stage 2 so the caption row owns that vertical space. -->
+      <div class="m8-truth" style="margin-bottom:24px">
+        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.45rem,2.1vw,2rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.32;max-width:1100px;margin:0 auto">
+          We feel our best <em style="font-style:italic;font-weight:700;color:#c8462c">when we give</em>.
+        </div>
+        <div style="font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.86vw,.9rem);font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-top:14px">Science says so.</div>
+      </div>
+      <!-- STAGE 2 reveal: V8 caption row (give-side + receive-side) — same as cs-1m5 -->
+      <div class="m8-caption" style="display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1300px,92%);align-items:start">
+        <div style="text-align:center">
+          <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#3a73b8;line-height:1.3;margin-bottom:10px">What you give</div>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#5B8FD4">fuels</em> the network.</div>
+        </div>
+        <div style="text-align:center">
+          <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#c94d32;line-height:1.3;margin-bottom:10px">Your People &middot; Your Moments</div>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#c8462c">Reciprocated</em> back to you.</div>
+        </div>
+      </div>
+      <!-- STAGE 2 reveal: 'The Network / Sees. Measures.' — appears alongside captions -->
+      <div class="m8-network" style="margin-top:24px">
+        <div style="font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.86vw,.9rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:8px">The Network</div>
+        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,1.55vw,1.55rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">Sees. Measures.</div>
+      </div>
+      <!-- Pulsing arrow — visible at stages 0 and 1 (still more to come). Hides at stage 2. -->
+      <div class="m8-hint">
+        <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 14 4 L 14 22 M 14 22 L 6 14 M 14 22 L 22 14" fill="none" stroke="#b8954a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:30px;left:36px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(26,22,18,0.65);font-weight:500;line-height:1.85;z-index:10">
+    <div style="color:#1a1612;font-weight:700">Dave Velardo</div>
+    <div style="color:rgba(26,22,18,0.55)">Founder &amp; CEO</div>
+    <div><a href="mailto:dave@givenreceive.com" style="color:rgba(26,22,18,0.7);text-decoration:none;border-bottom:1px solid rgba(184,149,74,0.4)">dave@givenreceive.com</a></div>
+    <div>978-604-0223</div>
+  </div>
+</div>
+<script>
+// [Dave 2026-05-09] cs-1m8 wheel hooks — mirror cs-1m5 pattern. 3 stages (0/1/2).
+window.cs1m8Advance = function() {
+  const s = document.getElementById('cs-1m8');
+  if (!s) return false;
+  const stage = parseInt(s.dataset.stage) || 0;
+  if (stage >= 2) return false;
+  s.dataset.stage = String(stage + 1);
+  return true;
+};
+window.cs1m8Reverse = function() {
+  const s = document.getElementById('cs-1m8');
+  if (!s) return false;
+  const stage = parseInt(s.dataset.stage) || 0;
+  if (stage <= 0) return false;
+  s.dataset.stage = String(stage - 1);
+  return true;
+};
+</script>
+
 <!-- ───── cs-1m6 · BRAND DEF v3 · G·n·R EQUATION [3 big letters as wordmark + sub-captions] ─────
      The 3 letters spread out as the brand mark itself, each labeled with its V8 caption.
      Uses V8's letter DNA (blue G + italic ink n + red R + gold arc) without the particle galaxy.
@@ -21677,8 +21815,9 @@ const SLIDE_ALTS = {
   //   cs-1m4 = BRAND DEF v1 · single line [DELETED 2026-05-09 per Dave]
   //   cs-1m5 = PROMOTED to slot 1 primary 2026-05-09 ('this is our new title slide'). No longer an alt.
   //   cs-1m6 = G·n·R Equation [MOVED to last appendix slide 2026-05-09 per Dave: 'move this to be the last slide in the appendix']
-  //   cs-1m7 = split-wordmark animation alt [DELETED 2026-05-09 per Dave: 'delete this slide. it can be replaced by 1/25 (alt) slide'. cs-1m5 primary covers the slot. HTML retained as silent backup.]
-  1: [],
+  //   cs-1m7 = split-wordmark animation alt [DELETED 2026-05-09 per Dave]
+  //   cs-1m8 = NEW [Dave 2026-05-09 EVENING] · adds a HUMAN-TRUTH opening beat before the product reveal. Per Dave: 'we feel our best when we're generous to others... incredible truth that we feel our best when we have an open heart, being generous, giving'. Stage 1 reveals 'We feel our best when we give. Science says so.' before stage 2 splits the wordmark. RED DOT review — easy to revert by removing from this array (cs-1m5 stays primary).
+  1: ['cs-1m8'],
   12: [],
   // [Dave 2026-05-08 v6] cs-merge3 ADDED as 3rd candidate at slot 13. Dave: 'try a new slide, make it a pink dot next to the red dots, where the krista steve graphic is clickable into if we click on party and where under the court and coffee gift home party graphic, you add the five cards (identical to as you have them now) from the why pickleball first slide.' cs-merge3 = pink-dot variant (vs red for merge1+merge2).
   13: ['cs-merge1', 'cs-merge2', 'cs-merge3'],
@@ -21715,7 +21854,7 @@ const SLIDE_ALTS = {
   // cs-brand-V13 ('What you give is you leaving a mark. / What you get is life sending it back.') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
   // cs-brand-V14 ('You get back what matters most. / Like it was meant to be.') REMOVED 2026-05-07 per Dave: 'delete this'. HTML retained as silent backup.
 };
-const REVIEW_POSITION = 0; // [Dave 2026-05-09] Slot 1 review CLOSED — cs-1m7 alt deleted, cs-1m5 primary holds the slot alone.
+const REVIEW_POSITION = 1; // [Dave 2026-05-09 EVENING] Slot 1 review reopened — cs-1m8 new red-dot alt with human-truth opener. Dave reviewing whether to lead the deck with the 'we feel our best when we give' framing before promoting to primary.
 // LOCKED_POSITIONS: emptied per Dave 2026-05-07 — green dots removed from nav, red review dot kept.
 // Locked-state still tracked in comments/git; just no longer rendered as a UI marker.
 const LOCKED_POSITIONS = [];
@@ -22875,7 +23014,7 @@ document.addEventListener('wheel', e => {
   e.preventDefault();
   wheelLock = true;
   if (e.deltaY > 0) {
-    // [Dave 2026-05-09] ALT slide check FIRST: alt slides like cs-1m5 / cs-1m7 aren't in SLIDE_ORDER (current still equals their parent slot's index), so we have to detect them via .active directly. Must run before the cs-1 primary check below — otherwise cs1Advance fires on the hidden cs-1 while user is actually on the alt.
+    // [Dave 2026-05-09] ALT slide check FIRST: alt slides like cs-1m5 / cs-1m7 / cs-1m8 aren't in SLIDE_ORDER (current still equals their parent slot's index), so we have to detect them via .active directly.
     if (!inAppendix) {
       const activeAlt = document.querySelector('.casey-slide.active');
       if (activeAlt && activeAlt.id === 'cs-1m5' && window.cs1m5Advance && window.cs1m5Advance()) {
@@ -22883,6 +23022,10 @@ document.addEventListener('wheel', e => {
         return;
       }
       if (activeAlt && activeAlt.id === 'cs-1m7' && window.cs1m7Advance && window.cs1m7Advance()) {
+        setTimeout(() => { wheelLock = false; }, 400);
+        return;
+      }
+      if (activeAlt && activeAlt.id === 'cs-1m8' && window.cs1m8Advance && window.cs1m8Advance()) {
         setTimeout(() => { wheelLock = false; }, 400);
         return;
       }
@@ -22964,7 +23107,7 @@ document.addEventListener('wheel', e => {
     if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
   }
   else if (e.deltaY < 0) {
-    // [Dave 2026-05-09] ALT slide check FIRST (mirrors deltaY > 0 block): un-stage cs-1m5 / cs-1m7 before falling through to deck-level prev-slide.
+    // [Dave 2026-05-09] ALT slide check FIRST (mirrors deltaY > 0 block): un-stage cs-1m5 / cs-1m7 / cs-1m8 before falling through to deck-level prev-slide.
     if (!inAppendix) {
       const activeAlt = document.querySelector('.casey-slide.active');
       if (activeAlt && activeAlt.id === 'cs-1m5' && window.cs1m5Reverse && window.cs1m5Reverse()) {
@@ -22972,6 +23115,10 @@ document.addEventListener('wheel', e => {
         return;
       }
       if (activeAlt && activeAlt.id === 'cs-1m7' && window.cs1m7Reverse && window.cs1m7Reverse()) {
+        setTimeout(() => { wheelLock = false; }, 400);
+        return;
+      }
+      if (activeAlt && activeAlt.id === 'cs-1m8' && window.cs1m8Reverse && window.cs1m8Reverse()) {
         setTimeout(() => { wheelLock = false; }, 400);
         return;
       }
