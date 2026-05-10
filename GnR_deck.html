@@ -18694,7 +18694,8 @@ window.cs1m7Reverse = function() {
   #cs-a7m1 .a7m1-stage { position:relative;width:100%;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 56px 44px;box-sizing:border-box;gap:24px }
   #cs-a7m1 .a7m1-headline { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.55rem,2.55vw,2.3rem);font-weight:700;line-height:1.18;letter-spacing:-0.018em;color:#1a1612;text-align:center;max-width:1200px }
   #cs-a7m1 .a7m1-headline em { font-style:italic;font-weight:600;color:#b8954a }
-  #cs-a7m1 .a7m1-grid { display:grid;grid-template-columns:1fr 80px 1fr;gap:24px;align-items:stretch;width:min(1700px,100%) }
+  /* [Dave 2026-05-10] grid simplified from '1fr 80px 1fr' (with center bridge) → '1fr 1fr' (bridge deleted) */
+  #cs-a7m1 .a7m1-grid { display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:stretch;width:min(1700px,100%) }
   /* CARDS */
   #cs-a7m1 .a7m1-card { padding:30px 28px;border-radius:14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;position:relative }
   #cs-a7m1 .a7m1-card.old { background:rgba(91,143,212,0.05);border:1px solid rgba(91,143,212,0.28) }
@@ -18717,10 +18718,26 @@ window.cs1m7Reverse = function() {
   #cs-a7m1 .gnrmark .gG { color:#5B8FD4;font-weight:700 }
   #cs-a7m1 .gnrmark .gn { color:#1a1612;font-style:italic;font-weight:500;padding:0 1px }
   #cs-a7m1 .gnrmark .gR { color:#c8462c;font-weight:700 }
-  /* Center bridge — gold arrow today → tomorrow */
-  #cs-a7m1 .a7m1-bridge { display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px }
-  #cs-a7m1 .a7m1-bridge .bl { font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:rgba(26,22,18,0.5) }
-  #cs-a7m1 .a7m1-bridge svg { display:block }
+  /* [Dave 2026-05-10] Flip-card mechanism on the RIGHT (Give n Receive vision) card. Front = simple invitation feed graphic; back = current content (4-figure network + caption). User clicks the card to flip it over. The eyebrow stays static above the flip-inner so it doesn't rotate. */
+  #cs-a7m1 .a7m1-card.new { perspective: 1400px; cursor: pointer; padding-top: 22px }
+  #cs-a7m1 .a7m1-flip-inner { position: relative; width: 100%; min-height: 380px; transform-style: preserve-3d; transition: transform 0.9s cubic-bezier(.4,0,.2,1) }
+  #cs-a7m1 .a7m1-card.new[data-flipped="1"] .a7m1-flip-inner { transform: rotateY(180deg) }
+  #cs-a7m1 .a7m1-flip-front, #cs-a7m1 .a7m1-flip-back { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center }
+  #cs-a7m1 .a7m1-flip-back { transform: rotateY(180deg) }
+  /* Invitation feed graphic — stack of 3 mini invitation cards */
+  #cs-a7m1 .a7m1-feed { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 320px; margin: 0 auto }
+  #cs-a7m1 .a7m1-feed-card { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid rgba(184,149,74,0.42); border-radius: 10px; background: rgba(255,255,255,0.55); position: relative }
+  #cs-a7m1 .a7m1-feed-card.featured { border-color: #b8954a; box-shadow: 0 0 0 3px rgba(184,149,74,0.10), 0 4px 14px rgba(184,149,74,0.16); background: rgba(255,250,240,0.85) }
+  #cs-a7m1 .a7m1-feed-card.faded { opacity: 0.55 }
+  #cs-a7m1 .a7m1-feed-avatar { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0 }
+  #cs-a7m1 .a7m1-feed-content { flex: 1; display: flex; flex-direction: column; gap: 5px; align-items: flex-start }
+  #cs-a7m1 .a7m1-feed-line { height: 6px; background: rgba(184,149,74,0.32); border-radius: 3px }
+  #cs-a7m1 .a7m1-feed-line.full { width: 100% }
+  #cs-a7m1 .a7m1-feed-line.short { width: 62% }
+  #cs-a7m1 .a7m1-feed-icon { color: #b8954a; font-size: 14px; flex-shrink: 0 }
+  /* Tap-to-flip hint on front */
+  #cs-a7m1 .a7m1-flip-hint { font-family: 'Manrope', sans-serif; font-size: .58rem; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; color: rgba(184,149,74,0.85); display: flex; align-items: center; gap: 8px; margin-top: 4px }
+  #cs-a7m1 .a7m1-flip-hint svg { fill: none; stroke: #b8954a; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round }
   /* Footer / closer */
   #cs-a7m1 .a7m1-closer { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.4vw,1.35rem);font-style:italic;font-weight:600;color:#1a1612;line-height:1.32;text-align:center;max-width:1080px;border-top:1px solid rgba(184,149,74,0.32);padding-top:14px;margin-top:8px }
   #cs-a7m1 .a7m1-closer strong { color:#c8462c;font-style:normal;font-weight:800 }
@@ -18730,9 +18747,7 @@ window.cs1m7Reverse = function() {
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Human connection technology is unsolved</div>
   <section style="position:relative;width:100%;min-height:100%">
     <div class="a7m1-stage">
-      <div class="a7m1-headline">
-        <span style="color:rgba(26,22,18,0.55);font-weight:600">Social media was a sliver.</span> The whole frontier of <em>human connection technology</em> is open.
-      </div>
+      <!-- [Dave 2026-05-10] Headline 'Social media was a sliver. The whole frontier of human connection technology is open.' DELETED — eyebrow + cards carry the message. -->
 
       <div class="a7m1-grid">
         <!-- LEFT CARD — LONELINESS / NARROW VIEW (old) -->
@@ -18760,65 +18775,96 @@ window.cs1m7Reverse = function() {
           </div>
         </div>
 
-        <!-- CENTER BRIDGE — gold arrow + 'today → tomorrow' label -->
-        <div class="a7m1-bridge">
-          <div class="bl">Today</div>
-          <svg width="80" height="22" viewBox="0 0 80 22">
-            <line x1="6" y1="11" x2="68" y2="11" stroke="#b8954a" stroke-width="1.6" stroke-linecap="round" opacity="0.85"/>
-            <path d="M62 5 L72 11 L62 17" stroke="#b8954a" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <div class="bl" style="color:#b8954a">Tomorrow</div>
-        </div>
+        <!-- [Dave 2026-05-10] Bridge deleted. Grid now 1fr 1fr (two cards). -->
 
-        <!-- RIGHT CARD — GIVE 'N RECEIVE / OUR VISION (new) -->
-        <div class="a7m1-card new">
+        <!-- RIGHT CARD — GIVE 'N RECEIVE / OUR VISION · FLIPPABLE [Dave 2026-05-10] -->
+        <div class="a7m1-card new" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'; event.stopPropagation()">
+          <!-- Eyebrow stays static above the flip — both faces share it -->
           <div class="a7m1-eye">Our Vision · Give n Receive</div>
-          <div class="a7m1-orb">
-            <!-- Invitation-based matchmaking visualization: 4 community-figures connected via gold curves; central GnR mark -->
-            <svg width="76%" height="76%" viewBox="0 0 100 100" fill="none">
-              <circle cx="50" cy="50" r="46" fill="rgba(212,168,83,0.05)"/>
-              <g stroke="#b8954a" stroke-width="0.8" fill="none" opacity="0.75" stroke-linecap="round">
-                <path d="M 22 34 Q 50 20 78 34" />
-                <path d="M 22 66 Q 50 80 78 66" />
-                <path d="M 22 34 Q 14 50 22 66" />
-                <path d="M 78 34 Q 86 50 78 66" />
-                <path d="M 22 34 Q 50 50 78 66" stroke-dasharray="2 2" opacity="0.45" />
-                <path d="M 78 34 Q 50 50 22 66" stroke-dasharray="2 2" opacity="0.45" />
-              </g>
-              <g fill="#b8954a">
-                <circle cx="50" cy="22" r="1.4"/>
-                <circle cx="50" cy="78" r="1.4"/>
-                <circle cx="13" cy="50" r="1.4"/>
-                <circle cx="87" cy="50" r="1.4"/>
-              </g>
-              <g transform="translate(22,34)">
-                <circle r="6.5" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1"/>
-                <circle cx="0" cy="-1.6" r="1.6" fill="#5B8FD4"/>
-                <path d="M -2.4 0.5 L -2.4 3 M 2.4 0.5 L 2.4 3 M 0 0.5 L 0 3" stroke="#5B8FD4" stroke-width="0.7" stroke-linecap="round"/>
-              </g>
-              <g transform="translate(78,34)">
-                <circle r="6.5" fill="rgba(200,70,44,0.18)" stroke="#c8462c" stroke-width="1"/>
-                <circle cx="0" cy="-1.6" r="1.6" fill="#c8462c"/>
-                <path d="M -2.4 0.5 L -2.4 3 M 2.4 0.5 L 2.4 3 M 0 0.5 L 0 3" stroke="#c8462c" stroke-width="0.7" stroke-linecap="round"/>
-              </g>
-              <g transform="translate(22,66)">
-                <circle r="6.5" fill="rgba(122,74,140,0.18)" stroke="#7d529f" stroke-width="1"/>
-                <circle cx="0" cy="-1.6" r="1.6" fill="#7d529f"/>
-                <path d="M -2.4 0.5 L -2.4 3 M 2.4 0.5 L 2.4 3 M 0 0.5 L 0 3" stroke="#7d529f" stroke-width="0.7" stroke-linecap="round"/>
-              </g>
-              <g transform="translate(78,66)">
-                <circle r="6.5" fill="rgba(22,134,81,0.18)" stroke="#168651" stroke-width="1"/>
-                <circle cx="0" cy="-1.6" r="1.6" fill="#168651"/>
-                <path d="M -2.4 0.5 L -2.4 3 M 2.4 0.5 L 2.4 3 M 0 0.5 L 0 3" stroke="#168651" stroke-width="0.7" stroke-linecap="round"/>
-              </g>
-              <circle cx="50" cy="50" r="11" fill="rgba(255,245,216,0.85)" stroke="rgba(184,149,74,0.6)" stroke-width="0.8"/>
-              <text x="44" y="53.5" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="7" font-weight="700" fill="#5B8FD4">G</text>
-              <text x="49" y="54" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="5.5" font-weight="500" font-style="italic" fill="#1a1612">n</text>
-              <text x="52.5" y="53.5" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="7" font-weight="700" fill="#c8462c">R</text>
-            </svg>
-          </div>
-          <div class="a7m1-cap">
-            <em>Invitation-based matchmaking.</em> The future of real-world social communities — where our <em>uniqueness</em> is <strong>seen</strong> and <em>reciprocated</em>. That's <span class="gnrmark"><span class="gG">Give</span> <span class="gn">n</span> <span class="gR">Receive</span></span>.
+          <div class="a7m1-flip-inner">
+            <!-- FRONT FACE — simple invitation feed graphic (visible on slide load) -->
+            <div class="a7m1-flip-front">
+              <div class="a7m1-feed">
+                <div class="a7m1-feed-card faded">
+                  <div class="a7m1-feed-avatar" style="background:rgba(91,143,212,0.55)"></div>
+                  <div class="a7m1-feed-content">
+                    <div class="a7m1-feed-line full"></div>
+                    <div class="a7m1-feed-line short"></div>
+                  </div>
+                  <svg class="a7m1-feed-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="3" width="11" height="8" rx="1" stroke="#b8954a" stroke-width="1.2"/><path d="M 1.5 3 L 7 7.5 L 12.5 3" stroke="#b8954a" stroke-width="1.2" stroke-linejoin="round" fill="none"/></svg>
+                </div>
+                <div class="a7m1-feed-card featured">
+                  <div class="a7m1-feed-avatar" style="background:rgba(200,70,44,0.55)"></div>
+                  <div class="a7m1-feed-content">
+                    <div class="a7m1-feed-line full"></div>
+                    <div class="a7m1-feed-line short"></div>
+                  </div>
+                  <svg class="a7m1-feed-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1.5" y="3.5" width="13" height="9" rx="1.2" stroke="#b8954a" stroke-width="1.4"/><path d="M 1.5 3.5 L 8 8.5 L 14.5 3.5" stroke="#b8954a" stroke-width="1.4" stroke-linejoin="round" fill="none"/></svg>
+                </div>
+                <div class="a7m1-feed-card faded">
+                  <div class="a7m1-feed-avatar" style="background:rgba(122,74,140,0.55)"></div>
+                  <div class="a7m1-feed-content">
+                    <div class="a7m1-feed-line full"></div>
+                    <div class="a7m1-feed-line short"></div>
+                  </div>
+                  <svg class="a7m1-feed-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="3" width="11" height="8" rx="1" stroke="#b8954a" stroke-width="1.2"/><path d="M 1.5 3 L 7 7.5 L 12.5 3" stroke="#b8954a" stroke-width="1.2" stroke-linejoin="round" fill="none"/></svg>
+                </div>
+              </div>
+              <div class="a7m1-feed-label" style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.95rem;font-weight:600;color:#1a1612">The invitation feed.</div>
+              <div class="a7m1-flip-hint">
+                <svg width="14" height="14" viewBox="0 0 14 14"><path d="M 2 7 Q 7 11 12 7"/><path d="M 9 4.5 L 12 7 L 9 9.5"/></svg>
+                Tap to flip
+              </div>
+            </div>
+            <!-- BACK FACE — current GnR vision (4-figure network + caption) -->
+            <div class="a7m1-flip-back">
+              <div class="a7m1-orb">
+                <svg width="76%" height="76%" viewBox="0 0 100 100" fill="none">
+                  <circle cx="50" cy="50" r="46" fill="rgba(212,168,83,0.05)"/>
+                  <g stroke="#b8954a" stroke-width="0.8" fill="none" opacity="0.75" stroke-linecap="round">
+                    <path d="M 22 34 Q 50 20 78 34" />
+                    <path d="M 22 66 Q 50 80 78 66" />
+                    <path d="M 22 34 Q 14 50 22 66" />
+                    <path d="M 78 34 Q 86 50 78 66" />
+                    <path d="M 22 34 Q 50 50 78 66" stroke-dasharray="2 2" opacity="0.45" />
+                    <path d="M 78 34 Q 50 50 22 66" stroke-dasharray="2 2" opacity="0.45" />
+                  </g>
+                  <g fill="#b8954a">
+                    <circle cx="50" cy="22" r="1.4"/>
+                    <circle cx="50" cy="78" r="1.4"/>
+                    <circle cx="13" cy="50" r="1.4"/>
+                    <circle cx="87" cy="50" r="1.4"/>
+                  </g>
+                  <g transform="translate(22,34)">
+                    <circle r="6.5" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1"/>
+                    <circle cx="0" cy="-1.6" r="1.6" fill="#5B8FD4"/>
+                    <path d="M -2.4 0.5 L -2.4 3 M 2.4 0.5 L 2.4 3 M 0 0.5 L 0 3" stroke="#5B8FD4" stroke-width="0.7" stroke-linecap="round"/>
+                  </g>
+                  <g transform="translate(78,34)">
+                    <circle r="6.5" fill="rgba(200,70,44,0.18)" stroke="#c8462c" stroke-width="1"/>
+                    <circle cx="0" cy="-1.6" r="1.6" fill="#c8462c"/>
+                    <path d="M -2.4 0.5 L -2.4 3 M 2.4 0.5 L 2.4 3 M 0 0.5 L 0 3" stroke="#c8462c" stroke-width="0.7" stroke-linecap="round"/>
+                  </g>
+                  <g transform="translate(22,66)">
+                    <circle r="6.5" fill="rgba(122,74,140,0.18)" stroke="#7d529f" stroke-width="1"/>
+                    <circle cx="0" cy="-1.6" r="1.6" fill="#7d529f"/>
+                    <path d="M -2.4 0.5 L -2.4 3 M 2.4 0.5 L 2.4 3 M 0 0.5 L 0 3" stroke="#7d529f" stroke-width="0.7" stroke-linecap="round"/>
+                  </g>
+                  <g transform="translate(78,66)">
+                    <circle r="6.5" fill="rgba(22,134,81,0.18)" stroke="#168651" stroke-width="1"/>
+                    <circle cx="0" cy="-1.6" r="1.6" fill="#168651"/>
+                    <path d="M -2.4 0.5 L -2.4 3 M 2.4 0.5 L 2.4 3 M 0 0.5 L 0 3" stroke="#168651" stroke-width="0.7" stroke-linecap="round"/>
+                  </g>
+                  <circle cx="50" cy="50" r="11" fill="rgba(255,245,216,0.85)" stroke="rgba(184,149,74,0.6)" stroke-width="0.8"/>
+                  <text x="44" y="53.5" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="7" font-weight="700" fill="#5B8FD4">G</text>
+                  <text x="49" y="54" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="5.5" font-weight="500" font-style="italic" fill="#1a1612">n</text>
+                  <text x="52.5" y="53.5" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="7" font-weight="700" fill="#c8462c">R</text>
+                </svg>
+              </div>
+              <div class="a7m1-cap">
+                <em>Invitation-based matchmaking.</em> The future of real-world social communities — where our <em>uniqueness</em> is <strong>seen</strong> and <em>reciprocated</em>. That's <span class="gnrmark"><span class="gG">Give</span> <span class="gn">n</span> <span class="gR">Receive</span></span>.
+              </div>
+            </div>
           </div>
         </div>
       </div>
