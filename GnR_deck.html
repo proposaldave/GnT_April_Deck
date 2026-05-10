@@ -5769,21 +5769,28 @@ html, body, html body{
   /* Gold arc above n — now positioned inside wm-n-wrap so it tracks the n exactly. Dave: 'the graphic above the black n should be perfectly centered above the black n'. wm-n-wrap is position:relative, so absolute children align to its box. left:50% of n_wrap puts arc at the n's center (n is centered in n_wrap by padding 0 40px). top:8% puts it above the n's top stem. */
   #cs-1m5 .wm-arc { position:absolute;left:calc(50% + 7px);top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition:transform var(--m5-dur) var(--m5-ease);will-change:transform }
   /* Stage 1+ split layout — switched from CSS grid (which snapped) BACK to flex + translateX so the wordmark transformations animate SMOOTHLY (Dave: 'the animations that come in here are not smooth'). The translateX values are computed to land G at slide_x 600 (left caption column center), R at slide_x 1320 (right caption column center), and n at slide_x 960 (slide center). All values transition smoothly via the .wm-letter / .wm-n-wrap transition rules. */
-  #cs-1m5[data-stage="1"] .m5-wordmark { transform:translateY(-160px) translateX(-46px) scale(.94) }
+  /* [Dave 2026-05-10 PM v2] FULL stage-1 layout rebuild after Dave's screenshot showed captions shifted +650px (cap-row's translate(-50%) wasn't centering when paired with display:grid) AND wordmark/network overlap. Fix:
+     1. Wordmark translateY -160 → -210 with !important to force more vertical clearance
+     2. G/R translateX REDUCED so they don't push to slide edges (was 81/316 → now 60/272 with scale 1.28 instead of 1.36)
+     3. n-wrap translateX matched (was 105 → 90)
+     4. Cap-row centered via left:0;right:0;margin:auto (margin-auto trick on position:absolute) instead of left:50%+translate(-50%) — bulletproof
+     5. Stage2-network top +26px → +90px (more clearance below wordmark)
+     6. Cap-row top +128px → +180px (push captions further down to clear network text below n)
+  */
+  #cs-1m5[data-stage="1"] .m5-wordmark { transform:translateY(-210px) translateX(-40px) scale(.92) !important }
   #cs-1m5[data-stage="1"] .wm-ive { opacity:0;transform:translateX(-24px) scaleX(.05) }
   #cs-1m5[data-stage="1"] .wm-eceive { opacity:0;transform:translateX(24px) scaleX(.05) }
-  #cs-1m5[data-stage="1"] .wm-G { transform:translateX(81px) scale(1.36) }
-  #cs-1m5[data-stage="1"] .wm-R { transform:translateX(316px) scale(1.36) }
-  #cs-1m5[data-stage="1"] .wm-n-wrap { transform:translateX(105px) scale(1.2) }
-  #cs-1m5[data-stage="1"] .wm-arc { transform:translateX(-50%) translateY(-10px) scale(1.2) }
-  /* CAPTION ROW — display grid 1fr/1fr stays, but LEFT and RIGHT children reveal independently per stage [Dave 2026-05-10: 4-stage breakdown, 'one more to reveal' each scroll]. */
-  #cs-1m5 .m5-cap-row { position:absolute;left:50%;top:calc(50% + 128px);display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1300px,92%);align-items:start;opacity:0;visibility:hidden;transform:translate(-50%,18px);transition:opacity 720ms ease 300ms, transform 920ms var(--m5-ease) 300ms, visibility 0s linear 1050ms;will-change:opacity,transform }
-  /* LEFT caption — reveals at stage 1+ */
-  #cs-1m5[data-stage="1"] .m5-cap-row { opacity:1;visibility:visible;transform:translate(-50%,0);transition:opacity 720ms ease 300ms, transform 920ms var(--m5-ease) 300ms, visibility 0s linear 0s }
-  /* [Dave 2026-05-10 PM] FIX: scoped children-visible rule to stage 1+ only. Was unscoped → forced 'What you give / fuels the network' + 'Reciprocated back to you' captions visible on page load, overriding parent's stage-0 hidden state. Now children inherit parent's hidden state at stage 0. */
+  #cs-1m5[data-stage="1"] .wm-G { transform:translateX(60px) scale(1.28) }
+  #cs-1m5[data-stage="1"] .wm-R { transform:translateX(272px) scale(1.28) }
+  #cs-1m5[data-stage="1"] .wm-n-wrap { transform:translateX(90px) scale(1.18) }
+  #cs-1m5[data-stage="1"] .wm-arc { transform:translateX(-50%) translateY(-10px) scale(1.18) }
+  /* CAPTION ROW — bulletproof centering: left:0;right:0;margin-auto (works on position:absolute when width is bounded). NO transform:translate(-50%) which was breaking with display:grid. */
+  #cs-1m5 .m5-cap-row { position:absolute;left:0;right:0;margin-left:auto;margin-right:auto;top:calc(50% + 180px);display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1180px,90%);align-items:start;opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity 720ms ease 300ms, transform 920ms var(--m5-ease) 300ms, visibility 0s linear 1050ms;will-change:opacity,transform }
+  #cs-1m5[data-stage="1"] .m5-cap-row { opacity:1;visibility:visible;transform:translateY(0);transition:opacity 720ms ease 300ms, transform 920ms var(--m5-ease) 300ms, visibility 0s linear 0s }
+  /* [Dave 2026-05-10 PM] Children-visible rule scoped to stage 1+ only (was unscoped → forced captions visible on page load) */
   #cs-1m5[data-stage="1"] .m5-cap-left, #cs-1m5[data-stage="1"] .m5-cap-right { opacity:1;visibility:visible;transform:none;transition:none }
-  /* NETWORK line — reveals at stage 2+ */
-  #cs-1m5 .m5-stage2-network { position:absolute;left:0;right:0;top:calc(50% + 26px);opacity:0;visibility:hidden;transform:translateY(16px) scale(.985);overflow:visible;max-height:none;transition:opacity 700ms ease 190ms, transform 900ms var(--m5-ease) 190ms, visibility 0s linear 990ms;will-change:opacity,transform }
+  /* NETWORK line — pushed down from +26 to +90 to clear the n's bottom edge */
+  #cs-1m5 .m5-stage2-network { position:absolute;left:0;right:0;top:calc(50% + 90px);opacity:0;visibility:hidden;transform:translateY(16px) scale(.985);overflow:visible;max-height:none;transition:opacity 700ms ease 190ms, transform 900ms var(--m5-ease) 190ms, visibility 0s linear 990ms;will-change:opacity,transform }
   #cs-1m5[data-stage="1"] .m5-stage2-network { opacity:1;visibility:visible;transform:translateY(0) scale(1);transition:opacity 700ms ease 190ms, transform 900ms var(--m5-ease) 190ms, visibility 0s linear 0s }
   /* RIGHT caption — reveals at stage 3 only */
   
@@ -5796,14 +5803,14 @@ html, body, html body{
   /* Export mode: jump to final state */
   html[data-export="1"] #cs-1m5 .wm-ive { opacity:0 !important;transform:scaleX(0) !important }
   html[data-export="1"] #cs-1m5 .wm-eceive { opacity:0 !important;transform:scaleX(0) !important }
-  html[data-export="1"] #cs-1m5 .m5-wordmark { transform:translateY(-160px) translateX(-46px) scale(.94) !important }
-  html[data-export="1"] #cs-1m5 .wm-G { transform:translateX(81px) scale(1.36) !important }
-  html[data-export="1"] #cs-1m5 .wm-R { transform:translateX(316px) scale(1.36) !important }
-  html[data-export="1"] #cs-1m5 .wm-n-wrap { transform:translateX(105px) scale(1.2) !important }
-  html[data-export="1"] #cs-1m5 .wm-arc { transform:translateX(-50%) translateY(-10px) scale(1.2) !important }
+  html[data-export="1"] #cs-1m5 .m5-wordmark { transform:translateY(-210px) translateX(-40px) scale(.92) !important }
+  html[data-export="1"] #cs-1m5 .wm-G { transform:translateX(60px) scale(1.28) !important }
+  html[data-export="1"] #cs-1m5 .wm-R { transform:translateX(272px) scale(1.28) !important }
+  html[data-export="1"] #cs-1m5 .wm-n-wrap { transform:translateX(90px) scale(1.18) !important }
+  html[data-export="1"] #cs-1m5 .wm-arc { transform:translateX(-50%) translateY(-10px) scale(1.18) !important }
   html[data-export="1"] #cs-1m5 .m5-cap-row, html[data-export="1"] #cs-1m5 .m5-stage2-network { opacity:1 !important;visibility:visible !important;max-height:none !important }
   html[data-export="1"] #cs-1m5 .m5-stage2-network { transform:translateY(0) scale(1) !important }
-  html[data-export="1"] #cs-1m5 .m5-cap-row { transform:translate(-50%,0) !important }
+  html[data-export="1"] #cs-1m5 .m5-cap-row { transform:translateY(0) !important }
   html[data-export="1"] #cs-1m5 .m5-hint { display:none !important }
 </style>
 <!-- [Dave 2026-05-09] cs-1m5 PROMOTED to slot 1 primary title slide. Active class so it shows on initial load. -->
