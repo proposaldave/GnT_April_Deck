@@ -15646,31 +15646,156 @@ window.cs1m7Reverse = function() {
 </div>
 
 <!-- HC8 · Abundance double · the rare AI win -->
+<!-- [Dave 2026-05-10 PM v2] cs-hc8 jaw-droppingly rebuilt: divergent-curves chart at center making the inversion visible (was just two static cards w/ arrows). New layout: headline → BIG chart showing two curves crossing at TODAY → twin cards below with icons → closer line that lands GnR's strategic position. -->
+<style>
+  #cs-hc8 .ai8-stage { position:relative;width:100%;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:50px 56px 40px;gap:14px;text-align:center }
+  #cs-hc8 .ai8-amb { position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 25% 50%, rgba(200,70,44,0.06), transparent 60%), radial-gradient(ellipse 60% 50% at 75% 50%, rgba(184,149,74,0.10), transparent 60%) }
+  #cs-hc8 .ai8-dots { position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:5px 5px;opacity:0.42;mix-blend-mode:multiply }
+  #cs-hc8 .ai8-head { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3vw,2.6rem);font-weight:800;line-height:1.1;letter-spacing:-0.022em;color:#1a1612;max-width:1200px }
+  #cs-hc8 .ai8-head .red { color:#c8462c;font-style:italic;font-weight:700 }
+  #cs-hc8 .ai8-head .gold { color:#b8954a;font-style:italic;font-weight:700 }
+  /* Chart wrapper */
+  #cs-hc8 .ai8-chart { position:relative;width:min(1180px,98%);margin-top:8px;aspect-ratio:1180/360 }
+  #cs-hc8 .ai8-chart svg { width:100%;height:100%;display:block;overflow:visible }
+  #cs-hc8 .ai8-chart .axis { stroke:rgba(26,22,18,0.18);stroke-width:1 }
+  #cs-hc8 .ai8-chart .axis-label { font-family:'Manrope',sans-serif;font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;fill:rgba(26,22,18,0.42) }
+  #cs-hc8 .ai8-chart .red-curve { stroke:#c8462c;stroke-width:3;fill:none;filter:drop-shadow(0 2px 6px rgba(200,70,44,0.22)) }
+  #cs-hc8 .ai8-chart .gold-curve { stroke:#b8954a;stroke-width:3;fill:none;filter:drop-shadow(0 2px 6px rgba(184,149,74,0.32)) }
+  #cs-hc8 .ai8-chart .red-fill { fill:rgba(200,70,44,0.06) }
+  #cs-hc8 .ai8-chart .gold-fill { fill:rgba(184,149,74,0.10) }
+  #cs-hc8 .ai8-chart .pivot { fill:#fbf7ef;stroke:#b8954a;stroke-width:2 }
+  #cs-hc8 .ai8-chart .pivot-glow { fill:rgba(184,149,74,0.12) }
+  #cs-hc8 .ai8-chart .gnr-mark text { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:18px;font-weight:850 }
+  #cs-hc8 .ai8-chart .marker-text { font-family:'Manrope',sans-serif;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase }
+  #cs-hc8 .ai8-chart .body-text { font-family:'Playfair Display',serif;font-style:italic;font-size:13px;font-weight:600 }
+  /* Two cards below */
+  #cs-hc8 .ai8-cards { display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1100px;width:96%;margin-top:6px }
+  #cs-hc8 .ai8-card { padding:18px 22px;border-radius:12px;text-align:left;display:flex;gap:18px;align-items:flex-start }
+  #cs-hc8 .ai8-card.left { background:rgba(200,70,44,0.04);border:1px solid rgba(200,70,44,0.32);border-top:3px solid #c8462c }
+  #cs-hc8 .ai8-card.right { background:linear-gradient(180deg,rgba(184,149,74,0.10),rgba(184,149,74,0.02));border:1.4px solid #b8954a;border-top:3px solid #b8954a;box-shadow:0 0 0 4px rgba(184,149,74,0.06) }
+  #cs-hc8 .ai8-card .ic { width:46px;height:46px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;border:1px solid currentColor }
+  #cs-hc8 .ai8-card .ic svg { width:22px;height:22px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round }
+  #cs-hc8 .ai8-card.left .ic { color:#c8462c;background:rgba(200,70,44,0.08) }
+  #cs-hc8 .ai8-card.right .ic { color:#b8954a;background:rgba(184,149,74,0.14) }
+  #cs-hc8 .ai8-card .body { flex:1 }
+  #cs-hc8 .ai8-card .eye { font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;margin-bottom:6px }
+  #cs-hc8 .ai8-card.left .eye { color:#c8462c }
+  #cs-hc8 .ai8-card.right .eye { color:#b8954a }
+  #cs-hc8 .ai8-card .verdict { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.18rem;font-weight:800;color:#1a1612;line-height:1.18 }
+  #cs-hc8 .ai8-card .verdict em { font-style:italic;font-weight:800 }
+  #cs-hc8 .ai8-card.left .verdict em { color:#c8462c }
+  #cs-hc8 .ai8-card.right .verdict em { color:#b8954a }
+  #cs-hc8 .ai8-card .desc { font-family:'Playfair Display',serif;font-style:italic;font-size:.86rem;color:rgba(26,22,18,0.7);margin-top:6px;line-height:1.45 }
+  /* Closer */
+  #cs-hc8 .ai8-closer { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1rem,1.55vw,1.3rem);font-weight:600;color:rgba(26,22,18,0.78);max-width:1000px;margin-top:6px;line-height:1.45 }
+  #cs-hc8 .ai8-closer em { font-style:italic;color:#b8954a;font-weight:800 }
+  #cs-hc8 .ai8-closer .gnr-inline .g { color:#5B8FD4;font-weight:800 }
+  #cs-hc8 .ai8-closer .gnr-inline .n { color:#1a1612;font-style:italic;font-weight:600 }
+  #cs-hc8 .ai8-closer .gnr-inline .r { color:#c8462c;font-weight:800 }
+</style>
 <div class="casey-slide ds-focus hc-slide" id="cs-hc8">
+  <div class="ai8-amb"></div>
+  <div class="ai8-dots"></div>
   <!-- 'A rare double' eyebrow + REVIEW tag DELETED per Dave 2026-05-07 PM. Slide promoted from appendix to main flow. Main point sharpened with bottom synthesizer line that names GnR's position on the inversion. -->
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">The AI Inversion</div>
   <div class="hc-tr"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
   <section style="position:relative;min-height:100%;width:100%">
-    <div class="hc-stage">
-      <div class="hc-hero">Most things AI makes abundant get <span class="red">cheaper.</span><br>Connection gets <span class="gold">more valuable.</span></div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:980px;margin-top:24px">
-        <div style="background:rgba(26,22,18,0.03);border:1px solid rgba(26,22,18,0.20);border-radius:12px;padding:22px;text-align:left">
-          <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-bottom:14px">Content &middot; Code &middot; Images</div>
-          <!-- Down arrow + "value per unit" -->
-          <svg viewBox="0 0 80 80" width="60" height="60" style="margin:8px 0">
-            <path d="M40 16 L40 60 M28 48 L40 60 L52 48" stroke="#1a1612" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
-          </svg>
-          <div style="font-family:'Fraunces',serif;font-style:italic;font-size:1.1rem;font-weight:600;color:rgba(26,22,18,0.65);line-height:1.3">Value per unit drops.</div>
-          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:.85rem;color:rgba(26,22,18,0.5);margin-top:8px;line-height:1.4">Supply explodes. Demand splits across more options.</div>
+    <div class="ai8-stage">
+      <div class="ai8-head">Most things AI makes abundant get <span class="red">cheaper.</span><br>Connection gets <span class="gold">more valuable.</span></div>
+
+      <!-- DIVERGENT CURVES CHART · The Inversion made visible -->
+      <div class="ai8-chart">
+        <svg viewBox="0 0 1180 360" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="hc8RedGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#c8462c" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="#c8462c" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="hc8GoldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#b8954a" stop-opacity="0"/>
+              <stop offset="100%" stop-color="#b8954a" stop-opacity="0.20"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Y-axis (left side, faint) -->
+          <line x1="80" y1="40" x2="80" y2="300" class="axis"/>
+          <!-- X-axis -->
+          <line x1="60" y1="180" x2="1120" y2="180" class="axis" stroke-dasharray="2 4"/>
+
+          <!-- Y-axis label -->
+          <text x="50" y="180" class="axis-label" text-anchor="middle" transform="rotate(-90 50 180)">Value</text>
+
+          <!-- Time labels on x-axis -->
+          <text x="180" y="335" class="axis-label" text-anchor="middle">2020</text>
+          <text x="600" y="335" class="axis-label" text-anchor="middle">Today</text>
+          <text x="1040" y="335" class="axis-label" text-anchor="middle">As AI advances →</text>
+
+          <!-- TODAY pivot vertical guide -->
+          <line x1="600" y1="40" x2="600" y2="300" stroke="rgba(184,149,74,0.36)" stroke-width="1.4" stroke-dasharray="4 5"/>
+
+          <!-- RED FILL (under cheaper curve) -->
+          <path d="M 100 110 C 240 120 380 140 600 178 C 760 220 920 270 1080 296 L 1080 300 L 100 300 Z" fill="url(#hc8RedGrad)"/>
+
+          <!-- GOLD FILL (above more-valuable curve) -->
+          <path d="M 100 200 C 240 200 380 196 600 178 C 760 138 920 90 1080 58 L 1080 0 L 100 0 Z" fill="url(#hc8GoldGrad)"/>
+
+          <!-- RED CURVE (cheaper) -->
+          <path class="red-curve" d="M 100 110 C 240 120 380 140 600 178 C 760 220 920 270 1080 296"/>
+
+          <!-- GOLD CURVE (more valuable) -->
+          <path class="gold-curve" d="M 100 200 C 240 200 380 196 600 178 C 760 138 920 90 1080 58"/>
+
+          <!-- Pivot point at TODAY where curves cross -->
+          <circle cx="600" cy="178" r="22" class="pivot-glow"/>
+          <circle cx="600" cy="178" r="14" class="pivot-glow"/>
+          <circle cx="600" cy="178" r="9" class="pivot"/>
+          <g class="gnr-mark">
+            <text x="600" y="184" text-anchor="middle">
+              <tspan fill="#5B8FD4">G</tspan><tspan fill="#1a1612" font-style="italic" font-weight="600" font-size="14">n</tspan><tspan fill="#c8462c">R</tspan>
+            </text>
+          </g>
+
+          <!-- LEFT-START labels -->
+          <text x="100" y="100" class="marker-text body-text" fill="#1a1612" text-anchor="start">Content · Code · Images</text>
+
+          <!-- RED endpoint label (cheaper) -->
+          <line x1="1080" y1="296" x2="1130" y2="296" stroke="#c8462c" stroke-width="1"/>
+          <text x="1100" y="290" class="marker-text" fill="#c8462c" text-anchor="end" font-size="13">↓ Cheaper</text>
+          <text x="1100" y="312" class="body-text" fill="rgba(26,22,18,0.55)" text-anchor="end">Infinite supply. Splintered demand.</text>
+
+          <!-- GOLD endpoint label (more valuable) -->
+          <line x1="1080" y1="58" x2="1130" y2="58" stroke="#b8954a" stroke-width="1"/>
+          <text x="1100" y="46" class="marker-text" fill="#b8954a" text-anchor="end" font-size="13">↑ More valuable</text>
+          <text x="1100" y="70" class="body-text" fill="rgba(26,22,18,0.62)" text-anchor="end">Real connection compounds.</text>
+
+          <!-- Pivot label (above the GnR mark) -->
+          <text x="600" y="140" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="3" fill="#b8954a">↑ The Inversion</text>
+        </svg>
+      </div>
+
+      <!-- TWIN CARDS — supporting beats -->
+      <div class="ai8-cards">
+        <div class="ai8-card left">
+          <div class="ic"><svg viewBox="0 0 24 24"><polyline points="6,8 12,14 18,8"/><line x1="12" y1="14" x2="12" y2="20"/><circle cx="12" cy="4" r="2"/></svg></div>
+          <div class="body">
+            <div class="eye">Content · Code · Images</div>
+            <div class="verdict">Value per unit <em>drops.</em></div>
+            <div class="desc">Supply explodes. Demand splits across more options. Every output trends toward zero marginal cost.</div>
+          </div>
         </div>
-        <div style="background:linear-gradient(180deg,rgba(184,149,74,0.10),rgba(184,149,74,0.02));border:1.5px solid #b8954a;border-radius:12px;padding:22px;text-align:left">
-          <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#b8954a;margin-bottom:14px">Human connection</div>
-          <svg viewBox="0 0 80 80" width="60" height="60" style="margin:8px 0">
-            <path d="M40 64 L40 20 M28 32 L40 20 L52 32" stroke="#b8954a" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <div style="font-family:'Fraunces',serif;font-style:italic;font-size:1.1rem;font-weight:600;color:#1a1612;line-height:1.3">Value per node grows.</div>
-          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:.85rem;color:rgba(26,22,18,0.65);margin-top:8px;line-height:1.4">Network effects compound. Every new connection raises the value of every prior one.</div>
+        <div class="ai8-card right">
+          <div class="ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="8" r="2.4"/><circle cx="18" cy="8" r="2.4"/><circle cx="12" cy="18" r="2.4"/><line x1="7.7" y1="9.6" x2="10.3" y2="16.4"/><line x1="16.3" y1="9.6" x2="13.7" y2="16.4"/><line x1="8" y1="8" x2="16" y2="8"/></svg></div>
+          <div class="body">
+            <div class="eye">Real Human Connection</div>
+            <div class="verdict">Value per node <em>grows.</em></div>
+            <div class="desc">Network effects compound. Every new connection raises the value of every prior one. Trust is unforkable.</div>
+          </div>
         </div>
+      </div>
+
+      <!-- CLOSER · GnR's strategic position -->
+      <div class="ai8-closer">
+        <span class="gnr-inline"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span> sits on the side of the inversion <em>that compounds.</em>
       </div>
     </div>
   </section>
@@ -15952,11 +16077,18 @@ window.cs1m7Reverse = function() {
   #cs-future .f2-wheel{position:relative;height:430px;width:880px;max-width:100%;margin:0 auto 30px}
   #cs-future .f2-ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(184,149,74,.28)}
   #cs-future .f2-ring.r1{width:420px;height:420px;border-style:dashed}.f2-ring.r2{width:306px;height:306px;background:rgba(184,149,74,.05)}.f2-ring.r3{width:188px;height:188px;border-color:rgba(200,70,44,.25)}
-  #cs-future .f2-sun{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:134px;height:134px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#fff7e8 0%,#f3ead8 68%);border:2px solid rgba(200,70,44,.45);box-shadow:0 0 0 18px rgba(200,70,44,.055),0 0 80px rgba(184,149,74,.26)}
-  #cs-future .f2-sun svg{width:72px;height:72px}.f2-sun line{stroke:#c8462c;stroke-width:1.7;stroke-linecap:round}.f2-sun circle{fill:#c8462c}
-  #cs-future .f2-node{position:absolute;width:154px;height:88px;padding:12px 14px;border-radius:10px;background:rgba(251,247,239,.72);border:1.2px solid rgba(184,149,74,.32);box-shadow:0 14px 34px rgba(26,22,18,.045);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+  /* [Dave 2026-05-10 PM] Center sun replaced with explicit GnR orb (Dave: 'i have no idea what the thing in the center is'). Now clearly shows GnR mark + 'the engine' label. */
+  #cs-future .f2-sun{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:144px;height:144px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;background:radial-gradient(circle,#fff7e8 0%,#f3ead8 70%);border:2px solid #b8954a;box-shadow:0 0 0 16px rgba(184,149,74,.07),0 0 0 32px rgba(184,149,74,.04),0 0 70px rgba(184,149,74,.32)}
+  #cs-future .f2-sun .gnr-mark{font-family:'Fraunces','Playfair Display',serif;font-size:2.4rem;font-weight:850;line-height:1;letter-spacing:-.02em}
+  #cs-future .f2-sun .gnr-mark .g{color:#5B8FD4} #cs-future .f2-sun .gnr-mark .n{color:#1a1612;font-style:italic;font-weight:600;font-size:.78em} #cs-future .f2-sun .gnr-mark .r{color:#c8462c}
+  #cs-future .f2-sun .gnr-tag{font-family:'Manrope',sans-serif;font-size:.5rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#b8954a;margin-top:2px}
+  /* [Dave 2026-05-10 PM] Each verb card now has a graphical icon on top (Dave: 'each of these needs graphical icons'). Cards taller to fit icon + key + verb. */
+  #cs-future .f2-node{position:absolute;width:170px;height:124px;padding:14px 14px 12px;border-radius:11px;background:rgba(251,247,239,.85);border:1.2px solid rgba(184,149,74,.36);box-shadow:0 14px 34px rgba(26,22,18,.06);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+  #cs-future .f2-node .ico{width:30px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(184,149,74,.10);border:1px solid rgba(184,149,74,.36)}
+  #cs-future .f2-node .ico svg{width:18px;height:18px;stroke:#b8954a;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
   #cs-future .f2-node .k{font-family:'Manrope',sans-serif;font-size:.52rem;font-weight:900;letter-spacing:.24em;text-transform:uppercase;color:rgba(26,22,18,.45)}
-  #cs-future .f2-node .v{font-family:'Fraunces','Playfair Display',serif;font-size:1.2rem;font-weight:850;line-height:1;color:#1a1612}.f2-node .v em{font-style:italic;color:#b8954a}
+  #cs-future .f2-node .v{font-family:'Fraunces','Playfair Display',serif;font-size:1.2rem;font-weight:850;line-height:1;color:#1a1612;text-align:center}
+  #cs-future .f2-node .v em{font-style:italic;color:#b8954a}
   #cs-future .n1{left:50%;top:0;transform:translateX(-50%)}#cs-future .n2{right:48px;top:120px}#cs-future .n3{right:116px;bottom:28px}#cs-future .n4{left:116px;bottom:28px}#cs-future .n5{left:48px;top:120px}
   #cs-future .f2-path{position:absolute;inset:0;pointer-events:none}.f2-path path{fill:none;stroke:#b8954a;stroke-width:1.3;stroke-dasharray:5 6;opacity:.55}.f2-path polygon{fill:#b8954a;opacity:.65}
   #cs-future .f2-close{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.12rem,1.75vw,1.5rem);font-style:italic;font-weight:650;line-height:1.38;color:rgba(26,22,18,.78);max-width:980px;margin:0 auto}.f2-close strong{font-style:normal;color:#c8462c;font-weight:900}
@@ -15965,18 +16097,21 @@ window.cs1m7Reverse = function() {
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Future of our communities</div>
 <section class="f2-stage">
   <div class="f2-wrap">
-    <div class="f2-head">When connection becomes measurable, <em>abundance becomes programmable.</em></div>
+    <div class="f2-head">As connection becomes measurable, <em>abundance becomes programmable.</em></div>
     <div class="f2-wheel">
       <svg class="f2-path" viewBox="0 0 880 430" preserveAspectRatio="none"><path d="M440 44 C628 58 780 182 722 316 C640 424 240 424 158 316 C100 182 252 58 440 44Z"/><polygon points="440,44 428,62 452,62"/></svg>
       <div class="f2-ring r1"></div><div class="f2-ring r2"></div><div class="f2-ring r3"></div>
-      <div class="f2-node n1"><div class="k">01</div><div class="v">Test it</div></div>
-      <div class="f2-node n2"><div class="k">02</div><div class="v"><em>Graph</em> it</div></div>
-      <div class="f2-node n3"><div class="k">03</div><div class="v">Coordinate it</div></div>
-      <div class="f2-node n4"><div class="k">04</div><div class="v">Automate it</div></div>
-      <div class="f2-node n5"><div class="k">05</div><div class="v"><em>Return</em> it</div></div>
-      <div class="f2-sun"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="11"/><line x1="36" y1="5" x2="36" y2="18"/><line x1="36" y1="54" x2="36" y2="67"/><line x1="5" y1="36" x2="18" y2="36"/><line x1="54" y1="36" x2="67" y2="36"/><line x1="14" y1="14" x2="23" y2="23"/><line x1="49" y1="49" x2="58" y2="58"/><line x1="14" y1="58" x2="23" y2="49"/><line x1="49" y1="23" x2="58" y2="14"/></svg></div>
+      <div class="f2-node n1"><div class="ico"><svg viewBox="0 0 24 24"><path d="M9 3 H15 V8 L19 18 C19.5 19.5 18.5 21 17 21 H7 C5.5 21 4.5 19.5 5 18 L9 8 Z"/><line x1="9" y1="3" x2="15" y2="3"/><line x1="7" y1="14" x2="17" y2="14" stroke-dasharray="2 2"/></svg></div><div class="k">01</div><div class="v">Test it</div></div>
+      <div class="f2-node n2"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="6" cy="18" r="2.4"/><circle cx="18" cy="18" r="2.4"/><circle cx="12" cy="12" r="2.4"/><line x1="7.6" y1="7.4" x2="10.6" y2="10.6"/><line x1="16.4" y1="7.4" x2="13.4" y2="10.6"/><line x1="7.6" y1="16.6" x2="10.6" y2="13.4"/><line x1="16.4" y1="16.6" x2="13.4" y2="13.4"/></svg></div><div class="k">02</div><div class="v"><em>Graph</em> it</div></div>
+      <div class="f2-node n3"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/><circle cx="9" cy="14" r="0.8" fill="currentColor"/><circle cx="13" cy="14" r="0.8" fill="currentColor"/><circle cx="17" cy="14" r="0.8" fill="currentColor"/></svg></div><div class="k">03</div><div class="v">Coordinate it</div></div>
+      <div class="f2-node n4"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2 V5 M12 19 V22 M2 12 H5 M19 12 H22 M4.9 4.9 L7 7 M17 17 L19.1 19.1 M4.9 19.1 L7 17 M17 7 L19.1 4.9"/></svg></div><div class="k">04</div><div class="v">Automate it</div></div>
+      <div class="f2-node n5"><div class="ico"><svg viewBox="0 0 24 24"><path d="M21 12 A9 9 0 1 1 12 3"/><polyline points="14,3 21,3 21,10"/><path d="M21 3 L13 11"/></svg></div><div class="k">05</div><div class="v"><em>Return</em> it</div></div>
+      <div class="f2-sun">
+        <div class="gnr-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+        <div class="gnr-tag">The Engine</div>
+      </div>
     </div>
-    <div class="f2-close">The end state is not better scheduling. <strong>It is more human connection than the community could create by hand.</strong></div>
+    <div class="f2-close">The end state is not better scheduling. <strong>It is more human connection, more <span style="color:#5B8FD4">G</span><span style="color:#1a1612;font-style:italic;font-weight:700">n</span><span style="color:#c8462c">R</span>, than the community could create by hand.</strong></div>
   </div>
 </section>
 </div>
@@ -21055,9 +21190,8 @@ const SLIDE_ORDER = [
   'cs-future',// 19 Future of our communities · 5 verbs ("When you digitize human connection, you can") — verb 5 lands "Make it abundant"
   // cs-8b (Abundance hero) → APPENDIX 2026-05-04 per Dave
   // cs-a7 ("Social media is a very narrow view of human connection technology") MOVED BACK to APPENDIX 2026-05-03 PM per Dave
-  // [Dave 2026-05-08] cs-lab inserted between cs-18 and cs-27. cs-18 = WHY (decision); cs-lab = HOW (method + lab + team); cs-27 = the CTO. Brief: 'team slide that emphasizes what I do at NEPC — talking with players on the courts, iterating' + value of NEPC as Dave's hired-domain-expert lab + DUPR-rejection strategic move.
-  'cs-lab',   // 18 The Founder Method · The Living Lab — Dave's iteration loop + NEPC team
-  'cs-27',    // 19 CTO · Steve Callan
+  // [Dave 2026-05-10 PM] cs-lab REMOVED from main flow + moved to RED-DOT alt at slot 17 (left of My Wheelhouse / cs-18). Per Dave: 'we either need to merge the slides or pick one of them to be the dave velardo founder slide'. cs-18 stays as primary founder slide; cs-lab is the comparison/merge candidate.
+  'cs-27',    // CTO · Steve Callan
   // cs-4 (Moat) → at slot 5
   // cs-16 (Every signal) → APPENDIX
   // cs-a3 (Pickleball TAM original) MOVED to APPENDIX 2026-05-03 PM per Dave
@@ -21066,10 +21200,10 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-06 PM] Mission alts: era progression + chart of human-connection downtrend → parabolic at GnR.
   // Variants A/B/C in review — Dave to pick best, then keep one and delete others.
   // cs-mv6-altA → DELETED from main flow 2026-05-06 PM per Dave (10x version moved to appendix as cs-mv6-app)
-  'cs-mv6',      // 19 · MISSION · era cards "for all our lives to run on abundant human connection" [Dave 2026-05-07: restored from appendix]
+  'cs-mv6',      // · MISSION · era cards "for all our lives to run on abundant human connection" [Dave 2026-05-07: restored from appendix]
   // cs-mv6-altC (two divergent lines) DELETED 2026-05-06 PM per Dave
-  'cs-prom',  // 22 Our Promise · GnR wordmark exploded + Dave's contact info
-  'cs-hc8',   // 23 The AI Inversion ('Most things AI makes abundant get cheaper. Connection gets more valuable.') — MOVED to END of main deck per Dave 2026-05-08: 'move this slide after the last slide'.
+  // [Dave 2026-05-10 PM] cs-prom REMOVED from main flow — its <div id="cs-prom"> HTML doesn't exist (was deleted earlier without removing from SLIDE_ORDER) → was rendering as a blank slide. Removed entry to fix the blank-slide bug.
+  'cs-hc8',   // The AI Inversion ('Most things AI makes abundant get cheaper. Connection gets more valuable.') — MOVED to END of main deck per Dave 2026-05-08: 'move this slide after the last slide'.
   // ===== ORANGE REVIEW SECTION · HC PARADIGM CANDIDATES (Dave 2026-05-04) =====
   // 10 candidate slides drafting the Human Connection paradigm reframe. Status = REVIEW
   // (orange top border + orange eyebrow). Sit at the end of main flow before APPENDIX.
@@ -21149,7 +21283,8 @@ const SLIDE_ALTS = {
   //   cs-18-alt1 = MY WHEELHOUSE · idea-maze journey arc
   //   cs-18-alt2 = FINALLY · emotional / 4-loves manifesto [DELETED 2026-05-08, HTML retained]
   //   cs-18-alt3 = STRATEGY · 'I figure out the next frontier + I have my lab'
-  17: [],
+  // [Dave 2026-05-10 PM] cs-lab MOVED FROM main flow TO red-dot alt here. Per Dave: 'we either need to merge the slides or pick one of them to be the dave velardo founder slide'. Both cs-18 (My Wheelhouse) and cs-lab (Founder Method · Living Lab) are candidates for the founder slot.
+  17: ['cs-lab'],
   // Slot 18 positioning alts CLEARED 2026-05-10 after cs-wedge1 promotion and Dave deletes.
   18: [],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt at slot 20 (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT of slot 20'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
@@ -22193,8 +22328,8 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     const isPinkAlt = (altId === 'cs-merge3');
     const isBlueAlt = (altId === 'cs-wedge1');
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 — explicit override since slot 2 is not the REVIEW_POSITION.
-    // [Dave 2026-05-10 PM] cs-16old also RED-DOT (restored complicated 'Every natural community touchpoint trains GnR' slide as alt at slot 20).
-    const isRedAlt = (altId === 'cs-1' || altId === 'cs-16old');
+    // [Dave 2026-05-10 PM] cs-16old + cs-lab also RED-DOT (cs-16old = restored complicated engine slide at slot 20; cs-lab = founder-slot alternate to cs-18 'My Wheelhouse').
+    const isRedAlt = (altId === 'cs-1' || altId === 'cs-16old' || altId === 'cs-lab');
     altDot.className = 'casey-dot alt' + (isPinkAlt ? ' pink-alt' : (isBlueAlt ? ' blue-alt' : (isRedAlt ? ' review' : (isReviewSlot ? ' review' : ''))));
     // Alt-dot tooltip pulls live from the alt slide's own eyebrow text [Dave 2026-05-07 sync rule]
     const altLabel = getSlideEyebrowText(altId);
@@ -22272,7 +22407,8 @@ document.addEventListener('keydown', e => {
     if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
     return;
   }
-  if (e.key === 'a' || e.key === 'A') {
+  // [Dave 2026-05-10 PM] 'S' added as back-nav (paired with 'D' for forward — natural WASD-style pair). 'A' kept as alias.
+  if (e.key === 'a' || e.key === 'A' || e.key === 's' || e.key === 'S') {
     e.preventDefault();
     if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
     return;
