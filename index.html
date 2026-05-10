@@ -20618,6 +20618,10 @@ window.cs1m7Reverse = function() {
   #cs-1bm1[data-left="1"]  .ti-flip-left  .ti-card { opacity: 1; transition: opacity 0.35s 0.45s ease; }
   #cs-1bm1[data-left="1"]  .ti-flip-left  .ti-ph   { opacity: 0; transition: opacity 0.35s ease; }
   #cs-1bm1[data-right="1"] .ti-flip-right .ti-card { opacity: 1; transition: opacity 0.35s 0.45s ease; }
+  /* [Dave 2026-05-09] Visual swap — values card on LEFT, tech card on RIGHT. Done via CSS order so HTML, classes, and click handlers stay intact. The .ti-flip-right wrap (values content, originally HTML position 2) gets order:1 → renders as 1st grid item (left). The .ti-flip-left wrap (tech content, originally HTML position 1) gets order:3 → renders as 3rd grid item (right). Bridge stays middle (order:2). */
+  #cs-1bm1 .ti-flip-wrap:nth-of-type(1) { order: 3 }
+  #cs-1bm1 .ti-bridge { order: 2 }
+  #cs-1bm1 .ti-flip-wrap:nth-of-type(2) { order: 1 }
   #cs-1bm1[data-right="1"] .ti-flip-right .ti-ph   { opacity: 0; transition: opacity 0.35s ease; }
   html[data-export="1"] #cs-1bm1 .ti-card { opacity: 1 !important; transition: none !important; }
   html[data-export="1"] #cs-1bm1 .ti-ph   { opacity: 0 !important; transition: none !important; }
@@ -21542,16 +21546,17 @@ const SLIDE_ORDER = [
   // Slides moved to appendix: cs-7, cs-8, cs-14, cs-16, cs-17, cs-20, cs-21, cs-1a.
   // [Dave 2026-05-09] cs-1m5 PROMOTED to slot 1 primary title slide ('this is our new title slide').
   // [Dave 2026-05-09 LATER] cs-1 RESTORED to main flow as SLOT 2 — 'this slide is going to be our new slide #2, a second title slide'. Was briefly moved to appendix end; pulled back. cs-a7 + everything below shift +1.
-  'cs-1m5',   //  1 NEW TITLE · The future of real-world social communities · wordmark + click-to-reveal stages (Network line → caption row)
+  'cs-1m5',   //  1 NEW TITLE · The future of human connection for real communities · wordmark + click-to-reveal stages (Network line + caption row)
   'cs-1',     //  2 SECOND TITLE · Original 'TO LEAD THE NEXT FRONTIER' + Give n Receive wordmark + click-revealed 'Invitation-based matchmaking for our communities'
-  'cs-a7',    //  3 Social media is a very narrow view of human connection technology [Dave 2026-05-07: moved from appendix to main slot 2 — bumped to slot 3 by cs-1 second-title insertion]
+  // [Dave 2026-05-09] cs-a7 + cs-1bm1 SWAPPED — Dave wants 'Two imbalances rule our lives' as slot 3, then 'Social media is a very narrow view' as slot 4. The values/tech imbalance frames modern life FIRST, then social-media-as-narrow-view drops in as the consequence.
   // 2026-04-30 PM v3: cs-1b + cs-0a Values side MERGED into cs-1bm1 (and 2 alts).
   // Dave's directive: "save current two slides to appendix, then merge — try 2-3 attempts I'll pick best."
   // PRIMARY: cs-1bm1 (chart + emotional closing line — minimal merge)
   // ALTS at slot 3: cs-1bm2 (heart-first, science as proof) · cs-1bm3 (head + heart agree, two-pane)
   // Originals cs-1b and cs-0a moved to APPENDIX as backups.
-  'cs-1bm1',  //  3 MERGED Truth · science chart + "Deep down, we already feel it — we need each other."
-  'cs-2c',    //  3 Community · 6-card grid (moved here per Dave 2026-04-30 PM evening)
+  'cs-1bm1',  //  3 Modern life · Two imbalances rule our lives · values + technology imbalance cards [Dave 2026-05-09: promoted from slot 4 to slot 3]
+  'cs-a7',    //  4 Social media is a very narrow view of human connection technology [Dave 2026-05-09: demoted from slot 3 to slot 4 — flows naturally after the values/tech imbalance setup]
+  'cs-2c',    //  5 Community · 6-card grid
   // [2026-05-04 Dave] cs-bh, cs-bh-vA, cs-bh-vC, cs-2b, cs-4 MERGED into single cs-thegap problem slide. Originals moved to APPENDIX as backups.
   'cs-thegap', //  3 MERGED — Our communities are full of understanding, we just never unlock it. 3 figures + rich network-bubbles + by-hand texting.
   // cs-bh2 (TOMORROW · multi-person synthesis) MOVED to APPENDIX per Dave 2026-05-03 PM — didn't land in main flow
@@ -21859,13 +21864,14 @@ window.cs12m2Reverse = function() {
   return true;
 };
 
+// [Dave 2026-05-09] Keyboard reveal order swapped — data-right reveals FIRST (values card, now visually on LEFT after CSS-order swap), then data-left (tech card, now visually on RIGHT). Matches visual left-to-right reading order.
 window.cs1bm1Advance = function() {
   const slide = document.getElementById('cs-1bm1');
   if (!slide || !slide.classList.contains('active')) return false;
   const left = slide.dataset.left === '1';
   const right = slide.dataset.right === '1';
-  if (!left)  { slide.dataset.left  = '1'; return true; }
   if (!right) { slide.dataset.right = '1'; return true; }
+  if (!left)  { slide.dataset.left  = '1'; return true; }
   return false;
 };
 window.cs1bm1Reverse = function() {
@@ -21873,8 +21879,8 @@ window.cs1bm1Reverse = function() {
   if (!slide || !slide.classList.contains('active')) return false;
   const left = slide.dataset.left === '1';
   const right = slide.dataset.right === '1';
-  if (right) { slide.dataset.right = '0'; return true; }
   if (left)  { slide.dataset.left  = '0'; return true; }
+  if (right) { slide.dataset.right = '0'; return true; }
   return false;
 };
 window.cs1bm1Toggle = function(side) {
