@@ -6102,8 +6102,8 @@ window.cs1m5Reverse = function() {
       </div>
       <!-- STAGE 1 reveal: human truth statement (NEW). Zooms in on 'Give' as the way humans are wired — feel-best-when-generous claim. Fades out at stage 2 so the caption row owns that vertical space. -->
       <div class="m8-truth" style="margin-bottom:24px">
-        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.45rem,2.1vw,2rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.32;max-width:1100px;margin:0 auto">
-          We feel our best <em style="font-style:italic;font-weight:700;color:#c8462c">when we give</em>.
+        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.35rem,1.95vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.32;max-width:1180px;margin:0 auto">
+          We feel our best when we have an <em style="font-style:italic;font-weight:700;color:#c8462c">open heart</em> toward others &mdash; free, generous, spontaneous.
         </div>
         <div style="font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.86vw,.9rem);font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-top:14px">Science says so.</div>
       </div>
@@ -21525,8 +21525,9 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-09] cs-1m5 PROMOTED to slot 1 primary title slide ('this is our new title slide').
   // [Dave 2026-05-09 LATER] cs-1 RESTORED to main flow as SLOT 2 — 'this slide is going to be our new slide #2, a second title slide'. Was briefly moved to appendix end; pulled back. cs-a7 + everything below shift +1.
   // [Dave 2026-05-10 PM] cs-1m9 PROMOTED to slot 1 PRIMARY · 3-stage version: page-load=wordmark only → stage 1='Who Gives' (Twitter-style talk setup) → stage 2=split + 3 captions. cs-1m5 demoted to gold-dot alt for comparison.
-  'cs-1m9',   //  1 NEW PRIMARY TITLE · 3-stage 'Who Gives' build → wordmark split → captions
-  // 'cs-1m5' demoted to alt (see SLIDE_ALTS[1])
+  // [Dave 2026-05-11] cs-1m8 PROMOTED to slot 1 PRIMARY (replacing cs-1m9). Opens with HUMAN-TRUTH beat: 'We feel our best when we have an open heart toward others — free, generous, spontaneous.' Stage 1 reveals truth → stage 2 splits wordmark + caption row + Network line. cs-1m9 demoted to RED-DOT alt for review.
+  'cs-1m8',   //  1 NEW PRIMARY TITLE · 3-stage 'open heart' human-truth opener → wordmark split → captions
+  // 'cs-1m5' / 'cs-1m9' demoted to alts (see SLIDE_ALTS[1])
   // [Dave 2026-05-10 PM] cs-a7m1 PROMOTED to slot 2 (was gold-alt at slot 4). Side-by-side OLD-vs-NEW (loneliness card LEFT + flippable Give n Receive vision card RIGHT). cs-1 (the old slot 2 title) demoted to RED-DOT alt at slot 2 — see SLIDE_ALTS below.
   'cs-a7m1',  //  2 NEW SLOT 2 · Old vs new — 'Social media is an extremely narrow view' (left) ↔ flippable Give n Receive vision (right)
   // [Dave 2026-05-09] cs-a7 + cs-1bm1 SWAPPED — Dave wants 'Two imbalances rule our lives' as slot 3, then 'Social media is a very narrow view' as slot 4. The values/tech imbalance frames modern life FIRST, then social-media-as-narrow-view drops in as the consequence.
@@ -21652,7 +21653,8 @@ const SLIDE_ALTS = {
   //   cs-1m7 = split-wordmark animation alt [DELETED 2026-05-09 per Dave]
   //   cs-1m8 = NEW [Dave 2026-05-09 EVENING] · adds a HUMAN-TRUTH opening beat before the product reveal. Per Dave: 'we feel our best when we're generous to others... incredible truth that we feel our best when we have an open heart, being generous, giving'. Stage 1 reveals 'We feel our best when we give. Science says so.' before stage 2 splits the wordmark. RED DOT review — easy to revert by removing from this array (cs-1m5 stays primary).
   // [Dave 2026-05-10 PM] cs-1m5 added as gold-alt (was main flow primary; demoted when cs-1m9 took over slot 1). cs-1m8 retained as red-dot review candidate.
-  1: ['cs-1m5', 'cs-1m8'],
+  // [Dave 2026-05-11] cs-1m8 PROMOTED to primary slot 1 (open-heart human-truth opener). cs-1m9 ('Who Gives?' 3-stage) demoted to red-dot alt. cs-1m5 stays as gold-dot.
+  1: ['cs-1m5', 'cs-1m9'],
   // [Dave 2026-05-10 PM] Slot 2 alts updated:
   //   - cs-1 added as RED-DOT alt (was main-flow slot 2; demoted to red-dot review per Dave)
   //   - cs-1s2a REMOVED — moved to APPENDIX_ORDER per Dave ('move this to appendix')
@@ -21696,7 +21698,7 @@ const SLIDE_ALTS = {
 };
 const REVIEW_POSITION = 0; // Red no longer means "review"; red means rejected/not-main. Use ORANGE_REVIEW_* for consideration candidates.
 const ORANGE_REVIEW_POSITIONS = [];
-const ORANGE_REVIEW_ALTS = ['cs-1m8', 'cs-merge1', 'cs-merge3', 'cs-18-vd1', 'cs-18-vd3'];
+const ORANGE_REVIEW_ALTS = ['cs-1m9', 'cs-merge1', 'cs-merge3', 'cs-18-vd1', 'cs-18-vd3'];
 // LOCKED_POSITIONS: emptied per Dave 2026-05-07 — green dots removed from nav, red review dot kept.
 // Locked-state still tracked in comments/git; just no longer rendered as a UI marker.
 const LOCKED_POSITIONS = [];
@@ -22821,7 +22823,7 @@ document.addEventListener('keydown', e => {
   }
   if (e.key === 'ArrowRight' || e.key === ' ') {
     e.preventDefault();
-    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m9' && window.cs1m9Advance && window.cs1m9Advance()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8' && window.cs1m8Advance && window.cs1m8Advance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Advance    && window.cs1Advance())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Advance && window.cs1bm1Advance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-thegap' && window.csThegapAdvance && window.csThegapAdvance()) return;
@@ -22845,7 +22847,7 @@ document.addEventListener('keydown', e => {
   }
   if (e.key === 'ArrowLeft') {
     e.preventDefault();
-    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m9' && window.cs1m9Reverse && window.cs1m9Reverse()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8' && window.cs1m8Reverse && window.cs1m8Reverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Reverse   && window.cs1Reverse())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Reverse && window.cs1bm1Reverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-thegap' && window.csThegapReverse && window.csThegapReverse()) return;
@@ -22893,9 +22895,14 @@ document.addEventListener('wheel', e => {
         setTimeout(() => { wheelLock = false; }, 400);
         return;
       }
+      // [Dave 2026-05-11] cs-1m9 demoted to alt — keep wheel-advance working while viewing as red-dot alt
+      if (activeAlt && activeAlt.id === 'cs-1m9' && window.cs1m9Advance && window.cs1m9Advance()) {
+        setTimeout(() => { wheelLock = false; }, 400);
+        return;
+      }
     }
-    // [Dave 2026-05-10 PM] cs-1m9 advance — slot 1 primary 3-stage title slide
-    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m9' && window.cs1m9Advance && window.cs1m9Advance()) {
+    // [Dave 2026-05-11] cs-1m8 promoted to slot 1 primary (open-heart human-truth opener). Wheel advances stages 0→1→2.
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8' && window.cs1m8Advance && window.cs1m8Advance()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
@@ -22991,9 +22998,14 @@ document.addEventListener('wheel', e => {
         setTimeout(() => { wheelLock = false; }, 400);
         return;
       }
+      // [Dave 2026-05-11] cs-1m9 demoted to alt — keep wheel-reverse working while viewing as red-dot alt
+      if (activeAlt && activeAlt.id === 'cs-1m9' && window.cs1m9Reverse && window.cs1m9Reverse()) {
+        setTimeout(() => { wheelLock = false; }, 400);
+        return;
+      }
     }
-    // [Dave 2026-05-10 PM] cs-1m9 reverse — slot 1 primary 3-stage title slide
-    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m9' && window.cs1m9Reverse && window.cs1m9Reverse()) {
+    // [Dave 2026-05-11] cs-1m8 promoted to slot 1 primary — wheel reverses stages 2→1→0.
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8' && window.cs1m8Reverse && window.cs1m8Reverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
