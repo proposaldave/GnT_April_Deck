@@ -19340,7 +19340,7 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-a7 .a7-cap-rule,
   html[data-export="1"] #cs-a7 .a7-cap { opacity: 1 !important; transform: none !important; }
 </style>
-<div class="casey-slide ds-intro" id="cs-a7">
+<div class="casey-slide ds-intro appendix-slide" id="cs-a7" style="display:none">
   <div class="a7-amb"></div>
   <div class="a7-dots"></div>
   <div class="a7-eyebrow slide-eyebrow"><span class="ln"></span>The Last Frontier<span class="ln"></span></div>
@@ -21323,7 +21323,7 @@ const SLIDE_ORDER = [
   // ALTS at slot 3: cs-1bm2 (heart-first, science as proof) · cs-1bm3 (head + heart agree, two-pane)
   // Originals cs-1b and cs-0a moved to APPENDIX as backups.
   'cs-1bm1',  //  3 Modern life · Two imbalances rule our lives · values + technology imbalance cards [Dave 2026-05-09: promoted from slot 4 to slot 3]
-  'cs-a7',    //  4 Social media is a very narrow view of human connection technology [Dave 2026-05-09: demoted from slot 3 to slot 4 — flows naturally after the values/tech imbalance setup]
+  // [Dave 2026-05-11] cs-a7 MOVED to APPENDIX per Dave: 'move this slide to the appendix'. The 'Social media is an extremely narrow view of human connection technology' beat now lives only in cs-a7m1 (slot 2 left card) — keeping it as a standalone slot 4 was redundant. cs-a7 retained in appendix as backup.
   'cs-2c',    //  5 Community · 6-card grid
   // [2026-05-04 Dave] cs-bh, cs-bh-vA, cs-bh-vC, cs-2b, cs-4 MERGED into single cs-thegap problem slide. Originals moved to APPENDIX as backups.
   'cs-thegap', //  3 MERGED — Our communities are full of understanding, we just never unlock it. 3 figures + rich network-bubbles + by-hand texting.
@@ -21446,10 +21446,10 @@ const SLIDE_ALTS = {
   //   - cs-1s2b retained as gold alt (after Dave deleted 'The operating layer' kicker text)
   2: ['cs-1', 'cs-1s2b'],
   // [Dave 2026-05-10 PM] cs-a7m1 PROMOTED from slot 4 alt to slot 2 PRIMARY. No longer in alts.
-  4: [],
-  12: [],
-  // [Dave 2026-05-10] cs-merge2 DELETED from slot 13 review per Dave. cs-merge1 + cs-merge3 remain for review.
-  13: ['cs-merge1', 'cs-merge3'],
+  // [Dave 2026-05-11] cs-a7 MOVED to appendix → slot 4 key removed (was empty anyway). All subsequent SLIDE_ALTS keys shifted -1 to track new slot numbers: 12→11, 13→12, 17→16, 18→17, 20→19.
+  11: [],
+  // [Dave 2026-05-10] cs-merge2 DELETED from slot 13 (now slot 12) review per Dave. cs-merge1 + cs-merge3 remain for review.
+  12: ['cs-merge1', 'cs-merge3'],
   // [Dave 2026-05-08] cs-pn1 DELETED from slot 14 alts per Dave: 'delete this'. HTML retained as silent backup, no nav dot.
   // [Dave 2026-05-09] BUG FIX: alt keys shifted +1 to match SLIDE_ORDER positions after cs-1m5 (slot 1) + cs-1 (slot 2) insertion bumped everything down.
   //   - cs-18 (Dave Velardo) was at slot 16 → now slot 17. Wheelhouse alts (cs-18-alt1, cs-18-alt3) moved from key 16 → 17.
@@ -21459,12 +21459,12 @@ const SLIDE_ALTS = {
   //   cs-18-alt1 = MY WHEELHOUSE · idea-maze journey arc
   //   cs-18-alt2 = FINALLY · emotional / 4-loves manifesto [DELETED 2026-05-08, HTML retained]
   //   cs-18-alt3 = STRATEGY · 'I figure out the next frontier + I have my lab'
-  // [Dave 2026-05-10 PM] cs-lab MOVED FROM main flow TO red-dot alt here. Per Dave: 'we either need to merge the slides or pick one of them to be the dave velardo founder slide'. Both cs-18 (My Wheelhouse) and cs-lab (Founder Method · Living Lab) are candidates for the founder slot.
-  17: ['cs-lab'],
-  // Slot 18 positioning alts CLEARED 2026-05-10 after cs-wedge1 promotion and Dave deletes.
-  18: [],
-  // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt at slot 20 (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT of slot 20'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
-  20: ['cs-16old'],
+  // [Dave 2026-05-10 PM] cs-lab MOVED FROM main flow TO red-dot alt here. Per Dave: 'we either need to merge the slides or pick one of them to be the dave velardo founder slide'. Both cs-18 (My Wheelhouse) and cs-lab (Founder Method · Living Lab) are candidates for the founder slot. [Dave 2026-05-11] Key shifted 17→16 after cs-a7 moved to appendix.
+  16: ['cs-lab'],
+  // Slot 17 (was 18) positioning alts CLEARED 2026-05-10 after cs-wedge1 promotion and Dave deletes.
+  17: [],
+  // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference. [Dave 2026-05-11] Key shifted 20→19 after cs-a7 moved to appendix.
+  19: ['cs-16old'],
   // cs-brand-V1 MOVED to last appendix slide per Dave 2026-05-07 PM ('move this slide to the last slide in the appendix'). Slot 12 alts now EMPTY — V8 is the lone brand-opportunity slide in main flow; brand variants V9/V15/V1 all live in appendix end.
   // cs-brand-V5 ('WHEN you're free, generous, spontaneously yourself / THEN your community rises with you / Aliveness spreads. Reciprocity compounds.') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
   // cs-brand-V2 ('When you show up fully... / What matters most comes back to you. + Networked stacked above n + n is the engine tagline') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
@@ -21489,7 +21489,8 @@ const LOCKED_POSITIONS = [];
 // Appendix navigation order — Dave 2026-04-29: The Ask is the FIRST appendix slide
 // (so when investor clicks Appendix, they see the ask immediately if they ask "what are you raising?").
 const APPENDIX_ORDER = [
-  'cs-1s2a',      // [Dave 2026-05-10 PM] MOVED to appendix per Dave: 'move this to appendix'. 'Every community already has a hidden invitation graph' / The product definition. Was gold-alt at slot 2; preserved here for reference. Newest always first per standing rule.
+  'cs-a7',        // [Dave 2026-05-11] MOVED from main flow slot 4 to appendix per Dave: 'move this slide to the appendix'. 'THE LAST FRONTIER · Social media is an extremely narrow view of human connection technology.' The beat now lives only in cs-a7m1's left card at slot 2. Standalone version preserved here as backup. Newest always first per standing rule.
+  'cs-1s2a',      // [Dave 2026-05-10 PM] MOVED to appendix per Dave: 'move this to appendix'. 'Every community already has a hidden invitation graph' / The product definition. Was gold-alt at slot 2; preserved here for reference.
   'cs-lastgraph', // [Dave 2026-05-10 PM] 'Community is the last untouched social graph' — 6-card lineup: LinkedIn/FB/X/IG/TikTok all CLAIMED by year, Community 2026 OPEN (gold glow + pulse). Every decade gets a new social graph; Community 20+ yrs overdue. Closer: 'Until now.'
   'cs-connfit',   // [Dave 2026-05-10] 10x 'old stack measures the wrong thing' / Connection Fit — Rating/Calendar/Social Feed all measure ~3-5% of fit; Connection Fit is the prize ('jaw droppingly 10x better').
   'cs-hc11',      // ECONOMY · 'Attention concentrates / Connection distributes' creator-economy power-law vs flat [moved from main slot 23 to appendix per Dave 2026-05-07 PM: 'move this to be the first appendix slide']
