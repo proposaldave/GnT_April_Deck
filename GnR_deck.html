@@ -12295,38 +12295,61 @@ window.cs1m7Reverse = function() {
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
-     cs-samecourt · "SAME COURT. TWO COMMUNITIES." [built 2026-05-12]
-     Concept Dave loved (screenshot): same humans, same court, but the INCENTIVE
-     STRUCTURE changes their behavior. Rating-run incentive = defensive, status-
-     protective language ("What's your DUPR?" / "I don't play down."). GnR
-     incentive = warm, generous, inclusive ("Glad you came." / "Take my spot.").
-     Two-stage click-reveal: Stage 0 shows hero + Card A (rating-run dysfunction);
-     Stage 1 adds Card B (GnR alternative) + footer.
-     Placement: between cs-brand-V8 (Human Value, Finally Seen) and cs-18
-     (Wheelhouse) — paradigm-proof beat right before founder credibility.
+     cs-samecourt · "WHAT EACH PARADIGM TRAINS" [v3 behavior-training, 2026-05-12]
+     Dave pivoted from quote-pair to behavior-training framing per latest
+     screenshots: "Protect your number / Avoid weaker players / Talk about
+     yourself" vs "Show up for others / Welcome the new face / Build the
+     community." Outcomes are behaviors, not quotes — sharper for investor pitch.
+     Top-left eyebrow uses "incentive" word per Dave: 'top left label for this
+     could be "Change the incentives" or something using the word incentive'.
+     Right column ends with "Build the community" per Dave: 'i like "build the
+     community" there'.
+     STAGE 0: hero + left column (RED · what the rating trains) illuminated.
+              Right column ghosted (the alternative isn't visible yet).
+     STAGE 1 (click): right column ignites + footer fades in. Click = paradigm flip.
+     Semantic color: terracotta-red only in RATING side; brand-blue only in GnR
+     side; gold only in neutral framing.
+     GPU-only animation (transform + opacity).
      ═══════════════════════════════════════════════════════════════════════════ -->
 <style>
-  #cs-samecourt .sc-stage{position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:78px 56px 56px;text-align:center}
-  #cs-samecourt .sc-wrap{width:min(940px,100%);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:28px}
-  #cs-samecourt .sc-head{font-family:'Manrope',sans-serif;font-size:clamp(1.5rem,2.4vw,2.1rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#1a1612;line-height:1.2}
-  #cs-samecourt .sc-sub{font-family:'Manrope',sans-serif;font-size:clamp(.78rem,1.05vw,1rem);font-weight:700;letter-spacing:.42em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-top:-14px}
-  #cs-samecourt .sc-card{width:100%;border-radius:6px;background:rgba(251,247,239,0.72);padding:24px 32px 26px;text-align:left;display:flex;flex-direction:column;gap:8px;position:relative;transition:transform 0.65s cubic-bezier(.22,1,.36,1), opacity 0.65s cubic-bezier(.22,1,.36,1)}
-  #cs-samecourt .sc-card.red{border-left:3.5px solid #c8462c}
-  #cs-samecourt .sc-card.blue{border-left:3.5px solid #5B8FD4}
-  #cs-samecourt .sc-eye{font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;margin-bottom:6px}
-  #cs-samecourt .sc-card.red .sc-eye{color:#c8462c}
-  #cs-samecourt .sc-card.blue .sc-eye{color:#5B8FD4}
-  #cs-samecourt .sc-quote{font-family:'Fraunces','Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.25rem,1.85vw,1.6rem);font-weight:500;color:#1a1612;line-height:1.5;letter-spacing:-0.005em}
-  #cs-samecourt .sc-card.blue .sc-quote.payoff{font-weight:700;color:#1a3554}
-  #cs-samecourt .sc-foot{display:flex;align-items:center;gap:18px;margin-top:14px;font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.92vw,.88rem);font-weight:700;letter-spacing:.36em;text-transform:uppercase;color:#b8954a}
-  #cs-samecourt .sc-foot .ln{width:64px;height:1px;background:rgba(184,149,74,0.55)}
-  /* Stage-0 (initial): blue card + footer hidden; red card visible */
-  #cs-samecourt[data-stage="0"] .sc-card.blue{opacity:0;transform:translateY(14px);pointer-events:none}
-  #cs-samecourt[data-stage="0"] .sc-foot{opacity:0;transform:translateY(8px);pointer-events:none}
-  #cs-samecourt[data-stage="1"] .sc-card.blue{opacity:1;transform:translateY(0)}
-  #cs-samecourt[data-stage="1"] .sc-foot{opacity:1;transform:translateY(0);transition-delay:0.18s}
-  /* Click-to-reveal hint (stage 0 only) */
-  #cs-samecourt .sc-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.36em;text-transform:uppercase;color:rgba(184,149,74,0.55);animation:scHintPulse 2.4s ease-in-out infinite;pointer-events:none}
+  #cs-samecourt .sc-stage{position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:74px 56px 56px;text-align:center}
+  #cs-samecourt .sc-wrap{width:min(1480px,100%);margin:0 auto;display:flex;flex-direction:column;align-items:center}
+  /* Top eyebrow + hero block */
+  #cs-samecourt .sc-eyebrow{font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.92vw,.88rem);font-weight:800;letter-spacing:.44em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-bottom:18px}
+  #cs-samecourt .sc-hero{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.4rem,4.2vw,4.05rem);font-weight:850;letter-spacing:-0.028em;color:#1a1612;line-height:1.04;margin-bottom:14px}
+  #cs-samecourt .sc-hero em{font-style:italic;font-weight:850;color:#b8954a}
+  #cs-samecourt .sc-sub{font-family:'Fraunces','Playfair Display',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(1.05rem,1.5vw,1.35rem);color:rgba(26,22,18,0.62);letter-spacing:-0.005em;margin-bottom:48px}
+  /* Side-by-side split */
+  #cs-samecourt .sc-split{display:grid;grid-template-columns:1fr auto 1fr;gap:0;width:100%;align-items:stretch;position:relative}
+  #cs-samecourt .sc-col{padding:28px 48px;display:flex;flex-direction:column;align-items:flex-start;gap:14px;text-align:left;will-change:opacity,transform;transition:opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1), filter 0.7s cubic-bezier(.22,1,.36,1)}
+  #cs-samecourt .sc-divider{position:relative;width:1px;background:rgba(184,149,74,0.55);margin:14px 0}
+  #cs-samecourt .sc-divider:before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:8px;height:8px;background:#b8954a;border-radius:50%;opacity:0.65}
+  /* Col eyebrows */
+  #cs-samecourt .sc-col .sc-col-eye{font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.92vw,.88rem);font-weight:800;letter-spacing:.36em;text-transform:uppercase;margin-bottom:14px}
+  #cs-samecourt .sc-col.red .sc-col-eye{color:#c8462c}
+  #cs-samecourt .sc-col.blue .sc-col-eye{color:#5B8FD4}
+  /* Behavior items — editorial em-dash bullets */
+  #cs-samecourt .sc-item{display:flex;align-items:baseline;gap:14px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-weight:500;font-size:clamp(1.45rem,2.3vw,2.05rem);line-height:1.32;color:#1a1612;letter-spacing:-0.012em}
+  #cs-samecourt .sc-item .dash{display:inline-block;flex-shrink:0;font-weight:300;color:rgba(184,149,74,0.65)}
+  #cs-samecourt .sc-col.red .sc-item{color:rgba(26,22,18,0.78)}
+  #cs-samecourt .sc-col.red .sc-item .dash{color:rgba(200,70,44,0.55)}
+  #cs-samecourt .sc-col.blue .sc-item{color:#1a1612}
+  #cs-samecourt .sc-col.blue .sc-item .dash{color:rgba(91,143,212,0.7)}
+  #cs-samecourt .sc-col.blue .sc-item.payoff{font-weight:700;color:#1a3554}
+  /* Footer band */
+  #cs-samecourt .sc-foot{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:54px;will-change:opacity,transform;transition:opacity 0.65s cubic-bezier(.22,1,.36,1), transform 0.65s cubic-bezier(.22,1,.36,1)}
+  #cs-samecourt .sc-foot-row{display:flex;align-items:center;gap:22px;font-family:'Manrope',sans-serif;font-size:clamp(.78rem,1.02vw,1rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase}
+  #cs-samecourt .sc-foot-row.top{color:rgba(26,22,18,0.55)}
+  #cs-samecourt .sc-foot-row.bot{color:#b8954a}
+  #cs-samecourt .sc-foot-row .ln{width:110px;height:1px;background:rgba(184,149,74,0.45)}
+  /* STAGE 0 (default) — right half ghosted */
+  #cs-samecourt[data-stage="0"] .sc-col.blue{opacity:0.14;filter:saturate(0.2);transform:translateX(6px)}
+  #cs-samecourt[data-stage="0"] .sc-foot{opacity:0;transform:translateY(6px);pointer-events:none}
+  /* STAGE 1 — right half ignites */
+  #cs-samecourt[data-stage="1"] .sc-col.blue{opacity:1;filter:saturate(1);transform:translateX(0)}
+  #cs-samecourt[data-stage="1"] .sc-foot{opacity:1;transform:translateY(0);transition-delay:0.22s}
+  /* Click hint (stage 0 only) */
+  #cs-samecourt .sc-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.36em;text-transform:uppercase;color:rgba(184,149,74,0.55);animation:scHintPulse 2.4s ease-in-out infinite;pointer-events:none}
   #cs-samecourt[data-stage="1"] .sc-hint{opacity:0;transition:opacity 0.4s}
   @keyframes scHintPulse{0%,100%{opacity:0.55}50%{opacity:1}}
 </style>
@@ -12339,30 +12362,41 @@ window.csSameCourtAdvance = function(){
 };
 </script>
 <div class="casey-slide ds-focus" id="cs-samecourt" data-stage="0" onclick="csSameCourtAdvance();event.stopPropagation()" style="cursor:pointer">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">On the court</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Change the incentives</div>
   <section class="sc-stage">
     <div class="sc-wrap">
-      <div class="sc-head">Same court. Two communities.</div>
-      <div class="sc-sub">Different incentive underneath.</div>
+      <div class="sc-eyebrow">What each paradigm trains</div>
+      <div class="sc-hero">Same humans. <em>Different community.</em></div>
+      <div class="sc-sub">The incentive underneath trains the behavior on top.</div>
 
-      <!-- Card A — Rating-run dysfunction (visible stage 0+) -->
-      <div class="sc-card red">
-        <div class="sc-eye">On a rating-run court</div>
-        <div class="sc-quote">&ldquo;What&rsquo;s your DUPR?&rdquo;</div>
-        <div class="sc-quote">&ldquo;I don&rsquo;t play down.&rdquo;</div>
-      </div>
+      <div class="sc-split">
+        <!-- LEFT · THE RATING TRAINS (visible stage 0+) -->
+        <div class="sc-col red">
+          <div class="sc-col-eye">The rating trains</div>
+          <div class="sc-item"><span class="dash">&mdash;</span><span>Protect your number.</span></div>
+          <div class="sc-item"><span class="dash">&mdash;</span><span>Avoid weaker players.</span></div>
+          <div class="sc-item"><span class="dash">&mdash;</span><span>Talk about yourself.</span></div>
+        </div>
 
-      <!-- Card B — GnR alternative (revealed stage 1) -->
-      <div class="sc-card blue">
-        <div class="sc-eye">On a Give &lsquo;n Receive court</div>
-        <div class="sc-quote">&ldquo;Glad you came.&rdquo;</div>
-        <div class="sc-quote payoff">&ldquo;Take my spot.&rdquo;</div>
+        <!-- Gold divider rule with center dot -->
+        <div class="sc-divider" aria-hidden="true"></div>
+
+        <!-- RIGHT · GIVE 'N RECEIVE TRAINS (ghosted stage 0, ignites stage 1) -->
+        <div class="sc-col blue">
+          <div class="sc-col-eye">Give &lsquo;n Receive trains</div>
+          <div class="sc-item"><span class="dash">&mdash;</span><span>Show up for others.</span></div>
+          <div class="sc-item"><span class="dash">&mdash;</span><span>Welcome the new face.</span></div>
+          <div class="sc-item payoff"><span class="dash">&mdash;</span><span>Build the community.</span></div>
+        </div>
       </div>
 
       <!-- Footer (revealed stage 1) -->
-      <div class="sc-foot"><span class="ln"></span><span>Same humans &middot; Different community</span><span class="ln"></span></div>
+      <div class="sc-foot">
+        <div class="sc-foot-row top"><span class="ln"></span><span>Same humans &middot; Different training</span><span class="ln"></span></div>
+        <div class="sc-foot-row bot"><span>Different community.</span></div>
+      </div>
     </div>
-    <div class="sc-hint">Click to reveal &rarr;</div>
+    <div class="sc-hint">Click to flip the incentive &rarr;</div>
   </section>
 </div>
 
