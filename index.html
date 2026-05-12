@@ -6001,7 +6001,7 @@ window.cs1m5Reverse = function() {
   <section class="intro-stage">
     <div class="intro-wrap" style="gap:24px">
       <div class="i5-headline">
-        Science proves we&rsquo;re all <em>wired</em> for <span style="color:#5B8FD4;font-weight:800">open</span> <span style="color:#c8462c;font-weight:800">human connection</span>.
+        Science proves we&rsquo;re <em>hardwired</em> to <span style="color:#5B8FD4;font-weight:800">give</span> with an <span style="color:#c8462c;font-weight:800">open heart</span>.
       </div>
       <div class="i5-grid">
         <div class="i5-col card-long" onclick="i5Show('long');event.stopPropagation()">
@@ -6194,12 +6194,13 @@ window.cs1m5Reverse = function() {
       </div>
       <!-- [Dave 2026-05-11 LATE] 4-stage reveal: STAGE 1 = LEFT cap only, STAGE 2 = + network line, STAGE 3 = + RIGHT cap. -->
       <!-- STAGE 1: LEFT caption (m8-cap-left auto-shows with parent at stage 1+); RIGHT (m8-cap-right) stays hidden until stage 3 -->
+      <!-- [Dave 2026-05-12 LATEST] Right caption shifted +95px to center under the visually-translated R (which sits at translateX 282px vs G at 85px — asymmetric, so right caption needs its own offset). -->
       <div class="m8-caption" style="display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1300px,92%);align-items:start">
         <div class="m8-cap-left" style="text-align:center">
           <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#3a73b8;line-height:1.3;margin-bottom:10px">What you give</div>
           <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#5B8FD4">fuels</em> your community.</div>
         </div>
-        <div class="m8-cap-right" style="text-align:center">
+        <div class="m8-cap-right" style="text-align:center;transform:translateX(95px)">
           <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#c94d32;line-height:1.3;margin-bottom:10px">Your People &middot; Your Moments</div>
           <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#c8462c">Reciprocated</em> back to you.</div>
         </div>
@@ -8146,7 +8147,7 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-pbfirst .pb-callout-arrow{opacity:1!important;transform:none!important;transition:none!important}
 </style>
 <div class="casey-slide ds-focus" id="cs-pbfirst">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Why pickleball first</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">The #1 secret</div>
   <section class="pb-stage">
     <div class="pb-wrap">
       <div class="pb-head">Pickleball is the clearest path to the first global, autonomous, <em>abundant human connection network</em>.</div>
@@ -18651,26 +18652,92 @@ document.getElementById('cbar').style.width = ((1/TOTAL)*100) + '%';
 document.getElementById('ccount').textContent = '1 / ' + TOTAL;
 
 // Keyboard nav
+// [Dave 2026-05-12 LATEST] Keyboard rewrite. New mapping per Dave:
+//   ArrowDown   → next MAIN slide (top→bottom dot column)
+//   ArrowUp     → previous MAIN slide
+//   ArrowLeft   → navigate LEFT into alts (red/orange/etc. dots to the left of the primary dot)
+//   ArrowRight  → navigate RIGHT (back toward the primary; ultimately to primary at altIndex 0)
+//   Space       → also advances reveal stages, then next main slide (fast scrub)
+//   D / S / A   → fast scrubber for next/prev main slide (skip reveals)
+// Global altIndex tracks where we are within the current slide's alt row. 0 = primary, 1+ = alts L→R.
+window.altIndex = 0;
+window.navigateAlt = function(direction) {
+  // direction: -1 to go LEFT (further into alts), +1 to go RIGHT (back toward primary)
+  if (inAppendix) return false; // alts only apply to main flow
+  const posKey = current;
+  const alts = (typeof SLIDE_ALTS !== 'undefined' && SLIDE_ALTS[posKey]) || [];
+  if (alts.length === 0) return false;
+  const newIndex = window.altIndex + (direction < 0 ? 1 : -1);
+  if (newIndex < 0 || newIndex > alts.length) return false;
+  window.altIndex = newIndex;
+  // Render: index 0 = primary, index N = alts[N-1]
+  document.querySelectorAll('.casey-slide').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.appendix-slide').forEach(s => { s.style.display = 'none'; });
+  if (window.altIndex === 0) {
+    const target = document.getElementById(SLIDE_ORDER[current - 1]);
+    if (target) { target.classList.add('active'); if (target.dataset && target.dataset.stage !== undefined) target.dataset.stage = '0'; }
+    document.getElementById('ccount').textContent = current + ' / ' + TOTAL;
+  } else {
+    const altId = alts[window.altIndex - 1];
+    const target = document.getElementById(altId);
+    if (target) { target.classList.add('active'); if (target.dataset && target.dataset.stage !== undefined) target.dataset.stage = '0'; }
+    document.getElementById('ccount').textContent = current + ' / ' + TOTAL + ' (alt)';
+  }
+  // Visual: update dot highlight
+  const wrap = document.getElementById('cnav').children[current - 1];
+  if (wrap) {
+    const dots = wrap.querySelectorAll('.casey-dot');
+    dots.forEach(d => d.classList.remove('on'));
+    // Primary is the LAST dot in the wrap (highest right). Alts are added after, positioned increasingly leftward.
+    // Layout: wrap.children = [primaryDot, altDot1, altDot2, ...] where altDot1 sits closest to primary (rightmost alt), altDot2 next (left), etc.
+    // window.altIndex maps: 0 → primary, 1 → altDot1 (closest left), 2 → altDot2, etc.
+    if (dots[window.altIndex]) dots[window.altIndex].classList.add('on');
+  }
+  return true;
+};
 document.addEventListener('keydown', e => {
   if (document.querySelector('.node-overlay.open')) {
     if (e.key === 'Escape') closePanel(e);
     return;
   }
-  // 2026-05-01 keyboard rewrite per Dave:
-  //   Right arrow / Space  → advance reveal step on click-to-animate slides; if no reveal pending, advance to next slide
-  //   Left arrow            → reverse reveal step; if at start, go back to prev slide
-  //   D                     → ALWAYS advance to next slide (skip reveals — fast scrubber)
-  //   A                     → ALWAYS go back to prev slide (skip reverses — fast scrubber)
+  // D / S / A — fast scrubber for next/prev main slide
   if (e.key === 'd' || e.key === 'D') {
     e.preventDefault();
+    window.altIndex = 0;
     if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
     return;
   }
-  // [Dave 2026-05-10 PM] 'S' added as back-nav (paired with 'D' for forward — natural WASD-style pair). 'A' kept as alias.
   if (e.key === 'a' || e.key === 'A' || e.key === 's' || e.key === 'S') {
     e.preventDefault();
+    window.altIndex = 0;
     if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
     return;
+  }
+  // ArrowDown = next main slide (down the dot column)
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    window.altIndex = 0;
+    if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
+    return;
+  }
+  // ArrowUp = previous main slide (up the dot column)
+  if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    window.altIndex = 0;
+    if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
+    return;
+  }
+  // ArrowLeft = navigate LEFT into alts (or further into the alt row)
+  if (e.key === 'ArrowLeft') {
+    e.preventDefault();
+    if (window.navigateAlt(-1)) return;
+    return; // No-op if no more alts to the left
+  }
+  // ArrowRight = navigate RIGHT toward primary (back from alts)
+  if (e.key === 'ArrowRight') {
+    e.preventDefault();
+    if (window.navigateAlt(1)) return;
+    return; // No-op if already at primary
   }
   if (e.key === 'ArrowRight' || e.key === ' ') {
     e.preventDefault();
