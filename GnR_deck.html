@@ -10199,7 +10199,7 @@ window.cs1m7Reverse = function() {
   <section class="vd-stage">
     <div class="vd-wrap">
       <div class="vd-name">Dave Velardo &middot; Founder &amp; CEO</div>
-      <div class="vd-hero">Three strengths &rarr; <em>doable mission.</em></div>
+      <div class="vd-hero">Three strengths &rarr; <em>do-able mission.</em></div>
 
       <!-- 3-pillar row with circular icon badges [Dave 2026-05-12 LATEST · ChatGPT-style] -->
       <div class="v5-pillars">
@@ -12754,7 +12754,8 @@ window.cs1m7Reverse = function() {
      LEFT (red rating side): "I'm a 3.9" — identity = my number, myself.
      RIGHT (blue GnR side):   "I'm part of NEPC" — identity = the community.
      Contrast lands the same-humans/different-incentive paradigm. */
-  #cs-samecourt .sc-char{display:flex;align-items:center;gap:14px;margin-bottom:22px;align-self:center}
+  /* [Dave 2026-05-12 v2] Bubble→eyebrow spacing tightened. Was margin-bottom:22px + column gap:18px (= 40px gap) which floated the bubble visually disconnected from the eyebrow's identity row. Now margin-bottom:-6px pulls the eyebrow tight under the bubble so the bubble reads as the player's voice ABOVE their identity label. align-self stays center so left/right bubbles mirror across the divider. */
+  #cs-samecourt .sc-char{display:flex;align-items:center;gap:14px;margin-bottom:-6px;align-self:center}
   #cs-samecourt .sc-char .sc-head{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;flex-shrink:0}
   #cs-samecourt .sc-char .sc-head.red{background:rgba(200,70,44,0.14);border:1.6px solid rgba(200,70,44,0.55)}
   #cs-samecourt .sc-char .sc-head.blue{background:rgba(91,143,212,0.14);border:1.6px solid rgba(91,143,212,0.55)}
@@ -12830,12 +12831,6 @@ window.cs1m7Reverse = function() {
         </div>
       </div>
 
-      <!-- [Dave 2026-05-12] CLOSER — three-beat payoff lifted from ChatGPT design reference. Lands the takeaway: same humans, flipped incentive ⇒ better for the individual, better for the people next to them, and better for the community as a whole. -->
-      <div class="sc-closer">
-        <span class="sc-c1">Better for you.</span>
-        <span class="sc-c2">Better for others.</span>
-        <span class="sc-c3">Better together.</span>
-      </div>
     </div>
   </section>
 </div>
