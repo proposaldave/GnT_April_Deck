@@ -9936,8 +9936,11 @@ window.cs1m7Reverse = function() {
   #cs-18-vd4 .v4-vis.horizon .pathwrap circle.end { fill:#fbf7ef;stroke:#b8954a;stroke-width:2.8; }
   #cs-18-vd4 .v4-vis.horizon .word { position:absolute;left:50%;bottom:18px;transform:translateX(-50%);font-family:'Manrope',sans-serif;font-size:.50rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;white-space:nowrap; }
   /* Foundation lab (lifted from vd3, scaled down) */
-  #cs-18-vd4 .v4-vis.lab .plate { position:absolute;left:50%;bottom:24px;transform:translateX(-50%);width:268px;height:50px;border-radius:7px;background:#fbf7ef;border:1.4px solid rgba(184,149,74,.62);box-shadow:0 14px 30px rgba(184,149,74,.14);display:flex;align-items:center;justify-content:center;gap:10px;padding:0 14px;font-family:'Manrope',sans-serif;font-size:.52rem;font-weight:900;letter-spacing:.24em;text-transform:uppercase;color:#b8954a; }
-  #cs-18-vd4 .v4-vis.lab .plate img { height:30px;width:auto;flex-shrink:0;object-fit:contain; }
+  #cs-18-vd4 .v4-vis.lab .plate { position:absolute;left:50%;bottom:24px;transform:translateX(-50%);width:240px;height:46px;border-radius:7px;background:#fbf7ef;border:1.4px solid rgba(184,149,74,.62);box-shadow:0 14px 30px rgba(184,149,74,.14);display:grid;place-items:center;font-family:'Manrope',sans-serif;font-size:.52rem;font-weight:900;letter-spacing:.24em;text-transform:uppercase;color:#b8954a; }
+  /* NEPC logo as prominent corner badge on the Starting Point pillar */
+  #cs-18-vd4 .strength.foundation { position:relative; }
+  #cs-18-vd4 .pillar-nepc-logo { position:absolute;top:16px;right:16px;width:64px;height:64px;z-index:3;pointer-events:none; }
+  #cs-18-vd4 .pillar-nepc-logo img { width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 4px 10px rgba(184,149,74,0.18)); }
   #cs-18-vd4 .v4-vis.lab .club { position:absolute;top:18px;width:78px;height:78px;border-radius:8px;background:#fbf7ef;border:1.2px solid rgba(26,22,18,.16);box-shadow:0 10px 24px rgba(26,22,18,.055);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px; }
   #cs-18-vd4 .v4-vis.lab .club .city { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.88rem;font-weight:900;color:#1a1612;line-height:1; }
   #cs-18-vd4 .v4-vis.lab .club .tag { font-family:'Manrope',sans-serif;font-size:.38rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,.48); }
@@ -10078,15 +10081,17 @@ window.cs1m7Reverse = function() {
           <div class="title">Rapid, <em>continuous iteration</em>.</div>
           <!-- [Dave 2026-05-12] Sub-line 'A category most can't even map yet. I walked the maze. I landed on the door.' DELETED per Dave. -->
         </div>
-        <!-- PILLAR 2 · THE FOUNDATION -->
+        <!-- PILLAR 2 · STARTING POINT -->
         <div class="strength foundation">
+          <!-- NEPC logo badge top-right [Dave 2026-05-12 LATEST] -->
+          <div class="pillar-nepc-logo"><img src="nepc-logo.png" alt="New England Pickleball Club logo"/></div>
           <div class="num">02 &middot; Starting Point</div>
           <div class="v4-vis lab">
             <!-- [Dave 2026-05-12] Cleaned: removed 3 mid-line dots (looked off). Two clubs + clean dashed connector + plate. -->
             <div class="line"></div>
             <div class="club rye"><div class="city">Rye</div><div class="tag">Club 01</div></div>
             <div class="club mid"><div class="city">Middleton</div><div class="tag">Club 02</div></div>
-            <div class="plate"><img src="nepc-logo.png" alt="NEPC logo"/><span>NEPC operating lab</span></div>
+            <div class="plate">NEPC operating lab</div>
           </div>
           <div class="title">Built a <em>tiny lab</em>.</div>
           <div class="sub">$2M ARR. 500 members. 20+ employees led by NEPC GM and GnR implementor Krista.</div>
