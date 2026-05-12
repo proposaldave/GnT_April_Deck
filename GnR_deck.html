@@ -12294,6 +12294,130 @@ window.cs1m7Reverse = function() {
 </div>
 
 
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-samecourt · "SAME COURT. TWO COMMUNITIES." [built 2026-05-12]
+     Concept Dave loved (screenshot): same humans, same court, but the INCENTIVE
+     STRUCTURE changes their behavior. Rating-run incentive = defensive, status-
+     protective language ("What's your DUPR?" / "I don't play down."). GnR
+     incentive = warm, generous, inclusive ("Glad you came." / "Take my spot.").
+     Two-stage click-reveal: Stage 0 shows hero + Card A (rating-run dysfunction);
+     Stage 1 adds Card B (GnR alternative) + footer.
+     Placement: between cs-brand-V8 (Human Value, Finally Seen) and cs-18
+     (Wheelhouse) — paradigm-proof beat right before founder credibility.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<style>
+  #cs-samecourt .sc-stage{position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:78px 56px 56px;text-align:center}
+  #cs-samecourt .sc-wrap{width:min(940px,100%);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:28px}
+  #cs-samecourt .sc-head{font-family:'Manrope',sans-serif;font-size:clamp(1.5rem,2.4vw,2.1rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#1a1612;line-height:1.2}
+  #cs-samecourt .sc-sub{font-family:'Manrope',sans-serif;font-size:clamp(.78rem,1.05vw,1rem);font-weight:700;letter-spacing:.42em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-top:-14px}
+  #cs-samecourt .sc-card{width:100%;border-radius:6px;background:rgba(251,247,239,0.72);padding:24px 32px 26px;text-align:left;display:flex;flex-direction:column;gap:8px;position:relative;transition:transform 0.65s cubic-bezier(.22,1,.36,1), opacity 0.65s cubic-bezier(.22,1,.36,1)}
+  #cs-samecourt .sc-card.red{border-left:3.5px solid #c8462c}
+  #cs-samecourt .sc-card.blue{border-left:3.5px solid #5B8FD4}
+  #cs-samecourt .sc-eye{font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;margin-bottom:6px}
+  #cs-samecourt .sc-card.red .sc-eye{color:#c8462c}
+  #cs-samecourt .sc-card.blue .sc-eye{color:#5B8FD4}
+  #cs-samecourt .sc-quote{font-family:'Fraunces','Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.25rem,1.85vw,1.6rem);font-weight:500;color:#1a1612;line-height:1.5;letter-spacing:-0.005em}
+  #cs-samecourt .sc-card.blue .sc-quote.payoff{font-weight:700;color:#1a3554}
+  #cs-samecourt .sc-foot{display:flex;align-items:center;gap:18px;margin-top:14px;font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.92vw,.88rem);font-weight:700;letter-spacing:.36em;text-transform:uppercase;color:#b8954a}
+  #cs-samecourt .sc-foot .ln{width:64px;height:1px;background:rgba(184,149,74,0.55)}
+  /* Stage-0 (initial): blue card + footer hidden; red card visible */
+  #cs-samecourt[data-stage="0"] .sc-card.blue{opacity:0;transform:translateY(14px);pointer-events:none}
+  #cs-samecourt[data-stage="0"] .sc-foot{opacity:0;transform:translateY(8px);pointer-events:none}
+  #cs-samecourt[data-stage="1"] .sc-card.blue{opacity:1;transform:translateY(0)}
+  #cs-samecourt[data-stage="1"] .sc-foot{opacity:1;transform:translateY(0);transition-delay:0.18s}
+  /* Click-to-reveal hint (stage 0 only) */
+  #cs-samecourt .sc-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.36em;text-transform:uppercase;color:rgba(184,149,74,0.55);animation:scHintPulse 2.4s ease-in-out infinite;pointer-events:none}
+  #cs-samecourt[data-stage="1"] .sc-hint{opacity:0;transition:opacity 0.4s}
+  @keyframes scHintPulse{0%,100%{opacity:0.55}50%{opacity:1}}
+</style>
+<script>
+window.csSameCourtAdvance = function(){
+  const s = document.getElementById('cs-samecourt');
+  if(!s) return;
+  const stage = parseInt(s.dataset.stage || '0', 10);
+  s.dataset.stage = String(Math.min(stage + 1, 1));
+};
+</script>
+<div class="casey-slide ds-focus" id="cs-samecourt" data-stage="0" onclick="csSameCourtAdvance();event.stopPropagation()" style="cursor:pointer">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">On the court</div>
+  <section class="sc-stage">
+    <div class="sc-wrap">
+      <div class="sc-head">Same court. Two communities.</div>
+      <div class="sc-sub">Different incentive underneath.</div>
+
+      <!-- Card A — Rating-run dysfunction (visible stage 0+) -->
+      <div class="sc-card red">
+        <div class="sc-eye">On a rating-run court</div>
+        <div class="sc-quote">&ldquo;What&rsquo;s your DUPR?&rdquo;</div>
+        <div class="sc-quote">&ldquo;I don&rsquo;t play down.&rdquo;</div>
+      </div>
+
+      <!-- Card B — GnR alternative (revealed stage 1) -->
+      <div class="sc-card blue">
+        <div class="sc-eye">On a Give &lsquo;n Receive court</div>
+        <div class="sc-quote">&ldquo;Glad you came.&rdquo;</div>
+        <div class="sc-quote payoff">&ldquo;Take my spot.&rdquo;</div>
+      </div>
+
+      <!-- Footer (revealed stage 1) -->
+      <div class="sc-foot"><span class="ln"></span><span>Same humans &middot; Different community</span><span class="ln"></span></div>
+    </div>
+    <div class="sc-hint">Click to reveal &rarr;</div>
+  </section>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-incentive · "Give 'n Receive · the incentive." [built 2026-05-12]
+     The paradigm-shift reframe (screenshot Dave loved): our brand name IS the
+     incentive structure that drives the platform. Double meaning — "Give 'n
+     Receive" as wordmark + "Give 'n Receive" as the actual mechanism. Closing
+     manifesto: "The only way to get more is to give more."
+     Quiet, contemplative, monumental typography. No animations — let it breathe.
+     Placement: immediately after cs-samecourt — first you SEE incentives drive
+     behavior, then we name the incentive we built around.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<style>
+  #cs-incentive .gni-stage{position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:88px 56px 64px;text-align:center;gap:0}
+  #cs-incentive .gni-wrap{width:min(960px,100%);margin:0 auto;display:flex;flex-direction:column;align-items:center}
+  #cs-incentive .gni-eye{font-family:'Manrope',sans-serif;font-size:clamp(.72rem,.95vw,.92rem);font-weight:800;letter-spacing:.44em;text-transform:uppercase;color:#b8954a;margin-bottom:34px}
+  #cs-incentive .gni-mark{font-family:'Fraunces','Playfair Display',Georgia,serif;font-weight:850;font-size:clamp(3.6rem,7.2vw,6.6rem);line-height:1;letter-spacing:-0.03em;color:#1a1612;margin-bottom:22px}
+  #cs-incentive .gni-mark .g{color:#5B8FD4}
+  #cs-incentive .gni-mark .n{font-style:italic;font-weight:500;color:#b8954a;font-size:0.78em;padding:0 0.04em}
+  #cs-incentive .gni-mark .r{color:#c8462c}
+  #cs-incentive .gni-mark .quot{color:#1a1612;font-style:italic;font-weight:500}
+  #cs-incentive .gni-incentive{font-family:'Fraunces','Playfair Display',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(2.2rem,4vw,3.4rem);line-height:1.04;letter-spacing:-0.02em;color:#1a1612;margin-bottom:38px}
+  #cs-incentive .gni-rule{width:140px;height:1px;background:rgba(184,149,74,0.55);margin:0 auto 32px}
+  #cs-incentive .gni-trio{display:flex;flex-direction:column;gap:6px;margin-bottom:42px}
+  #cs-incentive .gni-trio div{font-family:'Fraunces','Playfair Display',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(1.15rem,1.65vw,1.45rem);color:rgba(26,22,18,0.82);line-height:1.5}
+  #cs-incentive .gni-trio div em{font-style:italic;font-weight:700;color:#b8954a}
+  #cs-incentive .gni-manifesto{font-family:'Manrope',sans-serif;font-size:clamp(.78rem,1.05vw,1rem);font-weight:800;letter-spacing:.34em;text-transform:uppercase;color:#1a3554;line-height:1.85;max-width:680px}
+  #cs-incentive .gni-manifesto .pop{color:#c8462c}
+</style>
+<div class="casey-slide ds-focus" id="cs-incentive">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Give &lsquo;n Receive</div>
+  <section class="gni-stage">
+    <div class="gni-wrap">
+      <div class="gni-eye">The paradigm shift</div>
+      <div class="gni-mark">
+        <span class="g">G</span><span class="quot">ive</span> <span class="n">&lsquo;n</span> <span class="r">R</span><span class="quot">eceive</span>
+      </div>
+      <div class="gni-incentive">the incentive.</div>
+      <div class="gni-rule"></div>
+      <div class="gni-trio">
+        <div>Your <em>people</em>.</div>
+        <div>Your <em>moments</em>.</div>
+        <div>Your <em>dream matches</em>.</div>
+      </div>
+      <div class="gni-manifesto">
+        The system learns them.<br>
+        <span class="pop">The only way to get more is to give more.</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+
 <!-- ── V9 · BE YOURSELF — three orbs (G/n/R) with identity-to-impact captions; closing tag 'Be yourself. We'll handle the rest.'
         Most warm/emotional brand expression. Inspired by ChatGPT 8-grid #8 — Dave 2026-05-07. ── -->
 <style>
@@ -16837,6 +16961,9 @@ const SLIDE_ORDER = [
   // cs-brand-V9 MOVED to end of appendix per Dave 2026-05-07 PM — V15 (hybrid) won slot 12.
   // cs-brand-V15 MOVED to end of appendix per Dave 2026-05-07 PM — V8 (HUMAN VALUE, FINALLY SEEN) now primary at slot 12.
   'cs-brand-V8',   // 12 Brand Opportunity · 'HUMAN VALUE, FINALLY SEEN' [Dave 2026-05-07 PM: 'i loved it. make this the main top dot slide #12']
+  // [Dave 2026-05-12] cs-samecourt + cs-incentive INSERTED as paired paradigm-proof beat between cs-brand-V8 and cs-18, per Dave: 'i like these concepts - figure out and build at least 1-2 of your best implementing this into a slide and figure out somewhere in the middle of the deck to put it.' Card A (red): rating-run dysfunction ("What's your DUPR? / I don't play down."). Card B (blue): GnR alternative ("Glad you came. / Take my spot."). cs-incentive lands the reframe — our brand name IS the incentive structure, closing with "The only way to get more is to give more."
+  'cs-samecourt',  // Same Court. Two Communities. (incentive-structure proof — 2-stage click reveal)
+  'cs-incentive',  // Give 'n Receive · the incentive. (paradigm shift — brand name = the mechanism)
   // [Dave 2026-05-11 LATE] cs-18 MOVED HERE — Dave: 'Move the Dave Velardo wheelhouse slide so that it is immediately after the slide with the text "Human Value Finally Seen"'.
   'cs-18',    // 13 Founder · CEO · Dave Velardo (My Wheelhouse) — MOVED HERE 2026-05-11 (was slot 15)
   // cs-bh2 MOVED to appendix slot 3 per Dave 2026-05-07 — was main slot 13
