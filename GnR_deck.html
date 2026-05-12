@@ -9986,18 +9986,27 @@ window.cs1m7Reverse = function() {
   #cs-18-vd4 .v5-pillar.p1 .v5-body em { color:#c8462c; }
   #cs-18-vd4 .v5-pillar.p2 .v5-body em { color:#b8954a; }
   #cs-18-vd4 .v5-pillar.p3 .v5-body em { color:#c8462c; }
-  /* NEPC logo on Pillar 2 */
-  #cs-18-vd4 .v5-nepc { display:flex;align-items:center;gap:8px;margin-top:6px; }
-  #cs-18-vd4 .v5-nepc img { height:26px;width:auto; }
-  #cs-18-vd4 .v5-nepc-label { font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:rgba(26,22,18,0.55); }
-  /* Timeline strip */
-  #cs-18-vd4 .v5-timeline { display:grid;grid-template-columns:repeat(5,1fr);gap:18px;width:100%;max-width:1180px;padding:20px 24px 0;border-top:1px solid rgba(184,149,74,0.32);margin-top:18px; }
-  #cs-18-vd4 .v5-step { display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center; }
-  #cs-18-vd4 .v5-step .yr { font-family:'Manrope',sans-serif;font-size:.82rem;font-weight:700;color:rgba(26,22,18,0.55);letter-spacing:.02em; }
-  #cs-18-vd4 .v5-step .txt { font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:600;color:rgba(26,22,18,0.78);line-height:1.3; }
-  #cs-18-vd4 .v5-step.now .yr { color:#168651;font-weight:800; }
-  #cs-18-vd4 .v5-step.now .txt { color:#168651;font-weight:700; }
-  #cs-18-vd4 .v5-step.now .sub { font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:700;color:#168651;margin-top:2px;letter-spacing:.02em; }
+  /* NEPC logo badge — replaces the gold/R-M circle on Pillar 2 */
+  #cs-18-vd4 .v5-badge.nepc { background:transparent;box-shadow:none;width:130px;height:130px;padding:6px; }
+  #cs-18-vd4 .v5-badge.nepc img { width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 12px 28px rgba(184,149,74,0.22)); }
+  /* === TIMELINE v2 [Dave 2026-05-12 LATEST · visual upgrade] ===
+     Was: 5 plain text columns. Now: horizontal rail + dot markers, year ABOVE dot, label BELOW dot, "NOW" beat (2025) emphasized with larger green dot + glow + sub-line. */
+  #cs-18-vd4 .v5-timeline { position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:0;width:100%;max-width:1240px;padding:36px 32px 14px;margin-top:24px; }
+  /* Horizontal rail running through the dots */
+  #cs-18-vd4 .v5-timeline::before { content:"";position:absolute;left:84px;right:84px;top:50%;height:1.5px;background:linear-gradient(90deg, rgba(184,149,74,0.12) 0%, rgba(184,149,74,0.55) 12%, rgba(184,149,74,0.55) 80%, rgba(22,134,81,0.7) 100%);transform:translateY(-50%);z-index:0; }
+  #cs-18-vd4 .v5-step { position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;z-index:1; }
+  #cs-18-vd4 .v5-step .yr { font-family:'Manrope',sans-serif;font-size:.84rem;font-weight:800;letter-spacing:.08em;color:rgba(26,22,18,0.55);margin-bottom:14px; }
+  /* Dot on the rail */
+  #cs-18-vd4 .v5-step .dot { width:13px;height:13px;border-radius:50%;background:#fbf7ef;border:2.2px solid #b8954a;box-shadow:0 0 0 4px rgba(184,149,74,0.08);position:relative;z-index:2; }
+  #cs-18-vd4 .v5-step .txt { font-family:'Manrope',sans-serif;font-size:.8rem;font-weight:600;color:rgba(26,22,18,0.78);line-height:1.3;margin-top:14px;max-width:170px; }
+  /* NOW emphasis on 2025 Steve joins CTO */
+  #cs-18-vd4 .v5-step.now .yr { color:#168651;font-size:.92rem;font-weight:900; }
+  #cs-18-vd4 .v5-step.now .dot { width:18px;height:18px;background:#168651;border-color:#168651;box-shadow:0 0 0 6px rgba(22,134,81,0.14), 0 0 18px rgba(22,134,81,0.45);animation:v5NowPulse 2.4s ease-in-out infinite; }
+  #cs-18-vd4 .v5-step.now .txt { color:#168651;font-weight:800; }
+  #cs-18-vd4 .v5-step.now .sub { font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:700;color:#168651;margin-top:4px;letter-spacing:.04em; }
+  #cs-18-vd4 .v5-step.now .now-tag { display:inline-block;font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:900;letter-spacing:.32em;text-transform:uppercase;color:#168651;background:rgba(22,134,81,0.10);border:1px solid rgba(22,134,81,0.40);border-radius:99px;padding:2px 8px;margin-top:6px; }
+  @keyframes v5NowPulse { 0%,100% { box-shadow:0 0 0 6px rgba(22,134,81,0.14), 0 0 18px rgba(22,134,81,0.45); } 50% { box-shadow:0 0 0 10px rgba(22,134,81,0.10), 0 0 26px rgba(22,134,81,0.62); } }
+  html[data-export="1"] #cs-18-vd4 .v5-step.now .dot { animation:none !important; }
 </style>
 
 <div class="casey-slide ds-focus" id="cs-18-vd1">
@@ -10093,7 +10102,7 @@ window.cs1m7Reverse = function() {
   <section class="vd-stage">
     <div class="vd-wrap">
       <div class="vd-name">Dave Velardo &middot; Founder &amp; CEO</div>
-      <div class="vd-hero">Three strengths.<em>Very doable.</em></div>
+      <div class="vd-hero">Three strengths &rarr; <em>very doable mission.</em></div>
 
       <!-- 3-pillar row with circular icon badges [Dave 2026-05-12 LATEST · ChatGPT-style] -->
       <div class="v5-pillars">
@@ -10112,24 +10121,14 @@ window.cs1m7Reverse = function() {
           <div class="v5-body">Rapid, <em>continuous iteration</em>.</div>
         </div>
 
-        <!-- PILLAR 2 · STARTING POINT (GOLD + R-M GRAPH + NEPC logo) -->
+        <!-- PILLAR 2 · STARTING POINT (NEPC LOGO replaces the gold R-M badge per Dave 2026-05-12 LATEST) -->
         <div class="v5-pillar p2">
-          <div class="v5-badge gold">
-            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line x1="26" y1="40" x2="54" y2="40" stroke="white" stroke-width="1.8" stroke-dasharray="3 3"/>
-              <circle cx="26" cy="40" r="10" fill="white"/>
-              <text x="26" y="44" text-anchor="middle" font-family="Fraunces, 'Playfair Display', serif" font-size="11" font-weight="800" fill="#b8954a">R</text>
-              <circle cx="54" cy="40" r="10" fill="white"/>
-              <text x="54" y="44" text-anchor="middle" font-family="Fraunces, 'Playfair Display', serif" font-size="11" font-weight="800" fill="#b8954a">M</text>
-            </svg>
+          <div class="v5-badge nepc">
+            <img src="nepc-logo.png" alt="New England Pickleball Club logo"/>
           </div>
           <div class="v5-num">02</div>
           <div class="v5-eye">Starting Point</div>
           <div class="v5-body">Built a <em>tiny lab</em>.</div>
-          <div class="v5-nepc">
-            <img src="nepc-logo.png" alt="New England Pickleball Club logo"/>
-            <span class="v5-nepc-label">NEPC</span>
-          </div>
         </div>
 
         <!-- PILLAR 3 · GROWTH (BLUE + NETWORK ORB) -->
@@ -10159,13 +10158,13 @@ window.cs1m7Reverse = function() {
         </div>
       </div>
 
-      <!-- Clean horizontal timeline (no card boxes) -->
+      <!-- Visual-designer-improved timeline: horizontal rail + dot markers + emphasized NOW state -->
       <div class="v5-timeline">
-        <div class="v5-step"><div class="yr">2020</div><div class="txt">#27 pro tour</div></div>
-        <div class="v5-step"><div class="yr">2020</div><div class="txt">Pickleball computer vision</div></div>
-        <div class="v5-step"><div class="yr">2021</div><div class="txt">DUPR acquisition declined</div></div>
-        <div class="v5-step"><div class="yr">2022</div><div class="txt">Opened NEPC</div></div>
-        <div class="v5-step now"><div class="yr">2025</div><div class="txt">Steve joins CTO</div><div class="sub">60 GnR invitation courts/week</div></div>
+        <div class="v5-step"><div class="yr">2020</div><div class="dot"></div><div class="txt">#27 pro tour</div></div>
+        <div class="v5-step"><div class="yr">2020</div><div class="dot"></div><div class="txt">Pickleball computer vision</div></div>
+        <div class="v5-step"><div class="yr">2021</div><div class="dot"></div><div class="txt">DUPR acquisition declined</div></div>
+        <div class="v5-step"><div class="yr">2022</div><div class="dot"></div><div class="txt">Opened NEPC</div></div>
+        <div class="v5-step now"><div class="yr">2025</div><div class="dot"></div><div class="txt">Steve joins CTO</div><div class="sub">60 GnR invitation courts / week</div><div class="now-tag">Now</div></div>
       </div>
     </div>
   </section>
