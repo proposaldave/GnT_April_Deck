@@ -13571,6 +13571,53 @@ window.cs1m7Reverse = function() {
   #cs-fv6 .fv-c6 .fv-ico {width:50px;height:50px;background:rgba(200,70,44,.14)}
   #cs-fv6 .fv-c6 .fv-ico svg {width:26px;height:26px;stroke:#c8462c}
   #cs-fv6 .fv-c6 .fv-verb {color:#c8462c;font-size:clamp(1.18rem,1.45vw,1.42rem)}
+  /* ───── INTRO ANIMATION [Dave 2026-05-12 LATEST] ─────
+     Arc + hero fade in first, then the 9 verb cards cascade in left-to-right.
+     Arrows fade in with their preceding card. Triggered by .casey-entered (re-fires
+     every time the slide becomes active via caseyGo). GPU-accelerated (transform +
+     opacity only). Export mode bypasses animations and shows final state. */
+  #cs-fv6 .fv-arc, #cs-fv6 .fv-head, #cs-fv6 .fv-card, #cs-fv6 .fv-arrow {
+    opacity: 0;
+    transform: translateY(10px);
+    will-change: opacity, transform;
+    transition: opacity 0.55s cubic-bezier(.22,1,.36,1), transform 0.55s cubic-bezier(.22,1,.36,1);
+  }
+  #cs-fv6.casey-entered .fv-arc,
+  #cs-fv6.casey-entered .fv-head,
+  #cs-fv6.casey-entered .fv-card,
+  #cs-fv6.casey-entered .fv-arrow {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Staggered cascade */
+  #cs-fv6.casey-entered .fv-arc  { transition-delay: 0s; }
+  #cs-fv6.casey-entered .fv-head { transition-delay: 0.12s; }
+  #cs-fv6.casey-entered .fv-c0    { transition-delay: 0.35s; }
+  #cs-fv6.casey-entered .fv-c1    { transition-delay: 0.43s; }
+  #cs-fv6.casey-entered .fv-c2    { transition-delay: 0.51s; }
+  #cs-fv6.casey-entered .fv-c-mkt { transition-delay: 0.59s; }
+  #cs-fv6.casey-entered .fv-c3    { transition-delay: 0.67s; }
+  #cs-fv6.casey-entered .fv-c4    { transition-delay: 0.75s; }
+  #cs-fv6.casey-entered .fv-c5    { transition-delay: 0.83s; }
+  #cs-fv6.casey-entered .fv-c-recip { transition-delay: 0.91s; }
+  #cs-fv6.casey-entered .fv-c6    { transition-delay: 1.05s; }
+  #cs-fv6.casey-entered .fv-arrow:nth-of-type(2) { transition-delay: 0.45s; }
+  #cs-fv6.casey-entered .fv-arrow:nth-of-type(4) { transition-delay: 0.53s; }
+  #cs-fv6.casey-entered .fv-arrow:nth-of-type(6) { transition-delay: 0.61s; }
+  #cs-fv6.casey-entered .fv-arrow:nth-of-type(8) { transition-delay: 0.69s; }
+  #cs-fv6.casey-entered .fv-arrow:nth-of-type(10) { transition-delay: 0.77s; }
+  #cs-fv6.casey-entered .fv-arrow:nth-of-type(12) { transition-delay: 0.85s; }
+  #cs-fv6.casey-entered .fv-arrow:nth-of-type(14) { transition-delay: 0.93s; }
+  #cs-fv6.casey-entered .fv-arrow:nth-of-type(16) { transition-delay: 1.00s; }
+  /* Export / print mode — bypass animation, show final state */
+  html[data-export="1"] #cs-fv6 .fv-arc,
+  html[data-export="1"] #cs-fv6 .fv-head,
+  html[data-export="1"] #cs-fv6 .fv-card,
+  html[data-export="1"] #cs-fv6 .fv-arrow {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 </style>
 <div class="casey-slide ds-focus" id="cs-fv6">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">As connection becomes measurable, abundance becomes programmable.</div>
