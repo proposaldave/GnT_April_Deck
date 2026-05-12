@@ -8863,7 +8863,7 @@ window.cs1m7Reverse = function() {
             <rect x="-24" y="-2" width="48" height="22" rx="2" fill="#fbf7ef" stroke="rgba(26,22,18,0.65)" stroke-width="1.3"/>
             <path d="M -24 -2 L 0 12 L 24 -2" fill="none" stroke="rgba(26,22,18,0.65)" stroke-width="1.2"/>
           </g>
-          <text x="120" y="108" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="17" font-weight="700" fill="#1a1612">Invitation-feed</text>
+          <text x="120" y="115" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="20" font-weight="700" fill="#1a1612">Invitation-<tspan font-style="italic" font-weight="500" fill="rgba(26,22,18,0.55)">feed</tspan></text>
         </g>
         <g class="env-front-text">
           <text x="120" y="138" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" font-style="italic" fill="rgba(26,22,18,0.70)">Effortless</text>
@@ -16040,8 +16040,22 @@ window.cs1m7Reverse = function() {
   #cs-a7m1 .a7m1-closer strong { color:#c8462c;font-style:normal;font-weight:800 }
 </style>
 <div class="casey-slide ds-focus" id="cs-a7m1">
-  <!-- Eyebrow [Dave 2026-05-10: 'The Last Frontier · Today vs Tomorrow' → 'Human connection technology is unsolved'] -->
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Human Connection Technology is Unsolved</div>
+  <!-- Eyebrow [Dave 2026-05-12: 'Human connection technology' → 'Human connection'] -->
+  <div class="a7m1-eyebrow" style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Human Connection is Unsolved</div>
+  <!-- [Dave 2026-05-12] Page-load animation — staggered fade-in of outer ring, then 3 figures (blue/gold/red L→R), then arc, then left-card lonely figure + caption. Safe pattern: default state visible, .casey-entered re-runs intro. -->
+  <style>
+    @keyframes a7m1FadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes a7m1FadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    #cs-a7m1.casey-entered .a7m1-eyebrow { animation: a7m1FadeIn 0.45s ease-out backwards 0.05s; }
+    #cs-a7m1.casey-entered .a7m1-card.old .a7m1-orb { animation: a7m1FadeIn 0.55s ease-out backwards 0.20s; }
+    #cs-a7m1.casey-entered .a7m1-card.old .a7m1-cap { animation: a7m1FadeUp 0.55s ease-out backwards 0.35s; }
+    #cs-a7m1.casey-entered .a7m1-ring  { animation: a7m1FadeIn 0.6s ease-out backwards 0.18s; transform-origin: center; }
+    #cs-a7m1.casey-entered .a7m1-fig-blue { animation: a7m1FadeIn 0.5s ease-out backwards 0.45s; }
+    #cs-a7m1.casey-entered .a7m1-fig-gold { animation: a7m1FadeIn 0.5s ease-out backwards 0.62s; }
+    #cs-a7m1.casey-entered .a7m1-fig-red  { animation: a7m1FadeIn 0.5s ease-out backwards 0.79s; }
+    #cs-a7m1.casey-entered .a7m1-ground { animation: a7m1FadeIn 0.6s ease-out backwards 0.60s; }
+    #cs-a7m1.casey-entered .a7m1-arc    { animation: a7m1FadeIn 0.75s ease-out backwards 0.98s; }
+  </style>
   <section style="position:relative;width:100%;min-height:100%">
     <div class="a7m1-stage">
       <!-- [Dave 2026-05-10] Headline 'Social media was a sliver. The whole frontier of human connection technology is open.' DELETED — eyebrow + cards carry the message. -->
@@ -16118,40 +16132,40 @@ window.cs1m7Reverse = function() {
                       <stop offset="100%" stop-color="rgba(243,234,216,0)"/>
                     </radialGradient>
                   </defs>
-                  <circle cx="100" cy="108" r="86" fill="url(#a7m1RightGlow)"/>
+                  <circle class="a7m1-ring" cx="100" cy="108" r="86" fill="url(#a7m1RightGlow)"/>
                   <!-- Outer dashed ring (boosted to match left orb's dashed border visibility) -->
-                  <circle cx="100" cy="108" r="86" fill="none" stroke="rgba(184,149,74,0.42)" stroke-width="1" stroke-dasharray="3 4"/>
+                  <circle class="a7m1-ring" cx="100" cy="108" r="86" fill="none" stroke="rgba(184,149,74,0.42)" stroke-width="1" stroke-dasharray="3 4"/>
                   <!-- Connection arc above the three figures -->
-                  <path d="M 60 116 Q 100 70 140 116" stroke="rgba(184,149,74,0.65)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="3 3"/>
+                  <path class="a7m1-arc" d="M 60 116 Q 100 70 140 116" stroke="rgba(184,149,74,0.65)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="3 3"/>
                   <!-- Subtle inner ground line -->
-                  <line x1="44" y1="146" x2="156" y2="146" stroke="rgba(184,149,74,0.38)" stroke-width="1" stroke-linecap="round"/>
+                  <line class="a7m1-ground" x1="44" y1="146" x2="156" y2="146" stroke="rgba(184,149,74,0.38)" stroke-width="1" stroke-linecap="round"/>
                   <!-- Person 1 — blue (left) · proper stick figure: head + torso + arms + legs -->
-                  <g stroke="#5B8FD4" stroke-width="2.6" stroke-linecap="round" fill="none">
+                  <g class="a7m1-fig-blue" stroke="#5B8FD4" stroke-width="2.6" stroke-linecap="round" fill="none">
                     <line x1="62" y1="112" x2="62" y2="128"/><!-- torso -->
                     <line x1="62" y1="116" x2="51" y2="124"/><!-- left arm -->
                     <line x1="62" y1="116" x2="73" y2="124"/><!-- right arm -->
                     <line x1="62" y1="128" x2="54" y2="144"/><!-- left leg -->
                     <line x1="62" y1="128" x2="70" y2="144"/><!-- right leg -->
                   </g>
-                  <circle cx="62" cy="103" r="10" fill="#5B8FD4"/>
+                  <circle class="a7m1-fig-blue" cx="62" cy="103" r="10" fill="#5B8FD4"/>
                   <!-- Person 2 — gold (center, slightly taller as 'host') -->
-                  <g stroke="#b8954a" stroke-width="3" stroke-linecap="round" fill="none">
+                  <g class="a7m1-fig-gold" stroke="#b8954a" stroke-width="3" stroke-linecap="round" fill="none">
                     <line x1="100" y1="105" x2="100" y2="124"/><!-- torso -->
                     <line x1="100" y1="110" x2="87" y2="120"/><!-- left arm -->
                     <line x1="100" y1="110" x2="113" y2="120"/><!-- right arm -->
                     <line x1="100" y1="124" x2="91" y2="144"/><!-- left leg -->
                     <line x1="100" y1="124" x2="109" y2="144"/><!-- right leg -->
                   </g>
-                  <circle cx="100" cy="93" r="12" fill="#b8954a"/>
+                  <circle class="a7m1-fig-gold" cx="100" cy="93" r="12" fill="#b8954a"/>
                   <!-- Person 3 — red (right) -->
-                  <g stroke="#c8462c" stroke-width="2.6" stroke-linecap="round" fill="none">
+                  <g class="a7m1-fig-red" stroke="#c8462c" stroke-width="2.6" stroke-linecap="round" fill="none">
                     <line x1="138" y1="112" x2="138" y2="128"/><!-- torso -->
                     <line x1="138" y1="116" x2="127" y2="124"/><!-- left arm -->
                     <line x1="138" y1="116" x2="149" y2="124"/><!-- right arm -->
                     <line x1="138" y1="128" x2="130" y2="144"/><!-- left leg -->
                     <line x1="138" y1="128" x2="146" y2="144"/><!-- right leg -->
                   </g>
-                  <circle cx="138" cy="103" r="10" fill="#c8462c"/>
+                  <circle class="a7m1-fig-red" cx="138" cy="103" r="10" fill="#c8462c"/>
                 </svg>
               </div>
               <div class="a7m1-flip-hint" style="display:none">
@@ -16185,10 +16199,12 @@ window.cs1m7Reverse = function() {
                   <!-- "host" indicator — tiny gold star above avatar -->
                   <text x="33" y="55" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="5.5" font-weight="800" fill="#1a1612">Saturday · 9:00am</text>
                   <text x="33" y="65" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="3.8" font-style="italic" fill="rgba(26,22,18,0.7)">Krista invited you &amp; 2 more</text>
-                  <!-- [Dave 2026-05-12 LATEST v2] GnR sticker — moved to centered watermark UNDER avatar inside the featured card (previously sat awkwardly at top-right). n is now BLACK (more compact + visible per Dave: 'you could go black color on the n so it's more visible there/compact'). -->
-                  <g transform="translate(22 64)">
-                    <text x="0" y="0" text-anchor="middle" font-family="Fraunces, 'Playfair Display', Georgia, serif" font-size="4.4" font-weight="900" letter-spacing="-0.04em">
-                      <tspan fill="#5B8FD4">G</tspan><tspan font-style="italic" font-size="3.4" fill="#1a1612" dx="0.2">n</tspan><tspan fill="#c8462c" dx="0.2">R</tspan>
+                  <!-- [Dave 2026-05-12] Cramped GnR sticker DELETED — was overlapping the avatar (avatar bottom y=63.8, sticker y=64) and rendered illegibly at font-size 4.4. The persistent GnR mark in the slide's top-right already brands the deck; this redundant sticker hurt more than helped. -->
+                  <!-- top-right wax-seal style GnR mark on the featured card (clean position, no overlap) -->
+                  <g transform="translate(101 50)">
+                    <circle r="4.8" fill="#fbf7ef" stroke="#b8954a" stroke-width="0.5"/>
+                    <text x="0" y="1.6" text-anchor="middle" font-family="Fraunces, 'Playfair Display', Georgia, serif" font-size="4.5" font-weight="800" letter-spacing="-0.04em">
+                      <tspan fill="#5B8FD4">G</tspan><tspan font-style="italic" font-size="3.6" fill="#b8954a" dx="0.15">n</tspan><tspan fill="#c8462c" dx="0.15">R</tspan>
                     </text>
                   </g>
                   <!-- BOTTOM card — faded red (next upcoming) -->
@@ -16762,7 +16778,7 @@ window.cs1m7Reverse = function() {
     <div class="ti-flip-wrap" onclick="cs1bm1Toggle('left');event.stopPropagation()" style="cursor:pointer">
      <div class="ti-flip-inner ti-flip-left">
       <div class="ti-card ti-left" style="background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.22);border-top:4px solid #5B8FD4;border-radius:12px;padding:22px 20px 26px;display:flex;flex-direction:column;align-items:center;gap:12px">
-        <div style="font-family:'Manrope',sans-serif;font-size:0.92rem;font-weight:800;letter-spacing:0.36em;text-transform:uppercase;color:#3a7da3">Technology imbalance</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.92rem;font-weight:800;letter-spacing:0.36em;text-transform:uppercase;color:#3a7da3">Scroll alone.</div>
         <!-- Tech-era stack chart -->
         <div style="width:100%;max-width:540px;margin-top:4px">
           <div class="ti-bar-row ti-tech-row">
@@ -16818,7 +16834,7 @@ window.cs1m7Reverse = function() {
         <div class="ti-bottom" style="display:flex;flex-direction:column;align-items:center;gap:6px;width:100%;margin-top:32px">
           <!-- Headline (verdict) BELOW the chart -->
           <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,2.4vw,1.95rem);font-weight:700;color:#1a1612;line-height:1.15;text-align:center;margin-top:8px">
-            <em style="font-style:italic;font-weight:500;color:#3a7da3">Scroll alone.</em>
+            <em style="font-style:italic;font-weight:500;color:#3a7da3">Technology imbalance</em>
           </div>
           <!-- Invisible spacer matching the right side's sub-eyebrow line height so the icons align exactly [Dave 2026-05-04] -->
           <div style="font-size:.55rem;letter-spacing:.24em;text-transform:uppercase;visibility:hidden;margin-top:4px">&nbsp;</div>
@@ -16866,7 +16882,7 @@ window.cs1m7Reverse = function() {
     <div class="ti-flip-wrap" onclick="cs1bm1Toggle('right');event.stopPropagation()" style="cursor:pointer">
      <div class="ti-flip-inner ti-flip-right">
       <div class="ti-card ti-right" style="background:rgba(200,70,44,0.06);border:1px solid rgba(200,70,44,0.22);border-top:4px solid #c8462c;border-radius:12px;padding:18px 20px 22px;display:flex;flex-direction:column;align-items:center;gap:8px;overflow:hidden">
-        <div style="font-family:'Manrope',sans-serif;font-size:0.92rem;font-weight:800;letter-spacing:0.36em;text-transform:uppercase;color:#c8462c">Values imbalance</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.92rem;font-weight:800;letter-spacing:0.36em;text-transform:uppercase;color:#c8462c">Life&rsquo;s scorecard.</div>
         <!-- Values chart: what culture values (filled bars) → Human Connection EMPTY void at bottom -->
         <div style="width:100%;max-width:560px;margin-top:4px">
           <!-- "Ourselves" leads — the biggest cultural obsession. Sets up the contrast with "Connection with others" below. [Dave 2026-04-30 PM] -->
@@ -16914,7 +16930,7 @@ window.cs1m7Reverse = function() {
         <div class="ti-bottom" style="display:flex;flex-direction:column;align-items:center;gap:6px;width:100%">
           <!-- Values verdict kicker [Dave 2026-05-12]: parallel to Tech side's 'Scroll alone.' Captures the hustle/grind-culture outcome of chasing Me/Money/Work/Fitness/Nutrition without community. -->
           <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,2.4vw,1.95rem);font-weight:700;color:#1a1612;line-height:1.15;text-align:center;margin-top:8px">
-            <em style="font-style:italic;font-weight:500;color:#c8462c">Life&rsquo;s scorecard.</em>
+            <em style="font-style:italic;font-weight:500;color:#c8462c">Values imbalance</em>
           </div>
           <!-- Invisible spacer matching right card's sub-eyebrow line height so the icons align exactly -->
           <div style="font-size:.55rem;letter-spacing:.24em;text-transform:uppercase;visibility:hidden;margin-top:4px">&nbsp;</div>
