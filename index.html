@@ -455,6 +455,15 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
 .casey-slide.active{opacity:1;visibility:visible;pointer-events:all;transition:opacity 0.18s ease, visibility 0s linear 0s}
 /* [Dave 2026-05-08 v5] THIN vertical nav, centered under GnR wordmark. GnR mark is at right:24px width ~52px → center at right:50px. Nav width ~15px → right:42px puts its center at right:50 (lined up with GnR center). */
 .casey-nav{position:fixed;top:90px;right:42px;display:flex;flex-direction:column;align-items:center;gap:2px;z-index:999;background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);padding:6px 3px;border-radius:10px;border:1px solid rgba(26,22,18,0.10);max-height:calc(100vh - 200px);width:fit-content}
+/* [Dave 2026-05-12] PRESENTER MODE — default ON. Hides nav dots for clean live investor pitch.
+   Toggle via Z key OR the cog button at bottom-right. Class lives on <body>. */
+body.presenter-mode .casey-nav{display:none !important}
+/* Presenter cog toggle — bottom-right, sized like speakerNotes/annotation buttons (38px) and offset to sit to their left */
+#presenterToggle{position:fixed;bottom:14px;right:102px;width:34px;height:34px;border-radius:50%;background:rgba(26,22,18,0.22);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.55);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:1000;transition:all 0.25s ease;padding:0;opacity:0.45}
+#presenterToggle:hover{opacity:1;color:rgba(255,255,255,0.95);background:rgba(26,22,18,0.55);transform:scale(1.06)}
+#presenterToggle svg{width:16px;height:16px;display:block}
+body.presenter-mode #presenterToggle{opacity:0.18}
+body.presenter-mode #presenterToggle:hover{opacity:1}
 .casey-dot{width:7px;height:7px;border-radius:50%;background:rgba(26,22,18,0.20);border:none;padding:0;cursor:pointer;transition:all 0.3s ease;flex-shrink:0;position:relative}
 .casey-dot:hover{background:rgba(255,255,255,0.35);transform:scale(1.3)}
 /* [Dave 2026-05-08] Custom tooltip — opens to the LEFT of the dot (away from viewport edge) since the nav strip lives at the right edge. Fixes 'Autonomous Community In...' cutoff issue Dave caught. */
@@ -5564,6 +5573,10 @@ html, body, html body{
      ═══════════════════════════════════════════════════════════════════ -->
 <div class="casey-bar" id="cbar"></div>
 <div class="casey-count" id="ccount"></div>
+<!-- [Dave 2026-05-12] Presenter-mode toggle. Click or press Z to reveal/hide nav dots. Default = hidden for clean live pitch. -->
+<button id="presenterToggle" title="Toggle navigation dots (Z)" aria-label="Toggle navigation dots" onclick="window.togglePresenterMode && window.togglePresenterMode()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+</button>
 
 <!-- Persistent GnR brand mark, visible on every slide. Sits BELOW slide counter (top:12px),
      "READ" badge (top:8px), and appendix pink-dot label (top:26px) — placed at top:54px to
@@ -6001,7 +6014,7 @@ window.cs1m5Reverse = function() {
   <section class="intro-stage">
     <div class="intro-wrap" style="gap:24px">
       <div class="i5-headline">
-        Science proves we&rsquo;re all <em>wired</em> for <span style="color:#5B8FD4;font-weight:800">open</span> <span style="color:#c8462c;font-weight:800">human connection</span>.
+        Science proves we&rsquo;re <em>hardwired</em> for <span style="color:#5B8FD4;font-weight:800">openly giving</span> and <span style="color:#c8462c;font-weight:800">receiving</span>.
       </div>
       <div class="i5-grid">
         <div class="i5-col card-long" onclick="i5Show('long');event.stopPropagation()">
@@ -18712,6 +18725,12 @@ document.getElementById('ccount').textContent = '1 / ' + TOTAL;
 //   D / S / A   → fast scrubber for next/prev main slide (skip reveals)
 // Global altIndex tracks where we are within the current slide's alt row. 0 = primary, 1+ = alts L→R.
 window.altIndex = 0;
+// [Dave 2026-05-12] Presenter mode — default ON (nav dots hidden for clean live pitch).
+// Press Z to toggle, or click the cog button bottom-right. Persists across slides.
+document.body.classList.add('presenter-mode');
+window.togglePresenterMode = function() {
+  document.body.classList.toggle('presenter-mode');
+};
 window.navigateAlt = function(direction) {
   // direction: -1 to go LEFT (further into alts), +1 to go RIGHT (back toward primary)
   if (inAppendix) return false; // alts only apply to main flow
@@ -18749,6 +18768,13 @@ window.navigateAlt = function(direction) {
 document.addEventListener('keydown', e => {
   if (document.querySelector('.node-overlay.open')) {
     if (e.key === 'Escape') closePanel(e);
+    return;
+  }
+  // [Dave 2026-05-12] Z = toggle presenter mode (show/hide nav dots).
+  // Ignore when modifier keys are held so it doesn't collide with browser shortcuts.
+  if ((e.key === 'z' || e.key === 'Z') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+    e.preventDefault();
+    window.togglePresenterMode();
     return;
   }
   // D / S / A — fast scrubber for next/prev main slide
