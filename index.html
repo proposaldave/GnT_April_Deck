@@ -50,11 +50,18 @@
 <!-- Favicon — inline SVG GnR wordmark [Dave 2026-05-09]: prevents browser inheriting cached 4D favicon from sibling proposaldave repos -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23f3ead8' rx='10'/><text x='6' y='44' font-family='Georgia,serif' font-size='30' font-weight='700' fill='%235B8FD4'>G</text><text x='27' y='44' font-family='Georgia,serif' font-size='24' font-style='italic' fill='%23b8954a'>n</text><text x='40' y='44' font-family='Georgia,serif' font-size='30' font-weight='700' fill='%23c8462c'>R</text></svg>">
 <!-- ?export=1 detection: set data-export attribute and neuter requestAnimationFrame so
-     canvas/orb/particle loops don't run during PPTX/PDF capture. Must be FIRST script. -->
+     canvas/orb/particle loops don't run during PPTX/PDF capture. Must be FIRST script.
+     [Dave 2026-05-12] ?pdf=1 is a NEW mode for full-deck PDF print: inherits export-mode goodies AND stacks every main-flow slide (from SLIDE_ORDER) on its own 1920x1080 page. Appendix + alt slides hidden. -->
 <script>
 (function(){
   try {
-    if (location.search.indexOf('export=1') !== -1) {
+    var qs = location.search;
+    if (qs.indexOf('pdf=1') !== -1) {
+      document.documentElement.dataset.pdf = '1';
+      document.documentElement.dataset.export = '1';
+      window.requestAnimationFrame = function(){ return 0; };
+      window.cancelAnimationFrame = function(){};
+    } else if (qs.indexOf('export=1') !== -1) {
       document.documentElement.dataset.export = '1';
       window.requestAnimationFrame = function(){ return 0; };
       window.cancelAnimationFrame = function(){};
@@ -108,6 +115,68 @@ html[data-export="1"] .casey-slide:not(.active) {
   opacity: 0 !important;
   visibility: hidden !important;
 }
+
+/* ============================================================================
+   PDF MODE — `?pdf=1` URL flag. Stacks every main-flow slide on its own 1920x1080
+   page; appendix + alt slides hidden. JS at the bottom of the body marks each
+   slide with .pdf-show or .pdf-hide based on SLIDE_ORDER membership.
+   ============================================================================ */
+html[data-pdf="1"], html[data-pdf="1"] body {
+  width: auto !important;
+  height: auto !important;
+  min-width: 1920px !important;
+  max-width: none !important;
+  overflow: visible !important;
+  transform: none !important;
+  position: static !important;
+}
+/* When PDF mode is on, opt out of the export-mode 1920x1080 viewport lock — pdf mode
+   needs the body to grow to fit all stacked slides. */
+html[data-pdf="1"][data-export="1"], html[data-pdf="1"][data-export="1"] body {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+html[data-pdf="1"] .casey-slide.pdf-hide,
+html[data-pdf="1"] .appendix-slide,
+html[data-pdf="1"] .casey-nav,
+html[data-pdf="1"] .casey-bar,
+html[data-pdf="1"] .casey-count,
+html[data-pdf="1"] #appendixBtn,
+html[data-pdf="1"] #presenterToggle,
+html[data-pdf="1"] #speakerNotesBtn,
+html[data-pdf="1"] #annotationBtn,
+html[data-pdf="1"] #gnr-mark,
+html[data-pdf="1"] #slideHistoryOverlay { display: none !important; }
+html[data-pdf="1"] .casey-slide.pdf-show {
+  position: relative !important;
+  display: block !important;
+  width: 1920px !important;
+  height: 1080px !important;
+  min-width: 1920px !important;
+  min-height: 1080px !important;
+  max-width: 1920px !important;
+  max-height: 1080px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  page-break-after: always !important;
+  break-after: page !important;
+  page-break-inside: avoid !important;
+  break-inside: avoid !important;
+  left: auto !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  margin: 0 !important;
+}
+html[data-pdf="1"] .casey-slide.pdf-show:last-of-type {
+  page-break-after: auto !important;
+  break-after: auto !important;
+}
+@page { size: 1920px 1080px; margin: 0; }
 
 /* ============================================================================
    PDF-EXPORT-ONLY OVERRIDES — Dave 2026-05-04
@@ -17667,6 +17736,22 @@ const SLIDE_ALTS = {
   // cs-brand-V14 ('You get back what matters most. / Like it was meant to be.') REMOVED 2026-05-07 per Dave: 'delete this'. HTML retained as silent backup.
 };
 const REVIEW_POSITION = 0; // Red no longer means "review"; red means rejected/not-main. Use ORANGE_REVIEW_* for consideration candidates.
+
+// [Dave 2026-05-12] PDF MODE BOOTSTRAP — when ?pdf=1 is on, tag each main-flow slide with .pdf-show
+// and every non-main slide with .pdf-hide so the CSS can render the whole deck as one continuous,
+// paginated document. Runs before any navigation init since SLIDE_ORDER is now defined.
+if (document.documentElement.dataset.pdf === '1') {
+  (function(){
+    var mainSet = new Set(SLIDE_ORDER);
+    document.querySelectorAll('.casey-slide').forEach(function(el){
+      if (mainSet.has(el.id)) el.classList.add('pdf-show', 'active', 'casey-entered');
+      else el.classList.add('pdf-hide');
+    });
+    document.querySelectorAll('.appendix-slide').forEach(function(el){
+      el.classList.add('pdf-hide');
+    });
+  })();
+}
 const ORANGE_REVIEW_POSITIONS = [];
 const ORANGE_REVIEW_ALTS = ['cs-merge3'];
 // LOCKED_POSITIONS: emptied per Dave 2026-05-07 — green dots removed from nav, red review dot kept.
