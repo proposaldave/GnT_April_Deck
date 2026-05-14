@@ -10607,7 +10607,7 @@ window.cs1m7Reverse = function() {
   <section class="vd-stage">
     <div class="vd-wrap">
       <div class="vd-name">Dave Velardo &middot; Founder &amp; CEO</div>
-      <div class="vd-hero">Three strengths &rarr; <em>do-able mission.</em></div>
+      <div class="vd-hero">Three strengths &darr; <em>do-able mission.</em></div>
 
       <!-- 3-pillar row with circular icon badges [Dave 2026-05-12 LATEST · ChatGPT-style] -->
       <div class="v5-pillars">
@@ -14434,7 +14434,20 @@ window.cs1m7Reverse = function() {
   #cs-fv6 .fv-c3 {border-color:rgba(184,149,74,.45)} #cs-fv6 .fv-c3 .fv-ico{background:rgba(184,149,74,.12)} #cs-fv6 .fv-c3 .fv-ico svg{stroke:#b8954a} #cs-fv6 .fv-c3 .fv-verb{color:#b8954a}
   /* AUTOMATE — teal brightened from muddy #4c8c79 to cleaner brand mint #2a9d8f. */
   #cs-fv6 .fv-c4 .fv-ico{background:rgba(42,157,143,.12)} #cs-fv6 .fv-c4 .fv-ico svg{stroke:#2a9d8f} #cs-fv6 .fv-c4 .fv-verb{color:#2a9d8f} #cs-fv6 .fv-c4 {border-color:rgba(42,157,143,.40)}
-  #cs-fv6 .fv-c5 {background:rgba(22,134,81,.05)} #cs-fv6 .fv-c5 .fv-ico{background:rgba(22,134,81,.10)} #cs-fv6 .fv-c5 .fv-ico svg{stroke:#168651} #cs-fv6 .fv-c5 .fv-verb{color:#168651}
+  /* INCENTIVIZE — white bg like the rest of the row [Dave 2026-05-14]; green tint dropped. */
+  #cs-fv6 .fv-c5 {border-color:rgba(22,134,81,.42)} #cs-fv6 .fv-c5 .fv-ico{background:rgba(22,134,81,.10)} #cs-fv6 .fv-c5 .fv-ico svg{stroke:#168651} #cs-fv6 .fv-c5 .fv-verb{color:#168651}
+  /* HOVER — gentle lift + colored ring on every verb card [Dave 2026-05-14]. */
+  #cs-fv6 .fv-card{transition:transform .22s cubic-bezier(.22,1,.36,1), box-shadow .22s ease, border-color .22s ease}
+  #cs-fv6 .fv-card:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 18px 38px rgba(26,22,18,.14);cursor:default}
+  #cs-fv6 .fv-c0:hover{border-color:rgba(26,53,84,.85);box-shadow:0 18px 38px rgba(26,53,84,.22)}
+  #cs-fv6 .fv-c1:hover{border-color:rgba(122,74,140,.85);box-shadow:0 18px 38px rgba(122,74,140,.20)}
+  #cs-fv6 .fv-c2:hover{border-color:rgba(91,143,212,.95);box-shadow:0 18px 38px rgba(91,143,212,.22)}
+  #cs-fv6 .fv-c-mkt:hover{border-color:rgba(196,75,143,.85);box-shadow:0 18px 38px rgba(196,75,143,.22)}
+  #cs-fv6 .fv-c3:hover{border-color:rgba(184,149,74,.90);box-shadow:0 18px 38px rgba(184,149,74,.22)}
+  #cs-fv6 .fv-c-recip:hover{border-color:rgba(224,123,58,.90);box-shadow:0 18px 38px rgba(224,123,58,.22)}
+  #cs-fv6 .fv-c5:hover{border-color:rgba(22,134,81,.85);box-shadow:0 18px 38px rgba(22,134,81,.22)}
+  #cs-fv6 .fv-c4:hover{border-color:rgba(42,157,143,.85);box-shadow:0 18px 38px rgba(42,157,143,.22)}
+  #cs-fv6 .fv-c6:hover{border-color:rgba(200,70,44,.95);box-shadow:0 18px 38px rgba(200,70,44,.26)}
   /* RECIPROCATE — shifted from amber #d68d3a (too close to Coordinate gold) to a warmer orange #e07b3a, clearer hue separation. */
   #cs-fv6 .fv-c-recip .fv-ico{background:rgba(224,123,58,.14)} #cs-fv6 .fv-c-recip .fv-ico svg{stroke:#e07b3a} #cs-fv6 .fv-c-recip .fv-verb{color:#e07b3a} #cs-fv6 .fv-c-recip {border-color:rgba(224,123,58,.45)}
   /* ABUNDANCE — the destination card, visibly larger + warmer */
@@ -14491,7 +14504,7 @@ window.cs1m7Reverse = function() {
   }
 </style>
 <div class="casey-slide ds-focus" id="cs-fv6">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Abundance becomes programmable</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Abundance &rarr; programmable</div>
   <section class="fv-stage">
     <!-- Connector arc with blue/red endpoints (mirrors brand mark) -->
     <svg class="fv-arc" width="80" height="32" viewBox="0 0 80 32" fill="none">
@@ -16110,13 +16123,13 @@ window.cs1m7Reverse = function() {
         <circle cx="4" cy="4" r="1.9" fill="#2a8a4f"/>
       </g>
     </g>
-    <!-- LEFT: Compounding Community Value (coral) — eyebrow font dropped to 11.5 so longer label fits same rect [Dave 2026-05-03] -->
+    <!-- LEFT: Compounding Community Value (coral) — [Dave 2026-05-14] rect widened 276→300 + eyebrow restored to 13/2.2 to match the other 3 nodes (was visibly smaller). Badge shifted further left to clear the wider rect. -->
     <g class="fw1-anim fw1-n4" transform="translate(100, 300)">
-      <rect x="-138" y="-30" width="276" height="60" rx="30" fill="rgba(200,70,44,0.06)" stroke="#c8462c" stroke-width="1.7"/>
-      <text x="0" y="-6" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" font-weight="800" letter-spacing="2.0" fill="#c8462c">COMPOUNDING COMMUNITY VALUE</text>
+      <rect x="-150" y="-30" width="300" height="60" rx="30" fill="rgba(200,70,44,0.06)" stroke="#c8462c" stroke-width="1.7"/>
+      <text x="0" y="-6" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.2" fill="#c8462c">COMPOUNDING COMMUNITY VALUE</text>
       <text x="0" y="15" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">engagement · player growth · trusted reciprocity</text>
       <!-- Upward growth-curve badge to the LEFT of the rect -->
-      <g transform="translate(-170, 0)">
+      <g transform="translate(-184, 0)">
         <circle cx="0" cy="0" r="14" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.5"/>
         <path d="M -8 6 L -3 1 L 2 4 L 8 -5" fill="none" stroke="#c8462c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M 3 -5 L 8 -5 L 8 0" fill="none" stroke="#c8462c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
