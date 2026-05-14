@@ -10656,8 +10656,9 @@ window.cs1m7Reverse = function() {
   #cs-18-vd4 .v5-pillar[data-flipped="1"] .v5-flip-inner { transform:rotateY(180deg) }
   #cs-18-vd4 .v5-flip-front,
   #cs-18-vd4 .v5-flip-back { position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center }
+  /* [Dave 2026-05-14 PM] Better centering — back face now centers content vertically (was flex-start). Combined with horizontal align-items:center, both faces fully center their content in the card. */
   #cs-18-vd4 .v5-flip-front { justify-content:center }
-  #cs-18-vd4 .v5-flip-back { transform:rotateY(180deg);justify-content:flex-start;padding-top:0 }
+  #cs-18-vd4 .v5-flip-back { transform:rotateY(180deg);justify-content:center;padding:20px 0 }
   #cs-18-vd4 .v5-pillar .v5-body-wrap { display:flex;flex-direction:column;align-items:center;gap:8px;flex:1; }
   /* Circular icon badge */
   #cs-18-vd4 .v5-badge { width:118px;height:118px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 36px rgba(26,22,18,0.10); }
@@ -18630,6 +18631,8 @@ const SLIDE_ORDER = [
   'cs-3',           // Pickleball 24 unique social experiences per week — fastest-growing, highest-velocity, densest social-signal community
   // [Dave 2026-05-14 PM v3] cs-magnetic inserted here per Dave 'move the social pull slide right after the 24 unique social experiences per week slide'.
   'cs-magnetic',    // A rating can balance a match. A person can fill a room. — twin courts (rating-only vs marketplace roles).
+  // [Dave 2026-05-14 PM v4] cs-samecourt MOVED to right after cs-magnetic per Dave. Flow now: social density → social pull problem → flip the incentives.
+  'cs-samecourt',  // Flip the incentive. Unleash the community. — paradigm-proof beat.
   // Duplicate cs-4 at old slot 9 REMOVED 2026-05-03 PM — cs-4 now lives at slot 5 only
   'cs-11e',
   // cs-dupr (Founder's Bet) MERGED INTO cs-18 founder slide per Dave 2026-05-06 PM v2 — the DUPR-rejection IS the founder story; standalone cs-dupr div retained in HTML as backup but not in main flow.
