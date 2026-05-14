@@ -6274,7 +6274,165 @@ window.cs1m5Reverse = function() {
   html[data-export="1"] #cs-1m8 .m8-caption, html[data-export="1"] #cs-1m8 .m8-network, html[data-export="1"] #cs-1m8 .m8-cap-right { opacity:1 !important;visibility:visible !important;transform:none !important;max-height:none !important }
   html[data-export="1"] #cs-1m8 .m8-hint { display:none !important }
 </style>
-<div class="casey-slide ds-measure active" id="cs-1m8" data-stage="0" onclick="this.dataset.stage = Math.min(3, (parseInt(this.dataset.stage)||0) + 1)" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-intro6 · NEW SLIDE 1 [Dave 2026-05-14]
+     Cinematic science-proof opener that sets up the deck's whole premise BEFORE
+     the brand wordmark. Per Dave: 'take the attached image and figure out how to
+     leverage it to create a new slide just before the title slide for our new
+     slide 1'. Hero line states the #1 predictor of a fulfilling life; bottom
+     band carries the 4-field convergence (Neuroscience · Public Health ·
+     Epidemiology · Longitudinal). Background is a stylized golden-hour scene
+     (sunset gradient + 5 figure silhouettes from behind looking at a city) — no
+     external image dependency, scales crisp at any viewport.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<style>
+  #cs-intro6{overflow:hidden}
+  #cs-intro6 .i6-stage{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end}
+  /* Background SVG fills the slide */
+  #cs-intro6 .i6-art{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+  #cs-intro6 .i6-art svg{width:100%;height:100%;display:block}
+  /* Soft warm-light gradient overlay anchored to the LEFT so the hero text reads on a calm cream wash */
+  #cs-intro6 .i6-art::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,247,239,0.96) 0%,rgba(251,247,239,0.86) 22%,rgba(251,247,239,0.55) 38%,rgba(251,247,239,0.22) 52%,rgba(251,247,239,0) 68%);pointer-events:none}
+  /* Hero block — left half, vertically centered above the band */
+  #cs-intro6 .i6-hero-block{position:absolute;top:14%;left:6%;max-width:46%;z-index:5;display:flex;flex-direction:column;gap:18px}
+  #cs-intro6 .i6-eye{font-family:'Manrope',sans-serif;font-size:clamp(.6rem,.85vw,.78rem);font-weight:800;letter-spacing:.34em;text-transform:uppercase;color:rgba(184,149,74,0.95)}
+  #cs-intro6 .i6-hero{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.1rem,3.4vw,3.4rem);font-weight:700;color:#1a1612;line-height:1.13;letter-spacing:-0.022em}
+  #cs-intro6 .i6-hero .i6-num{font-style:normal;font-weight:800;color:#b8954a}
+  #cs-intro6 .i6-hero .i6-action{font-style:italic;font-weight:600;color:#c8462c;display:block}
+  #cs-intro6 .i6-divider{width:96px;height:1.4px;background:linear-gradient(90deg,rgba(184,149,74,0.85),rgba(184,149,74,0));margin-top:6px}
+  #cs-intro6 .i6-sub{font-family:'Fraunces',Georgia,serif;font-size:clamp(.95rem,1.2vw,1.2rem);font-weight:500;font-style:italic;color:rgba(26,22,18,0.72);line-height:1.4;max-width:30ch}
+  /* Bottom science band — 4 columns on a warm-cream card */
+  #cs-intro6 .i6-band{position:relative;z-index:5;margin:0 5% 28px;padding:26px 36px 28px;background:rgba(251,247,239,0.96);border:1px solid rgba(184,149,74,0.32);border-radius:14px;box-shadow:0 20px 60px rgba(26,22,18,0.16),0 6px 14px rgba(26,22,18,0.06);display:grid;grid-template-columns:repeat(4,1fr);gap:8px;backdrop-filter:blur(2px)}
+  #cs-intro6 .i6-col{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:0 14px;position:relative}
+  #cs-intro6 .i6-col + .i6-col::before{content:"";position:absolute;left:0;top:14%;bottom:14%;width:1px;background:linear-gradient(to bottom, transparent, rgba(184,149,74,0.32) 40%, rgba(184,149,74,0.32) 60%, transparent)}
+  #cs-intro6 .i6-ico{width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:#b8954a;opacity:0.9}
+  #cs-intro6 .i6-ico svg{width:32px;height:32px;display:block;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  #cs-intro6 .i6-field{font-family:'Manrope',sans-serif;font-size:clamp(.5rem,.7vw,.62rem);font-weight:800;letter-spacing:.30em;text-transform:uppercase;color:rgba(184,149,74,0.95)}
+  #cs-intro6 .i6-claim{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.05rem,1.3vw,1.25rem);font-weight:700;color:#1a1612;line-height:1.18;letter-spacing:-0.01em;margin-top:2px}
+  #cs-intro6 .i6-sub-claim{font-family:'Manrope',sans-serif;font-size:clamp(.5rem,.65vw,.58rem);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(200,70,44,0.78);margin-top:2px}
+  /* Entrance animations on .casey-entered */
+  #cs-intro6 .i6-hero-block, #cs-intro6 .i6-band, #cs-intro6 .i6-silhouettes, #cs-intro6 .i6-citylights{opacity:0;transition:opacity 0.85s cubic-bezier(.22,1,.36,1), transform 0.85s cubic-bezier(.22,1,.36,1)}
+  #cs-intro6 .i6-hero-block{transform:translateY(14px)}
+  #cs-intro6 .i6-band{transform:translateY(20px)}
+  #cs-intro6.casey-entered .i6-citylights{opacity:1;transition-delay:.15s}
+  #cs-intro6.casey-entered .i6-silhouettes{opacity:1;transition-delay:.30s}
+  #cs-intro6.casey-entered .i6-hero-block{opacity:1;transform:none;transition-delay:.45s}
+  #cs-intro6.casey-entered .i6-band{opacity:1;transform:none;transition-delay:.85s}
+  html[data-export="1"] #cs-intro6 .i6-hero-block,
+  html[data-export="1"] #cs-intro6 .i6-band,
+  html[data-export="1"] #cs-intro6 .i6-silhouettes,
+  html[data-export="1"] #cs-intro6 .i6-citylights{opacity:1 !important;transform:none !important;transition:none !important}
+  /* Small-viewport adjustments */
+  @media (max-width: 980px){
+    #cs-intro6 .i6-hero-block{max-width:88%;top:8%}
+    #cs-intro6 .i6-band{grid-template-columns:repeat(2,1fr);row-gap:18px}
+    #cs-intro6 .i6-col + .i6-col::before{display:none}
+  }
+</style>
+<div class="casey-slide ds-focus active" id="cs-intro6" style="background:linear-gradient(105deg, #fbf7ef 0%, #f5e9d2 42%, #e8b277 70%, #c87f4a 100%) !important;">
+  <section class="i6-stage">
+
+    <!-- Background art: distant city lights + 5 figure silhouettes looking out -->
+    <div class="i6-art">
+      <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="i6Glow" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0" stop-color="rgba(26,22,18,0.32)"/>
+            <stop offset="0.55" stop-color="rgba(26,22,18,0.06)"/>
+            <stop offset="1" stop-color="rgba(26,22,18,0)"/>
+          </linearGradient>
+          <radialGradient id="i6Sun" cx="0.78" cy="0.46" r="0.42">
+            <stop offset="0" stop-color="rgba(255,213,140,0.55)"/>
+            <stop offset="0.45" stop-color="rgba(232,178,119,0.18)"/>
+            <stop offset="1" stop-color="rgba(232,178,119,0)"/>
+          </radialGradient>
+        </defs>
+        <!-- soft sun bloom -->
+        <rect width="1920" height="1080" fill="url(#i6Sun)"/>
+        <!-- horizon haze -->
+        <rect x="0" y="620" width="1920" height="200" fill="rgba(200,127,74,0.18)"/>
+        <!-- ground vignette -->
+        <rect x="0" y="650" width="1920" height="430" fill="url(#i6Glow)"/>
+
+        <!-- City lights — twinkling dots along horizon, denser on the right where the sun sits -->
+        <g class="i6-citylights" fill="#fff5dc">
+          <circle cx="1080" cy="676" r="1.4" opacity="0.7"/><circle cx="1112" cy="672" r="1.2" opacity="0.6"/><circle cx="1148" cy="680" r="1.6" opacity="0.75"/>
+          <circle cx="1184" cy="674" r="1.3" opacity="0.65"/><circle cx="1216" cy="678" r="1.6" opacity="0.7"/><circle cx="1252" cy="671" r="1.5" opacity="0.78"/>
+          <circle cx="1290" cy="676" r="1.3" opacity="0.55"/><circle cx="1326" cy="682" r="1.7" opacity="0.85"/><circle cx="1364" cy="678" r="1.4" opacity="0.7"/>
+          <circle cx="1402" cy="673" r="1.6" opacity="0.8"/><circle cx="1438" cy="680" r="1.3" opacity="0.62"/><circle cx="1476" cy="676" r="1.5" opacity="0.72"/>
+          <circle cx="1514" cy="679" r="1.7" opacity="0.85"/><circle cx="1552" cy="674" r="1.4" opacity="0.65"/><circle cx="1590" cy="682" r="1.6" opacity="0.8"/>
+          <circle cx="1628" cy="678" r="1.3" opacity="0.6"/><circle cx="1666" cy="675" r="1.5" opacity="0.75"/><circle cx="1704" cy="681" r="1.6" opacity="0.8"/>
+          <circle cx="1742" cy="676" r="1.3" opacity="0.62"/><circle cx="1780" cy="679" r="1.5" opacity="0.7"/><circle cx="1818" cy="674" r="1.4" opacity="0.68"/>
+          <!-- second band, slightly lower -->
+          <circle cx="1100" cy="692" r="1.2" opacity="0.5"/><circle cx="1145" cy="697" r="1.4" opacity="0.62"/><circle cx="1198" cy="694" r="1.2" opacity="0.55"/>
+          <circle cx="1244" cy="699" r="1.5" opacity="0.68"/><circle cx="1296" cy="694" r="1.3" opacity="0.58"/><circle cx="1352" cy="697" r="1.4" opacity="0.6"/>
+          <circle cx="1410" cy="692" r="1.5" opacity="0.7"/><circle cx="1466" cy="697" r="1.3" opacity="0.6"/><circle cx="1522" cy="694" r="1.4" opacity="0.62"/>
+          <circle cx="1578" cy="699" r="1.5" opacity="0.7"/><circle cx="1632" cy="692" r="1.3" opacity="0.55"/><circle cx="1686" cy="696" r="1.4" opacity="0.65"/>
+          <circle cx="1742" cy="699" r="1.2" opacity="0.5"/><circle cx="1796" cy="694" r="1.5" opacity="0.7"/>
+        </g>
+
+        <!-- 5 figure silhouettes from behind — heads + shoulders, anchored to the ground. Slightly overlapping. Heights vary for realism. -->
+        <g class="i6-silhouettes" fill="#1a1410">
+          <!-- Figure 1 (leftmost) -->
+          <ellipse cx="1080" cy="640" rx="34" ry="42"/>
+          <path d="M 1010 1080 C 1010 880 1010 770 1040 740 C 1055 728 1080 720 1080 720 C 1080 720 1105 728 1120 740 C 1150 770 1150 880 1150 1080 Z"/>
+          <!-- Figure 2 -->
+          <ellipse cx="1190" cy="625" rx="36" ry="44"/>
+          <path d="M 1118 1080 C 1118 870 1118 760 1148 728 C 1166 716 1190 706 1190 706 C 1190 706 1214 716 1232 728 C 1262 760 1262 870 1262 1080 Z"/>
+          <!-- Figure 3 (center, slightly taller — the anchor) -->
+          <ellipse cx="1310" cy="615" rx="38" ry="46"/>
+          <path d="M 1234 1080 C 1234 860 1234 750 1266 720 C 1284 706 1310 696 1310 696 C 1310 696 1336 706 1354 720 C 1386 750 1386 860 1386 1080 Z"/>
+          <!-- Figure 4 -->
+          <ellipse cx="1430" cy="625" rx="36" ry="44"/>
+          <path d="M 1358 1080 C 1358 870 1358 760 1388 728 C 1406 716 1430 706 1430 706 C 1430 706 1454 716 1472 728 C 1502 760 1502 870 1502 1080 Z"/>
+          <!-- Figure 5 (rightmost) -->
+          <ellipse cx="1540" cy="635" rx="34" ry="42"/>
+          <path d="M 1470 1080 C 1470 880 1470 770 1500 740 C 1515 728 1540 720 1540 720 C 1540 720 1565 728 1580 740 C 1610 770 1610 880 1610 1080 Z"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Hero text block, anchored top-left -->
+    <div class="i6-hero-block">
+      <div class="i6-eye">An incredible truth</div>
+      <div class="i6-hero">
+        The <span class="i6-num">#1 predictor</span> of a fulfilling life:
+        <span class="i6-action">openly giving and receiving</span> human connection.
+      </div>
+      <div class="i6-divider"></div>
+      <div class="i6-sub">Four independent fields converge on one truth.</div>
+    </div>
+
+    <!-- Science band — 4 fields across the bottom -->
+    <div class="i6-band">
+      <div class="i6-col">
+        <div class="i6-ico"><svg viewBox="0 0 24 24"><path d="M9 4c-2 0-3.6 1.5-3.6 3.4 0 .8.3 1.6.7 2.1-.7.5-1.1 1.4-1.1 2.3 0 1 .5 1.9 1.3 2.4-.4.5-.7 1.2-.7 2 0 1.9 1.6 3.4 3.6 3.4 1.1 0 2.1-.5 2.8-1.3.6.8 1.7 1.3 2.8 1.3 2 0 3.6-1.5 3.6-3.4 0-.8-.3-1.5-.7-2 .8-.5 1.3-1.4 1.3-2.4 0-.9-.4-1.8-1.1-2.3.4-.5.7-1.3.7-2.1C18.6 5.5 17 4 15 4c-1.1 0-2.2.5-2.8 1.3C11.5 4.5 10.4 4 9.4 4z"/><path d="M12 8v8"/></svg></div>
+        <div class="i6-field">Neuroscience</div>
+        <div class="i6-claim">Reward + oxytocin</div>
+      </div>
+      <div class="i6-col">
+        <div class="i6-ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.5-7 11-7 11"/></svg></div>
+        <div class="i6-field">Public Health</div>
+        <div class="i6-claim">Stronger social connection</div>
+        <div class="i6-sub-claim">Lower mortality risk</div>
+      </div>
+      <div class="i6-col">
+        <div class="i6-ico"><svg viewBox="0 0 24 24"><path d="M3 12h3l3-7 4 14 3-7h5"/></svg></div>
+        <div class="i6-field">Epidemiology</div>
+        <div class="i6-claim">+50% survival</div>
+      </div>
+      <div class="i6-col">
+        <div class="i6-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div class="i6-field">Longitudinal</div>
+        <div class="i6-claim">85 years</div>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+
+<div class="casey-slide ds-measure" id="cs-1m8" data-stage="0" onclick="this.dataset.stage = Math.min(3, (parseInt(this.dataset.stage)||0) + 1)" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
   <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
   <!-- Eyebrow [Dave 2026-05-12]: 'Brand Promise' → 'Brand' per Dave. -->
@@ -17571,8 +17729,10 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-10 PM] cs-1m9 PROMOTED to slot 1 PRIMARY · 3-stage version: page-load=wordmark only → stage 1='Who Gives' (Twitter-style talk setup) → stage 2=split + 3 captions. cs-1m5 demoted to gold-dot alt for comparison.
   // [Dave 2026-05-11] cs-1m8 PROMOTED to slot 1 PRIMARY (replacing cs-1m9). Opens with HUMAN-TRUTH beat: 'We feel our best when we have an open heart toward others — free, generous, spontaneous.' Stage 1 reveals truth → stage 2 splits wordmark + caption row + Network line. cs-1m9 demoted to RED-DOT alt for review.
   // [Dave 2026-05-11 LATE] cs-intro1 INSERTED at slot 1 as new PRIMARY — 4 intro variants built (cs-intro1/2/3/4) for the '#1 predictor of fulfilling life is OPEN giving + receiving' science-proven premise. cs-1m8 (title slide) demoted to slot 2. All other slots +1. cs-intro2/3/4 are orange-dot review alts so Dave can pick the winner.
-  // [Dave 2026-05-12 LATEST] cs-intro5 MOVED to first appendix slot per Dave: 'current slide 1, move it to be the first appendix slide'. Science proof relocated to Values-imbalance card on cs-1bm1. cs-1m8 (former slot 2) is now the primary slot-1 title slide.
-  'cs-1m8',   //  1 PRIMARY TITLE · 3-stage 'open heart' human-truth opener → wordmark split → captions
+  // [Dave 2026-05-12 LATEST] cs-intro5 MOVED to first appendix slot per Dave: 'current slide 1, move it to be the first appendix slide'.
+  // [Dave 2026-05-14] cs-intro6 INSERTED as new slot 1 per Dave: 'take the attached image and figure out how to leverage it to create a new slide just before the title slide for our new slide 1'. Cinematic science-proof opener (4-field convergence) lands BEFORE the wordmark title slide. All other main-flow slots shift +1.
+  'cs-intro6',  //  1 NEW PRIMARY · Science-proof opener · #1 predictor + 4-field band (Neuroscience · Public Health · Epidemiology · Longitudinal)
+  'cs-1m8',   //  2 TITLE · 3-stage 'open heart' human-truth opener → wordmark split → captions
   // 'cs-1m5' / 'cs-1m9' demoted to alts (see SLIDE_ALTS[1])
   // [Dave 2026-05-10 PM] cs-a7m1 PROMOTED to slot 2 (was gold-alt at slot 4). Side-by-side OLD-vs-NEW (loneliness card LEFT + flippable Give n Receive vision card RIGHT). cs-1 (the old slot 2 title) demoted to RED-DOT alt at slot 2 — see SLIDE_ALTS below.
   'cs-a7m1',  //  2 NEW SLOT 2 · Old vs new — 'Social media is an extremely narrow view' (left) ↔ flippable Give n Receive vision (right)
@@ -17699,17 +17859,19 @@ const SLIDE_ALTS = {
   //   cs-1m7 = split-wordmark animation alt [DELETED 2026-05-09 per Dave]
   //   cs-1m8 = NEW [Dave 2026-05-09 EVENING] · adds a HUMAN-TRUTH opening beat before the product reveal. Per Dave: 'we feel our best when we're generous to others... incredible truth that we feel our best when we have an open heart, being generous, giving'. Stage 1 reveals 'We feel our best when we give. Science says so.' before stage 2 splits the wordmark. RED DOT review — easy to revert by removing from this array (cs-1m5 stays primary).
   // [Dave 2026-05-10 PM] cs-1m5 added as gold-alt (was main flow primary; demoted when cs-1m9 took over slot 1). cs-1m8 retained as red-dot review candidate.
-  // [Dave 2026-05-12 LATEST] cs-intro5 moved to first appendix slot → all alt keys shifted -1 (every main slot dropped by 1 when cs-intro5 left).
-  // [Dave 2026-05-11] cs-1m8 (title) is now slot 1 (was 2). cs-1m5 + cs-1m9 both DELETED 2026-05-11 LATE. No alts.
+  // [Dave 2026-05-14] cs-intro6 INSERTED at slot 1 → all alt keys shifted +1 (every main slot bumped by 1 when cs-intro6 was added before cs-1m8).
+  // Slot 1 (cs-intro6 — new science-proof opener) has no alts.
   1: [],
-  // Slot 2 alts (cs-a7m1 primary; was slot 3) — keys shifted 3 → 2.
-  2: ['cs-1'],
-  // [Dave 2026-05-12 LATEST] cs-2c-old DELETED per Dave: 'delete this slide'. Old text-based community design removed from alt slot. (Was slot 5; now slot 4.)
-  4: [],
-  // Slot 11 (cs-19; was slot 12).
-  11: [],
-  // [Dave 2026-05-12] cs-merge1 REMOVED. cs-merge3 retained as historical drift alt. (Was slot 13; now slot 12.)
-  12: ['cs-merge3'],
+  // Slot 2 alts (cs-1m8 title) — no alts.
+  2: [],
+  // Slot 3 alts (cs-a7m1 primary; was slot 2) — keys shifted 2 → 3.
+  3: ['cs-1'],
+  // Slot 5 alts (cs-2c; was slot 4).
+  5: [],
+  // Slot 12 (cs-19; was slot 11).
+  12: [],
+  // cs-samecourt alts — cs-merge3 kept as drift alt. (Was slot 12; now slot 13.)
+  13: ['cs-merge3'],
   // [Dave 2026-05-08] cs-pn1 DELETED from slot 14 alts per Dave: 'delete this'. HTML retained as silent backup, no nav dot.
   // [Dave 2026-05-09] BUG FIX: alt keys shifted +1 to match SLIDE_ORDER positions after cs-1m5 (slot 1) + cs-1 (slot 2) insertion bumped everything down.
   //   - cs-18 (Dave Velardo) was at slot 16 → now slot 17. Wheelhouse alts (cs-18-alt1, cs-18-alt3) moved from key 16 → 17.
@@ -17727,13 +17889,13 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-11 LATE] Wheelhouse alts. Key shifted 13 → 14 after cs-intro1 inserted at slot 1.
   // [Dave 2026-05-12] cs-18-vd4 promoted to PRIMARY → removed from alts. cs-18 (former primary), cs-lab, cs-18-vd1, cs-18-vd3 are all RED-DOT alts per Dave: 'put the dots to the left of it as red text'.
   // [Dave 2026-05-12 LATEST] cs-18-vd3 DELETED per Dave: 'delete this' (the 'Two strengths' alt). cs-18-vd1 retained as red-dot alt.
-  // [Dave 2026-05-12 EVENING] Wheelhouse alts now attach to slot 15 — cs-fw1 was moved up to slot 14 (right after cs-pbfirst) per Dave, so cs-18-vd4 (the wheelhouse primary) is now at slot 15. (Also corrects an earlier off-by-one — they were at key 13 when cs-18-vd4 was actually at slot 14, making them visually attach to cs-pbfirst's dot instead of the wheelhouse's.)
-  15: ['cs-18-vd5', 'cs-18', 'cs-lab', 'cs-18-vd1'],
-  // Slot 17 (was 18).
-  17: [],
+  // [Dave 2026-05-14] Wheelhouse alts now at slot 16 (cs-18-vd4 was 15, now 16 after cs-intro6 inserted at slot 1).
+  16: ['cs-18-vd5', 'cs-18', 'cs-lab', 'cs-18-vd1'],
+  // Slot 18 (cs-wedge1; was 17).
+  18: [],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference. [Dave 2026-05-11] Key shifted 20→19 after cs-a7 moved to appendix.
-  // Slot 19 (cs-16) — cs-16old alt. (Was slot 20.)
-  19: ['cs-16old'],
+  // Slot 20 (cs-16) — cs-16old alt. (Was 19.)
+  20: ['cs-16old'],
   // [Dave 2026-05-12 LATEST] cs-prom-merge DELETED + cs-prom DELETED per Dave (consecutive 'delete this slide' on both). The promise content now lives inside cs-brand-V8 captions, so cs-prom and cs-prom-merge are both redundant.
   // cs-brand-V1 MOVED to last appendix slide per Dave 2026-05-07 PM ('move this slide to the last slide in the appendix'). Slot 12 alts now EMPTY — V8 is the lone brand-opportunity slide in main flow; brand variants V9/V15/V1 all live in appendix end.
   // cs-brand-V5 ('WHEN you're free, generous, spontaneously yourself / THEN your community rises with you / Aliveness spreads. Reciprocity compounds.') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
