@@ -23415,13 +23415,11 @@ function downloadAllAnnotations() {
   link.download = 'gnr-annotations.json';
   link.style.display = 'none';
   document.body.appendChild(link);
-  link.addEventListener('click', () => {
-    setTimeout(() => {
-      URL.revokeObjectURL(url);
-      link.remove();
-    }, 0);
-  }, { once: true });
   link.click();
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+    link.remove();
+  }, 1500);
   document.getElementById('annotationStatus').textContent = 'Downloaded JSON.';
 }
 
