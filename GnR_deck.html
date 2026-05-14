@@ -13640,7 +13640,7 @@ window.cs1m7Reverse = function() {
   <section class="mg-stage">
 
     <!-- HERO -->
-    <h1 class="mg-hero">A <span class="muted">rating</span> can balance a match.<br>A <em>person</em> can fill a room.</h1>
+    <h1 class="mg-hero">A <span class="muted">rating</span> can balance a match, maybe.<br>A <em>person</em> can fill a room.</h1>
 
     <!-- TWIN-COURT COMPARISON -->
     <div class="mg-compare">
@@ -13662,17 +13662,19 @@ window.cs1m7Reverse = function() {
 
           <!-- 4 anonymous players: grey dots + rating labels (no personality, no roles) -->
           <g font-family="Manrope,sans-serif" font-size="9" font-weight="700" fill="rgba(26,22,18,0.62)" text-anchor="middle">
+            <!-- [Dave 2026-05-14 PM] Bottom-right player REMOVED — empty spot on the court visualizes the rating-only event's filling problem (3 players, can't find a 4th). The dashed outline marks where a player WOULD be. -->
             <circle cx="48" cy="45" r="7" fill="rgba(26,22,18,0.36)"/>
             <text x="48" y="32">3.5</text>
             <circle cx="48" cy="85" r="7" fill="rgba(26,22,18,0.36)"/>
             <text x="48" y="106">3.5</text>
             <circle cx="172" cy="45" r="7" fill="rgba(26,22,18,0.36)"/>
             <text x="172" y="32">3.5</text>
-            <circle cx="172" cy="85" r="7" fill="rgba(26,22,18,0.36)"/>
-            <text x="172" y="106">3.5</text>
+            <!-- Empty spot — dashed circle outline + faint '?' to signal unfilled -->
+            <circle cx="172" cy="85" r="7" fill="none" stroke="rgba(26,22,18,0.40)" stroke-width="1" stroke-dasharray="2 1.6"/>
+            <text x="172" y="89" font-family="Manrope,sans-serif" font-size="8" font-weight="700" fill="rgba(26,22,18,0.45)" text-anchor="middle">?</text>
           </g>
         </svg>
-        <div class="mg-outcome">Balanced, maybe. <em>Boring?</em> <em>Filled?</em></div>
+        <div class="mg-outcome"><em>Balanced?</em> <em>Boring?</em> <em>Filled?</em></div>
       </div>
 
       <!-- VS DIVIDER -->
