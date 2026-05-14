@@ -6615,12 +6615,7 @@ window.cs1m5Reverse = function() {
             <stop offset="0" stop-color="rgba(200,70,44,0.16)"/>
             <stop offset="1" stop-color="rgba(200,70,44,0)"/>
           </linearGradient>
-          <!-- [Dave 2026-05-14 v2] Replaced chunky-arrow + dashed-line approach with a gradient that fades the future-trajectory line into nothing. Cleaner, more editorial — the fade IS the visual meaning of 'continues into the future'. -->
-          <linearGradient id="frFutureFade" gradientUnits="userSpaceOnUse" x1="1180" y1="60" x2="1320" y2="-50">
-            <stop offset="0" stop-color="#c8462c" stop-opacity="0.92"/>
-            <stop offset="0.55" stop-color="#c8462c" stop-opacity="0.42"/>
-            <stop offset="1" stop-color="#c8462c" stop-opacity="0"/>
-          </linearGradient>
+          <!-- [Dave 2026-05-14 FINAL] frFutureFade gradient removed along with the deleted future-trajectory line. -->
         </defs>
 
         <!-- [Dave 2026-05-14] In-chart annotation: 'Demand is going parabolic.' lives in the empty upper-left where the curve hasn't risen yet. Reads as a label ON the chart instead of a separate sub line. -->
@@ -6670,10 +6665,7 @@ window.cs1m5Reverse = function() {
           <text x="1180" y="368" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="900" letter-spacing="2.4" fill="rgba(200,70,44,0.95)">AGE OF AI</text>
         </g>
 
-        <!-- [Dave 2026-05-14 v3] Future trajectory — clean solid line that FADES to transparent via gradient. No dashes, no arrowhead, no abrupt cutoff. The fade IS the visual meaning of 'continues into the future'. -->
-        <g class="fr-future-trajectory">
-          <path d="M 1180 60 Q 1224 28 1268 0 T 1320 -44" stroke="url(#frFutureFade)" stroke-width="3.6" fill="none" stroke-linecap="round"/>
-        </g>
+        <!-- [Dave 2026-05-14 FINAL] Future-trajectory line DELETED entirely. Every attempt (dashed-with-arrow, solid-with-arrow, fade-gradient) created noise around the curve tip. The curve's parabolic shape rising to the big red NOW dot IS the visual conclusion — AGE OF AI caption below carries the "this is where we are now" meaning. -->
 
         <!-- [Dave 2026-05-14] 'going parabolic' annotation DELETED — the curve speaks for itself. -->
       </svg>
@@ -10630,7 +10622,7 @@ window.cs1m7Reverse = function() {
           </div>
           <div class="v5-num">01</div>
           <div class="v5-eye">Idea Maze</div>
-          <div class="v5-body">Rapid, <em>continuous iteration</em>.</div>
+          <div class="v5-body"><em>Rapid iteration.</em></div>
           <div class="v5-meta">Next frontier in human connection technology</div>
         </div>
 
