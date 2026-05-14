@@ -23264,6 +23264,7 @@ window.addEventListener('resize',drawLoop);
       <button class="action primary" onclick="saveAnnotation()">Save note</button>
       <button class="action" onclick="copyCurrentAnnotation()">Copy current</button>
       <button class="action" onclick="copyAllAnnotations()">Copy all</button>
+      <button class="action" onclick="downloadAllAnnotations()">Download JSON for Codex</button>
       <button class="action" onclick="clearCurrentAnnotation()">Clear slide</button>
       <span class="status" id="annotationStatus">Saved locally in this browser.</span>
     </div>
@@ -23396,6 +23397,32 @@ function copyCurrentAnnotation() {
 function copyAllAnnotations() {
   saveAnnotation();
   copyAnnotationPayload(buildAnnotationPayload(false));
+}
+
+function downloadAllAnnotations() {
+  saveAnnotation();
+  const payload = buildAnnotationPayload(false);
+  const annotationsBySlideId = {};
+  (Array.isArray(payload.annotations) ? payload.annotations : Object.values(payload.annotations || {}))
+    .forEach(item => {
+      if (item && item.slideId) annotationsBySlideId[item.slideId] = item;
+    });
+  const exportPayload = { ...payload, annotations: annotationsBySlideId };
+  const blob = new Blob([JSON.stringify(exportPayload, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'gnr-annotations.json';
+  link.style.display = 'none';
+  document.body.appendChild(link);
+  link.addEventListener('click', () => {
+    setTimeout(() => {
+      URL.revokeObjectURL(url);
+      link.remove();
+    }, 0);
+  }, { once: true });
+  link.click();
+  document.getElementById('annotationStatus').textContent = 'Downloaded JSON.';
 }
 
 function clearCurrentAnnotation() {
