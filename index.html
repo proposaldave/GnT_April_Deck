@@ -6869,18 +6869,18 @@ window.cs1m5Reverse = function() {
      a single word.
      ════════════════════════════════════════════════════════════════════════════════════ -->
 <style>
-  #cs-frontier-iconic { background:radial-gradient(ellipse at 50% 0%, #fbf7ef 0%, #f3ead8 60%, #ebd9b7 100%) !important; }
-  #cs-frontier-iconic .fi-stage { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:48px 56px 36px; }
+  #cs-frontier-iconic { background:#f3ead8 !important; overflow:hidden; }
+  #cs-frontier-iconic .fi-stage { position:absolute; inset:0; padding:0; }
   /* [Dave 2026-05-14 PM v4 b] Hero headline added per Dave 'this slide needs to have text. use: The #1 predictor of a fulfilling life: openly giving and receiving real connection.' Sits above the curve so the eye reads the claim, then the curve + icons land the proof of demand. */
-  #cs-frontier-iconic .fi-headline { position:absolute; top:108px; left:78px; z-index:3; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.85rem,3.25vw,3rem); font-weight:800; line-height:1.14; letter-spacing:-0.022em; color:#1a1612; text-align:left; max-width:690px; margin:0; opacity:0; transform:translateY(8px); text-shadow:0 2px 18px rgba(251,247,239,0.34); }
+  #cs-frontier-iconic .fi-headline { position:absolute; top:8%; left:6%; z-index:3; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.85rem,3.25vw,3rem); font-weight:800; line-height:1.14; letter-spacing:-0.022em; color:#1a1612; text-align:left; max-width:690px; margin:0; opacity:0; transform:translateY(8px); text-shadow:0 1px 2px rgba(0,0,0,0.15); }
   #cs-frontier-iconic .fi-headline .fi-predictor { font-style:italic; font-weight:850; color:#b8954a; }
   #cs-frontier-iconic .fi-headline .fi-give { color:#5B8FD4; font-weight:850; }
   #cs-frontier-iconic .fi-headline .fi-receive { color:#c8462c; font-weight:850; }
-  #cs-frontier-iconic .fi-canvas { width:min(1580px, 98%); }
-  #cs-frontier-iconic .fi-hero-img { width:100%; height:auto; display:block; max-height:64vh; object-fit:contain; opacity:0; transform:translateY(10px) scale(0.985); }
+  #cs-frontier-iconic .fi-canvas { position:absolute; inset:0; width:100%; height:100%; }
+  #cs-frontier-iconic .fi-hero-img { position:absolute; inset:0; width:100%; height:100%; display:block; object-fit:cover; object-position:center center; opacity:0; transform:scale(1.015); }
   /* Entry animation — image settles in, headline lands over the negative space. */
   @keyframes fiArrowIn { 0% { opacity:0; transform:translate(-12px,18px); } 100% { opacity:1; transform:translate(0,0); } }
-  @keyframes fiHeroIn { 0% { opacity:0; transform:translateY(10px) scale(0.985); } 100% { opacity:1; transform:translateY(0) scale(1); } }
+  @keyframes fiHeroIn { 0% { opacity:0; transform:scale(1.015); } 100% { opacity:1; transform:scale(1); } }
   #cs-frontier-iconic.casey-entered .fi-headline { animation: fiArrowIn .8s cubic-bezier(.22,1,.36,1) 0.15s both; }
   #cs-frontier-iconic.casey-entered .fi-hero-img { animation: fiHeroIn 1.1s cubic-bezier(.22,1,.36,1) .35s both; }
   html[data-export="1"] #cs-frontier-iconic .fi-headline,
@@ -6890,7 +6890,7 @@ window.cs1m5Reverse = function() {
   <section class="fi-stage">
     <h1 class="fi-headline">The <em class="fi-predictor">#1 predictor</em> of a fulfilling life:<br>openly <span class="fi-give">giving</span> and <span class="fi-receive">receiving</span><br>real connection.</h1>
     <div class="fi-canvas">
-      <img class="fi-hero-img" src="assets/cs-frontier-iconic-hero.png" alt="Four pickleball paddles meeting in a post-point tap at golden hour">
+      <img class="fi-hero-img" src="assets/cs-frontier-iconic-hero.png" alt="Two hands reaching toward each other across a low pickleball net at golden hour">
     </div>
   </section>
 </div>
