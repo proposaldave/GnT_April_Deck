@@ -6586,7 +6586,7 @@ window.cs1m5Reverse = function() {
   <section class="fr-stage">
 
     <!-- [Dave 2026-05-14 MERGE] Hero rewritten to fuse cs-intro6's science truth + cs-frontier's parabolic/category positioning into a single editorial frame. Order of operations: science fact → demand reality → category claim. -->
-    <h1 class="fr-hero">Real human connection: the <em>#1 predictor</em> of a fulfilling life.</h1>
+    <h1 class="fr-hero">Giving and receiving human connection: the <em>#1 predictor</em> of a fulfilling life.</h1>
     <div class="fr-sub">And demand for it is going <strong style="font-style:normal;font-weight:800;color:#c8462c">parabolic.</strong></div>
 
     <!-- Parabolic disconnection curve -->
@@ -6612,38 +6612,39 @@ window.cs1m5Reverse = function() {
         <line x1="60" y1="160" x2="1280" y2="160" stroke="rgba(26,22,18,0.06)" stroke-width="1" stroke-dasharray="3 3"/>
         <line x1="60" y1="80" x2="1280" y2="80" stroke="rgba(26,22,18,0.06)" stroke-width="1" stroke-dasharray="3 3"/>
 
-        <!-- Filled area under the parabolic curve -->
-        <path d="M 80 314 Q 320 312 540 296 Q 760 274 940 220 Q 1100 168 1200 60 L 1200 320 L 80 320 Z" fill="url(#frCurveFill)"/>
+        <!-- [Dave 2026-05-14] Visual fix: NOW dot pulled in from x=1200 to x=1180 so the red halo no longer crops on the right edge. Dot radius graduated to mirror the curve's escalation (5 → 5.5 → 6 → 7 → 10). AGE OF AI sublabel font-size bumped 9 → 11 + letter-spacing tightened so the punch line lands. -->
+        <!-- Filled area under the parabolic curve (endpoint shifted from x=1200 to x=1180) -->
+        <path d="M 80 314 Q 320 312 540 296 Q 750 274 930 218 Q 1080 164 1180 60 L 1180 320 L 80 320 Z" fill="url(#frCurveFill)"/>
 
         <!-- The parabolic curve itself -->
-        <path class="fr-curve-path" d="M 80 314 Q 320 312 540 296 Q 760 274 940 220 Q 1100 168 1200 60" stroke="url(#frCurveGrad)" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+        <path class="fr-curve-path" d="M 80 314 Q 320 312 540 296 Q 750 274 930 218 Q 1080 164 1180 60" stroke="url(#frCurveGrad)" stroke-width="3.4" fill="none" stroke-linecap="round"/>
 
         <!-- Era markers (dots + labels) -->
         <g>
           <!-- 1980 -->
-          <circle class="fr-era-dot d1" cx="80" cy="314" r="6" fill="#b8954a"/>
+          <circle class="fr-era-dot d1" cx="80" cy="314" r="5" fill="#b8954a"/>
           <text x="80" y="350" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.55)">1980</text>
           <text x="80" y="368" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="600" letter-spacing="2.0" fill="rgba(26,22,18,0.35)">PRE-INTERNET</text>
 
           <!-- 2007 -->
-          <circle class="fr-era-dot d2" cx="380" cy="306" r="6" fill="#b8954a"/>
+          <circle class="fr-era-dot d2" cx="380" cy="306" r="5.5" fill="#b8954a"/>
           <text x="380" y="350" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.55)">2007</text>
           <text x="380" y="368" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="600" letter-spacing="2.0" fill="rgba(26,22,18,0.35)">SMARTPHONE</text>
 
           <!-- 2015 -->
-          <circle class="fr-era-dot d3" cx="700" cy="282" r="6" fill="#d18a3a"/>
-          <text x="700" y="350" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.55)">2015</text>
-          <text x="700" y="368" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="600" letter-spacing="2.0" fill="rgba(26,22,18,0.35)">SOCIAL SATURATION</text>
+          <circle class="fr-era-dot d3" cx="690" cy="282" r="6" fill="#d18a3a"/>
+          <text x="690" y="350" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.55)">2015</text>
+          <text x="690" y="368" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="600" letter-spacing="2.0" fill="rgba(26,22,18,0.35)">SOCIAL SATURATION</text>
 
           <!-- 2020 -->
-          <circle class="fr-era-dot d4" cx="940" cy="220" r="6.5" fill="#e07b3a"/>
-          <text x="940" y="350" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.6)">2020</text>
-          <text x="940" y="368" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="600" letter-spacing="2.0" fill="rgba(26,22,18,0.4)">PANDEMIC ISOLATION</text>
+          <circle class="fr-era-dot d4" cx="930" cy="218" r="7" fill="#e07b3a"/>
+          <text x="930" y="350" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.6)">2020</text>
+          <text x="930" y="368" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="600" letter-spacing="2.0" fill="rgba(26,22,18,0.4)">PANDEMIC ISOLATION</text>
 
-          <!-- 2025+ — parabolic tip, biggest dot, red -->
-          <circle class="fr-era-dot d5" cx="1200" cy="60" r="9" fill="#c8462c" stroke="rgba(200,70,44,0.32)" stroke-width="8"/>
-          <text x="1200" y="350" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" font-weight="900" letter-spacing="1.6" fill="#c8462c">NOW</text>
-          <text x="1200" y="368" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.0" fill="rgba(200,70,44,0.85)">AGE OF AI</text>
+          <!-- NOW — parabolic tip, biggest dot, red, pulled in for breathing room on the right edge -->
+          <circle class="fr-era-dot d5" cx="1180" cy="60" r="10" fill="#c8462c" stroke="rgba(200,70,44,0.32)" stroke-width="10"/>
+          <text x="1180" y="350" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="900" letter-spacing="1.6" fill="#c8462c">NOW</text>
+          <text x="1180" y="368" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="900" letter-spacing="2.4" fill="rgba(200,70,44,0.95)">AGE OF AI</text>
         </g>
 
         <!-- [Dave 2026-05-14] 'going parabolic' annotation DELETED — the curve speaks for itself. -->
