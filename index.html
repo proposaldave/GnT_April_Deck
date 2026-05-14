@@ -8819,6 +8819,8 @@ window.cs1m7Reverse = function() {
   #cs-pbfirst .pb-c5 .pb-face{border-color:rgba(125,82,159,.42)}
   #cs-pbfirst .pb-c5 .pb-ico{background:rgba(125,82,159,.12)} #cs-pbfirst .pb-c5 .pb-ico svg{stroke:#7d529f}
   #cs-pbfirst .pb-c5 .pb-title{color:#7d529f}
+  /* [Dave 2026-05-14 PM v3] Front-face callout text on pb-c1 (red Coordination card) — Dave: 'add to the front of this card: GnR starts where it's desperately needed the most'. Smaller than back-face title so it reads as a pre-flip teaser; same red ink so it pairs with the card's color identity. */
+  #cs-pbfirst .pb-c1 .pb-front-text{font-family:'Fraunces','Playfair Display',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(.78rem,.95vw,.95rem);line-height:1.32;color:#c8462c;text-align:center;max-width:200px;margin-top:4px;letter-spacing:-0.005em}
   /* Callout arrow above Card 1 — 'it desperately needs this new paradigm' */
   #cs-pbfirst .pb-callout{position:absolute;top:-44px;left:14px;font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:.78rem;line-height:1.25;color:#c8462c;text-align:left;width:160px;z-index:5;pointer-events:none}
   #cs-pbfirst .pb-callout-arrow{position:absolute;top:-2px;left:34px;width:1.6px;height:38px;background:#c8462c;z-index:5;pointer-events:none}
@@ -8888,6 +8890,8 @@ window.cs1m7Reverse = function() {
           <div class="pb-flip-inner">
             <div class="pb-face pb-front">
               <div class="pb-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/></svg></div>
+              <!-- [Dave 2026-05-14 PM v3] Front-face teaser per Dave — frames the card's contents before the flip. -->
+              <div class="pb-front-text">G<span style="font-style:italic;font-weight:500;color:#b8954a">n</span>R starts where it&rsquo;s desperately needed the most.</div>
             </div>
             <div class="pb-face pb-back">
               <div class="pb-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/></svg></div>
@@ -9693,6 +9697,8 @@ window.cs1m7Reverse = function() {
     <div class="c11e-anim c11e-hero" style="margin:0 auto 36px;max-width:760px;padding:46px 56px;border-radius:18px;background:linear-gradient(180deg,rgba(184,149,74,0.14) 0%,rgba(184,149,74,0.04) 100%);border:1.5px solid rgba(184,149,74,0.50);text-align:center;box-shadow:0 0 44px rgba(184,149,74,0.20);position:relative">
       <div style="font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#b8954a;margin-bottom:12px">Annual court fees powered by G<span style="text-transform:none">n</span>R</div>
       <div style="font-family:'Playfair Display',serif;font-size:clamp(4.5rem,9.5vw,7.2rem);font-weight:900;color:#b8954a;line-height:1;letter-spacing:-0.04em;text-shadow:0 0 38px rgba(184,149,74,0.30)">+$210K</div>
+      <!-- [Dave 2026-05-14 PM v3] Volume context per Dave — 60 GnR courts/week is the proof of what's generating the $210K. Sub-stat lands directly below the hero number. -->
+      <div style="margin-top:14px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1rem,1.4vw,1.25rem);font-weight:600;color:rgba(26,22,18,0.78);letter-spacing:-0.005em">from <strong style="font-style:normal;font-weight:850;color:#168651;letter-spacing:0">60</strong> G<span style="text-transform:none;font-style:italic;font-weight:500;color:#b8954a">n</span>R courts / week</div>
     </div>
     <!-- Three quotes -->
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;max-width:1080px;margin:0 auto">
@@ -10685,6 +10691,9 @@ window.cs1m7Reverse = function() {
   #cs-18-vd4 .v5-pillar.p1 .v5-body em { color:#5B8FD4; }/* [Dave 2026-05-14 PM] red → blue to match badge recolor */
   #cs-18-vd4 .v5-pillar.p2 .v5-body em { color:#b8954a; }
   #cs-18-vd4 .v5-pillar.p3 .v5-body em { color:#c8462c; }
+  /* [Dave 2026-05-14 PM v3] Green 'I have this' checkmark badge — sits at the top-right of each pillar's BACK face. Indicates Dave has all three foundational pieces locked in (Clarity / Starting Point / Mission). */
+  #cs-18-vd4 .v5-have { position:absolute; top:0; right:6px; width:34px; height:34px; border-radius:50%; background:#168651; border:1.6px solid #fbf7ef; box-shadow:0 0 0 2px rgba(22,134,81,0.32), 0 6px 16px rgba(22,134,81,0.30); display:flex; align-items:center; justify-content:center; z-index:3; }
+  #cs-18-vd4 .v5-have svg { width:18px; height:18px; display:block; stroke:#fbf7ef; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; fill:none; }
   /* NEPC logo badge — replaces the gold/R-M circle on Pillar 2 */
   /* [Dave 2026-05-12] NEPC badge enlarged so the visible logo matches the 118px solid red/blue circles. The PNG carries its own transparent padding, so the container needs to be ~165px for the logo to read at the same visible diameter as the other two pillars. */
   /* [Dave 2026-05-14 PM] Bumped 165→210 so the visible NEPC logo (which has transparent PNG padding around it) reads at the same visual diameter as the solid 118px red badges on pillars 1 + 3. */
@@ -10877,6 +10886,7 @@ window.cs1m7Reverse = function() {
                   <circle cx="54" cy="72" r="2.8" fill="white"/>
                 </svg>
               </div>
+              <div class="v5-have" aria-label="Dave has this"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>
               <div class="v5-num">01</div>
               <div class="v5-eye">Clarity</div>
               <div class="v5-body"><em>Next frontier of the technology<br>that connects us</em></div>
@@ -10899,6 +10909,7 @@ window.cs1m7Reverse = function() {
               <div class="v5-badge nepc">
                 <img src="nepc-logo.png" alt="New England Pickleball Club logo"/>
               </div>
+              <div class="v5-have" aria-label="Dave has this"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>
               <div class="v5-num">02</div>
               <div class="v5-eye">Starting Point</div>
               <div class="v5-body">Built a <em>tiny lab</em>.</div>
@@ -10933,10 +10944,11 @@ window.cs1m7Reverse = function() {
                   <line x1="46" y1="42" x2="54" y2="34" stroke="white" stroke-width="2.6" stroke-linecap="round"/>
                 </svg>
               </div>
+              <div class="v5-have" aria-label="Dave has this"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>
               <div class="v5-num">03</div>
               <div class="v5-eye">Mission</div>
               <div class="v5-body"><em>All in</em></div>
-              <div class="v5-meta">Lives it &middot; Face of it &middot; Club owner sales &middot; network &amp; podcasts &middot; community builder &middot; 4D play-style</div>
+              <div class="v5-meta">Lives it &middot; Face of it &middot; Club owner sales &middot; Network &amp; podcasts &middot; community builder &middot; 4D play-style</div>
             </div>
           </div>
         </div>
@@ -13427,7 +13439,7 @@ window.cs1m7Reverse = function() {
   /* [Dave 2026-05-14 PM v2] Divider cleaned up — single solid badge background (no gradient/alpha that let the column tint bleed through), single moat shadow (was double-ring which created uneven edges), drop shadow lifted slightly. */
   #cs-samecourt .sc-divider{position:relative;width:2px;background:linear-gradient(180deg, rgba(184,149,74,0) 0%, rgba(184,149,74,0.42) 18%, rgba(184,149,74,0.65) 50%, rgba(184,149,74,0.42) 82%, rgba(184,149,74,0) 100%);margin:18px 0;align-self:stretch}
   #cs-samecourt .sc-divider:before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:#fbf7ef;border:1.6px solid rgba(184,149,74,0.60);border-radius:50%;box-shadow:0 0 0 7px #fbf7ef, 0 10px 26px rgba(184,149,74,0.22)}
-  #cs-samecourt .sc-divider:after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:30px;height:30px;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b8954a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M5 8 H17'/><polyline points='14 5, 17 8, 14 11'/><path d='M19 16 H7'/><polyline points='10 19, 7 16, 10 13'/></svg>");background-size:contain;background-repeat:no-repeat;background-position:center}
+  /* [Dave 2026-05-14 PM v3] CSS-:after swap-arrows REMOVED — it was rendering a 30x30 background-image arrow on top of the inline 22x22 SVG arrow inside .sc-divider-icon. The two arrows didn't perfectly overlap, producing the doubled/misaligned-stroke look Dave called out as a visual issue. The inline SVG in .sc-divider-icon is now the single arrow source of truth. */
   /* Column eyebrow row with icon */
   #cs-samecourt .sc-col-eye-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
   #cs-samecourt .sc-col-icon{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;flex-shrink:0}
@@ -13776,7 +13788,7 @@ window.cs1m7Reverse = function() {
             <text x="172" y="32">3.5</text>
           </g>
         </svg>
-        <div class="mg-outcome"><em>Balanced?</em> <em>Boring?</em> <em>Filled?</em></div>
+        <div class="mg-outcome"><em>Balanced?</em> <em>Fun?</em> <em>Filled?</em></div>
       </div>
 
       <!-- VS DIVIDER -->
@@ -18672,7 +18684,8 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-07 PM via Claude Code brief] cs-once was inserted between cs-thegap (problem) and cs-gnr (product).
   // [Dave 2026-05-07 PM LATER] cs-once MOVED to END of APPENDIX per Dave: 'this slide design is terrible, has far too much content, and needs to be moved to the very end of the deck'.
   'cs-gnr',   //  7 Introducing GnR · invitation matchmaking
-  'cs-11d','cs-11',
+  // [Dave 2026-05-14 PM v3] cs-11e MOVED HERE — Dave: 'move the Same courts. Better groups. slide just after the GnR learns what we'd never say out loud slide'. cs-11d carries the 'GnR learns what we'd never say out loud' headline; cs-11e now follows immediately so the +$210K revenue proof lands as the immediate payoff of that paradigm beat.
+  'cs-11d','cs-11e','cs-11',
   // [Dave 2026-05-12 LATEST] cs-3 MOVED HERE — Dave: 'the "Pickleball is the fastest-growing, highest-velocity, densest social-signal community, ever." slide needs to follow the "No like button? No problem." slide'. cs-3 now sits right after cs-11.
   'cs-3',           // Pickleball 24 unique social experiences per week — fastest-growing, highest-velocity, densest social-signal community
   // [Dave 2026-05-14 PM v3] cs-magnetic inserted here per Dave 'move the social pull slide right after the 24 unique social experiences per week slide'.
@@ -18680,7 +18693,7 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-14 PM v4] cs-samecourt MOVED to right after cs-magnetic per Dave. Flow now: social density → social pull problem → flip the incentives.
   'cs-samecourt',  // Flip the incentive. Unleash the community. — paradigm-proof beat.
   // Duplicate cs-4 at old slot 9 REMOVED 2026-05-03 PM — cs-4 now lives at slot 5 only
-  'cs-11e',
+  // [Dave 2026-05-14 PM v3] cs-11e MOVED UP to right after cs-11d (see entry above). Was previously here, after cs-samecourt. Duplicate entry removed.
   // cs-dupr (Founder's Bet) MERGED INTO cs-18 founder slide per Dave 2026-05-06 PM v2 — the DUPR-rejection IS the founder story; standalone cs-dupr div retained in HTML as backup but not in main flow.
   'cs-19',    // 3× court fee revenue · For Your Club ('3x your community' slide per Dave)
   // cs-brand-V9 MOVED to end of appendix per Dave 2026-05-07 PM — V15 (hybrid) won slot 12.
@@ -19383,6 +19396,14 @@ function caseyGo(n) {
   if (target) {
     target.style.display = '';
     target.classList.add('active');
+    // [Dave 2026-05-14 PM v3] Universal state reset on slide re-entry — Dave: 'if I leave a slide (after everything is animated) and go back to that slide, the slide should start at the beginning in terms of animations.' Reset stateful UI attributes BEFORE the casey-entered replay so click-reveal slides + flippable cards always start fresh on every visit. Existing per-slide resets below still apply (and now act as redundant safety nets).
+    target.querySelectorAll('[data-flipped]').forEach(el => { el.dataset.flipped = '0'; });
+    target.querySelectorAll('[data-shown]').forEach(el => { el.dataset.shown = '0'; });
+    if (target.hasAttribute('data-stage'))    target.dataset.stage = '0';
+    if (target.hasAttribute('data-revealed')) target.dataset.revealed = '0';
+    if (target.hasAttribute('data-left'))     target.dataset.left = '0';
+    if (target.hasAttribute('data-right'))    target.dataset.right = '0';
+    if (target.hasAttribute('data-shown'))    target.dataset.shown = '0';
     // Universal slide-entrance replay (Dave 2026-04-29). Forces the fade-up
     // animation to re-run every time the slide becomes active.
     target.classList.remove('casey-entered');
