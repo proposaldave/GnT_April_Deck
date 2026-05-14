@@ -6587,7 +6587,19 @@ window.cs1m5Reverse = function() {
 
     <!-- [Dave 2026-05-14 MERGE] Hero rewritten to fuse cs-intro6's science truth + cs-frontier's parabolic/category positioning into a single editorial frame. Order of operations: science fact → demand reality → category claim. -->
     <h1 class="fr-hero">Giving and receiving human connection: the <em>#1 predictor</em> of a fulfilling life.</h1>
-    <!-- [Dave 2026-05-14] Sub line 'And demand for it is going parabolic' MOVED INTO the chart as an SVG annotation in the upper-left empty space (where the curve has the most negative real estate). -->
+    <!-- [Dave 2026-05-14] '4 sciences agree' evidence strip MOVED UP to sit directly under the hero so it grounds the #1-predictor claim immediately. Previously lived below the chart. -->
+    <div class="fr-evidence" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 28px;width:min(1340px,98%);font-family:'Manrope',sans-serif;font-size:clamp(.55rem,.72vw,.66rem);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(184,149,74,0.95)">
+      <span style="font-weight:800;color:#b8954a">4 sciences agree</span>
+      <span style="color:rgba(184,149,74,0.45)">·</span>
+      <span style="color:rgba(26,22,18,0.62)">Neuroscience</span>
+      <span style="color:rgba(184,149,74,0.45)">·</span>
+      <span style="color:rgba(26,22,18,0.62)">Public Health</span>
+      <span style="color:rgba(184,149,74,0.45)">·</span>
+      <span style="color:rgba(26,22,18,0.62)">Epidemiology</span>
+      <span style="color:rgba(184,149,74,0.45)">·</span>
+      <span style="color:rgba(26,22,18,0.62)">Longitudinal</span>
+    </div>
+    <!-- [Dave 2026-05-14] Sub line 'And demand for it is going parabolic' MOVED INTO the chart as an SVG annotation in the upper-left empty space. -->
 
 
     <!-- Parabolic disconnection curve -->
@@ -6603,6 +6615,10 @@ window.cs1m5Reverse = function() {
             <stop offset="0" stop-color="rgba(200,70,44,0.16)"/>
             <stop offset="1" stop-color="rgba(200,70,44,0)"/>
           </linearGradient>
+          <!-- [Dave 2026-05-14] Arrow marker for the future-trajectory dashed continuation past the NOW dot. -->
+          <marker id="frFutureArrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#c8462c"/>
+          </marker>
         </defs>
 
         <!-- [Dave 2026-05-14] In-chart annotation: 'Demand is going parabolic.' lives in the empty upper-left where the curve hasn't risen yet. Reads as a label ON the chart instead of a separate sub line. -->
@@ -6639,7 +6655,7 @@ window.cs1m5Reverse = function() {
           <!-- 2015 -->
           <circle class="fr-era-dot d3" cx="690" cy="282" r="6" fill="#d18a3a"/>
           <text x="690" y="350" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.55)">2015</text>
-          <text x="690" y="368" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="600" letter-spacing="2.0" fill="rgba(26,22,18,0.35)">SOCIAL SATURATION</text>
+          <text x="690" y="368" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="600" letter-spacing="2.0" fill="rgba(26,22,18,0.35)">ATTENTION ECONOMY</text>
 
           <!-- 2020 -->
           <circle class="fr-era-dot d4" cx="930" cy="218" r="7" fill="#e07b3a"/>
@@ -6650,6 +6666,12 @@ window.cs1m5Reverse = function() {
           <circle class="fr-era-dot d5" cx="1180" cy="60" r="10" fill="#c8462c" stroke="rgba(200,70,44,0.32)" stroke-width="10"/>
           <text x="1180" y="350" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="900" letter-spacing="1.6" fill="#c8462c">NOW</text>
           <text x="1180" y="368" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="900" letter-spacing="2.4" fill="rgba(200,70,44,0.95)">AGE OF AI</text>
+        </g>
+
+        <!-- [Dave 2026-05-14] Future trajectory — dashed continuation of the curve past NOW, accelerating up-and-right beyond the viewBox edge. Tells the eye "this keeps going." -->
+        <g class="fr-future-trajectory">
+          <path d="M 1180 60 Q 1216 28 1260 0 T 1310 -38" stroke="#c8462c" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="7 6" opacity="0.78" marker-end="url(#frFutureArrow)"/>
+          <text x="1300" y="22" text-anchor="end" font-family="Fraunces,Playfair Display,Georgia,serif" font-style="italic" font-size="15" font-weight="700" fill="#c8462c" opacity="0.92">accelerating</text>
         </g>
 
         <!-- [Dave 2026-05-14] 'going parabolic' annotation DELETED — the curve speaks for itself. -->
