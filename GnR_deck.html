@@ -7706,9 +7706,11 @@ window.cs1m7Reverse = function() {
         </svg>
       </div>
 
-      <!-- Single closing line — visual already tells the rest of the story [Dave 2026-05-08 v3 — reverted from two-beat resolution back to original single line per Dave: 'delete "GnR keeps every signal. The community finally compounds." and revert to what you had previously'] -->
+      <!-- [Dave 2026-05-14] Single closing line replaced with a 3-line diagnostic stack: operational failure → social failure → relational failure. Third line is mine — captures Dave's "NO TRUSTED RECIPROCITY" insight: in communities without infrastructure, trust + giving only happens inside close circles (cliques), so beyond them people retreat to self-interest. "Beyond cliques" hooks directly to line 2 so the three beats compound. -->
       <div class="tg-close">
-        <div class="tg-close-2">Manual bottleneck: coordination done by hand</div>
+        <div class="tg-close-2">Coordination done by hand</div>
+        <div class="tg-close-2" style="margin-top:6px">Communities devolve into cliques</div>
+        <div class="tg-close-2" style="margin-top:6px">No trusted reciprocity beyond cliques</div>
       </div>
     </div>
   </section>
@@ -8349,23 +8351,24 @@ window.cs1m7Reverse = function() {
       <!-- FRONT: invitation FEED — stack of 4 envelopes cascading like an inbox, NO TEXT [Dave 2026-05-02 PM] -->
       <div class="cs11-flip-front" style="background:rgba(91,143,212,0.04);border:1.5px solid rgba(91,143,212,0.42);border-radius:14px;padding:32px;display:flex;align-items:center;justify-content:center;min-height:300px;position:relative">
         <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- [Dave 2026-05-14] Whole envelope stack shifted UP by 18 (each Y -18) so the graphic sits at the viewBox optical center instead of biased down. Previously the content midpoint was at y≈127 vs viewBox center 110, leaving dead space at the top and the stack hugging the FLIP hint at the bottom. -->
           <!-- Envelope 4 (deepest, smallest, most faded — bottom of feed) -->
-          <g transform="translate(48 40)" opacity="0.32">
+          <g transform="translate(48 22)" opacity="0.32">
             <rect x="0" y="0" width="124" height="72" rx="4" fill="rgba(91,143,212,0.06)" stroke="#5B8FD4" stroke-width="1.6"/>
             <path d="M0 0 L62 44 L124 0" stroke="#5B8FD4" stroke-width="1.6" fill="none" stroke-linejoin="round"/>
           </g>
           <!-- Envelope 3 -->
-          <g transform="translate(40 64)" opacity="0.55">
+          <g transform="translate(40 46)" opacity="0.55">
             <rect x="0" y="0" width="140" height="78" rx="4" fill="rgba(91,143,212,0.07)" stroke="#5B8FD4" stroke-width="1.8"/>
             <path d="M0 0 L70 48 L140 0" stroke="#5B8FD4" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
           </g>
           <!-- Envelope 2 -->
-          <g transform="translate(32 90)" opacity="0.78">
+          <g transform="translate(32 72)" opacity="0.78">
             <rect x="0" y="0" width="156" height="86" rx="4" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="2.0"/>
             <path d="M0 0 L78 52 L156 0" stroke="#5B8FD4" stroke-width="2.0" fill="none" stroke-linejoin="round"/>
           </g>
           <!-- Envelope 1 (front, sharpest — newest invitation, top of feed) -->
-          <g transform="translate(22 122)">
+          <g transform="translate(22 104)">
             <rect x="0" y="0" width="176" height="92" rx="5" fill="rgba(91,143,212,0.14)" stroke="#5B8FD4" stroke-width="2.4" filter="url(#cs11FeedShadow)"/>
             <path d="M0 0 L88 56 L176 0" stroke="#5B8FD4" stroke-width="2.4" fill="none" stroke-linejoin="round"/>
           </g>
@@ -13206,7 +13209,7 @@ window.cs1m7Reverse = function() {
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Example: new paradigm powering our communities</div>
   <section class="sc-stage">
     <div class="sc-wrap">
-      <h1 class="sc-hero">Flip the incentives <span class="sc-arr">&rarr;</span> <em>Unleashes community</em></h1>
+      <h1 class="sc-hero">Flip the incentives <span class="sc-arr">&rarr;</span> <em>Unleash the community</em></h1>
 
       <div class="sc-split">
         <!-- LEFT · THE RATING TRAINS — with target icon [Dave 2026-05-12 LATEST] -->
@@ -13245,7 +13248,7 @@ window.cs1m7Reverse = function() {
             <div class="sc-head blue">
               <svg viewBox="0 0 24 24" fill="none" stroke="#5B8FD4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 21 C5 16.5 8 14 12 14 C16 14 19 16.5 19 21"/></svg>
             </div>
-            <div class="sc-bubble blue">I&rsquo;m part of building <strong style="font-style:normal;font-weight:800">my community</strong></div>
+            <div class="sc-bubble blue" style="max-width:none;white-space:nowrap">I&rsquo;m part of building <strong style="font-style:normal;font-weight:800">my community</strong></div>
           </div>
           <div class="sc-col-eye-row">
             <div class="sc-col-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#5B8FD4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20 C3 16 5 14 9 14 C13 14 15 16 15 20"/><path d="M14 19 C14 16.5 15.5 15 17 15 C19 15 21 16.5 21 19"/></svg></div>
