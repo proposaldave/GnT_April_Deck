@@ -6615,10 +6615,12 @@ window.cs1m5Reverse = function() {
             <stop offset="0" stop-color="rgba(200,70,44,0.16)"/>
             <stop offset="1" stop-color="rgba(200,70,44,0)"/>
           </linearGradient>
-          <!-- [Dave 2026-05-14] Arrow marker for the future-trajectory dashed continuation past the NOW dot. -->
-          <marker id="frFutureArrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="9" markerHeight="9" orient="auto">
-            <path d="M 0 0 L 10 5 L 0 10 z" fill="#c8462c"/>
-          </marker>
+          <!-- [Dave 2026-05-14 v2] Replaced chunky-arrow + dashed-line approach with a gradient that fades the future-trajectory line into nothing. Cleaner, more editorial — the fade IS the visual meaning of 'continues into the future'. -->
+          <linearGradient id="frFutureFade" gradientUnits="userSpaceOnUse" x1="1180" y1="60" x2="1320" y2="-50">
+            <stop offset="0" stop-color="#c8462c" stop-opacity="0.92"/>
+            <stop offset="0.55" stop-color="#c8462c" stop-opacity="0.42"/>
+            <stop offset="1" stop-color="#c8462c" stop-opacity="0"/>
+          </linearGradient>
         </defs>
 
         <!-- [Dave 2026-05-14] In-chart annotation: 'Demand is going parabolic.' lives in the empty upper-left where the curve hasn't risen yet. Reads as a label ON the chart instead of a separate sub line. -->
@@ -6668,29 +6670,17 @@ window.cs1m5Reverse = function() {
           <text x="1180" y="368" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="900" letter-spacing="2.4" fill="rgba(200,70,44,0.95)">AGE OF AI</text>
         </g>
 
-        <!-- [Dave 2026-05-14] Future trajectory — dashed continuation of the curve past NOW. 'accelerating' label deleted per Dave; arrow alone carries the meaning. -->
+        <!-- [Dave 2026-05-14 v3] Future trajectory — clean solid line that FADES to transparent via gradient. No dashes, no arrowhead, no abrupt cutoff. The fade IS the visual meaning of 'continues into the future'. -->
         <g class="fr-future-trajectory">
-          <path d="M 1180 60 Q 1216 28 1260 0 T 1310 -38" stroke="#c8462c" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="7 6" opacity="0.78" marker-end="url(#frFutureArrow)"/>
+          <path d="M 1180 60 Q 1224 28 1268 0 T 1320 -44" stroke="url(#frFutureFade)" stroke-width="3.6" fill="none" stroke-linecap="round"/>
         </g>
 
         <!-- [Dave 2026-05-14] 'going parabolic' annotation DELETED — the curve speaks for itself. -->
       </svg>
     </div>
 
-    <!-- [Dave 2026-05-14 MERGE] Science evidence strip — grounds the '#1 predictor' claim in 4 independent fields. Sits between the parabolic curve (the demand argument) and the positioning band (the category answer). -->
-    <div class="fr-evidence" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 18px;width:min(1340px,98%);font-family:'Manrope',sans-serif;font-size:clamp(.55rem,.72vw,.66rem);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(184,149,74,0.95)">
-      <span style="font-weight:800;color:#b8954a">4 sciences agree</span>
-      <span style="color:rgba(184,149,74,0.45)">·</span>
-      <span style="color:rgba(26,22,18,0.62)">Neuroscience</span>
-      <span style="color:rgba(184,149,74,0.45)">·</span>
-      <span style="color:rgba(26,22,18,0.62)">Public Health</span>
-      <span style="color:rgba(184,149,74,0.45)">·</span>
-      <span style="color:rgba(26,22,18,0.62)">Epidemiology</span>
-      <span style="color:rgba(184,149,74,0.45)">·</span>
-      <span style="color:rgba(26,22,18,0.62)">Longitudinal</span>
-    </div>
-
-    <!-- [Dave 2026-05-14] Positioning band (We're not dating · close-friends · legacy social → Real-world social networking · Starting in pickleball) DELETED per Dave. Slide now ends on the science evidence strip. -->
+    <!-- [Dave 2026-05-14] Duplicate science evidence strip DELETED — the only science strip now lives at the top under the hero. -->
+    <!-- [Dave 2026-05-14] Positioning band DELETED per Dave. -->
 
 
   </section>
@@ -8351,12 +8341,10 @@ window.cs1m7Reverse = function() {
 <div class="inner" style="padding-top:52px;text-align:center;max-width:1100px">
   <!-- Facebook-style "Like" button graphic DELETED 2026-05-06 per Dave -->
 
-  <!-- [Dave 2026-05-11 LATE] 'No like button? No problem.' promoted to main hero headline per Dave: 'clever, powerful point'. Old measures-connection line retained as subhead. -->
-  <div class="display" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.1rem,3.8vw,3.3rem);color:#1a1612;line-height:1.08;margin-bottom:16px;font-weight:800;letter-spacing:-0.022em;max-width:1180px;margin-left:auto;margin-right:auto">
+  <!-- [Dave 2026-05-11 LATE] 'No like button? No problem.' promoted to main hero headline. -->
+  <!-- [Dave 2026-05-14] 'GnR measures connection at the exact same time as we schedule it.' subhead MOVED to BELOW the two cards per Dave. -->
+  <div class="display" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.1rem,3.8vw,3.3rem);color:#1a1612;line-height:1.08;margin-bottom:30px;font-weight:800;letter-spacing:-0.022em;max-width:1180px;margin-left:auto;margin-right:auto">
     No <em style="font-style:italic;font-weight:700;color:#5B8FD4">like button</em>? <span style="color:#b8954a">No problem.</span>
-  </div>
-  <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.6vw,1.5rem);color:rgba(26,22,18,0.78);line-height:1.32;margin-bottom:30px;font-weight:500;font-style:italic;letter-spacing:-0.012em;max-width:1180px;margin-left:auto;margin-right:auto">
-    <span style="color:#5B8FD4;font-style:normal;font-weight:700">G</span><span style="font-style:italic;font-weight:500;color:#b8954a">n</span><span style="color:#c8462c;font-style:normal;font-weight:700">R</span> measures connection at the exact same time as we schedule it.
   </div>
   <!-- cs11-hint removed Dave 2026-05-02: cards now visible from start, no reveal step needed. -->
 
@@ -8586,9 +8574,10 @@ window.cs1m7Reverse = function() {
     </div>
   </div>
 
-  <!-- "Scheduling is measuring" bottom card deleted per Dave 2026-05-02 PM (now lives as the slide eyebrow) -->
-
-  <!-- [Dave 2026-05-11 LATE] 'Who do you choose?' prompt + down-arrow DELETED per Dave. -->
+  <!-- [Dave 2026-05-14] 'GnR measures connection at the exact same time as we schedule it.' moved here (below the two cards) per Dave. -->
+  <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.6vw,1.5rem);color:rgba(26,22,18,0.78);line-height:1.32;margin:30px auto 0;font-weight:500;font-style:italic;letter-spacing:-0.012em;max-width:1180px;text-align:center">
+    <span style="color:#5B8FD4;font-style:normal;font-weight:700">G</span><span style="font-style:italic;font-weight:500;color:#b8954a">n</span><span style="color:#c8462c;font-style:normal;font-weight:700">R</span> measures connection at the exact same time as we schedule it.
+  </div>
 
 </div>
 </section>
