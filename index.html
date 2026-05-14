@@ -8617,9 +8617,10 @@ window.cs1m7Reverse = function() {
   #cs-pbfirst .pb-c1 .pb-face{background:rgba(200,70,44,.07);border-color:rgba(200,70,44,.55);box-shadow:0 14px 34px rgba(200,70,44,.10)}
   #cs-pbfirst .pb-c1 .pb-ico{background:rgba(200,70,44,.12)} #cs-pbfirst .pb-c1 .pb-ico svg{stroke:#c8462c}
   #cs-pbfirst .pb-c1 .pb-title{color:#c8462c}
-  #cs-pbfirst .pb-pill{font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:600;color:#1a1612;background:rgba(200,70,44,.08);border:1px solid rgba(200,70,44,.32);border-radius:6px;padding:5px 10px;line-height:1.3;width:100%}
+  /* [Dave 2026-05-14] Pill breathing-room bump (5px 10px → 7px 12px) + gap 6 → 8 + radius 6 → 7. Lets the back-face pills feel less cramped. */
+  #cs-pbfirst .pb-pill{font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:600;color:#1a1612;background:rgba(200,70,44,.08);border:1px solid rgba(200,70,44,.32);border-radius:7px;padding:7px 12px;line-height:1.32;width:100%}
   #cs-pbfirst .pb-pill em{font-style:italic;font-weight:700;color:#c8462c}
-  #cs-pbfirst .pb-pills{display:flex;flex-direction:column;gap:6px;width:100%;margin-top:4px}
+  #cs-pbfirst .pb-pills{display:flex;flex-direction:column;gap:8px;width:100%;margin-top:6px}
   /* Card 2 — GOLD */
   #cs-pbfirst .pb-c2 .pb-ico{background:rgba(184,149,74,.12)} #cs-pbfirst .pb-c2 .pb-ico svg{stroke:#b8954a}
   #cs-pbfirst .pb-c2 .pb-title{color:#b8954a}
@@ -8691,7 +8692,7 @@ window.cs1m7Reverse = function() {
           <div class="pb-flip-inner">
             <div class="pb-face pb-front">
               <div class="pb-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/></svg></div>
-              <div class="pb-title">Max coordination pain.<br><em style="font-style:italic;font-weight:600">Desperately needed.</em></div>
+              <!-- [Dave 2026-05-14] 'Max coordination pain. Desperately needed.' front-face title DELETED per Dave. Card front is now icon-only again, matching the other 4 cards. -->
             </div>
             <div class="pb-face pb-back">
               <div class="pb-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/></svg></div>
