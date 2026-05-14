@@ -13406,12 +13406,15 @@ window.cs1m7Reverse = function() {
   #cs-samecourt .sc-hero{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.4rem,4.2vw,4.05rem);font-weight:850;letter-spacing:-0.028em;color:#1a1612;line-height:1.06;margin-bottom:64px;max-width:1240px;background:none}
   #cs-samecourt .sc-hero em{font-style:italic;font-weight:850;color:#b8954a;background:none}
   /* Side-by-side split — both halves illuminated, no stage logic */
-  #cs-samecourt .sc-split{display:grid;grid-template-columns:1fr auto 1fr;gap:0;width:100%;align-items:stretch}
-  #cs-samecourt .sc-col{padding:28px 56px;display:flex;flex-direction:column;align-items:flex-start;gap:18px;text-align:left}
-  #cs-samecourt .sc-divider{position:relative;width:1px;background:rgba(184,149,74,0.5);margin:18px 0}
-  /* Central flip glyph — two arrows showing the paradigm flip */
-  #cs-samecourt .sc-divider:before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:44px;height:44px;background:#fbf7ef;border:1.5px solid rgba(184,149,74,0.55);border-radius:50%;box-shadow:0 0 0 6px rgba(251,247,239,0.95),0 8px 24px rgba(184,149,74,0.18)}
-  #cs-samecourt .sc-divider:after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:24px;height:24px;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b8954a' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M5 8 H17'/><polyline points='14 5, 17 8, 14 11'/><path d='M19 16 H7'/><polyline points='10 19, 7 16, 10 13'/></svg>");background-size:contain;background-repeat:no-repeat;background-position:center}
+  /* [Dave 2026-05-14 PM] Designer cohesion pass — wrapped each column in a soft tinted card with matching border so the two halves feel like proper twin panels (parallel to cs-magnetic's twin courts). Padding rebalanced. */
+  #cs-samecourt .sc-split{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;width:100%;align-items:stretch}
+  #cs-samecourt .sc-col{padding:30px 32px 32px;display:flex;flex-direction:column;align-items:stretch;gap:18px;text-align:left;border-radius:16px;position:relative}
+  #cs-samecourt .sc-col.red{background:linear-gradient(180deg, rgba(200,70,44,0.04) 0%, rgba(200,70,44,0.015) 100%);border:1px solid rgba(200,70,44,0.22)}
+  #cs-samecourt .sc-col.blue{background:linear-gradient(180deg, rgba(184,149,74,0.07) 0%, rgba(184,149,74,0.025) 100%);border:1px solid rgba(184,149,74,0.38);box-shadow:0 14px 36px rgba(184,149,74,0.10)}
+  /* Stronger divider — wider gradient column with a prominent badge holding the flip arrows. */
+  #cs-samecourt .sc-divider{position:relative;width:2px;background:linear-gradient(180deg, rgba(184,149,74,0) 0%, rgba(184,149,74,0.42) 18%, rgba(184,149,74,0.65) 50%, rgba(184,149,74,0.42) 82%, rgba(184,149,74,0) 100%);margin:18px 0;align-self:stretch}
+  #cs-samecourt .sc-divider:before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:radial-gradient(circle at 50% 50%, #fbf7ef 0%, #fbf7ef 60%, rgba(251,247,239,0.95) 100%);border:1.8px solid rgba(184,149,74,0.65);border-radius:50%;box-shadow:0 0 0 8px rgba(251,247,239,0.95), 0 0 0 9px rgba(184,149,74,0.18), 0 12px 32px rgba(184,149,74,0.22)}
+  #cs-samecourt .sc-divider:after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:32px;height:32px;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b8954a' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M5 8 H17'/><polyline points='14 5, 17 8, 14 11'/><path d='M19 16 H7'/><polyline points='10 19, 7 16, 10 13'/></svg>");background-size:contain;background-repeat:no-repeat;background-position:center}
   /* Column eyebrow row with icon */
   #cs-samecourt .sc-col-eye-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
   #cs-samecourt .sc-col-icon{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;flex-shrink:0}
@@ -13455,6 +13458,24 @@ window.cs1m7Reverse = function() {
   #cs-samecourt .sc-closer .sc-c1{color:#1a1612}
   #cs-samecourt .sc-closer .sc-c2{color:#5B8FD4;font-weight:600}
   #cs-samecourt .sc-closer .sc-c3{color:#b8954a;font-weight:600}
+  /* [Dave 2026-05-14 PM] Unifying closer line below the split — ties both halves together. Italic Fraunces, gold center keyword. */
+  #cs-samecourt .sc-closer-line{align-self:center;margin-top:38px;padding:18px 32px;max-width:920px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.15rem,1.55vw,1.45rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.4;text-align:center;border-top:1px solid rgba(184,149,74,0.32);border-bottom:1px solid rgba(184,149,74,0.32);letter-spacing:-0.005em}
+  #cs-samecourt .sc-closer-line strong{color:#b8954a;font-weight:850;font-style:normal;letter-spacing:.04em;text-transform:uppercase;font-size:.82em;padding:0 4px}
+  /* Subtle staggered entrance — left card fades in first (the problem), divider scales up, right card fades in (the solution), closer lands last. */
+  #cs-samecourt .sc-col, #cs-samecourt .sc-divider, #cs-samecourt .sc-closer-line{opacity:0;will-change:opacity,transform}
+  #cs-samecourt .sc-col{transform:translateY(8px)}
+  #cs-samecourt .sc-divider:before{transform:translate(-50%,-50%) scale(0.6)}
+  @keyframes scIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes scDividerPop{from{transform:translate(-50%,-50%) scale(0.6)}to{transform:translate(-50%,-50%) scale(1)}}
+  #cs-samecourt.casey-entered .sc-col.red{animation:scIn .65s cubic-bezier(.22,1,.36,1) backwards .25s;opacity:1;transform:translateY(0)}
+  #cs-samecourt.casey-entered .sc-divider{animation:scIn .55s cubic-bezier(.22,1,.36,1) backwards .8s;opacity:1}
+  #cs-samecourt.casey-entered .sc-divider:before{animation:scDividerPop .55s cubic-bezier(.34,1.56,.64,1) backwards .9s;transform:translate(-50%,-50%) scale(1)}
+  #cs-samecourt.casey-entered .sc-col.blue{animation:scIn .65s cubic-bezier(.22,1,.36,1) backwards 1.05s;opacity:1;transform:translateY(0)}
+  #cs-samecourt.casey-entered .sc-closer-line{animation:scIn .6s cubic-bezier(.22,1,.36,1) backwards 1.65s;opacity:1}
+  html[data-export="1"] #cs-samecourt .sc-col,
+  html[data-export="1"] #cs-samecourt .sc-divider,
+  html[data-export="1"] #cs-samecourt .sc-closer-line{opacity:1!important;transform:none!important;animation:none!important}
+  html[data-export="1"] #cs-samecourt .sc-divider:before{transform:translate(-50%,-50%) scale(1)!important;animation:none!important}
   /* [Dave 2026-05-14 PM] Community-shape parallel to cs-magnetic's twin-court — LEFT shows the community FRAGMENTED into isolated cliques (rating-driven), RIGHT shows the same community NETWORKED into a vibrant web (GnR-driven). Sits at the top of each column, above the character bubble. */
   #cs-samecourt .sc-community { width:100%; max-width:380px; align-self:center; margin-bottom:6px; padding:14px 18px 12px; border-radius:12px; position:relative }
   #cs-samecourt .sc-col.red .sc-community { background:rgba(26,22,18,0.025); border:1px solid rgba(26,22,18,0.10) }
@@ -13486,7 +13507,8 @@ window.cs1m7Reverse = function() {
           </div>
           <!-- [Dave 2026-05-14 PM] COMMUNITY-LEVEL graphic — parallel to cs-magnetic's court: shows the community FRAGMENTED into 3 isolated cliques. No inter-cluster edges. Visualizes what rating-driven incentives DO to a community. -->
           <div class="sc-community">
-            <div class="sc-community-label">Rating-driven community</div>
+            <!-- [Dave 2026-05-14 PM] Standalone community label DELETED — the eye-row 'Rating-driven community trains' now carries that label. -->
+
             <svg class="sc-community-svg" viewBox="0 0 240 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Fragmented community — 3 isolated cliques">
               <!-- Clique 1 (top-left) -->
               <g stroke="rgba(200,70,44,0.42)" stroke-width="0.8" fill="rgba(200,70,44,0.55)">
@@ -13531,7 +13553,7 @@ window.cs1m7Reverse = function() {
           </div>
           <div class="sc-col-eye-row">
             <div class="sc-col-icon red"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#c8462c" stroke-width="1.6"/><circle cx="12" cy="12" r="5" stroke="#c8462c" stroke-width="1.6"/><circle cx="12" cy="12" r="1.8" fill="#c8462c"/></svg></div>
-            <div class="sc-col-eye">The rating trains</div>
+            <div class="sc-col-eye">Rating-driven community trains</div>
           </div>
           <div class="sc-item"><span class="dash">&mdash;</span><span>Protect the number.</span></div>
           <div class="sc-item"><span class="dash">&mdash;</span><span>Don't play down.</span></div>
@@ -13561,7 +13583,8 @@ window.cs1m7Reverse = function() {
           </div>
           <!-- [Dave 2026-05-14 PM] COMMUNITY-LEVEL graphic — parallel to cs-magnetic's marketplace court: shows the SAME community NETWORKED into a dense web. Same number of nodes as the left side, now connected by reciprocity edges through a warm glow. Visualizes what GnR-driven incentives DO to a community. -->
           <div class="sc-community">
-            <div class="sc-community-label">Networked reciprocity community</div>
+            <!-- [Dave 2026-05-14 PM] Standalone community label DELETED — the eye-row 'Networked reciprocity community trains' now carries that label. -->
+
             <svg class="sc-community-svg" viewBox="0 0 240 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Networked community — every node connected through reciprocity">
               <defs>
                 <radialGradient id="scGlowGrad" cx="50%" cy="50%" r="55%">
@@ -13618,13 +13641,16 @@ window.cs1m7Reverse = function() {
           </div>
           <div class="sc-col-eye-row">
             <div class="sc-col-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#5B8FD4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20 C3 16 5 14 9 14 C13 14 15 16 15 20"/><path d="M14 19 C14 16.5 15.5 15 17 15 C19 15 21 16.5 21 19"/></svg></div>
-            <div class="sc-col-eye">Give n Receive trains</div>
+            <div class="sc-col-eye">Networked reciprocity community trains</div>
           </div>
           <div class="sc-item"><span class="dash">&mdash;</span><span>Show up for others.</span></div>
           <div class="sc-item"><span class="dash">&mdash;</span><span>Play with the new face.</span></div>
           <div class="sc-item"><span class="dash">&mdash;</span><span>Take my spot.</span></div>
         </div>
       </div>
+
+      <!-- [Dave 2026-05-14 PM] Unifying closer that lands the slide — ties both halves together with a single sentence on what changes when you flip. -->
+      <div class="sc-closer-line">Same humans. <strong>Different incentive</strong>.</div>
 
     </div>
   </section>
