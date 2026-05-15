@@ -6872,13 +6872,17 @@ window.cs1m5Reverse = function() {
   #cs-frontier-iconic { background:#f3ead8 !important; overflow:hidden; }
   #cs-frontier-iconic .fi-stage { position:absolute; inset:0; padding:0; }
   /* [Dave 2026-05-14] Opener headline locked to the universal thesis; image stays non-sport and supports the text rather than literalizing the wedge. */
-  #cs-frontier-iconic .fi-headline { position:absolute; top:7.4%; left:6%; z-index:3; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.35rem,4.25vw,4.05rem); font-weight:800; line-height:1.06; letter-spacing:-0.022em; color:#1a1612; text-align:left; max-width:1180px; margin:0; opacity:0; transform:translateY(8px); text-shadow:0 1px 3px rgba(0,0,0,0.18); }
+  #cs-frontier-iconic .fi-headline { position:absolute; top:7.4%; left:6%; z-index:3; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.35rem,4.25vw,4.05rem); font-weight:800; line-height:1.06; letter-spacing:-0.022em; color:#1a1612; text-align:left; max-width:1120px; margin:0; opacity:0; transform:translateY(8px); text-shadow:0 1px 3px rgba(0,0,0,0.18); }
   #cs-frontier-iconic .fi-headline .fi-line { display:block; }
   #cs-frontier-iconic .fi-headline .fi-predictor { font-style:italic; font-weight:850; color:#8a6420; text-shadow:0 1px 2px rgba(0,0,0,0.25); }
   #cs-frontier-iconic .fi-headline .fi-give { color:#5B8FD4; font-weight:850; text-shadow:0 1px 2px rgba(0,0,0,0.25); }
   #cs-frontier-iconic .fi-headline .fi-receive { color:#c8462c; font-weight:850; text-shadow:0 1px 2px rgba(0,0,0,0.25); }
   #cs-frontier-iconic .fi-canvas { position:absolute; inset:0; width:100%; height:100%; }
   #cs-frontier-iconic .fi-hero-img { position:absolute; inset:0; width:100%; height:100%; display:block; object-fit:cover; object-position:center center; opacity:0; transform:scale(1.015); }
+  #cs-frontier-iconic .fi-mark { position:absolute; top:32px; right:42px; z-index:4; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.08rem; font-weight:800; letter-spacing:-0.035em; opacity:.86; text-shadow:0 1px 2px rgba(255,255,255,.36); }
+  #cs-frontier-iconic .fi-mark .g { color:#5B8FD4; }
+  #cs-frontier-iconic .fi-mark .n { color:#b8954a; font-style:italic; font-weight:650; padding:0 .03em; }
+  #cs-frontier-iconic .fi-mark .r { color:#c8462c; }
   /* Entry animation — image settles in, headline lands over the negative space. */
   @keyframes fiArrowIn { 0% { opacity:0; transform:translate(-12px,18px); } 100% { opacity:1; transform:translate(0,0); } }
   @keyframes fiHeroIn { 0% { opacity:0; transform:scale(1.015); } 100% { opacity:1; transform:scale(1); } }
@@ -6893,6 +6897,7 @@ window.cs1m5Reverse = function() {
     <div class="fi-canvas">
       <img class="fi-hero-img" src="assets/cs-frontier-iconic-hero.png" alt="Two open hands reaching toward a warm welcome">
     </div>
+    <div class="fi-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
   </section>
 </div>
 
