@@ -38,9 +38,9 @@ When hands are the hero subject, they must read active, capable, warm, and alive
 
 Typography audit is mandatory on every slide rebuild. When a slide's image, layout, or background changes, Codex MUST review the typography against the new context and propose improvements, not preserve as-is. Audit checklist: line breaks must avoid orphaned punctuation and mid-phrase breaks; contrast must read clearly against the new background using text-shadow or tuned color saturation when brand colors fade; hierarchy must weight title size appropriately for slide importance (opener > internal > footer); position must place type in a deliberate quiet zone of the painting, not floating arbitrarily; brand colors stay preserved (#1 predictor gold, "giving" blue, "receiving" rust) but can be tuned for contrast against the new background.
 
-### Suburban American anchor is non-negotiable for community/wedge imagery
+### STANDING - first slide is universal, not the wedge
 
-No Mediterranean, no villa, no European architecture, no terra cotta, no olive trees, no cosmopolitan-cafe register. GnR's wedge is suburban American pickleball clubs. Every hero image should be unmistakably set there or in a register compatible with it.
+The first slide must not use pickleball, racquet sports, courts, nets, paddles, balls, club scenes, or other proving-ground imagery. The opener sells the universal human truth before the wedge appears. Use a mythic, non-sport human gesture that lets the thesis text carry the claim: "The #1 predictor of a fulfilling life: openly giving and receiving real connection."
 
 ### Headline-image tension rule
 
@@ -69,7 +69,13 @@ Superseded by the one-mythic-gesture rule. Equipment may appear only as secondar
 
 Pickleball is the wedge and proof environment, not the opening metaphor unless Dave explicitly asks for a pickleball-specific slide. Do not use paddles, balls, nets, court lines, or paddle taps as the primary opener/hero image for civilizational claims like "fulfilling life" or "next great network." Those artifacts make the company feel like a club-sports product instead of a human-connection network.
 
-Superseded because the corrected opener permits pickleball equipment as soft-focus secondary context when the hands/gesture carry the mythic human-connection meaning.
+Superseded because the opener is now universal and must not use pickleball, racquet sports, courts, nets, paddles, balls, club scenes, or other proving-ground imagery. Save wedge imagery for wedge/community proof slides.
+
+### SUPERSEDED 2026-05-14 - Suburban American anchor is non-negotiable for community/wedge imagery
+
+No Mediterranean, no villa, no European architecture, no terra cotta, no olive trees, no cosmopolitan-cafe register. GnR's wedge is suburban American pickleball clubs. Every hero image should be unmistakably set there or in a register compatible with it.
+
+Superseded because the first slide is now explicitly universal and must not use pickleball, racquet sports, club scenes, or proving-ground imagery. Keep the suburban American anchor for wedge/community slides only.
 
 ### SUPERSEDED 2026-05-14 - Hero and opener slides must use FULL-BLEED imagery
 
