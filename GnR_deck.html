@@ -17873,15 +17873,16 @@ window.cs1m7Reverse = function() {
   <style>
     @keyframes a7m1FadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes a7m1FadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    /* [Dave 2026-05-14 PM v4 g] Re-sequenced: TOP/OLD card now lands first (0.10-0.30s), then NEW card cascade fires (0.55s onward). Bug fix: .a7m1-ring had fired at 0.18s — earlier than the OLD card's orb at 0.20s — so the bottom card visibly started animating before the top. Now the OLD card fully appears, THEN the NEW card builds. */
     #cs-a7m1.casey-entered .a7m1-eyebrow { animation: a7m1FadeIn 0.45s ease-out backwards 0.05s; }
-    #cs-a7m1.casey-entered .a7m1-card.old .a7m1-orb { animation: a7m1FadeIn 0.55s ease-out backwards 0.20s; }
-    #cs-a7m1.casey-entered .a7m1-card.old .a7m1-cap { animation: a7m1FadeUp 0.55s ease-out backwards 0.35s; }
-    #cs-a7m1.casey-entered .a7m1-ring  { animation: a7m1FadeIn 0.6s ease-out backwards 0.18s; transform-origin: center; }
-    #cs-a7m1.casey-entered .a7m1-fig-blue { animation: a7m1FadeIn 0.5s ease-out backwards 0.45s; }
-    #cs-a7m1.casey-entered .a7m1-fig-gold { animation: a7m1FadeIn 0.5s ease-out backwards 0.62s; }
-    #cs-a7m1.casey-entered .a7m1-fig-red  { animation: a7m1FadeIn 0.5s ease-out backwards 0.79s; }
-    #cs-a7m1.casey-entered .a7m1-ground { animation: a7m1FadeIn 0.6s ease-out backwards 0.60s; }
-    #cs-a7m1.casey-entered .a7m1-arc    { animation: a7m1FadeIn 0.75s ease-out backwards 0.98s; }
+    #cs-a7m1.casey-entered .a7m1-card.old .a7m1-orb { animation: a7m1FadeIn 0.55s ease-out backwards 0.10s; }
+    #cs-a7m1.casey-entered .a7m1-card.old .a7m1-cap { animation: a7m1FadeUp 0.55s ease-out backwards 0.25s; }
+    #cs-a7m1.casey-entered .a7m1-ring  { animation: a7m1FadeIn 0.6s ease-out backwards 0.55s; transform-origin: center; }
+    #cs-a7m1.casey-entered .a7m1-fig-blue { animation: a7m1FadeIn 0.5s ease-out backwards 0.72s; }
+    #cs-a7m1.casey-entered .a7m1-fig-gold { animation: a7m1FadeIn 0.5s ease-out backwards 0.88s; }
+    #cs-a7m1.casey-entered .a7m1-fig-red  { animation: a7m1FadeIn 0.5s ease-out backwards 1.04s; }
+    #cs-a7m1.casey-entered .a7m1-ground { animation: a7m1FadeIn 0.6s ease-out backwards 0.95s; }
+    #cs-a7m1.casey-entered .a7m1-arc    { animation: a7m1FadeIn 0.75s ease-out backwards 1.22s; }
   </style>
   <section style="position:relative;width:100%;min-height:100%">
     <div class="a7m1-stage">
