@@ -34,7 +34,7 @@ Will not touch: the 4-stage click reveal, `cs1m8Advance`, `cs1m8Reverse`, wordma
 
 ### After
 
-Pending.
+Normalized the two caption labels to exact brand blue `#5B8FD4` and rust `#c8462c`, while preserving the wordmark, caption copy, staged reveal, and right-caption `translateX(86px)`. Increased the contact card's supporting text/email contrast slightly without changing content or placement.
 
 ## cs-a7m1
 

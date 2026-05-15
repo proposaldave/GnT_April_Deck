@@ -1,0 +1,46 @@
+<!-- timestamp: 20260515-072302 | slide-id: cs-1m8 | description: pre-quality-pass -->
+<div class="casey-slide ds-measure" id="cs-1m8" data-stage="0" onclick="this.dataset.stage = Math.min(3, (parseInt(this.dataset.stage)||0) + 1)" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
+  <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
+  <!-- Eyebrow [Dave 2026-05-12]: 'Brand Promise' → 'Brand'. [Dave 2026-05-14]: → 'The next frontier of technology that connects us' → rewritten to 'The next frontier: technology that connects us' (Dave: 'reword for better grammar / clarity, you decide'). The colon eliminates the ambiguous attachment of 'that connects us' — it was hanging off either 'technology' or 'frontier'; now 'technology that connects us' is unambiguously a single noun phrase being equated with 'the next frontier'. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The next frontier: technology that connects us</div>
+  <div class="s on" style="background:transparent">
+    <div class="stg" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;text-align:center;color:#1a1612;padding:0 60px">
+      <!-- Wordmark — same span structure as cs-1m5: G/ive/n/R/eceive renders 'Give n Receive' -->
+      <div class="m8-wordmark">
+        <span class="wm-letter wm-G">G</span><span class="wm-letter wm-ive">ive</span><span class="wm-n-wrap"><svg class="wm-arc" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><path d="M 4 26 Q 30 -2 56 26" stroke="#b8954a" stroke-width="2.2" fill="none" opacity="0.85" stroke-linecap="round"/><circle cx="4" cy="26" r="3.4" fill="#5B8FD4"/><circle cx="56" cy="26" r="3.4" fill="#c8462c"/></svg><span class="wm-n">n</span></span><span class="wm-letter wm-R">R</span><span class="wm-letter wm-eceive">eceive</span>
+      </div>
+      <!-- [Dave 2026-05-11 LATE] 4-stage reveal: STAGE 1 = LEFT cap only, STAGE 2 = + network line, STAGE 3 = + RIGHT cap. -->
+      <!-- STAGE 1: LEFT caption (m8-cap-left auto-shows with parent at stage 1+); RIGHT (m8-cap-right) stays hidden until stage 3 -->
+      <!-- [Dave 2026-05-12 LATEST v2] Caption alignment: G is at translateX 85, R is at translateX 282 (asymmetric). Captions sit in a symmetric 2-col grid, so they don't naturally match the G/R visual centers. Solution — apply the SAME translates to each caption column as the wordmark uses, so caption centers track G and R precisely. (Was previously +95 on right only — overcorrected per Dave.) -->
+      <div class="m8-caption" style="display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1300px,92%);align-items:start">
+        <div class="m8-cap-left" style="text-align:center;transform:translateX(28px)">
+          <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#3a73b8;line-height:1.3;margin-bottom:10px">What we give</div>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#5B8FD4">fuels</em> our communities.</div>
+        </div>
+        <!-- [Dave 2026-05-14 PM v4] Right cap translateX bumped 28 → 86 per Dave 'center this text directly below the large R'. R has translateX(+282) + scale(1.4) from its LEFT-edge origin, so R's visual center sits ~70px further right than the right-column's natural center. Right cap needed a larger right-shift than the left cap to track R precisely. (Earlier '+95 overcorrected' note was at a different viewport; +86 lands the caption under R.) -->
+        <div class="m8-cap-right" style="text-align:center;transform:translateX(86px)">
+          <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#c94d32;line-height:1.3;margin-bottom:10px">Your People &middot; Your Moments</div>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#c8462c">Reciprocated</em> back.</div>
+        </div>
+      </div>
+      <!-- STAGE 2: 'The Network / Sees. Measures.' line -->
+      <div class="m8-network" style="margin-top:24px">
+        <div style="font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.86vw,.9rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:8px">The Network</div>
+        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,1.55vw,1.55rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">Sees. Measures.</div>
+      </div>
+      <!-- Pulsing arrow — visible at stages 0 and 1 (still more to come). Hides at stage 2. -->
+      <div class="m8-hint">
+        <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 14 4 L 14 22 M 14 22 L 6 14 M 14 22 L 22 14" fill="none" stroke="#b8954a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:30px;left:36px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(26,22,18,0.65);font-weight:500;line-height:1.85;z-index:10">
+    <div style="color:#1a1612;font-weight:700">Dave Velardo</div>
+    <div style="color:rgba(26,22,18,0.55)">Founder &amp; CEO</div>
+    <div><a href="mailto:dave@givenreceive.com" style="color:rgba(26,22,18,0.7);text-decoration:none;border-bottom:1px solid rgba(184,149,74,0.4)">dave@givenreceive.com</a></div>
+    <div>978-604-0223</div>
+  </div>
+</div>
