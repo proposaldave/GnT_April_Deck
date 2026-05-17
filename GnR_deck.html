@@ -15231,14 +15231,32 @@ window.cs1m7Reverse = function() {
 
   /* Entry animations — staggered fade-up so the slide lands as a deliberate close, not all-at-once */
   @keyframes askFadeUp { from { opacity:0; transform:translateY(14px) } to { opacity:1; transform:translateY(0) } }
-  #cs-ask .ask-headline, #cs-ask .ask-sub, #cs-ask .ask-paths, #cs-ask .ask-contact { opacity:0 }
+  @keyframes askIconPop { 0% { opacity:0; transform:scale(0.78) } 60% { opacity:1; transform:scale(1.08) } 100% { opacity:1; transform:scale(1) } }
+  #cs-ask .ask-headline, #cs-ask .ask-sub, #cs-ask .ask-contact { opacity:0 }
   #cs-ask.casey-entered .ask-headline { animation: askFadeUp 0.75s cubic-bezier(.22,1,.36,1) 0.20s both }
   #cs-ask.casey-entered .ask-sub      { animation: askFadeUp 0.65s cubic-bezier(.22,1,.36,1) 0.55s both }
-  #cs-ask.casey-entered .ask-paths    { animation: askFadeUp 0.70s cubic-bezier(.22,1,.36,1) 0.85s both }
-  #cs-ask.casey-entered .ask-contact  { animation: askFadeUp 0.65s cubic-bezier(.22,1,.36,1) 1.15s both }
+  #cs-ask.casey-entered .ask-contact  { animation: askFadeUp 0.65s cubic-bezier(.22,1,.36,1) 1.85s both }
+  /* [Dave 2026-05-17 LATEST] Two-paths block: left card cascade → OR divider → right card cascade. Within each card, the icon pops first, then the label fades up, then the body fades up. Simple, deliberate cadence. */
+  #cs-ask .ask-path.left,  #cs-ask .ask-path.right { opacity:0 }
+  #cs-ask .ask-path .ask-path-icon, #cs-ask .ask-path .ask-path-label, #cs-ask .ask-path .ask-path-body { opacity:0 }
+  #cs-ask .ask-merge { opacity:0 }
+  #cs-ask.casey-entered .ask-path.left  { animation: askFadeUp 0.65s cubic-bezier(.22,1,.36,1) 0.90s both }
+  #cs-ask.casey-entered .ask-path.left  .ask-path-icon  { animation: askIconPop 0.55s cubic-bezier(.34,1.6,.64,1) 1.00s both }
+  #cs-ask.casey-entered .ask-path.left  .ask-path-label { animation: askFadeUp 0.5s cubic-bezier(.22,1,.36,1) 1.20s both }
+  #cs-ask.casey-entered .ask-path.left  .ask-path-body  { animation: askFadeUp 0.5s cubic-bezier(.22,1,.36,1) 1.35s both }
+  #cs-ask.casey-entered .ask-merge      { animation: askFadeUp 0.5s cubic-bezier(.22,1,.36,1) 1.20s both }
+  #cs-ask.casey-entered .ask-path.right { animation: askFadeUp 0.65s cubic-bezier(.22,1,.36,1) 1.30s both }
+  #cs-ask.casey-entered .ask-path.right .ask-path-icon  { animation: askIconPop 0.55s cubic-bezier(.34,1.6,.64,1) 1.40s both }
+  #cs-ask.casey-entered .ask-path.right .ask-path-label { animation: askFadeUp 0.5s cubic-bezier(.22,1,.36,1) 1.55s both }
+  #cs-ask.casey-entered .ask-path.right .ask-path-body  { animation: askFadeUp 0.5s cubic-bezier(.22,1,.36,1) 1.70s both }
   html[data-export="1"] #cs-ask .ask-headline,
   html[data-export="1"] #cs-ask .ask-sub,
   html[data-export="1"] #cs-ask .ask-paths,
+  html[data-export="1"] #cs-ask .ask-path,
+  html[data-export="1"] #cs-ask .ask-path-icon,
+  html[data-export="1"] #cs-ask .ask-path-label,
+  html[data-export="1"] #cs-ask .ask-path-body,
+  html[data-export="1"] #cs-ask .ask-merge,
   html[data-export="1"] #cs-ask .ask-contact { opacity:1 !important; transform:none !important; animation:none !important }
 </style>
 <div class="casey-slide ds-focus" id="cs-ask">
@@ -17521,7 +17539,8 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-fv6-img .fvi-arc, html[data-export="1"] #cs-fv6-img .fvi-head, html[data-export="1"] #cs-fv6-img .fvi-sub, html[data-export="1"] #cs-fv6-img .fvi-card { opacity:1 !important;transition:none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-fv6-img" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">What is real human connection technology?</div>
+  <!-- [Dave 2026-05-17 LATEST] Eyebrow recolored to WHITE per Dave + font upgraded Manrope → Inter (600 weight, slightly looser .26em letter-spacing). Adds a soft drop-shadow so the white type reads cleanly over the watercolor regardless of background detail. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Inter','DM Sans',sans-serif;font-size:.60rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:#ffffff;z-index:10;text-shadow:0 1px 4px rgba(26,22,18,0.65),0 1px 1px rgba(26,22,18,0.55)">What is real human connection technology?</div>
   <!-- [Dave 2026-05-17 v11] Codex watercolor background — neighborhood-as-network. Fallback chain: real_world_graph → community_builders → display none. -->
   <img class="fvi-bg" src="assets/gnr_vnext_real_world_graph.png" alt="A neighborhood seen at twilight with golden connection threads weaving between homes — watercolor depiction of community as a living network." onerror="this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'"/>
   <div class="fvi-wash"></div>
@@ -18694,12 +18713,15 @@ window.cs1m7Reverse = function() {
   #cs-mv6-merge .mg2-jobs-eye { font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.34em;text-transform:uppercase;color:#b8954a; }
   #cs-mv6-merge .mg2-job { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(.9rem,1.12vw,1.06rem);font-style:italic;font-weight:600;color:#1a1612; }
   #cs-mv6-merge .mg2-job-sep { color:rgba(184,149,74,0.6);font-weight:500; }
-  /* Entry animations */
-  #cs-mv6-merge .mg2-head, #cs-mv6-merge .mg2-sub, #cs-mv6-merge .mg2-chart, #cs-mv6-merge .mg2-jobs { opacity:0;transition:opacity 0.7s cubic-bezier(.22,1,.36,1); }
-  #cs-mv6-merge.casey-entered .mg2-head    { opacity:1;transition-delay:0.15s; }
-  #cs-mv6-merge.casey-entered .mg2-sub     { opacity:1;transition-delay:0.45s; }
-  #cs-mv6-merge.casey-entered .mg2-chart   { opacity:1;transition-delay:0.75s; }
-  #cs-mv6-merge.casey-entered .mg2-jobs    { opacity:1;transition-delay:1.55s; }
+  /* Entry animations — [Dave 2026-05-17 LATEST] upgraded from plain fade to fade-UP (translateY 14→0) so the MISSION beat and headline land with deliberate movement on slide load. MISSION eyebrow span (.mg2-mission-eye) animates a beat before the rest of the head text. */
+  #cs-mv6-merge .mg2-head, #cs-mv6-merge .mg2-sub, #cs-mv6-merge .mg2-chart, #cs-mv6-merge .mg2-jobs { opacity:0;transform:translateY(14px);transition:opacity 0.75s cubic-bezier(.22,1,.36,1),transform 0.75s cubic-bezier(.22,1,.36,1); }
+  #cs-mv6-merge.casey-entered .mg2-head    { opacity:1;transform:translateY(0);transition-delay:0.30s; }
+  #cs-mv6-merge.casey-entered .mg2-sub     { opacity:1;transform:translateY(0);transition-delay:0.65s; }
+  #cs-mv6-merge.casey-entered .mg2-chart   { opacity:1;transform:translateY(0);transition-delay:0.90s; }
+  #cs-mv6-merge.casey-entered .mg2-jobs    { opacity:1;transform:translateY(0);transition-delay:1.70s; }
+  /* MISSION eyebrow lands first — small upward drift + brief letter-spacing settle for emphasis */
+  #cs-mv6-merge .mg2-mission-eye { display:inline-block;opacity:0;transform:translateY(6px);letter-spacing:0.38em;transition:opacity 0.55s cubic-bezier(.22,1,.36,1),transform 0.55s cubic-bezier(.22,1,.36,1),letter-spacing 0.65s cubic-bezier(.22,1,.36,1); }
+  #cs-mv6-merge.casey-entered .mg2-mission-eye { opacity:1;transform:translateY(0);letter-spacing:0.26em;transition-delay:0.10s; }
   @keyframes mg2CurveDraw { from { stroke-dashoffset: 2400; } to { stroke-dashoffset: 0; } }
   #cs-mv6-merge .mg2-curve-path { stroke-dasharray:2400;stroke-dashoffset:2400; }
   #cs-mv6-merge.casey-entered .mg2-curve-path { animation:mg2CurveDraw 2.4s cubic-bezier(.55,0,.65,.55) forwards 0.95s; }
@@ -18717,7 +18739,7 @@ window.cs1m7Reverse = function() {
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Powering the future of how we connect off screen</div>
   <section class="mg2-stage">
 
-    <h1 class="mg2-head"><span style="font-family:'Manrope',sans-serif;font-size:0.42em;font-weight:850;letter-spacing:0.26em;text-transform:uppercase;color:#b8954a;vertical-align:0.18em">Mission</span> &nbsp;for all our lives to run on <em>autonomous, abundant connection</em>.</h1>
+    <h1 class="mg2-head"><span class="mg2-mission-eye" style="font-family:'Inter','DM Sans',sans-serif;font-size:0.42em;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#b8954a;vertical-align:0.18em">Mission</span> &nbsp;for all our lives to run on <em>autonomous, abundant connection</em>.</h1>
 
     <!-- ═══ COMPOSITE CHART: era markers along x-axis + demand curve climbing through them ═══ -->
     <div class="mg2-chart">
