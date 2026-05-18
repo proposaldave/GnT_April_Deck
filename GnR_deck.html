@@ -12600,6 +12600,8 @@ window.cs1m7Reverse = function() {
         <div class="v5-step"><div class="yr">2022</div><div class="dot"></div><div class="txt">Founded NEPC</div></div>
         <div class="v5-step"><div class="yr">2024</div><div class="dot"></div><div class="txt"><strong style="font-weight:800;color:#1a1612">Core Product Pivot:</strong> invitations</div></div>
         <div class="v5-step now"><div class="yr">2025</div><div class="dot"></div><div class="txt">CTO Steve joins</div><div class="sub">60 GnR invitation courts</div></div>
+        <!-- [Dave 2026-05-18] 2026 Racketeer step added per Dave 'you can add racketeer to the timeline on the dave velardo slide (2026)'. -->
+        <div class="v5-step"><div class="yr">2026</div><div class="dot"></div><div class="txt">Racketeer</div></div>
       </div>
     </div>
   </section>
@@ -15939,8 +15941,39 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-ask .ask-path-body,
   html[data-export="1"] #cs-ask .ask-merge,
   html[data-export="1"] #cs-ask .ask-contact { opacity:1 !important; transform:none !important; animation:none !important }
+
+  /* [Dave 2026-05-18] cs-ask = FULL-BLEED bg image (NYC steakhouse watercolor — steak + wine + Empire State view). Content shifts to the LEFT half of the slide; right half reveals the painterly scene. Dark interior bg replaces the cream + recolors all type to cream/gold/light-blue/light-red. */
+  #cs-ask { background:#1a1410 !important; overflow:hidden; }
+  #cs-ask .ask-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; z-index:0; display:block; }
+  #cs-ask .ask-bg-wash { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(90deg, rgba(20,14,10,0.92) 0%, rgba(20,14,10,0.78) 28%, rgba(20,14,10,0.42) 52%, rgba(20,14,10,0.08) 72%, rgba(20,14,10,0) 88%); }
+  #cs-ask .ask-stage { z-index:2; align-items:flex-start !important; justify-content:center; padding:88px 56px 56px 84px !important; text-align:left !important; }
+  #cs-ask .ask-headline { color:#f9f3e2 !important; max-width:760px; text-align:left; }
+  #cs-ask .ask-headline em { color:#d4a85a !important; }
+  #cs-ask .ask-gnr .g { color:#7da9e0 !important; }
+  #cs-ask .ask-gnr .n { color:#d4a85a !important; }
+  #cs-ask .ask-gnr .r { color:#e07658 !important; }
+  #cs-ask .ask-paths { max-width:680px; margin:6px 0 0 !important; }
+  #cs-ask .ask-path.left { background:linear-gradient(180deg,rgba(91,143,212,0.14) 0%, rgba(91,143,212,0.04) 100%) !important; border-color:rgba(120,170,230,0.50) !important; }
+  #cs-ask .ask-path.right { background:linear-gradient(180deg,rgba(200,90,60,0.14) 0%, rgba(200,90,60,0.04) 100%) !important; border-color:rgba(230,130,90,0.50) !important; }
+  #cs-ask .ask-path.left .ask-path-icon { background:rgba(91,143,212,0.20) !important; border-color:rgba(140,180,230,0.65) !important; }
+  #cs-ask .ask-path.right .ask-path-icon { background:rgba(200,90,60,0.20) !important; border-color:rgba(230,130,90,0.65) !important; }
+  #cs-ask .ask-path.left .ask-path-label { color:#a4c5ea !important; }
+  #cs-ask .ask-path.right .ask-path-label { color:#eb9176 !important; }
+  #cs-ask .ask-path-body { color:#f9f3e2 !important; }
+  #cs-ask .ask-or { color:rgba(212,168,90,0.85) !important; }
+  #cs-ask .ask-merge-line { background:linear-gradient(180deg, rgba(212,168,90,0) 0%, rgba(212,168,90,0.55) 50%, rgba(212,168,90,0) 100%) !important; }
+  #cs-ask .ask-contact { max-width:680px; align-items:flex-start !important; text-align:left !important; border-top-color:rgba(212,168,90,0.32) !important; }
+  #cs-ask .ask-contact .name { color:#d4a85a !important; }
+  #cs-ask .ask-contact .email, #cs-ask .ask-contact .phone { color:#f9f3e2 !important; }
+  #cs-ask .ask-contact .email a, #cs-ask .ask-contact .phone a { color:#f9f3e2 !important; border-bottom-color:rgba(212,168,90,0.55) !important; }
+  /* Universal eyebrow halo (defined in head) is cream — keep the red eyebrow for now but override to gold-on-dark since cream halo over red on dark looks muddy. */
+  #cs-ask > div[style*="top:28px"][style*="left:48px"] { color:#d4a85a !important; text-shadow:0 1px 2px rgba(0,0,0,0.55), 0 0 8px rgba(0,0,0,0.35) !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-ask">
+  <!-- [Dave 2026-05-18] Bg image: NYC steakhouse watercolor — Dave attached a 1920×1080 night-scene image (cityscape view through window + steak/wine on table). Fallback: image hides if not on disk; dark interior bg + content still reads.
+       🎯 ACTION REQUIRED: Save the attached image to `C:\Users\dave\CLAUDE COWORK\07_PRODUCT\pitch_visuals\assets\cs-ask-bg.png` for the bg to render. -->
+  <img class="ask-bg" src="assets/cs-ask-bg.png" alt="" onerror="this.style.display='none'"/>
+  <div class="ask-bg-wash" aria-hidden="true"></div>
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Ask</div>
   <section class="ask-stage">
 
