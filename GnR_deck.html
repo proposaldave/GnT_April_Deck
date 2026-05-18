@@ -10031,10 +10031,14 @@ window.cs1m7Reverse = function() {
 
   /* LEFT — funnel */
   #cs-wedgepb-combo .wpc-funnel { display:flex; flex-direction:column; gap:7px; width:100%; max-width:620px; margin:0 auto; position:relative; overflow:visible; }
-  /* [Dave 2026-05-17 LATEST v2] Pickleball→cards connector REBUILT — Dave: "the blue arrow there looks absolutely terrible and out of place. the goal is to link the 5 cards on the right with the blue pickleball block on the left". Connector now lives INSIDE the funnel column, anchored vertically to the Pickleball band-4's exact center (266px from funnel top = 70px×3 bands + 7px×3 gaps + 70px/2 = 266px) and extends rightward past the funnel edge into the cards column. Originating dot sits AT the Pickleball band; line travels horizontally across the grid gap; chevron lands AT the cards' vertical bar. */
-  #cs-wedgepb-combo .wpc-pb-link { position:absolute; top:266px; left:72%; transform:translateY(-50%); width:380px; height:24px; z-index:6; pointer-events:none; overflow:visible; }
-  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-line { stroke:#5B8FD4; stroke-width:3.5; fill:none; stroke-linecap:round; stroke-linejoin:round; filter:drop-shadow(0 1px 2px rgba(91,143,212,0.25)); }
-  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-dot { fill:#5B8FD4; filter:drop-shadow(0 1px 2px rgba(91,143,212,0.25)); }
+  /* [Dave 2026-05-17 LATEST v3] Connector REDESIGNED again — Dave: "blue arrow looks awful". Replaced
+     the thick line + chevron arrowhead with an editorial-grade SUBTLE dotted trail: thin stroke,
+     no arrowhead, a small origin dot on the Pickleball band and a matching terminator dot on the
+     cards' vertical bar. Reads as a quiet thread, not a Powerpoint arrow. */
+  #cs-wedgepb-combo .wpc-pb-link { position:absolute; top:266px; left:73%; transform:translateY(-50%); width:380px; height:14px; z-index:6; pointer-events:none; overflow:visible; }
+  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-line { stroke:rgba(91,143,212,0.62); stroke-width:1.3; fill:none; stroke-linecap:round; stroke-dasharray:2.5 5; }
+  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-dot { fill:#5B8FD4; }
+  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-dot-end { fill:rgba(91,143,212,0.72); }
   #cs-wedgepb-combo .wpc-band { position:relative; height:70px; display:flex; align-items:center; justify-content:center; gap:14px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.95rem,1.18vw,1.15rem); font-weight:850; letter-spacing:-0.012em; color:#fbf7ef; text-align:center; }
   #cs-wedgepb-combo .wpc-band-1 { width:100%;  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%); background:linear-gradient(180deg, #c8b39d 0%, #a89378 100%); }
   #cs-wedgepb-combo .wpc-band-2 { width:84%;   clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%); background:linear-gradient(180deg, #8a7459 0%, #6e5a3f 100%); margin:0 auto; }
@@ -10138,14 +10142,14 @@ window.cs1m7Reverse = function() {
         <div class="wpc-band wpc-band-4"><span>Pickleball</span></div>
         <!-- [Dave 2026-05-17 v18] Big NEPC logo + "NEPC" text per Dave 'NEPC logo on #1 secret slide is still too small and... you have to add NEPC there'. -->
         <div class="wpc-band wpc-band-5"><img src="nepc-logo.png" alt="NEPC logo"/><span class="wpc-band-nepc-text">NEPC</span></div>
-        <!-- [Dave 2026-05-17 LATEST v2] Pickleball→cards connector — anchored vertically to band-4's center (top:266px set in CSS), extends rightward into the cards column. Originating dot SITS ON the Pickleball band's right edge; line crosses the grid gap; chevron points into the cards stack. -->
-        <svg class="wpc-pb-link" viewBox="0 0 380 24" preserveAspectRatio="none" aria-hidden="true">
+        <!-- [Dave 2026-05-17 LATEST v3] Pickleball→cards connector — subtle dotted trail, no arrowhead. Origin dot on Pickleball band's right edge; thin dashed thread crosses the gap; small terminator dot lands on the cards' vertical bar. Editorial whisper, not a Powerpoint shout. -->
+        <svg class="wpc-pb-link" viewBox="0 0 380 14" preserveAspectRatio="none" aria-hidden="true">
           <!-- Origin dot — anchored to Pickleball band right edge -->
-          <circle class="wpc-pb-link-dot" cx="6" cy="12" r="5.5"/>
-          <!-- Horizontal line extending rightward across grid gap into cards area -->
-          <path class="wpc-pb-link-line" d="M 11 12 L 365 12"/>
-          <!-- Chevron pointing → toward cards -->
-          <polyline class="wpc-pb-link-line" points="355 5, 374 12, 355 19"/>
+          <circle class="wpc-pb-link-dot" cx="5" cy="7" r="3.5"/>
+          <!-- Thin dashed thread extending rightward -->
+          <path class="wpc-pb-link-line" d="M 12 7 L 370 7"/>
+          <!-- Terminator dot — lands on the cards' vertical bar -->
+          <circle class="wpc-pb-link-dot-end" cx="376" cy="7" r="2.6"/>
         </svg>
       </div>
 
