@@ -7093,7 +7093,7 @@ window.cs1m5Reverse = function() {
   html[data-export="1"] #cs-frontier-pink2 .fi-headline,
   html[data-export="1"] #cs-frontier-pink2 .fi-hero-img { opacity:1 !important; transform:none !important; animation:none !important; }
 </style>
-<div class="casey-slide ds-focus active casey-entered" id="cs-frontier-iconic">
+<div class="casey-slide ds-focus" id="cs-frontier-iconic" style="display:none">
   <!-- [Dave 2026-05-17 LATEST] Eyebrow now carries the four science-discipline tags (Neuroscience · Longitudinal · Public Health · Epidemiology) — the standalone disciplines strip below the headline has been removed in favor of this single eyebrow line. Letter-spacing tightened .22em → .16em so the full 4-discipline string fits on one row at the standard eyebrow size. Gold middle-dot separators for rhythm against the red ink. -->
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Neuroscience<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Longitudinal<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Public Health<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Epidemiology</div>
   <section class="fi-stage">
@@ -7114,7 +7114,7 @@ window.cs1m5Reverse = function() {
      image for assets/cs-frontier-pink1.png (sunset town/village wide-angle watercolor).
      Fallback chain → cs-frontier-iconic-hero.png so slide always renders.
      ═══════════════════════════════════════════════════════════════════════════ -->
-<div class="casey-slide ds-focus" id="cs-frontier-pink1" style="display:none">
+<div class="casey-slide ds-focus active casey-entered" id="cs-frontier-pink1">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Neuroscience<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Longitudinal<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Public Health<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Epidemiology</div>
   <section class="fi-stage">
     <h1 class="fi-headline"><span class="fi-line">Real connection &rarr; <em class="fi-predictor">#1 predictor</em> of a fulfilling life.</span></h1>
@@ -10022,11 +10022,14 @@ window.cs1m7Reverse = function() {
      Front face: thematic icon + serif italic teaser word in card color + "FLIP →" hint.
      Back face: same icon + full lede + clarifier + ordinal num (the v16 design).
      Card 3 RED-FILLED on both faces — the "problem beat" foil. */
-  #cs-wedgepb-combo .wpc-cards-wrap { display:flex; flex-direction:column; gap:10px; width:100%; }
-  #cs-wedgepb-combo .wpc-cards-header { display:flex; align-items:center; gap:10px; padding-left:6px; font-family:'Manrope',sans-serif; font-size:.66rem; font-weight:900; letter-spacing:.32em; text-transform:uppercase; color:#5B8FD4; }
-  #cs-wedgepb-combo .wpc-cards-header svg { width:14px; height:14px; flex-shrink:0; }
+  #cs-wedgepb-combo .wpc-cards-wrap { display:flex; flex-direction:column; gap:10px; width:100%; position:relative; }
   #cs-wedgepb-combo .wpc-cards { display:flex; flex-direction:column; gap:10px; width:100%; position:relative; }
   #cs-wedgepb-combo .wpc-cards::before { content:""; position:absolute; left:-18px; top:0; bottom:0; width:3px; border-radius:1.5px; background:linear-gradient(180deg, rgba(91,143,212,0.95) 0%, rgba(91,143,212,0.75) 50%, rgba(91,143,212,0.4) 100%); z-index:0; }
+  /* [Dave 2026-05-17 LATEST] Horizontal Pickleball-blue connector stub at the top of the cards bar — visually links these five cards back to the blue Pickleball band of the funnel (left column). Replaces the deleted "Why pickleball" text header. */
+  #cs-wedgepb-combo .wpc-pb-link { position:absolute; z-index:6; pointer-events:none; left:-128px; top:-6px; width:140px; height:30px; overflow:visible; }
+  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-line { stroke:#5B8FD4; stroke-width:3; fill:none; stroke-linecap:round; }
+  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-dot { fill:#5B8FD4; }
+  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-arrow { stroke:#5B8FD4; stroke-width:3; fill:none; stroke-linecap:round; stroke-linejoin:round; }
   #cs-wedgepb-combo .wpc-card { position:relative; height:70px; width:100%; cursor:pointer; }
   /* Card 3 (red problem-beat) is taller to fit the 3 callout pills inline. */
   #cs-wedgepb-combo .wpc-card.wpc-c3 { height:142px; }
@@ -10111,14 +10114,21 @@ window.cs1m7Reverse = function() {
         <div class="wpc-band wpc-band-5"><img src="nepc-logo.png" alt="NEPC logo"/><span class="wpc-band-nepc-text">NEPC</span></div>
       </div>
 
-      <!-- RIGHT · 5 rationale cards [Dave 2026-05-17 v21]
-           Pickleball-blue eyebrow header ("WHY PICKLEBALL ↗") + thicker blue connector make the
-           "these belong to pickleball" linkage unambiguous in print/PDF. -->
+      <!-- RIGHT · 5 rationale cards [Dave 2026-05-17 LATEST]
+           "Why pickleball" text header DELETED per Dave 'to reduce the amount of text on this
+           slide, get rid of why pickleball text and have some sort of indicator/link/line/whatever
+           between the five cards on the right and the blue pickleball block on the left'.
+           Replaced with a horizontal Pickleball-blue connector stub at the top of the cards
+           vertical bar — visually arrows back toward the funnel's blue Pickleball band. -->
       <div class="wpc-cards-wrap">
-        <div class="wpc-cards-header">
-          <span>Why pickleball</span>
-          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="11" x2="11" y2="3"/><polyline points="5 3, 11 3, 11 9"/></svg>
-        </div>
+        <svg class="wpc-pb-link" viewBox="0 0 140 30" aria-hidden="true">
+          <!-- dot anchored on the cards-bar side -->
+          <circle class="wpc-pb-link-dot" cx="135" cy="15" r="4"/>
+          <!-- horizontal line extending leftward toward the Pickleball block -->
+          <path class="wpc-pb-link-line" d="M 18 15 L 131 15"/>
+          <!-- chevron pointing LEFT toward Pickleball -->
+          <polyline class="wpc-pb-link-arrow" points="14 8, 5 15, 14 22"/>
+        </svg>
       <div class="wpc-cards">
 
         <div class="wpc-card wpc-c1" onclick="this.classList.toggle('flipped');event.stopPropagation()">
@@ -12467,7 +12477,7 @@ window.cs1m7Reverse = function() {
               <div class="v5-have" aria-label="Dave has this"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>
               <div class="v5-num">01</div>
               <div class="v5-eye">Clarity</div>
-              <div class="v5-body"><em>Next frontier of real<br>human connection technology</em></div>
+              <div class="v5-body"><em>Next frontier: the technology<br>that connects us</em></div>
               <div class="v5-meta">Six years iterating path of least resistance</div>
             </div>
           </div>
@@ -12530,7 +12540,7 @@ window.cs1m7Reverse = function() {
               <div class="v5-have" aria-label="Dave has this"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>
               <div class="v5-num">03</div>
               <!-- [Dave 2026-05-17 v14] Pillar 3 retitled "Life Mission" → "GnR Growth & Mission" per Dave + body line simplified. [Dave 2026-05-17 LATEST] "GnR" now brand-colored (G=blue · n=italic gold · R=red) matching the wordmark used throughout the deck. -->
-              <div class="v5-eye"><span style="text-transform:none;letter-spacing:-0.01em;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.20em;font-weight:850;display:inline-block;vertical-align:baseline;margin-right:.18em"><span style="color:#5B8FD4">G</span><span style="color:#b8954a;font-style:italic;font-weight:500;padding:0 .02em">n</span><span style="color:#c8462c">R</span></span>Growth &amp; Mission</div>
+              <div class="v5-eye"><span style="text-transform:none;letter-spacing:-0.01em;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.20em;font-weight:850;display:inline-block;vertical-align:baseline;margin-right:.55em"><span style="color:#5B8FD4">G</span><span style="color:#b8954a;font-style:italic;font-weight:500;padding:0 .02em">n</span><span style="color:#c8462c">R</span></span>Growth &amp; Mission</div>
               <div class="v5-body"><em>We&rsquo;re wired to give first.</em></div>
               <div class="v5-meta">Live it &middot; Face of it &middot; Club owner sales<br>Network &amp; podcasts &middot; 4D play-style</div>
             </div>
@@ -16729,17 +16739,10 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-magnetic .mg-side.right .mg-edge,
   html[data-export="1"] #cs-magnetic .mg-side.right .mg-invite-envelope { opacity:1 !important; transform:none !important; animation:none !important; stroke-opacity:0 !important; }
   html[data-export="1"] #cs-magnetic .mg-side.right .mg-invite-envelope { opacity:0 !important; }
-  /* [Dave 2026-05-17 PM] Full-bleed bg image (watercolor — outdoor pickleball club, players gathering / welcoming pose / golden hour). Save attached image to assets/cs-magnetic-bg.png. Cream wash overlays so content stays legible. */
-  #cs-magnetic { background:#f3ead8 !important; overflow:hidden; }
-  #cs-magnetic .mgbg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; z-index:0; display:block; opacity:0.72; }
-  #cs-magnetic .mgbg-wash { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(180deg, rgba(251,247,239,0.90) 0%, rgba(251,247,239,0.78) 22%, rgba(251,247,239,0.62) 45%, rgba(251,247,239,0.55) 100%); }
-  #cs-magnetic .mg-stage { position:relative; z-index:2; }
-  html[data-export="1"] #cs-magnetic .mgbg { opacity:0.72 !important; }
+  /* [Dave 2026-05-17 LATEST] Bg-image treatment REVERTED per Dave 'the image background on this slide isn't working, so you need to revert so there's no image background'. mgbg/mgbg-wash markup now hidden via display:none below; CSS rules retained as silent backup. */
+  #cs-magnetic .mgbg, #cs-magnetic .mgbg-wash { display:none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-magnetic">
-  <!-- [Dave 2026-05-17 PM] Full-bleed bg image. Save attached image to assets/cs-magnetic-bg.png. Fallback chain → cs-samecourt-pink3.png → gnr_vnext_community_builders.png. -->
-  <img class="mgbg" src="assets/cs-magnetic-bg.png" alt="" onerror="this.onerror=null;this.src='assets/cs-samecourt-pink3.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
-  <div class="mgbg-wash" aria-hidden="true"></div>
   <!-- [Dave 2026-05-14 PM v4] Eyebrow and master header SWAPPED per Dave. Eyebrow now carries the long category claim ('PICKLEBALL IS A HUMAN VALUE MARKETPLACE') as a quiet banner; master header below is the short punchy phrase 'Social pull.' -->
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Social pull</div>
   <section class="mg-stage">
@@ -22884,7 +22887,7 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-14] cs-intro6 INSERTED as new slot 1 per Dave: 'take the attached image and figure out how to leverage it to create a new slide just before the title slide for our new slide 1'. Cinematic science-proof opener (4-field convergence) lands BEFORE the wordmark title slide. All other main-flow slots shift +1.
   // [Dave 2026-05-14 MERGE] cs-intro6 + cs-frontier MERGED into a single slot-1 opener (cs-frontier carries the merged content). cs-intro6 demoted to red-dot alt at slot 1 for A/B comparison. All slots past slot 1 shift -1. Merge approach: hero now states the #1-predictor science truth, sub names the parabolic demand reality, curve carries the demand visualization, '4 sciences agree' strip grounds the claim, positioning band carves the category + wedge.
   // [Dave 2026-05-14 PM v4] cs-frontier-iconic PROMOTED to slot-1 primary per Dave 'I like this, let's make it the first slide, replacing current first slide which you can move to being a red dot slide to the left'. cs-frontier (former primary) demoted to first red-dot alt below.
-  'cs-frontier-iconic', //  1 PRIMARY · Science has proven the #1 predictor of a fulfilling life: openly giving and receiving real connection. Full-bleed universal welcome image, no sports/wedge imagery.
+  'cs-frontier-pink1', //  1 PRIMARY · [Dave 2026-05-17 LATEST] Promoted from pink-dot alt → main slot 1 ('i like this, use this as main slide one and put current main slide one as a pink dot next to it'). Sunset town/village wide-angle watercolor bg + 'Real connection → #1 predictor of a fulfilling life' headline.
   // [Dave 2026-05-17 PM] cs-givefirst-slide2 REMOVED from main flow per Dave: 'major bug' — bg image asset cs-givefirst-slide2.png was never saved to disk; slide was rendering with broken image alt text. The original cs-givefirst-art at slot 18 still carries the same content cleanly. HTML retained as silent backup; restore by re-adding this line.
   // 'cs-givefirst-slide2', // REMOVED — was duplicate at slot 2 with broken bg image
   'cs-1m8',   //  3 TITLE · 3-stage 'open heart' human-truth opener → wordmark split → captions
@@ -23038,7 +23041,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-14 PM v4] cs-frontier-iconic PROMOTED to primary (see SLIDE_ORDER above). cs-frontier (former primary, with hero text + curve + era labels + 4-sciences strip) now sits as the FIRST red-dot alt — one step left of the new primary so it's the closest neighbor.
   // [Dave 2026-05-17 v6] cs-frontier AND cs-intro6 MOVED to appendix per Dave (consecutive 'move this slide to appendix' on both slot-1 red-dot alts). Slot 1 now has no alts; cs-frontier-iconic stands alone as the opener.
   // [Dave 2026-05-17 LATEST PINK] Two pink-dot alts added at slot 1 — duplicates of cs-frontier-iconic with different bg images (cs-frontier-pink1 + cs-frontier-pink2). Same eyebrow/headline/structure, swapped hero img only. Fallback chain → cs-frontier-iconic-hero.png so they always render.
-  1: ['cs-frontier-pink1', 'cs-frontier-pink2'],
+  1: ['cs-frontier-iconic', 'cs-frontier-pink2'],
   // [Dave 2026-05-17 LATEST] NEW slot 2 = cs-givefirst-slide2 (give-first duplicate). No alts. All keys past slot 1 shifted +1.
   2: [],
   // Slot 3 (cs-1m8 title — was slot 2) has no alts.
