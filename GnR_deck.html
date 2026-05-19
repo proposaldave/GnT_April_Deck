@@ -10470,6 +10470,284 @@ window.cs1m7Reverse = function() {
 </div>
 
 
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-wedgepb-codex · PINK-DOT ALT of cs-wedgepb-combo [Dave 2026-05-18 LATEST]
+     Per Dave: 'create a new pink dot slide to the left of the "Pickleball →
+     fastest path to the first global human value exchange network" slide
+     that's identical to the ... slide except it uses the image below as
+     background slide'. Image saved to assets/cs-wedgepb-codex.png.
+     Same headline + funnel + 5-card structure as cs-wedgepb-combo; the
+     codex watercolor sits behind everything at low opacity with a cream
+     wash so the wedge content reads cleanly on top.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<style>
+  #cs-wedgepb-codex { background:radial-gradient(ellipse at 50% 105%, #f3e6c4 0%, #f3ead8 38%, #efe6cd 68%, #e6d6b0 100%) !important; }
+  #cs-wedgepb-codex::before { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 76%, rgba(212,168,83,0.18) 0%, rgba(212,168,83,0.04) 38%, transparent 64%); pointer-events:none; z-index:1; }
+  #cs-wedgepb-codex .wpc-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:60px 56px 40px; z-index:2; gap:18px; }
+  /* [Dave 2026-05-17 v12] Old .wpc-head retained (now unused since the wedge tagline moved to speaker notes). .wpc-sub PROMOTED to slide header — bumped to 2.0–3.0rem peak, weight 850, black ink, italic gold accent. */
+  #cs-wedgepb-codex .wpc-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.5rem,2.2vw,2.05rem); font-weight:850; line-height:1.08; letter-spacing:-0.022em; color:#1a1612; max-width:1700px; text-align:center; margin:0; white-space:nowrap; }
+  #cs-wedgepb-codex .wpc-head em { font-style:italic; color:#b8954a; font-weight:850; }
+  #cs-wedgepb-codex .wpc-sub { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.7rem,2.7vw,2.6rem); font-weight:850; font-style:normal; color:#1a1612; line-height:1.06; letter-spacing:-0.024em; max-width:1700px; text-align:center; margin:0; }
+  #cs-wedgepb-codex .wpc-sub em { font-style:italic; font-weight:850; color:#b8954a; }
+  /* [Dave 2026-05-17 LATEST] Grid REBALANCED — Dave: "increase size of this graphic so left is significantly larger than the five cards on the right". Funnel column now 1.55× the cards column. */
+  #cs-wedgepb-codex .wpc-grid { display:grid; grid-template-columns: 1.55fr 1fr; gap:40px; align-items:center; width:100%; max-width:1700px; margin-top:8px; }
+
+  /* LEFT — funnel [Dave 2026-05-17 LATEST: SIZED UP — max-width 620→920, band height 70→96, band-5 height 90→124, gap 7→10] */
+  #cs-wedgepb-codex .wpc-funnel { display:flex; flex-direction:column; gap:10px; width:100%; max-width:920px; margin:0 auto; position:relative; overflow:visible; }
+  /* [Dave 2026-05-18 v6 — FINAL] Connector REMOVED per Dave 'look at how bad this looks. double check review and make sure you get this right finally'. After 5 iterations of dotted/solid/gradient lines + matched dots — every version looked like a crude flowchart on an editorial slide. The link between the Pickleball band and the cards is now carried purely by COLOR (cards' left vertical bar is Pickleball-blue, matching the Pickleball band's gradient) and SPATIAL PROXIMITY (cards sit directly to the right of the funnel). No floating arrow. No discrete connector. Cleaner reads. .wpc-pb-link rules retained as hidden no-op so the inline SVG markup below still parses without producing anything visible. */
+  #cs-wedgepb-codex .wpc-pb-link { display:none !important; }
+  #cs-wedgepb-codex .wpc-band { position:relative; height:96px; display:flex; align-items:center; justify-content:center; gap:14px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.15rem,1.45vw,1.45rem); font-weight:850; letter-spacing:-0.012em; color:#fbf7ef; text-align:center; }
+  #cs-wedgepb-codex .wpc-band-1 { width:100%;  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%); background:linear-gradient(180deg, #c8b39d 0%, #a89378 100%); }
+  #cs-wedgepb-codex .wpc-band-2 { width:84%;   clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%); background:linear-gradient(180deg, #8a7459 0%, #6e5a3f 100%); margin:0 auto; }
+  #cs-wedgepb-codex .wpc-band-3 { width:66%;   clip-path: polygon(0 0, 100% 0, 93% 100%, 7% 100%); background:linear-gradient(180deg, #d65a3a 0%, #b53e22 100%); margin:0 auto; box-shadow:0 12px 24px rgba(200,70,44,0.18); }
+  #cs-wedgepb-codex .wpc-band-4 { width:48%;   clip-path: polygon(0 0, 100% 0, 89% 100%, 11% 100%); background:linear-gradient(180deg, #6fa2de 0%, #4878bf 100%); margin:0 auto; box-shadow:0 12px 26px rgba(91,143,212,0.20); }
+  /* [Dave 2026-05-17 LATEST] Band-5 NEPC scaled up to match the larger funnel. */
+  #cs-wedgepb-codex .wpc-band-5 { width:36%; height:124px; clip-path: polygon(0 0, 100% 0, 82% 100%, 18% 100%); background:linear-gradient(180deg, #f5cf6a 0%, #d4a85a 48%, #a87a35 100%); margin:0 auto; color:#3a2a14; gap:18px; }
+  #cs-wedgepb-codex .wpc-band-5::before { content:""; position:absolute; left:-40%; right:-40%; top:-30px; bottom:-34px; background:radial-gradient(ellipse at center, rgba(240,196,96,0.50) 0%, rgba(212,168,83,0.16) 40%, rgba(184,149,74,0) 70%); z-index:-1; filter:blur(2px); }
+  #cs-wedgepb-codex .wpc-band-5 img { height:74px; width:auto; mix-blend-mode:multiply; }
+  /* [Dave 2026-05-17 LATEST] NEPC text recolored to WHITE + nudged slightly to the left (negative margin pulls it closer to the logo) per Dave. Dark text-shadow keeps the white legible against the warm gold band. */
+  #cs-wedgepb-codex .wpc-band-5 .wpc-band-nepc-text { font-family:'Fraunces','Playfair Display',Georgia,serif; font-weight:900; font-size:clamp(1.3rem,1.6vw,1.55rem); letter-spacing:0.06em; color:#ffffff; margin-left:-12px; text-shadow:0 1px 2px rgba(58,42,20,0.55),0 1px 1px rgba(58,42,20,0.45); }
+
+  /* RIGHT — 5 FLIPPABLE rationale cards [Dave 2026-05-17 v22]
+     Flip mechanic RESTORED per Dave 'these are supposed to be cards that i can flip over'.
+     Smooth 3D rotateY animation. Each card 70px tall with perspective on parent.
+     Front face: thematic icon + serif italic teaser word in card color + "FLIP →" hint.
+     Back face: same icon + full lede + clarifier + ordinal num (the v16 design).
+     Card 3 RED-FILLED on both faces — the "problem beat" foil. */
+  #cs-wedgepb-codex .wpc-cards-wrap { display:flex; flex-direction:column; gap:10px; width:100%; position:relative; }
+  #cs-wedgepb-codex .wpc-cards { display:flex; flex-direction:column; gap:10px; width:100%; position:relative; }
+  /* [Dave 2026-05-18 v7] Funnel→cards CONNECTOR rebuilt as an editorial BRACKET. Previous attempts (dotted line + paired dots, gradient arrow, color-only-no-connector) all felt either crude flowchart or invisible. New design: the cards' left rail becomes a Pickleball-blue OPEN-RIGHT bracket "[" with top + bottom arms wrapping the card stack (structural — says "all five = pickleball"), plus a single horizontal STUB exiting the bracket's mid-left edge and reaching toward the Pickleball band (directional — says "this comes FROM pickleball"). Bracket weight matches the funnel band stroke; stub ends ~24px short of the funnel column so it's clearly a callout, not a flowchart wire. */
+  #cs-wedgepb-codex .wpc-cards::before {
+    content:"";
+    position:absolute;
+    left:-22px;
+    top:-6px;
+    bottom:-6px;
+    width:16px;
+    border:3px solid #5B8FD4;
+    border-right:0;
+    border-radius:8px 0 0 8px;
+    box-shadow:0 6px 18px rgba(91,143,212,0.18);
+    z-index:0;
+  }
+  #cs-wedgepb-codex .wpc-cards::after {
+    content:"";
+    position:absolute;
+    left:-46px;
+    top:50%;
+    transform:translateY(-50%);
+    width:28px;
+    height:3px;
+    background:#5B8FD4;
+    border-radius:2px;
+    box-shadow:0 0 0 4px rgba(91,143,212,0.10);
+    z-index:0;
+  }
+  #cs-wedgepb-codex .wpc-card { position:relative; height:70px; width:100%; cursor:pointer; }
+  /* Card 3 (red problem-beat) is taller to fit the 3 callout pills inline. */
+  #cs-wedgepb-codex .wpc-card.wpc-c3 { height:142px; }
+  /* [Dave 2026-05-17 LATEST RESOLVE v3 — true 3D card flip] Dave: "the animations here these need to flip like animation card flipping over". Opacity crossfade replaced with a proper rotateY 3D flip. Each card gets perspective; faces sit back-to-back with backface-visibility:hidden so only the camera-facing side is visible mid-rotation. Click toggles .flipped which rotates the card 180deg. PDF/export mode forces .flipped so the back-face content shows in print. */
+  #cs-wedgepb-codex .wpc-card { perspective:1400px; -webkit-perspective:1400px; transform-style:preserve-3d; }
+  #cs-wedgepb-codex .wpc-flip-inner { position:absolute; inset:0; transform-style:preserve-3d; transition:transform 0.7s cubic-bezier(.22,1,.36,1); }
+  #cs-wedgepb-codex .wpc-card.flipped .wpc-flip-inner { transform:rotateY(180deg); }
+  #cs-wedgepb-codex .wpc-face { position:absolute; inset:0; display:flex; align-items:center; gap:18px; padding:14px 22px 14px 20px; background:rgba(251,247,239,0.96); border:1px solid rgba(184,149,74,0.30); border-left:4px solid var(--wpc-color); border-radius:0 12px 12px 0; box-shadow:0 6px 16px rgba(26,22,18,0.06); backface-visibility:hidden; -webkit-backface-visibility:hidden; transform-style:preserve-3d; }
+  #cs-wedgepb-codex .wpc-card .wpc-front { transform:rotateY(0deg); }
+  #cs-wedgepb-codex .wpc-card .wpc-back  { transform:rotateY(180deg); }
+  /* Legacy fallback for any card that doesn't have the .wpc-flip-inner wrapper — flip the face directly. */
+  #cs-wedgepb-codex .wpc-card:not(:has(.wpc-flip-inner)) .wpc-face { transition:transform 0.7s cubic-bezier(.22,1,.36,1); }
+  #cs-wedgepb-codex .wpc-card:not(:has(.wpc-flip-inner)).flipped .wpc-front { transform:rotateY(-180deg); }
+  #cs-wedgepb-codex .wpc-card:not(:has(.wpc-flip-inner)).flipped .wpc-back  { transform:rotateY(0deg); }
+  /* Front faces on Cards 1/2/4/5 are icon-only — center the lone icon horizontally. Card 3 keeps left-aligned multi-element front. */
+  #cs-wedgepb-codex .wpc-face.wpc-front-iconly { justify-content:center; padding:14px 16px; }
+  /* FRONT face — teaser */
+  #cs-wedgepb-codex .wpc-front-body { display:flex; flex-direction:column; gap:1px; flex:1; min-width:0; }
+  #cs-wedgepb-codex .wpc-front-teaser { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.25rem,1.55vw,1.48rem); font-weight:850; font-style:italic; line-height:1.1; color:var(--wpc-color); letter-spacing:-0.012em; }
+  #cs-wedgepb-codex .wpc-front-hint { font-family:'Manrope',sans-serif; font-size:.55rem; font-weight:800; letter-spacing:.30em; text-transform:uppercase; color:rgba(26,22,18,0.36); display:flex; align-items:center; gap:5px; }
+  #cs-wedgepb-codex .wpc-front-hint svg { width:8px; height:8px; opacity:0.7; }
+  /* BACK face — full statement */
+  #cs-wedgepb-codex .wpc-card-ico { width:42px; height:42px; flex-shrink:0; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--wpc-bg); color:var(--wpc-color); border:1.5px solid var(--wpc-color); }
+  #cs-wedgepb-codex .wpc-card-ico svg { width:21px; height:21px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  #cs-wedgepb-codex .wpc-card-body { display:flex; flex-direction:column; gap:1px; flex:1; min-width:0; }
+  #cs-wedgepb-codex .wpc-card-lede { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.05rem,1.3vw,1.22rem); font-weight:850; font-style:italic; line-height:1.1; color:var(--wpc-color); letter-spacing:-0.012em; }
+  #cs-wedgepb-codex .wpc-card-clarify { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.85rem,1.02vw,.98rem); font-weight:600; line-height:1.25; color:rgba(26,22,18,0.72); }
+  /* [Dave 2026-05-17 LATEST] Card ordinals (01-05) HIDDEN per Dave 'delete these numbers'. */
+  #cs-wedgepb-codex .wpc-card-num { display:none !important; }
+  /* [Dave 2026-05-17 LATEST] All five cards unified to Pickleball-blue accents (was purple/gold/red/blue/green). Dave: "let's not have the different colors of all of these slides on the right, let's just have them all blue shaded like the same blue as the pickleball block on the left, and with the middle card changed from red to blue. with the others having mostly white as they do not but the trimmings all blue". */
+  #cs-wedgepb-codex .wpc-c1 { --wpc-color:#5B8FD4; --wpc-bg:rgba(91,143,212,0.10); }
+  #cs-wedgepb-codex .wpc-c2 { --wpc-color:#5B8FD4; --wpc-bg:rgba(91,143,212,0.10); }
+  #cs-wedgepb-codex .wpc-c3 { --wpc-color:#5B8FD4; --wpc-bg:rgba(91,143,212,0.10); }
+  #cs-wedgepb-codex .wpc-c4 { --wpc-color:#5B8FD4; --wpc-bg:rgba(91,143,212,0.10); }
+  #cs-wedgepb-codex .wpc-c5 { --wpc-color:#5B8FD4; --wpc-bg:rgba(91,143,212,0.10); }
+  /* Card 3 — was RED-FILLED problem-beat card; now BLUE-FILLED to match Pickleball band. Same visual weight as foil card, blue palette. */
+  #cs-wedgepb-codex .wpc-c3 .wpc-face { background:linear-gradient(180deg, #6fa2de 0%, #4878bf 100%); border-color:rgba(91,143,212,0.6); border-left-color:#2f5a98; box-shadow:0 10px 24px rgba(91,143,212,0.26); }
+  #cs-wedgepb-codex .wpc-c3 .wpc-front-teaser { color:#fff5d8; }
+  #cs-wedgepb-codex .wpc-c3 .wpc-front-hint { color:rgba(251,247,239,0.62); }
+  #cs-wedgepb-codex .wpc-c3 .wpc-card-ico { background:rgba(251,247,239,0.18); color:#fff5d8; border-color:rgba(251,247,239,0.55); }
+  #cs-wedgepb-codex .wpc-c3 .wpc-card-lede { color:#fff5d8; }
+  #cs-wedgepb-codex .wpc-c3 .wpc-card-clarify { color:rgba(251,247,239,0.88); }
+  /* Export/PDF: force every card to its BACK face so the printed deck shows full text content. Flatten the 3D rotation by hiding the front via opacity:0 and forcing the back to face-forward without rotation; backface-visibility off so the front doesn't disappear from the back of a non-rotated parent. */
+  html[data-export="1"] #cs-wedgepb-codex .wpc-card .wpc-front { opacity:0 !important; transform:none !important; backface-visibility:visible !important; }
+  html[data-export="1"] #cs-wedgepb-codex .wpc-card .wpc-back  { opacity:1 !important; transform:none !important; backface-visibility:visible !important; }
+  html[data-export="1"] #cs-wedgepb-codex .wpc-flip-inner { transform:none !important; transition:none !important; }
+  html[data-export="1"] #cs-wedgepb-codex .wpc-face { transition:none !important; }
+
+  /* Entry stagger */
+  #cs-wedgepb-codex .wpc-head, #cs-wedgepb-codex .wpc-sub, #cs-wedgepb-codex .wpc-band, #cs-wedgepb-codex .wpc-card { opacity:0; transform:translateY(8px); transition:opacity 0.6s cubic-bezier(.22,1,.36,1), transform 0.6s cubic-bezier(.22,1,.36,1); }
+  #cs-wedgepb-codex.casey-entered .wpc-head { opacity:1; transform:none; transition-delay:0.10s; }
+  #cs-wedgepb-codex.casey-entered .wpc-sub  { opacity:1; transform:none; transition-delay:0.25s; }
+  #cs-wedgepb-codex.casey-entered .wpc-band-1 { opacity:1; transform:none; transition-delay:0.40s; }
+  #cs-wedgepb-codex.casey-entered .wpc-band-2 { opacity:1; transform:none; transition-delay:0.52s; }
+  #cs-wedgepb-codex.casey-entered .wpc-band-3 { opacity:1; transform:none; transition-delay:0.64s; }
+  #cs-wedgepb-codex.casey-entered .wpc-band-4 { opacity:1; transform:none; transition-delay:0.76s; }
+  #cs-wedgepb-codex.casey-entered .wpc-band-5 { opacity:1; transform:none; transition-delay:0.88s; }
+  #cs-wedgepb-codex.casey-entered .wpc-card:nth-child(1) { opacity:1; transform:none; transition-delay:0.55s; }
+  #cs-wedgepb-codex.casey-entered .wpc-card:nth-child(2) { opacity:1; transform:none; transition-delay:0.70s; }
+  #cs-wedgepb-codex.casey-entered .wpc-card:nth-child(3) { opacity:1; transform:none; transition-delay:0.85s; }
+  #cs-wedgepb-codex.casey-entered .wpc-card:nth-child(4) { opacity:1; transform:none; transition-delay:1.00s; }
+  #cs-wedgepb-codex.casey-entered .wpc-card:nth-child(5) { opacity:1; transform:none; transition-delay:1.15s; }
+  html[data-export="1"] #cs-wedgepb-codex .wpc-head, html[data-export="1"] #cs-wedgepb-codex .wpc-sub, html[data-export="1"] #cs-wedgepb-codex .wpc-band, html[data-export="1"] #cs-wedgepb-codex .wpc-card { opacity:1 !important; transform:none !important; transition:none !important; }
+
+  /* [Dave 2026-05-18 LATEST] cs-wedgepb-codex-specific overrides — replaces the cream/gold radial bg with a full-bleed codex watercolor + cream wash. Everything else inherits from the rules above (selectors all use #cs-wedgepb-codex). */
+  #cs-wedgepb-codex { background:#1a1612 !important; }
+  #cs-wedgepb-codex::before { background:none !important; }
+  #cs-wedgepb-codex .wpc-codex-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; z-index:0; display:block; opacity:0.42; }
+  #cs-wedgepb-codex .wpc-codex-wash { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(180deg, rgba(251,247,239,0.86) 0%, rgba(251,247,239,0.72) 28%, rgba(251,247,239,0.76) 70%, rgba(251,247,239,0.92) 100%); }
+</style>
+
+<div class="casey-slide ds-focus" id="cs-wedgepb-codex" style="display:none">
+  <img class="wpc-codex-bg" src="assets/cs-wedgepb-codex.png" alt="Watercolor backdrop — funnel of human-connection technology converging on the pickleball wedge." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.style.display=this.naturalWidth?'block':'none'"/>
+  <div class="wpc-codex-wash" aria-hidden="true"></div>
+  <!-- [Dave 2026-05-17 v14] Eyebrow changed to "Give n Receive's #1 secret" per Dave. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Give n Receive&rsquo;s #1 secret &middot; codex bg</div>
+  <section class="wpc-stage">
+
+    <!-- [Dave 2026-05-17 v12] "Pickleball is the wedge. Human connection is the category." headline DELETED from visible slide + moved to speaker notes per Dave. Sub-headline ("Pickleball → fastest path...") remains as the lead-in. -->
+    <div class="speaker-notes" data-slide="cs-wedgepb-codex" style="display:none">Pickleball is the wedge. Human connection is the category.</div>
+    <!-- [Dave 2026-05-18 LATEST] Headline rewritten per Dave: "Pickleball → fastest path to the world's first autonomous human value exchange network." → "Pickleball → fastest path to the first global human value exchange network." -->
+    <p class="wpc-sub"><strong style="color:#5B8FD4;font-weight:850;font-style:normal">Pickleball</strong> &rarr; fastest path to the <em>first global human value exchange network</em>.</p>
+
+    <div class="wpc-grid">
+
+      <!-- LEFT · funnel -->
+      <div class="wpc-funnel">
+        <div class="wpc-band wpc-band-1"><span>Human Connection Technology</span></div>
+        <div class="wpc-band wpc-band-2"><span>Communities</span></div>
+        <div class="wpc-band wpc-band-3"><span>Social Sports</span></div>
+        <div class="wpc-band wpc-band-4"><span>Pickleball</span></div>
+        <!-- [Dave 2026-05-17 v18] Big NEPC logo + "NEPC" text per Dave 'NEPC logo on #1 secret slide is still too small and... you have to add NEPC there'. -->
+        <div class="wpc-band wpc-band-5"><img src="nepc-logo.png" alt="NEPC logo"/><span class="wpc-band-nepc-text">NEPC</span></div>
+        <!-- [Dave 2026-05-18 v5] Pickleball→cards connector — DOTTED line restored (Dave: "the dotted line that you had previously was better than this attempt"). Anchor dots at BOTH ends with thin rings so each endpoint reads as a node — origin sits on the Pickleball band, terminator sits on the cards' vertical bar. -->
+        <svg class="wpc-pb-link" viewBox="0 0 380 20" preserveAspectRatio="none" aria-hidden="true">
+          <!-- Origin port — ring + filled dot on Pickleball band's right edge -->
+          <circle class="wpc-pb-link-ring" cx="10" cy="10" r="7"/>
+          <circle class="wpc-pb-link-dot" cx="10" cy="10" r="4.5"/>
+          <!-- Dotted line crossing the gap -->
+          <path class="wpc-pb-link-line" d="M 17 10 L 363 10"/>
+          <!-- Terminator port — ring + filled dot landing on cards' vertical bar -->
+          <circle class="wpc-pb-link-ring" cx="370" cy="10" r="7"/>
+          <circle class="wpc-pb-link-dot" cx="370" cy="10" r="4.5"/>
+        </svg>
+      </div>
+
+      <!-- RIGHT · 5 rationale cards [Dave 2026-05-17 LATEST]
+           "Why pickleball" text header DELETED per Dave 'to reduce the amount of text on this
+           slide, get rid of why pickleball text and have some sort of indicator/link/line/whatever
+           between the five cards on the right and the blue pickleball block on the left'.
+           Replaced with a horizontal Pickleball-blue connector stub at the top of the cards
+           vertical bar — visually arrows back toward the funnel's blue Pickleball band. -->
+      <div class="wpc-cards-wrap">
+      <div class="wpc-cards">
+
+        <div class="wpc-card wpc-c1" onclick="this.classList.toggle('flipped');event.stopPropagation()">
+          <div class="wpc-face wpc-front wpc-front-iconly">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12 H20"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4"/></svg></div>
+          </div>
+          <div class="wpc-face wpc-back">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12 H20"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4"/></svg></div>
+            <div class="wpc-card-body">
+              <div class="wpc-card-lede" style="white-space:nowrap">Already a social network <em style="font-style:italic;font-weight:850">beyond the courts.</em></div>
+            </div>
+            <div class="wpc-card-num">01</div>
+          </div>
+        </div>
+
+        <div class="wpc-card wpc-c2" onclick="this.classList.toggle('flipped');event.stopPropagation()">
+          <div class="wpc-face wpc-front wpc-front-iconly">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><path d="M12 3 L13.7 8.7 L19.5 8.7 L14.9 12.4 L16.6 18.1 L12 14.6 L7.4 18.1 L9.1 12.4 L4.5 8.7 L10.3 8.7 Z"/></svg></div>
+          </div>
+          <div class="wpc-face wpc-back">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><path d="M12 3 L13.7 8.7 L19.5 8.7 L14.9 12.4 L16.6 18.1 L12 14.6 L7.4 18.1 L9.1 12.4 L4.5 8.7 L10.3 8.7 Z"/></svg></div>
+            <div class="wpc-card-body">
+              <div class="wpc-card-lede" style="white-space:nowrap">Fastest-growing <em style="font-style:italic;font-weight:850">sport in U.S. history.</em></div>
+            </div>
+            <div class="wpc-card-num">02</div>
+          </div>
+        </div>
+
+        <!-- CARD 3 — RED-FILLED problem beat -->
+        <div class="wpc-card wpc-c3" onclick="this.classList.toggle('flipped');event.stopPropagation()">
+          <div class="wpc-face wpc-front">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="13" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/><circle cx="9" cy="14" r="0.9" fill="currentColor" stroke="none"/><circle cx="14" cy="14" r="0.9" fill="currentColor" stroke="none"/></svg></div>
+            <div class="wpc-front-body">
+              <div class="wpc-front-teaser">Social coordination max pain</div>
+            </div>
+            <div class="wpc-card-num">03</div>
+          </div>
+          <div class="wpc-face wpc-back">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="13" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/><circle cx="9" cy="14" r="0.9" fill="currentColor" stroke="none"/><circle cx="14" cy="14" r="0.9" fill="currentColor" stroke="none"/></svg></div>
+            <div class="wpc-card-body">
+              <div class="wpc-card-lede">Social coordination max pain</div>
+              <!-- [Dave 2026-05-18] Pills updated: 'ratings, ego' → 'ratings assumption'; 'reality (human connection)' → 'community reality (human connection, unique human value)'; last two pills SWAPPED so 'manual ...' lands before 'doesn't measure ...'. -->
+              <div class="wpc-c3-pills" style="display:flex;flex-direction:column;gap:4px;margin-top:5px">
+                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;line-height:1.22;color:#fff;background:rgba(30,60,120,0.58);border:1.2px solid rgba(255,245,216,0.55);border-radius:6px;padding:4px 10px;text-shadow:0 1px 1px rgba(0,0,0,0.30)">industry stuck in <em style="font-style:italic;font-weight:850;color:#ffe7c7">ratings assumption</em></div>
+                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;line-height:1.22;color:#fff;background:rgba(30,60,120,0.58);border:1.2px solid rgba(255,245,216,0.55);border-radius:6px;padding:4px 10px;text-shadow:0 1px 1px rgba(0,0,0,0.30)"><em style="font-style:italic;font-weight:850;color:#ffe7c7">manual, public</em> club calendar creation &amp; signup</div>
+                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;line-height:1.22;color:#fff;background:rgba(30,60,120,0.58);border:1.2px solid rgba(255,245,216,0.55);border-radius:6px;padding:4px 10px;text-shadow:0 1px 1px rgba(0,0,0,0.30)">doesn&rsquo;t measure <em style="font-style:italic;font-weight:850;color:#ffe7c7">community reality (human connection, unique human value)</em></div>
+              </div>
+            </div>
+            <div class="wpc-card-num">03</div>
+          </div>
+        </div>
+
+        <!-- [Dave 2026-05-18] Card 4 icon swapped from 5-node network/asterisk to a HEART per Dave: 'how about a heart graphic there would be better than this current icon graphic which i dont really get it'. Heart reads "wildly social" instantly. Same path on both faces. -->
+        <div class="wpc-card wpc-c4" onclick="this.classList.toggle('flipped');event.stopPropagation()">
+          <div class="wpc-face wpc-front wpc-front-iconly">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><path d="M 12 20 C 7 17 2 13 2 8 C 2 5 4 3.5 6 3.5 C 8.4 3.5 10.5 4.8 12 7 C 13.5 4.8 15.6 3.5 18 3.5 C 20 3.5 22 5 22 8 C 22 13 17 17 12 20 Z"/></svg></div>
+          </div>
+          <div class="wpc-face wpc-back">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><path d="M 12 20 C 7 17 2 13 2 8 C 2 5 4 3.5 6 3.5 C 8.4 3.5 10.5 4.8 12 7 C 13.5 4.8 15.6 3.5 18 3.5 C 20 3.5 22 5 22 8 C 22 13 17 17 12 20 Z"/></svg></div>
+            <div class="wpc-card-body">
+              <div class="wpc-card-lede" style="white-space:nowrap"><em style="font-style:italic;font-weight:850">Wildly social.</em></div>
+            </div>
+            <div class="wpc-card-num">04</div>
+          </div>
+        </div>
+
+        <div class="wpc-card wpc-c5" onclick="this.classList.toggle('flipped');event.stopPropagation()">
+          <div class="wpc-face wpc-front wpc-front-iconly">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.4"/><path d="M5 6 L5 18 C5 19.3 8.1 20.4 12 20.4 C15.9 20.4 19 19.3 19 18 L19 6"/><path d="M5 12 C5 13.3 8.1 14.4 12 14.4 C15.9 14.4 19 13.3 19 12"/></svg></div>
+          </div>
+          <div class="wpc-face wpc-back">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.4"/><path d="M5 6 L5 18 C5 19.3 8.1 20.4 12 20.4 C15.9 20.4 19 19.3 19 18 L19 6"/><path d="M5 12 C5 13.3 8.1 14.4 12 14.4 C15.9 14.4 19 13.3 19 12"/></svg></div>
+            <div class="wpc-card-body">
+              <div class="wpc-card-lede">Cold-start <em style="font-style:italic;font-weight:850">cracked.</em></div>
+            </div>
+            <div class="wpc-card-num">05</div>
+          </div>
+        </div>
+
+      </div>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- [Dave 2026-05-17 LATEST RESOLVE v3 — flip bug ROOT CAUSE FIXED] The capture-phase JS handler from the previous "resolve" was DOUBLE-FIRING with the inline onclick — both toggled .flipped on the same click, so the class went on then off in a single tap, producing no net flip. Removed the JS handler entirely. The inline onclick + event.stopPropagation() on each .wpc-card now does the toggle exactly once per click, and the new 3D rotateY CSS animates the rotation visually. -->
+
+</div>
+
+
 <!-- [Dave 2026-05-18 LATEST] cs-pbfirst slide DELETED per Dave 'delete this slide' (the 17/25 alt with 'Pickleball → fastest path to the world's first autonomous human value exchange network' + 5-card wedge). Hidden via display:none !important + data-deleted="1" so the dot disappears from nav AND the slide is unreachable. Black-dot registration also removed from SLIDE_ALTS[17]. Existing csPbfirstAdvance/Reverse functions retained as inert defensive references for any keyboard/wheel handler paths that still mention cs-pbfirst — they no-op because the slide is no longer in the nav order. -->
 <div class="casey-slide ds-focus" id="cs-pbfirst" style="display:none !important" data-deleted="1">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Give n Receive&rsquo;s #1 secret</div>
@@ -14320,10 +14598,12 @@ window.cs1m7Reverse = function() {
 <!-- Club Impact / 3× Net Profit — nav pos 21 -->
 <div class="casey-slide ds-focus" id="cs-19">
 <section style="position:relative;min-height:100%;width:100%">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10;">Transform your community</div>
-<div class="inner" style="padding-top:56px;text-align:center;max-width:1180px">
+<!-- [Dave 2026-05-18 LATEST] Eyebrow now carries TWO lines per Dave 'change "Transform your community" to "Transform your community / GnR handles the complexity of people"'. The new second line is serif italic (mixed-case) so it reads as a tagline beneath the small-caps section label rather than a second SHOUTED row. -->
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10;max-width:980px;line-height:1.5">Transform your community<br><span style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.5em;font-style:italic;font-weight:700;letter-spacing:-0.005em;text-transform:none;color:#1a1612">G<em style="color:#b8954a;font-style:italic">n</em>R handles the complexity of people</span></div>
+<div class="inner" style="padding-top:84px;text-align:center;max-width:1180px">
   <!-- Headline simplified 2026-05-07 PM per Dave: '3× your community' is the umbrella claim. Bars below ($70K → $155K → $300K profit ladder, 33% → 40% → 48% margin) tell the financial story underneath. Honest economics retained from earlier audit. -->
-  <div class="display" style="font-size:clamp(2.6rem,5vw,4rem);margin-bottom:48px"><span style="color:#1a1612">3&times; <em style="font-style:italic;color:#b8954a">community value</em></span></div>
+  <!-- [Dave 2026-05-18 LATEST] Headline retitled per Dave 'change "3× community value" to "~3× your community's value"'. Adds the "~" hedge (honest economics signal — not a fixed multiple, an approximation) and personalizes the noun phrase ("your community's"). -->
+  <div class="display" style="font-size:clamp(2.6rem,5vw,4rem);margin-bottom:48px"><span style="color:#1a1612">~3&times; <em style="font-style:italic;color:#b8954a">your community&rsquo;s value</em></span></div>
   <!-- Subtitle 'From $210K today to $630K at full scale...' DELETED 2026-05-07 per Dave -->
 
 
@@ -14392,7 +14672,8 @@ window.cs1m7Reverse = function() {
       </div>
       <div style="border-top:1px solid rgba(212,168,83,.4);width:130px;margin-top:0"></div>
       <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:#c8462c;margin-top:8px;line-height:1;text-shadow:0 0 20px rgba(200,70,44,0.22)">$780K</div>
-      <div style="font-family:'Manrope',sans-serif;font-size:.56rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#c8462c;margin-top:2px">net profit &middot; 3&times; pre-GnR</div>
+      <!-- [Dave 2026-05-18 LATEST] "net profit · 3× pre-GnR" trimmed to "3× pre-GnR" per Dave. -->
+      <div style="font-family:'Manrope',sans-serif;font-size:.56rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#c8462c;margin-top:2px">3&times; pre-GnR</div>
       <div style="font-size:0.88rem;font-weight:800;color:#b8954a;margin-top:10px">Stage 3</div>
       <div style="font-size:0.7rem;color:rgba(26,22,18,.7);margin-top:2px;font-style:italic">autonomous</div>
     </div>
@@ -17248,7 +17529,7 @@ window.cs1m7Reverse = function() {
   }
   #cs-brand-codex .bc-left-quote p em { font-style:italic; font-weight:850; color:#3a73b8; }
 
-  /* RIGHT ENVELOPE — opaque cream card styled as a physical invitation envelope, anchored over the warm/community half. Introduces "Give 'n Receive — invitation-based matchmaking". [Dave 2026-05-18 LATEST v3] Two changes: (1) Flap drawn as a real visible triangle with explicit diagonal fold lines (was nearly invisible — just a faint gradient at top). (2) Postmark stamp DELETED per Dave 'you can delete the "give n receive invitation first-class"'. */
+  /* RIGHT ENVELOPE — opaque cream card styled as a physical invitation envelope. [Dave 2026-05-18 LATEST v4] Top padding bumped 104px → 150px so the "INTRODUCING" eyebrow + G·n·R wordmark clear the wax-seal disk that sits on the flap's apex. Previous spacing had the seal physically overlapping the "INTRODUCING" eyebrow ink. */
   #cs-brand-codex .bc-envelope {
     position:absolute;
     top:50%; right:5%;
@@ -17263,7 +17544,7 @@ window.cs1m7Reverse = function() {
       0 4px 12px rgba(26,22,18,0.14),
       inset 0 0 0 6px rgba(251,247,239,1),
       inset 0 0 0 7px rgba(184,149,74,0.30);
-    padding:104px 36px 38px;
+    padding:150px 36px 38px;
   }
   /* Envelope FLAP — visible triangle that occupies the upper portion of the envelope. Uses SVG-style clip-path for crisp diagonals + a slightly darker cream fill so the flap reads as a distinct paper layer folded down over the body. */
   #cs-brand-codex .bc-env-flap {
@@ -17694,6 +17975,285 @@ window.cs1m7Reverse = function() {
     <!-- Supporting line -->
     <p class="ev-sub">Our connection and unique value to each other &mdash; <strong>measured, multiplied, made abundant.</strong></p>
   </section>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-1m8-title-A · BLUE-DOT TITLE-SLIDE CANDIDATE [Dave 2026-05-18 LATEST]
+     Per Dave: 'i really like this and i want you to leverage to create a new
+     blue dot slide to the left of slide 2... significantly increase the size
+     of that content... figure out where to say "Give n Receive"... this i'm
+     planning to make the title slide.'
+     SHARED title-slide CSS for cs-1m8-title-A/B/C lives in this block (.tt-*
+     class scope, applied to all three variants). Each variant only differs in
+     HOW it surfaces the company name + which beat is dominant.
+     Variant A places "Give 'n Receive" as the HERO WORDMARK in the upper
+     center, with the brand promise as a smaller supporting line beneath.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<style>
+  /* Shared scaffold for all three title-slide variants. */
+  .tt-slide { background:#1a1612 !important; overflow:hidden; position:relative; min-height:1080px; height:1080px; width:100%; }
+  .tt-slide .tt-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; z-index:1; display:block; }
+  /* Cream wash bands top + bottom so the typography reads cleanly without obliterating the painting. */
+  .tt-slide .tt-top-band {
+    position:absolute; top:0; left:0; right:0;
+    background:linear-gradient(180deg, rgba(251,247,239,0.97) 0%, rgba(251,247,239,0.88) 65%, rgba(251,247,239,0) 100%);
+    z-index:3; padding:80px 56px 64px; text-align:center; pointer-events:none;
+  }
+  .tt-slide .tt-bottom-band {
+    position:absolute; bottom:0; left:0; right:0;
+    background:linear-gradient(0deg, rgba(251,247,239,0.97) 0%, rgba(251,247,239,0.86) 60%, rgba(251,247,239,0) 100%);
+    z-index:3; padding:64px 64px 56px; pointer-events:none;
+  }
+  /* Top headline + eyebrow + wordmark */
+  .tt-slide .tt-eye {
+    font-family:'Manrope',sans-serif; font-size:.74rem; font-weight:900;
+    letter-spacing:.42em; text-transform:uppercase; color:#a87a35; margin:0 0 14px;
+  }
+  .tt-slide .tt-head {
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-weight:850; line-height:1.06; letter-spacing:-0.026em;
+    color:#1a1612; margin:0 auto; max-width:1380px;
+  }
+  .tt-slide .tt-head em { font-style:italic; font-weight:850; color:#b8954a; }
+  /* Hero wordmark — used by variant A (and the "by Give 'n Receive" line in variants B/C). */
+  .tt-slide .tt-mark {
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-weight:900; letter-spacing:-0.04em; line-height:0.95;
+    margin:0; display:inline-flex; align-items:baseline; justify-content:center;
+  }
+  .tt-slide .tt-mark .g { color:#5B8FD4; text-shadow:0 6px 24px rgba(91,143,212,0.20); }
+  .tt-slide .tt-mark .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.04em; text-shadow:0 6px 24px rgba(184,149,74,0.20); }
+  .tt-slide .tt-mark .r { color:#c8462c; text-shadow:0 6px 24px rgba(200,70,44,0.20); }
+  /* Left "Social media…" tablet — same recipe as cs-1m8-codexmerge. */
+  .tt-slide .tt-left-quote {
+    position:absolute; top:35%; left:4%;
+    z-index:3; max-width:26%;
+    padding:13px 17px;
+    background:linear-gradient(180deg, rgba(251,247,239,0.94) 0%, rgba(251,247,239,0.85) 100%);
+    border:1.2px solid rgba(91,143,212,0.35);
+    border-radius:13px;
+    box-shadow:0 12px 28px rgba(26,22,18,0.16);
+  }
+  .tt-slide .tt-left-quote p {
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:clamp(1.00rem, 1.40vw, 1.35rem);
+    font-style:italic; font-weight:600; line-height:1.22;
+    letter-spacing:-0.012em; color:#1a1612; margin:0;
+  }
+  .tt-slide .tt-left-quote p em { font-style:italic; font-weight:850; color:#3a73b8; }
+  /* SIGNIFICANTLY LARGER 3-column diptych — Dave: 'significantly increase the size of that content'.
+     Old cs-1m8-codexmerge:  cap-eye 0.7rem · cap-body 1.50rem peak · n-cell 130px · n font 2.9rem
+     Title-variant scale:    eye 1.20rem · body 2.55rem peak · n-cell 220px · n font 5.4rem */
+  .tt-slide .tt-cap-row {
+    display:grid; grid-template-columns:1fr auto 1fr; gap:64px; align-items:center; width:100%; max-width:1700px; margin:0 auto;
+  }
+  .tt-slide .tt-cap { display:flex; flex-direction:column; gap:10px; }
+  .tt-slide .tt-cap-l { text-align:right; }
+  .tt-slide .tt-cap-r { text-align:left; }
+  .tt-slide .tt-cap-eye {
+    font-family:'Manrope',sans-serif; font-size:clamp(.95rem, 1.20vw, 1.20rem);
+    font-weight:800; letter-spacing:.32em; text-transform:uppercase; margin:0;
+  }
+  .tt-slide .tt-cap-l .tt-cap-eye { color:#5B8FD4; }
+  .tt-slide .tt-cap-r .tt-cap-eye { color:#c8462c; }
+  .tt-slide .tt-cap-body {
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:clamp(1.85rem, 2.55vw, 2.55rem);
+    font-style:italic; font-weight:500; line-height:1.18; color:#1a1612; margin:0;
+  }
+  .tt-slide .tt-cap-l .tt-cap-body em { font-style:italic; font-weight:850; color:#5B8FD4; }
+  .tt-slide .tt-cap-r .tt-cap-body em { font-style:italic; font-weight:850; color:#c8462c; }
+  /* Bigger n-cell hub */
+  .tt-slide .tt-ncell {
+    position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    width:clamp(180px, 14vw, 220px); height:clamp(180px, 14vw, 220px); flex-shrink:0; padding:10px;
+  }
+  .tt-slide .tt-ncell::before {
+    content:''; position:absolute; inset:0; border-radius:50%;
+    background:radial-gradient(circle, rgba(255,250,240,0.95) 0%, rgba(243,234,216,0.55) 55%, rgba(243,234,216,0) 100%);
+    box-shadow:inset 0 0 50px rgba(184,149,74,0.30), 0 0 60px rgba(184,149,74,0.25);
+    z-index:0;
+  }
+  .tt-slide .tt-ncell .tt-n {
+    position:relative; z-index:1;
+    font-family:'Playfair Display',serif; font-style:italic; font-weight:500;
+    color:#b8954a; font-size:clamp(4.4rem, 5.8vw, 5.4rem); line-height:0.9;
+  }
+  .tt-slide .tt-ncell .tt-n-label {
+    position:relative; z-index:1;
+    font-family:'Manrope',sans-serif; font-size:clamp(.62rem, .76vw, .76rem);
+    font-weight:800; letter-spacing:.42em; text-transform:uppercase;
+    color:#b8954a; margin-top:6px;
+  }
+  .tt-slide .tt-ncell .tt-n-sub {
+    position:relative; z-index:1;
+    font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.80rem, 0.95vw, 0.95rem);
+    font-style:italic; font-weight:500; color:#b8954a; line-height:1.2;
+    margin-top:4px; text-align:center;
+  }
+  /* Animations — fade up everything. */
+  .tt-slide .tt-top-band, .tt-slide .tt-bottom-band, .tt-slide .tt-left-quote {
+    opacity:0; transform:translateY(10px);
+    transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1);
+  }
+  .tt-slide.casey-entered .tt-top-band    { opacity:1; transform:none; transition-delay:0.15s; }
+  .tt-slide.casey-entered .tt-left-quote  { opacity:1; transform:none; transition-delay:0.45s; }
+  .tt-slide.casey-entered .tt-bottom-band { opacity:1; transform:none; transition-delay:0.75s; }
+  html[data-export="1"] .tt-slide .tt-top-band,
+  html[data-export="1"] .tt-slide .tt-bottom-band,
+  html[data-export="1"] .tt-slide .tt-left-quote {
+    opacity:1 !important; transform:none !important; transition:none !important;
+  }
+  /* Variant-specific tweaks */
+  /* Variant A: hero wordmark above brand promise. */
+  #cs-1m8-title-A .tt-top-band { padding:64px 56px 56px; }
+  #cs-1m8-title-A .tt-mark { font-size:clamp(4.2rem, 6.6vw, 6.4rem); margin:0 auto 14px; }
+  #cs-1m8-title-A .tt-head { font-size:clamp(1.45rem, 2.25vw, 2.05rem); }
+  /* Variant B: hero brand promise, "Give 'n Receive" attribution. */
+  #cs-1m8-title-B .tt-head { font-size:clamp(2.05rem, 3.20vw, 2.95rem); margin-bottom:18px; }
+  #cs-1m8-title-B .tt-attr {
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:clamp(.95rem, 1.20vw, 1.20rem); font-style:italic; font-weight:500;
+    color:rgba(26,22,18,0.62); margin:0; letter-spacing:.04em;
+  }
+  #cs-1m8-title-B .tt-attr .tt-mark { font-size:1.25em; vertical-align:-0.05em; padding-left:0.18em; }
+  /* Variant C: eyebrow integrates the company name; medium-sized headline; HUGE diptych. */
+  #cs-1m8-title-C .tt-top-band { padding:72px 56px 36px; }
+  #cs-1m8-title-C .tt-head { font-size:clamp(1.75rem, 2.65vw, 2.40rem); }
+  #cs-1m8-title-C .tt-bottom-band { padding:72px 64px 64px; }
+  #cs-1m8-title-C .tt-cap-eye { font-size:clamp(1.05rem, 1.32vw, 1.32rem); }
+  #cs-1m8-title-C .tt-cap-body { font-size:clamp(2.10rem, 2.85vw, 2.85rem); }
+  #cs-1m8-title-C .tt-ncell { width:clamp(210px, 16vw, 250px); height:clamp(210px, 16vw, 250px); }
+  #cs-1m8-title-C .tt-ncell .tt-n { font-size:clamp(5.0rem, 6.6vw, 6.2rem); }
+  #cs-1m8-title-C .tt-eyebrow-mark {
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-weight:900; letter-spacing:-0.04em;
+    font-size:1.35em; vertical-align:-0.04em; padding:0 0.16em;
+  }
+  #cs-1m8-title-C .tt-eyebrow-mark .g { color:#5B8FD4; }
+  #cs-1m8-title-C .tt-eyebrow-mark .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.04em; }
+  #cs-1m8-title-C .tt-eyebrow-mark .r { color:#c8462c; }
+</style>
+<div class="casey-slide ds-focus tt-slide" id="cs-1m8-title-A" style="display:none">
+  <img class="tt-bg" src="assets/cs-brand-codex.png" alt="Watercolor split image — phone+isolated figures on the left, real-community gathering on the right." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
+
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brings real human connection to our digital world</div>
+
+  <!-- LEFT TABLET -->
+  <div class="tt-left-quote">
+    <p><em>Social media</em> is a narrow view<br>of human connection technology.</p>
+  </div>
+
+  <!-- TOP BAND · company wordmark hero + brand promise -->
+  <div class="tt-top-band">
+    <div class="tt-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+    <p class="tt-eye">Give &lsquo;n Receive</p>
+    <h1 class="tt-head">Live a life of <em>abundant, autonomous connection.</em></h1>
+  </div>
+
+  <!-- BOTTOM BAND · BIG G·n·R diptych -->
+  <div class="tt-bottom-band">
+    <div class="tt-cap-row">
+      <div class="tt-cap tt-cap-l">
+        <p class="tt-cap-eye">What we give</p>
+        <p class="tt-cap-body"><em>fuels</em> our communities.</p>
+      </div>
+      <div class="tt-ncell" aria-hidden="true">
+        <span class="tt-n">n</span>
+        <span class="tt-n-label">The Network</span>
+        <span class="tt-n-sub">Sees. Measures.<br>Reciprocates.</span>
+      </div>
+      <div class="tt-cap tt-cap-r">
+        <p class="tt-cap-eye">Your People &middot; Your Moments</p>
+        <p class="tt-cap-body"><em>Reciprocated</em> back.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-1m8-title-B · BLUE-DOT TITLE-SLIDE CANDIDATE
+     Variant B places the BRAND PROMISE as the dominant headline and surfaces
+     "Give 'n Receive" as a small italic attribution underneath ("by G·n·R").
+     The diptych dominates the lower half — biggest type weight on the page.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<div class="casey-slide ds-focus tt-slide" id="cs-1m8-title-B" style="display:none">
+  <img class="tt-bg" src="assets/cs-brand-codex.png" alt="" onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
+
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brings real human connection to our digital world</div>
+
+  <div class="tt-left-quote">
+    <p><em>Social media</em> is a narrow view<br>of human connection technology.</p>
+  </div>
+
+  <div class="tt-top-band">
+    <p class="tt-eye">Brand</p>
+    <h1 class="tt-head">Live a life of <em>abundant, autonomous connection.</em></h1>
+    <p class="tt-attr">by <span class="tt-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span> &middot; <em>Give &lsquo;n Receive</em></p>
+  </div>
+
+  <div class="tt-bottom-band">
+    <div class="tt-cap-row">
+      <div class="tt-cap tt-cap-l">
+        <p class="tt-cap-eye">What we give</p>
+        <p class="tt-cap-body"><em>fuels</em> our communities.</p>
+      </div>
+      <div class="tt-ncell" aria-hidden="true">
+        <span class="tt-n">n</span>
+        <span class="tt-n-label">The Network</span>
+        <span class="tt-n-sub">Sees. Measures.<br>Reciprocates.</span>
+      </div>
+      <div class="tt-cap tt-cap-r">
+        <p class="tt-cap-eye">Your People &middot; Your Moments</p>
+        <p class="tt-cap-body"><em>Reciprocated</em> back.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-1m8-title-C · BLUE-DOT TITLE-SLIDE CANDIDATE
+     Variant C embeds "Give 'n Receive" right INTO the eyebrow line (so the
+     company name is the first thing the viewer reads, top-left), and pushes
+     the diptych to its biggest expression yet — n-cell at 250px, body lines
+     at 2.85rem peak. The brand promise becomes a medium-sized supporting
+     headline rather than the hero. The diptych IS the slide.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<div class="casey-slide ds-focus tt-slide" id="cs-1m8-title-C" style="display:none">
+  <img class="tt-bg" src="assets/cs-brand-codex.png" alt="" onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
+
+  <!-- Eyebrow integrates the company wordmark + the positioning phrase. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10"><span class="tt-eyebrow-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span> &middot; Brings real human connection to our digital world</div>
+
+  <div class="tt-left-quote">
+    <p><em>Social media</em> is a narrow view<br>of human connection technology.</p>
+  </div>
+
+  <div class="tt-top-band">
+    <p class="tt-eye">Brand</p>
+    <h1 class="tt-head">Live a life of <em>abundant, autonomous connection.</em></h1>
+  </div>
+
+  <div class="tt-bottom-band">
+    <div class="tt-cap-row">
+      <div class="tt-cap tt-cap-l">
+        <p class="tt-cap-eye">What we give</p>
+        <p class="tt-cap-body"><em>fuels</em> our communities.</p>
+      </div>
+      <div class="tt-ncell" aria-hidden="true">
+        <span class="tt-n">n</span>
+        <span class="tt-n-label">The Network</span>
+        <span class="tt-n-sub">Sees. Measures.<br>Reciprocates.</span>
+      </div>
+      <div class="tt-cap tt-cap-r">
+        <p class="tt-cap-eye">Your People &middot; Your Moments</p>
+        <p class="tt-cap-body"><em>Reciprocated</em> back.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 
@@ -25136,9 +25696,10 @@ const SLIDE_ORDER = [
   //   (2) cs-19 MOVED to right after cs-wedgepb-combo (Pickleball → fastest path) — the 3× community value revenue slide follows the wedge claim
   //   (3) cs-mv6-merge MOVED to right after cs-fv6-img (What is real human connection technology?) — mission lands after the question
   //   New post-move flow: samecourt → givefirst-art → magnetic → wedgepb-combo → cs-19 → racketeer → fv6-img → mv6-merge → wedge1
-  'cs-samecourt',  // Flip the incentive. Unleash the community. — paradigm-proof beat.
-  'cs-givefirst-art', // 'You can't tell someone to open their heart.' — give-first follows Munger incentive paradigm
-  'cs-magnetic',    // A rating can balance a match. A person can fill a room. — twin courts (rating-only vs marketplace roles).
+  // [Dave 2026-05-18 LATEST v8] cs-magnetic ("Social media created 1% influencers." / Social pull) MOVED to immediately after cs-samecourt (Munger 'Show me the incentive') per Dave 'move the "Social media created 1% influencers." slide to be right after the "Charlie Munger" slide'. cs-givefirst-art shifts one slot back. New order: samecourt → magnetic → givefirst-art → wedgepb-combo → cs-19 → ... SLIDE_ALTS keys 14 (cs-givefirst-art's alts) ↔ 15 (cs-magnetic's alts) swapped to follow.
+  'cs-samecourt',  // Flip the incentive. Unleash the community. — paradigm-proof beat (Munger).
+  'cs-magnetic',    // A rating can balance a match. A person can fill a room. — twin courts (rating-only vs marketplace roles). Now sits IMMEDIATELY AFTER Munger.
+  'cs-givefirst-art', // 'You can't tell someone to open their heart.' — give-first follows the marketplace-role beat.
   'cs-wedgepb-combo', // PRIMARY · Pickleball → fastest path to the first global human value exchange network.
   'cs-19',    // 3× court fee revenue · For Your Club ('3x your community') — follows the wedge claim
   'cs-racketeer-att-arc', // RACKETEER · 3-quote narrative arc — first prospective customer outside NEPC
@@ -25250,8 +25811,9 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v6] cs-fw1 was slot 25; now slot 24 after cs-brand-V8 demotion. cs-16 stays as PINK-DOT alt to its left.
   24: ['cs-16'],
   // [Dave 2026-05-17 LATEST] NEW slot 2 = cs-givefirst-slide2 (give-first duplicate). No alts. All keys past slot 1 shifted +1.
-  // [Dave 2026-05-18 LATEST v6] Brand pink-dot alts for cs-1m8 (slot 2). cs-brand-V8 demoted from main slot 3 → leftmost pink-dot alt here per Dave 'move this as a pink dot slide to the left of slide 2'. Two NEW codex-merge variants added: cs-1m8-codexmerge (codex bg + cs-brand-V8 top + cs-1m8 diptych + left tablet) and cs-1m8-envelopes (same + nested envelopes graphic + autonomous-abundant captions). cs-brand-mono REMOVED per Dave 'delete this slide'. Order in array maps LEFT→RIGHT in the dot strip (index 0 = leftmost / furthest from primary).
-  2: ['cs-brand-V8', 'cs-1m8-envelopes', 'cs-1m8-codexmerge', 'cs-1m8-fuels', 'cs-brand-codex'],
+  // [Dave 2026-05-18 LATEST v6] Brand pink-dot alts for cs-1m8 (slot 2). cs-brand-V8 demoted from main slot 3 → leftmost pink-dot alt here. cs-1m8-codexmerge + cs-1m8-envelopes added (codex-merge variants). cs-brand-mono REMOVED.
+  // [Dave 2026-05-18 LATEST v7] THREE NEW BLUE-DOT title-slide candidates leveraging cs-1m8-codexmerge per Dave 'i really like this and i want you to leverage to create a new blue dot slide to the left of slide 2... significantly increase the size of that content... figure out where to say "Give n Receive"... this i'm planning to make the title slide'. Three variants of where the company name lands: A = wordmark hero up top, B = brand-promise hero with "by G·n·R" attribution, C = wordmark in the eyebrow line + biggest diptych of the three. All three share .tt-slide CSS and use the codex split-watercolor as bg. Order in array maps LEFT→RIGHT (index 0 = leftmost). Title-A/B/C placed FIRST so they sit furthest left (blue dots leading the pink-dot brand alts).
+  2: ['cs-1m8-title-C', 'cs-1m8-title-B', 'cs-1m8-title-A', 'cs-brand-V8', 'cs-1m8-envelopes', 'cs-1m8-codexmerge', 'cs-1m8-fuels', 'cs-brand-codex'],
   // [Dave 2026-05-18 LATEST v6] All SLIDE_ALTS keys past slot 2 DECREMENTED by 1 because cs-brand-V8 was removed from the main flow at old slot 3. Slot 3 (formerly cs-brand-V8) now = cs-a7m1; slot 4 = cs-1bm1; slot 5 = cs-2c; ... slot 24 = cs-fw1.
   // Slot 3 (cs-a7m1 — was slot 4) — no alts.
   3: [],
@@ -25260,9 +25822,8 @@ const SLIDE_ALTS = {
   // Slot 12 (cs-samecourt — was slot 13) — no alts.
   // [Dave 2026-05-17 PM v2] pink3 PROMOTED INTO primary per Dave: 'i like this. use this to replace the current "Flip the incentive → Unleash connection & community" slide that's in the main deck.' The cs-samecourt primary now carries the bg-image + cream-wash treatment that pink3 had. pink1/pink2/pink3 HTML all retained as silent backups.
   12: [],
-  // [Dave 2026-05-17 v7] cs-magnetic-orig added as RED-DOT alt at slot 14 (was 15, was 16) per Dave 'add a red dot slide to left of social pull slide which was the original social pull slide where you had the ratings court on the right with the three questions'. cs-merge3 retained as pink-dot drift alt.
-  // Slot 14 (cs-magnetic — was slot 15, was slot 16) — red-dot + pink-dot alts
-  15: ['cs-magnetic-orig', 'cs-merge3'],
+  // [Dave 2026-05-18 LATEST v8] cs-magnetic ↔ cs-givefirst-art swapped in SLIDE_ORDER (magnetic moved to right after Munger). cs-magnetic alts (red+pink) MOVED from key 15 → 14 to follow the slide; cs-givefirst-art alts moved from 14 → 15 below.
+  14: ['cs-magnetic-orig', 'cs-merge3'],
   // [Dave 2026-05-08] cs-pn1 DELETED from slot 14 alts per Dave: 'delete this'. HTML retained as silent backup, no nav dot.
   // [Dave 2026-05-09] BUG FIX: alt keys shifted +1 to match SLIDE_ORDER positions after cs-1m5 (slot 1) + cs-1 (slot 2) insertion bumped everything down.
   //   - cs-18 (Dave Velardo) was at slot 16 → now slot 17. Wheelhouse alts (cs-18-alt1, cs-18-alt3) moved from key 16 → 17.
@@ -25285,8 +25846,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-17 v14] cs-pbfirst added as 2nd red-dot alt at slot 15 per Dave 'move attached slide as a red dot slide to the left of the dot of the "Pickleball → fastest path..." slide'. cs-wedgefunnel stays as the rightmost red-dot alt (the funnel variant); cs-pbfirst is the further-left red-dot (the 5-card "#1 secret" variant).
   // Slot 16 (cs-wedgepb-combo — was slot 15) — cs-pbfirst red-dot alt
   // [Dave 2026-05-18 LATEST] cs-18-vd4-pink REMOVED per Dave 'delete this slide' (was the 16/25 alt — original pre-edit wheelhouse copy). HTML retained as silent backup; restore by re-adding the id to this list.
-  // [Dave 2026-05-18 LATEST] cs-pbfirst DELETED per Dave 'delete this slide'. Slot 16 alts now empty (was slot 17 before cs-brand-V8 demotion).
-  16: [],
+  // [Dave 2026-05-18 LATEST v8] Slot 16 = cs-wedgepb-combo. cs-wedgepb-codex (identical content + codex watercolor bg image) added as PINK-DOT alt per Dave 'create a new pink dot slide to the left of the "Pickleball → fastest path..." slide that's identical to the ... slide except it uses the image below as background slide'.
+  16: ['cs-wedgepb-codex'],
   // [Dave 2026-05-18 LATEST v5] SLIDE_ORDER reshuffled AGAIN — cs-brand-V8 moved to slot 3 + cs-racketeer cluster (7 slides) deleted. New 24-slide mapping:
   //    1: cs-frontier-pink1  (no alts)
   //    2: cs-1m8             (no alts)
@@ -25313,9 +25874,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v3] cs-brand-mono added as PINK-DOT alt — brand-monument treatment.
   // [Dave 2026-05-18 LATEST v4] cs-brand-codex added as 2nd PINK-DOT alt (codex split-image watercolor).
   // [Dave 2026-05-18 LATEST v5] All brand pink-dot alts RELOCATED from slot 3 (cs-brand-V8) → slot 2 (cs-1m8) per Dave 'move these two slides and any new brand slide you are working on as pink dot slides next to the slide with the text below: What we give fuels our communities.' That's cs-1m8 — which sits at slot 2 in SLIDE_ORDER. cs-1m8-fuels (the new particle-galaxy variant anchored to "What we give fuels our communities.") also added here. Slot 3 (cs-brand-V8) now carries no alts; if Dave wants the brand alts to live under the brand slide again later, just move them back.
-  // [Dave 2026-05-18 LATEST v6] These late-file SLIDE_ALTS overrides ran AFTER the earlier ones; with cs-brand-V8 demoted to alt, all keys past slot 2 shift -1. Old 15 → new 14 (cs-givefirst-art alts). Old 19 → 18, old 20 → 19, old 21 → 20 — all empty.
-  // NB: JS object-literal duplicate keys: the last one wins. The `15:` further up is now `14:` and lives in the main block above; the duplicate `15:` slot here is removed to avoid clobbering it.
-  14: ['cs-givefirst-brand'],
+  // [Dave 2026-05-18 LATEST v6+v8] These late-file SLIDE_ALTS overrides run AFTER the earlier ones (object-literal "last key wins"). With cs-brand-V8 demoted (v6) all keys past slot 2 shift -1, AND with cs-magnetic ↔ cs-givefirst-art swap (v8) the magnetic+givefirst alts swap keys. cs-givefirst-brand (the pink-dot alt of cs-givefirst-art) now lives at slot 15 (where cs-givefirst-art now sits).
+  15: ['cs-givefirst-brand'],
   18: [],
   19: [],
   // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug' — was rendering blank (bg image asset not on disk). HTML retained as silent backup. Slot 20 was 21 before.
@@ -26524,11 +27084,13 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   cs-quadrant1, cs-arch1, cs-cat1 = blue (slot 17 source-material variants)
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 → pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-brand-codex' || altId === 'cs-1m8-fuels' || altId === 'cs-brand-V8' || altId === 'cs-1m8-codexmerge' || altId === 'cs-1m8-envelopes');
+    // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-brand-codex' || altId === 'cs-1m8-fuels' || altId === 'cs-brand-V8' || altId === 'cs-1m8-codexmerge' || altId === 'cs-1m8-envelopes' || altId === 'cs-wedgepb-codex');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
-    const isBlueAlt = (altId === 'cs-wedge1');
+    // [Dave 2026-05-18 LATEST v7] Three title-slide candidates added as BLUE-DOT alts at slot 2.
+    const isBlueAlt = (altId === 'cs-wedge1' || altId === 'cs-1m8-title-A' || altId === 'cs-1m8-title-B' || altId === 'cs-1m8-title-C');
     const isOrangeAlt = Array.isArray(ORANGE_REVIEW_ALTS) && ORANGE_REVIEW_ALTS.includes(altId);
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 — explicit override since slot 2 is not the REVIEW_POSITION.
     // [Dave 2026-05-10 PM] cs-16old + cs-lab also RED-DOT (cs-16old = restored complicated engine slide at slot 20; cs-lab = founder-slot alternate to cs-18 'My Wheelhouse').
