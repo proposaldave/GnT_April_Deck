@@ -16098,8 +16098,8 @@ window.cs1m7Reverse = function() {
         </svg>
       </div>
 
-      <!-- [Dave 2026-05-18 LATEST] KRISTA → STEVE Slack proof block. [v2] Now animates IN on slide load per Dave 'upon slide load of the "The next great network..." slide, have the attachment have some sort of simple animate-in animation'. Default state: opacity:0 + translateY(14px). .casey-entered → fade up at 0.8s into the slide so it lands after the SVG graphic above settles. -->
-      <div class="wd-slack-proof" style="max-width:880px;margin:18px auto 0;padding:18px 20px;background:#fff;border:1px solid rgba(26,22,18,0.10);border-radius:10px;box-shadow:0 4px 14px rgba(26,22,18,0.05);text-align:left">
+      <!-- [Dave 2026-05-18 LATEST v3] KRISTA → STEVE Slack proof block. Top margin tightened 18px→8px per Dave so the proof card sits slightly closer to the constellation/pickleball graphic. -->
+      <div class="wd-slack-proof" style="max-width:880px;margin:8px auto 0;padding:18px 20px;background:#fff;border:1px solid rgba(26,22,18,0.10);border-radius:10px;box-shadow:0 4px 14px rgba(26,22,18,0.05);text-align:left">
         <!-- Krista message -->
         <div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:10px">
           <div style="flex-shrink:0;width:34px;height:34px;border-radius:6px;background:#7c3aed;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-size:0.95rem;font-weight:700">K</div>
@@ -18492,7 +18492,6 @@ window.cs1m7Reverse = function() {
   <!-- [Dave 2026-05-18 LATEST v2] "Click to reveal" hint REMOVED per Dave 'remove "click to reveal" text bottom right of slide 2'. The staged reveal still works via click/scroll/keyboard — just no visible hint chrome. -->
 
   <div class="tt-top-band">
-    <p class="tt-eye">Brand</p>
     <h1 class="tt-head">Live a life of <em>abundant, autonomous connection.</em></h1>
     <p class="tt-attr">by <span class="tt-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span> &middot; <em>Give &lsquo;n Receive</em></p>
   </div>
@@ -18951,13 +18950,13 @@ window.cs1m7Reverse = function() {
     pointer-events:auto;
   }
   /* Per-line stagger inside LEFT column on stage 1 — each bullet enters on its own beat */
-  #cs-samecourt[data-stage="1"] .sc-col.red .sc-item:nth-of-type(1) { transition-delay:0.05s; }
-  #cs-samecourt[data-stage="1"] .sc-col.red .sc-item:nth-of-type(2) { transition-delay:0.60s; }
-  #cs-samecourt[data-stage="1"] .sc-col.red .sc-item:nth-of-type(3) { transition-delay:1.15s; }
+  #cs-samecourt[data-stage="1"] .sc-col.red .sc-item:nth-last-of-type(3) { transition-delay:0.05s; }
+  #cs-samecourt[data-stage="1"] .sc-col.red .sc-item:nth-last-of-type(2) { transition-delay:0.60s; }
+  #cs-samecourt[data-stage="1"] .sc-col.red .sc-item:nth-last-of-type(1) { transition-delay:1.15s; }
   /* Per-line stagger inside RIGHT column on stage 2 (left stays steady) */
-  #cs-samecourt[data-stage="2"] .sc-col.blue .sc-item:nth-of-type(1) { transition-delay:0.05s; }
-  #cs-samecourt[data-stage="2"] .sc-col.blue .sc-item:nth-of-type(2) { transition-delay:0.60s; }
-  #cs-samecourt[data-stage="2"] .sc-col.blue .sc-item:nth-of-type(3) { transition-delay:1.15s; }
+  #cs-samecourt[data-stage="2"] .sc-col.blue .sc-item:nth-last-of-type(3) { transition-delay:0.05s; }
+  #cs-samecourt[data-stage="2"] .sc-col.blue .sc-item:nth-last-of-type(2) { transition-delay:0.60s; }
+  #cs-samecourt[data-stage="2"] .sc-col.blue .sc-item:nth-last-of-type(1) { transition-delay:1.15s; }
   /* Click hint chevron — visible until BOTH columns are revealed (stage < 2). */
   #cs-samecourt .sc-click-hint { position:absolute; bottom:34px; left:50%; transform:translateX(-50%); z-index:6; font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:800; letter-spacing:.28em; text-transform:uppercase; color:rgba(184,149,74,0.78); display:flex; flex-direction:column; align-items:center; gap:6px; pointer-events:none; animation: scClickHintPulse 2.4s ease-in-out infinite; }
   #cs-samecourt[data-stage="2"] .sc-click-hint { display:none; }
@@ -19018,7 +19017,8 @@ window.cs1m7Reverse = function() {
   #cs-samecourt.casey-entered .sc-closer-line{animation:scIn .6s cubic-bezier(.22,1,.36,1) backwards 1.65s;opacity:1}
   html[data-export="1"] #cs-samecourt .sc-col,
   html[data-export="1"] #cs-samecourt .sc-divider,
-  html[data-export="1"] #cs-samecourt .sc-closer-line{opacity:1!important;transform:none!important;animation:none!important}
+  html[data-export="1"] #cs-samecourt .sc-closer-line,
+  html[data-export="1"] #cs-samecourt .sc-item{opacity:1!important;transform:none!important;animation:none!important;pointer-events:auto!important}
   html[data-export="1"] #cs-samecourt .sc-divider:before{transform:translate(-50%,-50%) scale(1)!important;animation:none!important}
   /* [Dave 2026-05-14 PM] Community-shape parallel to cs-magnetic's twin-court — LEFT shows the community FRAGMENTED into isolated cliques (rating-driven), RIGHT shows the same community NETWORKED into a vibrant web (GnR-driven). Sits at the top of each column, above the character bubble. */
   #cs-samecourt .sc-community { width:100%; max-width:380px; align-self:center; margin-bottom:6px; padding:14px 18px 12px; border-radius:12px; position:relative }
@@ -19386,7 +19386,7 @@ window.cs1m7Reverse = function() {
   #cs-samecourt-pink3 .sc-col.red .sc-col-eye{color:#c8462c}
   #cs-samecourt-pink3 .sc-col.blue .sc-col-eye{color:#5B8FD4}
   /* [Dave 2026-05-14 PM v4 — JAW-DROPPING UPGRADE] Behavior dashes now have a small iconic glyph BEFORE each line — adds visual texture + recognition for each behavior. Icons are small and quiet so they don't compete with the typography. */
-  #cs-samecourt-pink3 .sc-item{display:flex;align-items:center;gap:14px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-weight:500;font-size:clamp(1.45rem,2.3vw,2.05rem);line-height:1.32;color:#1a1612;letter-spacing:-0.012em}
+  #cs-samecourt-pink3 .sc-item{display:flex;align-items:center;gap:14px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-weight:500;font-size:clamp(1.45rem,2.3vw,2.05rem);line-height:1.32;color:#1a1612;letter-spacing:-0.012em;opacity:0;transform:translateY(16px);will-change:opacity,transform}
   #cs-samecourt-pink3 .sc-item .dash{display:inline-block;flex-shrink:0;font-weight:300}
   #cs-samecourt-pink3 .sc-item-icon{flex-shrink:0;width:24px;height:24px;display:flex;align-items:center;justify-content:center;opacity:.78}
   #cs-samecourt-pink3 .sc-item-icon svg{width:24px;height:24px;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
@@ -19437,10 +19437,17 @@ window.cs1m7Reverse = function() {
   #cs-samecourt-pink3.casey-entered .sc-divider{animation:scIn .55s cubic-bezier(.22,1,.36,1) backwards .8s;opacity:1}
   #cs-samecourt-pink3.casey-entered .sc-divider:before{animation:scDividerPop .55s cubic-bezier(.34,1.56,.64,1) backwards .9s;transform:translate(-50%,-50%) scale(1)}
   #cs-samecourt-pink3.casey-entered .sc-col.blue{animation:scIn .65s cubic-bezier(.22,1,.36,1) backwards 1.05s;opacity:1;transform:translateY(0)}
+  #cs-samecourt-pink3.casey-entered .sc-col.red .sc-item:nth-last-of-type(3){animation:scIn .75s cubic-bezier(.22,1,.36,1) .55s both}
+  #cs-samecourt-pink3.casey-entered .sc-col.red .sc-item:nth-last-of-type(2){animation:scIn .75s cubic-bezier(.22,1,.36,1) .95s both}
+  #cs-samecourt-pink3.casey-entered .sc-col.red .sc-item:nth-last-of-type(1){animation:scIn .75s cubic-bezier(.22,1,.36,1) 1.35s both}
+  #cs-samecourt-pink3.casey-entered .sc-col.blue .sc-item:nth-last-of-type(3){animation:scIn .75s cubic-bezier(.22,1,.36,1) 1.45s both}
+  #cs-samecourt-pink3.casey-entered .sc-col.blue .sc-item:nth-last-of-type(2){animation:scIn .75s cubic-bezier(.22,1,.36,1) 1.85s both}
+  #cs-samecourt-pink3.casey-entered .sc-col.blue .sc-item:nth-last-of-type(1){animation:scIn .75s cubic-bezier(.22,1,.36,1) 2.25s both}
   #cs-samecourt-pink3.casey-entered .sc-closer-line{animation:scIn .6s cubic-bezier(.22,1,.36,1) backwards 1.65s;opacity:1}
   html[data-export="1"] #cs-samecourt-pink3 .sc-col,
   html[data-export="1"] #cs-samecourt-pink3 .sc-divider,
-  html[data-export="1"] #cs-samecourt-pink3 .sc-closer-line{opacity:1!important;transform:none!important;animation:none!important}
+  html[data-export="1"] #cs-samecourt-pink3 .sc-closer-line,
+  html[data-export="1"] #cs-samecourt-pink3 .sc-item{opacity:1!important;transform:none!important;animation:none!important}
   html[data-export="1"] #cs-samecourt-pink3 .sc-divider:before{transform:translate(-50%,-50%) scale(1)!important;animation:none!important}
   /* [Dave 2026-05-14 PM] Community-shape parallel to cs-magnetic's twin-court — LEFT shows the community FRAGMENTED into isolated cliques (rating-driven), RIGHT shows the same community NETWORKED into a vibrant web (GnR-driven). Sits at the top of each column, above the character bubble. */
   #cs-samecourt-pink3 .sc-community { width:100%; max-width:380px; align-self:center; margin-bottom:6px; padding:14px 18px 12px; border-radius:12px; position:relative }
@@ -19816,9 +19823,9 @@ window.cs1m7Reverse = function() {
   /* [Dave 2026-05-18 LATEST] Centered envelope DELETED — see SVG markup below. Orphan animation rules removed. The transform-box:fill-box + animation combination caused a single-frame flash at SVG origin (top-left) on slide entry, then the transform settled at court-center. Not worth fixing per Dave 'just delete it, not worth the effort'. */
 </style>
 <div class="casey-slide ds-focus" id="cs-magnetic">
-  <!-- [Dave 2026-05-18 LATEST v2] Full-bleed bg KEPT but cream wash dialed up to NEAR-OPAQUE per Dave 'see how the content on this slide doesn't look good at all with the background image? keep background image but you need to make the content show up like it did before so it's clearly visible'. New wash: 0.92/0.88/0.84/0.88 (was .85/.62/.42/.52). The painting still whispers underneath but the headline + court + roles read cleanly like the pre-bg version. -->
-  <img src="assets/cs-samecourt-bg.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;display:block;opacity:0.55" onerror="this.onerror=null;this.src='assets/cs-samecourt-pink3.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
-  <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg, rgba(251,247,239,0.92) 0%, rgba(251,247,239,0.88) 22%, rgba(251,247,239,0.84) 55%, rgba(251,247,239,0.88) 100%)"></div>
+  <!-- [Dave 2026-05-18 LATEST v3] Background image made more visible per Dave. Image opacity 0.55→0.68; cream wash eased from 0.92/0.88/0.84/0.88 to 0.86/0.80/0.72/0.80 so the court/community image reads without sacrificing headline contrast. -->
+  <img src="assets/cs-samecourt-bg.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;display:block;opacity:0.68" onerror="this.onerror=null;this.src='assets/cs-samecourt-pink3.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg, rgba(251,247,239,0.86) 0%, rgba(251,247,239,0.80) 22%, rgba(251,247,239,0.72) 55%, rgba(251,247,239,0.80) 100%)"></div>
   <!-- [Dave 2026-05-18 LATEST] Eyebrow ↔ above-court hero SWAPPED per Dave: '"Social pull" / "People are the product and the sales engine." swap places of that text (eg so "People are the product..." will go top left label of the slide and social pull will go right above the court)'. Eyebrow now carries the marketplace claim; "Social pull" moves to the above-court hero (.mg-side-hero on .mg-side.right). -->
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">People are the product and the sales engine</div>
   <section class="mg-stage">
@@ -22852,7 +22859,7 @@ window.cs1m7Reverse = function() {
 
     <div class="mg2-headwrap">
       <!-- [Dave 2026-05-18 LATEST] Word order swapped per Dave: "autonomous, abundant" → "abundant, autonomous". -->
-      <h1 class="mg2-head">For all our lives to run on<span class="mg2-line2"><em>abundant</em>, <em>autonomous</em> connection.</span></h1>
+      <h1 class="mg2-head">Mission: For all our lives to run on<span class="mg2-line2"><em>abundant</em>, <em>autonomous</em> connection.</span></h1>
     </div>
 
     <!-- ═══ COMPOSITE CHART: era markers along x-axis + demand curve climbing through them ═══ -->
@@ -23085,7 +23092,7 @@ window.cs1m7Reverse = function() {
 
     <div class="mg2-headwrap">
       <!-- [Dave 2026-05-18 LATEST] Word order swapped to match cs-mv6-merge primary above. -->
-      <h1 class="mg2-head">For all our lives to run on<span class="mg2-line2"><em>abundant</em>, <em>autonomous</em> connection.</span></h1>
+      <h1 class="mg2-head">Mission: For all our lives to run on<span class="mg2-line2"><em>abundant</em>, <em>autonomous</em> connection.</span></h1>
     </div>
 
     <div class="mg2-chart">
@@ -25965,8 +25972,8 @@ const SLIDE_ORDER = [
   'cs-frontier-pink1', //  1 PRIMARY · [Dave 2026-05-17 LATEST] Promoted from pink-dot alt → main slot 1 ('i like this, use this as main slide one and put current main slide one as a pink dot next to it'). Sunset town/village wide-angle watercolor bg + 'Real connection → #1 predictor of a fulfilling life' headline.
   // [Dave 2026-05-17 PM] cs-givefirst-slide2 REMOVED from main flow per Dave: 'major bug' — bg image asset cs-givefirst-slide2.png was never saved to disk; slide was rendering with broken image alt text. The original cs-givefirst-art at slot 18 still carries the same content cleanly. HTML retained as silent backup; restore by re-adding this line.
   // 'cs-givefirst-slide2', // REMOVED — was duplicate at slot 2 with broken bg image
-  // [Dave 2026-05-18 LATEST v2] Slot 2 PRIMARY swapped AGAIN: cs-1m8-title-B PROMOTED to slot 2 main per Dave 'make this the main slide 2, moving the current slide two as a red dot slide to the left of this new main slide 2'. cs-1m8-title-B carries the centered BRAND eyebrow + "Live a life of abundant, autonomous connection." headline + "by GnR · Give 'n Receive" attribution. cs-1m8-title-A demoted to RED-DOT alt.
-  'cs-1m8-title-B',   //  2 TITLE · centered BRAND eyebrow + Live a life headline + by GnR · Give 'n Receive attribution + big 3-col diptych. Staged diptych reveal (1 column at a time per Dave 2026-05-18 LATEST: 'i'd like these to animate in one at a time instead of all at once').
+  // [Dave 2026-05-18 LATEST v4] Slot 2 PRIMARY swapped back to cs-1m8-title-A per Dave screenshot: large centered GnR wordmark + Give 'n Receive label + Live a life headline + full diptych. Previous main cs-1m8-title-B demoted to leftmost RED-DOT alt below.
+  'cs-1m8-title-A',   //  2 TITLE · large centered GnR wordmark + Give 'n Receive + Live a life headline + full codex diptych.
   // [Dave 2026-05-18 LATEST v6] cs-brand-V8 REMOVED from main flow per Dave 'move this as a pink dot slide to the left of slide 2'. It now lives as the LEFTMOST pink-dot alt of cs-1m8 (see SLIDE_ALTS[2] below). All slots past slot 2 shift -1 → SLIDE_ALTS keys 4..25 all decrement by 1. HTML for cs-brand-V8 retained as-is below; only its position in nav changed.
   // 'cs-1m5' / 'cs-1m9' demoted to alts (see SLIDE_ALTS[1])
   // [Dave 2026-05-18 LATEST v9] cs-a7m1 REMOVED from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'. Now lives as a RED-DOT alt at slot 2 (cs-1m8). All SLIDE_ALTS keys past slot 3 decrement by 1 — 4→3, 6→5, 13→12, 14→13, 15→14, 16→15, 24→23. Total main-flow slides now 23.
@@ -26117,8 +26124,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v6] Brand pink-dot alts for cs-1m8 (slot 2). cs-brand-V8 demoted from main slot 3 → leftmost pink-dot alt here. cs-1m8-codexmerge + cs-1m8-envelopes added (codex-merge variants). cs-brand-mono REMOVED.
   // [Dave 2026-05-18 LATEST v9] cs-a7m1 added as a RED-DOT alt at the FAR LEFT of the slot-2 dot strip (furthest from primary). It's the old "Social media is an extremely narrow view" slide that just demoted from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'.
   // Plus the existing blue-dot title candidates + pink-dot brand alts. Order in array maps LEFT→RIGHT (index 0 = leftmost). Red-dot sits leftmost, then blue-dots, then pink-dots — color groups stay contiguous.
-  // [Dave 2026-05-18 LATEST v3] Slot 2 alt array reshuffled AGAIN: cs-1m8-title-B PROMOTED to primary (see above), cs-1m8-title-A demoted from primary back to alt position (red dot, leftmost) per Dave 'moving the current slide two as a red dot slide to the left of this new main slide 2'. Order LEFT→RIGHT (red dots first, then blue, then pink): cs-1m8-title-A · cs-1m8 · cs-a7m1 · cs-1m8-title-C · pink-dot brand alts.
-  2: ['cs-1m8-title-A', 'cs-1m8', 'cs-a7m1', 'cs-1m8-title-C', 'cs-brand-V8', 'cs-1m8-envelopes', 'cs-1m8-codexmerge', 'cs-1m8-fuels', 'cs-brand-codex'],
+  // [Dave 2026-05-18 LATEST v6] cs-1m8-codexmerge removed from slot 2 alts per Dave. cs-1m8-title-A remains primary. Order LEFT→RIGHT: red dots first, then blue, then pink.
+  2: ['cs-1m8', 'cs-a7m1', 'cs-1m8-title-C', 'cs-brand-V8', 'cs-1m8-envelopes', 'cs-1m8-fuels', 'cs-brand-codex'],
   // [Dave 2026-05-18 LATEST v6+v9] All SLIDE_ALTS keys past slot 2 DECREMENTED by 1 (v6 = cs-brand-V8 demoted, v9 = cs-a7m1 demoted). Net effect: 4→3 (v6) →still 3 with v9, 5→5 still, 6→5 (v6), 14→13 (v6)→12 (v9), 15→14, 16→15, 24→23.
   // Slot 3 (cs-1bm1 — was cs-a7m1) — no alts.
   3: [],
@@ -27389,12 +27396,12 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 → pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-brand-codex' || altId === 'cs-1m8-fuels' || altId === 'cs-brand-V8' || altId === 'cs-1m8-codexmerge' || altId === 'cs-1m8-envelopes' || altId === 'cs-wedgepb-codex');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-brand-codex' || altId === 'cs-1m8-fuels' || altId === 'cs-brand-V8' || altId === 'cs-1m8-envelopes' || altId === 'cs-wedgepb-codex');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
     // [Dave 2026-05-18 LATEST v7] Three title-slide candidates added as BLUE-DOT alts at slot 2.
-    const isBlueAlt = (altId === 'cs-wedge1' || altId === 'cs-1m8-title-A' || altId === 'cs-1m8-title-B' || altId === 'cs-1m8-title-C');
+    const isBlueAlt = (altId === 'cs-wedge1' || altId === 'cs-1m8-title-A' || altId === 'cs-1m8-title-C');
     const isOrangeAlt = Array.isArray(ORANGE_REVIEW_ALTS) && ORANGE_REVIEW_ALTS.includes(altId);
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 — explicit override since slot 2 is not the REVIEW_POSITION.
     // [Dave 2026-05-10 PM] cs-16old + cs-lab also RED-DOT (cs-16old = restored complicated engine slide at slot 20; cs-lab = founder-slot alternate to cs-18 'My Wheelhouse').
