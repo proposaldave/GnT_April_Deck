@@ -26011,16 +26011,17 @@ const SLIDE_ORDER = [
   //   (2) cs-19 MOVED to right after cs-wedgepb-combo (Pickleball â†’ fastest path) â€” the 3Ã— community value revenue slide follows the wedge claim
   //   (3) cs-mv6-merge MOVED to right after cs-fv6-img (What is real human connection technology?) â€” mission lands after the question
   //   New post-move flow: samecourt â†’ givefirst-art â†’ magnetic â†’ wedgepb-combo â†’ cs-19 â†’ racketeer â†’ fv6-img â†’ mv6-merge â†’ wedge1
-  // [Dave 2026-05-19] cs-givefirst-art ("How GnR Community Growth actually works") MOVED to immediately after cs-samecourt (Charlie Munger) per Dave.
-  // New order: samecourt â†’ givefirst-art â†’ magnetic â†’ wedgepb-codex â†’ cs-19 â†’ ...
+  // [Dave 2026-05-19] cs-fv6-img ("What is real human connection technology?") MOVED to immediately after cs-samecourt
+  // and immediately before cs-givefirst-art ("You can't tell someone to open their heart.") per Dave.
+  // New order: samecourt â†’ fv6-img â†’ givefirst-art â†’ magnetic â†’ wedgepb-codex â†’ cs-19 â†’ ...
   'cs-samecourt',  // Flip the incentive. Unleash the community. â€” paradigm-proof beat (Munger).
+  'cs-fv6-img', // Image-led "What is real human connection technology?" â€” question first, now directly after Munger.
   'cs-givefirst-art', // 'You can't tell someone to open their heart.' â€” give-first follows the marketplace-role beat.
   'cs-magnetic',    // A rating can balance a match. A person can fill a room. â€” twin courts (rating-only vs marketplace roles).
   // [Dave 2026-05-18 LATEST] cs-wedgepb-codex PROMOTED to main primary per Dave 'the attached slide is going to go in the main deck, replacing (and you can delete) the slide in the deck that is almost identical to this one'. cs-wedgepb-combo (former primary, gold radial bg) removed from SLIDE_ORDER. HTML for cs-wedgepb-combo retained as silent backup so its CSS/markup is still parseable.
   'cs-wedgepb-codex', // PRIMARY Â· Pickleball â†’ fastest path to the first global human value exchange network Â· codex watercolor bg.
   'cs-19',    // 3Ã— court fee revenue Â· For Your Club ('3x your community') â€” follows the wedge claim
   'cs-racketeer-att-arc', // RACKETEER Â· 3-quote narrative arc â€” first prospective customer outside NEPC
-  'cs-fv6-img', // Image-led "What is real human connection technology?" â€” question first
   'cs-mv6-merge',  // MISSION Â· 'For all our lives to run on autonomous, abundant connection.' â€” answers the question
   'cs-wedge1',     // "The next great network is the one that helps us find ourselves and find each other."
   // [Dave 2026-05-12 LATEST] cs-onandoff MOVED DOWN â€” now immediately after cs-fv6. [Dave 2026-05-14 PM v4] cs-onandoff DELETED per Dave 'delete this slide'. HTML retained for rollback.
@@ -26166,8 +26167,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-17 v14] cs-pbfirst added as 2nd red-dot alt at slot 15 per Dave 'move attached slide as a red dot slide to the left of the dot of the "Pickleball â†’ fastest path..." slide'. cs-wedgefunnel stays as the rightmost red-dot alt (the funnel variant); cs-pbfirst is the further-left red-dot (the 5-card "#1 secret" variant).
   // Slot 16 (cs-wedgepb-combo â€” was slot 15) â€” cs-pbfirst red-dot alt
   // [Dave 2026-05-18 LATEST] cs-18-vd4-pink REMOVED per Dave 'delete this slide' (was the 16/25 alt â€” original pre-edit wheelhouse copy). HTML retained as silent backup; restore by re-adding the id to this list.
-  // [Dave 2026-05-18 LATEST v9] Slot 15 = cs-wedgepb-combo (was 16 before cs-a7m1 demotion). cs-wedgepb-codex pink-dot alt follows.
-  16: ['cs-wedgepb-codex'],
+  // [Dave 2026-05-19] cs-wedgepb-codex is a main slide now, not an alt dot.
   // [Dave 2026-05-18 LATEST v5] SLIDE_ORDER reshuffled AGAIN â€” cs-brand-V8 moved to slot 3 + cs-racketeer cluster (7 slides) deleted. New 24-slide mapping:
   //    1: cs-frontier-pink1  (no alts)
   //    2: cs-1m8             (no alts)
@@ -26194,9 +26194,9 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v3] cs-brand-mono added as PINK-DOT alt â€” brand-monument treatment.
   // [Dave 2026-05-18 LATEST v4] cs-brand-codex added as 2nd PINK-DOT alt (codex split-image watercolor).
   // [Dave 2026-05-18 LATEST v5] All brand pink-dot alts RELOCATED from slot 3 (cs-brand-V8) â†’ slot 2 (cs-1m8) per Dave 'move these two slides and any new brand slide you are working on as pink dot slides next to the slide with the text below: What we give fuels our communities.' That's cs-1m8 â€” which sits at slot 2 in SLIDE_ORDER. cs-1m8-fuels (the new particle-galaxy variant anchored to "What we give fuels our communities.") also added here. Slot 3 (cs-brand-V8) now carries no alts; if Dave wants the brand alts to live under the brand slide again later, just move them back.
-  // [Dave 2026-05-19] Slot 14 = cs-givefirst-art after Munger; slot 15 = cs-magnetic.
-  14: ['cs-givefirst-brand'],
-  15: ['cs-magnetic-orig', 'cs-merge3'],
+  // [Dave 2026-05-19] Slot 14 = cs-fv6-img after Munger; slot 15 = cs-givefirst-art; slot 16 = cs-magnetic.
+  15: ['cs-givefirst-brand'],
+  16: ['cs-magnetic-orig', 'cs-merge3'],
   18: [],
   19: [],
   // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug'. HTML retained as silent backup. Slot 19 was 20 was 21 before.
