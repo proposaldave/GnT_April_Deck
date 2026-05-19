@@ -26011,10 +26011,11 @@ const SLIDE_ORDER = [
   //   (2) cs-19 MOVED to right after cs-wedgepb-combo (Pickleball â†’ fastest path) â€” the 3Ã— community value revenue slide follows the wedge claim
   //   (3) cs-mv6-merge MOVED to right after cs-fv6-img (What is real human connection technology?) â€” mission lands after the question
   //   New post-move flow: samecourt â†’ givefirst-art â†’ magnetic â†’ wedgepb-combo â†’ cs-19 â†’ racketeer â†’ fv6-img â†’ mv6-merge â†’ wedge1
-  // [Dave 2026-05-18 LATEST v8] cs-magnetic ("Social media created 1% influencers." / Social pull) MOVED to immediately after cs-samecourt (Munger 'Show me the incentive') per Dave 'move the "Social media created 1% influencers." slide to be right after the "Charlie Munger" slide'. cs-givefirst-art shifts one slot back. New order: samecourt â†’ magnetic â†’ givefirst-art â†’ wedgepb-combo â†’ cs-19 â†’ ... SLIDE_ALTS keys 14 (cs-givefirst-art's alts) â†” 15 (cs-magnetic's alts) swapped to follow.
+  // [Dave 2026-05-19] cs-givefirst-art ("How GnR Community Growth actually works") MOVED to immediately after cs-samecourt (Charlie Munger) per Dave.
+  // New order: samecourt â†’ givefirst-art â†’ magnetic â†’ wedgepb-codex â†’ cs-19 â†’ ...
   'cs-samecourt',  // Flip the incentive. Unleash the community. â€” paradigm-proof beat (Munger).
-  'cs-magnetic',    // A rating can balance a match. A person can fill a room. â€” twin courts (rating-only vs marketplace roles). Now sits IMMEDIATELY AFTER Munger.
   'cs-givefirst-art', // 'You can't tell someone to open their heart.' â€” give-first follows the marketplace-role beat.
+  'cs-magnetic',    // A rating can balance a match. A person can fill a room. â€” twin courts (rating-only vs marketplace roles).
   // [Dave 2026-05-18 LATEST] cs-wedgepb-codex PROMOTED to main primary per Dave 'the attached slide is going to go in the main deck, replacing (and you can delete) the slide in the deck that is almost identical to this one'. cs-wedgepb-combo (former primary, gold radial bg) removed from SLIDE_ORDER. HTML for cs-wedgepb-combo retained as silent backup so its CSS/markup is still parseable.
   'cs-wedgepb-codex', // PRIMARY Â· Pickleball â†’ fastest path to the first global human value exchange network Â· codex watercolor bg.
   'cs-19',    // 3Ã— court fee revenue Â· For Your Club ('3x your community') â€” follows the wedge claim
@@ -26142,8 +26143,7 @@ const SLIDE_ALTS = {
   5: [],
   // Slot 12 (cs-samecourt â€” was slot 12) â€” no alts.
   12: [],
-  // [Dave 2026-05-18 LATEST v9] cs-magnetic alts decrement from 14 â†’ 13 because cs-a7m1 demoted from main slot 3. cs-magnetic-orig (red-dot) + cs-merge3 (pink-dot) still alt cs-magnetic.
-  14: ['cs-magnetic-orig', 'cs-merge3'],
+  // [Dave 2026-05-19] cs-givefirst-art now owns slot 14 after Munger; cs-magnetic alts moved to slot 15 below.
   // [Dave 2026-05-08] cs-pn1 DELETED from slot 14 alts per Dave: 'delete this'. HTML retained as silent backup, no nav dot.
   // [Dave 2026-05-09] BUG FIX: alt keys shifted +1 to match SLIDE_ORDER positions after cs-1m5 (slot 1) + cs-1 (slot 2) insertion bumped everything down.
   //   - cs-18 (Dave Velardo) was at slot 16 â†’ now slot 17. Wheelhouse alts (cs-18-alt1, cs-18-alt3) moved from key 16 â†’ 17.
@@ -26194,8 +26194,9 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v3] cs-brand-mono added as PINK-DOT alt â€” brand-monument treatment.
   // [Dave 2026-05-18 LATEST v4] cs-brand-codex added as 2nd PINK-DOT alt (codex split-image watercolor).
   // [Dave 2026-05-18 LATEST v5] All brand pink-dot alts RELOCATED from slot 3 (cs-brand-V8) â†’ slot 2 (cs-1m8) per Dave 'move these two slides and any new brand slide you are working on as pink dot slides next to the slide with the text below: What we give fuels our communities.' That's cs-1m8 â€” which sits at slot 2 in SLIDE_ORDER. cs-1m8-fuels (the new particle-galaxy variant anchored to "What we give fuels our communities.") also added here. Slot 3 (cs-brand-V8) now carries no alts; if Dave wants the brand alts to live under the brand slide again later, just move them back.
-  // [Dave 2026-05-18 LATEST v9] cs-givefirst-art alts decrement 15 â†’ 14 (cs-a7m1 demoted).
-  15: ['cs-givefirst-brand'],
+  // [Dave 2026-05-19] Slot 14 = cs-givefirst-art after Munger; slot 15 = cs-magnetic.
+  14: ['cs-givefirst-brand'],
+  15: ['cs-magnetic-orig', 'cs-merge3'],
   18: [],
   19: [],
   // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug'. HTML retained as silent backup. Slot 19 was 20 was 21 before.
