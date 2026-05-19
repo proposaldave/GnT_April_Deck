@@ -21562,28 +21562,36 @@ window.cs1m7Reverse = function() {
   #cs-fv6-img .fvi-c5, #cs-fv6-pink .fvi-c5 { --fvi-c:#168651; --fvi-bg:rgba(22,134,81,0.10); }
   #cs-fv6-img .fvi-c4, #cs-fv6-pink .fvi-c4 { --fvi-c:#5B8FD4; --fvi-bg:rgba(91,143,212,0.10); }
   #cs-fv6-img .fvi-c6, #cs-fv6-pink .fvi-c6 { --fvi-c:#c8462c; --fvi-bg:rgba(200,70,44,0.10); }
-  /* Entry stagger */
-  #cs-fv6-img .fvi-bg, #cs-fv6-img .fvi-arc, #cs-fv6-img .fvi-head, #cs-fv6-img .fvi-sub, #cs-fv6-img .fvi-card,
-  #cs-fv6-pink .fvi-bg, #cs-fv6-pink .fvi-arc, #cs-fv6-pink .fvi-head, #cs-fv6-pink .fvi-sub, #cs-fv6-pink .fvi-card { opacity:0;transition:opacity 0.7s cubic-bezier(.22,1,.36,1); }
+  /* Entry stagger. Bg/title enter on slide load; workflow row waits for click/scroll advance. */
+  #cs-fv6-img .fvi-bg, #cs-fv6-img .fvi-arc, #cs-fv6-img .fvi-head, #cs-fv6-img .fvi-sub, #cs-fv6-img .fvi-card, #cs-fv6-img .fvi-arrow,
+  #cs-fv6-pink .fvi-bg, #cs-fv6-pink .fvi-arc, #cs-fv6-pink .fvi-head, #cs-fv6-pink .fvi-sub, #cs-fv6-pink .fvi-card, #cs-fv6-pink .fvi-arrow { opacity:0;transition:opacity 0.7s cubic-bezier(.22,1,.36,1); }
   #cs-fv6-img.casey-entered .fvi-bg, #cs-fv6-pink.casey-entered .fvi-bg   { opacity:0.96;transition-delay:0.15s; }
   #cs-fv6-img.casey-entered .fvi-arc, #cs-fv6-pink.casey-entered .fvi-arc  { opacity:1;transition-delay:0.40s; }
   #cs-fv6-img.casey-entered .fvi-head, #cs-fv6-pink.casey-entered .fvi-head { opacity:1;transition-delay:0.55s; }
   #cs-fv6-img.casey-entered .fvi-sub, #cs-fv6-pink.casey-entered .fvi-sub  { opacity:1;transition-delay:0.75s; }
-  #cs-fv6-img.casey-entered .fvi-card:nth-child(1), #cs-fv6-pink.casey-entered .fvi-card:nth-child(1)  { opacity:1;transition-delay:0.90s; }
-  #cs-fv6-img.casey-entered .fvi-card:nth-child(3), #cs-fv6-pink.casey-entered .fvi-card:nth-child(3)  { opacity:1;transition-delay:1.00s; }
-  #cs-fv6-img.casey-entered .fvi-card:nth-child(5), #cs-fv6-pink.casey-entered .fvi-card:nth-child(5)  { opacity:1;transition-delay:1.10s; }
-  #cs-fv6-img.casey-entered .fvi-card:nth-child(7), #cs-fv6-pink.casey-entered .fvi-card:nth-child(7)  { opacity:1;transition-delay:1.20s; }
-  #cs-fv6-img.casey-entered .fvi-card:nth-child(9), #cs-fv6-pink.casey-entered .fvi-card:nth-child(9)  { opacity:1;transition-delay:1.30s; }
-  #cs-fv6-img.casey-entered .fvi-card:nth-child(11), #cs-fv6-pink.casey-entered .fvi-card:nth-child(11) { opacity:1;transition-delay:1.40s; }
-  #cs-fv6-img.casey-entered .fvi-card:nth-child(13), #cs-fv6-pink.casey-entered .fvi-card:nth-child(13) { opacity:1;transition-delay:1.50s; }
-  #cs-fv6-img.casey-entered .fvi-card:nth-child(15), #cs-fv6-pink.casey-entered .fvi-card:nth-child(15) { opacity:1;transition-delay:1.60s; }
-  #cs-fv6-img.casey-entered .fvi-card:nth-child(17), #cs-fv6-pink.casey-entered .fvi-card:nth-child(17) { opacity:1;transition-delay:1.70s; }
+  #cs-fv6-img[data-shown="1"] .fvi-card:nth-child(1), #cs-fv6-pink[data-shown="1"] .fvi-card:nth-child(1)  { opacity:1;transition-delay:0.05s; }
+  #cs-fv6-img[data-shown="1"] .fvi-arrow:nth-child(2), #cs-fv6-pink[data-shown="1"] .fvi-arrow:nth-child(2) { opacity:1;transition-delay:0.12s; }
+  #cs-fv6-img[data-shown="1"] .fvi-card:nth-child(3), #cs-fv6-pink[data-shown="1"] .fvi-card:nth-child(3)  { opacity:1;transition-delay:0.18s; }
+  #cs-fv6-img[data-shown="1"] .fvi-arrow:nth-child(4), #cs-fv6-pink[data-shown="1"] .fvi-arrow:nth-child(4) { opacity:1;transition-delay:0.25s; }
+  #cs-fv6-img[data-shown="1"] .fvi-card:nth-child(5), #cs-fv6-pink[data-shown="1"] .fvi-card:nth-child(5)  { opacity:1;transition-delay:0.31s; }
+  #cs-fv6-img[data-shown="1"] .fvi-arrow:nth-child(6), #cs-fv6-pink[data-shown="1"] .fvi-arrow:nth-child(6) { opacity:1;transition-delay:0.38s; }
+  #cs-fv6-img[data-shown="1"] .fvi-card:nth-child(7), #cs-fv6-pink[data-shown="1"] .fvi-card:nth-child(7)  { opacity:1;transition-delay:0.44s; }
+  #cs-fv6-img[data-shown="1"] .fvi-arrow:nth-child(8), #cs-fv6-pink[data-shown="1"] .fvi-arrow:nth-child(8) { opacity:1;transition-delay:0.51s; }
+  #cs-fv6-img[data-shown="1"] .fvi-card:nth-child(9), #cs-fv6-pink[data-shown="1"] .fvi-card:nth-child(9)  { opacity:1;transition-delay:0.57s; }
+  #cs-fv6-img[data-shown="1"] .fvi-arrow:nth-child(10), #cs-fv6-pink[data-shown="1"] .fvi-arrow:nth-child(10) { opacity:1;transition-delay:0.64s; }
+  #cs-fv6-img[data-shown="1"] .fvi-card:nth-child(11), #cs-fv6-pink[data-shown="1"] .fvi-card:nth-child(11) { opacity:1;transition-delay:0.70s; }
+  #cs-fv6-img[data-shown="1"] .fvi-arrow:nth-child(12), #cs-fv6-pink[data-shown="1"] .fvi-arrow:nth-child(12) { opacity:1;transition-delay:0.77s; }
+  #cs-fv6-img[data-shown="1"] .fvi-card:nth-child(13), #cs-fv6-pink[data-shown="1"] .fvi-card:nth-child(13) { opacity:1;transition-delay:0.83s; }
+  #cs-fv6-img[data-shown="1"] .fvi-arrow:nth-child(14), #cs-fv6-pink[data-shown="1"] .fvi-arrow:nth-child(14) { opacity:1;transition-delay:0.90s; }
+  #cs-fv6-img[data-shown="1"] .fvi-card:nth-child(15), #cs-fv6-pink[data-shown="1"] .fvi-card:nth-child(15) { opacity:1;transition-delay:0.96s; }
   html[data-export="1"] #cs-fv6-img .fvi-bg,
   html[data-export="1"] #cs-fv6-pink .fvi-bg { opacity:0.96 !important;transition:none !important; }
   html[data-export="1"] #cs-fv6-img .fvi-arc, html[data-export="1"] #cs-fv6-img .fvi-head, html[data-export="1"] #cs-fv6-img .fvi-sub, html[data-export="1"] #cs-fv6-img .fvi-card,
-  html[data-export="1"] #cs-fv6-pink .fvi-arc, html[data-export="1"] #cs-fv6-pink .fvi-head, html[data-export="1"] #cs-fv6-pink .fvi-sub, html[data-export="1"] #cs-fv6-pink .fvi-card { opacity:1 !important;transition:none !important; }
+  html[data-export="1"] #cs-fv6-img .fvi-arrow,
+  html[data-export="1"] #cs-fv6-pink .fvi-arc, html[data-export="1"] #cs-fv6-pink .fvi-head, html[data-export="1"] #cs-fv6-pink .fvi-sub, html[data-export="1"] #cs-fv6-pink .fvi-card,
+  html[data-export="1"] #cs-fv6-pink .fvi-arrow { opacity:1 !important;transition:none !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-fv6-img" style="display:none">
+<div class="casey-slide ds-focus" id="cs-fv6-img" data-shown="0" onclick="csFv6Advance();event.stopPropagation()" style="display:none;cursor:pointer">
   <!-- [Dave 2026-05-18 LATEST] Eyebrow text inverted per Dave's "best font color over this bg" check + reworded: "The planet's most valuable, networkable, untapped dataset" â†’ "The most valuable, networkable, untapped dataset on the planet". Color stays WHITE â€” the cs-fv6-img bg is a dark twilight neighborhood watercolor (deep blues/greens in the top-left where the eyebrow sits), so white reads cleanly against it. Cream/gold would muddy against the warm golden connection threads in the same band. A subtle text-shadow added for legibility when the painting's blue tones lighten near the top corner. -->
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#ffffff;text-shadow:0 1px 2px rgba(0,0,0,0.45);z-index:10">The most valuable, networkable, untapped dataset on the planet</div>
   <!-- [Dave 2026-05-17 v11] Codex watercolor background â€” neighborhood-as-network. Fallback chain: real_world_graph â†’ community_builders â†’ display none. -->
@@ -21629,7 +21637,7 @@ window.cs1m7Reverse = function() {
      golden light). Fallback chain â†’ gnr_vnext_real_world_graph.png.
      Shares all fvi-* styles (selectors extended above).
      â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<div class="casey-slide ds-focus" id="cs-fv6-pink" style="display:none">
+<div class="casey-slide ds-focus" id="cs-fv6-pink" data-shown="0" onclick="csFv6Advance();event.stopPropagation()" style="display:none;cursor:pointer">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#ffffff;text-shadow:0 1px 2px rgba(0,0,0,0.45);z-index:10">The most valuable, networkable, untapped dataset on the planet</div>
   <img class="fvi-bg" src="assets/cs-fv6-pink.png" alt="Two hands clasped in warm golden light â€” watercolor handshake depicting human connection technology." onerror="this.onerror=null;this.src='assets/gnr_vnext_real_world_graph.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
   <div class="fvi-wash"></div>
@@ -26668,20 +26676,18 @@ window.csGnrReverse = function() {
   return false;
 };
 
-// [Dave 2026-05-17] csFv6Advance â€” cs-fv6 verb row (Measure â†’ Test â†’ ... â†’ Abundance) hidden on
-// slide load, animates in on first click/scroll-down. Per Dave 'have it be an animation that
-// i have to click (or mouse scroll down) to animate in'.
-// [Dave 2026-05-17 v3] Reverted to cs-fv6 only â€” cs-fv6-art image-led variant deleted per Dave.
+// [Dave 2026-05-19] csFv6Advance â€” real human connection technology row waits on the active
+// cs-fv6* slide until first click/scroll/key advance, then cascades the workflow row.
 window.csFv6Advance = function() {
-  const slide = document.getElementById('cs-fv6');
-  if (!slide || !slide.classList.contains('active')) return false;
+  const slide = document.querySelector('.casey-slide.active[id^="cs-fv6"]');
+  if (!slide) return false;
   if (slide.dataset.shown === '1') return false;
   slide.dataset.shown = '1';
   return true;
 };
 window.csFv6Reverse = function() {
-  const slide = document.getElementById('cs-fv6');
-  if (!slide || !slide.classList.contains('active')) return false;
+  const slide = document.querySelector('.casey-slide.active[id^="cs-fv6"]');
+  if (!slide) return false;
   if (slide.dataset.shown !== '1') return false;
   slide.dataset.shown = '0';
   return true;
@@ -27735,7 +27741,7 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-gnr'  && window.csGnrAdvance  && window.csGnrAdvance())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pbfirst' && window.csPbfirstAdvance && window.csPbfirstAdvance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt' && window.csSamecourtAdvance && window.csSamecourtAdvance()) return;
-    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-fv6' && window.csFv6Advance && window.csFv6Advance()) return;
+    if (!inAppendix && /^cs-fv6/.test(SLIDE_ORDER[current - 1] || '') && window.csFv6Advance && window.csFv6Advance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-4'    && window.cs4Advance    && window.cs4Advance())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-3'    && window.cs3Advance    && window.cs3Advance())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11d'  && window.cs11dAdvance  && window.cs11dAdvance())  return;
@@ -27764,7 +27770,7 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cReverse   && window.cs2cReverse())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pbfirst' && window.csPbfirstReverse && window.csPbfirstReverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt' && window.csSamecourtReverse && window.csSamecourtReverse()) return;
-    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-fv6' && window.csFv6Reverse && window.csFv6Reverse()) return;
+    if (!inAppendix && /^cs-fv6/.test(SLIDE_ORDER[current - 1] || '') && window.csFv6Reverse && window.csFv6Reverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-gnr'  && window.csGnrReverse  && window.csGnrReverse())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-4'    && window.cs4Reverse    && window.cs4Reverse())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-3'    && window.cs3Reverse    && window.cs3Reverse())    return;
@@ -27867,8 +27873,8 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 600);
       return;
     }
-    // [Dave 2026-05-17] cs-fv6 (7-verb workflow row) â€” scroll-down reveals the row before next-slide nav.
-    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-fv6' && window.csFv6Advance && window.csFv6Advance()) {
+    // [Dave 2026-05-19] cs-fv6* workflow row â€” scroll-down reveals the row before next-slide nav.
+    if (!inAppendix && /^cs-fv6/.test(SLIDE_ORDER[current - 1] || '') && window.csFv6Advance && window.csFv6Advance()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
@@ -28002,7 +28008,7 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 600);
       return;
     }
-    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-fv6' && window.csFv6Reverse && window.csFv6Reverse()) {
+    if (!inAppendix && /^cs-fv6/.test(SLIDE_ORDER[current - 1] || '') && window.csFv6Reverse && window.csFv6Reverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
@@ -28094,7 +28100,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-gnr'  && window.csGnrAdvance  && window.csGnrAdvance())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-pbfirst' && window.csPbfirstAdvance && window.csPbfirstAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-samecourt' && window.csSamecourtAdvance && window.csSamecourtAdvance()) { setTimeout(() => { touchLock = false; }, 600); return; }
-      if (!inAppendix && slideId === 'cs-fv6' && window.csFv6Advance && window.csFv6Advance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && /^cs-fv6/.test(slideId || '') && window.csFv6Advance && window.csFv6Advance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2b'   && window.cs2bAdvance   && window.cs2bAdvance())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-3'    && window.cs3Advance    && window.cs3Advance())    { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-11d'  && window.cs11dAdvance  && window.cs11dAdvance())  { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -28120,7 +28126,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-gnr'  && window.csGnrReverse  && window.csGnrReverse())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-pbfirst' && window.csPbfirstReverse && window.csPbfirstReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-samecourt' && window.csSamecourtReverse && window.csSamecourtReverse()) { setTimeout(() => { touchLock = false; }, 600); return; }
-      if (!inAppendix && slideId === 'cs-fv6' && window.csFv6Reverse && window.csFv6Reverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && /^cs-fv6/.test(slideId || '') && window.csFv6Reverse && window.csFv6Reverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2b'   && window.cs2bReverse   && window.cs2bReverse())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-3'    && window.cs3Reverse    && window.cs3Reverse())    { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-11d'  && window.cs11dReverse  && window.cs11dReverse())  { setTimeout(() => { touchLock = false; }, 400); return; }
