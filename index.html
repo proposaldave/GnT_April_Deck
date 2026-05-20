@@ -242,7 +242,8 @@
 html[data-export="1"] .casey-nav,
 html[data-export="1"] .casey-bar,
 html[data-export="1"] .casey-count,
-html[data-export="1"] #appendixBtn {
+html[data-export="1"] #appendixBtn,
+html[data-export="1"] #trashBtn {
   display: none !important;
 }
 html[data-export="1"], html[data-export="1"] body {
@@ -302,10 +303,12 @@ html[data-pdf="1"][data-export="1"], html[data-pdf="1"][data-export="1"] body {
 }
 html[data-pdf="1"] .casey-slide.pdf-hide,
 html[data-pdf="1"] .appendix-slide,
+html[data-pdf="1"] .trash-slide,
 html[data-pdf="1"] .casey-nav,
 html[data-pdf="1"] .casey-bar,
 html[data-pdf="1"] .casey-count,
 html[data-pdf="1"] #appendixBtn,
+html[data-pdf="1"] #trashBtn,
 html[data-pdf="1"] #presenterToggle,
 html[data-pdf="1"] #speakerNotesBtn,
 html[data-pdf="1"] #annotationBtn,
@@ -18881,8 +18884,8 @@ window.cs1m7Reverse = function() {
   </section>
 </div>
 
-<!-- [Dave 2026-05-19] cs-ask-coasts ? PINK-DOT ALT of dinner/outlier slide. Same content/layout as cs-ask; background swapped to generated SF + New York + Boston dinner-decision watercolor. -->
-<div class="casey-slide ds-focus" id="cs-ask-coasts" style="display:none">
+<!-- [Dave 2026-05-20] cs-ask-coasts moved from pink-dot dinner/Torch VC alt into recoverable Trash bucket. Same content/layout as cs-ask; background swapped to generated SF + New York + Boston dinner-decision watercolor. -->
+<div class="casey-slide ds-focus trash-slide" id="cs-ask-coasts" style="display:none">
   <!-- [Dave 2026-05-18 LATEST v3] HYBRID bg: PNG override layer (Dave's ChatGPT-generated steakhouse image) layered ABOVE the inline SVG fallback. If assets/cs-ask-bg.png exists on disk, it covers the SVG entirely. If missing, onerror hides it and the SVG scene paints through. Both render at full bleed. ðŸŽ¯ ACTION REQUIRED: drop the ChatGPT image at C:\Users\dave\CLAUDE COWORK\07_PRODUCT\pitch_visuals\assets\cs-ask-bg.png. -->
   <img src="assets/cs-ask-coasts-bg.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:1;display:block" onerror="this.onerror=null;this.src='assets/cs-ask-bg.png';this.onerror=function(){this.style.display='none'}"/>
   <div class="ask-bg" aria-hidden="true">
@@ -26462,8 +26465,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug'. HTML retained as silent backup. Slot 19 was 20 was 21 before.
   // [Dave 2026-05-19] cs-mv6-networked added as a PINK-DOT alt left of the mission slide.
   20: ['cs-mv6-networked'],
-  // [Dave 2026-05-19] Pink-dot dinner/outlier alt with SF + New York + Boston decision-dinner background.
-  23: ['cs-ask-coasts'],
+  // [Dave 2026-05-20] Dinner/Torch VC alt moved to TRASH_ORDER so it stays recoverable without occupying the deck/appendix review system.
+  23: [],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one â€” bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
   // [Dave 2026-05-15] Key shifted 20 â†’ 21 after cs-givefirst inserted at slot 18 (after the Wheelhouse slide). cs-16 is now at slot 21.
   // [Dave 2026-05-14 PM v4 c] cs-funnel added as second red-dot alt (further LEFT than cs-16old) per Dave: 'create a new red dot slide to the left of this one, and rethink it, reimagine it as a SALES FUNNEL â€” a human value sales funnel which is exactly what GnR is.'
@@ -26626,9 +26629,17 @@ const APPENDIX_ORDER = [
   'cs-1m6',      // LAST appendix slide Â· GÂ·nÂ·R Equation â€” 3 big letters with V8 sub-captions
 ];
 const APPENDIX_TOTAL = APPENDIX_ORDER.length;
+// Recoverable slide trash. These are intentionally out of the main deck and appendix,
+// but still visible inside the app so Dave can restore candidates later.
+const TRASH_ORDER = [
+  'cs-ask-coasts',
+];
+const TRASH_TOTAL = TRASH_ORDER.length;
 let current = 1;
 let inAppendix = false;
 let appendixCurrent = 1;
+let inTrash = false;
+let trashCurrent = 1;
 
 function goTo(n) { caseyGo(n); }
 
@@ -27151,7 +27162,7 @@ window.cs_mv6_Reverse = function() {
 };
 
 function caseyGo(n) {
-  if (inAppendix) return;
+  if (inAppendix || inTrash) return;
   if (n < 1 || n > TOTAL) return;
   // BULLETPROOF FIX 2026-04-30 PM: hide ALL slides via inline display:none, then show only target.
   document.querySelectorAll('.casey-slide').forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
@@ -27264,6 +27275,7 @@ function caseyGo(n) {
 
 function enterAppendix() {
   inAppendix = true;
+  inTrash = false;
   // Land on first slot of APPENDIX_ORDER (cs-a20 The Ask). Scroll forward goes through the rest.
   appendixCurrent = 1;
   // BULLETPROOF FIX 2026-04-30 PM: explicitly hide ALL slides (main + appendix)
@@ -27293,6 +27305,11 @@ function enterAppendix() {
   document.getElementById('appendixBtn').innerHTML = '<svg width="11" height="11" viewBox="0 0 12 12" style="display:block"><path d="M9 2 L4 6 L9 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   document.getElementById('appendixBtn').title = 'Back to Deck';
   document.getElementById('appendixBtn').onclick = exitAppendix;
+  const trashBtn = document.getElementById('trashBtn');
+  if (trashBtn) {
+    trashBtn.style.opacity = '0.35';
+    trashBtn.style.pointerEvents = 'none';
+  }
 }
 
 function exitAppendix() {
@@ -27307,6 +27324,11 @@ function exitAppendix() {
   document.getElementById('appendixBtn').innerHTML = '<svg width="9" height="9" viewBox="0 0 12 12" style="display:block"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="display:block;width:5px;height:5px;border-radius:50%;background:#ff4d8f;box-shadow:0 0 7px rgba(255,77,143,0.85);margin-top:3px;animation:pinkPulse 2.2s ease-in-out infinite"></span>';
   document.getElementById('appendixBtn').title = 'Appendix Â· 5 bonus slides';
   document.getElementById('appendixBtn').onclick = enterAppendix;
+  const trashBtn = document.getElementById('trashBtn');
+  if (trashBtn) {
+    trashBtn.style.opacity = '1';
+    trashBtn.style.pointerEvents = '';
+  }
   caseyGo(current);
 }
 
@@ -27346,6 +27368,97 @@ function appendixGo(n) {
   }
   if (targetId === 'cs-17') animateIntroExpansion();
   if (targetId === 'cs-4') animateIntroTeaser();
+  if (window.updateAnnotationBadge) updateAnnotationBadge();
+  if (window.renderAnnotationMarkers) renderAnnotationMarkers();
+}
+
+function enterTrash() {
+  inTrash = true;
+  inAppendix = false;
+  trashCurrent = 1;
+  document.querySelectorAll('.casey-slide').forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
+  const target = document.getElementById(TRASH_ORDER[0]);
+  if (target) {
+    target.style.display = '';
+    target.classList.add('active');
+    target.classList.remove('casey-entered');
+    void target.offsetWidth;
+    target.classList.add('casey-entered');
+  }
+  document.getElementById('cbar').style.background = 'linear-gradient(90deg,#8a8175,#c8462c)';
+  document.getElementById('cbar').style.width = TRASH_TOTAL ? ((1 / TRASH_TOTAL) * 100) + '%' : '0%';
+  document.getElementById('ccount').textContent = 'Trash 1 / ' + TRASH_TOTAL;
+  const nav = document.getElementById('cnav');
+  nav.querySelectorAll('.casey-dot').forEach(d => d.style.display = 'none');
+  nav.querySelectorAll('.casey-dot.appendix-dot,.casey-dot.trash-dot').forEach(d => d.remove());
+  TRASH_ORDER.forEach((id, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'casey-dot trash-dot' + (i === 0 ? ' on' : '');
+    dot.style.background = i === 0 ? '#c8462c' : 'rgba(200,70,44,0.32)';
+    dot.title = 'Trash slot ' + (i + 1);
+    dot.onclick = () => trashGo(i + 1);
+    nav.appendChild(dot);
+  });
+  const appendixBtn = document.getElementById('appendixBtn');
+  if (appendixBtn) {
+    appendixBtn.innerHTML = '<svg width="9" height="9" viewBox="0 0 12 12" style="display:block"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="display:block;width:5px;height:5px;border-radius:50%;background:#ff4d8f;box-shadow:0 0 7px rgba(255,77,143,0.85);margin-top:3px;animation:pinkPulse 2.2s ease-in-out infinite"></span>';
+    appendixBtn.title = 'Appendix · bonus slides';
+    appendixBtn.onclick = enterAppendix;
+    appendixBtn.style.opacity = '0.35';
+    appendixBtn.style.pointerEvents = 'none';
+  }
+  const trashBtn = document.getElementById('trashBtn');
+  if (trashBtn) {
+    trashBtn.innerHTML = '<svg width="11" height="11" viewBox="0 0 12 12" style="display:block"><path d="M9 2 L4 6 L9 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    trashBtn.title = 'Back to Deck';
+    trashBtn.onclick = exitTrash;
+  }
+  if (window.updateAnnotationBadge) updateAnnotationBadge();
+  if (window.renderAnnotationMarkers) renderAnnotationMarkers();
+}
+
+function exitTrash() {
+  inTrash = false;
+  document.querySelectorAll('.trash-slide').forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
+  document.getElementById('cbar').style.background = 'linear-gradient(90deg,#d4a853,#e04040,#3dff7a)';
+  const nav = document.getElementById('cnav');
+  nav.querySelectorAll('.casey-dot.trash-dot').forEach(d => d.remove());
+  nav.querySelectorAll('.casey-dot').forEach(d => d.style.display = '');
+  const appendixBtn = document.getElementById('appendixBtn');
+  if (appendixBtn) {
+    appendixBtn.style.opacity = '1';
+    appendixBtn.style.pointerEvents = '';
+  }
+  const trashBtn = document.getElementById('trashBtn');
+  if (trashBtn) {
+    trashBtn.innerHTML = '<svg width="11" height="11" viewBox="0 0 16 16" style="display:block"><path d="M5 5v7M8 5v7M11 5v7M3 3h10M6 3V2h4v1M4 3l.6 11h6.8L12 3" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="display:block;width:5px;height:5px;border-radius:50%;background:#8a8175;box-shadow:0 0 7px rgba(138,129,117,0.85);margin-top:3px"></span>';
+    trashBtn.title = 'Trash · recoverable slides';
+    trashBtn.onclick = enterTrash;
+  }
+  caseyGo(current);
+}
+
+function trashGo(n) {
+  if (!inTrash) return;
+  if (n < 1 || n > TRASH_TOTAL) return;
+  document.querySelectorAll('.casey-slide').forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
+  const targetId = TRASH_ORDER[n - 1];
+  const target = document.getElementById(targetId);
+  if (target) {
+    target.style.display = '';
+    target.classList.add('active');
+    target.classList.remove('casey-entered');
+    void target.offsetWidth;
+    target.classList.add('casey-entered');
+  }
+  document.getElementById('cbar').style.width = ((n / TRASH_TOTAL) * 100) + '%';
+  document.getElementById('ccount').textContent = 'Trash ' + n + ' / ' + TRASH_TOTAL;
+  trashCurrent = n;
+  document.querySelectorAll('.casey-dot.trash-dot').forEach((d, i) => {
+    const isOn = (i === n - 1);
+    d.classList.toggle('on', isOn);
+    d.style.background = isOn ? '#c8462c' : 'rgba(200,70,44,0.32)';
+  });
   if (window.updateAnnotationBadge) updateAnnotationBadge();
   if (window.renderAnnotationMarkers) renderAnnotationMarkers();
 }
@@ -27669,7 +27782,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) Â· cs-samecourt-pink1/pink2 (slot 13) Â· cs-givefirst-pink (slot 18) Â· cs-fv6-pink (slot 20) Â· cs-mv6-pink (slot 21) â€” all pink-dot alts for image-led/reduced-content variants of their primaries.
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 â†’ pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 â€” same content + codex watercolor bg).
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-mv6-networked' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-wedgepb-codex' || altId === 'cs-ask-coasts' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-mv6-networked' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3');
     // [Dave 2026-05-18] Purple-dot alts â€” 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added â€” pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 â€” FULL-content variant at slot 13 with warehouse bg image.
@@ -27755,6 +27868,17 @@ abtn.onmouseleave = () => { abtn.style.color = 'rgba(255,255,255,0.55)'; };
 abtn.onclick = enterAppendix;
 nav.appendChild(abtn);
 
+// Add recoverable trash bucket button for retired-but-not-deleted slides.
+const tbtn = document.createElement('button');
+tbtn.id = 'trashBtn';
+tbtn.innerHTML = '<svg width="11" height="11" viewBox="0 0 16 16" style="display:block"><path d="M5 5v7M8 5v7M11 5v7M3 3h10M6 3V2h4v1M4 3l.6 11h6.8L12 3" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="display:block;width:5px;height:5px;border-radius:50%;background:#8a8175;box-shadow:0 0 7px rgba(138,129,117,0.85);margin-top:3px"></span>';
+tbtn.style.cssText = 'display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;color:rgba(255,255,255,0.55);background:transparent;border:none;border-top:1px solid rgba(255,255,255,0.15);border-radius:0;padding:6px 0 2px;cursor:pointer;margin-top:5px;transition:color 0.3s;width:100%';
+tbtn.title = 'Trash · recoverable slides';
+tbtn.onmouseenter = () => { tbtn.style.color = 'rgba(255,255,255,0.9)'; };
+tbtn.onmouseleave = () => { tbtn.style.color = 'rgba(255,255,255,0.55)'; };
+tbtn.onclick = enterTrash;
+nav.appendChild(tbtn);
+
 document.getElementById('cbar').style.width = ((1/TOTAL)*100) + '%';
 document.getElementById('ccount').textContent = '1 / ' + TOTAL;
 
@@ -27804,7 +27928,17 @@ window.togglePresenterMode = function() {
           if (!el) return;
           const text = (el.textContent || '').replace(/\s+/g, ' ').trim().substring(0, 900);
           if (!text) return;
-          searchIndex.push({ id: id, position: i + 1, isAppendix: true, text: text });
+          searchIndex.push({ id: id, position: i + 1, isAppendix: true, isTrash: false, text: text });
+        });
+      }
+      if (typeof TRASH_ORDER !== 'undefined') {
+        TRASH_ORDER.forEach((id, i) => {
+          if (seen.has(id)) return; seen.add(id);
+          const el = document.getElementById(id);
+          if (!el) return;
+          const text = (el.textContent || '').replace(/\s+/g, ' ').trim().substring(0, 900);
+          if (!text) return;
+          searchIndex.push({ id: id, position: i + 1, isAppendix: false, isTrash: true, text: text });
         });
       }
       return searchIndex;
@@ -27830,21 +27964,25 @@ window.togglePresenterMode = function() {
       results.innerHTML = '';
       matches.forEach((m, idx) => {
         const div = document.createElement('div');
-        div.className = 'ss-result' + (m.isAppendix ? ' appendix' : '') + (idx === 0 ? ' focused' : '');
-        const numLabel = m.isAppendix ? 'A' + m.position : m.position;
-        const apxTag = m.isAppendix ? '<span class="ss-tag">APX</span>' : '';
-        div.innerHTML = '<span class="ss-num">' + numLabel + '</span>' + apxTag + '<span class="ss-snippet">' + buildSnippet(m.text, q) + '</span>';
+        div.className = 'ss-result' + (m.isAppendix ? ' appendix' : '') + (m.isTrash ? ' trash' : '') + (idx === 0 ? ' focused' : '');
+        const numLabel = m.isTrash ? 'T' + m.position : (m.isAppendix ? 'A' + m.position : m.position);
+        const sectionTag = m.isTrash ? '<span class="ss-tag">TRASH</span>' : (m.isAppendix ? '<span class="ss-tag">APX</span>' : '');
+        div.innerHTML = '<span class="ss-num">' + numLabel + '</span>' + sectionTag + '<span class="ss-snippet">' + buildSnippet(m.text, q) + '</span>';
         div.addEventListener('click', function() { navigateTo(m); });
         results.appendChild(div);
       });
     }
 
     function navigateTo(m) {
-      if (m.isAppendix) {
+      if (m.isTrash) {
+        if (typeof enterTrash === 'function' && !inTrash) enterTrash();
+        if (typeof trashGo === 'function') trashGo(m.position);
+      } else if (m.isAppendix) {
         if (typeof enterAppendix === 'function' && !inAppendix) enterAppendix();
         if (typeof appendixGo === 'function') appendixGo(m.position);
       } else {
         if (inAppendix && typeof exitAppendix === 'function') exitAppendix();
+        if (inTrash && typeof exitTrash === 'function') exitTrash();
         if (typeof caseyGo === 'function') caseyGo(m.position);
       }
       input.value = '';
@@ -27892,7 +28030,7 @@ window.togglePresenterMode = function() {
 })();
 window.navigateAlt = function(direction) {
   // direction: -1 to go LEFT (further into alts), +1 to go RIGHT (back toward primary)
-  if (inAppendix) return false; // alts only apply to main flow
+  if (inAppendix || inTrash) return false; // alts only apply to main flow
   const posKey = current;
   const alts = (typeof SLIDE_ALTS !== 'undefined' && SLIDE_ALTS[posKey]) || [];
   if (alts.length === 0) return false;
@@ -27931,7 +28069,7 @@ window.navigateAlt = function(direction) {
 // Keep this aligned with wheel/touch reveal handlers, but key off the actually active slide
 // so promoted slides, retained alts, and reshuffled SLIDE_ORDER entries do not drift.
 window.caseyAdvanceActiveReveal = function() {
-  if (inAppendix) return false;
+  if (inAppendix || inTrash) return false;
   const active = document.querySelector('.casey-slide.active');
   const activeId = active ? active.id : (SLIDE_ORDER[current - 1] || '');
   const directHandlers = {
@@ -27972,7 +28110,7 @@ window.caseyAdvanceActiveReveal = function() {
 };
 
 window.caseyReverseActiveReveal = function() {
-  if (inAppendix) return false;
+  if (inAppendix || inTrash) return false;
   const active = document.querySelector('.casey-slide.active');
   const activeId = active ? active.id : (SLIDE_ORDER[current - 1] || '');
   const directHandlers = {
@@ -28033,29 +28171,29 @@ document.addEventListener('keydown', e => {
   if (e.key === 'd' || e.key === 'D') {
     e.preventDefault();
     window.altIndex = 0;
-    if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
+    if (inTrash) trashGo(trashCurrent + 1); else if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
     return;
   }
   if (e.key === 'a' || e.key === 'A' || e.key === 's' || e.key === 'S') {
     e.preventDefault();
     window.altIndex = 0;
-    if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
+    if (inTrash) trashGo(trashCurrent - 1); else if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
     return;
   }
   // ArrowDown = next main slide (down the dot column)
   if (e.key === 'ArrowDown') {
     e.preventDefault();
-    if (!inAppendix && window.caseyAdvanceActiveReveal && window.caseyAdvanceActiveReveal()) return;
+    if (!inAppendix && !inTrash && window.caseyAdvanceActiveReveal && window.caseyAdvanceActiveReveal()) return;
     window.altIndex = 0;
-    if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
+    if (inTrash) trashGo(trashCurrent + 1); else if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
     return;
   }
   // ArrowUp = previous main slide (up the dot column)
   if (e.key === 'ArrowUp') {
     e.preventDefault();
-    if (!inAppendix && window.caseyReverseActiveReveal && window.caseyReverseActiveReveal()) return;
+    if (!inAppendix && !inTrash && window.caseyReverseActiveReveal && window.caseyReverseActiveReveal()) return;
     window.altIndex = 0;
-    if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
+    if (inTrash) trashGo(trashCurrent - 1); else if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
     return;
   }
   // ArrowLeft = navigate LEFT into alts (or further into the alt row)
@@ -28073,6 +28211,7 @@ document.addEventListener('keydown', e => {
   // [Dave 2026-05-18 LATEST] Bluetooth-clicker support: PageDown advances like Space (per-slide-aware advance, NOT bare ArrowRight which only navigates alt dots). Most Bluetooth presentation remotes (Logitech R400/R500/Spotlight, Kensington, generic Amazon clickers) send PageDown for forward and PageUp for back. PageDown / PageUp on a real keyboard also fall through here.
   if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
     e.preventDefault();
+    if (inTrash) { trashGo(trashCurrent + 1); return; }
     if (!inAppendix && window.caseyAdvanceActiveReveal && window.caseyAdvanceActiveReveal()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8' && window.cs1m8Advance && window.cs1m8Advance()) return;
     // [Dave 2026-05-18 LATEST] cs-1m8-title-A (slot 2 primary) staged reveal.
@@ -28108,6 +28247,7 @@ document.addEventListener('keydown', e => {
   // [Dave 2026-05-18 LATEST] Bluetooth-clicker support: PageUp reverses like the per-slide-aware ArrowLeft. NOTE: this handler is reached only when the EARLIER ArrowLeft handler (alt-dot navigation, ~line 26052) didn't claim the event â€” but PageUp never matches that earlier handler, so PageUp always falls through to here and triggers the proper per-slide reverse.
   if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
     e.preventDefault();
+    if (inTrash) { trashGo(trashCurrent - 1); return; }
     if (!inAppendix && window.caseyReverseActiveReveal && window.caseyReverseActiveReveal()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8' && window.cs1m8Reverse && window.cs1m8Reverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8-title-A' && window.csM8TitleAReverse && window.csM8TitleAReverse()) return;
@@ -28136,6 +28276,7 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6'  && window.cs_mv6_Reverse && window.cs_mv6_Reverse()) return;
     if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
   }
+  if (e.key === 'Escape' && inTrash) { e.preventDefault(); exitTrash(); }
   if (e.key === 'Escape' && inAppendix) { e.preventDefault(); exitAppendix(); }
 });
 
@@ -28146,6 +28287,12 @@ document.addEventListener('wheel', e => {
   if (document.querySelector('.node-overlay.open')) return;
   e.preventDefault();
   wheelLock = true;
+  if (inTrash) {
+    if (e.deltaY > 0) trashGo(trashCurrent + 1);
+    else if (e.deltaY < 0) trashGo(trashCurrent - 1);
+    setTimeout(() => { wheelLock = false; }, 400);
+    return;
+  }
   if (e.deltaY > 0) {
     // [Dave 2026-05-09] ALT slide check FIRST: alt slides like cs-1m5 / cs-1m7 / cs-1m8 aren't in SLIDE_ORDER (current still equals their parent slot's index), so we have to detect them via .active directly.
     if (!inAppendix) {
@@ -28433,6 +28580,12 @@ document.addEventListener('touchend', e => {
   const adx = Math.abs(dx), ady = Math.abs(dy);
   if (adx < 50 && ady < 50) return;  // ignore taps + tiny drags
   touchLock = true;
+  if (inTrash) {
+    const forward = ady > adx ? (dy < 0) : (dx < 0);
+    if (forward) trashGo(trashCurrent + 1); else trashGo(trashCurrent - 1);
+    setTimeout(() => { touchLock = false; }, 400);
+    return;
+  }
   if (ady > adx) {
     // Vertical swipe â†’ animate-reveal aware (mirrors ArrowRight / ArrowLeft logic)
     const slideId = SLIDE_ORDER[current - 1];
@@ -30655,13 +30808,16 @@ function getActiveSlideForAnnotation() {
   const slide = document.querySelector('.casey-slide.active');
   if (!slide) return { id: 'unknown', label: 'Slide ?', title: 'Current slide' };
   const appendixMode = (typeof inAppendix !== 'undefined' && inAppendix);
-  const idx = appendixMode && typeof appendixCurrent !== 'undefined'
+  const trashMode = (typeof inTrash !== 'undefined' && inTrash);
+  const idx = trashMode && typeof trashCurrent !== 'undefined'
+    ? 'Trash ' + trashCurrent
+    : appendixMode && typeof appendixCurrent !== 'undefined'
     ? 'A' + appendixCurrent
     : (typeof current !== 'undefined' ? String(current) : '?');
   const eyebrow = slide.querySelector('.slide-eyebrow');
   const headline = slide.querySelector('h1,h2,.display,.h');
   const title = (headline && headline.textContent ? headline.textContent.trim().replace(/\s+/g, ' ') : slide.id).slice(0, 96);
-  return { id: slide.id, label: 'Slide ' + idx, title };
+  return { id: slide.id, label: trashMode ? idx : ('Slide ' + idx), title };
 }
 
 function updateAnnotationBadge() {
@@ -30912,7 +31068,7 @@ function renderAnnotationMarkers() {
 
 function handleAnnotationCapture(event) {
   if (!annotationsAllowedHere()) return;
-  const ui = event.target.closest('#annotationBtn,#annotationOverlay,#speakerNotesBtn,#speakerNotesOverlay,#appendixBtn,.casey-nav,.annotation-marker');
+  const ui = event.target.closest('#annotationBtn,#annotationOverlay,#speakerNotesBtn,#speakerNotesOverlay,#appendixBtn,#trashBtn,.casey-nav,.annotation-marker');
   if (ui || !annotationPickModeActive) return;
   const slide = event.target.closest('.casey-slide.active');
   if (!slide) return;
@@ -31465,8 +31621,8 @@ function openSpeakerNotes() {
   if (!target) return;
   const id = target.id;
   const note = getSpeakerNote(id);
-  const idx = (typeof inAppendix !== 'undefined' && inAppendix && typeof appendixCurrent !== 'undefined') ? ('A' + appendixCurrent) : (typeof current !== 'undefined' ? current : '?');
-  const totalLabel = (typeof inAppendix !== 'undefined' && inAppendix) ? (typeof APPENDIX_TOTAL !== 'undefined' ? APPENDIX_TOTAL : '') : (typeof TOTAL !== 'undefined' ? TOTAL : '');
+  const idx = (typeof inTrash !== 'undefined' && inTrash && typeof trashCurrent !== 'undefined') ? ('Trash ' + trashCurrent) : ((typeof inAppendix !== 'undefined' && inAppendix && typeof appendixCurrent !== 'undefined') ? ('A' + appendixCurrent) : (typeof current !== 'undefined' ? current : '?'));
+  const totalLabel = (typeof inTrash !== 'undefined' && inTrash) ? (typeof TRASH_TOTAL !== 'undefined' ? TRASH_TOTAL : '') : ((typeof inAppendix !== 'undefined' && inAppendix) ? (typeof APPENDIX_TOTAL !== 'undefined' ? APPENDIX_TOTAL : '') : (typeof TOTAL !== 'undefined' ? TOTAL : ''));
   document.getElementById('snLabel').textContent = 'Slide ' + idx + (totalLabel ? (' / ' + totalLabel) : '');
   if (note) {
     document.getElementById('snTitle').textContent = note.title;
