@@ -18328,10 +18328,8 @@ window.cs1m7Reverse = function() {
       </svg>
     </div>
 
-    <!-- Hero headline -->
-    <h2 class="ev-hero"><em>Autonomous, abundant</em> human connection for communities.</h2>
     <!-- Supporting line -->
-    <p class="ev-sub">Our connection and unique value to each other &mdash; <strong>measured, multiplied, made abundant.</strong></p>
+    <p class="ev-sub">Our connection and unique value to each other in our communities &mdash; <strong>measured, multiplied, made abundant.</strong></p>
   </section>
 </div>
 
@@ -26579,6 +26577,69 @@ window.csA7m1Reverse = function() {
   .casey-dot.concept-dot.on { height:18px; border-radius:4px; background:#ff4d8f !important; box-shadow:0 0 14px rgba(255,77,143,.95) !important; }
   body.presenter-mode .casey-concept-nav { display:none !important; }
   html[data-export="1"] .casey-concept-nav, html[data-pdf="1"] .casey-concept-nav { display:none !important; }
+  /* Seed investor deck rail + slides */
+  .casey-seed-nav { position:fixed; top:50%; right:2px; transform:translateY(-50%); display:flex; flex-direction:column; align-items:center; gap:3px; z-index:1000; background:rgba(26,22,18,.46); backdrop-filter:blur(8px); padding:7px 4px; border-radius:10px; border:1px solid rgba(91,143,212,.32); max-height:calc(100vh - 220px); width:fit-content; }
+  .casey-dot.seed-dot { background:#5B8FD4 !important; border:1px solid rgba(91,143,212,.98) !important; box-shadow:0 0 8px rgba(91,143,212,.48) !important; width:7px; height:7px; }
+  .casey-dot.seed-dot.on { height:18px; border-radius:4px; background:#5B8FD4 !important; box-shadow:0 0 14px rgba(91,143,212,.90) !important; }
+  body.presenter-mode .casey-seed-nav { display:none !important; }
+  html[data-export="1"] .casey-seed-nav, html[data-pdf="1"] .casey-seed-nav { display:none !important; }
+  .seed-slide { background:#fbf7ef !important; color:#1a1612 !important; }
+  .seed-shell { position:relative; min-height:100%; width:100%; overflow:hidden; padding:72px 86px 64px; box-sizing:border-box; background:radial-gradient(circle at 72% 24%, rgba(184,149,74,.14), transparent 30%), linear-gradient(180deg,#fbf7ef 0%,#f3ead8 100%); }
+  .seed-paper { position:absolute; inset:0; opacity:.35; background-image:radial-gradient(rgba(184,149,74,.18) 1px, transparent 1px); background-size:12px 12px; pointer-events:none; }
+  .seed-eyebrow { position:absolute; top:28px; left:48px; font-family:'Manrope',sans-serif; text-transform:uppercase; font-size:.58rem; font-weight:700; letter-spacing:.22em; color:#b8954a; z-index:4; }
+  .seed-count { position:absolute; top:26px; right:54px; font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:800; letter-spacing:.12em; color:rgba(26,22,18,.54); z-index:4; }
+  .seed-title { position:relative; z-index:2; margin:0; max-width:1320px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:4.65rem; line-height:1.02; letter-spacing:-.035em; font-weight:850; color:#1a1612; }
+  .seed-title .gold { color:#b8954a; font-style:italic; }
+  .seed-title .blue { color:#5B8FD4; }
+  .seed-title .red { color:#c8462c; }
+  .seed-sub { position:relative; z-index:2; margin-top:22px; max-width:980px; font-family:'Manrope',sans-serif; font-size:1.24rem; line-height:1.45; color:rgba(26,22,18,.72); font-weight:650; }
+  .seed-stage { position:relative; z-index:2; margin-top:54px; }
+  .seed-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:stretch; }
+  .seed-grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; align-items:stretch; }
+  .seed-card { border:1px solid rgba(184,149,74,.34); background:rgba(255,252,244,.72); border-radius:18px; padding:30px; box-shadow:0 18px 48px rgba(26,22,18,.08); }
+  .seed-card.blue { border-color:rgba(91,143,212,.42); background:rgba(91,143,212,.07); }
+  .seed-card.red { border-color:rgba(200,70,44,.42); background:rgba(200,70,44,.06); }
+  .seed-card.dark { background:#1a1612; color:#fbf7ef; border-color:rgba(184,149,74,.42); }
+  .seed-kicker { font-family:'Manrope',sans-serif; text-transform:uppercase; letter-spacing:.18em; font-size:.74rem; color:#b8954a; font-weight:900; margin-bottom:14px; }
+  .seed-big { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:3.4rem; line-height:1; letter-spacing:-.025em; font-weight:850; }
+  .seed-small { margin-top:14px; font-family:'Manrope',sans-serif; font-size:1.05rem; line-height:1.38; color:rgba(26,22,18,.66); font-weight:650; }
+  .seed-card.dark .seed-small { color:rgba(251,247,239,.74); }
+  .seed-flow { display:flex; align-items:center; justify-content:center; gap:22px; flex-wrap:nowrap; }
+  .seed-node { min-width:170px; min-height:134px; border:1.5px solid rgba(184,149,74,.54); border-radius:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; background:rgba(255,252,244,.78); box-shadow:0 14px 40px rgba(26,22,18,.08); font-family:'Manrope',sans-serif; font-weight:900; color:#1a1612; }
+  .seed-node .icon { font-size:2.6rem; line-height:1; margin-bottom:12px; color:#b8954a; }
+  .seed-node.blue { border-color:rgba(91,143,212,.58); }
+  .seed-node.blue .icon, .seed-node.blue b { color:#5B8FD4; }
+  .seed-node.red { border-color:rgba(200,70,44,.55); }
+  .seed-node.red .icon, .seed-node.red b { color:#c8462c; }
+  .seed-arrow { font-family:'Manrope',sans-serif; font-size:2.1rem; color:#b8954a; font-weight:900; }
+  .seed-metric { display:flex; align-items:baseline; gap:14px; font-family:'Fraunces','Playfair Display',Georgia,serif; color:#1a1612; }
+  .seed-metric strong { font-size:6.3rem; line-height:.9; letter-spacing:-.055em; }
+  .seed-metric span { font-family:'Manrope',sans-serif; font-size:1.25rem; line-height:1.15; font-weight:850; color:rgba(26,22,18,.68); }
+  .seed-bars { display:grid; grid-template-columns:1fr; gap:22px; margin-top:20px; }
+  .seed-bar { display:grid; grid-template-columns:220px 1fr 100px; align-items:center; gap:20px; font-family:'Manrope',sans-serif; font-weight:850; color:#1a1612; }
+  .seed-track { height:26px; background:rgba(26,22,18,.08); border-radius:999px; overflow:hidden; }
+  .seed-fill { height:100%; border-radius:999px; background:#5B8FD4; }
+  .seed-fill.red { background:#c8462c; }
+  .seed-network { position:relative; height:540px; border:1px solid rgba(184,149,74,.28); border-radius:24px; background:radial-gradient(circle at center, rgba(91,143,212,.12), transparent 42%), rgba(255,252,244,.56); overflow:hidden; }
+  .seed-dotnode { position:absolute; width:74px; height:74px; border-radius:50%; border:2px solid #b8954a; background:#fbf7ef; display:grid; place-items:center; font-family:'Manrope',sans-serif; font-weight:900; color:#1a1612; box-shadow:0 0 0 8px rgba(184,149,74,.12); }
+  .seed-dotnode.blue { border-color:#5B8FD4; box-shadow:0 0 0 8px rgba(91,143,212,.12); }
+  .seed-dotnode.red { border-color:#c8462c; box-shadow:0 0 0 8px rgba(200,70,44,.12); }
+  .seed-line { position:absolute; height:2px; background:rgba(184,149,74,.55); transform-origin:left center; }
+  .seed-line.blue { background:rgba(91,143,212,.58); }
+  .seed-line.red { background:rgba(200,70,44,.62); height:4px; }
+  .seed-pullquote { margin-top:40px; padding:28px 34px; border-left:6px solid #c8462c; background:rgba(255,252,244,.74); font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:2.2rem; line-height:1.18; box-shadow:0 18px 48px rgba(26,22,18,.08); }
+  .seed-footerline { position:absolute; left:86px; right:86px; bottom:48px; display:flex; align-items:center; justify-content:space-between; border-top:1px solid rgba(184,149,74,.34); padding-top:20px; font-family:'Manrope',sans-serif; text-transform:uppercase; letter-spacing:.16em; font-size:.82rem; font-weight:900; color:rgba(26,22,18,.58); }
+  .seed-circle-stack { display:flex; justify-content:center; align-items:center; gap:42px; margin-top:20px; }
+  .seed-circle { width:210px; height:210px; border-radius:50%; border:2px solid rgba(184,149,74,.62); background:rgba(255,252,244,.72); display:flex; align-items:center; justify-content:center; text-align:center; padding:24px; font-family:'Manrope',sans-serif; font-weight:900; box-shadow:0 18px 48px rgba(26,22,18,.08); }
+  .seed-circle.blue { border-color:#5B8FD4; }
+  .seed-circle.red { border-color:#c8462c; }
+  .seed-road { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+  .seed-step { min-height:360px; border:1px solid rgba(184,149,74,.38); border-radius:22px; padding:28px; background:rgba(255,252,244,.72); position:relative; }
+  .seed-step .num { width:42px; height:42px; border-radius:50%; display:grid; place-items:center; background:#1a1612; color:#fbf7ef; font-family:'Manrope',sans-serif; font-weight:900; margin-bottom:24px; }
+  .seed-step h3 { margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:2rem; line-height:1.05; }
+  .seed-step p { margin:16px 0 0; font-family:'Manrope',sans-serif; color:rgba(26,22,18,.66); font-weight:650; line-height:1.35; }
+  @media (max-width: 900px) { .casey-seed-nav { right:1px; } .seed-shell { padding:54px 34px 44px; } .seed-title { font-size:3rem; max-width:92vw; } .seed-sub { font-size:1rem; max-width:82vw; } .seed-stage { margin-top:30px; } .seed-grid-2,.seed-grid-3 { grid-template-columns:1fr; gap:14px; } .seed-flow { transform:scale(.72); transform-origin:left top; width:138%; justify-content:flex-start; } .seed-network { height:420px; } .seed-footerline { left:34px; right:34px; bottom:24px; font-size:.66rem; } }
+
 
   .concept-mini-label { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:850; letter-spacing:.2em; text-transform:uppercase; color:#b8954a; }
   .concept-rating-row { display:flex; align-items:center; justify-content:center; gap:26px; width:min(1320px,88vw); margin:0 auto; position:relative; }
@@ -26987,6 +27048,7 @@ window.csA7m1Reverse = function() {
   .invite-concept .invite-court svg { width:100%; height:100%; overflow:visible; }
   .invite-concept .invite-arcs { position:absolute; left:475px; right:0; top:185px; bottom:120px; z-index:5; pointer-events:none; }
   .invite-concept .invite-arcs svg { width:100%; height:100%; overflow:visible; }
+
 </style>
 
 <div class="casey-slide concept-slide" id="cs-concept-skill-wrong" style="display:none">
@@ -27007,22 +27069,6 @@ window.csA7m1Reverse = function() {
       </div>
     </div>
     <div class="concept-foot">The real matching problem is <strong>human value exchange.</strong></div>
-  </div>
-</section>
-</div>
-
-<div class="casey-slide concept-slide" id="cs-concept-community-not-rating" style="display:none">
-<section style="position:relative;min-height:100%;width:100%">
-  <div class="concept-eyebrow">Concept rail - simplest version</div>
-  <div class="concept-stage" style="justify-content:center;gap:54px">
-    <h1 class="concept-title">A 4.0 rating tells you how someone plays.<br><em>It does not tell you who they lift.</em></h1>
-    <div class="concept-pill-row">
-      <div class="concept-pill">Who enjoys playing together?</div>
-      <div class="concept-pill">Who brings people in?</div>
-      <div class="concept-pill">Who creates value?</div>
-      <div class="concept-pill">Who gets invited back?</div>
-    </div>
-    <div class="concept-foot">GnR measures what the rating never could.</div>
   </div>
 </section>
 </div>
@@ -27699,8 +27745,28 @@ window.csA7m1Reverse = function() {
 
 <div class="casey-slide concept-slide hct-concept" id="cs-concept-hct-big-vision-start" style="display:none"><section style="position:relative;min-height:100%;width:100%"><div class="hct-bg"></div><div class="concept-eyebrow">Concept rail - big vision specific start</div><div class="hct-stage"><h1 class="hct-title" style="font-size:4.2rem">The big vision. The specific start.</h1><p class="hct-sub">We&apos;re building the network that powers human connection.</p><div class="vision-grid"><div class="vision-row"><div class="vision-mini" style="color:#ff6b6b">&#9825;<br>Relationships</div><div class="vision-mini" style="color:#f35d8c">&#9671;<br>Dating</div><div class="vision-mini" style="color:#5B8FD4">&#9679;<br>Friends</div><div class="vision-mini" style="color:#a168f5">&#8962;<br>Family</div><div class="vision-mini" style="color:#9ce86b">&#9675;<br>Communities</div></div><div class="vision-row" style="grid-template-columns:repeat(4,1fr)"><div class="vision-mini">All types of<br>communities</div><div class="vision-mini">Social sports<br>communities</div><div class="vision-mini">Pickleball<br>community</div><div class="vision-mini" style="border-color:#9ce86b;color:#9ce86b;font-size:1.6rem;font-weight:900">NEPC<br><span style="font-size:.85rem;color:#fff">New England<br>Pickleball Club</span></div></div></div><div class="hct-pill">Our biggest secret. The perfect starting point.</div></div></section></div>
 
+
+
+<div class="casey-slide seed-slide" id="sd-seed-01" style="display:none"><section class="seed-shell"><div class="seed-paper"></div><div class="seed-eyebrow">Seed deck - cover</div><div class="seed-count">Seed 1 / 16</div><h1 class="seed-title">Give n Receive fills real-world communities with <span class="gold">better groups.</span></h1><div class="seed-sub">We use invitations, responses, and expert coordination feedback to learn who should actually be together.</div><div class="seed-stage seed-flow"><div class="seed-node blue"><div class="icon">@</div><b>Invite</b><span>real people</span></div><div class="seed-arrow">&rarr;</div><div class="seed-node"><div class="icon">Y</div><b>Learn</b><span>who says yes</span></div><div class="seed-arrow">&rarr;</div><div class="seed-node red"><div class="icon">#</div><b>Coordinate</b><span>better groups</span></div><div class="seed-arrow">&rarr;</div><div class="seed-node"><div class="icon">R</div><b>Reciprocate</b><span>value back</span></div></div><div class="seed-footerline"><span>Seed investor deck</span><span>Built from current repo proof</span></div></section></div>
+<div class="casey-slide seed-slide" id="sd-seed-02" style="display:none"><section class="seed-shell"><div class="seed-paper"></div><div class="seed-eyebrow">Problem</div><div class="seed-count">Seed 2 / 16</div><h1 class="seed-title">The painful gap is not scheduling. It is knowing <span class="gold">who should be together.</span></h1><div class="seed-stage seed-grid-2"><div class="seed-card red"><div class="seed-kicker">Coordination tools see</div><div class="seed-big">Courts.<br>Times.<br>Slots.</div><div class="seed-small">Useful logistics, but thin social intelligence.</div></div><div class="seed-card blue"><div class="seed-kicker">Great communities need</div><div class="seed-big">Trust.<br>Fit.<br>Value exchange.</div><div class="seed-small">The real work lives in judgment that coordinators hold manually.</div></div></div><div class="seed-footerline"><span>Conclusion</span><span>Software missed the human layer.</span></div></section></div>
+<div class="casey-slide seed-slide" id="sd-seed-03" style="display:none"><section class="seed-shell"><div class="seed-paper"></div><div class="seed-eyebrow">Why now</div><div class="seed-count">Seed 3 / 16</div><h1 class="seed-title">AI can now learn the social signals coordinators used to hold in their heads.</h1><div class="seed-stage seed-road"><div class="seed-step"><div class="num">1</div><h3>Every invite creates a signal.</h3><p>Yes, no, no reply, referral, repeat play, and timing become structured learning events.</p></div><div class="seed-step"><div class="num">2</div><h3>The expert corrects the system.</h3><p>Manual judgment becomes labeled training data instead of disappearing into memory.</p></div><div class="seed-step"><div class="num">3</div><h3>The graph gets smarter.</h3><p>Preference, fit, reliability, and group chemistry compound across the community.</p></div><div class="seed-step"><div class="num">4</div><h3>Autonomy becomes measurable.</h3><p>The system earns trust by outperforming manual coordination before replacing it.</p></div></div></section></div>
+<div class="casey-slide seed-slide" id="sd-seed-04" style="display:none"><section class="seed-shell"><div class="seed-paper"></div><div class="seed-eyebrow">Product</div><div class="seed-count">Seed 4 / 16</div><h1 class="seed-title">The product turns invitations into a live <span class="blue">connection graph.</span></h1><div class="seed-stage seed-network"><div class="seed-line" style="left:230px;top:245px;width:420px;transform:rotate(-18deg)"></div><div class="seed-line blue" style="left:310px;top:355px;width:380px;transform:rotate(10deg)"></div><div class="seed-line" style="left:620px;top:230px;width:390px;transform:rotate(18deg)"></div><div class="seed-line red" style="left:640px;top:360px;width:370px;transform:rotate(-12deg)"></div><div class="seed-dotnode blue" style="left:180px;top:210px">Invite</div><div class="seed-dotnode" style="left:560px;top:150px">RSVP</div><div class="seed-dotnode red" style="left:910px;top:260px">Fit</div><div class="seed-dotnode" style="left:520px;top:370px">Repeat</div><div class="seed-dotnode blue" style="left:1040px;top:380px">Value</div><div class="seed-dotnode" style="left:705px;top:292px;width:110px;height:110px">GnR</div></div><div class="seed-footerline"><span>What exists today</span><span>Human-in-loop coordination plus measurable signals.</span></div></section></div>
+<div class="casey-slide seed-slide" id="sd-seed-05" style="display:none"><section class="seed-shell"><div class="seed-paper"></div><div class="seed-eyebrow">Wedge</div><div class="seed-count">Seed 5 / 16</div><h1 class="seed-title">Pickleball is the fastest wedge into dense real-world social behavior.</h1><div class="seed-stage seed-flow" style="margin-top:78px"><div class="seed-node"><div class="icon">C</div><b>Communities</b><span>universal need</span></div><div class="seed-arrow">&rarr;</div><div class="seed-node blue"><div class="icon">S</div><b>Social sports</b><span>repeat behavior</span></div><div class="seed-arrow">&rarr;</div><div class="seed-node"><div class="icon">P</div><b>Pickleball</b><span>high frequency</span></div><div class="seed-arrow">&rarr;</div><div class="seed-node red"><div class="icon">N</div><b>NEPC</b><span>live lab</span></div></div><div class="seed-pullquote">Pickleball is not the category. It is the place where the graph can learn fastest.</div></section></div>
+<div class="casey-slide seed-slide" id="sd-seed-06" style="display:none"><section class="seed-shell"><div class="seed-paper"></div><div class="seed-eyebrow">Proof - live lab</div><div class="seed-count">Seed 6 / 16</div><h1 class="seed-title">NEPC gives us a live lab where the loop runs every week.</h1><div class="seed-stage seed-grid-3"><div class="seed-card blue"><div class="seed-metric"><strong>2</strong><span>clubs</span></div><div class="seed-small">Rye and Middleton provide repeated real-world coordination demand.</div></div><div class="seed-card"><div class="seed-metric"><strong>36</strong><span>curated events / week</span></div><div class="seed-small">A steady stream of real group-composition decisions.</div></div><div class="seed-card red"><div class="seed-metric"><strong>268</strong><span>player slots / week</span></div><div class="seed-small">Enough repetition to learn quickly without leaving the wedge.</div></div></div><div class="seed-footerline"><span>Grounding</span><span>NEPC operating data in proof library.</span></div></section></div>
+<div class="casey-slide seed-slide" id="sd-seed-07" style="display:none"><section class="seed-shell"><div class="seed-paper"></div><div class="seed-eyebrow">Proof - data source</div><div class="seed-count">Seed 7 / 16</div><h1 class="seed-title">Behavioral data beats surveys because players show what they will not say.</h1><div class="seed-stage seed-grid-2"><div class="seed-card red"><div class="seed-kicker">Survey completion</div><div class="seed-metric"><strong>1.6%</strong><span>in-product response rate</span></div><div class="seed-small">Asking directly does not produce enough data.</div></div><div class="seed-card blue"><div class="seed-kicker">Behavior stream</div><div class="seed-big">Invites.<br>RSVPs.<br>Repeat play.</div><div class="seed-small">The graph learns from what people actually choose.</div></div></div></section></div>
+<div class="casey-slide seed-slide" id="sd-seed-08" style="display:none"><section class="seed-shell"><div class="seed-paper"></div><div class="seed-eyebrow">Proof - acceptance</div><div class="seed-count">Seed 8 / 16</div><h1 class="seed-title">Better group composition creates a <span class="blue">37-point</span> acceptance swing.</h1><div class="seed-stage seed-card"><div class="seed-bars"><div class="seed-bar"><div>Small curated groups</div><div class="seed-track"><div class="seed-fill" style="width:86.7%"></div></div><div>86.7%</div></div><div class="seed-bar"><div>Larger / open groups</div><div class="seed-track"><div class="seed-fill red" style="width:49.9%"></div></div><div>49.9%</div></div></div><div class="seed-pullquote" style="font-size:1.75rem">The product does not just fill slots. It changes who says yes.</div></div><div class="seed-footerline"><span>Proof library</span><span>Curated small groups vs larger/open groups.</span></div></section></div>
+<div class="casey-slide seed-slide" id="sd-seed-09" style="display:none"><section class="seed-shell"><div class="seed-paper"></div><div class="seed-eyebrow">Proof - learning speed</div><div class="seed-count">Seed 9 / 16</div><h1 class="seed-title">One week of invitations can teach the system who belongs together.</h1><div class="seed-stage seed-grid-2"><div class="seed-card"><div class="seed-kicker">Start of week</div><div class="seed-metric"><strong>0.65</strong><span>AUC-ROC</span></div><div class="seed-small">The model starts with limited signal.</div></div><div class="seed-card blue"><div class="seed-kicker">After one week</div><div class="seed-metric"><strong>0.90</strong><span>AUC-ROC</span></div><div class="seed-small">Invitation behavior rapidly improves prediction.</div></div></div><div class="seed-footerline"><span>Proof library</span><span>Recommendation model learning curve.</span></div></section></div>
+<div class="casey-slide seed-slide" id="sd-seed-10" style="display:none"><section class="seed-shell"><div class="seed-paper"></div><div class="seed-eyebrow">Proof - group chemistry</div><div class="seed-count">Seed 10 / 16</div><h1 class="seed-title">The weakest relationship in the group predicts whether the group repeats.</h1><div class="seed-stage seed-network" style="height:500px"><div class="seed-line blue" style="left:380px;top:230px;width:250px;transform:rotate(18deg)"></div><div class="seed-line blue" style="left:620px;top:250px;width:270px;transform:rotate(-20deg)"></div><div class="seed-line" style="left:400px;top:355px;width:500px;transform:rotate(0deg)"></div><div class="seed-line red" style="left:500px;top:220px;width:420px;transform:rotate(26deg)"></div><div class="seed-dotnode blue" style="left:330px;top:190px">A</div><div class="seed-dotnode" style="left:610px;top:285px">B</div><div class="seed-dotnode blue" style="left:875px;top:180px">C</div><div class="seed-dotnode red" style="left:890px;top:350px">D</div><div class="seed-card dark" style="position:absolute;left:80px;bottom:60px;width:420px"><div class="seed-kicker">Measured lift</div><div class="seed-metric" style="color:#fbf7ef"><strong>4.9x</strong><span style="color:rgba(251,247,239,.72)">predictive signal</span></div><div class="seed-small">Co-play depth predicts repeat group behavior.</div></div></div></section></div>
+<div class="casey-slide seed-slide" id="sd-seed-11" style="display:none"><section class="seed-shell"><div class="seed-paper"></div><div class="seed-eyebrow">Moat - labels</div><div class="seed-count">Seed 11 / 16</div><h1 class="seed-title">Krista's corrections turn expert judgment into labels.</h1><div class="seed-stage seed-flow"><div class="seed-node"><div class="icon">AI</div><b>Proposal</b><span>who should play</span></div><div class="seed-arrow">&rarr;</div><div class="seed-node red"><div class="icon">K</div><b>Correction</b><span>expert judgment</span></div><div class="seed-arrow">&rarr;</div><div class="seed-node blue"><div class="icon">L</div><b>Label</b><span>structured reason</span></div><div class="seed-arrow">&rarr;</div><div class="seed-node"><div class="icon">G</div><b>Graph</b><span>better next time</span></div></div><div class="seed-pullquote">The next seed milestone is not more dashboards. It is measured adoption of AI group composition.</div></section></div>
+<div class="casey-slide seed-slide" id="sd-seed-12" style="display:none"><section class="seed-shell"><div class="seed-paper"></div><div class="seed-eyebrow">Risk and milestone</div><div class="seed-count">Seed 12 / 16</div><h1 class="seed-title">Autonomy is earned by measuring outcomes before removing the human.</h1><div class="seed-stage seed-road"><div class="seed-step"><div class="num">1</div><h3>Human-in-loop today.</h3><p>The coordinator remains accountable while the system learns.</p></div><div class="seed-step"><div class="num">2</div><h3>Track every correction.</h3><p>Accepted, edited, discarded becomes the operating KPI.</p></div><div class="seed-step"><div class="num">3</div><h3>Prove adoption.</h3><p>The investor proof is accepted recommendations without edits.</p></div><div class="seed-step"><div class="num">4</div><h3>Then automate.</h3><p>Autonomy follows measured trust, not a demo claim.</p></div></div></section></div>
+<div class="casey-slide seed-slide" id="sd-seed-13" style="display:none"><section class="seed-shell"><div class="seed-paper"></div><div class="seed-eyebrow">Business model</div><div class="seed-count">Seed 13 / 16</div><h1 class="seed-title">We sell filled courts, not scheduling software.</h1><div class="seed-stage seed-grid-3"><div class="seed-card red"><div class="seed-kicker">Manual burden</div><div class="seed-metric"><strong>~$120K</strong><span>/ year coordination cost</span></div><div class="seed-small">Estimated labor cost of manual fill work.</div></div><div class="seed-card blue"><div class="seed-kicker">Utilization upside</div><div class="seed-metric"><strong>~$332K</strong><span>/ year opportunity</span></div><div class="seed-small">Estimated revenue unlocked by better fill.</div></div><div class="seed-card"><div class="seed-kicker">Economic wedge</div><div class="seed-big">Outcome<br>pricing.</div><div class="seed-small">Capture value where coordination creates measurable revenue.</div></div></div></section></div>
+<div class="casey-slide seed-slide" id="sd-seed-14" style="display:none"><section class="seed-shell"><div class="seed-paper"></div><div class="seed-eyebrow">Expansion logic</div><div class="seed-count">Seed 14 / 16</div><h1 class="seed-title">The same graph can coordinate more than courts.</h1><div class="seed-stage seed-circle-stack"><div class="seed-circle blue">Players<br>and groups</div><div class="seed-arrow">&rarr;</div><div class="seed-circle">Events<br>and staff</div><div class="seed-arrow">&rarr;</div><div class="seed-circle red">Community<br>growth</div></div><div class="seed-pullquote">Once the system knows who creates value for whom, coordination expands beyond a single program.</div></section></div>
+<div class="casey-slide seed-slide" id="sd-seed-15" style="display:none"><section class="seed-shell"><div class="seed-paper"></div><div class="seed-eyebrow">Market</div><div class="seed-count">Seed 15 / 16</div><h1 class="seed-title">Pickleball is the wedge; real-world community coordination is the category.</h1><div class="seed-stage seed-flow" style="margin-top:82px"><div class="seed-node red"><div class="icon">1</div><b>NEPC</b><span>prove the loop</span></div><div class="seed-arrow">&rarr;</div><div class="seed-node"><div class="icon">2</div><b>Pickleball</b><span>repeatable wedge</span></div><div class="seed-arrow">&rarr;</div><div class="seed-node blue"><div class="icon">3</div><b>Social sports</b><span>same signals</span></div><div class="seed-arrow">&rarr;</div><div class="seed-node"><div class="icon">4</div><b>Communities</b><span>larger category</span></div></div></section></div>
+<div class="casey-slide seed-slide" id="sd-seed-16" style="display:none"><section class="seed-shell"><div class="seed-paper"></div><div class="seed-eyebrow">Closing vision</div><div class="seed-count">Seed 16 / 16</div><h1 class="seed-title">When reciprocity becomes measurable, community becomes <span class="gold">abundant.</span></h1><div class="seed-stage seed-network"><div class="seed-line blue" style="left:375px;top:265px;width:300px;transform:rotate(0deg)"></div><div class="seed-line" style="left:640px;top:210px;width:280px;transform:rotate(34deg)"></div><div class="seed-line red" style="left:640px;top:350px;width:280px;transform:rotate(-34deg)"></div><div class="seed-dotnode blue" style="left:270px;top:230px;width:130px;height:130px">Give</div><div class="seed-dotnode" style="left:610px;top:230px;width:130px;height:130px">Network</div><div class="seed-dotnode red" style="left:960px;top:120px;width:130px;height:130px">Receive</div><div class="seed-dotnode" style="left:960px;top:360px;width:130px;height:130px">Return</div><div class="seed-card dark" style="position:absolute;left:120px;bottom:68px;width:820px"><div class="seed-big">Real-world social coordination can become a compounding system.</div><div class="seed-small">Start with the communities where the need is urgent, the data is dense, and the loop already runs.</div></div></div></section></div>
+
 <nav class="casey-nav" id="cnav"></nav>
 <nav class="casey-concept-nav" id="conceptNav" aria-label="Concept review slides"></nav>
+<nav class="casey-seed-nav" id="seedNav" aria-label="Seed investor deck slides"></nav>
 
 <!-- cs-a19 ("What Runs the World" · Land/Labor/Capital/Information/Attention/Intelligence → Human Connection)
      → DELETED 2026-05-02 per Dave (duplicate of cs-mv7 which was already removed). Slide div fully removed. -->
@@ -28136,7 +28202,6 @@ const TRASH_TOTAL = TRASH_ORDER.length;
 // These are new raw candidate slides Dave can review without changing the canonical pitch.
 const CONCEPT_ORDER = [
   'cs-concept-skill-wrong',
-  'cs-concept-community-not-rating',
   'cs-concept-century-default',
   'cs-concept-match-people',
   'cs-concept-market-gap',
@@ -28192,6 +28257,27 @@ const CONCEPT_ORDER = [
   'cs-concept-hct-big-vision-start',
 ];
 const CONCEPT_TOTAL = CONCEPT_ORDER.length;
+
+const SEED_ORDER = [
+  'sd-seed-01',
+  'sd-seed-02',
+  'sd-seed-03',
+  'sd-seed-04',
+  'sd-seed-05',
+  'sd-seed-06',
+  'sd-seed-07',
+  'sd-seed-08',
+  'sd-seed-09',
+  'sd-seed-10',
+  'sd-seed-11',
+  'sd-seed-12',
+  'sd-seed-13',
+  'sd-seed-14',
+  'sd-seed-15',
+  'sd-seed-16'
+];
+const SEED_TOTAL = SEED_ORDER.length;
+
 let current = 1;
 let inAppendix = false;
 let appendixCurrent = 1;
@@ -28199,6 +28285,8 @@ let inTrash = false;
 let trashCurrent = 1;
 let inConcept = false;
 let conceptCurrent = 1;
+let inSeed = false;
+let seedCurrent = 1;
 
 function goTo(n) { caseyGo(n); }
 
@@ -28723,6 +28811,7 @@ window.cs_mv6_Reverse = function() {
 function caseyGo(n) {
   if (inAppendix || inTrash) return;
   inConcept = false;
+  inSeed = false;
   if (n < 1 || n > TOTAL) return;
   // BULLETPROOF FIX 2026-04-30 PM: hide ALL slides via inline display:none, then show only target.
   document.querySelectorAll('.casey-slide').forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
@@ -28751,6 +28840,7 @@ function caseyGo(n) {
   document.getElementById('ccount').textContent = n + ' / ' + TOTAL;
   current = n;
   if (typeof updateConceptDots === 'function') updateConceptDots(0);
+  if (typeof updateSeedDots === 'function') updateSeedDots(0);
   // RESET click-reveal state when entering a slide so the reveal animation runs fresh on every visit
   // (Dave 2026-05-03 PM: cs-2c text was showing immediately on return because data-shown stayed at '1')
   if (targetId === 'cs-2c'   && target) target.dataset.shown = '0';
@@ -29039,6 +29129,7 @@ function conceptGo(n) {
   inConcept = true;
   inAppendix = false;
   inTrash = false;
+  inSeed = false;
   conceptCurrent = n;
   document.querySelectorAll('.casey-slide').forEach(s => { s.classList.remove('active'); s.classList.remove('casey-entered'); s.style.display = 'none'; });
   const targetId = CONCEPT_ORDER[n - 1];
@@ -29063,6 +29154,49 @@ function exitConcept() {
   inConcept = false;
   document.querySelectorAll('.concept-slide').forEach(s => { s.classList.remove('active'); s.classList.remove('casey-entered'); s.style.display = 'none'; });
   updateConceptDots(0);
+  document.getElementById('cbar').style.background = 'linear-gradient(90deg,#d4a853,#e04040,#3dff7a)';
+  caseyGo(current);
+}
+
+function updateSeedDots(activeIndex) {
+  const snav = document.getElementById('seedNav');
+  if (!snav) return;
+  snav.querySelectorAll('.seed-dot').forEach((d, i) => {
+    d.classList.toggle('on', activeIndex === i + 1);
+  });
+}
+
+function seedGo(n) {
+  if (n < 1 || n > SEED_TOTAL) return;
+  inSeed = true;
+  inConcept = false;
+  inAppendix = false;
+  inTrash = false;
+  seedCurrent = n;
+  document.querySelectorAll('.casey-slide').forEach(s => { s.classList.remove('active'); s.classList.remove('casey-entered'); s.style.display = 'none'; });
+  const targetId = SEED_ORDER[n - 1];
+  const target = document.getElementById(targetId);
+  if (target) {
+    target.style.display = '';
+    target.classList.add('active');
+    void target.offsetWidth;
+    target.classList.add('casey-entered');
+  }
+  document.getElementById('cbar').style.background = 'linear-gradient(90deg,#5B8FD4,#b8954a,#c8462c)';
+  document.getElementById('cbar').style.width = ((n / SEED_TOTAL) * 100) + '%';
+  document.getElementById('ccount').textContent = 'Seed ' + n + ' / ' + SEED_TOTAL;
+  document.querySelectorAll('#cnav .casey-dot').forEach(d => d.classList.remove('on'));
+  updateConceptDots(0);
+  updateSeedDots(n);
+  if (window.updateAnnotationBadge) updateAnnotationBadge();
+  if (window.renderAnnotationMarkers) renderAnnotationMarkers();
+}
+
+function exitSeed() {
+  if (!inSeed) return;
+  inSeed = false;
+  document.querySelectorAll('.seed-slide').forEach(s => { s.classList.remove('active'); s.classList.remove('casey-entered'); s.style.display = 'none'; });
+  updateSeedDots(0);
   document.getElementById('cbar').style.background = 'linear-gradient(90deg,#d4a853,#e04040,#3dff7a)';
   caseyGo(current);
 }
@@ -29500,6 +29634,24 @@ if (conceptNav && Array.isArray(CONCEPT_ORDER)) {
   });
 }
 
+
+// Build separate seed-investor-deck dot rail to the right of existing deck rails.
+const seedNav = document.getElementById('seedNav');
+if (seedNav && Array.isArray(SEED_ORDER)) {
+  SEED_ORDER.forEach((id, i) => {
+    const d = document.createElement('button');
+    d.className = 'casey-dot seed-dot';
+    const label = getSlideEyebrowText(id) || ('Seed ' + (i + 1));
+    d.title = label + ' - seed investor deck slide ' + (i + 1);
+    d.setAttribute('data-tooltip', 'Seed ' + (i + 1));
+    d.onclick = (e) => {
+      e.stopPropagation();
+      seedGo(i + 1);
+    };
+    seedNav.appendChild(d);
+  });
+}
+
 document.getElementById('cbar').style.width = ((1/TOTAL)*100) + '%';
 document.getElementById('ccount').textContent = '1 / ' + TOTAL;
 
@@ -29792,29 +29944,29 @@ document.addEventListener('keydown', e => {
   if (e.key === 'd' || e.key === 'D') {
     e.preventDefault();
     window.altIndex = 0;
-    if (inConcept) conceptGo(conceptCurrent + 1); else if (inTrash) trashGo(trashCurrent + 1); else if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
+    if (inSeed) seedGo(seedCurrent + 1); else if (inConcept) conceptGo(conceptCurrent + 1); else if (inTrash) trashGo(trashCurrent + 1); else if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
     return;
   }
   if (e.key === 'a' || e.key === 'A' || e.key === 's' || e.key === 'S') {
     e.preventDefault();
     window.altIndex = 0;
-    if (inConcept) conceptGo(conceptCurrent - 1); else if (inTrash) trashGo(trashCurrent - 1); else if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
+    if (inSeed) seedGo(seedCurrent - 1); else if (inConcept) conceptGo(conceptCurrent - 1); else if (inTrash) trashGo(trashCurrent - 1); else if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
     return;
   }
   // ArrowDown = next main slide (down the dot column)
   if (e.key === 'ArrowDown') {
     e.preventDefault();
-    if (!inAppendix && !inTrash && window.caseyAdvanceActiveReveal && window.caseyAdvanceActiveReveal()) return;
+    if (!inSeed && !inAppendix && !inTrash && window.caseyAdvanceActiveReveal && window.caseyAdvanceActiveReveal()) return;
     window.altIndex = 0;
-    if (inConcept) conceptGo(conceptCurrent + 1); else if (inTrash) trashGo(trashCurrent + 1); else if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
+    if (inSeed) seedGo(seedCurrent + 1); else if (inConcept) conceptGo(conceptCurrent + 1); else if (inTrash) trashGo(trashCurrent + 1); else if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
     return;
   }
   // ArrowUp = previous main slide (up the dot column)
   if (e.key === 'ArrowUp') {
     e.preventDefault();
-    if (!inAppendix && !inTrash && window.caseyReverseActiveReveal && window.caseyReverseActiveReveal()) return;
+    if (!inSeed && !inAppendix && !inTrash && window.caseyReverseActiveReveal && window.caseyReverseActiveReveal()) return;
     window.altIndex = 0;
-    if (inConcept) conceptGo(conceptCurrent - 1); else if (inTrash) trashGo(trashCurrent - 1); else if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
+    if (inSeed) seedGo(seedCurrent - 1); else if (inConcept) conceptGo(conceptCurrent - 1); else if (inTrash) trashGo(trashCurrent - 1); else if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
     return;
   }
   // ArrowLeft = navigate LEFT into alts (or further into the alt row)
@@ -29832,6 +29984,7 @@ document.addEventListener('keydown', e => {
   // [Dave 2026-05-18 LATEST] Bluetooth-clicker support: PageDown advances like Space (per-slide-aware advance, NOT bare ArrowRight which only navigates alt dots). Most Bluetooth presentation remotes (Logitech R400/R500/Spotlight, Kensington, generic Amazon clickers) send PageDown for forward and PageUp for back. PageDown / PageUp on a real keyboard also fall through here.
   if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
     e.preventDefault();
+    if (inSeed) { seedGo(seedCurrent + 1); return; }
     if (inConcept) { conceptGo(conceptCurrent + 1); return; }
     if (inTrash) { trashGo(trashCurrent + 1); return; }
     if (!inAppendix && window.caseyAdvanceActiveReveal && window.caseyAdvanceActiveReveal()) return;
@@ -29869,6 +30022,7 @@ document.addEventListener('keydown', e => {
   // [Dave 2026-05-18 LATEST] Bluetooth-clicker support: PageUp reverses like the per-slide-aware ArrowLeft. NOTE: this handler is reached only when the EARLIER ArrowLeft handler (alt-dot navigation, ~line 26052) didn't claim the event — but PageUp never matches that earlier handler, so PageUp always falls through to here and triggers the proper per-slide reverse.
   if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
     e.preventDefault();
+    if (inSeed) { seedGo(seedCurrent - 1); return; }
     if (inConcept) { conceptGo(conceptCurrent - 1); return; }
     if (inTrash) { trashGo(trashCurrent - 1); return; }
     if (!inAppendix && window.caseyReverseActiveReveal && window.caseyReverseActiveReveal()) return;
@@ -29899,6 +30053,7 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6'  && window.cs_mv6_Reverse && window.cs_mv6_Reverse()) return;
     if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
   }
+  if (e.key === 'Escape' && inSeed) { e.preventDefault(); exitSeed(); }
   if (e.key === 'Escape' && inTrash) { e.preventDefault(); exitTrash(); }
   if (e.key === 'Escape' && inConcept) { e.preventDefault(); exitConcept(); }
   if (e.key === 'Escape' && inAppendix) { e.preventDefault(); exitAppendix(); }
@@ -29911,6 +30066,12 @@ document.addEventListener('wheel', e => {
   if (document.querySelector('.node-overlay.open')) return;
   e.preventDefault();
   wheelLock = true;
+  if (inSeed) {
+    if (e.deltaY > 0) seedGo(seedCurrent + 1);
+    else if (e.deltaY < 0) seedGo(seedCurrent - 1);
+    setTimeout(() => { wheelLock = false; }, 400);
+    return;
+  }
   if (inConcept) {
     if (e.deltaY > 0) conceptGo(conceptCurrent + 1);
     else if (e.deltaY < 0) conceptGo(conceptCurrent - 1);
@@ -30210,6 +30371,12 @@ document.addEventListener('touchend', e => {
   const adx = Math.abs(dx), ady = Math.abs(dy);
   if (adx < 50 && ady < 50) return;  // ignore taps + tiny drags
   touchLock = true;
+  if (inSeed) {
+    const forward = ady > adx ? (dy < 0) : (dx < 0);
+    if (forward) seedGo(seedCurrent + 1); else seedGo(seedCurrent - 1);
+    setTimeout(() => { touchLock = false; }, 400);
+    return;
+  }
   if (inTrash) {
     const forward = ady > adx ? (dy < 0) : (dx < 0);
     if (forward) trashGo(trashCurrent + 1); else trashGo(trashCurrent - 1);
@@ -32698,7 +32865,7 @@ function renderAnnotationMarkers() {
 
 function handleAnnotationCapture(event) {
   if (!annotationsAllowedHere()) return;
-  const ui = event.target.closest('#annotationBtn,#annotationOverlay,#speakerNotesBtn,#speakerNotesOverlay,#appendixBtn,#trashBtn,.casey-nav,.annotation-marker');
+  const ui = event.target.closest('#annotationBtn,#annotationOverlay,#speakerNotesBtn,#speakerNotesOverlay,#appendixBtn,#trashBtn,.casey-nav,.casey-concept-nav,.casey-seed-nav,.annotation-marker');
   if (ui || !annotationPickModeActive) return;
   const slide = event.target.closest('.casey-slide.active');
   if (!slide) return;
