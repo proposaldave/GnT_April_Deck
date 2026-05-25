@@ -28848,25 +28848,80 @@ window.csA7m1Reverse = function() {
 </section>
 </div>
 
-<div class="casey-slide concept-slide concept-dark" id="cs-concept-club-value-system" style="display:none">
+<style>
+  #cs-concept-club-value-system { background:#f3ead8 !important; color:#1a1612 !important; }
+  #cs-concept-club-value-system .club-thesis-stage { position:absolute; inset:0; padding:82px 92px 58px; display:flex; flex-direction:column; justify-content:center; gap:30px; }
+  #cs-concept-club-value-system .club-title { margin:0 auto; max-width:1540px; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(4rem,5.8vw,6.1rem); line-height:.98; font-weight:900; letter-spacing:-.045em; color:#1a1612; }
+  #cs-concept-club-value-system .club-title em { color:#b8954a; font-style:italic; font-weight:850; }
+  #cs-concept-club-value-system .club-diagram { width:min(1580px,88vw); margin:4px auto 0; display:grid; grid-template-columns:1fr 108px 1.08fr; align-items:center; gap:24px; }
+  #cs-concept-club-value-system .club-panel { min-height:460px; border:1.3px solid rgba(184,149,74,.30); background:rgba(251,247,239,.72); box-shadow:0 22px 64px rgba(26,22,18,.09); padding:34px 38px; display:grid; grid-template-rows:auto 1fr auto; gap:20px; position:relative; overflow:hidden; }
+  #cs-concept-club-value-system .club-panel:before { content:''; position:absolute; inset:0; background-image:radial-gradient(rgba(184,149,74,.17) 1px, transparent 1px); background-size:14px 14px; opacity:.40; pointer-events:none; }
+  #cs-concept-club-value-system .club-panel > * { position:relative; z-index:1; }
+  #cs-concept-club-value-system .club-panel.system { background:linear-gradient(135deg,rgba(251,247,239,.90),rgba(239,229,206,.72)); border-color:rgba(91,143,212,.36); }
+  #cs-concept-club-value-system .club-label { font-family:'Manrope',sans-serif; font-size:.68rem; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:#b8954a; }
+  #cs-concept-club-value-system .club-panel h2 { margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.15rem,3.2vw,3.35rem); line-height:1.03; letter-spacing:-.03em; font-weight:850; color:#1a1612; }
+  #cs-concept-club-value-system .club-panel h2 em { font-style:italic; color:#5B8FD4; }
+  #cs-concept-club-value-system .club-surface-list, #cs-concept-club-value-system .club-system-list { display:grid; gap:12px; align-self:end; }
+  #cs-concept-club-value-system .club-row { display:flex; align-items:center; gap:12px; font-family:'Manrope',sans-serif; font-size:1.03rem; font-weight:850; color:rgba(26,22,18,.78); }
+  #cs-concept-club-value-system .club-row b { width:34px; height:34px; border-radius:50%; display:grid; place-items:center; font-size:.78rem; color:#1a1612; border:1.3px solid rgba(184,149,74,.42); background:#fffaf0; }
+  #cs-concept-club-value-system .club-surface-metrics { align-self:center; justify-self:stretch; display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  #cs-concept-club-value-system .club-metric { min-height:150px; border:1.2px solid rgba(184,149,74,.34); background:rgba(255,250,240,.62); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; text-align:center; }
+  #cs-concept-club-value-system .club-metric strong { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.2rem,3vw,3.15rem); line-height:.95; color:#1a1612; }
+  #cs-concept-club-value-system .club-metric span { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:#b8954a; }
+  #cs-concept-club-value-system .club-bridge { display:grid; place-items:center; gap:10px; color:#b8954a; }
+  #cs-concept-club-value-system .club-bridge .line { width:2px; height:154px; background:linear-gradient(180deg,transparent,#b8954a,transparent); }
+  #cs-concept-club-value-system .club-bridge .word { transform:rotate(-90deg); font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:900; letter-spacing:.20em; text-transform:uppercase; white-space:nowrap; color:rgba(184,149,74,.78); }
+  #cs-concept-club-value-system .club-network { position:relative; align-self:center; justify-self:center; width:480px; max-width:100%; height:260px; }
+  #cs-concept-club-value-system .club-network svg { width:100%; height:100%; display:block; overflow:visible; }
+  #cs-concept-club-value-system .club-final { margin:0 auto; width:min(1500px,86vw); text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.1rem,3.15vw,3.35rem); line-height:1.05; letter-spacing:-.035em; font-weight:850; color:#1a1612; }
+  #cs-concept-club-value-system .club-final em { font-style:italic; color:#b8954a; }
+</style>
+<div class="casey-slide concept-slide" id="cs-concept-club-value-system" style="display:none">
 <section style="position:relative;min-height:100%;width:100%">
   <div class="concept-eyebrow">Concept rail - club thesis</div>
-  <div class="concept-stage" style="gap:32px;padding-top:74px">
-    <h1 class="concept-title" style="font-size:5.55rem">A social pickleball club is <em>not just</em> a place to play.</h1>
-    <div class="concept-split-hero">
-      <div class="concept-photo-sim">
-        <div class="label">What you see</div>
-        <div class="concept-side-list"><span><b>&#9633;</b>courts</span><span><b>&#9678;</b>games</span><span><b>11-7</b>scores</span></div>
-        <div class="concept-court-line" style="left:9%;right:16%;top:58%;height:1px"></div>
-        <div class="concept-court-line" style="left:18%;top:34%;width:1px;height:44%"></div>
+  <div class="club-thesis-stage">
+    <h1 class="club-title">A social pickleball club is <em>not just</em> a place to play.</h1>
+    <div class="club-diagram">
+      <div class="club-panel surface">
+        <div class="club-label">What you see</div>
+        <h2>Courts.<br>Games.<br>Scores.</h2>
+        <div class="club-surface-metrics" aria-hidden="true"><div class="club-metric"><strong>6</strong><span>courts</span></div><div class="club-metric"><strong>games</strong><span>sessions</span></div><div class="club-metric"><strong>11-7</strong><span>scores</span></div></div>
+        <div class="club-surface-list">
+          <div class="club-row"><b>1</b><span>Court inventory</span></div>
+          <div class="club-row"><b>2</b><span>Signups and match play</span></div>
+          <div class="club-row"><b>3</b><span>Who won, who lost</span></div>
+        </div>
       </div>
-      <div class="concept-photo-sim" style="background:linear-gradient(135deg,rgba(5,8,13,.95),rgba(184,149,74,.32)), radial-gradient(circle at 42% 42%, rgba(245,195,94,.36), transparent 22%), radial-gradient(circle at 70% 58%, rgba(251,247,239,.18), transparent 20%)">
-        <div class="label" style="align-self:flex-end;border:1px solid rgba(245,195,94,.70)">What is actually happening</div>
-        <div class="concept-side-list" style="align-self:flex-end"><span><b>&#9825;</b>connection</span><span><b>&#9993;</b>invitations</span><span><b>&#9675;</b>friendships</span><span><b>&#10022;</b>community</span></div>
+      <div class="club-bridge" aria-hidden="true"><div class="line"></div><div class="word">underneath</div><div class="line"></div></div>
+      <div class="club-panel system">
+        <div class="club-label" style="color:#c8462c">What is actually happening</div>
+        <h2>A living system of <em>human value exchange.</em></h2>
+        <div class="club-network" aria-hidden="true">
+          <svg viewBox="0 0 520 280">
+            <defs><filter id="clubGlow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+            <g stroke="rgba(184,149,74,.68)" stroke-width="2.2" fill="none" filter="url(#clubGlow)">
+              <path d="M84 150C154 54 284 38 374 104S430 228 260 222S112 210 84 150Z"/>
+              <path d="M84 150L205 78L374 104L430 174L330 232L172 212Z"/>
+              <path d="M205 78L260 222M172 212L374 104M84 150L430 174" opacity=".62"/>
+            </g>
+            <g font-family="Manrope, sans-serif" font-weight="900" text-anchor="middle" filter="url(#clubGlow)">
+              <g transform="translate(84 150)"><circle r="34" fill="#fffaf0" stroke="#5B8FD4" stroke-width="2"/><text y="6" font-size="12" fill="#1a1612">invite</text></g>
+              <g transform="translate(205 78)"><circle r="34" fill="#fffaf0" stroke="#b8954a" stroke-width="2"/><text y="6" font-size="12" fill="#1a1612">trust</text></g>
+              <g transform="translate(374 104)"><circle r="34" fill="#fffaf0" stroke="#c8462c" stroke-width="2"/><text y="6" font-size="12" fill="#1a1612">give</text></g>
+              <g transform="translate(430 174)"><circle r="34" fill="#fffaf0" stroke="#5B8FD4" stroke-width="2"/><text y="6" font-size="12" fill="#1a1612">return</text></g>
+              <g transform="translate(260 222)"><circle r="38" fill="#1a1612" stroke="#b8954a" stroke-width="2.4"/><text y="7" font-size="15" fill="#fbf7ef">GnR</text></g>
+              <g transform="translate(172 212)"><circle r="30" fill="#fffaf0" stroke="#c8462c" stroke-width="2"/><text y="6" font-size="11" fill="#1a1612">belong</text></g>
+            </g>
+          </svg>
+        </div>
+        <div class="club-system-list">
+          <div class="club-row"><b style="color:#5B8FD4">A</b><span>Who makes others feel welcome</span></div>
+          <div class="club-row"><b style="color:#b8954a">B</b><span>Who creates repeat social energy</span></div>
+          <div class="club-row"><b style="color:#c8462c">C</b><span>Who should be invited together next</span></div>
+        </div>
       </div>
-      <div class="concept-divider-glow"></div>
     </div>
-    <div class="concept-foot" style="font-size:4.5rem">It is a <strong style="color:#b8954a">human value exchange</strong> system.</div>
+    <div class="club-final">The club is the interface. <em>The exchange is the product.</em></div>
   </div>
 </section>
 </div>
