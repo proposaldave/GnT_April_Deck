@@ -90,6 +90,15 @@
   .visual.right .visual-proof{left:auto;right:72px}
   .visual-chip{border:1.5px solid rgba(184,149,74,.38);background:rgba(251,247,239,.74);border-radius:999px;padding:12px 18px;font-size:.74rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,22,18,.68)}
   .visual-chip.red{border-color:rgba(200,70,44,.42);color:var(--red)}.visual-chip.blue{border-color:rgba(91,143,212,.42);color:var(--blue)}
+  .cover:after{background:linear-gradient(90deg,rgba(243,234,216,.94) 0%,rgba(243,234,216,.78) 34%,rgba(243,234,216,.14) 68%,rgba(243,234,216,0) 100%)}
+  .cover .visual-copy{top:88px;width:980px}
+  .cover-title{font-family:'Fraunces',Georgia,serif;font-size:7.7rem;line-height:.86;font-weight:850;letter-spacing:0;color:var(--ink)}
+  .cover-title .blue{color:var(--blue)}.cover-title .gold{color:var(--gold);font-style:italic}.cover-title .red{color:var(--red)}
+  .cover-sub{font-family:'Fraunces',Georgia,serif;font-size:2rem;line-height:1.14;font-weight:750;color:rgba(26,22,18,.72);margin-top:28px;max-width:800px}
+  .cover-contact{position:absolute;z-index:2;left:72px;bottom:58px;display:grid;gap:8px;font-size:1.1rem;line-height:1.25;font-weight:850;color:rgba(26,22,18,.72)}
+  .cover-contact .name{font-family:'Fraunces',Georgia,serif;font-size:2rem;font-weight:850;color:var(--ink)}
+  .cover-contact .details{display:flex;gap:18px;flex-wrap:wrap}
+  .cover-contact a{color:inherit;text-decoration:none}
 </style>
 </head>
 <body>
@@ -98,7 +107,21 @@
 <div class="count" id="count"></div>
 
 <main>
-  <section class="slide active"><div class="canvas"><img class="source-img" src="assets/inkind/source_slides/01_source_title.png" alt="Copied slide from original GnR deck"></div></section>
+  <section class="slide active"><div class="canvas">
+    <div class="visual cover">
+      <img src="assets/inkind/visuals/inkind_social_layer.png" alt="">
+      <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="visual-copy">
+        <div class="eyebrow">Investor deck for inKind audience</div>
+        <div class="cover-title"><span class="blue">Give</span> <span class="gold">n</span> <span class="red">Receive</span></div>
+        <div class="cover-sub">The inKind capacity mechanic, rebuilt for social sports.</div>
+      </div>
+      <div class="cover-contact">
+        <div class="name">Dave Velardo &middot; Founder &amp; CEO</div>
+        <div class="details"><a href="mailto:dave@gnt.ai">dave@gnt.ai</a><span>978-604-0223</span><a href="https://v2.gnt.ai">v2.gnt.ai</a></div>
+      </div>
+    </div>
+  </div></section>
 
   <section class="slide"><div class="canvas">
     <div class="visual">
