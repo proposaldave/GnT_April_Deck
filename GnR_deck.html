@@ -32215,13 +32215,34 @@ document.addEventListener('wheel', e => {
 //   Horizontal swipe (left/right)  = slide nav (no reveal)
 //   Vertical swipe   (up/down)     = animate reveal/reverse (cs1bm1, cs2b, cs3, cs11d), then slide nav
 let touchStartX = 0, touchStartY = 0, touchLock = false;
+let presenterLastTapTime = 0, presenterLastTapX = 0, presenterLastTapY = 0;
 document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; touchStartY = e.touches[0].clientY; }, { passive: true });
 document.addEventListener('touchend', e => {
   if (touchLock) return;
   const dx = e.changedTouches[0].clientX - touchStartX;
   const dy = e.changedTouches[0].clientY - touchStartY;
   const adx = Math.abs(dx), ady = Math.abs(dy);
-  if (adx < 50 && ady < 50) return;  // ignore taps + tiny drags
+  if (adx < 50 && ady < 50) {
+    const touch = e.changedTouches[0];
+    const now = Date.now();
+    const tapGap = now - presenterLastTapTime;
+    const tapMove = Math.hypot(touch.clientX - presenterLastTapX, touch.clientY - presenterLastTapY);
+    const uiTarget = e.target && e.target.closest && e.target.closest('input,textarea,button,a,#annotationOverlay,#speakerNotesOverlay,#slideSearch,.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.annotation-marker');
+    if (!uiTarget && tapGap > 0 && tapGap < 360 && tapMove < 44 && window.togglePresenterMode) {
+      e.preventDefault();
+      e.stopPropagation();
+      window.togglePresenterMode();
+      presenterLastTapTime = 0;
+      touchLock = true;
+      setTimeout(() => { touchLock = false; }, 260);
+      return;
+    }
+    presenterLastTapTime = now;
+    presenterLastTapX = touch.clientX;
+    presenterLastTapY = touch.clientY;
+    return;  // ignore single taps + tiny drags
+  }
+  presenterLastTapTime = 0;
   touchLock = true;
   if (inStaff) {
     const forward = ady > adx ? (dy < 0) : (dx < 0);
@@ -32304,7 +32325,7 @@ document.addEventListener('touchend', e => {
     else        { if (inStaff) staffGo(staffCurrent - 1); else if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1); }
   }
   setTimeout(() => { touchLock = false; }, 400);
-}, { passive: true });
+}, { passive: false });
 
 // TEXT SELECTION FIX: force pointer-events correctly on every slide change
 function fixTextSelection() {
