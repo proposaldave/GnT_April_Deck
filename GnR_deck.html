@@ -18849,6 +18849,13 @@ window.cs1m7Reverse = function() {
   #cs-hct-system-pink2 .hcts-right{right:7.6%!important}
   #cs-hct-system-pink3 .hcts-opening{top:30%!important}
   #cs-hct-system-pink3 .hcts-panel{min-height:310px!important}
+  .hct-system-slide[data-stage="0"] .hcts-panel,.hct-system-slide[data-stage="0"] .hcts-bridge{opacity:0!important;visibility:hidden!important;pointer-events:none!important;animation:none!important}
+  .hct-system-slide[data-stage="1"] .hcts-opening,.hct-system-slide[data-stage="2"] .hcts-opening{opacity:0!important;visibility:hidden!important;pointer-events:none!important;animation:none!important}
+  .hct-system-slide[data-stage="1"] .hcts-left,.hct-system-slide[data-stage="2"] .hcts-left,.hct-system-slide[data-stage="2"] .hcts-right{visibility:visible!important;pointer-events:auto!important}
+  .hct-system-slide[data-stage="1"] .hcts-right{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
+  #cs-hct-system-pink3 .hcts-opening{top:29%!important;width:min(1120px,58vw)!important;left:57%!important}
+  #cs-hct-system-pink3 .hcts-opening h1{font-size:clamp(2.35rem,3.75vw,4.35rem)!important;line-height:.98!important;letter-spacing:-.026em!important}
+  #cs-hct-system-pink3 .hcts-right h2{font-size:clamp(1.72rem,2.45vw,2.55rem)!important}
 </style>
 
 <div class="casey-slide ds-focus hct-system-slide" id="cs-hct-system" data-stage="0" onclick="csHctSystemAdvance()" style="display:none">
