@@ -18817,6 +18817,40 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] .hct-system-slide .hcts-bridge { opacity:1 !important; transform:translate(-50%,-50%) !important; transition:none !important; }
 </style>
 
+<style>
+  /* [Codex 2026-05-25] HCT visual cleanup: keep slot-2 variants inside viewport and remove duplicate local logo. */
+  .hct-system-slide .hcts-mark{display:none!important}
+  .hct-system-slide .hcts-opening{top:32%!important;width:min(1360px,75vw)!important;transform:translate(-50%,-50%)!important}
+  .hct-system-slide .hcts-opening h1{font-size:clamp(3.05rem,4.7vw,5.35rem)!important;line-height:1!important;letter-spacing:-.032em!important;max-width:100%;overflow-wrap:normal}
+  .hct-system-slide.hcts-alt .hcts-opening{top:31%!important;width:min(1360px,75vw)!important;transform:translate(-50%,-50%)!important}
+  .hct-system-slide.hcts-alt .hcts-opening h1{font-size:clamp(2.78rem,4.2vw,4.8rem)!important;line-height:1.02!important}
+  .hct-system-slide .hcts-panel{top:52%!important;width:min(595px,30.8vw)!important;min-height:312px!important;max-height:370px!important;padding:32px 36px!important;box-sizing:border-box!important;gap:15px!important;justify-content:center!important;background:rgba(251,247,239,.94)!important;backdrop-filter:blur(5px)!important;overflow:hidden!important}
+  .hct-system-slide .hcts-left{left:5%!important}
+  .hct-system-slide .hcts-right{right:7.6%!important}
+  .hct-system-slide .hcts-panel h2{font-size:clamp(1.78rem,2.52vw,2.65rem)!important;line-height:1.05!important;letter-spacing:-.026em!important}
+  .hct-system-slide .hcts-system-map{height:112px!important;margin-top:4px!important;padding-top:18px!important}
+  .hct-system-slide .hcts-node{top:25px!important;width:74px!important;height:74px!important;font-size:.5rem!important}
+  .hct-system-slide .hcts-line{left:66px!important;right:66px!important;top:62px!important}
+  .hct-system-slide .hcts-missing{height:110px!important;margin-top:4px!important;font-size:.66rem!important;letter-spacing:.17em!important;overflow:hidden!important}
+  .hct-system-slide .hcts-missing:before,.hct-system-slide .hcts-missing:after{width:48px!important;height:48px!important}
+  .hct-system-slide .hcts-missing:before{left:32px!important;top:30px!important}
+  .hct-system-slide .hcts-missing:after{right:32px!important;top:30px!important}
+  .hct-system-slide .hcts-bridge{top:52%!important;width:112px!important}
+  .hct-system-slide[data-stage="1"] .hcts-opening,.hct-system-slide[data-stage="2"] .hcts-opening{opacity:0!important;transform:translate(-50%,-58%)!important;pointer-events:none!important}
+  .hct-system-slide.casey-entered > section > .hcts-panel,.hct-system-slide.casey-entered > section > .hcts-bridge{animation:none!important}
+  .hct-system-slide[data-stage="0"] .hcts-panel{opacity:0!important;transform:translateY(-46%) translateY(18px)!important}
+  .hct-system-slide[data-stage="0"] .hcts-bridge{opacity:0!important}
+  .hct-system-slide[data-stage="1"] .hcts-left,.hct-system-slide[data-stage="2"] .hcts-left{opacity:1!important;transform:translateY(-50%)!important}
+  .hct-system-slide[data-stage="1"] .hcts-right{opacity:0!important;transform:translateY(-46%) translateY(18px)!important}
+  .hct-system-slide[data-stage="2"] .hcts-right{opacity:1!important;transform:translateY(-50%)!important}
+  .hct-system-slide[data-stage="2"] .hcts-bridge{opacity:1!important}
+  #cs-hct-system-pink1 .hcts-panel,#cs-hct-system-pink2 .hcts-panel,#cs-hct-system-pink3 .hcts-panel{top:52%!important}
+  #cs-hct-system-pink2 .hcts-left{left:5%!important}
+  #cs-hct-system-pink2 .hcts-right{right:7.6%!important}
+  #cs-hct-system-pink3 .hcts-opening{top:30%!important}
+  #cs-hct-system-pink3 .hcts-panel{min-height:310px!important}
+</style>
+
 <div class="casey-slide ds-focus hct-system-slide" id="cs-hct-system" data-stage="0" onclick="csHctSystemAdvance()" style="display:none">
   <img class="hcts-bg" src="assets/cs-brand-codex.png" alt="" onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
   <div class="hcts-wash"></div><div class="hcts-shade"></div>
