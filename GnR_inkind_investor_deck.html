@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#f3ead8">
+<title>Give n Receive x inKind Investor Deck</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,850;1,9..144,500;1,9..144,700&family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:#f3ead8;
+    --paper2:#fbf7ef;
+    --ink:#1a1612;
+    --blue:#5B8FD4;
+    --gold:#b8954a;
+    --red:#c8462c;
+    --mint:#49b4a0;
+    --pink:#d46b7e;
+    --muted:rgba(26,22,18,.62);
+    --line:rgba(26,22,18,.14);
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html, body { width:100%; height:100%; overflow:hidden; background:var(--paper); color:var(--ink); font-family:'Manrope', system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+  body { position:relative; }
+  .deck { position:fixed; inset:0; background:
+    radial-gradient(circle at 82% 16%, rgba(91,143,212,.12), transparent 28%),
+    radial-gradient(circle at 14% 88%, rgba(200,70,44,.08), transparent 28%),
+    linear-gradient(180deg, var(--paper2), var(--paper));
+  }
+  .progress { position:fixed; top:0; left:0; height:3px; width:0; background:linear-gradient(90deg,var(--blue),var(--gold),var(--red)); z-index:30; transition:width .35s ease; }
+  .brand { position:fixed; top:24px; right:38px; z-index:25; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.05rem; letter-spacing:-.03em; }
+  .brand .g { color:var(--blue); font-weight:700; }
+  .brand .n { color:var(--gold); font-style:italic; font-weight:500; padding:0 .04em; }
+  .brand .r { color:var(--red); font-weight:700; }
+  .slide {
+    position:absolute; inset:0; display:none; min-height:100%; padding:72px 72px 52px 110px; overflow:hidden;
+  }
+  .slide.active { display:flex; }
+  .stage { width:min(1390px, calc(100vw - 190px)); height:100%; margin:0 auto; display:flex; flex-direction:column; justify-content:center; gap:30px; position:relative; z-index:1; }
+  .eyebrow {
+    position:absolute; top:28px; left:48px; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--red); z-index:10;
+  }
+  .eyebrow.gold { color:var(--gold); }
+  h1, h2 { font-family:'Fraunces','Playfair Display',Georgia,serif; letter-spacing:0; color:var(--ink); }
+  h1 { font-size:clamp(4.2rem,8.4vw,9.4rem); line-height:.88; font-weight:850; max-width:1220px; }
+  h2 { font-size:clamp(3rem,5.7vw,6.5rem); line-height:.94; font-weight:850; max-width:1240px; }
+  .tight h2 { max-width:1080px; }
+  .sub { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.2rem,2vw,1.85rem); line-height:1.3; color:rgba(26,22,18,.78); max-width:1040px; font-weight:600; }
+  .sub em, h1 em, h2 em { color:var(--gold); font-style:italic; font-weight:700; }
+  .blue { color:var(--blue); } .gold { color:var(--gold); } .red { color:var(--red); } .mint { color:var(--mint); } .pink { color:var(--pink); }
+  .grid { display:grid; gap:20px; }
+  .grid.two { grid-template-columns:1fr 1fr; align-items:stretch; }
+  .grid.three { grid-template-columns:repeat(3,1fr); }
+  .grid.four { grid-template-columns:repeat(4,1fr); }
+  .card {
+    border:1.3px solid rgba(184,149,74,.32); background:rgba(251,247,239,.66); border-radius:8px; padding:24px; box-shadow:0 16px 42px rgba(26,22,18,.06);
+  }
+  .card.blue { border-color:rgba(91,143,212,.40); background:rgba(91,143,212,.08); color:var(--ink); }
+  .card.red { border-color:rgba(200,70,44,.40); background:rgba(200,70,44,.07); color:var(--ink); }
+  .card.mint { border-color:rgba(73,180,160,.38); background:rgba(73,180,160,.08); color:var(--ink); }
+  .kicker { font-size:.62rem; font-weight:900; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
+  .metric { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.6rem,5vw,5rem); line-height:.95; font-weight:850; letter-spacing:-.03em; color:var(--ink); }
+  .card p, .body { font-size:clamp(1rem,1.22vw,1.24rem); line-height:1.42; color:rgba(26,22,18,.74); font-weight:650; }
+  .body strong, .card strong { color:var(--ink); font-weight:900; }
+  .bigline { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.7rem,2.8vw,2.8rem); line-height:1.12; font-weight:800; letter-spacing:0; }
+  .comparison { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .comparison .head { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.24em; text-transform:uppercase; margin-bottom:12px; color:var(--gold); }
+  .rows { display:grid; gap:10px; }
+  .row { display:grid; grid-template-columns:150px 1fr; gap:18px; align-items:start; padding:14px 0; border-top:1px solid var(--line); }
+  .row .lbl { font-size:.7rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:rgba(26,22,18,.52); }
+  .row .txt { font-size:1.08rem; line-height:1.32; color:rgba(26,22,18,.76); font-weight:700; }
+  .flow { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; align-items:stretch; }
+  .step { border:1.4px solid rgba(184,149,74,.34); background:rgba(251,247,239,.72); border-radius:8px; padding:20px 16px; min-height:168px; display:flex; flex-direction:column; justify-content:space-between; }
+  .step .num { font-family:'Fraunces',Georgia,serif; font-size:2rem; color:var(--gold); font-weight:850; line-height:1; }
+  .step .txt { font-size:1.02rem; font-weight:800; line-height:1.25; color:var(--ink); }
+  .rulebox { border-left:4px solid var(--red); padding:18px 0 18px 24px; max-width:1080px; }
+  .rulebox .quote { font-family:'Fraunces',Georgia,serif; font-size:clamp(1.55rem,2.7vw,2.55rem); line-height:1.15; font-style:italic; font-weight:700; }
+  .source { position:absolute; left:110px; bottom:28px; font-size:.58rem; letter-spacing:.13em; text-transform:uppercase; color:rgba(26,22,18,.42); font-weight:800; max-width:1100px; }
+  .source a { color:inherit; text-decoration:none; border-bottom:1px solid rgba(26,22,18,.20); }
+  .badge { display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(184,149,74,.48); border-radius:999px; padding:8px 14px; font-size:.72rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); background:rgba(251,247,239,.68); }
+  .stack { display:flex; flex-wrap:wrap; gap:10px; }
+  .nav { position:fixed; top:50%; left:26px; transform:translateY(-50%); z-index:40; display:flex; flex-direction:column; gap:6px; padding:10px 9px 10px 28px; border-radius:12px; background:rgba(26,22,18,.12); border:1px solid rgba(26,22,18,.10); backdrop-filter:blur(8px); }
+  .dot-wrap { position:relative; width:12px; height:18px; display:grid; place-items:center; }
+  .dot { width:8px; height:8px; border:0; border-radius:50%; background:rgba(26,22,18,.26); cursor:pointer; transition:all .2s ease; }
+  .dot.on { height:18px; border-radius:5px; background:var(--gold); box-shadow:0 0 12px rgba(184,149,74,.65); }
+  .dot:hover { transform:scale(1.35); background:var(--ink); }
+  .alt-dot { position:absolute; left:-18px; top:50%; transform:translateY(-50%); width:8px; height:8px; border-radius:50%; border:1px solid rgba(212,107,126,.90); background:var(--pink); box-shadow:0 0 10px rgba(212,107,126,.75); cursor:pointer; }
+  .alt-dot:hover { transform:translateY(-50%) scale(1.35); }
+  .count { position:fixed; bottom:28px; right:38px; z-index:25; font-size:.65rem; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(26,22,18,.52); }
+  .split-title { display:grid; grid-template-columns:1.08fr .92fr; gap:54px; align-items:center; }
+  .visual-panel { position:relative; min-height:520px; border:1.5px solid rgba(184,149,74,.30); border-radius:10px; background:linear-gradient(180deg,rgba(251,247,239,.72),rgba(243,234,216,.64)); overflow:hidden; }
+  .circle { position:absolute; border-radius:50%; border:1.6px solid rgba(184,149,74,.45); background:rgba(251,247,239,.72); display:grid; place-items:center; text-align:center; font-size:.72rem; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:var(--ink); padding:14px; }
+  .line { position:absolute; height:2px; background:linear-gradient(90deg,transparent,rgba(184,149,74,.70),transparent); transform-origin:left center; }
+  .table { display:grid; border:1.3px solid rgba(184,149,74,.32); border-radius:8px; overflow:hidden; background:rgba(251,247,239,.64); }
+  .tr { display:grid; grid-template-columns:1.05fr .95fr .95fr; border-top:1px solid rgba(26,22,18,.11); }
+  .tr:first-child { border-top:0; background:rgba(184,149,74,.10); }
+  .td { padding:16px 18px; font-size:1.02rem; font-weight:750; line-height:1.28; color:rgba(26,22,18,.76); }
+  .tr:first-child .td { font-size:.64rem; letter-spacing:.20em; text-transform:uppercase; font-weight:900; color:var(--gold); }
+  .ask-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:34px; align-items:stretch; }
+  .ask-number { font-family:'Fraunces',Georgia,serif; font-size:clamp(6rem,12vw,11rem); line-height:.84; font-weight:850; letter-spacing:-.05em; color:var(--red); }
+  .use-list { display:grid; gap:14px; }
+  .use { display:grid; grid-template-columns:82px 1fr; align-items:center; gap:18px; padding:18px; border:1px solid rgba(184,149,74,.26); border-radius:8px; background:rgba(251,247,239,.58); }
+  .use .pct { font-family:'Fraunces',Georgia,serif; font-size:2.2rem; line-height:1; color:var(--gold); font-weight:850; }
+  .use .desc { font-size:1.08rem; font-weight:750; line-height:1.25; color:rgba(26,22,18,.75); }
+  @media (max-width:980px) {
+    .slide { padding:72px 28px 48px 74px; }
+    .stage { width:calc(100vw - 112px); gap:20px; }
+    h1 { font-size:3.7rem; }
+    h2 { font-size:2.75rem; }
+    .grid.two, .grid.three, .grid.four, .comparison, .split-title, .ask-grid { grid-template-columns:1fr; }
+    .flow { grid-template-columns:1fr 1fr; }
+    .visual-panel { min-height:300px; }
+    .source { left:74px; right:24px; }
+  }
+</style>
+</head>
+<body>
+<div class="deck"></div>
+<div class="progress" id="progress"></div>
+<div class="brand"><span class="g">Give</span> <span class="n">n</span> <span class="r">Receive</span></div>
+<nav class="nav" id="nav" aria-label="Slide navigation"></nav>
+<div class="count" id="count"></div>
+
+<main id="slides">
+  <section class="slide active" data-slot="1" data-title="Cover">
+    <div class="eyebrow">For investors who understand inKind</div>
+    <div class="stage split-title">
+      <div>
+        <h1><span class="gold">inKind</span> buys empty tables.<br><span class="red">GnR</span> buys empty courts.</h1>
+        <p class="sub">Then we fill them with the right people. That is the difference between discounted inventory and premium social demand.</p>
+      </div>
+      <div class="visual-panel">
+        <div class="circle" style="width:184px;height:184px;left:42px;top:72px;color:var(--gold)">Empty<br>tables</div>
+        <div class="circle" style="width:184px;height:184px;right:42px;top:72px;color:var(--red)">Empty<br>courts</div>
+        <div class="line" style="left:206px;top:164px;width:270px;transform:rotate(0deg)"></div>
+        <div class="circle" style="width:220px;height:220px;left:50%;top:260px;transform:translateX(-50%);border-color:rgba(91,143,212,.66);box-shadow:0 0 44px rgba(91,143,212,.16)">Invitation<br>Graph</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide variant" data-slot="1" data-title="Cover Alt">
+    <div class="eyebrow">Pink-dot swap</div>
+    <div class="stage tight">
+      <h2>Give n Receive is the <em>demand engine</em> inKind would invent if the inventory were social.</h2>
+      <div class="rulebox"><div class="quote">The club gets cash now. Players get better games. The system captures who pulls whom into the room.</div></div>
+    </div>
+  </section>
+
+  <section class="slide" data-slot="2" data-title="Known Playbook">
+    <div class="eyebrow gold">The familiar playbook</div>
+    <div class="stage">
+      <h2>You already know why this works.</h2>
+      <div class="comparison">
+        <div class="card">
+          <div class="head">inKind</div>
+          <div class="rows">
+            <div class="row"><div class="lbl">Operator pain</div><div class="txt">Restaurants need cash and traffic.</div></div>
+            <div class="row"><div class="lbl">Inventory</div><div class="txt">Perishable table capacity and F&amp;B credit.</div></div>
+            <div class="row"><div class="lbl">Motion</div><div class="txt">Capital now in exchange for restaurant credit redeemed later.</div></div>
+            <div class="row"><div class="lbl">Network</div><div class="txt">Diner demand, rewards, repeat behavior.</div></div>
+          </div>
+        </div>
+        <div class="card red">
+          <div class="head">Give n Receive</div>
+          <div class="rows">
+            <div class="row"><div class="lbl">Operator pain</div><div class="txt">Clubs need filled off-peak courts and healthier communities.</div></div>
+            <div class="row"><div class="lbl">Inventory</div><div class="txt">Perishable court-hours that expire every day.</div></div>
+            <div class="row"><div class="lbl">Motion</div><div class="txt">Cash now for off-peak inventory, converted into curated social play.</div></div>
+            <div class="row"><div class="lbl">Network</div><div class="txt">Invitation data, vibe anchors, repeat groups, after-play demand.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="source">Sources: inKind official restaurant-capital pages; GnR proof library and NEPC operating data.</div>
+  </section>
+
+  <section class="slide" data-slot="3" data-title="Operator Offer">
+    <div class="eyebrow">The club-owner offer</div>
+    <div class="stage">
+      <h2>We lead with cash, not software.</h2>
+      <div class="flow">
+        <div class="step"><div class="num">01</div><div class="txt">We buy $10K of underused court inventory upfront.</div></div>
+        <div class="step"><div class="num">02</div><div class="txt">Club defines the windows: off-peak only, no member displacement.</div></div>
+        <div class="step"><div class="num">03</div><div class="txt">We pay a deep discount because the inventory is otherwise empty.</div></div>
+        <div class="step"><div class="num">04</div><div class="txt">Club grants data access so GnR can invite and schedule.</div></div>
+        <div class="step"><div class="num">05</div><div class="txt">GnR fills courts through SMS-based social matchmaking.</div></div>
+      </div>
+      <div class="rulebox"><div class="quote">"Give us your dead zones. We'll turn them into games people are excited to say yes to."</div></div>
+    </div>
+  </section>
+
+  <section class="slide variant" data-slot="3" data-title="Offer Alt: Risk Controls">
+    <div class="eyebrow">Pink-dot swap</div>
+    <div class="stage">
+      <h2>The offer is only a no-brainer if we protect peak revenue.</h2>
+      <div class="grid four">
+        <div class="card red"><div class="kicker">Guardrail</div><p><strong>Off-peak only.</strong><br>No Saturday-morning arbitrage. No premium-time cannibalization.</p></div>
+        <div class="card"><div class="kicker">Guardrail</div><p><strong>No cheap-court blast.</strong><br>This is curated play, not a discount marketplace.</p></div>
+        <div class="card blue"><div class="kicker">Guardrail</div><p><strong>Small checks first.</strong><br>$1K-$10K pilots until demand underwriting is proven.</p></div>
+        <div class="card mint"><div class="kicker">Guardrail</div><p><strong>Measured report.</strong><br>Fill rate, return rate, complaints, and repeat-group creation.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slot="4" data-title="Better Inventory">
+    <div class="eyebrow gold">Why courts are powerful inventory</div>
+    <div class="stage">
+      <h2>A court-hour is cleaner than a restaurant tab.</h2>
+      <div class="grid four">
+        <div class="card"><div class="metric blue">01</div><p><strong>Simple unit.</strong><br>Time, court, location, player count.</p></div>
+        <div class="card"><div class="metric gold">02</div><p><strong>Low marginal cost.</strong><br>An empty court is mostly fixed cost.</p></div>
+        <div class="card"><div class="metric red">03</div><p><strong>No fulfillment chaos.</strong><br>No menu variance, servers, split checks, or food cost volatility.</p></div>
+        <div class="card"><div class="metric mint">04</div><p><strong>Better data exhaust.</strong><br>Every game produces invitation, RSVP, attendance, repeat, and social-pull data.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slot="5" data-title="Arbitrage">
+    <div class="eyebrow">The premium arbitrage</div>
+    <div class="stage">
+      <h2>Distressed inventory becomes premium when the product is <em>who shows up.</em></h2>
+      <div class="table">
+        <div class="tr"><div class="td">Layer</div><div class="td">Commodity court booking</div><div class="td">GnR curated session</div></div>
+        <div class="tr"><div class="td">What player buys</div><div class="td">Access to a court</div><div class="td">A game with people they want to play with again</div></div>
+        <div class="tr"><div class="td">Club economics</div><div class="td">Empty off-peak slot expires</div><div class="td">Guaranteed revenue plus new demand signal</div></div>
+        <div class="tr"><div class="td">Pricing power</div><div class="td">Time-of-day commodity</div><div class="td">Social-fit premium, even off-peak</div></div>
+        <div class="tr"><div class="td">Moat</div><div class="td">Calendar availability</div><div class="td">Invitation Graph: who says yes because of whom</div></div>
+      </div>
+      <p class="sub">The spread is not "buy cheap, sell cheap." The spread is buy unused time and sell belonging.</p>
+    </div>
+  </section>
+
+  <section class="slide variant" data-slot="5" data-title="Arbitrage Alt: Math">
+    <div class="eyebrow">Pink-dot swap</div>
+    <div class="stage">
+      <h2>Illustrative pilot math.</h2>
+      <div class="grid four">
+        <div class="card"><div class="metric">$10K</div><p>Upfront purchase of off-peak court inventory.</p></div>
+        <div class="card"><div class="metric red">50%</div><p>Discount to listed court value, only where inventory is unused.</p></div>
+        <div class="card"><div class="metric blue">4x</div><p>Each court-hour can be monetized as four player seats, not one court rental.</p></div>
+        <div class="card"><div class="metric gold">Data</div><p>The real asset is the invitation response graph, not the first-session margin.</p></div>
+      </div>
+      <div class="rulebox"><div class="quote">The first goal is not financing yield. The first goal is club acquisition and proof.</div></div>
+    </div>
+  </section>
+
+  <section class="slide" data-slot="6" data-title="Built The Club">
+    <div class="eyebrow gold">Why we can underwrite this</div>
+    <div class="stage">
+      <h2>inKind opened restaurants to understand restaurants. Dave built pickleball clubs.</h2>
+      <div class="grid four">
+        <div class="card blue"><div class="metric">2</div><p><strong>NEPC locations</strong><br>Real operating proving ground, not a lab.</p></div>
+        <div class="card"><div class="metric">$2M+</div><p><strong>Annual revenue</strong><br>Community quality as an operating business.</p></div>
+        <div class="card red"><div class="metric">452</div><p><strong>Approx. members</strong><br>Dense enough for repeat social signal.</p></div>
+        <div class="card mint"><div class="metric">95.1%</div><p><strong>Annual retention</strong><br>Paying members active in Q1 returned by Q4.</p></div>
+      </div>
+      <p class="sub">We learned the hard part from the inside: the core constraint is not booking software. It is social matchmaking and community health across the whole day.</p>
+    </div>
+    <div class="source">Sources: Proof Library 10, 11, 13. NEPC is the operating testbed; tech company is separate.</div>
+  </section>
+
+  <section class="slide" data-slot="7" data-title="Invitation Graph">
+    <div class="eyebrow">The data layer</div>
+    <div class="stage split-title">
+      <div>
+        <h2>The court booking is the transaction. The invitation is the signal.</h2>
+        <p class="sub">Accept, decline, no response, cancel, re-invite, repeat. Every move tells us who creates energy for whom.</p>
+      </div>
+      <div class="visual-panel">
+        <div class="circle" style="width:96px;height:96px;left:60px;top:64px;color:var(--blue)">Dave</div>
+        <div class="circle" style="width:96px;height:96px;right:78px;top:84px;color:var(--red)">Johnny</div>
+        <div class="circle" style="width:96px;height:96px;left:210px;top:238px;color:var(--gold)">Lisa</div>
+        <div class="circle" style="width:96px;height:96px;right:136px;bottom:86px;color:var(--mint)">Maya</div>
+        <div class="line" style="left:150px;top:115px;width:340px;transform:rotate(5deg)"></div>
+        <div class="line" style="left:268px;top:286px;width:220px;transform:rotate(-24deg)"></div>
+        <div class="line" style="left:284px;top:330px;width:266px;transform:rotate(19deg)"></div>
+        <div class="badge" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)">Social pull detected</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slot="8" data-title="Proof">
+    <div class="eyebrow gold">NEPC proof</div>
+    <div class="stage">
+      <h2>Social fit is measurable.</h2>
+      <div class="grid four">
+        <div class="card red"><div class="metric">86.7%</div><p>Acceptance for small curated groups vs. 49.9% for large open groups.</p></div>
+        <div class="card blue"><div class="metric">4.9x</div><p>Repeat-group lift when every pair has 10+ shared sessions.</p></div>
+        <div class="card"><div class="metric">0.65->0.90</div><p>AUC-ROC lift within one week of invitation history.</p></div>
+        <div class="card mint"><div class="metric">1.6%</div><p>Preferences survey completion. Asking fails. Watching works.</p></div>
+      </div>
+      <div class="rulebox"><div class="quote">Players won't tell you who they don't want to play with. The data tells you anyway.</div></div>
+    </div>
+    <div class="source">Sources: Proof Library 3, 4, 9, 14.</div>
+  </section>
+
+  <section class="slide" data-slot="9" data-title="Vibe Anchors">
+    <div class="eyebrow">What inKind people should see</div>
+    <div class="stage">
+      <h2>The future of off-peak demand is <em>vibe anchors.</em></h2>
+      <div class="grid three">
+        <div class="card"><div class="kicker">Today</div><p>Restaurants and clubs discount time slots because the room feels empty.</p></div>
+        <div class="card red"><div class="kicker">GnR signal</div><p>Some people make other people say yes. Not influencers. Anchors of trust, fun, and belonging.</p></div>
+        <div class="card blue"><div class="kicker">Tomorrow</div><p>The system knows: if Johnny is there, Lisa says yes to pickleball, and Maya says yes to lunch after.</p></div>
+      </div>
+      <p class="sub">This is the bridge from empty courts to empty tables. Social pull is portable demand intelligence.</p>
+    </div>
+  </section>
+
+  <section class="slide variant" data-slot="9" data-title="Vibe Anchor Alt">
+    <div class="eyebrow">Pink-dot swap</div>
+    <div class="stage tight">
+      <h2>inKind knows where the table is. GnR can know <em>who makes the table worth joining.</em></h2>
+      <div class="rulebox"><div class="quote">"I love hanging out with Johnny" is not a booking preference. It is demand creation.</div></div>
+      <div class="stack">
+        <span class="badge">pickleball match</span><span class="badge">lunch after</span><span class="badge">repeat group</span><span class="badge">off-peak restaurant table</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slot="10" data-title="inKind Expansion">
+    <div class="eyebrow gold">Why this matters to inKind</div>
+    <div class="stage">
+      <h2>Pickleball is a perfect social-data wedge for dining demand.</h2>
+      <div class="table">
+        <div class="tr"><div class="td">Signal</div><div class="td">In pickleball</div><div class="td">In restaurants</div></div>
+        <div class="tr"><div class="td">Availability</div><div class="td">Who can play Tuesday morning</div><div class="td">Who can do lunch Tuesday after</div></div>
+        <div class="tr"><div class="td">Affinity</div><div class="td">Who accepts because of whom</div><div class="td">Who joins a table because of whom</div></div>
+        <div class="tr"><div class="td">Repeat behavior</div><div class="td">Which foursomes become regular</div><div class="td">Which groups become recurring diners</div></div>
+        <div class="tr"><div class="td">Inventory</div><div class="td">Dead court-hours become curated sessions</div><div class="td">Dead tables become anchored gatherings</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slot="11" data-title="Pilot">
+    <div class="eyebrow">Launch plan</div>
+    <div class="stage">
+      <h2>Run the inKind motion safely before we finance it broadly.</h2>
+      <div class="flow">
+        <div class="step"><div class="num">1</div><div class="txt">Simulate the purchase inside NEPC. Assign a real cost to 100-200 dead-zone court-hours.</div></div>
+        <div class="step"><div class="num">2</div><div class="txt">Create SMS-driven curated sessions: foursomes, socials, new-member games, bring-a-friend groups.</div></div>
+        <div class="step"><div class="num">3</div><div class="txt">Measure fill rate, revenue, repeat play, new-player conversion, and complaints.</div></div>
+        <div class="step"><div class="num">4</div><div class="txt">Package the operator report as if Middleton were an external customer.</div></div>
+        <div class="step"><div class="num">5</div><div class="txt">Take the artifact to three external clubs with small upfront checks.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slot="12" data-title="Business Model">
+    <div class="eyebrow gold">Business model</div>
+    <div class="stage">
+      <h2>The court-credit purchase is the launch mechanic. The intelligence layer is the company.</h2>
+      <div class="grid three">
+        <div class="card"><div class="kicker">Start</div><p><strong>Buy unused inventory.</strong><br>Cash-forward offer creates immediate club trust.</p></div>
+        <div class="card red"><div class="kicker">Prove</div><p><strong>Fill with curated demand.</strong><br>GnR takes demand risk and captures the invitation graph.</p></div>
+        <div class="card blue"><div class="kicker">Convert</div><p><strong>90-day pilot -> revenue share.</strong><br>Long-term model: 10% of GnR-processed booking revenue.</p></div>
+      </div>
+      <p class="sub">Eventually, court-credit capital becomes a product. Today, it is the fastest way to get clubs live and prove the loop.</p>
+    </div>
+  </section>
+
+  <section class="slide" data-slot="13" data-title="Ask">
+    <div class="eyebrow">The ask</div>
+    <div class="stage ask-grid">
+      <div>
+        <div class="ask-number">$2.5M</div>
+        <p class="sub">Seed round at a <strong>$10M pre-money valuation</strong> for the Give n Receive technology company.</p>
+        <p class="body" style="margin-top:18px"><strong>New England Pickleball Club is not included.</strong> NEPC remains the proving ground and data laboratory.</p>
+      </div>
+      <div class="use-list">
+        <div class="use"><div class="pct">50%</div><div class="desc">Ship the ASC engine, close the loop, and turn corrections into training data.</div></div>
+        <div class="use"><div class="pct">30%</div><div class="desc">Run 3-5 external club pilots using the court-credit launch mechanic.</div></div>
+        <div class="use"><div class="pct">20%</div><div class="desc">Harden the graph, prove cross-club signal transfer, and build investor-grade reporting.</div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const slots = [...new Set(slides.map(s => Number(s.dataset.slot)))].sort((a,b)=>a-b);
+  const nav = document.getElementById('nav');
+  const count = document.getElementById('count');
+  const progress = document.getElementById('progress');
+  let activeSlot = 1;
+  let activeVariant = false;
+
+  function slideFor(slot, variant=false) {
+    return slides.find(s => Number(s.dataset.slot) === slot && s.classList.contains('variant') === variant)
+      || slides.find(s => Number(s.dataset.slot) === slot && !s.classList.contains('variant'));
+  }
+
+  function buildNav() {
+    nav.innerHTML = '';
+    slots.forEach(slot => {
+      const wrap = document.createElement('div');
+      wrap.className = 'dot-wrap';
+      const hasAlt = !!slideFor(slot, true);
+      if (hasAlt) {
+        const alt = document.createElement('button');
+        alt.className = 'alt-dot';
+        alt.type = 'button';
+        alt.title = 'Swap slide ' + slot;
+        alt.addEventListener('click', () => show(slot, true));
+        wrap.appendChild(alt);
+      }
+      const dot = document.createElement('button');
+      dot.className = 'dot';
+      dot.type = 'button';
+      dot.title = 'Slide ' + slot + ': ' + (slideFor(slot, false)?.dataset.title || '');
+      dot.addEventListener('click', () => show(slot, false));
+      wrap.appendChild(dot);
+      nav.appendChild(wrap);
+    });
+  }
+
+  function show(slot, variant=false) {
+    activeSlot = Math.max(1, Math.min(slots.length, slot));
+    activeVariant = !!variant && !!slideFor(activeSlot, true);
+    slides.forEach(s => s.classList.remove('active'));
+    const target = slideFor(activeSlot, activeVariant);
+    target.classList.add('active');
+    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('on', slots[i] === activeSlot));
+    document.querySelectorAll('.alt-dot').forEach(dot => dot.style.opacity = '.95');
+    count.textContent = (activeVariant ? 'Swap ' : 'Slide ') + activeSlot + ' / ' + slots.length;
+    progress.style.width = ((activeSlot - 1) / (slots.length - 1) * 100) + '%';
+    location.hash = activeVariant ? `#${activeSlot}v` : `#${activeSlot}`;
+  }
+
+  function next() { show(Math.min(slots.length, activeSlot + 1), false); }
+  function prev() { show(Math.max(1, activeSlot - 1), false); }
+
+  document.addEventListener('keydown', e => {
+    if (['ArrowRight','ArrowDown',' ','d','D','s','S','PageDown'].includes(e.key)) { e.preventDefault(); next(); }
+    if (['ArrowLeft','ArrowUp','a','A','w','W','PageUp'].includes(e.key)) { e.preventDefault(); prev(); }
+    if (e.key === 'v' || e.key === 'V') { e.preventDefault(); show(activeSlot, !activeVariant); }
+  });
+
+  let touchX = 0;
+  document.addEventListener('touchstart', e => { touchX = e.changedTouches[0].clientX; }, {passive:true});
+  document.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 48) dx < 0 ? next() : prev();
+  }, {passive:true});
+
+  buildNav();
+  const hash = location.hash.replace('#','');
+  if (/^\d+v$/.test(hash)) show(parseInt(hash), true);
+  else if (/^\d+$/.test(hash)) show(parseInt(hash), false);
+  else show(1, false);
+</script>
+</body>
+</html>
