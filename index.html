@@ -9127,7 +9127,6 @@ window.cs1m7Reverse = function() {
 
 </style>
 
-
 <div class="casey-slide ds-focus" id="cs-emotion-graph" style="display:none">
   <div class="eg-eye">Connection graph</div>
   <div class="eg-brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
@@ -11796,7 +11795,6 @@ window.cs1m7Reverse = function() {
   #cs-wedgepb-codex .wpc-codex-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; z-index:0; display:block; opacity:0.95; }
   #cs-wedgepb-codex .wpc-codex-wash { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(180deg, rgba(251,247,239,0.35) 0%, rgba(251,247,239,0.18) 28%, rgba(251,247,239,0.22) 70%, rgba(251,247,239,0.42) 100%); }
 
-
   /* [Dave 2026-05-24] Blue-dot attempts for pickleball silliness wedge story. */
   #cs-pb-silly-feature, #cs-pb-silly-social { background:#f3ead8 !important; overflow:hidden; position:relative; color:#1a1612; }
   #cs-pb-silly-feature::before, #cs-pb-silly-social::before { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 20% 20%, rgba(91,143,212,0.16) 0%, rgba(91,143,212,0.04) 34%, transparent 62%), radial-gradient(ellipse at 82% 82%, rgba(184,149,74,0.20) 0%, rgba(184,149,74,0.05) 34%, transparent 66%); pointer-events:none; }
@@ -11979,7 +11977,6 @@ window.cs1m7Reverse = function() {
   <!-- [Dave 2026-05-17 LATEST RESOLVE v3 — flip bug ROOT CAUSE FIXED] The capture-phase JS handler from the previous "resolve" was DOUBLE-FIRING with the inline onclick — both toggled .flipped on the same click, so the class went on then off in a single tap, producing no net flip. Removed the JS handler entirely. The inline onclick + event.stopPropagation() on each .wpc-card now does the toggle exactly once per click, and the new 3D rotateY CSS animates the rotation visually. -->
 
 </div>
-
 
 
 
@@ -18770,7 +18767,6 @@ window.cs1m7Reverse = function() {
     <p class="bm-kicker">Sees<span class="dot">&middot;</span>Measures<span class="dot">&middot;</span>Reciprocates</p>
   </section>
 </div>
-
 
 
 
@@ -26347,7 +26343,6 @@ window.csA7m1Reverse = function() {
   #cs-2c[data-shown="1"] .c2c-hint { opacity: 0; pointer-events: none; animation: none; }
   html[data-export="1"] #cs-2c .c2c-hint { opacity: 0 !important; animation: none !important; }
 
-
   /* Hidden community-type story overlays [Codex 2026-05-24]
      Cards remain visually neutral; Dave can secretly open a slide-within-slide while pitching. */
   #cs-2c { cursor: default !important; }
@@ -28816,31 +28811,6 @@ window.csA7m1Reverse = function() {
 </section>
 </div>
 
-<div class="casey-slide concept-slide concept-dark" id="cs-concept-reject-wrong-assumption" style="display:none">
-<section style="position:relative;min-height:100%;width:100%">
-  <div class="concept-eyebrow">Concept rail - new paradigm</div>
-  <div class="concept-stage" style="gap:42px">
-    <h1 class="concept-title" style="font-size:6.1rem">Great social matches<br><em style="color:#9cc878">do not start with skill ratings.</em></h1>
-    <div style="display:grid;grid-template-columns:.75fr .18fr 1.35fr;gap:28px;width:min(1500px,90vw);margin:0 auto;align-items:center">
-      <div class="concept-card" style="min-height:380px;background:rgba(251,247,239,.05)!important;border-color:rgba(251,247,239,.20)!important">
-        <div class="concept-mini-label">The old assumption</div>
-        <div class="big" style="color:#fbf7ef">Skill-rating<br>matching</div>
-        <div class="small">Limited matches. Limited connections.</div>
-      </div>
-      <div class="concept-arrow" style="color:#9cc878;font-size:5.8rem">&rarr;</div>
-      <div class="concept-step-chain" style="grid-template-columns:repeat(5,1fr);width:100%">
-        <div class="concept-step" style="--accent:#49b4a0"><div class="icon">&#9679;</div><div class="label">People</div></div>
-        <div class="concept-step" style="--accent:#b9d651"><div class="icon">&#9993;</div><div class="label">Invitations</div></div>
-        <div class="concept-step" style="--accent:#9cc878"><div class="icon">&#9675;</div><div class="label">Groups</div></div>
-        <div class="concept-step" style="--accent:#5B8FD4"><div class="icon">&#9824;</div><div class="label">Social sports</div></div>
-        <div class="concept-step" style="--accent:#9d72d9"><div class="icon">&#9635;</div><div class="label">Communities</div></div>
-      </div>
-    </div>
-    <div class="concept-foot">That insight opens a new paradigm for social sports.</div>
-  </div>
-</section>
-</div>
-
 <div class="casey-slide concept-slide" id="cs-concept-assumption-vs-reality" style="display:none">
 <section style="position:relative;min-height:100%;width:100%">
   <div class="concept-eyebrow">Concept rail - assumption vs reality</div>
@@ -29916,7 +29886,7 @@ const CONCEPT_ORDER = [
   'cs-concept-match-people',
   'cs-concept-market-gap',
   'cs-concept-five-exist',
-  'cs-concept-core-assumption',  'cs-concept-reject-wrong-assumption',
+  'cs-concept-core-assumption',
   'cs-concept-assumption-vs-reality',
   'cs-concept-powered-by-people',
   'cs-concept-belong-repeat',
@@ -31500,7 +31470,6 @@ if (seedNav && Array.isArray(SEED_ORDER)) {
     seedNav.appendChild(d);
   });
 }
-
 
 
 // Build separate NEPC-staff-story dot rail to the left of existing deck rails.
