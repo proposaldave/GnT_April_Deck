@@ -1,0 +1,113 @@
+## Deck Edit Operating Rules
+
+This repo contains a large single-file HTML investor pitch deck. Treat every deck request as a targeted surgical edit unless the user explicitly asks for a full-deck rewrite.
+
+### Default mode
+
+- Use Targeted Deck Edit Mode for all deck work.
+- Make the smallest diff that satisfies the request.
+- Do not scan, rewrite, reformat, regenerate, or normalize the whole deck.
+- Do not touch unrelated slides, sections, CSS, JS, assets, registries, or copy.
+- Do not change deck order, narrative, brand system, or slide architecture unless explicitly requested.
+- Do not rename files, move assets, restructure folders, or change build tooling unless explicitly required.
+- Do not delete, reset, clean, stash, checkout, or overwrite user work.
+
+### Finding the target
+
+- Start with `git status --short`.
+- Locate the target by exact visible text, slide ID, section ID, dot/alt registry entry, nearby heading, unique class name, or screenshot context.
+- Use targeted search. Avoid broad repo exploration.
+- Ignore large/generated folders unless directly relevant: `node_modules`, `dist`, `build`, exports, screenshots, backups, generated assets, cache folders.
+- If multiple matches exist, inspect only enough surrounding context to choose the correct slide.
+- If ambiguity remains but a safe minimal interpretation exists, proceed with that interpretation.
+- Ask the user only if the edit would risk changing the wrong slide or damaging deck structure.
+
+### Editing
+
+- Make one focused edit at a time.
+- Keep CSS/HTML/JS scoped to the requested slide or component.
+- Preserve existing IDs, class names, animation hooks, registry relationships, responsive behavior, and asset paths unless the request requires changing them.
+- Do not introduce dependencies.
+- Do not split the HTML file, create a new deck system, or perform architectural cleanup while there is active deck-edit queue work.
+- For exact copy changes, perform direct targeted replacement and source verification. Do not open Chrome unless there is a realistic layout risk.
+- For layout/visual changes, use scoped CSS/HTML edits and one focused visual check.
+- For deleting a slide, prefer removing it from active deck order / alt registries / navigation first. Delete the HTML block only when clearly safe or explicitly requested.
+- For moving or restoring slides with animations, preserve the active slide ID when that avoids risky JS rewiring.
+- For mirror files, identify the canonical deck file first, edit canonical first, then mirror to the existing GitHub Pages files such as `sites/GnR_Deck/GnR_deck.html` and `sites/GnR_Deck/index.html` if that is the repo's established workflow. Do not hand-edit mirrors differently from canonical.
+
+### Brand rules
+
+- Brand abbreviation is `GnR`.
+- Never use `GnT` or `Give 'n Take`.
+- Preferred palette: warm cream `#fbf7ef`, ink `#1a1612`, brand gold `#b8954a`, brand blue `#5B8FD4`, brand red `#c8462c`.
+- Never introduce green.
+- For hero art or deck visuals, default to text-free imagery because text is rendered separately in HTML.
+
+### Speed rules
+
+- Assume the main deck HTML file is expensive to process.
+- Avoid repeatedly reading the whole file.
+- Avoid full-file diffs when targeted diffs are enough.
+- Avoid repeated Chrome launches.
+- Avoid repeated GitHub Pages cache checks.
+- Avoid Playwright/runtime debugging unless the user specifically asks for QA automation.
+- If headless/browser QA fails because of local Windows/tooling issues, do not spend cycles fixing QA. Fall back to source checks, targeted DOM checks if cheap, or one normal Chrome open.
+- Batch validation for a small group of queued edits when safe instead of doing full validation after every tiny text replacement.
+- For simple text edits, source check + diff check + commit/push is enough.
+- For visual edits, one local Chrome render check is enough unless the slide is obviously broken.
+- For live GitHub Pages, check once after push if needed. Do not poll repeatedly for cache propagation.
+
+### Validation
+
+Use the cheapest sufficient checks:
+
+- `git diff --check`
+- targeted source search: old text absent, new text present
+- verify canonical and mirror hashes match when mirroring is required
+- verify slide ID remains in or out of the correct main/alt registry
+- one local Chrome open/check for visual edits
+- one live-page HTTP/source check after push only when publishing matters
+
+Do not run expensive builds, full previews, screenshot generation, or full-deck audits unless the request requires it.
+
+### Queue handling
+
+- Finish the current visible task before starting the next one.
+- If a newer user instruction supersedes an older unfinished one, preserve completed non-conflicting work and continue with the newer instruction.
+- Do not revisit already completed commits unless the current request depends on them.
+- If a task was interrupted mid-edit, inspect current file state and continue from there instead of starting over.
+- If the visible queue is exhausted, report that there is no visible pending deck request.
+
+### Commit/push
+
+- Stay on the current branch unless explicitly told otherwise.
+- Commit completed deck edits with concise messages.
+- Push to the existing remote only after checks pass or after noting a non-blocking validation limitation.
+- Do not create a separate commit for AGENTS.md if there is an active deck edit ready to commit; include it in the next sensible deck-work commit unless that would mix unrelated work.
+
+### Response format
+
+Do not use long mission statements.
+Do not say "Model check."
+Do not provide proposals when the user asked for execution.
+Do not ask me to review routine work.
+
+After each completed task, respond briefly:
+
+DONE:
+- what changed
+
+TOUCHED:
+- file(s) and slide/region
+
+CHECKS:
+- what was verified
+
+PUSH:
+- commit hash if pushed, or why not
+
+BLOCKED:
+- only if truly blocked
+
+NEXT:
+- next visible queued task, or "No visible pending deck request."
