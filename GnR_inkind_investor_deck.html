@@ -73,6 +73,23 @@
   .proof-pill{border:1.5px solid rgba(91,143,212,.42);border-radius:8px;background:rgba(91,143,212,.08);padding:13px 16px;text-align:center;font-size:.88rem;font-weight:900;color:rgba(26,22,18,.70)}
   .proof-pill.red{border-color:rgba(200,70,44,.42);background:rgba(200,70,44,.06)}
   .proof-pill.gold{border-color:rgba(184,149,74,.44);background:rgba(184,149,74,.10)}
+  .visual{position:absolute;inset:0;overflow:hidden;background:#f3ead8}
+  .visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(243,234,216,.94) 0%,rgba(243,234,216,.82) 28%,rgba(243,234,216,.18) 58%,rgba(243,234,216,0) 100%)}
+  .visual.right:after{background:linear-gradient(90deg,rgba(243,234,216,0) 0%,rgba(243,234,216,.18) 40%,rgba(243,234,216,.84) 72%,rgba(243,234,216,.95) 100%)}
+  .visual.center:after{background:radial-gradient(circle at 50% 48%,rgba(243,234,216,.90) 0%,rgba(243,234,216,.72) 28%,rgba(243,234,216,.20) 54%,rgba(243,234,216,0) 82%)}
+  .visual-copy{position:absolute;z-index:2;left:72px;top:92px;width:820px}
+  .visual.right .visual-copy{left:auto;right:72px;width:760px}
+  .visual.center .visual-copy{left:50%;top:50%;transform:translate(-50%,-50%);width:1040px;text-align:center}
+  .visual-copy .eyebrow{position:static;margin-bottom:28px}
+  .visual-title{font-family:'Fraunces',Georgia,serif;font-size:6.25rem;line-height:.90;font-weight:850;letter-spacing:0;color:var(--ink)}
+  .visual-title .red{color:var(--red)}.visual-title .gold{color:var(--gold);font-style:italic}.visual-title .blue{color:var(--blue)}
+  .visual-sub{font-family:'Fraunces',Georgia,serif;font-size:1.8rem;line-height:1.18;font-weight:750;color:rgba(26,22,18,.72);margin-top:26px;max-width:760px}
+  .visual.center .visual-sub{margin-left:auto;margin-right:auto}
+  .visual-proof{position:absolute;z-index:2;left:72px;bottom:54px;display:flex;gap:14px}
+  .visual.right .visual-proof{left:auto;right:72px}
+  .visual-chip{border:1.5px solid rgba(184,149,74,.38);background:rgba(251,247,239,.74);border-radius:999px;padding:12px 18px;font-size:.74rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,22,18,.68)}
+  .visual-chip.red{border-color:rgba(200,70,44,.42);color:var(--red)}.visual-chip.blue{border-color:rgba(91,143,212,.42);color:var(--blue)}
 </style>
 </head>
 <body>
@@ -84,35 +101,15 @@
   <section class="slide active"><div class="canvas"><img class="source-img" src="assets/inkind/source_slides/01_source_title.png" alt="Copied slide from original GnR deck"></div></section>
 
   <section class="slide"><div class="canvas">
-    <div class="inkind-slide mechanic">
-      <div class="eyebrow">Investor frame for inKind audience</div><div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
-      <h2 class="mechanic-title">The <em>inKind</em> mechanic, rebuilt for social sports.</h2>
-      <p class="mechanic-sub">Buy perishable capacity cheaply. Package it through a demand engine. Resell it as a higher-value experience.</p>
-      <div class="mechanic-map">
-        <div class="mechanic-panel">
-          <div class="panel-head">inKind</div>
-          <div class="panel-sub">Restaurant capacity engine</div>
-          <div class="mechanic-item"><div class="badge">1</div><div><h3>Buy discounted F&amp;B credit</h3><p>Restaurant gets capital. inKind gets future dining value.</p></div></div>
-          <div class="mechanic-item"><div class="badge">2</div><div><h3>Use the app as demand engine</h3><p>Diners discover, prepay, redeem, and return.</p></div></div>
-          <div class="mechanic-item"><div class="badge">3</div><div><h3>Fill seats that would expire</h3><p>Operator sees cash now and traffic later.</p></div></div>
-        </div>
-        <div class="same">
-          <div class="arrow">-&gt;</div>
-          <div class="same-label">same mechanic</div>
-          <div class="same-note">Perishable inventory becomes packaged demand.</div>
-        </div>
-        <div class="mechanic-panel gnr">
-          <div class="panel-head">Give n Receive</div>
-          <div class="panel-sub">Social sports capacity engine</div>
-          <div class="mechanic-item"><div class="badge">1</div><div><h3>Buy off-peak court hours</h3><p>Club gets guaranteed revenue from dead zones.</p></div></div>
-          <div class="mechanic-item"><div class="badge">2</div><div><h3>Use AI matchmaking as demand engine</h3><p>GnR assembles games players actually want.</p></div></div>
-          <div class="mechanic-item"><div class="badge">3</div><div><h3>Sell the match, not the slot</h3><p>Player pays for fit, confidence, and zero coordination burden.</p></div></div>
-        </div>
+    <div class="visual">
+      <img src="assets/inkind/visuals/inkind_social_layer.png" alt="">
+      <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="visual-copy">
+        <div class="eyebrow">Investor frame for inKind audience</div>
+        <div class="visual-title"><span class="gold">inKind</span> buys empty tables. <span class="red">GnR</span> buys empty courts.</div>
+        <div class="visual-sub">Same capacity mechanic. Bigger social layer: the match can be worth more than the slot.</div>
       </div>
-      <div class="twist">
-        <div><div class="twist-kicker">The new twist</div><div class="twist-title">The court is cheap. The match is premium.</div></div>
-        <div><p class="twist-copy">Potential price ceiling: above a raw prime-time court booking because players are buying the right people, not just time on a court.</p><div class="proof-row"><div class="proof-pill">86.7% small-group acceptance</div><div class="proof-pill red">0.65 -> 0.90 AUC in week one</div><div class="proof-pill gold">SMS-first B2B2C</div></div></div>
-      </div>
+      <div class="visual-proof"><div class="visual-chip blue">Buy capacity</div><div class="visual-chip">Package demand</div><div class="visual-chip red">Sell belonging</div></div>
     </div>
   </div></section>
 
@@ -120,16 +117,15 @@
   <section class="slide"><div class="canvas"><img class="source-img" src="assets/inkind/source_slides/04_product.png" alt="Copied slide from original GnR deck"></div></section>
 
   <section class="slide"><div class="canvas">
-    <div class="inkind-slide">
-      <div class="eyebrow">Court credit launch program</div><div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
-      <h2>We lead with a no-brainer club-owner offer: <em>cash for dead-zone courts.</em></h2>
-      <div class="flow">
-        <div class="step"><div class="num">01</div><div class="txt">Buy underused court inventory upfront.</div></div>
-        <div class="step"><div class="num">02</div><div class="txt">Club defines off-peak windows only.</div></div>
-        <div class="step"><div class="num">03</div><div class="txt">GnR gets data access to invite and schedule.</div></div>
-        <div class="step"><div class="num">04</div><div class="txt">We fill courts with curated groups, not discount credits.</div></div>
-        <div class="step"><div class="num">05</div><div class="txt">Convert proof into a 90-day revenue-share pilot.</div></div>
+    <div class="visual">
+      <img src="assets/inkind/visuals/court_credit_offer.png" alt="">
+      <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="visual-copy">
+        <div class="eyebrow">Court credit launch program</div>
+        <div class="visual-title"><span class="red">$10K</span> upfront. Off-peak only. We fill it.</div>
+        <div class="visual-sub">A club-owner offer they understand in ten seconds: cash for dead-zone courts, no peak-time cannibalization.</div>
       </div>
+      <div class="visual-proof"><div class="visual-chip">Guaranteed revenue</div><div class="visual-chip blue">Curated demand</div><div class="visual-chip red">No member displacement</div></div>
     </div>
   </div></section>
 
@@ -138,15 +134,15 @@
   <section class="slide"><div class="canvas"><img class="source-img" src="assets/inkind/source_slides/08_intelligence.png" alt="Copied slide from original GnR deck"></div></section>
 
   <section class="slide"><div class="canvas">
-    <div class="inkind-slide">
-      <div class="eyebrow">Why inKind people should care</div><div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
-      <h2>Once you know <em>who creates pull</em>, you can fill more than courts.</h2>
-      <div class="grid three">
-        <div class="card"><div><div class="kicker">Court signal</div><p><strong>Who says yes because Johnny is playing?</strong><br>That is social demand, not availability.</p></div></div>
-        <div class="card red"><div><div class="kicker">Vibe anchors</div><p><strong>Some people make rooms fill.</strong><br>They are not influencers. They are trust, fun, and belonging anchors.</p></div></div>
-        <div class="card blue"><div><div class="kicker">Dining bridge</div><p><strong>Pickleball often becomes lunch after.</strong><br>The same invitation graph can tell you who makes the table worth joining.</p></div></div>
+    <div class="visual right">
+      <img src="assets/inkind/visuals/vibe_anchors.png" alt="">
+      <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="visual-copy">
+        <div class="eyebrow">Vibe anchors</div>
+        <div class="visual-title">Some people make the <span class="gold">room</span> fill.</div>
+        <div class="visual-sub">GnR learns who creates pull, then sends the invitation that makes the game, lunch, or table happen.</div>
       </div>
-      <div class="rule"><div class="line">inKind knows where the table is. GnR can know who makes the table worth joining.</div><div class="small">Portable demand intelligence</div></div>
+      <div class="visual-proof"><div class="visual-chip red">Social pull</div><div class="visual-chip">Invitation graph</div><div class="visual-chip blue">Portable demand</div></div>
     </div>
   </div></section>
 
@@ -154,20 +150,15 @@
   <section class="slide"><div class="canvas"><img class="source-img" src="assets/inkind/source_slides/11_expansion.png" alt="Copied slide from original GnR deck"></div></section>
 
   <section class="slide"><div class="canvas">
-    <div class="inkind-slide">
-      <div class="eyebrow">Raise</div><div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
-      <div class="ask">
-        <div>
-          <div class="ask-num">$2.5M</div>
-          <p class="sub">Seed round at a <strong>$10M pre-money valuation</strong> for the Give n Receive technology company.</p>
-          <p class="sub" style="font-size:1.25rem;margin-top:22px">New England Pickleball Club is not included. NEPC remains the owned operating lab.</p>
-        </div>
-        <div>
-          <div class="use"><div class="pct">50%</div><div class="txt">Close the loop: ASC engine, corrections, adoption tracking, and production deployment.</div></div>
-          <div class="use"><div class="pct">30%</div><div class="txt">External clubs: 3-5 pilots using the court-credit launch mechanic.</div></div>
-          <div class="use"><div class="pct">20%</div><div class="txt">Data science: graph hardening, cross-club transfer, and investor-grade proof reports.</div></div>
-        </div>
+    <div class="visual center">
+      <img src="assets/inkind/visuals/raise_background.png" alt="">
+      <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="visual-copy">
+        <div class="eyebrow">Raise</div>
+        <div class="visual-title"><span class="red">$2.5M</span> seed at <span class="gold">$10M</span> pre.</div>
+        <div class="visual-sub">For the Give n Receive technology company. NEPC is not included; it remains the operating lab.</div>
       </div>
+      <div class="visual-proof" style="left:50%;transform:translateX(-50%)"><div class="visual-chip">Close the loop</div><div class="visual-chip blue">Launch external clubs</div><div class="visual-chip red">Harden the graph</div></div>
     </div>
   </div></section>
 </main>
