@@ -7461,7 +7461,7 @@ window.cs1m5Reverse = function() {
      image for assets/cs-frontier-pink1.png (sunset town/village wide-angle watercolor).
      Fallback chain → cs-frontier-iconic-hero.png so slide always renders.
      ═══════════════════════════════════════════════════════════════════════════ -->
-<div class="casey-slide ds-focus active casey-entered frontier-feeling-slide" id="cs-frontier-pink1" data-stage="0" onclick="csFrontierFeelingAdvance()" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 66%, #eadcc3 100%) !important;overflow:hidden">
+<div class="casey-slide ds-focus active casey-entered frontier-feeling-slide" id="cs-frontier-pink1" data-stage="1" onclick="csFrontierFeelingAdvance()" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 68%, #eadcc3 100%) !important;overflow:hidden">
   <style>
     #cs-frontier-pink1 .ms-stage{position:absolute;inset:0;padding:28px 48px 44px;color:#1a1612}
     #cs-frontier-pink1 .ms-paper{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,.045) 1px, transparent 0);background-size:4px 4px;opacity:.38;mix-blend-mode:multiply;pointer-events:none}
@@ -7503,32 +7503,43 @@ window.cs1m5Reverse = function() {
     #cs-frontier-pink1 .ms-footer:before,#cs-frontier-pink1 .ms-footer:after{content:"";height:1px;flex:1;background:linear-gradient(90deg, transparent, rgba(184,149,74,.55))}
     #cs-frontier-pink1 .ms-footer:after{background:linear-gradient(90deg, rgba(184,149,74,.55), transparent)}
     #cs-frontier-pink1 .ms-footer .g{color:#5B8FD4}#cs-frontier-pink1 .ms-footer .n{color:#b8954a;font-style:italic}#cs-frontier-pink1 .ms-footer .r{color:#c8462c}#cs-frontier-pink1 .ms-footer em{font-style:italic;color:#b8954a}
+    #cs-frontier-pink1 .ms-stage{display:block;padding:58px 74px 42px}
+    #cs-frontier-pink1 .ms-paper{opacity:.34;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,.035) 1px, transparent 0)}
+    #cs-frontier-pink1 .ms-glow{background:radial-gradient(circle at 72% 46%, rgba(184,149,74,.16), transparent 32%),radial-gradient(circle at 20% 50%, rgba(91,143,212,.08), transparent 30%)}
+    #cs-frontier-pink1 .ms-eye{position:absolute;top:28px;left:48px;z-index:4;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a}
+    #cs-frontier-pink1 .ms-mark{position:absolute;top:28px;right:44px;z-index:4;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.04rem;font-weight:850;line-height:1}
+    #cs-frontier-pink1 .ms-mark .g{color:#5B8FD4}#cs-frontier-pink1 .ms-mark .n{color:#b8954a;font-style:italic}#cs-frontier-pink1 .ms-mark .r{color:#c8462c}
+    #cs-frontier-pink1 .ms-head{font-size:clamp(3.4rem,5.25vw,5.85rem);line-height:.98;letter-spacing:0;max-width:1500px}
+    #cs-frontier-pink1 .ms-graphic{left:80px;right:80px;top:332px;width:auto;height:435px;transform:none;border-radius:22px;overflow:hidden;box-shadow:0 32px 80px rgba(74,53,26,.16), inset 0 0 0 1px rgba(184,149,74,.18);background:#efe3cd}
+    #cs-frontier-pink1 .ms-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
+    #cs-frontier-pink1 .ms-graphic:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg, rgba(10,23,35,.16) 0%, rgba(251,247,239,.36) 49%, rgba(255,235,188,.05) 100%);pointer-events:none}
+    #cs-frontier-pink1 .ms-divider{position:absolute;left:50%;top:0;bottom:0;z-index:2;width:1px;background:linear-gradient(180deg, transparent, rgba(251,247,239,.84) 24%, rgba(184,149,74,.54) 50%, rgba(251,247,239,.84) 76%, transparent)}
+    #cs-frontier-pink1 .ms-vs{position:absolute;left:50%;top:50%;z-index:3;transform:translate(-50%,-50%);width:88px;height:88px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(251,247,239,.9);box-shadow:0 12px 28px rgba(74,53,26,.14);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.38rem;font-weight:850;color:#b8954a}
+    #cs-frontier-pink1 .ms-pill{position:absolute;right:128px;top:34px;z-index:3;font-family:'Manrope',sans-serif;font-size:1.08rem;font-weight:850;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;background:rgba(251,247,239,.88);border-radius:999px;padding:10px 22px;box-shadow:0 8px 24px rgba(74,53,26,.12)}
+    #cs-frontier-pink1 .ms-signal{position:absolute;right:156px;top:88px;z-index:3;font-family:'Manrope',sans-serif;font-size:.54rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,.62);background:rgba(251,247,239,.78);border-radius:999px;padding:7px 15px}
+    #cs-frontier-pink1 .ms-tech{position:absolute;left:44px;bottom:38px;z-index:3;display:grid;grid-template-columns:repeat(4,46px);gap:14px;align-items:end;padding:18px 20px;border-radius:14px;background:rgba(15,25,34,.56);box-shadow:0 18px 40px rgba(0,0,0,.14);backdrop-filter:blur(6px)}
+    #cs-frontier-pink1 .ms-tech i{display:block;width:46px;border-radius:5px 5px 0 0;background:rgba(91,143,212,.75)}
+    #cs-frontier-pink1 .ms-tech i:nth-child(1){height:30px}#cs-frontier-pink1 .ms-tech i:nth-child(2){height:48px}#cs-frontier-pink1 .ms-tech i:nth-child(3){height:70px}#cs-frontier-pink1 .ms-tech i:nth-child(4){height:92px}
+    #cs-frontier-pink1 .ms-footer{display:block;left:0;right:0;margin:0 auto;transform:none;bottom:52px;width:min(1240px,86vw);font-size:clamp(2.05rem,2.45vw,2.85rem);line-height:1.04}
+    #cs-frontier-pink1 .ms-footer:before,#cs-frontier-pink1 .ms-footer:after{display:none}
   </style>
   <div class="ms-paper"></div>
   <div class="ms-glow"></div>
+  <div class="ms-eye">The missing human signal</div>
   <section class="ms-stage">
     <div class="ms-eye">The missing human signal</div>
     <div class="ms-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
     <h1 class="ms-head">The <em>#1 predictor</em> of a fulfilling life is still invisible to technology.</h1>
     <div class="ms-sub"><strong>We are deeply wired to feel connected.</strong> <span>Technology still measures the wrong side.</span></div>
     <div class="ms-graphic" aria-label="Technology metrics balanced against real human connection">
-      <div class="ms-beam"></div>
-      <div class="ms-fulcrum"></div>
-      <div class="ms-scale-pan left"></div>
-      <div class="ms-scale-pan right"></div>
-      <div class="ms-panel left">
-        <div class="ms-metric ms-m1"><b>2.1K</b><span>Likes</span></div>
-        <div class="ms-metric ms-m2"><b>12,845</b><span>Followers</span></div>
-        <div class="ms-metric ms-m3"><b>87%</b><span>Productivity</span></div>
-        <div class="ms-metric ms-m4"><b>6h 42m</b><span>Screen time</span></div>
-        <div class="ms-chart"><svg viewBox="0 0 250 86" aria-hidden="true"><path d="M26 58 L72 46 L112 53 L148 34 L184 42 L222 18" fill="none" stroke="#b8954a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 68 L222 68" stroke="rgba(251,247,239,.18)" stroke-width="2"/><rect x="42" y="50" width="14" height="18" fill="rgba(91,143,212,.55)"/><rect x="78" y="40" width="14" height="28" fill="rgba(91,143,212,.65)"/><rect x="114" y="30" width="14" height="38" fill="rgba(91,143,212,.75)"/><rect x="150" y="22" width="14" height="46" fill="rgba(91,143,212,.85)"/></svg></div>
-      </div>
-      <div class="ms-panel right">
-        <div class="ms-sun"></div>
-        <div class="ms-people"><div class="ms-person"></div><div class="ms-person"></div><div class="ms-person"></div><div class="ms-person"></div><div class="ms-person"></div></div>
-      </div>
+      <img class="ms-image" src="assets/cs-brand-codex.png" alt="">
+      <div class="ms-divider"></div>
+      <div class="ms-vs">vs.</div>
+      <div class="ms-pill">Technology cannot see</div>
+      <div class="ms-signal">belonging + being known + shared experience + contribution</div>
+      <div class="ms-tech" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     </div>
-    <div class="ms-footer"><span><span class="g">Give</span> <span class="n">n</span> <span class="r">Receive</span> measures the <em>missing signal.</em></span></div>
+    <div class="ms-footer"><span><span class="g">Gn</span><span class="r">R</span> measures the <em>missing signal</em> behind human connection.</span></div>
   </section>
 </div>
 
