@@ -30131,7 +30131,7 @@ const SLIDE_ORDER = [
   'cs-3',           // Pickleball 24 unique social experiences per week — fastest-growing, highest-velocity, densest social-signal community
   // [Dave 2026-05-24] Prior move comments were superseded by the current post-Munger block; cs-19 now follows cs-3 after the invitation-mechanics beat.
   'cs-19',    // 3× court fee revenue · For Your Club ('3x your community') — follows the wedge claim
-  'cs-racketeer-att-arc', // RACKETEER · 3-quote narrative arc — first prospective customer outside NEPC
+  // [Dave 2026-05-26] cs-racketeer-att-arc MOVED to APPENDIX per screenshot request.
   'cs-wedge1',     // "The next great network is the one that helps us find ourselves and find each other."
   'cs-mv6-merge', // HUMANITY'S ENDGAME - mission/demand curve moved to final-quarter vision section.
   // [Dave 2026-05-24 LATER] Founder fit now lands after product, proof, customer, and vision context, immediately before team/CTO.
@@ -30322,8 +30322,8 @@ const SLIDE_ALTS = {
   13: ['cs-magnetic-orig', 'cs-merge3'],
   // [Dave 2026-05-24] Blue-dot attempts for 'Pickleball silliness is a feature, not a bug' left of the main pickleball wedge slide.
   14: ['cs-pb-silly-feature', 'cs-pb-silly-social'],
-  // [Codex 2026-05-26] Racketeer path candidates belong under the Racketeer proof slide. They had drifted to slot 21 after the deck reorder, creating a broken 21/24 alt.
-  18: ['cs-racketeer-path1', 'cs-racketeer-path2', 'cs-racketeer-path3'],
+  // [Dave 2026-05-26] Racketeer proof slide moved to appendix; detach same-slot Racketeer path alts from the main flow.
+  18: [],
   20: [],
   // [Dave 2026-05-19] Three new pink-dot Racketeer path attempts. Main Racketeer slide stays unchanged.
   21: [],
@@ -30367,12 +30367,11 @@ const CODEX_BG_REVIEW_ALTS = [
   { slot: 14, sourceId: 'cs-11',                 id: 'cs-11-bg-green',                 image: 'assets/v2/cs-11/v1-hero-measurement.-preview.png' },
   { slot: 15, sourceId: 'cs-3',                  id: 'cs-3-bg-green',                  image: 'assets/v2/cs-3/v1-hero-signal-density.-preview.png' },
   { slot: 16, sourceId: 'cs-19',                 id: 'cs-19-bg-green',                 image: 'assets/v2/cs-19/v1-hero-revenue.-preview.png' },
-  { slot: 17, sourceId: 'cs-racketeer-att-arc',  id: 'cs-racketeer-att-arc-bg-green',  image: 'assets/inkind/visuals/inkind_social_layer.png' },
-  { slot: 18, sourceId: 'cs-wedge1',             id: 'cs-wedge1-bg-green',             image: 'assets/v2/cs-wedge1/v1-hero-expansion.-preview.png' },
-  { slot: 19, sourceId: 'cs-mv6-merge',          id: 'cs-mv6-merge-bg-green',          image: 'assets/cs-mv6-humans.png' },
-  { slot: 20, sourceId: 'cs-18-vd4',             id: 'cs-18-vd4-bg-green',             image: 'assets/v2/cs-18-vd4/v1-hero-founder.-preview.png' },
-  { slot: 21, sourceId: 'cs-27',                 id: 'cs-27-bg-green',                 image: 'assets/v2/cs-27/v1-hero-cto.-preview.png' },
-  { slot: 22, sourceId: 'cs-brand-V8',           id: 'cs-brand-V8-bg-green',           image: 'assets/cs-brand-codex.png' }
+  { slot: 17, sourceId: 'cs-wedge1',             id: 'cs-wedge1-bg-green',             image: 'assets/v2/cs-wedge1/v1-hero-expansion.-preview.png' },
+  { slot: 18, sourceId: 'cs-mv6-merge',          id: 'cs-mv6-merge-bg-green',          image: 'assets/cs-mv6-humans.png' },
+  { slot: 19, sourceId: 'cs-18-vd4',             id: 'cs-18-vd4-bg-green',             image: 'assets/v2/cs-18-vd4/v1-hero-founder.-preview.png' },
+  { slot: 20, sourceId: 'cs-27',                 id: 'cs-27-bg-green',                 image: 'assets/v2/cs-27/v1-hero-cto.-preview.png' },
+  { slot: 21, sourceId: 'cs-brand-V8',           id: 'cs-brand-V8-bg-green',           image: 'assets/cs-brand-codex.png' }
 ];
 
 CODEX_BG_REVIEW_ALTS.forEach(cfg => {
@@ -30419,6 +30418,8 @@ const APPENDIX_ORDER = [
   'cs-cultural-shift',
   // [Dave 2026-05-26] cs-givefirst-art MOVED here from SLIDE_ORDER per screenshot request: "You can't tell someone to open their heart."
   'cs-givefirst-art',
+  // [Dave 2026-05-26] cs-racketeer-att-arc MOVED here from SLIDE_ORDER per screenshot request: Racketeer three-quote proof slide.
+  'cs-racketeer-att-arc',
   // [Dave 2026-05-18 LATEST] cs-brand-att5 MOVED here from SLIDE_ALTS[3] per Dave 'move this slide to appendix'. The invisible→seen diptych ('A community of strangers' grey scatter → 'A community that gives back' connected G·n·R constellation). Preserved as appendix reference.
   'cs-brand-att5',
   // [Dave 2026-05-17 v6] cs-frontier + cs-intro6 MOVED here from SLIDE_ALTS[1] per Dave (consecutive 'move this slide to appendix' on both). cs-frontier = '#1 predictor of a fulfilling life / Giving and receiving real connection' + demand curve. cs-intro6 = 'An incredible truth / The #1 predictor of a fulfilling life: openly giving and receiving human connection' + 4-field science strip.
