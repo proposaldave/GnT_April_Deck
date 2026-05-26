@@ -12477,9 +12477,13 @@ window.cs1m7Reverse = function() {
   #cs-gnr .gnr-env-svg { display:block; width:100%; height:auto; filter:drop-shadow(0 2px 10px rgba(184,149,74,0.20)); }
   #cs-gnr .gnr-env-text { position:absolute; top:72%; left:50%; transform:translate(-50%,-50%); width:88%; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1rem,1.55vw,1.35rem); font-weight:700; color:#1a1612; line-height:1.22; letter-spacing:-0.008em; }
   #cs-gnr .gnr-env-text em { font-style:italic; font-weight:500; color:#b8954a; }
-  /* Stage-2 reveal [Dave 2026-05-06 PM v2]: ONLY the 3 envelopes (and the down arrow above them) hide on load.
-     The "GnR envelope experience" headline stays visible so Dave can introduce the slide.
-     Each envelope animates in with translateY + scale stagger when slide advances. */
+  #cs-gnr .gnr-lonely-bg { position:absolute; inset:0; z-index:0; overflow:hidden; }
+  #cs-gnr .gnr-lonely-bg img { width:100%; height:100%; object-fit:cover; display:block; filter:saturate(0.88) contrast(0.95); }
+  #cs-gnr .gnr-lonely-bg::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,rgba(26,22,18,0.18) 0%,rgba(251,247,239,0.08) 45%,rgba(251,247,239,0.30) 100%); }
+  #cs-gnr .gnr-reveal-on-advance { opacity:0; transform:translateY(12px); transition:opacity 0.7s cubic-bezier(.45,.05,.18,1), transform 0.7s cubic-bezier(.45,.05,.18,1); pointer-events:none; }
+  #cs-gnr[data-shown="1"] .gnr-reveal-on-advance { opacity:1; transform:translateY(0); pointer-events:auto; }
+  html[data-export="1"] #cs-gnr .gnr-reveal-on-advance { opacity:1 !important; transform:none !important; pointer-events:auto !important; transition:none !important; }
+  /* Stage-2 reveal [Dave 2026-05-06 PM v2]: 3 envelopes animate in with translateY + scale stagger when slide advances. */
   #cs-gnr .gnr-stage2 { opacity: 0 !important; transition: opacity 0.55s cubic-bezier(.45,.05,.18,1); pointer-events: none; }
   #cs-gnr[data-shown="1"] .gnr-stage2 { opacity: 1 !important; pointer-events: auto; }
   #cs-gnr[data-shown="1"] .gnr-stage2.s2-2 { transition-delay: 0.10s; }
@@ -12612,9 +12616,10 @@ window.cs1m7Reverse = function() {
 
 <div class="casey-slide ds-focus" id="cs-gnr" data-shown="0" onclick="csGnrAdvance()" style="cursor:pointer">
 <section style="position:relative;min-height:100%;width:100%">
+<div class="gnr-lonely-bg" aria-hidden="true"><img src="design_refs/gnr_lonely_phone_background.png" alt=""/></div>
 <!-- [Dave 2026-05-18 LATEST] Eyebrow trimmed per Dave 'Autonomous, abundant connection's core product → Core product'. -->
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Core product</div>
-<div class="inner" style="padding-top:60px;text-align:center;max-width:1100px;margin:0 auto">
+<div class="gnr-reveal-on-advance" style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Core product</div>
+<div class="inner gnr-reveal-on-advance" style="position:relative;z-index:1;padding-top:60px;text-align:center;max-width:1100px;margin:0 auto">
 
   <!-- Headline moved BELOW the large envelope, ABOVE the 3 small envelopes [Dave 2026-05-03 PM] -->
 
@@ -12653,11 +12658,11 @@ window.cs1m7Reverse = function() {
 
   <style>
     #cs-gnr .gnr-env-hero { opacity:0; transform:translateY(14px) rotate(-2deg); }
-    #cs-gnr.active .gnr-env-hero { animation: gnrEnvHeroIn 1.0s cubic-bezier(.45,.05,.18,1) forwards 0.30s; }
+    #cs-gnr.active[data-shown="1"] .gnr-env-hero { animation: gnrEnvHeroIn 1.0s cubic-bezier(.45,.05,.18,1) forwards 0.30s; }
     @keyframes gnrEnvHeroIn { to { opacity:1; transform:translateY(0) rotate(-1deg); } }
     /* Foursome strip is absolute-positioned at the BOTTOM of the envelope (top:86%) per Dave 2026-05-03 PM —
        was overlapping the GnR seal at top:64%. Keyframe preserves translate(-50%,-50%) centering throughout. */
-    #cs-gnr.active .gnr-fs-strip { animation: gnrFsStripIn 0.7s cubic-bezier(.45,.05,.18,1) forwards 1.10s; }
+    #cs-gnr.active[data-shown="1"] .gnr-fs-strip { animation: gnrFsStripIn 0.7s cubic-bezier(.45,.05,.18,1) forwards 1.10s; }
     @keyframes gnrFsStripIn {
       from { opacity:0; transform:translate(-50%, calc(-50% + 8px)); }
       to   { opacity:1; transform:translate(-50%, -50%); }
