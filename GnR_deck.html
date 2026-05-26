@@ -20736,9 +20736,9 @@ window.cs1m7Reverse = function() {
   /* [Dave 2026-05-18 LATEST v3] Per-line stagger WIDENED + per-item transition LENGTHENED per Dave 'these could animate in a little better (eg instead of the block all at once, one line at a time would look better)'. Old gaps were 0.05/0.20/0.35s with 0.55s transitions — that read as a fast block. New gaps are 0/0.55/1.10s with 0.85s transitions + larger 16px y-offset, so each bullet visibly arrives on its own beat. */
   #cs-samecourt[data-stage="0"] .sc-col.red  .sc-item,
   #cs-samecourt[data-stage="0"] .sc-col.blue .sc-item { opacity:0; transform:translateY(16px); pointer-events:none; }
-  #cs-samecourt[data-stage="1"] .sc-col.blue .sc-item { opacity:0; transform:translateY(16px); pointer-events:none; }
-  /* Stage 1 reveals LEFT (red) column with WIDE stagger */
   #cs-samecourt[data-stage="1"] .sc-col.red  .sc-item,
+  #cs-samecourt[data-stage="1"] .sc-col.blue .sc-item { opacity:0; transform:translateY(16px); pointer-events:none; }
+  /* Stage 2 reveals the below-card text; it stays out of the initial content reveal. */
   #cs-samecourt[data-stage="2"] .sc-col.red  .sc-item,
   #cs-samecourt[data-stage="2"] .sc-col.blue .sc-item {
     opacity:1; transform:none;
