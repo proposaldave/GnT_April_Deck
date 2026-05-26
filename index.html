@@ -7527,14 +7527,14 @@ window.cs1m5Reverse = function() {
     #cs-frontier-pink1 .ms-tech{position:absolute;left:44px;bottom:38px;z-index:3;display:grid;grid-template-columns:repeat(4,46px);gap:14px;align-items:end;padding:18px 20px;border-radius:14px;background:rgba(15,25,34,.56);box-shadow:0 18px 40px rgba(0,0,0,.14);backdrop-filter:blur(6px)}
     #cs-frontier-pink1 .ms-tech i{display:block;width:46px;border-radius:5px 5px 0 0;background:rgba(91,143,212,.75)}
     #cs-frontier-pink1 .ms-tech i:nth-child(1){height:30px}#cs-frontier-pink1 .ms-tech i:nth-child(2){height:48px}#cs-frontier-pink1 .ms-tech i:nth-child(3){height:70px}#cs-frontier-pink1 .ms-tech i:nth-child(4){height:92px}
-    #cs-frontier-pink1 .ms-footer{display:block;left:0;right:0;margin:0 auto;transform:none;bottom:52px;width:min(1500px,90vw);font-size:clamp(1.9rem,2.25vw,2.55rem);line-height:1.04;white-space:nowrap}
+    #cs-frontier-pink1 .ms-footer{display:block;left:0;right:0;margin:0 auto;transform:none;bottom:72px;width:min(1500px,90vw);font-size:clamp(1.9rem,2.25vw,2.55rem);line-height:1.04;white-space:nowrap}
     #cs-frontier-pink1 .ms-footer:before,#cs-frontier-pink1 .ms-footer:after{display:none}
   </style>
   <div class="ms-paper"></div>
   <div class="ms-glow"></div>
-  <div class="ms-eye">What we're most wired for isn't measured</div>
+  <div class="ms-eye">NEUROSCIENCE &bull; LONGITUDINAL &bull; PUBLIC HEALTH &bull; EPIDEMOLOGY</div>
   <section class="ms-stage">
-    <div class="ms-eye">What we're most wired for isn't measured</div>
+    <div class="ms-eye">NEUROSCIENCE &bull; LONGITUDINAL &bull; PUBLIC HEALTH &bull; EPIDEMOLOGY</div>
     <div class="ms-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
     <h1 class="ms-head">The <em>#1 predictor</em> of a fulfilling life is still invisible to technology.</h1>
     <div class="ms-graphic" aria-label="Technology metrics balanced against real human connection">
@@ -7543,7 +7543,7 @@ window.cs1m5Reverse = function() {
       <div class="ms-vs">vs.</div>
       <div class="ms-tech" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     </div>
-    <div class="ms-footer"><span><span class="g">G</span><span class="n">n</span><span class="r">R</span> measures the <em>missing signal</em> behind human connection.</span></div>
+    <div class="ms-footer"><span>What we're most wired for isn't measured</span></div>
   </section>
 </div>
 
@@ -12855,13 +12855,13 @@ window.cs1m7Reverse = function() {
 <section style="position:relative;min-height:100%;width:100%">
 <div class="gnr-lonely-bg" aria-hidden="true"><img src="design_refs/gnr_loneliness_deck_style.png" alt=""/></div>
 <!-- [Dave 2026-05-18 LATEST] Eyebrow trimmed per Dave 'Autonomous, abundant connection's core product → Core product'. -->
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Core product</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">The core product to solve loneliness</div>
 <div class="inner gnr-reveal-on-advance" style="position:relative;z-index:1;padding-top:60px;text-align:center;max-width:1100px;margin:0 auto">
 
   <!-- Headline moved BELOW the large envelope, ABOVE the 3 small envelopes [Dave 2026-05-03 PM] -->
 
   <!-- Headline ABOVE the large envelope — Dave 2026-05-06 PM: bumped ~25% larger to command the slide -->
-  <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:700;color:#1a1612;line-height:1.12;letter-spacing:-0.022em;max-width:1180px;margin:0 auto 8px;text-align:center">
+  <div class="gnr-load-hidden" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:700;color:#1a1612;line-height:1.12;letter-spacing:-0.022em;max-width:1180px;margin:0 auto 8px;text-align:center">
     <em style="font-style:italic;font-weight:500;color:#1a1612">The rise of the personalized invitation feed</em>
   </div>
 
@@ -12894,6 +12894,9 @@ window.cs1m7Reverse = function() {
   </div>
 
   <style>
+    #cs-gnr .gnr-load-hidden { transition:opacity 0.7s cubic-bezier(.45,.05,.18,1), transform 0.7s cubic-bezier(.45,.05,.18,1); }
+    #cs-gnr:not([data-shown="1"]) .gnr-load-hidden { opacity:0 !important; transform:translateY(12px); pointer-events:none; }
+    #cs-gnr[data-shown="1"] .gnr-load-hidden { opacity:1; transform:translateY(0); }
     #cs-gnr .gnr-env-hero { opacity:0; transform:translateY(14px) rotate(-2deg); }
     #cs-gnr.active[data-shown="1"] .gnr-env-hero { animation: gnrEnvHeroIn 1.0s cubic-bezier(.45,.05,.18,1) forwards 0.30s; }
     @keyframes gnrEnvHeroIn { to { opacity:1; transform:translateY(0) rotate(-1deg); } }
@@ -12908,8 +12911,8 @@ window.cs1m7Reverse = function() {
     html[data-export="1"] #cs-gnr .gnr-fs-strip { opacity:1 !important; transform:translate(-50%,-50%) !important; animation:none !important; }
   </style>
 
-  <!-- "GnR envelope experience" headline — always visible -->
-  <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.5rem,2.9vw,2.3rem);font-weight:700;color:#1a1612;line-height:1.2;letter-spacing:-0.016em;max-width:1080px;margin:14px auto 0;text-align:center">
+  <!-- "GnR envelope experience" headline -->
+  <div class="gnr-load-hidden" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.5rem,2.9vw,2.3rem);font-weight:700;color:#1a1612;line-height:1.2;letter-spacing:-0.016em;max-width:1080px;margin:14px auto 0;text-align:center">
     <span style="display:inline-block;padding:2px 14px 5px;border-radius:999px;background:rgba(251,247,239,0.72);box-shadow:0 8px 24px rgba(251,247,239,0.46)">
     Experience the <em style="font-style:italic;font-weight:500;color:#1a1612">envelope</em>
     </span>
@@ -19342,7 +19345,7 @@ window.cs1m7Reverse = function() {
     opacity:1 !important; transform:translateY(-50%) rotate(-1.5deg) !important; transition:none !important;
   }
 </style>
-<div class="casey-slide ds-focus" id="cs-brand-codex" style="display:none">
+<div class="casey-slide ds-focus trash-slide" id="cs-brand-codex" style="display:none">
   <img class="bc-bg" src="assets/cs-brand-codex.png" alt="Watercolor split image — left half cool-toned with a smartphone spilling profile cards into isolated, faceless figures (the social-media view of human connection); right half warm gold with handshakes, friends at a glowing dinner table, and pickleball courts activated under string lights (the Give n Receive future)." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
 
   <!-- [Dave 2026-05-24] Eyebrow remains the slide/category cue; brand-promise band now animates in after load. -->
@@ -29858,7 +29861,7 @@ window.csA7m1Reverse = function() {
   #cs-community-business .cb-arrow svg{width:72px;height:54px}
   #cs-community-business .cb-close{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.15rem,3.3vw,3.7rem);font-weight:900;line-height:1.06;letter-spacing:-.028em;color:#1a1612;margin:58px 0 0;max-width:1500px}
   #cs-community-business .cb-close em{display:block;font-style:italic;color:#c8462c}
-  #cs-community-business .cb-title,#cs-community-business .cb-sub,#cs-community-business .cb-card,#cs-community-business .cb-close{opacity:0;transform:translateY(12px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
+  #cs-community-business .cb-title,#cs-community-business .cb-sub,#cs-community-business .cb-card,#cs-community-business .cb-close{opacity:1;transform:none;transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
   #cs-community-business.active{display:flex!important;opacity:1!important;visibility:visible!important}
   #cs-community-business.active .cb-stage,#cs-community-business.active .cb-stage *{visibility:visible!important}
   #cs-community-business.casey-entered .cb-title{opacity:1;transform:none;transition-delay:.05s}
@@ -30071,8 +30074,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-17 LATEST PINK] Two pink-dot alts added at slot 1 — duplicates of cs-frontier-iconic with different bg images (cs-frontier-pink1 + cs-frontier-pink2). Same eyebrow/headline/structure, swapped hero img only. Fallback chain → cs-frontier-iconic-hero.png so they always render.
   // [Dave 2026-05-17 LATEST] cs-frontier-iconic REMOVED from slot-1 alts per Dave 'you can delete this slide'. HTML retained as silent backup.
   // [Dave 2026-05-18] cs-frontier-pink2 ALSO REMOVED per Dave 'delete the "1 / 24 (alt)" slide'. Slot 1 now has zero alts. HTML retained as silent backup.
-  // [Dave 2026-05-26] cs-brand-codex moved out of main deck and registered here as the pink-dot slide immediately left of slide 1.
-  1: ['cs-brand-codex'],
+  // [Dave 2026-05-26] cs-brand-codex moved from slot-1 pink-dot alt to TRASH_ORDER per screenshot request.
+  1: [],
   // [Codex 2026-05-24] New slide-2 HCT story variants. Pink-dot alts left of cs-hct-system.
   // [Dave 2026-05-25] cs-hct-system-pink1 moved to TRASH_ORDER per screenshot request.
   2: [],
@@ -30190,6 +30193,37 @@ const SLIDE_ALTS = {
   // cs-brand-V13 ('What you give is you leaving a mark. / What you get is life sending it back.') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
   // cs-brand-V14 ('You get back what matters most. / Like it was meant to be.') REMOVED 2026-05-07 per Dave: 'delete this'. HTML retained as silent backup.
 };
+
+// [Codex 2026-05-26] Green-dot background-image review alts.
+// Main-flow slides with an existing background image stay untouched. These
+// generated alts clone the active main slide at runtime, insert one emotional
+// image layer behind the cloned content, and register as same-slot green dots.
+const CODEX_BG_REVIEW_ALTS = [
+  { slot: 2,  sourceId: 'cs-1m8',                id: 'cs-1m8-bg-green',                image: 'assets/gnr_vnext_opener_constellation.png' },
+  { slot: 3,  sourceId: 'cs-2c',                 id: 'cs-2c-bg-green',                 image: 'assets/cs-2c-v2-community-listening.png' },
+  { slot: 4,  sourceId: 'cs-thegap',             id: 'cs-thegap-bg-green',             image: 'assets/explorations/cs-thegap-v4-invisible-reciprocity.png' },
+  { slot: 5,  sourceId: 'cs-community-business', id: 'cs-community-business-bg-green', image: 'assets/explorations/community-value-slide-options/bg-network-club.png' },
+  { slot: 6,  sourceId: 'cs-cultural-shift',     id: 'cs-cultural-shift-bg-green',     image: 'assets/gnr_vnext_openness_room.png' },
+  { slot: 8,  sourceId: 'cs-11d',                id: 'cs-11d-bg-green',                image: 'assets/v2/cs-11d/v1-hero-implicit-signal.-preview.png' },
+  { slot: 9,  sourceId: 'cs-samecourt',          id: 'cs-samecourt-bg-green',          image: 'assets/cs-samecourt-bg.png' },
+  { slot: 13, sourceId: 'cs-11e',                id: 'cs-11e-bg-green',                image: 'assets/explorations/cs-11e-v3-faces-not-ratings.png' },
+  { slot: 14, sourceId: 'cs-11',                 id: 'cs-11-bg-green',                 image: 'assets/v2/cs-11/v1-hero-measurement.-preview.png' },
+  { slot: 15, sourceId: 'cs-3',                  id: 'cs-3-bg-green',                  image: 'assets/v2/cs-3/v1-hero-signal-density.-preview.png' },
+  { slot: 16, sourceId: 'cs-19',                 id: 'cs-19-bg-green',                 image: 'assets/v2/cs-19/v1-hero-revenue.-preview.png' },
+  { slot: 17, sourceId: 'cs-racketeer-att-arc',  id: 'cs-racketeer-att-arc-bg-green',  image: 'assets/inkind/visuals/inkind_social_layer.png' },
+  { slot: 18, sourceId: 'cs-wedge1',             id: 'cs-wedge1-bg-green',             image: 'assets/v2/cs-wedge1/v1-hero-expansion.-preview.png' },
+  { slot: 19, sourceId: 'cs-mv6-merge',          id: 'cs-mv6-merge-bg-green',          image: 'assets/cs-mv6-humans.png' },
+  { slot: 20, sourceId: 'cs-18-vd4',             id: 'cs-18-vd4-bg-green',             image: 'assets/v2/cs-18-vd4/v1-hero-founder.-preview.png' },
+  { slot: 21, sourceId: 'cs-27',                 id: 'cs-27-bg-green',                 image: 'assets/v2/cs-27/v1-hero-cto.-preview.png' },
+  { slot: 22, sourceId: 'cs-brand-V8',           id: 'cs-brand-V8-bg-green',           image: 'assets/cs-brand-codex.png' }
+];
+
+CODEX_BG_REVIEW_ALTS.forEach(cfg => {
+  if (SLIDE_ORDER[cfg.slot - 1] !== cfg.sourceId) return;
+  const alts = SLIDE_ALTS[cfg.slot] || [];
+  if (!alts.includes(cfg.id)) alts.push(cfg.id);
+  SLIDE_ALTS[cfg.slot] = alts;
+});
 const REVIEW_POSITION = 0; // Red no longer means "review"; red means rejected/not-main. Use ORANGE_REVIEW_* for consideration candidates.
 
 // [Dave 2026-05-12] PDF MODE BOOTSTRAP — when ?pdf=1 is on, tag each main-flow slide with .pdf-show
@@ -30337,6 +30371,7 @@ const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 // Recoverable slide trash. These are intentionally out of the main deck and appendix,
 // but still visible inside the app so Dave can restore candidates later.
 const TRASH_ORDER = [
+  'cs-brand-codex',
   'cs-1bm1',
   'cs-ask',
   'cs-ask-coasts',
@@ -31844,6 +31879,42 @@ function getSlideEyebrowText(slideId) {
   return '';
 }
 
+// Materialize green-dot background review alts before nav/tooltips are built.
+// Keeps the main slide DOM untouched while giving Dave same-slot comparisons.
+(function createCodexBgReviewSlides(){
+  if (!Array.isArray(CODEX_BG_REVIEW_ALTS)) return;
+  CODEX_BG_REVIEW_ALTS.forEach(cfg => {
+    if (SLIDE_ORDER[cfg.slot - 1] !== cfg.sourceId) return;
+    const source = document.getElementById(cfg.sourceId);
+    if (!source || document.getElementById(cfg.id)) return;
+    const clone = source.cloneNode(true);
+    clone.id = cfg.id;
+    clone.classList.remove('active', 'casey-entered', 'pdf-show');
+    clone.setAttribute('data-bg-review-alt', 'green');
+    clone.setAttribute('data-bg-source', cfg.sourceId);
+    clone.style.display = 'none';
+    clone.style.overflow = 'hidden';
+
+    const layer = document.createElement('div');
+    layer.className = 'codex-bg-review-layer';
+    layer.setAttribute('aria-hidden', 'true');
+    layer.style.cssText = 'position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;';
+
+    const img = document.createElement('img');
+    img.src = cfg.image;
+    img.alt = '';
+    img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.54;filter:saturate(.92) contrast(.98);';
+
+    const wash = document.createElement('div');
+    wash.style.cssText = 'position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,247,239,.86) 0%,rgba(251,247,239,.66) 46%,rgba(251,247,239,.30) 100%),radial-gradient(circle at 72% 42%,rgba(26,22,18,.20),transparent 48%);';
+
+    layer.appendChild(img);
+    layer.appendChild(wash);
+    clone.insertBefore(layer, clone.firstChild);
+    source.insertAdjacentElement('afterend', clone);
+  });
+})();
+
 function syncCaseyDotHighlightToActiveSlide() {
   const active = document.querySelector('.casey-slide.active');
   if (!active || inAppendix || inTrash || inStaff || inSeed || inConcept) return false;
@@ -31915,6 +31986,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // [Dave 2026-05-18 LATEST v7] Three title-slide candidates added as BLUE-DOT alts at slot 2.
     const isBlueAlt = (altId === 'cs-wedge1' || altId === 'cs-1m8-title-C' || altId === 'cs-hc-market-planet' || altId === 'cs-hc-market-attention' || altId === 'cs-hc-market-latent' || altId === 'cs-emotion-smile' || altId === 'cs-emotion-help' || altId === 'cs-emotion-uncaptured' || altId === 'cs-pb-silly-feature' || altId === 'cs-pb-silly-social');
     const isOrangeAlt = Array.isArray(ORANGE_REVIEW_ALTS) && ORANGE_REVIEW_ALTS.includes(altId);
+    const isGreenAlt = Array.isArray(CODEX_BG_REVIEW_ALTS) && CODEX_BG_REVIEW_ALTS.some(cfg => cfg.id === altId);
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 — explicit override since slot 2 is not the REVIEW_POSITION.
     // [Dave 2026-05-10 PM] cs-16old + cs-lab also RED-DOT (cs-16old = restored complicated engine slide at slot 20; cs-lab = founder-slot alternate to cs-18 'My Wheelhouse').
     // [Dave 2026-05-18 LATEST v9] cs-a7m1 added to red-dot list (demoted from main slot 3 to red-dot alt of slot 2). [Dave 2026-05-17 v7] cs-magnetic-orig RESTORED as red-dot per Dave 'add a red dot slide to left of social pull slide' — was momentarily classified as black-dot but the explicit isPinkAlt check above for cs-merge3 doesn't affect cs-magnetic-orig, so it lands as red-dot here.
@@ -31922,7 +31994,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // [Dave 2026-05-18 LATEST] BLACK-DOT alts — slides reviewed + decided to leave as-is.
     // [Dave 2026-05-18 LATEST] cs-pbfirst removed from black-dot list — slide DELETED per Dave 'delete this slide'.
     const isBlackAlt = (altId === 'cs-magnetic-orig' || altId === 'cs-1m8-black-backup');
-    altDot.className = 'casey-dot alt' + (isRedAlt ? ' review' : (isOrangeAlt || isReviewSlot ? ' orange-review' : (isBlackAlt ? ' black-alt' : (isPurpleAlt ? ' purple-alt' : (isPinkAlt ? ' pink-alt' : (isBlueAlt ? ' blue-alt' : ''))))));
+    altDot.className = 'casey-dot alt' + (isGreenAlt ? ' locked' : (isRedAlt ? ' review' : (isOrangeAlt || isReviewSlot ? ' orange-review' : (isBlackAlt ? ' black-alt' : (isPurpleAlt ? ' purple-alt' : (isPinkAlt ? ' pink-alt' : (isBlueAlt ? ' blue-alt' : '')))))));
     // Alt-dot tooltip pulls live from the alt slide's own eyebrow text [Dave 2026-05-07 sync rule]
     const altLabel = getSlideEyebrowText(altId);
     altDot.title = altLabel ? (altLabel + ' (alt for slide ' + pos + ')') : (altId + ' (alt for slide ' + pos + ')');
