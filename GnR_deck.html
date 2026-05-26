@@ -24699,8 +24699,15 @@ window.cs1m7Reverse = function() {
      rightmost pink dot).
      ═══════════════════════════════════════════════════════════════════════════ -->
 <style>
-  #cs-mv6-merge { background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important; }
-  #cs-mv6-merge .mg2-stage { position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:74px 56px 36px;text-align:center;gap:12px; }
+  #cs-mv6-merge { position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important; }
+  #cs-mv6-merge::before { content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:
+    radial-gradient(ellipse 48% 42% at 82% 22%, rgba(184,149,74,.18) 0%, rgba(184,149,74,.06) 42%, rgba(184,149,74,0) 72%),
+    linear-gradient(118deg, transparent 0 39%, rgba(91,143,212,.12) 39.2%, rgba(91,143,212,.12) 39.7%, transparent 40% 100%),
+    linear-gradient(118deg, transparent 0 46%, rgba(200,70,44,.13) 46.2%, rgba(200,70,44,.13) 46.65%, transparent 47% 100%),
+    radial-gradient(circle at 74% 33%, rgba(200,70,44,.14) 0 7px, rgba(200,70,44,0) 8px),
+    radial-gradient(circle at 88% 14%, rgba(184,149,74,.24) 0 11px, rgba(184,149,74,0) 12px);
+    opacity:.86; }
+  #cs-mv6-merge .mg2-stage { position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:74px 56px 36px;text-align:center;gap:12px; }
   /* [Dave 2026-05-17 LATEST jaw-drop pass] Headline upgraded to a true magazine-spread treatment:
      stacked mission eyebrow over a two-line statement, hairline gold underline beneath the eyebrow,
      tighter optical tracking, two-color emphasis (red verb + gold modifier), and a small "·" pause
@@ -24766,7 +24773,7 @@ window.cs1m7Reverse = function() {
 </style>
 <div class="casey-slide ds-focus" id="cs-mv6-merge" style="display:none">
   <!-- [Dave 2026-05-18 LATEST] Eyebrow "The future of off-screen connection" → "Mission". Internal mg2-mission-eye-block ("Mission" + rule) DELETED — the eyebrow now carries the Mission framing, so the redundant in-slide "Mission" label and its gold rule are gone. Headline rises directly under the chart. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Humanity's Endgame</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">skate to where the puck is going</div>
   <section class="mg2-stage">
 
     <div class="mg2-headwrap">
