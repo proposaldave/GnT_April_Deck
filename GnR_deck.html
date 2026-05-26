@@ -15412,7 +15412,7 @@ window.cs1m7Reverse = function() {
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
-     cs-givefirst-art · RESTORED to PRIMARY at slot 18 [Dave 2026-05-17 v8]
+     cs-givefirst-art · MOVED to APPENDIX [Dave 2026-05-26]
      Per Dave: 'revert this to the one that had the amazing image which i never
      told you to delete!!!! we had this slide with an amazing background image
      created by codex which i was going to use, told you to have it in main
@@ -15480,7 +15480,7 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-givefirst-slide2 .gfa-image,
   html[data-export="1"] #cs-givefirst-pink .gfa-image { opacity:0.96 !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-givefirst-art">
+<div class="casey-slide ds-focus appendix-slide" id="cs-givefirst-art" style="display:none">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">How GnR Community Growth actually works</div>
   <!-- [Dave 2026-05-17 v15] Background image swapped to the GIVE-FIRST COMMUNITY watercolor —
        a man kneels to tie another man's boot while a small community gathers around (smiling
@@ -29810,7 +29810,8 @@ const SLIDE_ORDER = [
   'cs-cultural-shift', //  7 Bridge: Andreessen uncomfortable cultural shift + trapped human-social dataset.
   'cs-gnr',   //  8 Introducing GnR · invitation matchmaking
   // [Dave 2026-05-24] Current post-Munger flow: samecourt -> magnetic -> wedgepb-codex -> fv6-img -> givefirst-art -> NEPC proof -> invitation mechanics.
-  'cs-11d','cs-samecourt','cs-magnetic','cs-wedgepb-codex','cs-fv6-img','cs-givefirst-art','cs-11e','cs-11',
+  // [Dave 2026-05-26] cs-givefirst-art MOVED to APPENDIX per screenshot request.
+  'cs-11d','cs-samecourt','cs-magnetic','cs-wedgepb-codex','cs-fv6-img','cs-11e','cs-11',
   // [Dave 2026-05-12 LATEST] cs-3 MOVED HERE — Dave: 'the "Pickleball is the fastest-growing, highest-velocity, densest social-signal community, ever." slide needs to follow the "No like button? No problem." slide'. cs-3 now sits right after cs-11.
   'cs-3',           // Pickleball 24 unique social experiences per week — fastest-growing, highest-velocity, densest social-signal community
   // [Dave 2026-05-24] Prior move comments were superseded by the current post-Munger block; cs-19 now follows cs-3 after the invitation-mechanics beat.
@@ -29996,7 +29997,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v4] cs-brand-codex added as 2nd PINK-DOT alt (codex split-image watercolor).
   // [Dave 2026-05-18 LATEST v5] All brand pink-dot alts RELOCATED from slot 3 (cs-brand-V8) → slot 2 (cs-1m8) per Dave 'move these two slides and any new brand slide you are working on as pink dot slides next to the slide with the text below: What we give fuels our communities.' That's cs-1m8 — which sits at slot 2 in SLIDE_ORDER. cs-1m8-fuels (the new particle-galaxy variant anchored to "What we give fuels our communities.") also added here. Slot 3 (cs-brand-V8) now carries no alts; if Dave wants the brand alts to live under the brand slide again later, just move them back.
   // [Dave 2026-05-19] Slot 14 = cs-fv6-img after Munger; slot 15 = cs-givefirst-art; slot 16 = cs-magnetic.
-  16: ['cs-givefirst-brand'],
+  16: [], // [Dave 2026-05-26] cs-givefirst-brand detached after cs-givefirst-art moved to appendix.
   13: ['cs-magnetic-orig', 'cs-merge3'],
   // [Dave 2026-05-24] Blue-dot attempts for 'Pickleball silliness is a feature, not a bug' left of the main pickleball wedge slide.
   14: ['cs-pb-silly-feature', 'cs-pb-silly-social'],
@@ -30064,6 +30065,8 @@ const LOCKED_POSITIONS = [];
 // Appendix navigation order — Dave 2026-04-29: The Ask is the FIRST appendix slide
 // (so when investor clicks Appendix, they see the ask immediately if they ask "what are you raising?").
 const APPENDIX_ORDER = [
+  // [Dave 2026-05-26] cs-givefirst-art MOVED here from SLIDE_ORDER per screenshot request: "You can't tell someone to open their heart."
+  'cs-givefirst-art',
   // [Dave 2026-05-18 LATEST] cs-brand-att5 MOVED here from SLIDE_ALTS[3] per Dave 'move this slide to appendix'. The invisible→seen diptych ('A community of strangers' grey scatter → 'A community that gives back' connected G·n·R constellation). Preserved as appendix reference.
   'cs-brand-att5',
   // [Dave 2026-05-17 v6] cs-frontier + cs-intro6 MOVED here from SLIDE_ALTS[1] per Dave (consecutive 'move this slide to appendix' on both). cs-frontier = '#1 predictor of a fulfilling life / Giving and receiving real connection' + demand curve. cs-intro6 = 'An incredible truth / The #1 predictor of a fulfilling life: openly giving and receiving human connection' + 4-field science strip.
