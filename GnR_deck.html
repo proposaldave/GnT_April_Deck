@@ -21527,10 +21527,10 @@ window.cs1m7Reverse = function() {
   #cs-magnetic .mg-side.right{opacity:0;transform:translateY(10px);will-change:opacity,transform}
   @keyframes mgIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
   #cs-magnetic .mg-master{opacity:0;transform:translateY(8px);will-change:opacity,transform}
-  #cs-magnetic.casey-entered .mg-master{animation:mgIn .7s cubic-bezier(.22,1,.36,1) backwards .05s;opacity:1}
-  #cs-magnetic.casey-entered .mg-side.left{animation:mgIn .65s cubic-bezier(.22,1,.36,1) backwards .35s;opacity:1}
-  #cs-magnetic.casey-entered .mg-vs{animation:mgIn .55s cubic-bezier(.22,1,.36,1) backwards .75s;opacity:1}
-  #cs-magnetic.casey-entered .mg-side.right{animation:mgIn .75s cubic-bezier(.22,1,.36,1) backwards .92s;opacity:1}
+  #cs-magnetic[data-stage="1"] .mg-master{animation:mgIn .7s cubic-bezier(.22,1,.36,1) backwards .05s;opacity:1}
+  #cs-magnetic[data-stage="1"] .mg-side.left{animation:mgIn .65s cubic-bezier(.22,1,.36,1) backwards .35s;opacity:1}
+  #cs-magnetic[data-stage="1"] .mg-vs{animation:mgIn .55s cubic-bezier(.22,1,.36,1) backwards .75s;opacity:1}
+  #cs-magnetic[data-stage="1"] .mg-side.right{animation:mgIn .75s cubic-bezier(.22,1,.36,1) backwards .92s;opacity:1}
   html[data-export="1"] #cs-magnetic .mg-side,
   html[data-export="1"] #cs-magnetic .mg-master,
   html[data-export="1"] #cs-magnetic .mg-vs{opacity:1!important;transform:none!important;animation:none!important}
@@ -21566,21 +21566,21 @@ window.cs1m7Reverse = function() {
      felt sluggish on click — kicks off at 0.10s now. Inter-step gaps tightened from ~0.65s
      to ~0.45s. Total runtime: 4.75s → 3.05s. Slide-entry animation uses the same tightened
      timeline (no separate selector needed). */
-  #cs-magnetic.casey-entered .mg-side.right .mg-player-anchor,
+  #cs-magnetic[data-stage="1"] .mg-side.right .mg-player-anchor,
   #cs-magnetic .mg-side.right.mg-replaying .mg-player-anchor   { animation: mgPlayerIn 0.65s cubic-bezier(.22,1,.36,1) backwards 0.10s; opacity:1; }
-  #cs-magnetic.casey-entered .mg-side.right .mg-edge-anchor-regular,
+  #cs-magnetic[data-stage="1"] .mg-side.right .mg-edge-anchor-regular,
   #cs-magnetic .mg-side.right.mg-replaying .mg-edge-anchor-regular   { animation: mgEdgeFlash 0.70s cubic-bezier(.22,1,.36,1) 0.55s 1 both; }
-  #cs-magnetic.casey-entered .mg-side.right .mg-player-regular,
+  #cs-magnetic[data-stage="1"] .mg-side.right .mg-player-regular,
   #cs-magnetic .mg-side.right.mg-replaying .mg-player-regular  { animation: mgPlayerIn 0.65s cubic-bezier(.22,1,.36,1) backwards 0.75s; opacity:1; }
-  #cs-magnetic.casey-entered .mg-side.right .mg-edge-anchor-referrer,
+  #cs-magnetic[data-stage="1"] .mg-side.right .mg-edge-anchor-referrer,
   #cs-magnetic .mg-side.right.mg-replaying .mg-edge-anchor-referrer  { animation: mgEdgeFlash 0.70s cubic-bezier(.22,1,.36,1) 1.20s 1 both; }
-  #cs-magnetic.casey-entered .mg-side.right .mg-player-referrer,
+  #cs-magnetic[data-stage="1"] .mg-side.right .mg-player-referrer,
   #cs-magnetic .mg-side.right.mg-replaying .mg-player-referrer { animation: mgPlayerIn 0.65s cubic-bezier(.22,1,.36,1) backwards 1.40s; opacity:1; }
-  #cs-magnetic.casey-entered .mg-side.right .mg-edge-referrer-referred,
+  #cs-magnetic[data-stage="1"] .mg-side.right .mg-edge-referrer-referred,
   #cs-magnetic .mg-side.right.mg-replaying .mg-edge-referrer-referred { animation: mgEdgeFlash 0.80s cubic-bezier(.22,1,.36,1) 1.90s 1 both; }
-  #cs-magnetic.casey-entered .mg-side.right .mg-invite-envelope,
+  #cs-magnetic[data-stage="1"] .mg-side.right .mg-invite-envelope,
   #cs-magnetic .mg-side.right.mg-replaying .mg-invite-envelope { animation: mgEnvelopeFly 0.80s cubic-bezier(.45,.05,.55,.95) 1.90s 1 both; }
-  #cs-magnetic.casey-entered .mg-side.right .mg-player-referred,
+  #cs-magnetic[data-stage="1"] .mg-side.right .mg-player-referred,
   #cs-magnetic .mg-side.right.mg-replaying .mg-player-referred { animation: mgPlayerIn 0.65s cubic-bezier(.22,1,.36,1) backwards 2.55s; opacity:1; }
 
   /* Export mode — snap to final state, no animations (printed deck shows all 4 roles + faint web) */
@@ -21607,12 +21607,15 @@ window.cs1m7Reverse = function() {
   #cs-magnetic .mg-side.left .mg-side-hero em{color:#5B8FD4}
   #cs-magnetic .mg-broadcast{width:100%;max-width:720px;height:auto;display:block;margin:auto 0 0}
   #cs-magnetic .mg-side.left .mg-outcome{display:none}
+  #cs-magnetic[data-stage="0"] .mg-stage{opacity:0;visibility:hidden;transform:translateY(12px);pointer-events:none}
+  #cs-magnetic[data-stage="1"] .mg-stage{opacity:1;visibility:visible;transform:none;transition:opacity .48s cubic-bezier(.22,1,.36,1),transform .58s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
   #cs-magnetic[data-stage="0"] .mg-broadcast,
   #cs-magnetic[data-stage="0"] .mg-court{opacity:0;visibility:hidden;transform:translateY(18px) scale(.985);pointer-events:none}
   #cs-magnetic[data-stage="1"] .mg-broadcast,
   #cs-magnetic[data-stage="1"] .mg-court{opacity:1;visibility:visible;transform:none;transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
   html[data-export="1"] #cs-magnetic .mg-broadcast,
-  html[data-export="1"] #cs-magnetic .mg-court{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important;pointer-events:auto!important}
+  html[data-export="1"] #cs-magnetic .mg-court,
+  html[data-export="1"] #cs-magnetic .mg-stage{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important;pointer-events:auto!important}
 </style>
 <div class="casey-slide ds-focus" id="cs-magnetic" data-stage="0" onclick="if(window.csMagneticAdvance) window.csMagneticAdvance(); event.stopPropagation()" style="cursor:pointer">
   <!-- [Dave 2026-05-18 LATEST v3] Background image made more visible per Dave. Image opacity 0.55→0.68; cream wash eased from 0.92/0.88/0.84/0.88 to 0.86/0.80/0.72/0.80 so the court/community image reads without sacrificing headline contrast. -->
