@@ -3,5 +3,18 @@ Use Local mode.
 Verify expected branch and status.
 Ensure GnR_deck.html and index.html are identical before publish.
 Push only when Dave explicitly requests.
+After pushing main to origin, run:
+
+git rev-parse --short HEAD
+
+Then report:
+
+Canonical URL:
+https://proposaldave.github.io/GnR_Deck/
+
+Cache-busted verification URL:
+https://proposaldave.github.io/GnR_Deck/?v=[short-commit-hash]
+
+Immediately after publish, Dave should check the cache-busted verification URL. The canonical URL is still the real public URL, but the browser may show stale cached content for a short time.
 Report published URL/status.
 Do not redesign or edit content.
