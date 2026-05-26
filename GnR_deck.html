@@ -12493,10 +12493,31 @@ window.cs1m7Reverse = function() {
   #cs-cultural-shift-pink1 h1, #cs-cultural-shift-pink2 h1 { margin:0; position:relative; z-index:2; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(4rem,7.2vw,7.6rem); line-height:.94; font-weight:880; letter-spacing:0; color:#1a1612; max-width:1220px; }
   #cs-cultural-shift-pink1 h1 em, #cs-cultural-shift-pink2 h1 em { color:#c8462c; font-style:italic; }
   #cs-cultural-shift-pink1 p, #cs-cultural-shift-pink2 p { position:relative; z-index:2; margin:36px auto 0; max-width:900px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.45rem,2.2vw,2.25rem); line-height:1.16; font-weight:650; color:rgba(26,22,18,.78); }
-  #cs-cultural-shift-pink2 .csu-grid { position:absolute; inset:150px 110px 130px; display:grid; grid-template-columns:repeat(7,1fr); grid-template-rows:repeat(4,1fr); gap:18px; opacity:.28; }
-  #cs-cultural-shift-pink2 .csu-cell { border:1px solid rgba(26,22,18,.12); background:rgba(251,247,239,.48); box-shadow:inset 0 0 38px rgba(184,149,74,.10); }
-  #cs-cultural-shift-pink2 .csu-cell:nth-child(3n) { border-color:rgba(91,143,212,.32); }
-  #cs-cultural-shift-pink2 .csu-cell:nth-child(5n) { border-color:rgba(200,70,44,.30); }
+  #cs-cultural-shift-pink2 .csu-p2 { overflow:hidden; }
+  #cs-cultural-shift-pink2 .csu-p2::before { content:""; position:absolute; inset:0; background:radial-gradient(circle at 50% 48%,rgba(251,247,239,.78),rgba(251,247,239,.20) 42%,rgba(243,234,216,.72) 74%), radial-gradient(circle at 24% 30%,rgba(91,143,212,.16),transparent 36%), radial-gradient(circle at 76% 67%,rgba(200,70,44,.13),transparent 34%); }
+  #cs-cultural-shift-pink2 .csu-mindscape { position:absolute; inset:86px 72px 72px; opacity:.78; pointer-events:none; }
+  #cs-cultural-shift-pink2 .csu-orbital { position:absolute; inset:0; width:100%; height:100%; overflow:visible; }
+  #cs-cultural-shift-pink2 .csu-orbital path { fill:none; stroke-width:2; stroke-linecap:round; stroke-dasharray:7 13; opacity:.64; }
+  #cs-cultural-shift-pink2 .csu-orbital .gold { stroke:#b8954a; }
+  #cs-cultural-shift-pink2 .csu-orbital .blue { stroke:#5B8FD4; }
+  #cs-cultural-shift-pink2 .csu-orbital .red { stroke:#c8462c; }
+  #cs-cultural-shift-pink2 .csu-headshape { position:absolute; width:290px; height:370px; border:1px solid rgba(26,22,18,.13); border-radius:48% 48% 42% 42% / 32% 32% 58% 58%; background:linear-gradient(180deg,rgba(255,252,246,.58),rgba(243,234,216,.24)); box-shadow:inset 0 0 60px rgba(184,149,74,.10),0 22px 54px rgba(26,22,18,.045); }
+  #cs-cultural-shift-pink2 .csu-headshape::before { content:""; position:absolute; left:50%; top:42px; transform:translateX(-50%); width:122px; height:122px; border-radius:50%; border:1px solid rgba(26,22,18,.15); background:rgba(251,247,239,.36); }
+  #cs-cultural-shift-pink2 .csu-headshape::after { content:""; position:absolute; left:50%; bottom:42px; transform:translateX(-50%); width:178px; height:106px; border-radius:48% 48% 0 0; border:1px solid rgba(26,22,18,.13); border-bottom:0; background:rgba(251,247,239,.28); }
+  #cs-cultural-shift-pink2 .csu-headshape.h1 { left:32px; top:26px; transform:rotate(-7deg); }
+  #cs-cultural-shift-pink2 .csu-headshape.h2 { right:52px; top:26px; transform:rotate(6deg); }
+  #cs-cultural-shift-pink2 .csu-headshape.h3 { left:50%; bottom:-36px; transform:translateX(-50%) scale(1.12); opacity:.62; }
+  #cs-cultural-shift-pink2 .csu-thought { position:absolute; width:13px; height:13px; border-radius:50%; background:#b8954a; box-shadow:0 0 0 9px rgba(184,149,74,.10),0 0 24px rgba(184,149,74,.24); }
+  #cs-cultural-shift-pink2 .csu-thought.blue { background:#5B8FD4; box-shadow:0 0 0 9px rgba(91,143,212,.10),0 0 24px rgba(91,143,212,.23); }
+  #cs-cultural-shift-pink2 .csu-thought.red { background:#c8462c; box-shadow:0 0 0 9px rgba(200,70,44,.10),0 0 24px rgba(200,70,44,.24); }
+  #cs-cultural-shift-pink2 .csu-thought.t1 { left:210px; top:132px; }
+  #cs-cultural-shift-pink2 .csu-thought.t2 { left:312px; top:250px; }
+  #cs-cultural-shift-pink2 .csu-thought.t3 { right:276px; top:128px; }
+  #cs-cultural-shift-pink2 .csu-thought.t4 { right:188px; top:276px; }
+  #cs-cultural-shift-pink2 .csu-thought.t5 { left:50%; bottom:150px; transform:translateX(-50%); }
+  #cs-cultural-shift-pink2 .csu-lockbox { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:min(760px,50vw); height:420px; border:1px solid rgba(200,70,44,.30); background:linear-gradient(135deg,rgba(251,247,239,.22),rgba(251,247,239,.06)); box-shadow:inset 0 0 90px rgba(200,70,44,.075),0 0 0 10px rgba(200,70,44,.026); }
+  #cs-cultural-shift-pink2 .csu-lockbox::before, #cs-cultural-shift-pink2 .csu-lockbox::after { content:""; position:absolute; inset:28px; border:1px solid rgba(91,143,212,.22); }
+  #cs-cultural-shift-pink2 .csu-lockbox::after { inset:70px; border-color:rgba(184,149,74,.25); }
 </style>
 <div class="casey-slide ds-focus" id="cs-cultural-shift">
   <div class="csu-eye">The uncomfortable cultural shift</div>
@@ -12531,11 +12552,22 @@ window.cs1m7Reverse = function() {
 <div class="casey-slide ds-focus" id="cs-cultural-shift-pink2" style="display:none">
   <div class="csu-eye">Pink candidate &middot; trapped dataset</div>
   <section class="csu-p2">
-    <div class="csu-grid" aria-hidden="true">
-      <div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div>
-      <div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div>
-      <div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div>
-      <div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div>
+    <div class="csu-mindscape" aria-hidden="true">
+      <svg class="csu-orbital" viewBox="0 0 1600 760" preserveAspectRatio="none">
+        <path class="gold" d="M178 210 C420 88 576 122 795 274 C1012 426 1182 462 1426 322"/>
+        <path class="blue" d="M224 492 C430 350 566 472 804 368 C1048 260 1198 176 1402 214"/>
+        <path class="red" d="M414 124 C522 342 662 438 804 382 C986 310 1086 416 1216 612"/>
+        <path class="gold" d="M292 642 C536 520 704 548 800 610 C946 704 1112 670 1348 536"/>
+      </svg>
+      <div class="csu-headshape h1"></div>
+      <div class="csu-headshape h2"></div>
+      <div class="csu-headshape h3"></div>
+      <div class="csu-lockbox"></div>
+      <i class="csu-thought t1 red"></i>
+      <i class="csu-thought t2 blue"></i>
+      <i class="csu-thought t3 gold"></i>
+      <i class="csu-thought t4 red"></i>
+      <i class="csu-thought t5 blue"></i>
     </div>
     <div>
       <h1>The most valuable dataset on the planet is <em>trapped in our heads.</em></h1>
