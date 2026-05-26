@@ -19262,9 +19262,9 @@ window.cs1m7Reverse = function() {
     opacity:0; transform:translateY(10px);
     transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1);
   }
-  #cs-brand-codex.casey-entered .bc-top-band   { opacity:1; transform:none; transition-delay:1.20s; }
+  #cs-brand-codex.casey-entered .bc-top-band   { opacity:0; transform:translateY(10px); transition-delay:0s; }
   #cs-brand-codex.casey-entered .bc-left-quote { opacity:1; transform:none; transition-delay:0.50s; }
-  #cs-brand-codex.casey-entered .bc-envelope   { opacity:1; transform:translateY(-50%) rotate(-1.5deg); transition-delay:0.85s; }
+  #cs-brand-codex.casey-entered .bc-envelope   { opacity:0; transform:translateY(calc(-50% + 10px)) rotate(-1.5deg); transition-delay:0s; }
   html[data-export="1"] #cs-brand-codex .bc-top-band,
   html[data-export="1"] #cs-brand-codex .bc-left-quote {
     opacity:1 !important; transform:none !important; transition:none !important;
