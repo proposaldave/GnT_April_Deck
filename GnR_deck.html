@@ -16204,6 +16204,25 @@ window.cs1m7Reverse = function() {
 <div class="casey-slide ds-focus" id="cs-27">
 <!-- [Dave 2026-05-14] Eyebrow normalized to canonical style — Manrope .58rem / weight 700 / .22em tracked / gold #b8954a — matching every other slide's top-left eyebrow. -->
 <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">CTO &middot; Steve Callan</div>
+<style>
+  #cs-27 .steve-timeline-line{
+    transform:scaleX(0);
+    transform-origin:left center;
+    animation:steveTimelineDraw .95s ease-out .22s forwards;
+  }
+  #cs-27 .steve-timeline-step{
+    opacity:0;
+    transform:translateY(10px);
+    animation:steveTimelineStep .55s cubic-bezier(.22,.72,.22,1) var(--step-delay) forwards;
+  }
+  #cs-27 .steve-timeline-dot{
+    transform:scale(.55);
+    animation:steveTimelineDot .5s cubic-bezier(.22,.72,.22,1) calc(var(--step-delay) + .08s) forwards;
+  }
+  @keyframes steveTimelineDraw{to{transform:scaleX(1)}}
+  @keyframes steveTimelineStep{to{opacity:1;transform:translateY(0)}}
+  @keyframes steveTimelineDot{to{transform:scale(1)}}
+</style>
 <section style="position:relative;width:100%;min-height:100%;display:flex;align-items:center;justify-content:center;padding:80px 40px 60px">
   <div style="text-align:center;max-width:1140px;width:100%">
 
@@ -16214,25 +16233,25 @@ window.cs1m7Reverse = function() {
     </div>
 
     <!-- TIMELINE — career arc, mirrors Dave's slide -->
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:980px;margin:0 auto 50px;position:relative">
-      <div style="position:absolute;top:9px;left:12%;right:12%;height:1.5px;background:linear-gradient(90deg,transparent 0%,rgba(91,159,196,0.45) 12%,rgba(91,159,196,0.5) 50%,rgba(73,180,160,0.6) 88%,transparent 100%);z-index:0"></div>
-      <div style="text-align:center;position:relative;z-index:1">
-        <div style="width:14px;height:14px;border-radius:50%;background:#5b9fc4;margin:2px auto 14px;box-shadow:0 0 14px rgba(91,159,196,0.55)"></div>
+    <div class="steve-timeline" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:980px;margin:0 auto 50px;position:relative">
+      <div class="steve-timeline-line" style="position:absolute;top:9px;left:12%;right:12%;height:1.5px;background:linear-gradient(90deg,transparent 0%,rgba(91,159,196,0.45) 12%,rgba(91,159,196,0.5) 50%,rgba(73,180,160,0.6) 88%,transparent 100%);z-index:0"></div>
+      <div class="steve-timeline-step" style="--step-delay:.42s;text-align:center;position:relative;z-index:1">
+        <div class="steve-timeline-dot" style="width:14px;height:14px;border-radius:50%;background:#5b9fc4;margin:2px auto 14px;box-shadow:0 0 14px rgba(91,159,196,0.55)"></div>
         <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:800;color:#3a7da3;line-height:1;margin-bottom:8px">Hill Holliday</div>
         <div style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:rgba(26,22,18,0.78);line-height:1.45;font-weight:500">Ex-SVP, Technology<br><span style="color:rgba(26,22,18,0.55);font-size:0.7rem">Top-10 US ad agency</span></div>
       </div>
-      <div style="text-align:center;position:relative;z-index:1">
-        <div style="width:14px;height:14px;border-radius:50%;background:#5b9fc4;margin:2px auto 14px;box-shadow:0 0 14px rgba(91,159,196,0.55)"></div>
+      <div class="steve-timeline-step" style="--step-delay:.62s;text-align:center;position:relative;z-index:1">
+        <div class="steve-timeline-dot" style="width:14px;height:14px;border-radius:50%;background:#5b9fc4;margin:2px auto 14px;box-shadow:0 0 14px rgba(91,159,196,0.55)"></div>
         <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:800;color:#3a7da3;line-height:1;margin-bottom:8px">KingsCrowd</div>
         <div style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:rgba(26,22,18,0.78);line-height:1.45;font-weight:500">Ex-Head of Technology<br><span style="color:rgba(26,22,18,0.55);font-size:0.7rem">Private-market data platform</span></div>
       </div>
-      <div style="text-align:center;position:relative;z-index:1">
-        <div style="width:14px;height:14px;border-radius:50%;background:#5b9fc4;margin:2px auto 14px;box-shadow:0 0 14px rgba(91,159,196,0.55)"></div>
+      <div class="steve-timeline-step" style="--step-delay:.82s;text-align:center;position:relative;z-index:1">
+        <div class="steve-timeline-dot" style="width:14px;height:14px;border-radius:50%;background:#5b9fc4;margin:2px auto 14px;box-shadow:0 0 14px rgba(91,159,196,0.55)"></div>
         <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:800;color:#3a7da3;line-height:1;margin-bottom:8px">prsona.ai</div>
         <div style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:rgba(26,22,18,0.78);line-height:1.45;font-weight:500">Founder<br><span style="color:rgba(26,22,18,0.55);font-size:0.7rem">People-first AI</span></div>
       </div>
-      <div style="text-align:center;position:relative;z-index:1">
-        <div style="width:14px;height:14px;border-radius:50%;background:#49b4a0;margin:2px auto 14px;box-shadow:0 0 18px rgba(73,180,160,0.7)"></div>
+      <div class="steve-timeline-step" style="--step-delay:1.02s;text-align:center;position:relative;z-index:1">
+        <div class="steve-timeline-dot" style="width:14px;height:14px;border-radius:50%;background:#49b4a0;margin:2px auto 14px;box-shadow:0 0 18px rgba(73,180,160,0.7)"></div>
         <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:800;color:#49b4a0;line-height:1;margin-bottom:8px">Give &lsquo;n Take</div>
         <div style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:rgba(26,22,18,0.85);line-height:1.45;font-weight:600">Co-Founder &amp; CTO<br><span style="color:rgba(26,22,18,0.6);font-size:0.7rem;font-weight:500">Architecture &middot; AI/data layer</span></div>
       </div>
