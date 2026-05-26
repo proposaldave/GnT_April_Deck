@@ -30126,7 +30126,7 @@ const SLIDE_ORDER = [
   'cs-2c',    //  5 Community · 6-card grid
   // [2026-05-04 Dave] cs-bh, cs-bh-vA, cs-bh-vC, cs-2b, cs-4 MERGED into single cs-thegap problem slide. Originals moved to APPENDIX as backups.
   'cs-thegap', //  3 MERGED — Our communities are full of understanding, we just never unlock it. 3 figures + rich network-bubbles + by-hand texting.
-  'cs-community-business', // Community is a different kind of business - missing people-understood layer.
+  // [Codex 2026-05-26] cs-community-business moved to TRASH_ORDER per Dave: slide 5 / 20 and its alt were blank.
   // [Dave 2026-05-26] cs-samecourt MOVED EARLIER. The Munger/incentive-system thesis now lands before cultural/product reveal so investors understand the core behavior-change mechanism first.
   'cs-samecourt',
   // [Dave 2026-05-24 LATER] cs-18-vd4 MOVED LATER. Founder/Steve Jobs wheelhouse beat was interrupting the product reveal here; investor needs the product before founder philosophy.
@@ -30375,18 +30375,17 @@ const SLIDE_ALTS = {
 const CODEX_BG_REVIEW_ALTS = [
   { slot: 3,  sourceId: 'cs-2c',                 id: 'cs-2c-bg-green',                 image: 'assets/cs-2c-v2-community-listening.png' },
   { slot: 4,  sourceId: 'cs-thegap',             id: 'cs-thegap-bg-green',             image: 'assets/explorations/cs-thegap-v4-invisible-reciprocity.png' },
-  { slot: 5,  sourceId: 'cs-community-business', id: 'cs-community-business-bg-green', image: 'assets/explorations/community-value-slide-options/bg-network-club.png' },
-  { slot: 8,  sourceId: 'cs-11d',                id: 'cs-11d-bg-green',                image: 'assets/v2/cs-11d/v1-hero-implicit-signal.-preview.png' },
-  { slot: 9,  sourceId: 'cs-samecourt',          id: 'cs-samecourt-bg-green',          image: 'assets/cs-samecourt-bg.png' },
-  { slot: 13, sourceId: 'cs-11e',                id: 'cs-11e-bg-green',                image: 'assets/explorations/cs-11e-v3-faces-not-ratings.png' },
-  { slot: 14, sourceId: 'cs-11',                 id: 'cs-11-bg-green',                 image: 'assets/v2/cs-11/v1-hero-measurement.-preview.png' },
-  { slot: 15, sourceId: 'cs-3',                  id: 'cs-3-bg-green',                  image: 'assets/v2/cs-3/v1-hero-signal-density.-preview.png' },
-  { slot: 16, sourceId: 'cs-19',                 id: 'cs-19-bg-green',                 image: 'assets/v2/cs-19/v1-hero-revenue.-preview.png' },
-  { slot: 17, sourceId: 'cs-wedge1',             id: 'cs-wedge1-bg-green',             image: 'assets/v2/cs-wedge1/v1-hero-expansion.-preview.png' },
-  { slot: 18, sourceId: 'cs-mv6-merge',          id: 'cs-mv6-merge-bg-green',          image: 'assets/cs-mv6-humans.png' },
-  { slot: 19, sourceId: 'cs-18-vd4',             id: 'cs-18-vd4-bg-green',             image: 'assets/v2/cs-18-vd4/v1-hero-founder.-preview.png' },
-  { slot: 20, sourceId: 'cs-27',                 id: 'cs-27-bg-green',                 image: 'assets/v2/cs-27/v1-hero-cto.-preview.png' },
-  { slot: 21, sourceId: 'cs-brand-V8',           id: 'cs-brand-V8-bg-green',           image: 'assets/cs-brand-codex.png' }
+  { slot: 5,  sourceId: 'cs-samecourt',          id: 'cs-samecourt-bg-green',          image: 'assets/cs-samecourt-bg.png' },
+  { slot: 7,  sourceId: 'cs-11d',                id: 'cs-11d-bg-green',                image: 'assets/v2/cs-11d/v1-hero-implicit-signal.-preview.png' },
+  { slot: 11, sourceId: 'cs-11e',                id: 'cs-11e-bg-green',                image: 'assets/explorations/cs-11e-v3-faces-not-ratings.png' },
+  { slot: 12, sourceId: 'cs-11',                 id: 'cs-11-bg-green',                 image: 'assets/v2/cs-11/v1-hero-measurement.-preview.png' },
+  { slot: 13, sourceId: 'cs-3',                  id: 'cs-3-bg-green',                  image: 'assets/v2/cs-3/v1-hero-signal-density.-preview.png' },
+  { slot: 14, sourceId: 'cs-19',                 id: 'cs-19-bg-green',                 image: 'assets/v2/cs-19/v1-hero-revenue.-preview.png' },
+  { slot: 15, sourceId: 'cs-wedge1',             id: 'cs-wedge1-bg-green',             image: 'assets/v2/cs-wedge1/v1-hero-expansion.-preview.png' },
+  { slot: 16, sourceId: 'cs-mv6-merge',          id: 'cs-mv6-merge-bg-green',          image: 'assets/cs-mv6-humans.png' },
+  { slot: 17, sourceId: 'cs-18-vd4',             id: 'cs-18-vd4-bg-green',             image: 'assets/v2/cs-18-vd4/v1-hero-founder.-preview.png' },
+  { slot: 18, sourceId: 'cs-27',                 id: 'cs-27-bg-green',                 image: 'assets/v2/cs-27/v1-hero-cto.-preview.png' },
+  { slot: 19, sourceId: 'cs-brand-V8',           id: 'cs-brand-V8-bg-green',           image: 'assets/cs-brand-codex.png' }
 ];
 
 const CODEX_BG_REVIEW_GLASS_CARD_ALTS = new Set(['cs-2c-bg-green']);
@@ -30572,6 +30571,7 @@ const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 // Recoverable slide trash. These are intentionally out of the main deck and appendix,
 // but still visible inside the app so Dave can restore candidates later.
 const TRASH_ORDER = [
+  'cs-community-business',
   'cs-brand-codex',
   'cs-1bm1',
   'cs-ask',
