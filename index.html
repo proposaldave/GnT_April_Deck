@@ -1408,8 +1408,8 @@ body.presenter-mode #slideSearch { display: none !important; }
        5. Larger tap targets on click-to-reveal elements where needed.
      ══════════════════════════════════════════════════════════════════════ */
   @media (hover: none) and (pointer: coarse) and (min-width: 769px) {
-    /* iPad/tablet: hide the bottom slide-dot bar entirely [Dave 2026-05-07 PM: 'For the iPad tablet version, I'd like you to not show the slide dots on the bottom']. Swipe + D/A still navigate. */
-    .casey-nav { display: none !important; }
+    /* iPad/tablet: keep the active main-deck dot rail visible and inset left of the review rails so stacked alt dots remain reachable. */
+    .casey-nav { display:flex !important; right:64px !important; }
     /* V8 particle galaxy: keep entrance, kill the infinite per-dot drift (saves GPU + battery on iPad) */
     #cs-brand-V8.casey-entered .v8-particles circle { animation-iteration-count: 1 !important; animation-duration: 1.6s !important; }
     /* V15 orbital ring spin (80s loop) — disable on touch; static dashed ring still renders */
@@ -6049,6 +6049,13 @@ html, body, html body{
   <span style="font-size:15px;font-weight:400;font-style:italic;color:#b8954a;padding:0 1.5px">n</span>
   <span style="font-size:17px;font-weight:600;color:#c8462c">R</span>
 </div>
+<style>
+  /* Brand-name rule: when rendering Give n Receive or GnR as styled deck copy, use this inline mark. */
+  .gnr-inline-brand{display:inline-flex;align-items:baseline;font-family:'Playfair Display',Georgia,serif;font-weight:700;letter-spacing:-0.015em;white-space:nowrap}
+  .gnr-inline-brand .gnr-g{color:#5B8FD4}
+  .gnr-inline-brand .gnr-n{color:#b8954a;font-style:italic;padding:0 .05em;font-weight:500}
+  .gnr-inline-brand .gnr-r{color:#c8462c}
+</style>
 
 <!-- [Dave 2026-05-14 PM v4] Slide search — visible only when Z is pressed (NOT in presenter-mode). Searches eyebrow + headline + body text across main + appendix slides. -->
 <div id="slideSearch">
@@ -11143,7 +11150,7 @@ window.cs1m7Reverse = function() {
   <!-- [Dave 2026-05-14 PM] 'GnR measures…' rewritten to 'We measure…' — founder-voice + single subject (same 'we' for measure + schedule). Cleaner grammar, stronger pitch voice.
        [Dave 2026-05-17] Font size bumped (clamp 1.05/1.6/1.5 → 1.3/1.95/1.85) per Dave 'slightly increase font size'. -->
   <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.3rem,1.95vw,1.85rem);color:rgba(26,22,18,0.78);line-height:1.32;margin:30px auto 0;font-weight:500;font-style:italic;letter-spacing:-0.012em;max-width:1180px;text-align:center">
-    GnR measures connection at the exact same time as it&rsquo;s scheduled.
+    <span class="gnr-inline-brand" aria-label="GnR"><span class="gnr-g">G</span><span class="gnr-n">n</span><span class="gnr-r">R</span></span> measures connection at the exact same time as it&rsquo;s scheduled.
   </div>
 
 </div>
@@ -12639,7 +12646,7 @@ window.cs1m7Reverse = function() {
   #cs-gnr .gnr-env-svg { display:block; width:100%; height:auto; filter:drop-shadow(0 2px 10px rgba(184,149,74,0.20)); }
   #cs-gnr .gnr-env-text { position:absolute; top:72%; left:50%; transform:translate(-50%,-50%); width:88%; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1rem,1.55vw,1.35rem); font-weight:700; color:#1a1612; line-height:1.22; letter-spacing:-0.008em; }
   #cs-gnr .gnr-env-text em { font-style:italic; font-weight:500; color:#b8954a; }
-  #cs-gnr .gnr-lonely-bg { position:absolute; inset:0; z-index:0; overflow:hidden; opacity:1; transition:opacity 0.85s cubic-bezier(.45,.05,.18,1), filter 0.85s cubic-bezier(.45,.05,.18,1); }
+  #cs-gnr .gnr-lonely-bg { position:absolute; inset:0; z-index:0; overflow:hidden; opacity:0; transition:opacity 0.85s cubic-bezier(.45,.05,.18,1), filter 0.85s cubic-bezier(.45,.05,.18,1); }
   #cs-gnr .gnr-lonely-bg img { width:100%; height:100%; object-fit:cover; display:block; filter:saturate(0.94) contrast(0.98); }
   #cs-gnr .gnr-lonely-bg::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,rgba(251,247,239,0.06) 0%,rgba(251,247,239,0.02) 45%,rgba(251,247,239,0.18) 100%); }
   #cs-gnr[data-shown="1"] .gnr-lonely-bg { opacity:0.18; filter:blur(1px); }
@@ -14254,6 +14261,9 @@ window.cs1m7Reverse = function() {
   [id^="cs-18-vd4"] .vd-hero em { display:block;font-style:italic;font-weight:850;color:#b8954a;margin-top:6px; }
   /* 3-pillar row */
   [id^="cs-18-vd4"] .v5-pillars { display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;width:100%;max-width:1180px;align-items:stretch;margin-top:12px; }
+  @media (hover:none) and (pointer:coarse) and (orientation:landscape) {
+    #cs-18-vd4 .v5-pillars { transform:translateX(-5.5vw); }
+  }
   /* [Dave 2026-05-14 PM] Pillars are now FLIPPABLE cards — front shows just the badge, back shows the full content. perspective + cursor live on the pillar; the flex layout moves to the front/back faces inside .v5-flip-inner. */
   [id^="cs-18-vd4"] .v5-pillar { position:relative;perspective:1400px;cursor:pointer;min-height:380px;padding:0 16px; }
   [id^="cs-18-vd4"] .v5-flip-inner { position:relative;width:100%;min-height:380px;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.4,0,.2,1) }
@@ -14455,7 +14465,7 @@ window.cs1m7Reverse = function() {
       <!-- [Dave 2026-05-18 LATEST] vd-name DELETED — founder identity moved to eyebrow above. -->
       <!-- [Dave 2026-05-18] Three-core-strengths line replaced with Steve Jobs quote — anchors the wheelhouse beat in his framing: customer-first → reverse-engineer the technology. -->
       <!-- [Dave 2026-05-18 LATEST] Quote shortened per Dave — drop "You've got to" so it reads as a clean imperative. New break sits after "work" for symmetric phrasing. -->
-      <div class="vd-hero" style="text-align:center">Silicon Valley has unlimited capital<br>and the smartest builders on earth.<br><em style="font-style:italic;color:#b8954a;font-weight:850">So why hasn&rsquo;t it solved this for real-world social communities?</em></div>
+      <div class="vd-hero" style="text-align:center">Silicon Valley has unlimited capital<br>and the smartest builders on earth.<br><em style="font-style:italic;color:#b8954a;font-weight:850">So why hasn&rsquo;t it solved real connection and real community?</em></div>
 
       <!-- 3-pillar row with circular icon badges [Dave 2026-05-12 LATEST · ChatGPT-style] -->
       <div class="v5-pillars">
@@ -18809,7 +18819,7 @@ window.cs1m7Reverse = function() {
 
 <div class="casey-slide ds-focus trash-slide" id="cs-brand-V8" style="display:none">
   <!-- Eyebrow history: "Brand" → "Introducing Give n Receive". [Dave 2026-05-18 LATEST v3]: → 'Brand → live a life of abundant, autonomous connection.' per Dave's latest positioning eyebrow. Same mixed-case treatment as cs-1m8 above so the two slides share an identical eyebrow voice. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:none;color:#c8462c;z-index:10;max-width:980px;line-height:1.5"><em style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.4em;font-style:italic;font-weight:700;color:#1a1612">Live a life of <span style="color:#b8954a">abundant, autonomous connection</span>.</em></div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">brand</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v8-stage">
       <!-- [Dave 2026-05-18 LATEST v3] Header rewritten per Dave: '"A life of autonomous, abundant connection." → "Brand → live a life of abundant, autonomous connection."'. The "Brand →" prefix makes the slide self-identify even more clearly; word order flipped to "abundant, autonomous" per the new copy. -->
@@ -20534,6 +20544,9 @@ window.cs1m7Reverse = function() {
   #cs-samecourt .sc-col.blue .sc-col-eye{color:#5B8FD4}
   /* [Dave 2026-05-14 PM v4 — JAW-DROPPING UPGRADE] Behavior dashes now have a small iconic glyph BEFORE each line — adds visual texture + recognition for each behavior. Icons are small and quiet so they don't compete with the typography. */
   #cs-samecourt .sc-item{display:flex;align-items:center;gap:14px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-weight:500;font-size:clamp(1.45rem,2.3vw,2.05rem);line-height:1.32;color:#1a1612;letter-spacing:-0.012em}
+  #cs-samecourt .sc-brand-words .give{color:#5B8FD4}
+  #cs-samecourt .sc-brand-words .n{color:#b8954a;font-style:italic;font-weight:800}
+  #cs-samecourt .sc-brand-words .receive{color:#c8462c}
   #cs-samecourt .sc-item .dash{display:inline-block;flex-shrink:0;font-weight:300}
   #cs-samecourt .sc-item-icon{flex-shrink:0;width:24px;height:24px;display:flex;align-items:center;justify-content:center;opacity:.78}
   #cs-samecourt .sc-item-icon svg{width:24px;height:24px;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
@@ -20654,7 +20667,7 @@ window.cs1m7Reverse = function() {
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Community incentive system</div>
   <section class="sc-stage">
     <div class="sc-wrap">
-      <h1 class="sc-hero"><span style="font-style:italic">&ldquo;Show me the incentive and I&rsquo;ll show you the outcome&rdquo;</span> <em style="font-style:italic;color:#b8954a;font-weight:850">&mdash; Charlie Munger</em></h1>
+      <h1 class="sc-hero"><span style="font-style:italic">&ldquo;Show me the incentive and I&rsquo;ll show you the outcome&rdquo;</span>&nbsp; <em style="font-style:italic;color:#b8954a;font-weight:850">&mdash; Charlie Munger</em></h1>
 
       <div class="sc-split">
         <!-- LEFT · THE RATING TRAINS — with target icon [Dave 2026-05-12 LATEST] -->
@@ -20844,7 +20857,7 @@ window.cs1m7Reverse = function() {
             <div class="sc-bubble blue" style="max-width:none;white-space:nowrap">I&rsquo;m part of building <strong style="font-style:normal;font-weight:800">my community</strong></div>
           </div>
           <!-- [Dave 2026-05-14 PM v4] Behavior icons added — hand-up (show up), welcoming-arms (new face), swap-arrows (take spot). -->
-          <div class="sc-item"><span class="sc-item-icon"><svg viewBox="0 0 24 24"><path d="M12 13 V4 M8 8 L12 4 L16 8"/><path d="M5 13 V17 C5 19 6.5 20 9 20 H15 C17.5 20 19 19 19 17 V13"/></svg></span><span class="dash">&mdash;</span><span>The job is Give n Receive.</span></div>
+          <div class="sc-item"><span class="sc-item-icon"><svg viewBox="0 0 24 24"><path d="M12 13 V4 M8 8 L12 4 L16 8"/><path d="M5 13 V17 C5 19 6.5 20 9 20 H15 C17.5 20 19 19 19 17 V13"/></svg></span><span class="dash">&mdash;</span><span>The job is <span class="sc-brand-words"><span class="give">Give</span> <span class="n">n</span> <span class="receive">Receive</span></span>.</span></div>
           <div class="sc-item"><span class="sc-item-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 20 C5 16 7.5 13.5 12 13.5 C16.5 13.5 19 16 19 20"/><path d="M3 11 L5 13 M21 11 L19 13"/></svg></span><span class="dash">&mdash;</span><span>Play with the new face.</span></div>
           <div class="sc-item"><span class="sc-item-icon"><svg viewBox="0 0 24 24"><path d="M5 9 H17"/><polyline points="14 6, 17 9, 14 12"/><path d="M19 16 H7"/><polyline points="10 19, 7 16, 10 13"/></svg></span><span class="dash">&mdash;</span><span>Take my spot.</span></div>
         </div>
@@ -21444,14 +21457,14 @@ window.cs1m7Reverse = function() {
 
     <!-- [Dave 2026-05-14 PM v4] Master header text SWAPPED with the eyebrow per Dave. Long category claim moved up to the eyebrow banner; this header is now the punchy 2-word slide title. -->
     <!-- [Dave 2026-05-18 LATEST] Second line wrapped in .mg-master-line2 (nowrap) so the 'Real-world social networking: everyone contributes local community value.' phrase always renders on a single row, paired with the font-size reduction in CSS above. -->
-    <h1 class="mg-master">How do I change the atomic unit of Airbnb from a home to a person?<span class="mg-source">- Brian Chesky</span></h1>
+    <h1 class="mg-master">Social pull</h1>
 
     <!-- [Dave 2026-05-17 v7] LEFT rating-only court (with X-mark) + VS divider DELETED per Dave 'delete what you see attached for the social pull slide'. Slide is now single-court (right marketplace) centered. Original twin-court layout preserved as red-dot alt cs-magnetic-orig to the LEFT. -->
     <div class="mg-compare">
 
       <div class="mg-side left">
         <h2 class="mg-side-hero">Social media &rarr; <em>1% influencers</em>.</h2>
-        <svg class="mg-broadcast" viewBox="0 0 220 130" fill="none" preserveAspectRatio="xMidYMid meet" aria-label="Social media broadcast model: one influencer reaches many passive followers.">
+        <svg class="mg-broadcast" viewBox="0 0 220 130" fill="none" preserveAspectRatio="xMidYMid meet" aria-label="Social media broadcast model: one influencer reaches many lurkers.">
           <defs>
             <radialGradient id="mgBroadcastGlow" cx="34%" cy="50%" r="62%">
               <stop offset="0%" stop-color="rgba(91,143,212,0.22)"/>
@@ -21473,7 +21486,7 @@ window.cs1m7Reverse = function() {
           <g fill="rgba(26,22,18,0.34)" stroke="rgba(26,22,18,0.22)" stroke-width=".8">
             <circle cx="152" cy="34" r="7"/><circle cx="166" cy="50" r="7"/><circle cx="174" cy="66" r="7"/><circle cx="166" cy="82" r="7"/><circle cx="152" cy="96" r="7"/>
           </g>
-          <text x="162" y="104" text-anchor="middle" font-family="Manrope,sans-serif" font-size="5.25" font-weight="900" letter-spacing="0.08em" fill="rgba(26,22,18,0.46)">PASSIVE FEED</text>
+          <text x="162" y="104" text-anchor="middle" font-family="Manrope,sans-serif" font-size="5.25" font-weight="900" letter-spacing="0.08em" fill="rgba(26,22,18,0.46)">LURKER</text>
         </svg>
       </div>
 
@@ -23294,8 +23307,8 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-fv6-pink .fvi-arrow { opacity:1 !important;transition:none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-fv6-img" data-shown="0" onclick="csFv6Advance();event.stopPropagation()" style="display:none;cursor:pointer">
-  <!-- [Dave 2026-05-18 LATEST] Eyebrow text inverted per Dave's "best font color over this bg" check + reworded: "The planet's most valuable, networkable, untapped dataset" → "The most valuable, networkable, untapped dataset on the planet". Color stays WHITE — the cs-fv6-img bg is a dark twilight neighborhood watercolor (deep blues/greens in the top-left where the eyebrow sits), so white reads cleanly against it. Cream/gold would muddy against the warm golden connection threads in the same band. A subtle text-shadow added for legibility when the painting's blue tones lighten near the top corner. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#ffffff;text-shadow:0 1px 2px rgba(0,0,0,0.45);z-index:10">The most valuable, networkable, untapped dataset on the planet</div>
+  <!-- [Codex 2026-05-26] Eyebrow updated to the canonical slide label "Real human connection technology." -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;text-shadow:0 1px 2px rgba(0,0,0,0.45);z-index:10">Real human connection technology</div>
   <!-- [Dave 2026-05-17 v11] Codex watercolor background — neighborhood-as-network. Fallback chain: real_world_graph → community_builders → display none. -->
   <img class="fvi-bg" src="assets/gnr_vnext_real_world_graph.png" alt="A neighborhood seen at twilight with golden connection threads weaving between homes — watercolor depiction of community as a living network." onerror="this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'"/>
   <div class="fvi-wash"></div>
@@ -23305,7 +23318,7 @@ window.cs1m7Reverse = function() {
       <circle cx="8" cy="22" r="3.8" fill="#5B8FD4"/>
       <circle cx="72" cy="22" r="3.8" fill="#c8462c"/>
     </svg>
-    <h1 class="fvi-head">real human connection technology has limitless potential</h1>
+    <h1 class="fvi-head">When you can measure human connection, something magical happens.</h1>
     <!-- [Dave 2026-05-17 LATEST] Subtitle "The full workflow GnR brings online — measure to abundance." DELETED per Dave 'delete this'. -->
 
     <div class="fvi-row">
@@ -26702,7 +26715,7 @@ window.csA7m1Reverse = function() {
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">What's community?</div>
 <div class="inner" style="padding-top:48px;text-align:center;max-width:1700px;margin:0 auto">
   <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.4vw,2.8rem);font-weight:700;color:#1a1612;line-height:1.15;letter-spacing:-0.018em;max-width:1300px;margin:0 auto 32px">
-    <em style="font-style:italic;font-weight:500;color:#b8954a">Community</em> brings us together.
+    It&rsquo;s <em style="font-style:italic;font-weight:500;color:#b8954a">community</em> that brings us together.
   </div>
 
   <div class="c2c-grid">
@@ -29777,6 +29790,7 @@ window.csA7m1Reverse = function() {
   #cs-community-business.casey-entered .cb-card:nth-child(3){opacity:1;transform:none;transition-delay:.48s}
   #cs-community-business.casey-entered .cb-card:nth-child(5){opacity:1;transform:none;transition-delay:.62s}
   #cs-community-business.casey-entered .cb-close{opacity:1;transform:none;transition-delay:.78s}
+  #cs-community-business.active .cb-title,#cs-community-business.active .cb-sub,#cs-community-business.active .cb-card,#cs-community-business.active .cb-close{opacity:1;transform:none}
   html[data-export="1"] #cs-community-business .cb-title,html[data-export="1"] #cs-community-business .cb-sub,html[data-export="1"] #cs-community-business .cb-card,html[data-export="1"] #cs-community-business .cb-close{opacity:1!important;transform:none!important;transition:none!important}
 </style>
 <div class="casey-slide ds-focus" id="cs-community-business" style="display:none">
