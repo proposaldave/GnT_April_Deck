@@ -18784,7 +18784,7 @@ window.cs1m7Reverse = function() {
 </div>
 
 
-<div class="casey-slide ds-focus" id="cs-brand-V8">
+<div class="casey-slide ds-focus trash-slide" id="cs-brand-V8" style="display:none">
   <!-- Eyebrow history: "Brand" → "Introducing Give n Receive". [Dave 2026-05-18 LATEST v3]: → 'Brand → live a life of abundant, autonomous connection.' per Dave's latest positioning eyebrow. Same mixed-case treatment as cs-1m8 above so the two slides share an identical eyebrow voice. -->
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:none;color:#c8462c;z-index:10;max-width:980px;line-height:1.5"><em style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.4em;font-style:italic;font-weight:700;color:#1a1612">Live a life of <span style="color:#b8954a">abundant, autonomous connection</span>.</em></div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
@@ -29918,7 +29918,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v9] cs-a7m1 added as a RED-DOT alt at the FAR LEFT of the slot-2 dot strip (furthest from primary). It's the old "Social media is an extremely narrow view" slide that just demoted from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'.
   // Plus the existing blue-dot title candidates + pink-dot brand alts. Order in array maps LEFT→RIGHT (index 0 = leftmost). Red-dot sits leftmost, then blue-dots, then pink-dots — color groups stay contiguous.
   // [Dave 2026-05-18 LATEST v6] cs-1m8-codexmerge removed from slot 2 alts per Dave. cs-1m8-title-A remains primary. Order LEFT→RIGHT: red dots first, then blue, then pink.
-  3: ['cs-1m8-title-A', 'cs-1m8-title-C', 'cs-hc-market-planet', 'cs-hc-market-attention', 'cs-hc-market-latent', 'cs-brand-V8'],
+  3: ['cs-1m8-title-A', 'cs-1m8-title-C', 'cs-hc-market-planet', 'cs-hc-market-attention', 'cs-hc-market-latent'],
   // [Dave 2026-05-18 LATEST v6+v9] All SLIDE_ALTS keys past slot 2 DECREMENTED by 1 (v6 = cs-brand-V8 demoted, v9 = cs-a7m1 demoted). Net effect: 4→3 (v6) →still 3 with v9, 5→5 still, 6→5 (v6), 14→13 (v6)→12 (v9), 15→14, 16→15, 24→23.
   // [Dave 2026-05-24] Slot 3 primary is cs-brand-codex; former main slot-3 slide cs-1m8-envelopes is preserved as the pink-dot alt immediately left of it.
   // Slot 3 alt: cs-1m8-envelopes (pink rollback).
@@ -30169,6 +30169,7 @@ const TRASH_ORDER = [
   'cs-hct-system',
   'cs-hct-system-pink1',
   'cs-1m8-black-backup',
+  'cs-brand-V8',
 ];
 const TRASH_TOTAL = TRASH_ORDER.length;
 // Concept review rail. Separate from main deck, appendix, trash, and slot alts.
