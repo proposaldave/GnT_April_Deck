@@ -7546,73 +7546,77 @@ window.cs1m5Reverse = function() {
      Bg image: assets/cs-frontier-pink2.png (golden-hour porches at sunset with people).
      Fallback chain → cs-frontier-iconic-hero.png.
      ═══════════════════════════════════════════════════════════════════════════ -->
-<div class="casey-slide ds-focus" id="cs-frontier-scale-pink" style="display:none;background:radial-gradient(ellipse at 50% 38%, #fbf7ef 0%, #f3ead8 68%, #eadcc3 100%) !important;overflow:hidden">
+<div class="casey-slide ds-focus" id="cs-frontier-scale-pink" style="display:none;background:#f3ead8 !important;overflow:hidden">
   <style>
     #cs-frontier-scale-pink .scale-paper{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,.036) 1px, transparent 0);background-size:4px 4px;opacity:.34;pointer-events:none}
-    #cs-frontier-scale-pink .scale-glow{position:absolute;inset:-10%;background:radial-gradient(circle at 70% 46%, rgba(184,149,74,.18), transparent 34%),radial-gradient(circle at 24% 54%, rgba(91,143,212,.08), transparent 30%);pointer-events:none}
     #cs-frontier-scale-pink .scale-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a}
     #cs-frontier-scale-pink .scale-mark{position:absolute;top:28px;right:44px;z-index:5;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.04rem;font-weight:850;line-height:1}
     #cs-frontier-scale-pink .scale-mark .g{color:#5B8FD4}#cs-frontier-scale-pink .scale-mark .n{color:#b8954a;font-style:italic}#cs-frontier-scale-pink .scale-mark .r{color:#c8462c}
     #cs-frontier-scale-pink .scale-stage{position:absolute;inset:0;color:#1a1612}
     #cs-frontier-scale-pink .scale-head{position:absolute;left:50%;top:62px;z-index:3;transform:translateX(-50%);width:min(1410px,84vw);margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.9rem,5.25vw,6rem);font-weight:850;line-height:.95;letter-spacing:0;text-align:center;color:#1a1612}
     #cs-frontier-scale-pink .scale-head em{font-style:italic;color:#b8954a;font-weight:850}
-    #cs-frontier-scale-pink .scale-sub{position:absolute;left:50%;top:248px;z-index:3;transform:translateX(-50%);width:min(980px,68vw);margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.28rem,1.55vw,1.68rem);font-weight:850;font-style:italic;line-height:1.12;text-align:center;color:#1a1612}
-    #cs-frontier-scale-pink .scale-sub:before,#cs-frontier-scale-pink .scale-sub:after{content:"";position:absolute;top:31px;width:158px;height:1px;background:linear-gradient(90deg, transparent, rgba(184,149,74,.50))}
-    #cs-frontier-scale-pink .scale-sub:before{right:calc(50% + 260px)}
-    #cs-frontier-scale-pink .scale-sub:after{left:calc(50% + 260px);background:linear-gradient(90deg, rgba(184,149,74,.50), transparent)}
-    #cs-frontier-scale-pink .scale-diamond{position:absolute;top:25px;width:12px;height:12px;background:#b8954a;transform:rotate(45deg)}
-    #cs-frontier-scale-pink .scale-diamond.left{right:calc(50% + 224px)}
-    #cs-frontier-scale-pink .scale-diamond.right{left:calc(50% + 224px)}
-    #cs-frontier-scale-pink .scale-sub strong{display:block;font-weight:850}
-    #cs-frontier-scale-pink .scale-sub span:not(.scale-diamond){display:block;margin-top:7px;color:rgba(26,22,18,.66);font-size:.82em;font-weight:760}
-    #cs-frontier-scale-pink .scale-graphic{position:absolute;left:174px;right:174px;top:344px;z-index:2;height:424px;overflow:hidden;background:linear-gradient(180deg, rgba(251,247,239,.80), rgba(238,226,202,.50));box-shadow:0 28px 74px rgba(74,53,26,.13)}
-    #cs-frontier-scale-pink .scale-wash{position:absolute;inset:0;background:radial-gradient(circle at 78% 40%, rgba(255,221,142,.54), transparent 26%),radial-gradient(circle at 50% 44%, rgba(251,247,239,.70), transparent 48%),linear-gradient(90deg, rgba(251,247,239,.70), rgba(255,240,205,.16));pointer-events:none}
-    #cs-frontier-scale-pink .scale-beam{position:absolute;left:50%;bottom:108px;width:min(900px,63vw);height:7px;transform:translateX(-50%) rotate(-.7deg);background:linear-gradient(90deg, rgba(94,66,28,.66), #b8954a 48%, rgba(94,66,28,.66));border-radius:999px;box-shadow:0 8px 18px rgba(54,41,22,.18)}
-    #cs-frontier-scale-pink .scale-pan{position:absolute;bottom:62px;width:37%;height:82px;border-radius:0 0 50% 50%;background:linear-gradient(180deg, rgba(104,78,42,.10), rgba(74,53,26,.68));box-shadow:0 20px 32px rgba(54,41,22,.18)}
-    #cs-frontier-scale-pink .scale-pan:before{content:"";position:absolute;left:0;right:0;top:-27px;height:54px;border-radius:50%;background:linear-gradient(180deg, rgba(251,247,239,.78), rgba(184,149,74,.18));box-shadow:inset 0 -10px 20px rgba(74,53,26,.10)}
-    #cs-frontier-scale-pink .scale-pan.left{left:5%;transform:rotate(.35deg)}
-    #cs-frontier-scale-pink .scale-pan.right{right:5%;transform:rotate(-.35deg)}
-    #cs-frontier-scale-pink .scale-fulcrum{position:absolute;left:50%;bottom:32px;transform:translateX(-50%);width:124px;height:104px}
-    #cs-frontier-scale-pink .scale-fulcrum:before{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 38% 35%, #f4dfac 0 16%, #b8954a 18% 52%, #76572b 54% 100%);box-shadow:0 8px 18px rgba(54,41,22,.22)}
-    #cs-frontier-scale-pink .scale-fulcrum:after{content:"";position:absolute;left:8px;bottom:0;border-left:55px solid transparent;border-right:55px solid transparent;border-bottom:80px solid rgba(96,71,37,.76);filter:drop-shadow(0 14px 14px rgba(54,41,22,.18))}
-    #cs-frontier-scale-pink .scale-metric{position:absolute;border-radius:14px;background:linear-gradient(180deg, #26231f, #12110f);color:#fbf7ef;font-family:'Manrope',sans-serif;box-shadow:0 16px 28px rgba(0,0,0,.20), inset 0 0 0 1px rgba(255,255,255,.07);display:flex;flex-direction:column;align-items:center;justify-content:center}
-    #cs-frontier-scale-pink .scale-metric b{font-size:1.22rem;line-height:1;font-weight:800}
-    #cs-frontier-scale-pink .scale-metric span{font-size:.43rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(251,247,239,.68);margin-top:7px}
-    #cs-frontier-scale-pink .sm1{left:9%;top:126px;width:122px;height:78px}#cs-frontier-scale-pink .sm2{left:17%;top:54px;width:142px;height:96px}#cs-frontier-scale-pink .sm3{left:28.5%;top:112px;width:116px;height:88px}#cs-frontier-scale-pink .sm4{left:18.5%;top:182px;width:166px;height:90px}
-    #cs-frontier-scale-pink .scale-chart{position:absolute;left:9.5%;top:214px;width:250px;height:86px;border-radius:10px;background:#181614;box-shadow:0 16px 24px rgba(0,0,0,.18)}
-    #cs-frontier-scale-pink .scale-chart svg{width:100%;height:100%}
-    #cs-frontier-scale-pink .scale-people{position:absolute;right:7%;bottom:112px;width:35%;height:190px;display:flex;align-items:flex-end;justify-content:center;gap:26px}
-    #cs-frontier-scale-pink .scale-people:before{content:"";position:absolute;right:12%;top:-34px;width:360px;height:230px;background:radial-gradient(circle at 50% 42%, rgba(255,211,122,.50), transparent 68%);filter:blur(2px)}
-    #cs-frontier-scale-pink .scale-person{position:relative;width:58px;height:112px;border-radius:34px 34px 14px 14px;background:linear-gradient(180deg, rgba(143,94,35,.48), rgba(77,53,28,.78));filter:drop-shadow(0 12px 12px rgba(74,45,17,.15))}
-    #cs-frontier-scale-pink .scale-person:before{content:"";position:absolute;left:50%;top:-36px;transform:translateX(-50%);width:52px;height:52px;border-radius:50%;background:rgba(86,60,32,.80)}
-    #cs-frontier-scale-pink .scale-person:nth-child(1){height:124px;transform:translateY(-2px)}
-    #cs-frontier-scale-pink .scale-person:nth-child(2){height:102px;background:linear-gradient(180deg, rgba(196,132,42,.46), rgba(113,75,32,.74));transform:translateY(10px)}
-    #cs-frontier-scale-pink .scale-person:nth-child(3){height:112px;background:linear-gradient(180deg, rgba(184,149,74,.58), rgba(98,68,34,.80));transform:translateY(2px)}
-    #cs-frontier-scale-pink .scale-person:nth-child(4){height:94px;background:linear-gradient(180deg, rgba(200,70,44,.30), rgba(100,63,35,.74));transform:translateY(15px)}
-    #cs-frontier-scale-pink .scale-person:nth-child(5){height:108px;background:linear-gradient(180deg, rgba(91,143,212,.28), rgba(82,61,39,.74));transform:translateY(6px)}
+    #cs-frontier-scale-pink .scale-image-wrap{position:absolute;left:104px;right:104px;top:340px;height:430px;z-index:2;overflow:hidden;background:#fbf7ef;box-shadow:0 28px 78px rgba(74,53,26,.14)}
+    #cs-frontier-scale-pink .scale-image-wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(251,247,239,.08), rgba(251,247,239,.18) 49%, rgba(255,226,157,.08));pointer-events:none}
+    #cs-frontier-scale-pink .scale-image{position:absolute;inset:0;width:100%;height:100%;display:block}
     #cs-frontier-scale-pink .scale-footer{position:absolute;left:50%;bottom:78px;z-index:3;transform:translateX(-50%);width:min(1420px,86vw);display:flex;align-items:center;justify-content:center;gap:30px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.9rem,2.28vw,2.58rem);font-weight:850;line-height:1.04;color:#1a1612;text-align:center;white-space:nowrap}
     #cs-frontier-scale-pink .scale-footer:before,#cs-frontier-scale-pink .scale-footer:after{content:"";display:block;flex:1;max-width:250px;height:1px;background:linear-gradient(90deg, transparent, rgba(184,149,74,.42))}
     #cs-frontier-scale-pink .scale-footer:after{background:linear-gradient(90deg, rgba(184,149,74,.42), transparent)}
-    #cs-frontier-scale-pink .scale-footer .g{color:#5B8FD4}#cs-frontier-scale-pink .scale-footer .n{color:#b8954a;font-style:italic}#cs-frontier-scale-pink .scale-footer .r{color:#c8462c}#cs-frontier-scale-pink .scale-footer em{font-style:italic;color:#b8954a}
   </style>
   <div class="scale-paper"></div>
-  <div class="scale-glow"></div>
   <div class="scale-eye">NEUROSCIENCE &bull; LONGITUDINAL &bull; PUBLIC HEALTH &bull; EPIDEMOLOGY</div>
   <div class="scale-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
   <section class="scale-stage">
     <h1 class="scale-head">The <em>#1 predictor</em> of a fulfilling life is still invisible to technology.</h1>
-    <div class="scale-graphic" aria-label="Technology metrics balanced against real human connection">
-      <div class="scale-wash"></div>
-      <div class="scale-pan left"></div>
-      <div class="scale-pan right"></div>
-      <div class="scale-beam"></div>
-      <div class="scale-fulcrum"></div>
-      <div class="scale-metric sm1"><b>2.1K</b><span>Likes</span></div>
-      <div class="scale-metric sm2"><b>12,845</b><span>Followers</span></div>
-      <div class="scale-metric sm3"><b>87%</b><span>Productivity</span></div>
-      <div class="scale-metric sm4"><b>6h 42m</b><span>Screen time</span></div>
-      <div class="scale-chart" aria-hidden="true"><svg viewBox="0 0 250 86" fill="none"><path d="M18 64H232" stroke="rgba(251,247,239,.22)"/><path d="M28 58L62 48L96 54L130 34L164 40L198 18L226 28" stroke="#b8954a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="30" y="50" width="18" height="14" fill="rgba(91,143,212,.65)"/><rect x="64" y="42" width="18" height="22" fill="rgba(91,143,212,.65)"/><rect x="98" y="34" width="18" height="30" fill="rgba(91,143,212,.65)"/><rect x="132" y="24" width="18" height="40" fill="rgba(91,143,212,.65)"/></svg></div>
-      <div class="scale-people" aria-hidden="true"><div class="scale-person"></div><div class="scale-person"></div><div class="scale-person"></div><div class="scale-person"></div><div class="scale-person"></div></div>
+    <div class="scale-image-wrap" aria-label="Technology metrics balanced against real human connection">
+      <svg class="scale-image" viewBox="0 0 1269 379" role="img" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <radialGradient id="scaleGlow" cx="74%" cy="46%" r="34%"><stop offset="0" stop-color="#ffd986" stop-opacity=".78"/><stop offset=".48" stop-color="#f8d894" stop-opacity=".25"/><stop offset="1" stop-color="#fbf7ef" stop-opacity="0"/></radialGradient>
+          <linearGradient id="panShade" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff8e8" stop-opacity=".88"/><stop offset=".5" stop-color="#b8954a" stop-opacity=".16"/><stop offset="1" stop-color="#4c3a22" stop-opacity=".70"/></linearGradient>
+          <linearGradient id="cardShade" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2a2825"/><stop offset="1" stop-color="#11100e"/></linearGradient>
+          <filter id="softShadow" x="-25%" y="-35%" width="150%" height="170%"><feDropShadow dx="0" dy="16" stdDeviation="12" flood-color="#1a1612" flood-opacity=".18"/></filter>
+          <filter id="warmBlur"><feGaussianBlur stdDeviation="16"/></filter>
+        </defs>
+        <rect width="1269" height="379" fill="#fbf7ef"/>
+        <rect width="1269" height="379" fill="url(#scaleGlow)"/>
+        <ellipse cx="278" cy="263" rx="276" ry="42" fill="#b8954a" opacity=".12"/>
+        <ellipse cx="278" cy="279" rx="276" ry="54" fill="url(#panShade)"/>
+        <ellipse cx="974" cy="260" rx="242" ry="44" fill="#b8954a" opacity=".13"/>
+        <ellipse cx="974" cy="278" rx="242" ry="54" fill="url(#panShade)"/>
+        <path d="M304 248 C454 245 529 244 634 245 C745 246 820 245 966 244" fill="none" stroke="#7d642e" stroke-width="7" stroke-linecap="round" opacity=".62"/>
+        <path d="M637 239 L684 350 H590 Z" fill="#6d532f" opacity=".78" filter="url(#softShadow)"/>
+        <circle cx="637" cy="239" r="28" fill="#b8954a" filter="url(#softShadow)"/>
+        <circle cx="637" cy="239" r="11" fill="#ffe28c"/>
+        <g filter="url(#softShadow)">
+          <rect x="78" y="82" width="118" height="74" rx="13" fill="url(#cardShade)"/>
+          <rect x="193" y="16" width="126" height="96" rx="14" fill="url(#cardShade)"/>
+          <rect x="330" y="90" width="116" height="90" rx="13" fill="url(#cardShade)"/>
+          <rect x="230" y="160" width="166" height="92" rx="13" fill="url(#cardShade)"/>
+          <rect x="118" y="139" width="188" height="114" rx="12" fill="#171614"/>
+        </g>
+        <g font-family="Manrope, Arial, sans-serif" text-anchor="middle" fill="#fbf7ef">
+          <text x="137" y="122" font-size="22" font-weight="800">2.1K</text><text x="137" y="141" font-size="9" font-weight="800" letter-spacing="1.7" opacity=".62">LIKES</text>
+          <text x="256" y="58" font-size="23" font-weight="800">12,845</text><text x="256" y="80" font-size="9" font-weight="800" letter-spacing="1.4" opacity=".62">FOLLOWERS</text>
+          <text x="388" y="129" font-size="22" font-weight="800">87%</text><text x="388" y="150" font-size="9" font-weight="800" letter-spacing="1.4" opacity=".62">PRODUCTIVITY</text>
+          <text x="313" y="198" font-size="21" font-weight="800">6h 42m</text><text x="313" y="220" font-size="9" font-weight="800" letter-spacing="1.4" opacity=".62">SCREEN TIME</text>
+        </g>
+        <g transform="translate(138 166)">
+          <path d="M16 66H174" stroke="#fbf7ef" stroke-opacity=".17"/>
+          <rect x="24" y="52" width="18" height="14" fill="#5B8FD4" opacity=".66"/>
+          <rect x="61" y="42" width="18" height="24" fill="#5B8FD4" opacity=".66"/>
+          <rect x="98" y="32" width="18" height="34" fill="#5B8FD4" opacity=".66"/>
+          <path d="M18 57L55 47L92 54L132 31L168 42" fill="none" stroke="#b8954a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <g fill="#4f3b22" opacity=".92" filter="url(#softShadow)">
+          <circle cx="842" cy="146" r="24"/><rect x="816" y="170" width="52" height="92" rx="25"/>
+          <circle cx="930" cy="166" r="26"/><rect x="904" y="192" width="52" height="84" rx="24"/>
+          <circle cx="1016" cy="145" r="25"/><rect x="990" y="170" width="52" height="94" rx="24"/>
+          <circle cx="1100" cy="178" r="24"/><rect x="1076" y="202" width="49" height="74" rx="22"/>
+          <circle cx="1182" cy="156" r="25"/><rect x="1156" y="181" width="52" height="86" rx="23"/>
+        </g>
+        <g fill="#c8943d" opacity=".38"><circle cx="930" cy="166" r="26"/><rect x="904" y="192" width="52" height="84" rx="24"/><circle cx="1016" cy="145" r="25"/></g>
+        <rect x="990" y="170" width="52" height="94" rx="24" fill="#b8954a" opacity=".25"/>
+        <g filter="url(#warmBlur)" opacity=".54"><circle cx="999" cy="128" r="96" fill="#ffd986"/></g>
+      </svg>
     </div>
     <div class="scale-footer">What we're most wired for isn't measured</div>
   </section>
@@ -9906,7 +9910,7 @@ window.cs1m7Reverse = function() {
 <div class="casey-slide ds-focus" id="cs-thegap" data-shown="0" onclick="csThegapAdvance();event.stopPropagation()" style="cursor:pointer">
   <img class="tg-bg" src="assets/explorations/cs-thegap-v4-invisible-reciprocity.png" alt="Warm real-world community gathering." onerror="this.onerror=null;this.src='assets/cs-givefirst-art-community.png'"/>
   <div class="tg-bg-wash" aria-hidden="true"></div>
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Our communities: not digitized + unsolved</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Community Reality → Undigitized, Unsolved</div>
   <section style="position:relative;min-height:100%;width:100%">
     <div class="tg-stage">
       <div class="tg-head" style="opacity:1;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
@@ -11981,19 +11985,20 @@ window.cs1m7Reverse = function() {
 
   /* Entry stagger */
   #cs-wedgepb-codex .wpc-head, #cs-wedgepb-codex .wpc-sub, #cs-wedgepb-codex .wpc-band, #cs-wedgepb-codex .wpc-card { opacity:0; transform:translateY(8px); transition:opacity 0.6s cubic-bezier(.22,1,.36,1), transform 0.6s cubic-bezier(.22,1,.36,1); }
+  #cs-wedgepb-codex[data-stage="0"] .wpc-stage > :not(.speaker-notes) { opacity:0 !important; visibility:hidden !important; pointer-events:none !important; animation:none !important; transform:translateY(8px) !important; }
   #cs-wedgepb-codex[data-stage="0"] .wpc-stage { pointer-events:none; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-head { opacity:1; transform:none; transition-delay:0.10s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-sub  { opacity:1; transform:none; transition-delay:0.25s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-band-1 { opacity:1; transform:none; transition-delay:0.40s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-band-2 { opacity:1; transform:none; transition-delay:0.52s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-band-3 { opacity:1; transform:none; transition-delay:0.64s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-band-4 { opacity:1; transform:none; transition-delay:0.76s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-band-5 { opacity:1; transform:none; transition-delay:0.88s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-card:nth-child(1) { opacity:1; transform:none; transition-delay:0.55s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-card:nth-child(2) { opacity:1; transform:none; transition-delay:0.70s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-card:nth-child(3) { opacity:1; transform:none; transition-delay:0.85s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-card:nth-child(4) { opacity:1; transform:none; transition-delay:1.00s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-card:nth-child(5) { opacity:1; transform:none; transition-delay:1.15s; }
+  #cs-wedgepb-codex:is([data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-head,
+  #cs-wedgepb-codex:is([data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-sub { opacity:1; transform:none; transition-delay:0.10s; }
+  #cs-wedgepb-codex:is([data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-band-1,
+  #cs-wedgepb-codex:is([data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-card:nth-child(1) { opacity:1; transform:none; transition-delay:0.12s; }
+  #cs-wedgepb-codex:is([data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-band-2,
+  #cs-wedgepb-codex:is([data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-card:nth-child(2) { opacity:1; transform:none; transition-delay:0.12s; }
+  #cs-wedgepb-codex:is([data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-band-3,
+  #cs-wedgepb-codex:is([data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-card:nth-child(3) { opacity:1; transform:none; transition-delay:0.12s; }
+  #cs-wedgepb-codex:is([data-stage="4"],[data-stage="5"]).casey-entered .wpc-band-4,
+  #cs-wedgepb-codex:is([data-stage="4"],[data-stage="5"]).casey-entered .wpc-card:nth-child(4) { opacity:1; transform:none; transition-delay:0.12s; }
+  #cs-wedgepb-codex[data-stage="5"].casey-entered .wpc-band-5,
+  #cs-wedgepb-codex[data-stage="5"].casey-entered .wpc-card:nth-child(5) { opacity:1; transform:none; transition-delay:0.12s; }
   html[data-export="1"] #cs-wedgepb-codex .wpc-head, html[data-export="1"] #cs-wedgepb-codex .wpc-sub, html[data-export="1"] #cs-wedgepb-codex .wpc-band, html[data-export="1"] #cs-wedgepb-codex .wpc-card { opacity:1 !important; transform:none !important; transition:none !important; }
 
   /* [Dave 2026-05-18 LATEST v3] cs-wedgepb-codex bg image MORE VISIBLE per Dave 'this slide i'd like the background image to be a little more visible' (after promotion to main primary). Opacity 0.78 → 0.95 + cream wash thinned even further from light (.55/.32/.40/.62) to faint (.35/.18/.22/.42). The codex watercolor is now the dominant visual layer; the funnel + cards float over it with their card chrome (white fills, blue rails, drop shadows) providing legibility. */
@@ -14433,7 +14438,6 @@ window.cs1m7Reverse = function() {
   [id^="cs-18-vd4"] .v5-flip-back { position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center }
   /* [Dave 2026-05-14 PM] Better centering — back face now centers content vertically (was flex-start). Combined with horizontal align-items:center, both faces fully center their content in the card. */
   [id^="cs-18-vd4"] .v5-flip-front { justify-content:center }
-  #cs-18-vd4 .v5-pillar.p2 .v5-flip-front { transform:translateY(-88px); }
   /* [Dave 2026-05-18 LATEST] Front-face labels under the badge — one keyword per pillar so the closed cards read as the 3-beat wheelhouse story without needing to be flipped. Editorial serif, brand-warm ink, kerned wide to feel like a section title. */
   [id^="cs-18-vd4"] .v5-front-label { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.15rem,1.45vw,1.35rem); font-weight:850; font-style:italic; line-height:1.10; letter-spacing:-0.012em; color:#1a1612; text-align:center; margin-top:14px; max-width:220px; }
   [id^="cs-18-vd4"] .v5-pillar.p1 .v5-front-label { color:#8a6420; }
@@ -20736,9 +20740,9 @@ window.cs1m7Reverse = function() {
   /* [Dave 2026-05-18 LATEST v3] Per-line stagger WIDENED + per-item transition LENGTHENED per Dave 'these could animate in a little better (eg instead of the block all at once, one line at a time would look better)'. Old gaps were 0.05/0.20/0.35s with 0.55s transitions — that read as a fast block. New gaps are 0/0.55/1.10s with 0.85s transitions + larger 16px y-offset, so each bullet visibly arrives on its own beat. */
   #cs-samecourt[data-stage="0"] .sc-col.red  .sc-item,
   #cs-samecourt[data-stage="0"] .sc-col.blue .sc-item { opacity:0; transform:translateY(16px); pointer-events:none; }
-  #cs-samecourt[data-stage="1"] .sc-col.blue .sc-item { opacity:0; transform:translateY(16px); pointer-events:none; }
-  /* Stage 1 reveals LEFT (red) column with WIDE stagger */
   #cs-samecourt[data-stage="1"] .sc-col.red  .sc-item,
+  #cs-samecourt[data-stage="1"] .sc-col.blue .sc-item { opacity:0; transform:translateY(16px); pointer-events:none; }
+  /* Stage 2 reveals the below-card text; it stays out of the initial content reveal. */
   #cs-samecourt[data-stage="2"] .sc-col.red  .sc-item,
   #cs-samecourt[data-stage="2"] .sc-col.blue .sc-item {
     opacity:1; transform:none;
@@ -21175,6 +21179,7 @@ window.cs1m7Reverse = function() {
   #cs-samecourt-pink3 .sc-col-icon.red{background:rgba(200,70,44,0.10);border:1.4px solid rgba(200,70,44,0.40)}
   #cs-samecourt-pink3 .sc-col-icon.blue{background:rgba(91,143,212,0.10);border:1.4px solid rgba(91,143,212,0.40)}
   #cs-samecourt-pink3 .sc-col .sc-col-eye{font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.92vw,.88rem);font-weight:800;letter-spacing:.36em;text-transform:uppercase;margin-bottom:0}
+  #cs-samecourt-pink3 .sc-col .sc-col-eye strong{font-weight:900}
   #cs-samecourt-pink3 .sc-col.red .sc-col-eye{color:#c8462c}
   #cs-samecourt-pink3 .sc-col.blue .sc-col-eye{color:#5B8FD4}
   /* [Dave 2026-05-14 PM v4 — JAW-DROPPING UPGRADE] Behavior dashes now have a small iconic glyph BEFORE each line — adds visual texture + recognition for each behavior. Icons are small and quiet so they don't compete with the typography. */
@@ -21290,7 +21295,7 @@ window.cs1m7Reverse = function() {
           <!-- [Dave 2026-05-14 PM v3] SWAPPED per Dave: eye-row label moved to TOP (section header for the column), bubble moved to JUST ABOVE the dashes (testimonial below the graphic). -->
           <div class="sc-col-eye-row">
             <div class="sc-col-icon red"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#c8462c" stroke-width="1.6"/><circle cx="12" cy="12" r="5" stroke="#c8462c" stroke-width="1.6"/><circle cx="12" cy="12" r="1.8" fill="#c8462c"/></svg></div>
-            <div class="sc-col-eye">Coordination by skill rating</div>
+            <div class="sc-col-eye">Coordination by <strong>skill rating</strong></div>
           </div>
           <!-- [Dave 2026-05-14 PM] COMMUNITY-LEVEL graphic — parallel to cs-magnetic's court: shows the community FRAGMENTED into 3 isolated cliques. No inter-cluster edges. Visualizes what rating-driven incentives DO to a community. -->
           <div class="sc-community">
@@ -21378,7 +21383,7 @@ window.cs1m7Reverse = function() {
           <!-- [Dave 2026-05-14 PM v3] SWAPPED per Dave: eye-row label moved to TOP, bubble moved to JUST ABOVE the dashes (testimonial below the graphic). -->
           <div class="sc-col-eye-row">
             <div class="sc-col-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#5B8FD4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20 C3 16 5 14 9 14 C13 14 15 16 15 20"/><path d="M14 19 C14 16.5 15.5 15 17 15 C19 15 21 16.5 21 19"/></svg></div>
-            <div class="sc-col-eye">Coordination by networked reciprocity</div>
+            <div class="sc-col-eye">Coordination by <strong>networked reciprocity</strong></div>
           </div>
           <!-- [Dave 2026-05-14 PM] COMMUNITY-LEVEL graphic — parallel to cs-magnetic's marketplace court: shows the SAME community NETWORKED into a dense web. Same number of nodes as the left side, now connected by reciprocity edges through a warm glow. Visualizes what GnR-driven incentives DO to a community. -->
           <div class="sc-community">
@@ -21643,12 +21648,11 @@ window.cs1m7Reverse = function() {
   <img src="assets/cs-samecourt-bg.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;display:block;opacity:0.68" onerror="this.onerror=null;this.src='assets/cs-samecourt-pink3.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
   <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg, rgba(251,247,239,0.86) 0%, rgba(251,247,239,0.80) 22%, rgba(251,247,239,0.72) 55%, rgba(251,247,239,0.80) 100%)"></div>
   <!-- [Dave 2026-05-18 LATEST] Eyebrow ↔ above-court hero SWAPPED per Dave: '"Social pull" / "People are the product and the sales engine." swap places of that text (eg so "People are the product..." will go top left label of the slide and social pull will go right above the court)'. Eyebrow now carries the marketplace claim; "Social pull" moves to the above-court hero (.mg-side-hero on .mg-side.right). -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Social pull</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Social pull powers real communities</div>
   <section class="mg-stage">
 
     <!-- [Dave 2026-05-14 PM v4] Master header text SWAPPED with the eyebrow per Dave. Long category claim moved up to the eyebrow banner; this header is now the punchy 2-word slide title. -->
     <!-- [Dave 2026-05-18 LATEST] Second line wrapped in .mg-master-line2 (nowrap) so the 'Real-world social networking: everyone contributes local community value.' phrase always renders on a single row, paired with the font-size reduction in CSS above. -->
-    <h1 class="mg-master">Social pull</h1>
 
     <!-- [Dave 2026-05-17 v7] LEFT rating-only court (with X-mark) + VS divider DELETED per Dave 'delete what you see attached for the social pull slide'. Slide is now single-court (right marketplace) centered. Original twin-court layout preserved as red-dot alt cs-magnetic-orig to the LEFT. -->
     <div class="mg-compare">
@@ -23499,7 +23503,7 @@ window.cs1m7Reverse = function() {
 </style>
 <div class="casey-slide ds-focus" id="cs-fv6-img" data-shown="0" onclick="csFv6Advance();event.stopPropagation()" style="display:none;cursor:pointer">
   <!-- [Codex 2026-05-26] Eyebrow updated to the canonical slide label "Real human connection technology." -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;background:rgba(251,247,239,0.86);padding:4px 7px;border-radius:2px;box-shadow:0 1px 4px rgba(26,22,18,0.14);z-index:10">Real human connection technology</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;text-shadow:0 1px 3px rgba(251,247,239,0.82);z-index:10">Real human connection technology</div>
   <!-- [Codex 2026-05-26] Stronger measured-connection background for active fv6 slide. Fallback chain: real_world_graph -> community_builders -> display none. -->
   <img class="fvi-bg" src="assets/cs-fv6-measured-connection-bg.png" alt="A golden-hour pickleball community with subtle measured connection arcs linking people, courts, and clubhouse activity." onerror="this.onerror=null;this.src='assets/gnr_vnext_real_world_graph.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
   <div class="fvi-wash"></div>
@@ -23509,7 +23513,7 @@ window.cs1m7Reverse = function() {
       <circle cx="8" cy="22" r="3.8" fill="#5B8FD4"/>
       <circle cx="72" cy="22" r="3.8" fill="#c8462c"/>
     </svg>
-    <h1 class="fvi-head">When you can measure human connection, something magical happens.</h1>
+    <h1 class="fvi-head">When you can measure human connection, something magical happens, something limitless.</h1>
     <!-- [Dave 2026-05-17 LATEST] Subtitle "The full workflow GnR brings online — measure to abundance." DELETED per Dave 'delete this'. -->
 
     <div class="fvi-row">
@@ -24699,8 +24703,15 @@ window.cs1m7Reverse = function() {
      rightmost pink dot).
      ═══════════════════════════════════════════════════════════════════════════ -->
 <style>
-  #cs-mv6-merge { background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important; }
-  #cs-mv6-merge .mg2-stage { position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:74px 56px 36px;text-align:center;gap:12px; }
+  #cs-mv6-merge { position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important; }
+  #cs-mv6-merge::before { content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:
+    radial-gradient(ellipse 48% 42% at 82% 22%, rgba(184,149,74,.18) 0%, rgba(184,149,74,.06) 42%, rgba(184,149,74,0) 72%),
+    linear-gradient(118deg, transparent 0 39%, rgba(91,143,212,.12) 39.2%, rgba(91,143,212,.12) 39.7%, transparent 40% 100%),
+    linear-gradient(118deg, transparent 0 46%, rgba(200,70,44,.13) 46.2%, rgba(200,70,44,.13) 46.65%, transparent 47% 100%),
+    radial-gradient(circle at 74% 33%, rgba(200,70,44,.14) 0 7px, rgba(200,70,44,0) 8px),
+    radial-gradient(circle at 88% 14%, rgba(184,149,74,.24) 0 11px, rgba(184,149,74,0) 12px);
+    opacity:.86; }
+  #cs-mv6-merge .mg2-stage { position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:74px 56px 36px;text-align:center;gap:12px; }
   /* [Dave 2026-05-17 LATEST jaw-drop pass] Headline upgraded to a true magazine-spread treatment:
      stacked mission eyebrow over a two-line statement, hairline gold underline beneath the eyebrow,
      tighter optical tracking, two-color emphasis (red verb + gold modifier), and a small "·" pause
@@ -24766,7 +24777,7 @@ window.cs1m7Reverse = function() {
 </style>
 <div class="casey-slide ds-focus" id="cs-mv6-merge" style="display:none">
   <!-- [Dave 2026-05-18 LATEST] Eyebrow "The future of off-screen connection" → "Mission". Internal mg2-mission-eye-block ("Mission" + rule) DELETED — the eyebrow now carries the Mission framing, so the redundant in-slide "Mission" label and its gold rule are gone. Headline rises directly under the chart. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Humanity's Endgame</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">skate to where the puck is going</div>
   <section class="mg2-stage">
 
     <div class="mg2-headwrap">
@@ -26772,10 +26783,13 @@ window.csA7m1Reverse = function() {
 
 <!-- ===== cs-2c — Real-world social communities · 6-card grid (ported from pitch-communities.html, paper-mode) [Dave 2026-04-30 PM evening] ===== -->
 <style>
+  #cs-2c { background:#1a1612 !important; overflow:hidden; position:relative; }
+  #cs-2c::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; background:url('assets/cs-2c-v2-community-listening.png') center/cover no-repeat !important; opacity:.54; filter:saturate(.92) contrast(.98); mix-blend-mode:normal; }
+  #cs-2c::after { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; background:linear-gradient(90deg,rgba(251,247,239,.86) 0%,rgba(251,247,239,.66) 46%,rgba(251,247,239,.30) 100%),radial-gradient(circle at 72% 42%,rgba(26,22,18,.20),transparent 48%) !important; }
   #cs-2c .c2c-grid { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); gap:clamp(7px,0.8vw,12px); max-width:1820px; margin:48px auto 0; padding:0 clamp(14px,1.8vw,28px); align-items:stretch; }
   /* PERMANENT card-height equality [Dave 2026-05-07 — third correction]: align-items:stretch on grid + aspect-ratio + label min-height of 2 lines.
      Single-line labels (e.g. 'Neighborhoods') now reserve the same vertical space as two-line labels ('Colleges & Universities') so every card renders identical height regardless of label copy. Do NOT regress this. */
-  #cs-2c .c2c-card { background:rgba(26,22,18,0.025); border:1px solid rgba(26,22,18,0.16); border-radius:14px; padding:clamp(18px,2.4vw,36px) clamp(8px,1.2vw,18px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:clamp(10px,1.4vw,18px); text-align:center; aspect-ratio:1/1; min-width:0; height:100%; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  #cs-2c .c2c-card { background:rgba(251,247,239,.30); border:1px solid rgba(26,22,18,0.14); border-radius:14px; padding:clamp(18px,2.4vw,36px) clamp(8px,1.2vw,18px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:clamp(10px,1.4vw,18px); text-align:center; aspect-ratio:1/1; min-width:0; height:100%; box-shadow:0 18px 54px rgba(26,22,18,.055); backdrop-filter:blur(2px); transition: transform 0.3s ease, box-shadow 0.3s ease; }
   #cs-2c .c2c-card.c2c-highlight { background:linear-gradient(180deg,rgba(184,149,74,0.12) 0%,rgba(184,149,74,0.04) 100%); border:1.5px solid rgba(184,149,74,0.55); box-shadow:0 0 28px rgba(184,149,74,0.18); position:relative; }
   #cs-2c .c2c-icon { font-size:clamp(38px,4.4vw,64px); line-height:1; margin:0; }
   #cs-2c .c2c-icon svg { width:clamp(40px,4.4vw,60px); height:clamp(40px,4.4vw,60px); }
@@ -29972,19 +29986,19 @@ window.csA7m1Reverse = function() {
 
 
 
-<div class="casey-slide staff-slide" id="staff-nepc-02" style="display:none"><section class="staff-shell"><div class="staff-paper"></div><div class="staff-eyebrow">Human truth</div><div class="staff-count">Staff 1 / 7</div><h1 class="staff-title" style="max-width:790px;font-size:clamp(4.2rem,5.7vw,6.75rem);line-height:.94;letter-spacing:-.045em">Humans are wired for <span class="gold">live connection.</span></h1><div style="position:absolute;left:92px;bottom:104px;z-index:4;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#1a1612;max-width:650px;text-shadow:0 10px 34px rgba(255,252,244,.82)">A smile lands.<br><span style="color:#5B8FD4">The room opens.</span></div><div style="position:absolute;right:126px;bottom:82px;z-index:4;border-left:7px solid #c8462c;padding:22px 0 22px 32px;width:560px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:3rem;line-height:1.04;font-weight:760;color:#1a1612;background:rgba(255,252,244,.74);box-shadow:0 24px 70px rgba(26,22,18,.08)">The least digitized thing<br><span style="color:#c8462c;font-style:italic">is the signal.</span></div><div style="position:absolute;right:70px;top:146px;width:910px;height:610px;z-index:2;"><svg viewBox="0 0 910 610" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#1a1612" flood-opacity=".18"/></filter><filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="58%"><stop offset="0" stop-color="#fff2bd" stop-opacity="1"/><stop offset=".54" stop-color="#f2c963" stop-opacity=".40"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient><linearGradient id="orbitStroke" x1="75" y1="110" x2="830" y2="505"><stop offset="0" stop-color="#5B8FD4" stop-opacity=".75"/><stop offset=".52" stop-color="#b8954a" stop-opacity=".82"/><stop offset="1" stop-color="#c8462c" stop-opacity=".70"/></linearGradient></defs><ellipse cx="455" cy="310" rx="410" ry="246" fill="rgba(255,252,244,.56)" stroke="rgba(184,149,74,.25)" stroke-width="2"/><circle cx="455" cy="310" r="282" fill="url(#sglow)" opacity=".98"/><g fill="none" stroke="url(#orbitStroke)" stroke-linecap="round"><ellipse cx="455" cy="310" rx="350" ry="172" stroke-width="4" opacity=".60"/><ellipse cx="455" cy="310" rx="260" ry="112" stroke-width="3" opacity=".48" transform="rotate(-18 455 310)"/><path d="M182 198 C292 76 622 78 724 198" stroke-width="4" opacity=".74"/><path d="M145 389 C288 526 636 524 775 388" stroke-width="4" opacity=".74"/><path d="M182 198 C318 323 562 353 775 388" stroke-width="3.5" opacity=".62"/><path d="M724 198 C580 324 378 356 145 389" stroke-width="3.5" opacity=".62"/></g><g filter="url(#soft)" opacity=".48"><circle cx="455" cy="310" r="136" fill="#b8954a"/><circle cx="455" cy="310" r="74" fill="#c8462c"/></g><g filter="url(#sfx)"><circle cx="455" cy="310" r="92" fill="#fffaf0" stroke="#b8954a" stroke-width="6"/><path d="M418 302 C418 270 452 260 455 294 C460 260 493 270 493 302 C493 344 455 364 455 364 C455 364 418 344 418 302Z" fill="#c8462c"/></g><g filter="url(#sfx)"><g transform="translate(182 198)"><circle r="62" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="8"/><circle cy="-15" r="17" fill="#5B8FD4"/><path d="M-34 42 C-20 13 20 13 34 42" fill="#5B8FD4"/></g><g transform="translate(724 198)"><circle r="62" fill="#fbf7ef" stroke="#b8954a" stroke-width="8"/><circle cy="-15" r="17" fill="#b8954a"/><path d="M-34 42 C-20 13 20 13 34 42" fill="#b8954a"/></g><g transform="translate(145 389)"><circle r="62" fill="#fbf7ef" stroke="#c8462c" stroke-width="8"/><circle cy="-15" r="17" fill="#c8462c"/><path d="M-34 42 C-20 13 20 13 34 42" fill="#c8462c"/></g><g transform="translate(775 388)"><circle r="62" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="8"/><circle cy="-15" r="17" fill="#5B8FD4"/><path d="M-34 42 C-20 13 20 13 34 42" fill="#5B8FD4"/></g></g><g fill="#c8462c" opacity=".72"><circle cx="310" cy="316" r="12"/><circle cx="604" cy="317" r="12"/></g><g fill="#5B8FD4" opacity=".45"><circle cx="264" cy="138" r="8"/><circle cx="668" cy="468" r="8"/></g><g fill="#b8954a" opacity=".42"><circle cx="455" cy="77" r="7"/><circle cx="455" cy="536" r="7"/></g></svg></div></section></div>
+<div class="casey-slide staff-slide" id="staff-nepc-02" style="display:none"><section class="staff-shell"><div class="staff-paper"></div><div class="staff-eyebrow">Human truth</div><div class="staff-count" style="display:none">Staff 1 / 6</div><h1 class="staff-title" style="max-width:640px;font-size:clamp(4.2rem,5.7vw,6.75rem);line-height:.94;letter-spacing:-.045em;z-index:5">Humans are wired for <span class="gold">live connection.</span></h1><div style="position:absolute;left:92px;bottom:104px;z-index:4;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#1a1612;max-width:650px;text-shadow:0 10px 34px rgba(255,252,244,.82)">A smile lands.<br><span style="color:#5B8FD4">The room opens.</span></div><div style="position:absolute;right:126px;bottom:82px;z-index:4;border-left:7px solid #c8462c;padding:22px 0 22px 32px;width:560px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:3rem;line-height:1.04;font-weight:760;color:#1a1612;background:rgba(255,252,244,.74);box-shadow:0 24px 70px rgba(26,22,18,.08)">The least digitized thing<br><span style="color:#c8462c;font-style:italic">is the signal.</span></div><div style="position:absolute;right:170px;top:170px;width:720px;height:500px;z-index:1;"><svg viewBox="0 0 910 610" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#1a1612" flood-opacity=".18"/></filter><filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="58%"><stop offset="0" stop-color="#fff2bd" stop-opacity="1"/><stop offset=".54" stop-color="#f2c963" stop-opacity=".40"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient><linearGradient id="orbitStroke" x1="75" y1="110" x2="830" y2="505"><stop offset="0" stop-color="#5B8FD4" stop-opacity=".75"/><stop offset=".52" stop-color="#b8954a" stop-opacity=".82"/><stop offset="1" stop-color="#c8462c" stop-opacity=".70"/></linearGradient></defs><ellipse cx="455" cy="310" rx="410" ry="246" fill="rgba(255,252,244,.56)" stroke="rgba(184,149,74,.25)" stroke-width="2"/><circle cx="455" cy="310" r="282" fill="url(#sglow)" opacity=".98"/><g fill="none" stroke="url(#orbitStroke)" stroke-linecap="round"><ellipse cx="455" cy="310" rx="350" ry="172" stroke-width="4" opacity=".60"/><ellipse cx="455" cy="310" rx="260" ry="112" stroke-width="3" opacity=".48" transform="rotate(-18 455 310)"/><path d="M182 198 C292 76 622 78 724 198" stroke-width="4" opacity=".74"/><path d="M145 389 C288 526 636 524 775 388" stroke-width="4" opacity=".74"/><path d="M182 198 C318 323 562 353 775 388" stroke-width="3.5" opacity=".62"/><path d="M724 198 C580 324 378 356 145 389" stroke-width="3.5" opacity=".62"/></g><g filter="url(#soft)" opacity=".48"><circle cx="455" cy="310" r="136" fill="#b8954a"/><circle cx="455" cy="310" r="74" fill="#c8462c"/></g><g filter="url(#sfx)"><circle cx="455" cy="310" r="92" fill="#fffaf0" stroke="#b8954a" stroke-width="6"/><path d="M418 302 C418 270 452 260 455 294 C460 260 493 270 493 302 C493 344 455 364 455 364 C455 364 418 344 418 302Z" fill="#c8462c"/></g><g filter="url(#sfx)"><g transform="translate(182 198)"><circle r="62" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="8"/><circle cy="-15" r="17" fill="#5B8FD4"/><path d="M-34 42 C-20 13 20 13 34 42" fill="#5B8FD4"/></g><g transform="translate(724 198)"><circle r="62" fill="#fbf7ef" stroke="#b8954a" stroke-width="8"/><circle cy="-15" r="17" fill="#b8954a"/><path d="M-34 42 C-20 13 20 13 34 42" fill="#b8954a"/></g><g transform="translate(145 389)"><circle r="62" fill="#fbf7ef" stroke="#c8462c" stroke-width="8"/><circle cy="-15" r="17" fill="#c8462c"/><path d="M-34 42 C-20 13 20 13 34 42" fill="#c8462c"/></g><g transform="translate(775 388)"><circle r="62" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="8"/><circle cy="-15" r="17" fill="#5B8FD4"/><path d="M-34 42 C-20 13 20 13 34 42" fill="#5B8FD4"/></g></g><g fill="#c8462c" opacity=".72"><circle cx="310" cy="316" r="12"/><circle cx="604" cy="317" r="12"/></g><g fill="#5B8FD4" opacity=".45"><circle cx="264" cy="138" r="8"/><circle cx="668" cy="468" r="8"/></g><g fill="#b8954a" opacity=".42"><circle cx="455" cy="77" r="7"/><circle cx="455" cy="536" r="7"/></g></svg></div></section></div>
 
 <div class="casey-slide staff-slide" id="staff-nepc-03" style="display:none"><section class="staff-shell"><div class="staff-paper"></div><div class="staff-eyebrow">One event</div><div class="staff-count">Staff 2 / 8</div><h1 class="staff-title" style="max-width:1040px">One open heart can change the court.</h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#1a1612;max-width:650px">Sign up.<br><span style="color:#b8954a;font-style:italic">Show up open.</span><br>Everyone feels it.</div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><rect x="116" y="84" width="760" height="420" rx="18" fill="rgba(255,252,244,.72)" stroke="#b8954a" stroke-width="8"/><line x1="496" y1="84" x2="496" y2="504" stroke="#b8954a" stroke-width="7"/><line x1="116" y1="294" x2="876" y2="294" stroke="#b8954a" stroke-width="3" opacity=".38"/><g stroke="#b8954a" stroke-width="3" stroke-dasharray="10 16" opacity=".62"><path d="M248 210 C400 128 610 124 748 208"/><path d="M248 382 C402 492 614 492 748 382"/><path d="M248 210 C396 322 598 350 748 382"/></g><g transform="translate(248 210)"><circle r="58" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><circle cy="-14" r="16" fill="#5B8FD4"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#5B8FD4"/></g><g transform="translate(248 382)"><circle r="58" fill="#fbf7ef" stroke="#c8462c" stroke-width="7"/><circle cy="-14" r="16" fill="#c8462c"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#c8462c"/></g><g transform="translate(748 208)"><circle r="58" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><circle cy="-14" r="16" fill="#b8954a"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#b8954a"/></g><g transform="translate(748 382)"><circle r="58" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><circle cy="-14" r="16" fill="#5B8FD4"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#5B8FD4"/></g><g filter="url(#sfx)"><circle cx="496" cy="294" r="78" fill="#fffaf0" stroke="#c8462c" stroke-width="7"/><path d="M462 288 C462 258 495 252 497 282 C502 252 532 260 532 288 C532 325 497 343 497 343 C497 343 462 325 462 288Z" fill="#c8462c"/></g><path d="M892 294 L1038 294" stroke="#b8954a" stroke-width="6"/><path d="M1038 294 L1000 266 M1038 294 L1000 322" stroke="#b8954a" stroke-width="6"/><text x="1060" y="282" style="font-family:'Fraunces','Playfair Display',Georgia,serif;" font-size="62" font-weight="850" fill="#1a1612">repeat</text><text x="1060" y="338" style="font-family:'Manrope',sans-serif;" font-size="22" font-weight="900" letter-spacing="4" fill="#c8462c">DEMAND</text></svg></div></section></div>
 
 <div class="casey-slide staff-slide" id="staff-nepc-04" style="display:none"><section class="staff-shell dark"><div class="staff-paper"></div><div class="staff-eyebrow">Open heart mechanics</div><div class="staff-count">Staff 2 / 7</div><h1 class="staff-title" style="max-width:1040px">Openness is contagious.</h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#fbf7ef;max-width:650px"><span style="color:#b8954a;font-style:italic">One person</span><br>opens the room.</div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><circle cx="600" cy="325" r="285" fill="url(#sglow)" opacity=".8"/><g fill="none" stroke="#b8954a" stroke-width="3" opacity=".55"><circle cx="600" cy="325" r="130"/><circle cx="600" cy="325" r="225"/><circle cx="600" cy="325" r="310"/></g><g stroke="#b8954a" stroke-width="3" opacity=".65"><path d="M600 325 L318 218"/><path d="M600 325 L376 472"/><path d="M600 325 L792 160"/><path d="M600 325 L930 300"/><path d="M600 325 L820 500"/></g><g filter="url(#sfx)"><circle cx="600" cy="325" r="82" fill="#fbf7ef" stroke="#c8462c" stroke-width="6"/><path d="M566 320 C566 292 598 283 600 312 C604 283 635 292 635 320 C635 357 600 374 600 374 C600 374 566 357 566 320Z" fill="#c8462c"/></g><g transform="translate(318 218)"><circle r="58" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><circle cy="-14" r="16" fill="#5B8FD4"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#5B8FD4"/></g><g transform="translate(376 472)"><circle r="58" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><circle cy="-14" r="16" fill="#b8954a"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#b8954a"/></g><g transform="translate(792 160)"><circle r="58" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><circle cy="-14" r="16" fill="#5B8FD4"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#5B8FD4"/></g><g transform="translate(930 300)"><circle r="58" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><circle cy="-14" r="16" fill="#b8954a"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#b8954a"/></g><g transform="translate(820 500)"><circle r="58" fill="#fbf7ef" stroke="#c8462c" stroke-width="7"/><circle cy="-14" r="16" fill="#c8462c"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#c8462c"/></g><text x="600" y="625" text-anchor="middle" style="font-family:'Manrope',sans-serif;" font-size="23" font-weight="900" letter-spacing="5" fill="#fbf7ef" opacity=".78">THE ROOM CHANGES</text></svg></div></section></div>
 
-<div class="casey-slide staff-slide" id="staff-nepc-05" style="display:none"><section class="staff-shell"><div class="staff-paper"></div><div class="staff-eyebrow">Ripple</div><div class="staff-count">Staff 3 / 7</div><h1 class="staff-title" style="max-width:1040px">One good session keeps working.</h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#1a1612;max-width:650px">Session<br><span style="color:#b8954a;font-style:italic">to friendship</span><br>to demand.</div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><g transform="translate(578 320)"><circle r="300" fill="rgba(255,252,244,.58)" stroke="rgba(184,149,74,.22)"/><circle r="218" fill="none" stroke="#b8954a" stroke-width="5" opacity=".42"/><circle r="140" fill="none" stroke="#5B8FD4" stroke-width="5" opacity=".5"/><circle r="64" fill="#fbf7ef" stroke="#c8462c" stroke-width="7" filter="url(#sfx)"/><path d="M-30 -6 C-30 -35 -2 -41 0 -12 C5 -41 33 -35 33 -6 C33 30 0 48 0 48 C0 48 -30 30 -30 -6Z" fill="#c8462c"/><g style="font-family:'Manrope',sans-serif;" font-weight="900" letter-spacing="4" font-size="18" text-anchor="middle"><text y="-165" fill="#5B8FD4">FRIENDSHIP</text><text x="220" y="10" fill="#b8954a">PRIVATE COURT</text><text y="188" fill="#c8462c">NAME DRAW</text><text x="-230" y="10" fill="#1a1612">REPEAT</text></g></g><path d="M890 320 C982 312 1048 266 1100 200" fill="none" stroke="#c8462c" stroke-width="8"/><path d="M1100 200 L1092 250 M1100 200 L1048 212" fill="none" stroke="#c8462c" stroke-width="8"/></svg></div></section></div>
+<div class="casey-slide staff-slide" id="staff-nepc-05" style="display:none"><section class="staff-shell"><div class="staff-paper"></div><div class="staff-eyebrow">Ripple</div><div class="staff-count">Staff 3 / 7</div><h1 class="staff-title" style="max-width:760px">One good session keeps working.</h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#1a1612;max-width:650px">Session<br><span style="color:#b8954a;font-style:italic">to friendship</span><br>to demand.</div><div style="position:absolute;right:40px;top:205px;width:980px;height:610px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><g transform="translate(578 320)"><circle r="300" fill="rgba(255,252,244,.58)" stroke="rgba(184,149,74,.22)"/><circle r="218" fill="none" stroke="#b8954a" stroke-width="5" opacity=".42"/><circle r="140" fill="none" stroke="#5B8FD4" stroke-width="5" opacity=".5"/><circle r="64" fill="#fbf7ef" stroke="#c8462c" stroke-width="7" filter="url(#sfx)"/><path d="M-30 -6 C-30 -35 -2 -41 0 -12 C5 -41 33 -35 33 -6 C33 30 0 48 0 48 C0 48 -30 30 -30 -6Z" fill="#c8462c"/><g style="font-family:'Manrope',sans-serif;" font-weight="900" letter-spacing="4" font-size="18" text-anchor="middle"><text y="-165" fill="#5B8FD4">FRIENDSHIP</text><text x="220" y="10" fill="#b8954a">PRIVATE COURT</text><text y="188" fill="#c8462c">NAME DRAW</text><text x="-230" y="10" fill="#1a1612">REPEAT</text></g></g><path d="M890 320 C982 312 1048 266 1100 200" fill="none" stroke="#c8462c" stroke-width="8"/><path d="M1100 200 L1092 250 M1100 200 L1048 212" fill="none" stroke="#c8462c" stroke-width="8"/></svg></div></section></div>
 
 <div class="casey-slide staff-slide" id="staff-nepc-06" style="display:none"><section class="staff-shell"><div class="staff-paper"></div><div class="staff-eyebrow">Social pull</div><div class="staff-count">Staff 4 / 7</div><h1 class="staff-title" style="max-width:1040px">Some people make rooms fill.</h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#1a1612;max-width:650px"><span style="color:#5B8FD4">Magnets</span><br>are the hidden engine.</div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><g fill="none" stroke="#b8954a" stroke-width="4" opacity=".45"><path d="M222 168 C450 48 778 48 1010 168"/><path d="M178 308 C448 174 790 174 1054 308"/><path d="M222 466 C450 586 778 586 1010 466"/></g><g stroke="#b8954a" stroke-width="3" stroke-dasharray="10 16" opacity=".58"><path d="M604 318 L270 180"/><path d="M604 318 L944 178"/><path d="M604 318 L262 470"/><path d="M604 318 L944 472"/></g><g transform="translate(270 180)"><circle r="58" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><circle cy="-14" r="16" fill="#b8954a"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#b8954a"/></g><g transform="translate(944 178)"><circle r="58" fill="#fbf7ef" stroke="#c8462c" stroke-width="7"/><circle cy="-14" r="16" fill="#c8462c"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#c8462c"/></g><g transform="translate(262 470)"><circle r="58" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><circle cy="-14" r="16" fill="#5B8FD4"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#5B8FD4"/></g><g transform="translate(944 472)"><circle r="58" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><circle cy="-14" r="16" fill="#b8954a"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#b8954a"/></g><g filter="url(#sfx)"><circle cx="604" cy="318" r="106" fill="#fffaf0" stroke="#5B8FD4" stroke-width="8"/><text x="604" y="310" text-anchor="middle" style="font-family:'Fraunces','Playfair Display',Georgia,serif;" font-size="70" font-weight="900" fill="#5B8FD4">M</text><text x="604" y="360" text-anchor="middle" style="font-family:'Manrope',sans-serif;" font-size="18" font-weight="900" letter-spacing="4" fill="#1a1612">MAGNET</text></g><text x="604" y="625" text-anchor="middle" style="font-family:'Fraunces','Playfair Display',Georgia,serif;" font-size="56" font-weight="850" fill="#1a1612">Who makes people want to come back?</text></svg></div></section></div>
 
 <div class="casey-slide staff-slide" id="staff-nepc-07" style="display:none"><section class="staff-shell dark"><div class="staff-paper"></div><div class="staff-eyebrow">Technology layer</div><div class="staff-count">Staff 5 / 7</div><h1 class="staff-title" style="max-width:1040px">Technology helps the heart reach more people.</h1><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;left:110px;right:110px;width:calc(100% - 220px);"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><g transform="translate(125 300)" filter="url(#sfx)"><circle r="104" fill="#fbf7ef" stroke="#c8462c" stroke-width="7"/><path d="M-40 -4 C-40 -42 -3 -52 0 -16 C7 -52 43 -42 43 -4 C43 42 0 65 0 65 C0 65 -40 42 -40 -4Z" fill="#c8462c"/><text y="158" text-anchor="middle" style="font-family:'Manrope',sans-serif;" font-size="20" font-weight="900" letter-spacing="5" fill="#fbf7ef">HEART</text></g><path d="M260 300 L1010 300" stroke="#b8954a" stroke-width="8"/><path d="M1010 300 L964 268 M1010 300 L964 332" stroke="#b8954a" stroke-width="8"/><g style="font-family:'Fraunces','Playfair Display',Georgia,serif;" font-size="52" font-weight="850" text-anchor="middle" filter="url(#sfx)"><g transform="translate(405 300)"><rect x="-96" y="-72" width="192" height="144" rx="16" fill="rgba(251,247,239,.10)" stroke="rgba(251,247,239,.25)"/><text y="14" fill="#fbf7ef">match</text></g><g transform="translate(590 300)"><rect x="-96" y="-72" width="192" height="144" rx="16" fill="rgba(251,247,239,.10)" stroke="rgba(251,247,239,.25)"/><text y="14" fill="#fbf7ef">invite</text></g><g transform="translate(775 300)"><rect x="-96" y="-72" width="192" height="144" rx="16" fill="rgba(251,247,239,.10)" stroke="rgba(251,247,239,.25)"/><text y="14" fill="#fbf7ef">learn</text></g></g><g transform="translate(1085 300)" filter="url(#sfx)"><circle r="118" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="8"/><circle r="58" fill="none" stroke="#b8954a" stroke-width="4" opacity=".65"/><circle cx="-46" cy="18" r="16" fill="#5B8FD4"/><circle cx="42" cy="-22" r="16" fill="#c8462c"/><circle cx="38" cy="48" r="16" fill="#b8954a"/><path d="M-46 18 L42 -22 L38 48 L-46 18" fill="none" stroke="#b8954a" stroke-width="4"/><text y="164" text-anchor="middle" style="font-family:'Manrope',sans-serif;" font-size="20" font-weight="900" letter-spacing="5" fill="#fbf7ef">MORE CONNECTION</text></g></svg></div></section></div>
 
-<div class="casey-slide staff-slide" id="staff-nepc-08" style="display:none"><section class="staff-shell"><div class="staff-paper"></div><div class="staff-eyebrow">Operating loop</div><div class="staff-count">Staff 6 / 7</div><h1 class="staff-title" style="max-width:1040px">The club becomes a learning loop.</h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#1a1612;max-width:650px">Staff judgment.<br><span style="color:#b8954a;font-style:italic">Member generosity.</span><br>Software memory.</div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><circle cx="560" cy="315" r="250" fill="rgba(255,252,244,.62)" stroke="rgba(184,149,74,.32)"/><path d="M560 65 C790 75 930 235 880 437" fill="none" stroke="#b8954a" stroke-width="8"/><path d="M782 545 C590 673 348 607 258 405" fill="none" stroke="#5B8FD4" stroke-width="8"/><path d="M238 205 C326 27 538 -3 708 81" fill="none" stroke="#c8462c" stroke-width="8"/><g filter="url(#sfx)" style="font-family:'Fraunces','Playfair Display',Georgia,serif;" font-size="58" font-weight="850" text-anchor="middle"><g transform="translate(560 82)"><circle r="92" fill="#fbf7ef" stroke="#c8462c" stroke-width="7"/><text y="18" fill="#1a1612">Staff</text></g><g transform="translate(860 427)"><circle r="92" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><text y="18" fill="#1a1612">Play</text></g><g transform="translate(270 427)"><circle r="92" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><text y="18" fill="#1a1612">Learn</text></g><g transform="translate(560 315)"><circle r="118" fill="#1a1612" stroke="#b8954a" stroke-width="7"/><text y="0" fill="#fbf7ef">GnR</text><text y="48" style="font-family:'Manrope',sans-serif;" font-size="18" letter-spacing="5" fill="#b8954a">MEMORY</text></g></g></svg></div></section></div>
+<div class="casey-slide staff-slide" id="staff-nepc-08" style="display:none"><section class="staff-shell"><div class="staff-paper"></div><div class="staff-eyebrow">Operating loop</div><div class="staff-count">Staff 6 / 7</div><h1 class="staff-title" style="max-width:760px;font-size:clamp(3.8rem,5.2vw,6.15rem);line-height:.94">The club becomes a learning loop.</h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#1a1612;max-width:650px">Staff judgment.<br><span style="color:#b8954a;font-style:italic">Member generosity.</span><br>Software memory.</div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="staff-loop-sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><circle cx="560" cy="315" r="250" fill="rgba(255,252,244,.62)" stroke="rgba(184,149,74,.32)"/><path d="M560 65 C790 75 930 235 880 437" fill="none" stroke="#b8954a" stroke-width="8"/><path d="M782 545 C590 673 348 607 258 405" fill="none" stroke="#5B8FD4" stroke-width="8"/><path d="M238 205 C326 27 538 -3 708 81" fill="none" stroke="#c8462c" stroke-width="8"/><g filter="url(#staff-loop-sfx)" style="font-family:'Fraunces','Playfair Display',Georgia,serif;" font-size="58" font-weight="850" text-anchor="middle"><g transform="translate(560 82)"><circle r="92" fill="#fbf7ef" stroke="#c8462c" stroke-width="7"/><text y="18" fill="#1a1612">Staff</text></g><g transform="translate(860 427)"><circle r="92" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><text y="18" fill="#1a1612">Play</text></g><g transform="translate(270 427)"><circle r="92" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><text y="18" fill="#1a1612">Learn</text></g><g transform="translate(560 315)"><circle r="118" fill="#1a1612" stroke="#b8954a" stroke-width="7"/><text y="0" fill="#fbf7ef">GnR</text><text y="48" style="font-family:'Manrope',sans-serif;" font-size="18" letter-spacing="5" fill="#b8954a">MEMORY</text></g></g></svg></div></section></div>
 
 <div class="casey-slide staff-slide" id="staff-nepc-09" style="display:none"><section class="staff-shell dark"><div class="staff-paper"></div><div class="staff-eyebrow">The point</div><div class="staff-count">Staff 7 / 7</div><h1 class="staff-title" style="max-width:1040px">The future starts on our courts.</h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#fbf7ef;max-width:650px"><span style="color:#b8954a;font-style:italic">Open hearts</span><br>made abundant.</div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><circle cx="620" cy="315" r="310" fill="url(#sglow)"/><rect x="318" y="136" width="604" height="330" rx="18" fill="rgba(251,247,239,.10)" stroke="#b8954a" stroke-width="7"/><line x1="620" y1="136" x2="620" y2="466" stroke="#b8954a" stroke-width="5"/><line x1="318" y1="301" x2="922" y2="301" stroke="#b8954a" stroke-width="3" opacity=".42"/><g stroke="#b8954a" stroke-width="3" opacity=".52"><path d="M620 301 C472 226 330 160 188 76"/><path d="M620 301 C802 212 964 148 1120 66"/><path d="M620 301 C444 402 312 496 164 596"/><path d="M620 301 C810 410 962 506 1110 596"/></g><g filter="url(#sfx)"><circle cx="620" cy="301" r="112" fill="#fbf7ef" stroke="#c8462c" stroke-width="8"/><path d="M574 293 C574 252 617 244 620 284 C626 244 666 253 666 293 C666 343 620 368 620 368 C620 368 574 343 574 293Z" fill="#c8462c"/><text x="620" y="526" text-anchor="middle" style="font-family:'Manrope',sans-serif;" font-size="22" font-weight="900" letter-spacing="5" fill="#fbf7ef">WHERE THE SYSTEM BECOMES REAL</text></g><g fill="#fbf7ef" opacity=".9"><circle cx="188" cy="76" r="13"/><circle cx="1120" cy="66" r="13"/><circle cx="164" cy="596" r="13"/><circle cx="1110" cy="596" r="13"/><circle cx="240" cy="496" r="9"/><circle cx="998" cy="506" r="9"/></g></svg></div></section></div>
 
@@ -30105,6 +30119,7 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-14 MERGE] cs-intro6 + cs-frontier MERGED into a single slot-1 opener (cs-frontier carries the merged content). cs-intro6 demoted to red-dot alt at slot 1 for A/B comparison. All slots past slot 1 shift -1. Merge approach: hero now states the #1-predictor science truth, sub names the parabolic demand reality, curve carries the demand visualization, '4 sciences agree' strip grounds the claim, positioning band carves the category + wedge.
   // [Dave 2026-05-14 PM v4] cs-frontier-iconic PROMOTED to slot-1 primary per Dave 'I like this, let's make it the first slide, replacing current first slide which you can move to being a red dot slide to the left'. cs-frontier (former primary) demoted to first red-dot alt below.
   'cs-frontier-pink1', //  1 PRIMARY · [Dave 2026-05-17 LATEST] Promoted from pink-dot alt → main slot 1 ('i like this, use this as main slide one and put current main slide one as a pink dot next to it'). Sunset town/village wide-angle watercolor bg + 'Real connection → #1 predictor of a fulfilling life' headline.
+  'cs-fv6-img', //  2 Real human connection technology - moved up per Dave 2026-05-26.
   // [Dave 2026-05-25] cs-hct-system moved to TRASH_ORDER per screenshot request.
   // [Dave 2026-05-17 PM] cs-givefirst-slide2 REMOVED from main flow per Dave: 'major bug' — bg image asset cs-givefirst-slide2.png was never saved to disk; slide was rendering with broken image alt text. The original cs-givefirst-art at slot 18 still carries the same content cleanly. HTML retained as silent backup; restore by re-adding this line.
   // 'cs-givefirst-slide2', // REMOVED — was duplicate at slot 2 with broken bg image
@@ -30126,7 +30141,7 @@ const SLIDE_ORDER = [
   'cs-2c',    //  5 Community · 6-card grid
   // [2026-05-04 Dave] cs-bh, cs-bh-vA, cs-bh-vC, cs-2b, cs-4 MERGED into single cs-thegap problem slide. Originals moved to APPENDIX as backups.
   'cs-thegap', //  3 MERGED — Our communities are full of understanding, we just never unlock it. 3 figures + rich network-bubbles + by-hand texting.
-  'cs-community-business', // Community is a different kind of business - missing people-understood layer.
+  // [Codex 2026-05-26] cs-community-business moved to TRASH_ORDER per Dave: slide 5 / 20 and its alt were blank.
   // [Dave 2026-05-26] cs-samecourt MOVED EARLIER. The Munger/incentive-system thesis now lands before cultural/product reveal so investors understand the core behavior-change mechanism first.
   'cs-samecourt',
   // [Dave 2026-05-24 LATER] cs-18-vd4 MOVED LATER. Founder/Steve Jobs wheelhouse beat was interrupting the product reveal here; investor needs the product before founder philosophy.
@@ -30139,7 +30154,7 @@ const SLIDE_ORDER = [
   'cs-gnr',   //  8 Introducing GnR · invitation matchmaking
   // [Dave 2026-05-26] Current post-product flow after earlier incentive-system thesis: magnetic -> wedgepb-codex -> fv6-img -> NEPC proof -> invitation mechanics.
   // [Dave 2026-05-26] cs-givefirst-art MOVED to APPENDIX per screenshot request.
-  'cs-11d','cs-magnetic','cs-wedgepb-codex','cs-fv6-img','cs-11e','cs-11',
+  'cs-11d','cs-magnetic','cs-wedgepb-codex','cs-11e','cs-11',
   // [Dave 2026-05-12 LATEST] cs-3 MOVED HERE — Dave: 'the "Pickleball is the fastest-growing, highest-velocity, densest social-signal community, ever." slide needs to follow the "No like button? No problem." slide'. cs-3 now sits right after cs-11.
   'cs-3',           // Pickleball 24 unique social experiences per week — fastest-growing, highest-velocity, densest social-signal community
   // [Dave 2026-05-24] Prior move comments were superseded by the current post-Munger block; cs-19 now follows cs-3 after the invitation-mechanics beat.
@@ -30375,18 +30390,17 @@ const SLIDE_ALTS = {
 const CODEX_BG_REVIEW_ALTS = [
   { slot: 3,  sourceId: 'cs-2c',                 id: 'cs-2c-bg-green',                 image: 'assets/cs-2c-v2-community-listening.png' },
   { slot: 4,  sourceId: 'cs-thegap',             id: 'cs-thegap-bg-green',             image: 'assets/explorations/cs-thegap-v4-invisible-reciprocity.png' },
-  { slot: 5,  sourceId: 'cs-community-business', id: 'cs-community-business-bg-green', image: 'assets/explorations/community-value-slide-options/bg-network-club.png' },
-  { slot: 8,  sourceId: 'cs-11d',                id: 'cs-11d-bg-green',                image: 'assets/v2/cs-11d/v1-hero-implicit-signal.-preview.png' },
-  { slot: 9,  sourceId: 'cs-samecourt',          id: 'cs-samecourt-bg-green',          image: 'assets/cs-samecourt-bg.png' },
-  { slot: 13, sourceId: 'cs-11e',                id: 'cs-11e-bg-green',                image: 'assets/explorations/cs-11e-v3-faces-not-ratings.png' },
-  { slot: 14, sourceId: 'cs-11',                 id: 'cs-11-bg-green',                 image: 'assets/v2/cs-11/v1-hero-measurement.-preview.png' },
-  { slot: 15, sourceId: 'cs-3',                  id: 'cs-3-bg-green',                  image: 'assets/v2/cs-3/v1-hero-signal-density.-preview.png' },
-  { slot: 16, sourceId: 'cs-19',                 id: 'cs-19-bg-green',                 image: 'assets/v2/cs-19/v1-hero-revenue.-preview.png' },
-  { slot: 17, sourceId: 'cs-wedge1',             id: 'cs-wedge1-bg-green',             image: 'assets/v2/cs-wedge1/v1-hero-expansion.-preview.png' },
-  { slot: 18, sourceId: 'cs-mv6-merge',          id: 'cs-mv6-merge-bg-green',          image: 'assets/cs-mv6-humans.png' },
-  { slot: 19, sourceId: 'cs-18-vd4',             id: 'cs-18-vd4-bg-green',             image: 'assets/v2/cs-18-vd4/v1-hero-founder.-preview.png' },
-  { slot: 20, sourceId: 'cs-27',                 id: 'cs-27-bg-green',                 image: 'assets/v2/cs-27/v1-hero-cto.-preview.png' },
-  { slot: 21, sourceId: 'cs-brand-V8',           id: 'cs-brand-V8-bg-green',           image: 'assets/cs-brand-codex.png' }
+  { slot: 5,  sourceId: 'cs-samecourt',          id: 'cs-samecourt-bg-green',          image: 'assets/cs-samecourt-bg.png' },
+  { slot: 7,  sourceId: 'cs-11d',                id: 'cs-11d-bg-green',                image: 'assets/v2/cs-11d/v1-hero-implicit-signal.-preview.png' },
+  { slot: 11, sourceId: 'cs-11e',                id: 'cs-11e-bg-green',                image: 'assets/explorations/cs-11e-v3-faces-not-ratings.png' },
+  { slot: 12, sourceId: 'cs-11',                 id: 'cs-11-bg-green',                 image: 'assets/v2/cs-11/v1-hero-measurement.-preview.png' },
+  { slot: 13, sourceId: 'cs-3',                  id: 'cs-3-bg-green',                  image: 'assets/v2/cs-3/v1-hero-signal-density.-preview.png' },
+  { slot: 14, sourceId: 'cs-19',                 id: 'cs-19-bg-green',                 image: 'assets/v2/cs-19/v1-hero-revenue.-preview.png' },
+  { slot: 15, sourceId: 'cs-wedge1',             id: 'cs-wedge1-bg-green',             image: 'assets/v2/cs-wedge1/v1-hero-expansion.-preview.png' },
+  { slot: 16, sourceId: 'cs-mv6-merge',          id: 'cs-mv6-merge-bg-green',          image: 'assets/cs-mv6-humans.png' },
+  { slot: 17, sourceId: 'cs-18-vd4',             id: 'cs-18-vd4-bg-green',             image: 'assets/v2/cs-18-vd4/v1-hero-founder.-preview.png' },
+  { slot: 18, sourceId: 'cs-27',                 id: 'cs-27-bg-green',                 image: 'assets/v2/cs-27/v1-hero-cto.-preview.png' },
+  { slot: 19, sourceId: 'cs-brand-V8',           id: 'cs-brand-V8-bg-green',           image: 'assets/cs-brand-codex.png' }
 ];
 
 const CODEX_BG_REVIEW_GLASS_CARD_ALTS = new Set(['cs-2c-bg-green']);
@@ -30572,6 +30586,7 @@ const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 // Recoverable slide trash. These are intentionally out of the main deck and appendix,
 // but still visible inside the app so Dave can restore candidates later.
 const TRASH_ORDER = [
+  'cs-community-business',
   'cs-brand-codex',
   'cs-1bm1',
   'cs-ask',
@@ -30669,8 +30684,8 @@ window.csWedgepbCodexAdvance = function() {
   const slide = document.getElementById('cs-wedgepb-codex');
   if (!slide || !slide.classList.contains('active')) return false;
   const stage = parseInt(slide.dataset.stage || '0', 10);
-  if (stage >= 1) return false;
-  slide.dataset.stage = '1';
+  if (stage >= 5) return false;
+  slide.dataset.stage = String(stage + 1);
   return true;
 };
 window.csWedgepbCodexReverse = function() {
@@ -30678,7 +30693,7 @@ window.csWedgepbCodexReverse = function() {
   if (!slide || !slide.classList.contains('active')) return false;
   const stage = parseInt(slide.dataset.stage || '0', 10);
   if (stage <= 0) return false;
-  slide.dataset.stage = '0';
+  slide.dataset.stage = String(stage - 1);
   return true;
 };
 
@@ -32953,6 +32968,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 600);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-wedgepb-codex' && window.csWedgepbCodexAdvance && window.csWedgepbCodexAdvance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-magnetic' && window.csMagneticAdvance && window.csMagneticAdvance()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
@@ -33102,6 +33121,10 @@ document.addEventListener('wheel', e => {
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt' && window.csSamecourtReverse && window.csSamecourtReverse()) {
       setTimeout(() => { wheelLock = false; }, 600);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-wedgepb-codex' && window.csWedgepbCodexReverse && window.csWedgepbCodexReverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-magnetic' && window.csMagneticReverse && window.csMagneticReverse()) {
