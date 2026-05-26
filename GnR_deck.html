@@ -11982,18 +11982,18 @@ window.cs1m7Reverse = function() {
   /* Entry stagger */
   #cs-wedgepb-codex .wpc-head, #cs-wedgepb-codex .wpc-sub, #cs-wedgepb-codex .wpc-band, #cs-wedgepb-codex .wpc-card { opacity:0; transform:translateY(8px); transition:opacity 0.6s cubic-bezier(.22,1,.36,1), transform 0.6s cubic-bezier(.22,1,.36,1); }
   #cs-wedgepb-codex[data-stage="0"] .wpc-stage { pointer-events:none; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-head { opacity:1; transform:none; transition-delay:0.10s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-sub  { opacity:1; transform:none; transition-delay:0.25s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-band-1 { opacity:1; transform:none; transition-delay:0.40s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-band-2 { opacity:1; transform:none; transition-delay:0.52s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-band-3 { opacity:1; transform:none; transition-delay:0.64s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-band-4 { opacity:1; transform:none; transition-delay:0.76s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-band-5 { opacity:1; transform:none; transition-delay:0.88s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-card:nth-child(1) { opacity:1; transform:none; transition-delay:0.55s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-card:nth-child(2) { opacity:1; transform:none; transition-delay:0.70s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-card:nth-child(3) { opacity:1; transform:none; transition-delay:0.85s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-card:nth-child(4) { opacity:1; transform:none; transition-delay:1.00s; }
-  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-card:nth-child(5) { opacity:1; transform:none; transition-delay:1.15s; }
+  #cs-wedgepb-codex:is([data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-head,
+  #cs-wedgepb-codex:is([data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-sub { opacity:1; transform:none; transition-delay:0.10s; }
+  #cs-wedgepb-codex:is([data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-band-1,
+  #cs-wedgepb-codex:is([data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-card:nth-child(1) { opacity:1; transform:none; transition-delay:0.12s; }
+  #cs-wedgepb-codex:is([data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-band-2,
+  #cs-wedgepb-codex:is([data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-card:nth-child(2) { opacity:1; transform:none; transition-delay:0.12s; }
+  #cs-wedgepb-codex:is([data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-band-3,
+  #cs-wedgepb-codex:is([data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-card:nth-child(3) { opacity:1; transform:none; transition-delay:0.12s; }
+  #cs-wedgepb-codex:is([data-stage="4"],[data-stage="5"]).casey-entered .wpc-band-4,
+  #cs-wedgepb-codex:is([data-stage="4"],[data-stage="5"]).casey-entered .wpc-card:nth-child(4) { opacity:1; transform:none; transition-delay:0.12s; }
+  #cs-wedgepb-codex[data-stage="5"].casey-entered .wpc-band-5,
+  #cs-wedgepb-codex[data-stage="5"].casey-entered .wpc-card:nth-child(5) { opacity:1; transform:none; transition-delay:0.12s; }
   html[data-export="1"] #cs-wedgepb-codex .wpc-head, html[data-export="1"] #cs-wedgepb-codex .wpc-sub, html[data-export="1"] #cs-wedgepb-codex .wpc-band, html[data-export="1"] #cs-wedgepb-codex .wpc-card { opacity:1 !important; transform:none !important; transition:none !important; }
 
   /* [Dave 2026-05-18 LATEST v3] cs-wedgepb-codex bg image MORE VISIBLE per Dave 'this slide i'd like the background image to be a little more visible' (after promotion to main primary). Opacity 0.78 → 0.95 + cream wash thinned even further from light (.55/.32/.40/.62) to faint (.35/.18/.22/.42). The codex watercolor is now the dominant visual layer; the funnel + cards float over it with their card chrome (white fills, blue rails, drop shadows) providing legibility. */
@@ -30669,8 +30669,8 @@ window.csWedgepbCodexAdvance = function() {
   const slide = document.getElementById('cs-wedgepb-codex');
   if (!slide || !slide.classList.contains('active')) return false;
   const stage = parseInt(slide.dataset.stage || '0', 10);
-  if (stage >= 1) return false;
-  slide.dataset.stage = '1';
+  if (stage >= 5) return false;
+  slide.dataset.stage = String(stage + 1);
   return true;
 };
 window.csWedgepbCodexReverse = function() {
@@ -30678,7 +30678,7 @@ window.csWedgepbCodexReverse = function() {
   if (!slide || !slide.classList.contains('active')) return false;
   const stage = parseInt(slide.dataset.stage || '0', 10);
   if (stage <= 0) return false;
-  slide.dataset.stage = '0';
+  slide.dataset.stage = String(stage - 1);
   return true;
 };
 
@@ -32953,6 +32953,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 600);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-wedgepb-codex' && window.csWedgepbCodexAdvance && window.csWedgepbCodexAdvance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-magnetic' && window.csMagneticAdvance && window.csMagneticAdvance()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
@@ -33102,6 +33106,10 @@ document.addEventListener('wheel', e => {
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt' && window.csSamecourtReverse && window.csSamecourtReverse()) {
       setTimeout(() => { wheelLock = false; }, 600);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-wedgepb-codex' && window.csWedgepbCodexReverse && window.csWedgepbCodexReverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-magnetic' && window.csMagneticReverse && window.csMagneticReverse()) {
