@@ -19342,7 +19342,7 @@ window.cs1m7Reverse = function() {
     opacity:1 !important; transform:translateY(-50%) rotate(-1.5deg) !important; transition:none !important;
   }
 </style>
-<div class="casey-slide ds-focus" id="cs-brand-codex" style="display:none">
+<div class="casey-slide ds-focus trash-slide" id="cs-brand-codex" style="display:none">
   <img class="bc-bg" src="assets/cs-brand-codex.png" alt="Watercolor split image — left half cool-toned with a smartphone spilling profile cards into isolated, faceless figures (the social-media view of human connection); right half warm gold with handshakes, friends at a glowing dinner table, and pickleball courts activated under string lights (the Give n Receive future)." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
 
   <!-- [Dave 2026-05-24] Eyebrow remains the slide/category cue; brand-promise band now animates in after load. -->
@@ -30071,8 +30071,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-17 LATEST PINK] Two pink-dot alts added at slot 1 — duplicates of cs-frontier-iconic with different bg images (cs-frontier-pink1 + cs-frontier-pink2). Same eyebrow/headline/structure, swapped hero img only. Fallback chain → cs-frontier-iconic-hero.png so they always render.
   // [Dave 2026-05-17 LATEST] cs-frontier-iconic REMOVED from slot-1 alts per Dave 'you can delete this slide'. HTML retained as silent backup.
   // [Dave 2026-05-18] cs-frontier-pink2 ALSO REMOVED per Dave 'delete the "1 / 24 (alt)" slide'. Slot 1 now has zero alts. HTML retained as silent backup.
-  // [Dave 2026-05-26] cs-brand-codex moved out of main deck and registered here as the pink-dot slide immediately left of slide 1.
-  1: ['cs-brand-codex'],
+  // [Dave 2026-05-26] cs-brand-codex moved from slot-1 pink-dot alt to TRASH_ORDER per screenshot request.
+  1: [],
   // [Codex 2026-05-24] New slide-2 HCT story variants. Pink-dot alts left of cs-hct-system.
   // [Dave 2026-05-25] cs-hct-system-pink1 moved to TRASH_ORDER per screenshot request.
   2: [],
@@ -30337,6 +30337,7 @@ const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 // Recoverable slide trash. These are intentionally out of the main deck and appendix,
 // but still visible inside the app so Dave can restore candidates later.
 const TRASH_ORDER = [
+  'cs-brand-codex',
   'cs-1bm1',
   'cs-ask',
   'cs-ask-coasts',
