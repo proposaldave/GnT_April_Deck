@@ -31064,7 +31064,7 @@ function caseyGo(n) {
     target.classList.add('casey-entered');
   }
   // Only toggle on PRIMARY dots (skip alt-stacked dots so index math matches SLIDE_ORDER)
-  document.querySelectorAll('.casey-dot:not(.alt)').forEach((d, i) => d.classList.toggle('on', i === n - 1));
+  if (!syncCaseyDotHighlightToActiveSlide()) document.querySelectorAll('.casey-dot:not(.alt)').forEach((d, i) => d.classList.toggle('on', i === n - 1));
   document.getElementById('cbar').style.width = ((n / TOTAL) * 100) + '%';
   document.getElementById('ccount').textContent = n + ' / ' + TOTAL;
   current = n;
@@ -31763,6 +31763,31 @@ function getSlideEyebrowText(slideId) {
   return '';
 }
 
+function syncCaseyDotHighlightToActiveSlide() {
+  const active = document.querySelector('.casey-slide.active');
+  if (!active || inAppendix || inTrash || inStaff || inSeed || inConcept) return false;
+  const activeId = active.id;
+  let slot = SLIDE_ORDER.indexOf(activeId) + 1;
+  let dotIndex = 0;
+  if (!slot && typeof SLIDE_ALTS !== 'undefined') {
+    Object.keys(SLIDE_ALTS).some(posKey => {
+      const idx = SLIDE_ALTS[posKey].indexOf(activeId);
+      if (idx === -1) return false;
+      slot = parseInt(posKey, 10);
+      dotIndex = idx + 1;
+      return true;
+    });
+  }
+  const wrap = slot ? document.getElementById('cnav').children[slot - 1] : null;
+  if (!wrap) return false;
+  document.querySelectorAll('.casey-dot').forEach(d => d.classList.remove('on'));
+  const dots = wrap.querySelectorAll('.casey-dot');
+  if (dots[dotIndex]) dots[dotIndex].classList.add('on');
+  current = slot;
+  window.altIndex = dotIndex;
+  return true;
+}
+
 // Build nav dots
 const nav = document.getElementById('cnav');
 for (let i = 1; i <= TOTAL; i++) {
@@ -31843,8 +31868,10 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
       document.getElementById('cbar').style.width = ((pos / TOTAL) * 100) + '%';
       document.getElementById('ccount').textContent = pos + ' / ' + TOTAL + ' (alt)';
       // Visual: glow this alt dot, dim siblings
-      document.querySelectorAll('.casey-dot').forEach(d => d.classList.remove('on'));
-      altDot.classList.add('on');
+      if (!syncCaseyDotHighlightToActiveSlide()) {
+        document.querySelectorAll('.casey-dot').forEach(d => d.classList.remove('on'));
+        altDot.classList.add('on');
+      }
     };
     wrap.appendChild(altDot);
   });
@@ -32137,16 +32164,7 @@ window.navigateAlt = function(direction) {
     if (target) { target.style.display = ''; target.classList.add('active'); void target.offsetWidth; target.classList.add('casey-entered'); if (target.dataset && target.dataset.stage !== undefined) target.dataset.stage = '0'; }
     document.getElementById('ccount').textContent = current + ' / ' + TOTAL + ' (alt)';
   }
-  // Visual: update dot highlight
-  const wrap = document.getElementById('cnav').children[current - 1];
-  if (wrap) {
-    const dots = wrap.querySelectorAll('.casey-dot');
-    dots.forEach(d => d.classList.remove('on'));
-    // Primary is the LAST dot in the wrap (highest right). Alts are added after, positioned increasingly leftward.
-    // Layout: wrap.children = [primaryDot, altDot1, altDot2, ...] where altDot1 sits closest to primary (rightmost alt), altDot2 next (left), etc.
-    // window.altIndex maps: 0 → primary, 1 → altDot1 (closest left), 2 → altDot2, etc.
-    if (dots[window.altIndex]) dots[window.altIndex].classList.add('on');
-  }
+  syncCaseyDotHighlightToActiveSlide();
   return true;
 };
 
