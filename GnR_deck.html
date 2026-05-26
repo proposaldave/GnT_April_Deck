@@ -20784,7 +20784,10 @@ window.cs1m7Reverse = function() {
   #cs-samecourt { background:#f3ead8 !important; overflow:hidden; }
   #cs-samecourt .scf-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; z-index:0; display:block; opacity:0.78; }
   #cs-samecourt .scf-wash { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(180deg, rgba(251,247,239,0.88) 0%, rgba(251,247,239,0.72) 18%, rgba(251,247,239,0.55) 38%, rgba(251,247,239,0.50) 100%); }
-  #cs-samecourt .sc-stage { position:relative; z-index:2; }
+  #cs-samecourt .sc-stage { position:relative; z-index:2; transition:opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
+  #cs-samecourt[data-stage="0"] .sc-stage { opacity:0; transform:translateY(16px); pointer-events:none; }
+  #cs-samecourt:not([data-stage="0"]) .sc-stage { opacity:1; transform:none; }
+  html[data-export="1"] #cs-samecourt .sc-stage { opacity:1 !important; transform:none !important; }
   /* Slight card opacity tweak so the bg image breathes through */
   #cs-samecourt .sc-col.red { background:linear-gradient(180deg, rgba(251,247,239,0.85) 0%, rgba(251,247,239,0.65) 100%) !important; }
   #cs-samecourt .sc-col.blue { background:linear-gradient(180deg, rgba(251,247,239,0.92) 0%, rgba(245,235,210,0.78) 100%) !important; }
@@ -20792,7 +20795,9 @@ window.cs1m7Reverse = function() {
 </style>
 <!-- [Dave 2026-05-18 LATEST v2] Slide gated behind TWO click/scroll beats: click 1 reveals LEFT column ("I'm a 3.9" trio), click 2 reveals RIGHT column ("I'm part of building my community" trio), click 3 advances to next slide. data-stage drives the CSS gate above; csSamecourtAdvance/Reverse increment/decrement the stage and only return false (= let nav fall through) once stage hits 2. -->
 <div class="casey-slide ds-focus" id="cs-samecourt" data-stage="0" onclick="if(window.csSamecourtAdvance) window.csSamecourtAdvance(); event.stopPropagation()" style="cursor:pointer">
-  <!-- [Dave 2026-05-18 LATEST] Background image REMOVED per Dave 'look at the "Flip the incentives → Unleash connection & community" slide - it has a background image, but it doesn't need one. get rid of the background image'. Slide now relies on the cream radial bg + sc-col gradients only. The bg image (cs-samecourt-bg.png) was moved to cs-magnetic (next slide). The .scf-bg + .scf-wash CSS rules still exist below but no longer have matching DOM nodes — harmless no-op. -->
+  <img class="scf-bg" src="assets/cs-givefirst-art-community.png" alt="A community member helping another person tie a shoe while neighbors gather nearby." onerror="this.style.display='none'"/>
+  <div class="scf-wash" aria-hidden="true"></div>
+  <!-- [Codex 2026-05-26] Background restored with the full give-first community image; stage 0 intentionally shows only the image and eyebrow. -->
   <!-- [Dave 2026-05-18] Eyebrow ↔ headline SWAPPED. Eyebrow now carries the slide-mechanic label ("Flip the incentive → Unleash connection & community"); the Munger quote is promoted to the slide HEADER. -->
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Community incentive system</div>
   <section class="sc-stage">
