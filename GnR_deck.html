@@ -21254,8 +21254,14 @@ window.cs1m7Reverse = function() {
   #cs-magnetic .mg-side.left .mg-side-hero em{color:#5B8FD4}
   #cs-magnetic .mg-broadcast{width:100%;max-width:720px;height:auto;display:block;margin:auto 0 0}
   #cs-magnetic .mg-side.left .mg-outcome{display:none}
+  #cs-magnetic[data-stage="0"] .mg-broadcast,
+  #cs-magnetic[data-stage="0"] .mg-court{opacity:0;visibility:hidden;transform:translateY(18px) scale(.985);pointer-events:none}
+  #cs-magnetic[data-stage="1"] .mg-broadcast,
+  #cs-magnetic[data-stage="1"] .mg-court{opacity:1;visibility:visible;transform:none;transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  html[data-export="1"] #cs-magnetic .mg-broadcast,
+  html[data-export="1"] #cs-magnetic .mg-court{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important;pointer-events:auto!important}
 </style>
-<div class="casey-slide ds-focus" id="cs-magnetic">
+<div class="casey-slide ds-focus" id="cs-magnetic" data-stage="0" onclick="if(window.csMagneticAdvance) window.csMagneticAdvance(); event.stopPropagation()" style="cursor:pointer">
   <!-- [Dave 2026-05-18 LATEST v3] Background image made more visible per Dave. Image opacity 0.55→0.68; cream wash eased from 0.92/0.88/0.84/0.88 to 0.86/0.80/0.72/0.80 so the court/community image reads without sacrificing headline contrast. -->
   <img src="assets/cs-samecourt-bg.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;display:block;opacity:0.68" onerror="this.onerror=null;this.src='assets/cs-samecourt-pink3.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
   <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg, rgba(251,247,239,0.86) 0%, rgba(251,247,239,0.80) 22%, rgba(251,247,239,0.72) 55%, rgba(251,247,239,0.80) 100%)"></div>
@@ -30162,6 +30168,20 @@ window.mgRightReplay = function() {
   // opacity:0 + start-transform back into place, then animation plays through)
   animated.forEach(el => { el.style.animation = ''; });
 };
+window.csMagneticAdvance = function() {
+  const slide = document.getElementById('cs-magnetic');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.stage === '1') return false;
+  slide.dataset.stage = '1';
+  return true;
+};
+window.csMagneticReverse = function() {
+  const slide = document.getElementById('cs-magnetic');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.stage !== '1') return false;
+  slide.dataset.stage = '0';
+  return true;
+};
 window.csThegapReverse = function() {
   const slide = document.getElementById('cs-thegap');
   if (!slide || !slide.classList.contains('active')) return false;
@@ -31835,6 +31855,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-11': 'cs11Advance',
     'cs-fw1': 'csFw1Advance',
     'cs-12m2': 'cs12m2Advance',
+    'cs-magnetic': 'csMagneticAdvance',
     'cs-25': 'cs25Advance',
     'cs-mv6': 'cs_mv6_Advance',
     'cs-a7m1': 'csA7m1Advance'
@@ -31878,6 +31899,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-11': 'cs11Reverse',
     'cs-fw1': 'csFw1Reverse',
     'cs-12m2': 'cs12m2Reverse',
+    'cs-magnetic': 'csMagneticReverse',
     'cs-25': 'cs25Reverse',
     'cs-mv6': 'cs_mv6_Reverse',
     'cs-a7m1': 'csA7m1Reverse'
@@ -32152,6 +32174,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 600);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-magnetic' && window.csMagneticAdvance && window.csMagneticAdvance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     // [Dave 2026-05-19] cs-fv6* workflow row — scroll-down reveals the row before next-slide nav.
     if (!inAppendix && /^cs-fv6/.test(SLIDE_ORDER[current - 1] || '') && window.csFv6Advance && window.csFv6Advance()) {
       setTimeout(() => { wheelLock = false; }, 400);
@@ -32297,6 +32323,10 @@ document.addEventListener('wheel', e => {
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt' && window.csSamecourtReverse && window.csSamecourtReverse()) {
       setTimeout(() => { wheelLock = false; }, 600);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-magnetic' && window.csMagneticReverse && window.csMagneticReverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
     if (!inAppendix && /^cs-fv6/.test(SLIDE_ORDER[current - 1] || '') && window.csFv6Reverse && window.csFv6Reverse()) {
