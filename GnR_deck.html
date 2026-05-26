@@ -29789,13 +29789,15 @@ window.csA7m1Reverse = function() {
   #cs-community-business .cb-close{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.15rem,3.3vw,3.7rem);font-weight:900;line-height:1.06;letter-spacing:-.028em;color:#1a1612;margin:58px 0 0;max-width:1500px}
   #cs-community-business .cb-close em{display:block;font-style:italic;color:#c8462c}
   #cs-community-business .cb-title,#cs-community-business .cb-sub,#cs-community-business .cb-card,#cs-community-business .cb-close{opacity:0;transform:translateY(12px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
+  #cs-community-business.active{display:flex!important;opacity:1!important;visibility:visible!important}
+  #cs-community-business.active .cb-stage,#cs-community-business.active .cb-stage *{visibility:visible!important}
   #cs-community-business.casey-entered .cb-title{opacity:1;transform:none;transition-delay:.05s}
   #cs-community-business.casey-entered .cb-sub{opacity:1;transform:none;transition-delay:.18s}
   #cs-community-business.casey-entered .cb-card:nth-child(1){opacity:1;transform:none;transition-delay:.34s}
   #cs-community-business.casey-entered .cb-card:nth-child(3){opacity:1;transform:none;transition-delay:.48s}
   #cs-community-business.casey-entered .cb-card:nth-child(5){opacity:1;transform:none;transition-delay:.62s}
   #cs-community-business.casey-entered .cb-close{opacity:1;transform:none;transition-delay:.78s}
-  #cs-community-business.active .cb-title,#cs-community-business.active .cb-sub,#cs-community-business.active .cb-card,#cs-community-business.active .cb-close{opacity:1;transform:none}
+  #cs-community-business.active .cb-title,#cs-community-business.active .cb-sub,#cs-community-business.active .cb-card,#cs-community-business.active .cb-close{opacity:1!important;transform:none!important}
   html[data-export="1"] #cs-community-business .cb-title,html[data-export="1"] #cs-community-business .cb-sub,html[data-export="1"] #cs-community-business .cb-card,html[data-export="1"] #cs-community-business .cb-close{opacity:1!important;transform:none!important;transition:none!important}
 </style>
 <div class="casey-slide ds-focus" id="cs-community-business" style="display:none">
