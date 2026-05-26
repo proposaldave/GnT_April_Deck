@@ -7461,15 +7461,64 @@ window.cs1m5Reverse = function() {
      image for assets/cs-frontier-pink1.png (sunset town/village wide-angle watercolor).
      Fallback chain → cs-frontier-iconic-hero.png so slide always renders.
      ═══════════════════════════════════════════════════════════════════════════ -->
-<div class="casey-slide ds-focus active casey-entered frontier-feeling-slide" id="cs-frontier-pink1" data-stage="0" onclick="csFrontierFeelingAdvance()">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Neuroscience<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Longitudinal<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Public Health<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Epidemiology</div>
-  <section class="fi-stage">
-    <h1 class="fi-headline"><span class="fi-line">Feeling connection <span class="fi-arrow">&rarr;</span> <em class="fi-predictor">#1 predictor</em> of a fulfilling life.</span></h1>
-    <div class="fi-invisible">But it's invisible to technology.</div>
-    <div class="fi-canvas">
-      <img class="fi-hero-img" src="assets/cs-frontier-pink1.png" alt="" onerror="this.onerror=null;this.src='assets/gnr_vnext_opener_constellation.png'"/>
+<div class="casey-slide ds-focus active casey-entered frontier-feeling-slide" id="cs-frontier-pink1" data-stage="0" onclick="csFrontierFeelingAdvance()" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 66%, #eadcc3 100%) !important;overflow:hidden">
+  <style>
+    #cs-frontier-pink1 .ms-stage{position:absolute;inset:0;padding:62px 74px 48px;color:#1a1612}
+    #cs-frontier-pink1 .ms-paper{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,.05) 1px, transparent 0);background-size:4px 4px;opacity:.48;mix-blend-mode:multiply;pointer-events:none}
+    #cs-frontier-pink1 .ms-glow{position:absolute;inset:-12%;background:radial-gradient(circle at 70% 45%, rgba(184,149,74,.18), transparent 34%),radial-gradient(circle at 22% 50%, rgba(91,143,212,.11), transparent 34%);pointer-events:none}
+    #cs-frontier-pink1 .ms-head{position:relative;z-index:2;margin:0 auto;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.2rem,6.3vw,7.15rem);font-weight:850;line-height:.98;letter-spacing:-.032em;text-align:center;max-width:1550px;color:#1a1612}
+    #cs-frontier-pink1 .ms-head em{font-style:italic;color:#b8954a;font-weight:850}
+    #cs-frontier-pink1 .ms-graphic{position:absolute;left:50%;top:338px;transform:translateX(-50%);width:1550px;height:472px;z-index:2}
+    #cs-frontier-pink1 .ms-panel{position:absolute;top:42px;width:498px;height:266px;border-radius:8px;background:linear-gradient(145deg, rgba(251,247,239,.92), rgba(238,226,202,.82));box-shadow:0 34px 80px rgba(54,41,22,.18), inset 0 0 0 1px rgba(184,149,74,.16);overflow:hidden}
+    #cs-frontier-pink1 .ms-panel.left{left:42px}
+    #cs-frontier-pink1 .ms-panel.right{right:42px}
+    #cs-frontier-pink1 .ms-scale-pan{position:absolute;bottom:64px;width:520px;height:82px;border-radius:0 0 48% 48%;background:linear-gradient(180deg, rgba(96,71,37,.18), rgba(74,53,26,.72));box-shadow:0 20px 30px rgba(54,41,22,.2)}
+    #cs-frontier-pink1 .ms-scale-pan.left{left:32px}
+    #cs-frontier-pink1 .ms-scale-pan.right{right:32px}
+    #cs-frontier-pink1 .ms-beam{position:absolute;left:50%;bottom:104px;width:910px;height:9px;transform:translateX(-50%) rotate(-.5deg);background:linear-gradient(90deg, rgba(94,66,28,.7), #b8954a 48%, rgba(94,66,28,.7));border-radius:999px;box-shadow:0 8px 18px rgba(54,41,22,.18)}
+    #cs-frontier-pink1 .ms-fulcrum{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);width:142px;height:112px}
+    #cs-frontier-pink1 .ms-fulcrum:before{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 38% 35%, #f4dfac 0 16%, #b8954a 18% 52%, #76572b 54% 100%);box-shadow:0 8px 18px rgba(54,41,22,.22)}
+    #cs-frontier-pink1 .ms-fulcrum:after{content:"";position:absolute;left:12px;bottom:0;border-left:59px solid transparent;border-right:59px solid transparent;border-bottom:82px solid rgba(96,71,37,.76);filter:drop-shadow(0 14px 14px rgba(54,41,22,.18))}
+    #cs-frontier-pink1 .ms-metric{position:absolute;border-radius:14px;background:linear-gradient(180deg, #24211d, #11100e);color:#fbf7ef;font-family:'Manrope',sans-serif;box-shadow:0 18px 30px rgba(0,0,0,.22), inset 0 0 0 1px rgba(255,255,255,.07);display:flex;flex-direction:column;align-items:center;justify-content:center}
+    #cs-frontier-pink1 .ms-metric b{font-size:1.32rem;line-height:1;font-weight:800}
+    #cs-frontier-pink1 .ms-metric span{font-size:.44rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(251,247,239,.68);margin-top:7px}
+    #cs-frontier-pink1 .ms-m1{left:86px;top:130px;width:126px;height:82px}#cs-frontier-pink1 .ms-m2{left:182px;top:72px;width:142px;height:96px}#cs-frontier-pink1 .ms-m3{left:322px;top:116px;width:116px;height:92px}#cs-frontier-pink1 .ms-m4{left:214px;top:182px;width:168px;height:92px}
+    #cs-frontier-pink1 .ms-chart{position:absolute;left:122px;top:214px;width:250px;height:86px;border-radius:10px;background:#181614;box-shadow:0 16px 24px rgba(0,0,0,.18)}
+    #cs-frontier-pink1 .ms-chart svg{width:100%;height:100%}
+    #cs-frontier-pink1 .ms-people{position:absolute;left:60px;right:60px;bottom:30px;height:166px;display:flex;align-items:flex-end;justify-content:center;gap:28px}
+    #cs-frontier-pink1 .ms-person{position:relative;width:52px;height:132px;border-radius:28px 28px 10px 10px;background:linear-gradient(180deg, rgba(143,94,35,.58), rgba(77,53,28,.82));filter:drop-shadow(0 12px 12px rgba(74,45,17,.17))}
+    #cs-frontier-pink1 .ms-person:before{content:"";position:absolute;left:50%;top:-32px;transform:translateX(-50%);width:48px;height:48px;border-radius:50%;background:rgba(86,60,32,.82)}
+    #cs-frontier-pink1 .ms-person:nth-child(2){height:112px;background:linear-gradient(180deg, rgba(196,132,42,.52), rgba(113,75,32,.78))}
+    #cs-frontier-pink1 .ms-person:nth-child(3){height:124px;background:linear-gradient(180deg, rgba(184,149,74,.64), rgba(98,68,34,.82))}
+    #cs-frontier-pink1 .ms-person:nth-child(4){height:102px;background:linear-gradient(180deg, rgba(200,70,44,.38), rgba(100,63,35,.78))}
+    #cs-frontier-pink1 .ms-sun{position:absolute;right:122px;top:64px;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle, rgba(255,226,157,.82), rgba(255,226,157,.26) 46%, transparent 70%);filter:blur(.2px)}
+    #cs-frontier-pink1 .ms-footer{position:absolute;left:50%;bottom:64px;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:28px;width:1220px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.45rem;font-weight:850;line-height:1;color:#1a1612;text-align:center;z-index:3}
+    #cs-frontier-pink1 .ms-footer:before,#cs-frontier-pink1 .ms-footer:after{content:"";height:1px;flex:1;background:linear-gradient(90deg, transparent, rgba(184,149,74,.55))}
+    #cs-frontier-pink1 .ms-footer:after{background:linear-gradient(90deg, rgba(184,149,74,.55), transparent)}
+    #cs-frontier-pink1 .ms-footer .g{color:#5B8FD4}#cs-frontier-pink1 .ms-footer .n{color:#b8954a;font-style:italic}#cs-frontier-pink1 .ms-footer .r{color:#c8462c}#cs-frontier-pink1 .ms-footer em{font-style:italic;color:#b8954a}
+  </style>
+  <div class="ms-paper"></div>
+  <div class="ms-glow"></div>
+  <section class="ms-stage">
+    <h1 class="ms-head">The <em>#1 predictor</em> of a fulfilling life is still invisible to technology.</h1>
+    <div class="ms-graphic" aria-label="Technology metrics balanced against real human connection">
+      <div class="ms-beam"></div>
+      <div class="ms-fulcrum"></div>
+      <div class="ms-scale-pan left"></div>
+      <div class="ms-scale-pan right"></div>
+      <div class="ms-panel left">
+        <div class="ms-metric ms-m1"><b>2.1K</b><span>Likes</span></div>
+        <div class="ms-metric ms-m2"><b>12,845</b><span>Followers</span></div>
+        <div class="ms-metric ms-m3"><b>87%</b><span>Productivity</span></div>
+        <div class="ms-metric ms-m4"><b>6h 42m</b><span>Screen time</span></div>
+        <div class="ms-chart"><svg viewBox="0 0 250 86" aria-hidden="true"><path d="M26 58 L72 46 L112 53 L148 34 L184 42 L222 18" fill="none" stroke="#b8954a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 68 L222 68" stroke="rgba(251,247,239,.18)" stroke-width="2"/><rect x="42" y="50" width="14" height="18" fill="rgba(91,143,212,.55)"/><rect x="78" y="40" width="14" height="28" fill="rgba(91,143,212,.65)"/><rect x="114" y="30" width="14" height="38" fill="rgba(91,143,212,.75)"/><rect x="150" y="22" width="14" height="46" fill="rgba(91,143,212,.85)"/></svg></div>
+      </div>
+      <div class="ms-panel right">
+        <div class="ms-sun"></div>
+        <div class="ms-people"><div class="ms-person"></div><div class="ms-person"></div><div class="ms-person"></div><div class="ms-person"></div><div class="ms-person"></div></div>
+      </div>
     </div>
-    <div class="fi-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+    <div class="ms-footer"><span><span class="g">Give</span> <span class="n">n</span> <span class="r">Receive</span> measures the <em>missing signal.</em></span></div>
   </section>
 </div>
 
