@@ -877,7 +877,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
 
 .casey-slide.active{opacity:1;visibility:visible;pointer-events:all;transition:opacity 0.18s ease, visibility 0s linear 0s}
 /* [Dave 2026-05-14 PM v4] Nav dot strip CENTERED vertically between the GnR wordmark (top) and the bottom-right control cluster. Was top:90px (anchored just under GnR mark); now top:50% translateY(-50%) so the strip sits in the visual middle of the right column. max-height keeps it from overlapping either edge. */
-.casey-nav{position:fixed;top:50%;right:42px;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:2px;z-index:999;background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);padding:6px 3px;border-radius:10px;border:1px solid rgba(26,22,18,0.10);max-height:calc(100vh - 220px);width:fit-content}
+.casey-nav{position:fixed;top:50%;right:42px;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;z-index:999;background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);padding:7px 4px;border-radius:10px;border:1px solid rgba(26,22,18,0.10);max-height:calc(100vh - 220px);width:fit-content}
 /* [Dave 2026-05-12 v3] PRESENTER MODE — default ON. Hides ALL chrome (nav dots + presenter cog + speaker-notes + annotation buttons + slide counter + slide search) for a clean live investor pitch. Z key toggles. [Dave 2026-05-14 PM v4] Slide counter (.casey-count) and slide search (#slideSearch) added to the hide list — they should only appear when Z is pressed, just like the dots. */
 body.presenter-mode .casey-nav,
 body.presenter-mode .casey-staff-nav,
@@ -916,12 +916,12 @@ body.presenter-mode #slideSearch { display: none !important; }
 #slideHistoryOverlay .shv-badge .shv-label{font-style:italic;font-weight:500;color:rgba(251,247,239,0.82)}
 #slideHistoryOverlay .shv-badge kbd{background:rgba(251,247,239,0.16);border:1px solid rgba(251,247,239,0.32);border-radius:4px;padding:1px 6px;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:#fbf7ef}
 #slideHistoryOverlay .shv-badge .shv-sep{opacity:0.32}
-.casey-dot{width:7px;height:7px;border-radius:50%;background:rgba(26,22,18,0.20);border:none;padding:0;cursor:pointer;transition:all 0.3s ease;flex-shrink:0;position:relative}
+.casey-dot{width:9px;height:9px;border-radius:50%;background:rgba(26,22,18,0.20);border:none;padding:0;cursor:pointer;transition:all 0.3s ease;flex-shrink:0;position:relative}
 .casey-dot:hover{background:rgba(255,255,255,0.35);transform:scale(1.3)}
 /* [Dave 2026-05-08] Custom tooltip — opens to the LEFT of the dot (away from viewport edge) since the nav strip lives at the right edge. Fixes 'Autonomous Community In...' cutoff issue Dave caught. */
 .casey-dot[data-tooltip]:hover::after{content:attr(data-tooltip);position:absolute;right:calc(100% + 12px);top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.88);color:#fff;font-family:'Manrope',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.04em;padding:6px 10px;border-radius:5px;white-space:nowrap;z-index:1001;pointer-events:none}
 /* [Dave 2026-05-08] Active dot is a VERTICAL pill (was horizontal) since the strip runs top-to-bottom */
-.casey-dot.on{background:#d4a853;box-shadow:0 0 10px rgba(212,168,83,0.6);height:18px;border-radius:4px}
+.casey-dot.on{background:#d4a853;box-shadow:0 0 10px rgba(212,168,83,0.6);height:20px;border-radius:4px}
 .casey-dot.review{background:#e04040 !important;box-shadow:0 0 14px rgba(224,64,64,0.85) !important;animation:reviewPulse 1.6s ease-in-out infinite}
 .casey-dot.review.on{background:#e04040 !important}
 .casey-dot.orange-review{background:#f28c28 !important;box-shadow:0 0 14px rgba(242,140,40,0.78) !important;animation:orangePulse 1.8s ease-in-out infinite}
@@ -929,7 +929,7 @@ body.presenter-mode #slideSearch { display: none !important; }
 .casey-dot.locked{background:#3dff7a !important;box-shadow:0 0 12px rgba(61,255,122,0.7) !important}
 .casey-dot.locked.on{background:#3dff7a !important;box-shadow:0 0 16px rgba(61,255,122,0.85) !important}
 /* [Dave 2026-05-08] Alt dots now stack to the LEFT of their parent dot (was below). Positioned via JS using the .right property — see the altDot.style.right loop. */
-.casey-dot.alt{position:absolute;top:50%;transform:translateY(-50%);right:18px;width:7px !important;height:7px !important;background:rgba(212,168,83,0.55);border:1px solid rgba(212,168,83,0.85);box-shadow:0 0 6px rgba(212,168,83,0.4)}
+.casey-dot.alt{position:absolute;top:50%;transform:translateY(-50%);right:20px;width:9px !important;height:9px !important;background:rgba(212,168,83,0.55);border:1px solid rgba(212,168,83,0.85);box-shadow:0 0 6px rgba(212,168,83,0.4)}
 .casey-dot.alt.review{background:#e04040 !important;border:1px solid #e04040 !important;box-shadow:0 0 8px rgba(224,64,64,0.95) !important}
 .casey-dot.alt.orange-review{background:#f28c28 !important;border:1px solid #f28c28 !important;box-shadow:0 0 9px rgba(242,140,40,0.95) !important;animation:orangePulse 1.8s ease-in-out infinite}
 @keyframes reviewPulse{0%,100%{box-shadow:0 0 14px rgba(224,64,64,0.85)}50%{box-shadow:0 0 22px rgba(224,64,64,1)}}
@@ -7411,9 +7411,13 @@ window.cs1m5Reverse = function() {
   html[data-export="1"] #cs-frontier-iconic .fi-science-strip,
   html[data-export="1"] #cs-frontier-pink1 .fi-science-strip,
   html[data-export="1"] #cs-frontier-pink2 .fi-science-strip { opacity:1 !important; transform:none !important; animation:none !important; }
-  #cs-frontier-iconic .fi-invisible, #cs-frontier-pink1 .fi-invisible, #cs-frontier-pink2 .fi-invisible { position:absolute; top:23.5%; left:50%; z-index:4; transform:translate(-50%, 16px); font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.9rem,2.8vw,3.05rem); font-style:italic; font-weight:800; line-height:1.05; color:#c8462c; text-align:center; padding:10px 18px; background:rgba(251,247,239,.62); border-radius:4px; box-shadow:0 14px 34px rgba(251,247,239,.22); text-shadow:0 1px 3px rgba(251,247,239,.82); opacity:0; visibility:hidden; pointer-events:none; transition:opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1), visibility 0s linear .55s; }
-  #cs-frontier-iconic[data-stage="1"] .fi-invisible, #cs-frontier-pink1[data-stage="1"] .fi-invisible, #cs-frontier-pink2[data-stage="1"] .fi-invisible { opacity:1; visibility:visible; transform:translate(-50%, 0); transition:opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1), visibility 0s linear 0s; }
-  html[data-export="1"] #cs-frontier-iconic .fi-invisible, html[data-export="1"] #cs-frontier-pink1 .fi-invisible, html[data-export="1"] #cs-frontier-pink2 .fi-invisible { opacity:1 !important; visibility:visible !important; transform:translate(-50%, 0) !important; transition:none !important; }
+  #cs-frontier-iconic .fi-invisible, #cs-frontier-pink1 .fi-invisible, #cs-frontier-pink2 .fi-invisible { position:absolute; top:23.5%; left:50%; z-index:4; transform:translate(-50%, 20px) scale(.965); font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.9rem,2.8vw,3.05rem); font-style:italic; font-weight:800; line-height:1.05; color:#c8462c; text-align:center; padding:10px 18px; background:rgba(251,247,239,.62); border-radius:4px; box-shadow:0 14px 34px rgba(251,247,239,.22); text-shadow:0 1px 3px rgba(251,247,239,.82); opacity:0; visibility:hidden; pointer-events:none; overflow:hidden; filter:blur(8px); clip-path:inset(0 52% 0 52%); transition:opacity .28s ease, visibility 0s linear .28s; }
+  #cs-frontier-iconic .fi-invisible::before, #cs-frontier-pink1 .fi-invisible::before, #cs-frontier-pink2 .fi-invisible::before { content:""; position:absolute; inset:-18% auto -18% -34%; width:34%; background:linear-gradient(90deg, transparent 0%, rgba(255,255,255,.16) 18%, rgba(255,255,255,.74) 50%, rgba(184,149,74,.18) 72%, transparent 100%); transform:skewX(-14deg); opacity:0; pointer-events:none; mix-blend-mode:screen; }
+  @keyframes fiInvisibleReveal { 0% { opacity:0; transform:translate(-50%, 20px) scale(.965); filter:blur(8px); clip-path:inset(0 52% 0 52%); letter-spacing:.035em; } 44% { opacity:.86; filter:blur(2px); clip-path:inset(0 0 0 0); letter-spacing:.018em; } 100% { opacity:1; transform:translate(-50%, 0) scale(1); filter:blur(0); clip-path:inset(0 0 0 0); letter-spacing:0; } }
+  @keyframes fiInvisibleScan { 0% { opacity:0; transform:translateX(0) skewX(-14deg); } 16% { opacity:1; } 100% { opacity:0; transform:translateX(430%) skewX(-14deg); } }
+  #cs-frontier-iconic[data-stage="1"] .fi-invisible, #cs-frontier-pink1[data-stage="1"] .fi-invisible, #cs-frontier-pink2[data-stage="1"] .fi-invisible { opacity:1; visibility:visible; transform:translate(-50%, 0) scale(1); filter:blur(0); clip-path:inset(0 0 0 0); animation:fiInvisibleReveal .95s cubic-bezier(.16,1,.3,1) both; transition:visibility 0s linear 0s; }
+  #cs-frontier-iconic[data-stage="1"] .fi-invisible::before, #cs-frontier-pink1[data-stage="1"] .fi-invisible::before, #cs-frontier-pink2[data-stage="1"] .fi-invisible::before { animation:fiInvisibleScan .82s cubic-bezier(.22,1,.36,1) .12s both; }
+  html[data-export="1"] #cs-frontier-iconic .fi-invisible, html[data-export="1"] #cs-frontier-pink1 .fi-invisible, html[data-export="1"] #cs-frontier-pink2 .fi-invisible { opacity:1 !important; visibility:visible !important; transform:translate(-50%, 0) scale(1) !important; filter:blur(0) !important; clip-path:inset(0 0 0 0) !important; animation:none !important; transition:none !important; }
   #cs-frontier-iconic .fi-headline .fi-give, #cs-frontier-pink1 .fi-headline .fi-give, #cs-frontier-pink2 .fi-headline .fi-give { color:#5B8FD4; font-weight:850; text-shadow:0 1px 2px rgba(0,0,0,0.25); }
   #cs-frontier-iconic .fi-headline .fi-receive, #cs-frontier-pink1 .fi-headline .fi-receive, #cs-frontier-pink2 .fi-headline .fi-receive { color:#c8462c; font-weight:850; text-shadow:0 1px 2px rgba(0,0,0,0.25); }
   #cs-frontier-iconic .fi-canvas, #cs-frontier-pink1 .fi-canvas, #cs-frontier-pink2 .fi-canvas { position:absolute; inset:0; width:100%; height:100%; }
@@ -7457,15 +7461,64 @@ window.cs1m5Reverse = function() {
      image for assets/cs-frontier-pink1.png (sunset town/village wide-angle watercolor).
      Fallback chain → cs-frontier-iconic-hero.png so slide always renders.
      ═══════════════════════════════════════════════════════════════════════════ -->
-<div class="casey-slide ds-focus active casey-entered frontier-feeling-slide" id="cs-frontier-pink1" data-stage="0" onclick="csFrontierFeelingAdvance()">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Neuroscience<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Longitudinal<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Public Health<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Epidemiology</div>
-  <section class="fi-stage">
-    <h1 class="fi-headline"><span class="fi-line">Feeling connection <span class="fi-arrow">&rarr;</span> <em class="fi-predictor">#1 predictor</em> of a fulfilling life.</span></h1>
-    <div class="fi-invisible">But it's invisible to technology.</div>
-    <div class="fi-canvas">
-      <img class="fi-hero-img" src="assets/cs-frontier-pink1.png" alt="" onerror="this.onerror=null;this.src='assets/gnr_vnext_opener_constellation.png'"/>
+<div class="casey-slide ds-focus active casey-entered frontier-feeling-slide" id="cs-frontier-pink1" data-stage="0" onclick="csFrontierFeelingAdvance()" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 66%, #eadcc3 100%) !important;overflow:hidden">
+  <style>
+    #cs-frontier-pink1 .ms-stage{position:absolute;inset:0;padding:62px 74px 48px;color:#1a1612}
+    #cs-frontier-pink1 .ms-paper{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,.05) 1px, transparent 0);background-size:4px 4px;opacity:.48;mix-blend-mode:multiply;pointer-events:none}
+    #cs-frontier-pink1 .ms-glow{position:absolute;inset:-12%;background:radial-gradient(circle at 70% 45%, rgba(184,149,74,.18), transparent 34%),radial-gradient(circle at 22% 50%, rgba(91,143,212,.11), transparent 34%);pointer-events:none}
+    #cs-frontier-pink1 .ms-head{position:relative;z-index:2;margin:0 auto;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.2rem,6.3vw,7.15rem);font-weight:850;line-height:.98;letter-spacing:-.032em;text-align:center;max-width:1550px;color:#1a1612}
+    #cs-frontier-pink1 .ms-head em{font-style:italic;color:#b8954a;font-weight:850}
+    #cs-frontier-pink1 .ms-graphic{position:absolute;left:50%;top:338px;transform:translateX(-50%);width:1550px;height:472px;z-index:2}
+    #cs-frontier-pink1 .ms-panel{position:absolute;top:42px;width:498px;height:266px;border-radius:8px;background:linear-gradient(145deg, rgba(251,247,239,.92), rgba(238,226,202,.82));box-shadow:0 34px 80px rgba(54,41,22,.18), inset 0 0 0 1px rgba(184,149,74,.16);overflow:hidden}
+    #cs-frontier-pink1 .ms-panel.left{left:42px}
+    #cs-frontier-pink1 .ms-panel.right{right:42px}
+    #cs-frontier-pink1 .ms-scale-pan{position:absolute;bottom:64px;width:520px;height:82px;border-radius:0 0 48% 48%;background:linear-gradient(180deg, rgba(96,71,37,.18), rgba(74,53,26,.72));box-shadow:0 20px 30px rgba(54,41,22,.2)}
+    #cs-frontier-pink1 .ms-scale-pan.left{left:32px}
+    #cs-frontier-pink1 .ms-scale-pan.right{right:32px}
+    #cs-frontier-pink1 .ms-beam{position:absolute;left:50%;bottom:104px;width:910px;height:9px;transform:translateX(-50%) rotate(-.5deg);background:linear-gradient(90deg, rgba(94,66,28,.7), #b8954a 48%, rgba(94,66,28,.7));border-radius:999px;box-shadow:0 8px 18px rgba(54,41,22,.18)}
+    #cs-frontier-pink1 .ms-fulcrum{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);width:142px;height:112px}
+    #cs-frontier-pink1 .ms-fulcrum:before{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 38% 35%, #f4dfac 0 16%, #b8954a 18% 52%, #76572b 54% 100%);box-shadow:0 8px 18px rgba(54,41,22,.22)}
+    #cs-frontier-pink1 .ms-fulcrum:after{content:"";position:absolute;left:12px;bottom:0;border-left:59px solid transparent;border-right:59px solid transparent;border-bottom:82px solid rgba(96,71,37,.76);filter:drop-shadow(0 14px 14px rgba(54,41,22,.18))}
+    #cs-frontier-pink1 .ms-metric{position:absolute;border-radius:14px;background:linear-gradient(180deg, #24211d, #11100e);color:#fbf7ef;font-family:'Manrope',sans-serif;box-shadow:0 18px 30px rgba(0,0,0,.22), inset 0 0 0 1px rgba(255,255,255,.07);display:flex;flex-direction:column;align-items:center;justify-content:center}
+    #cs-frontier-pink1 .ms-metric b{font-size:1.32rem;line-height:1;font-weight:800}
+    #cs-frontier-pink1 .ms-metric span{font-size:.44rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(251,247,239,.68);margin-top:7px}
+    #cs-frontier-pink1 .ms-m1{left:86px;top:130px;width:126px;height:82px}#cs-frontier-pink1 .ms-m2{left:182px;top:72px;width:142px;height:96px}#cs-frontier-pink1 .ms-m3{left:322px;top:116px;width:116px;height:92px}#cs-frontier-pink1 .ms-m4{left:214px;top:182px;width:168px;height:92px}
+    #cs-frontier-pink1 .ms-chart{position:absolute;left:122px;top:214px;width:250px;height:86px;border-radius:10px;background:#181614;box-shadow:0 16px 24px rgba(0,0,0,.18)}
+    #cs-frontier-pink1 .ms-chart svg{width:100%;height:100%}
+    #cs-frontier-pink1 .ms-people{position:absolute;left:60px;right:60px;bottom:30px;height:166px;display:flex;align-items:flex-end;justify-content:center;gap:28px}
+    #cs-frontier-pink1 .ms-person{position:relative;width:52px;height:132px;border-radius:28px 28px 10px 10px;background:linear-gradient(180deg, rgba(143,94,35,.58), rgba(77,53,28,.82));filter:drop-shadow(0 12px 12px rgba(74,45,17,.17))}
+    #cs-frontier-pink1 .ms-person:before{content:"";position:absolute;left:50%;top:-32px;transform:translateX(-50%);width:48px;height:48px;border-radius:50%;background:rgba(86,60,32,.82)}
+    #cs-frontier-pink1 .ms-person:nth-child(2){height:112px;background:linear-gradient(180deg, rgba(196,132,42,.52), rgba(113,75,32,.78))}
+    #cs-frontier-pink1 .ms-person:nth-child(3){height:124px;background:linear-gradient(180deg, rgba(184,149,74,.64), rgba(98,68,34,.82))}
+    #cs-frontier-pink1 .ms-person:nth-child(4){height:102px;background:linear-gradient(180deg, rgba(200,70,44,.38), rgba(100,63,35,.78))}
+    #cs-frontier-pink1 .ms-sun{position:absolute;right:122px;top:64px;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle, rgba(255,226,157,.82), rgba(255,226,157,.26) 46%, transparent 70%);filter:blur(.2px)}
+    #cs-frontier-pink1 .ms-footer{position:absolute;left:50%;bottom:64px;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:28px;width:1220px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.45rem;font-weight:850;line-height:1;color:#1a1612;text-align:center;z-index:3}
+    #cs-frontier-pink1 .ms-footer:before,#cs-frontier-pink1 .ms-footer:after{content:"";height:1px;flex:1;background:linear-gradient(90deg, transparent, rgba(184,149,74,.55))}
+    #cs-frontier-pink1 .ms-footer:after{background:linear-gradient(90deg, rgba(184,149,74,.55), transparent)}
+    #cs-frontier-pink1 .ms-footer .g{color:#5B8FD4}#cs-frontier-pink1 .ms-footer .n{color:#b8954a;font-style:italic}#cs-frontier-pink1 .ms-footer .r{color:#c8462c}#cs-frontier-pink1 .ms-footer em{font-style:italic;color:#b8954a}
+  </style>
+  <div class="ms-paper"></div>
+  <div class="ms-glow"></div>
+  <section class="ms-stage">
+    <h1 class="ms-head">The <em>#1 predictor</em> of a fulfilling life is still invisible to technology.</h1>
+    <div class="ms-graphic" aria-label="Technology metrics balanced against real human connection">
+      <div class="ms-beam"></div>
+      <div class="ms-fulcrum"></div>
+      <div class="ms-scale-pan left"></div>
+      <div class="ms-scale-pan right"></div>
+      <div class="ms-panel left">
+        <div class="ms-metric ms-m1"><b>2.1K</b><span>Likes</span></div>
+        <div class="ms-metric ms-m2"><b>12,845</b><span>Followers</span></div>
+        <div class="ms-metric ms-m3"><b>87%</b><span>Productivity</span></div>
+        <div class="ms-metric ms-m4"><b>6h 42m</b><span>Screen time</span></div>
+        <div class="ms-chart"><svg viewBox="0 0 250 86" aria-hidden="true"><path d="M26 58 L72 46 L112 53 L148 34 L184 42 L222 18" fill="none" stroke="#b8954a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 68 L222 68" stroke="rgba(251,247,239,.18)" stroke-width="2"/><rect x="42" y="50" width="14" height="18" fill="rgba(91,143,212,.55)"/><rect x="78" y="40" width="14" height="28" fill="rgba(91,143,212,.65)"/><rect x="114" y="30" width="14" height="38" fill="rgba(91,143,212,.75)"/><rect x="150" y="22" width="14" height="46" fill="rgba(91,143,212,.85)"/></svg></div>
+      </div>
+      <div class="ms-panel right">
+        <div class="ms-sun"></div>
+        <div class="ms-people"><div class="ms-person"></div><div class="ms-person"></div><div class="ms-person"></div><div class="ms-person"></div><div class="ms-person"></div></div>
+      </div>
     </div>
-    <div class="fi-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+    <div class="ms-footer"><span><span class="g">Give</span> <span class="n">n</span> <span class="r">Receive</span> measures the <em>missing signal.</em></span></div>
   </section>
 </div>
 
@@ -7504,18 +7557,18 @@ window.cs1m5Reverse = function() {
       <!-- [Dave 2026-05-12 LATEST v2] Caption alignment: G is at translateX 85, R is at translateX 282 (asymmetric). Captions sit in a symmetric 2-col grid, so they don't naturally match the G/R visual centers. Solution — apply the SAME translates to each caption column as the wordmark uses, so caption centers track G and R precisely. (Was previously +95 on right only — overcorrected per Dave.) -->
       <div class="m8-caption" style="display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1300px,92%);align-items:start">
         <div class="m8-cap-left" style="text-align:center;transform:translateX(28px)">
-          <div style="font-family:'Manrope',sans-serif;font-size:clamp(.70rem,.84vw,.86rem);font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:#5B8FD4;line-height:1.3;margin-bottom:10px">The spirit and feeling</div>
-          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">we give each other.</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:clamp(.70rem,.84vw,.86rem);font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:10px">The spirit and feeling</div>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">we <span style="color:#5B8FD4;font-weight:700">give</span> each other.</div>
         </div>
         <!-- [Dave 2026-05-17] Right cap translateX history: 28 → 86 → 140 → 100 → 70 → 50 → 30. Dave: "reposition this text a little more to the left". -->
         <div class="m8-cap-right" style="text-align:center;transform:translateX(30px)">
-          <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#c8462c;line-height:1.3;margin-bottom:10px">Your People &middot; Your Moments</div>
-          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#c8462c">Reciprocated</em> back.</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:10px">Your People &middot; Your Moments</div>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#c8462c">received</em> back.</div>
         </div>
       </div>
       <!-- STAGE 2: 'The Network · The Community / Sees. Digitizes.' line -->
       <div class="m8-network" style="margin-top:24px;text-align:center;transform:translateX(10px)">
-        <div style="font-family:'Manrope',sans-serif;font-size:clamp(.58rem,.72vw,.76rem);font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:8px">The Network · The Community</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:clamp(.58rem,.72vw,.76rem);font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:8px">The <span style="color:#b8954a">Network</span> · The Community</div>
         <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,1.55vw,1.55rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">Sees. Digitizes.</div>
       </div>
       <!-- Pulsing arrow — visible at stages 0 and 1 (still more to come). Hides at stage 2. -->
@@ -11026,38 +11079,38 @@ window.cs1m7Reverse = function() {
       <!-- BACK: 4 group circles + 'IN THE ROOM' eyebrow (parallel to FRONT and to LEFT 'BEFORE THE ROOM') -->
       <div class="cs11-flip-back" style="background:rgba(61,255,122,0.04);border:1px solid rgba(61,255,122,0.32);border-radius:14px;padding:32px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:absolute;inset:0;transform:rotateY(180deg)">
         <div style="font-family:'Manrope',sans-serif;font-size:.92rem;font-weight:800;letter-spacing:.30em;text-transform:uppercase;color:rgba(42,138,79,0.95);text-align:center">In the room</div>
-        <svg viewBox="0 0 56 56" width="240" height="240">
-          <!-- 4 group clusters: each wrapped in <g class="cs11-group"> for staggered bloom. Dave 2026-04-29 v2 -->
-          <g class="cs11-group">
-            <circle cx="14" cy="14" r="9" fill="rgba(61,255,122,0.05)" stroke="rgba(61,255,122,0.45)" stroke-width="1" stroke-dasharray="2 1.5"/>
-            <circle cx="11" cy="11" r="2.0" fill="rgba(91,143,212,0.20)" stroke="#5B8FD4" stroke-width="0.5"/>
-            <circle cx="17" cy="11" r="2.0" fill="rgba(212,107,126,0.20)" stroke="#b8475c" stroke-width="0.5"/>
-            <circle cx="11" cy="17" r="2.0" fill="rgba(199,107,219,0.20)" stroke="#7a4a8c" stroke-width="0.5"/>
-            <circle cx="17" cy="17" r="2.0" fill="rgba(74,232,193,0.20)" stroke="#5fa896" stroke-width="0.5"/>
+        <svg class="cs11-cluster-svg" viewBox="0 0 240 240" width="240" height="240" shape-rendering="geometricPrecision">
+          <!-- 4 group clusters: native 240px geometry replaces scaled-up mini-SVG so the icons stay sharp. -->
+          <g class="cs11-group" transform="translate(60 60)">
+            <circle r="36" fill="rgba(61,255,122,0.07)" stroke="rgba(42,138,79,0.78)" stroke-width="2.25" stroke-dasharray="7 6"/>
+            <circle cx="-12" cy="-12" r="7.5" fill="rgba(91,143,212,0.42)" stroke="#5B8FD4" stroke-width="2"/>
+            <circle cx="12" cy="-12" r="7.5" fill="rgba(212,107,126,0.42)" stroke="#b8475c" stroke-width="2"/>
+            <circle cx="-12" cy="12" r="7.5" fill="rgba(199,107,219,0.42)" stroke="#7a4a8c" stroke-width="2"/>
+            <circle cx="12" cy="12" r="7.5" fill="rgba(74,232,193,0.42)" stroke="#5fa896" stroke-width="2"/>
           </g>
 
-          <g class="cs11-group">
-            <circle cx="42" cy="14" r="9" fill="rgba(61,255,122,0.05)" stroke="rgba(61,255,122,0.45)" stroke-width="1" stroke-dasharray="2 1.5"/>
-            <circle cx="39" cy="11" r="2.0" fill="rgba(212,107,126,0.20)" stroke="#b8475c" stroke-width="0.5"/>
-            <circle cx="45" cy="11" r="2.0" fill="rgba(199,107,219,0.20)" stroke="#7a4a8c" stroke-width="0.5"/>
-            <circle cx="39" cy="17" r="2.0" fill="rgba(74,232,193,0.20)" stroke="#5fa896" stroke-width="0.5"/>
-            <circle cx="45" cy="17" r="2.0" fill="rgba(91,143,212,0.20)" stroke="#5B8FD4" stroke-width="0.5"/>
+          <g class="cs11-group" transform="translate(180 60)">
+            <circle r="36" fill="rgba(61,255,122,0.07)" stroke="rgba(42,138,79,0.78)" stroke-width="2.25" stroke-dasharray="7 6"/>
+            <circle cx="-12" cy="-12" r="7.5" fill="rgba(212,107,126,0.42)" stroke="#b8475c" stroke-width="2"/>
+            <circle cx="12" cy="-12" r="7.5" fill="rgba(199,107,219,0.42)" stroke="#7a4a8c" stroke-width="2"/>
+            <circle cx="-12" cy="12" r="7.5" fill="rgba(74,232,193,0.42)" stroke="#5fa896" stroke-width="2"/>
+            <circle cx="12" cy="12" r="7.5" fill="rgba(91,143,212,0.42)" stroke="#5B8FD4" stroke-width="2"/>
           </g>
 
-          <g class="cs11-group">
-            <circle cx="14" cy="42" r="9" fill="rgba(61,255,122,0.05)" stroke="rgba(61,255,122,0.45)" stroke-width="1" stroke-dasharray="2 1.5"/>
-            <circle cx="11" cy="39" r="2.0" fill="rgba(199,107,219,0.20)" stroke="#7a4a8c" stroke-width="0.5"/>
-            <circle cx="17" cy="39" r="2.0" fill="rgba(74,232,193,0.20)" stroke="#5fa896" stroke-width="0.5"/>
-            <circle cx="11" cy="45" r="2.0" fill="rgba(91,143,212,0.20)" stroke="#5B8FD4" stroke-width="0.5"/>
-            <circle cx="17" cy="45" r="2.0" fill="rgba(212,107,126,0.20)" stroke="#b8475c" stroke-width="0.5"/>
+          <g class="cs11-group" transform="translate(60 180)">
+            <circle r="36" fill="rgba(61,255,122,0.07)" stroke="rgba(42,138,79,0.78)" stroke-width="2.25" stroke-dasharray="7 6"/>
+            <circle cx="-12" cy="-12" r="7.5" fill="rgba(199,107,219,0.42)" stroke="#7a4a8c" stroke-width="2"/>
+            <circle cx="12" cy="-12" r="7.5" fill="rgba(74,232,193,0.42)" stroke="#5fa896" stroke-width="2"/>
+            <circle cx="-12" cy="12" r="7.5" fill="rgba(91,143,212,0.42)" stroke="#5B8FD4" stroke-width="2"/>
+            <circle cx="12" cy="12" r="7.5" fill="rgba(212,107,126,0.42)" stroke="#b8475c" stroke-width="2"/>
           </g>
 
-          <g class="cs11-group">
-            <circle cx="42" cy="42" r="9" fill="rgba(61,255,122,0.05)" stroke="rgba(61,255,122,0.45)" stroke-width="1" stroke-dasharray="2 1.5"/>
-            <circle cx="39" cy="39" r="2.0" fill="rgba(74,232,193,0.20)" stroke="#5fa896" stroke-width="0.5"/>
-            <circle cx="45" cy="39" r="2.0" fill="rgba(91,143,212,0.20)" stroke="#5B8FD4" stroke-width="0.5"/>
-            <circle cx="39" cy="45" r="2.0" fill="rgba(212,107,126,0.20)" stroke="#b8475c" stroke-width="0.5"/>
-            <circle cx="45" cy="45" r="2.0" fill="rgba(199,107,219,0.20)" stroke="#7a4a8c" stroke-width="0.5"/>
+          <g class="cs11-group" transform="translate(180 180)">
+            <circle r="36" fill="rgba(61,255,122,0.07)" stroke="rgba(42,138,79,0.78)" stroke-width="2.25" stroke-dasharray="7 6"/>
+            <circle cx="-12" cy="-12" r="7.5" fill="rgba(74,232,193,0.42)" stroke="#5fa896" stroke-width="2"/>
+            <circle cx="12" cy="-12" r="7.5" fill="rgba(91,143,212,0.42)" stroke="#5B8FD4" stroke-width="2"/>
+            <circle cx="-12" cy="12" r="7.5" fill="rgba(212,107,126,0.42)" stroke="#b8475c" stroke-width="2"/>
+            <circle cx="12" cy="12" r="7.5" fill="rgba(199,107,219,0.42)" stroke="#7a4a8c" stroke-width="2"/>
           </g>
         </svg>
       </div>
@@ -11847,6 +11900,8 @@ window.cs1m7Reverse = function() {
   #cs-pb-silly-social .pbs-kuhn { border-left:5px solid #b8954a; padding:16px 0 16px 18px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.22rem; line-height:1.22; font-weight:650; color:rgba(26,22,18,.75); }
   #cs-pb-silly-social .pbs-kuhn b { display:block; margin-top:8px; font-family:'Manrope',sans-serif; font-size:.62rem; letter-spacing:.18em; text-transform:uppercase; color:#b8954a; }
   #cs-pb-silly-feature .pbs-title, #cs-pb-silly-feature .pbs-card, #cs-pb-silly-feature .pbs-side, #cs-pb-silly-social .pbs-title, #cs-pb-silly-social .pbs-sub, #cs-pb-silly-social .pbs-court, #cs-pb-silly-social .pbs-panel { opacity:0; transform:translateY(12px); transition:opacity .72s cubic-bezier(.22,1,.36,1), transform .72s cubic-bezier(.22,1,.36,1); }
+  #cs-pb-silly-feature.active, #cs-pb-silly-social.active { display:flex !important; }
+  #cs-pb-silly-feature.active .pbs-title, #cs-pb-silly-feature.active .pbs-card, #cs-pb-silly-feature.active .pbs-side, #cs-pb-silly-social.active .pbs-title, #cs-pb-silly-social.active .pbs-sub, #cs-pb-silly-social.active .pbs-court, #cs-pb-silly-social.active .pbs-panel { opacity:1; transform:none; }
   #cs-pb-silly-feature.casey-entered .pbs-title, #cs-pb-silly-social.casey-entered .pbs-title { opacity:1; transform:none; transition-delay:.08s; }
   #cs-pb-silly-feature.casey-entered .pbs-card:nth-child(1) { opacity:1; transform:none; transition-delay:.18s; }
   #cs-pb-silly-feature.casey-entered .pbs-card:nth-child(2) { opacity:1; transform:none; transition-delay:.28s; }
@@ -11899,19 +11954,6 @@ window.cs1m7Reverse = function() {
       <div class="wpc-cards-wrap">
       <div class="wpc-cards">
 
-        <div class="wpc-card wpc-c1" onclick="this.classList.toggle('flipped');event.stopPropagation()">
-          <div class="wpc-face wpc-front wpc-front-iconly">
-            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12 H20"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4"/></svg></div>
-          </div>
-          <div class="wpc-face wpc-back">
-            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12 H20"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4"/></svg></div>
-            <div class="wpc-card-body">
-              <div class="wpc-card-lede" style="white-space:nowrap">Already a social network <em style="font-style:italic;font-weight:850">beyond the courts.</em></div>
-            </div>
-            <div class="wpc-card-num">01</div>
-          </div>
-        </div>
-
         <div class="wpc-card wpc-c2" onclick="this.classList.toggle('flipped');event.stopPropagation()">
           <div class="wpc-face wpc-front wpc-front-iconly">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><path d="M12 3 L13.7 8.7 L19.5 8.7 L14.9 12.4 L16.6 18.1 L12 14.6 L7.4 18.1 L9.1 12.4 L4.5 8.7 L10.3 8.7 Z"/></svg></div>
@@ -11922,6 +11964,19 @@ window.cs1m7Reverse = function() {
               <div class="wpc-card-lede" style="white-space:nowrap">Fastest-growing <em style="font-style:italic;font-weight:850">sport in U.S. history.</em></div>
             </div>
             <div class="wpc-card-num">02</div>
+          </div>
+        </div>
+
+        <div class="wpc-card wpc-c1" onclick="this.classList.toggle('flipped');event.stopPropagation()">
+          <div class="wpc-face wpc-front wpc-front-iconly">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12 H20"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4"/></svg></div>
+          </div>
+          <div class="wpc-face wpc-back">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12 H20"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4"/></svg></div>
+            <div class="wpc-card-body">
+              <div class="wpc-card-lede" style="white-space:nowrap">Already a social network <em style="font-style:italic;font-weight:850">beyond the courts.</em></div>
+            </div>
+            <div class="wpc-card-num">01</div>
           </div>
         </div>
 
@@ -12378,6 +12433,91 @@ window.cs1m7Reverse = function() {
 <!-- Inside NEPC — bridges from cs-18 (founder built NEPC) into cs-11b (proof of operations there).
      Simplified Dave 2026-04-28: lighter framing, NEPC eyebrow, the 70/0.6 secret stays as the
      killer insight, closer is now the bridge into the operational proof slides. -->
+<!-- ===== cs-cultural-shift - new bridge after cs-thegap [Codex 2026-05-26] ===== -->
+<style>
+  #cs-cultural-shift, #cs-cultural-shift-pink1, #cs-cultural-shift-pink2 { background:#f3ead8 !important; overflow:hidden; position:relative; min-height:1080px; height:1080px; width:100%; }
+  #cs-cultural-shift .csu-eye, #cs-cultural-shift-pink1 .csu-eye, #cs-cultural-shift-pink2 .csu-eye { position:absolute; top:28px; left:48px; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#c8462c; z-index:10; }
+  #cs-cultural-shift .csu-stage { position:absolute; inset:0; padding:92px 92px 74px; display:grid; grid-template-columns:.88fr 1.12fr; gap:70px; align-items:center; }
+  #cs-cultural-shift .csu-orbit { position:relative; height:760px; }
+  #cs-cultural-shift .csu-orbit::before { content:""; position:absolute; inset:4%; border-radius:50%; background:radial-gradient(circle at 50% 48%, rgba(184,149,74,.22), transparent 38%), radial-gradient(circle at 50% 50%, rgba(91,143,212,.14), transparent 54%); filter:blur(2px); }
+  #cs-cultural-shift .csu-ring { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); border:1px solid rgba(184,149,74,.42); border-radius:50%; box-shadow:0 0 70px rgba(184,149,74,.12) inset; }
+  #cs-cultural-shift .csu-ring.r1 { width:560px; height:560px; }
+  #cs-cultural-shift .csu-ring.r2 { width:410px; height:410px; border-color:rgba(91,143,212,.28); }
+  #cs-cultural-shift .csu-ring.r3 { width:246px; height:246px; border-color:rgba(200,70,44,.26); }
+  #cs-cultural-shift .csu-head { position:absolute; width:154px; height:154px; border-radius:50%; background:linear-gradient(180deg,rgba(251,247,239,.92),rgba(255,246,222,.72)); border:1.4px solid rgba(26,22,18,.34); box-shadow:0 22px 60px rgba(26,22,18,.09), inset 0 0 44px rgba(184,149,74,.18); }
+  #cs-cultural-shift .csu-head::before { content:""; position:absolute; left:50%; bottom:-75px; transform:translateX(-50%); width:108px; height:92px; border-radius:58% 58% 18% 18%; background:#1a1612; opacity:.94; }
+  #cs-cultural-shift .csu-head::after { content:attr(data-signal); position:absolute; inset:22px 18px; display:flex; align-items:center; justify-content:center; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1rem; font-style:italic; font-weight:650; line-height:1.1; color:#1a1612; }
+  #cs-cultural-shift .csu-h1 { left:22px; top:104px; }
+  #cs-cultural-shift .csu-h2 { right:34px; top:176px; }
+  #cs-cultural-shift .csu-h3 { left:124px; bottom:98px; }
+  #cs-cultural-shift .csu-core { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:236px; height:236px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-align:center; padding:30px; font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.24em; text-transform:uppercase; line-height:1.5; color:#fbf7ef; background:radial-gradient(circle at 50% 34%, #5B8FD4 0%, #2d4f82 58%, #1a1612 100%); box-shadow:0 0 0 16px rgba(91,143,212,.10), 0 28px 90px rgba(91,143,212,.30); z-index:2; }
+  #cs-cultural-shift .csu-line { position:absolute; left:50%; top:50%; width:2px; height:260px; background:linear-gradient(#b8954a,rgba(184,149,74,0)); transform-origin:top center; opacity:.64; }
+  #cs-cultural-shift .csu-l1 { transform:rotate(238deg); }
+  #cs-cultural-shift .csu-l2 { transform:rotate(64deg); }
+  #cs-cultural-shift .csu-l3 { transform:rotate(156deg); }
+  #cs-cultural-shift .csu-quote { margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.45rem,5.9vw,6.25rem); line-height:.96; font-weight:850; letter-spacing:0; color:#1a1612; max-width:910px; }
+  #cs-cultural-shift .csu-quote em { color:#c8462c; font-style:italic; font-weight:850; }
+  #cs-cultural-shift .csu-author { margin-top:20px; font-family:'Manrope',sans-serif; font-size:.78rem; font-weight:850; letter-spacing:.22em; text-transform:uppercase; color:#b8954a; }
+  #cs-cultural-shift .csu-sub { margin-top:42px; max-width:790px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.6rem,2.45vw,2.55rem); line-height:1.12; font-weight:700; color:#1a1612; }
+  #cs-cultural-shift .csu-sub strong { color:#5B8FD4; font-weight:900; }
+  #cs-cultural-shift .csu-foot { margin-top:30px; display:inline-flex; gap:12px; align-items:center; font-family:'Manrope',sans-serif; font-size:.66rem; font-weight:850; letter-spacing:.20em; text-transform:uppercase; color:rgba(26,22,18,.60); }
+  #cs-cultural-shift .csu-foot i { width:38px; height:1px; background:#c8462c; display:block; }
+  #cs-cultural-shift-pink1 .csu-p1, #cs-cultural-shift-pink2 .csu-p2 { position:absolute; inset:0; display:grid; place-items:center; padding:90px; text-align:center; }
+  #cs-cultural-shift-pink1 .csu-p1::before { content:""; position:absolute; width:820px; height:820px; border-radius:50%; border:1px solid rgba(184,149,74,.38); box-shadow:0 0 0 80px rgba(184,149,74,.045), 0 0 0 210px rgba(91,143,212,.035); }
+  #cs-cultural-shift-pink1 h1, #cs-cultural-shift-pink2 h1 { margin:0; position:relative; z-index:2; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(4rem,7.2vw,7.6rem); line-height:.94; font-weight:880; letter-spacing:0; color:#1a1612; max-width:1220px; }
+  #cs-cultural-shift-pink1 h1 em, #cs-cultural-shift-pink2 h1 em { color:#c8462c; font-style:italic; }
+  #cs-cultural-shift-pink1 p, #cs-cultural-shift-pink2 p { position:relative; z-index:2; margin:36px auto 0; max-width:900px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.45rem,2.2vw,2.25rem); line-height:1.16; font-weight:650; color:rgba(26,22,18,.78); }
+  #cs-cultural-shift-pink2 .csu-grid { position:absolute; inset:150px 110px 130px; display:grid; grid-template-columns:repeat(7,1fr); grid-template-rows:repeat(4,1fr); gap:18px; opacity:.28; }
+  #cs-cultural-shift-pink2 .csu-cell { border:1px solid rgba(26,22,18,.12); background:rgba(251,247,239,.48); box-shadow:inset 0 0 38px rgba(184,149,74,.10); }
+  #cs-cultural-shift-pink2 .csu-cell:nth-child(3n) { border-color:rgba(91,143,212,.32); }
+  #cs-cultural-shift-pink2 .csu-cell:nth-child(5n) { border-color:rgba(200,70,44,.30); }
+</style>
+<div class="casey-slide ds-focus" id="cs-cultural-shift">
+  <div class="csu-eye">The uncomfortable cultural shift</div>
+  <section class="csu-stage">
+    <div class="csu-orbit" aria-hidden="true">
+      <div class="csu-ring r1"></div><div class="csu-ring r2"></div><div class="csu-ring r3"></div>
+      <div class="csu-line csu-l1"></div><div class="csu-line csu-l2"></div><div class="csu-line csu-l3"></div>
+      <div class="csu-head csu-h1" data-signal="who lifts the room"></div>
+      <div class="csu-head csu-h2" data-signal="who gives value"></div>
+      <div class="csu-head csu-h3" data-signal="who I want back"></div>
+      <div class="csu-core">Networkable human data</div>
+    </div>
+    <div>
+      <h1 class="csu-quote">&ldquo;The best startups tend to have an <em>uncomfortable cultural shift</em>&rdquo;</h1>
+      <div class="csu-author">Marc Andreessen</div>
+      <div class="csu-sub">The most valuable, networkable, untapped dataset on the planet is <strong>trapped in our heads</strong>.</div>
+      <div class="csu-foot"><i></i> GnR turns invisible social judgment into a trusted network layer.</div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-cultural-shift-pink1" style="display:none">
+  <div class="csu-eye">Pink candidate &middot; cultural shift</div>
+  <section class="csu-p1">
+    <div>
+      <h1>&ldquo;The best startups tend to have an <em>uncomfortable cultural shift</em>&rdquo;</h1>
+      <p>The shift: the value inside a community is not the score, the calendar, or the feed. It is what people privately know about each other.</p>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-cultural-shift-pink2" style="display:none">
+  <div class="csu-eye">Pink candidate &middot; trapped dataset</div>
+  <section class="csu-p2">
+    <div class="csu-grid" aria-hidden="true">
+      <div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div>
+      <div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div>
+      <div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div>
+      <div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div>
+    </div>
+    <div>
+      <h1>The most valuable dataset on the planet is <em>trapped in our heads.</em></h1>
+      <p>Every community already knows who creates value. Nobody has built the trusted system to network it.</p>
+    </div>
+  </section>
+</div>
+
 <!-- ===== cs-gnr — Introducing Give n Receive · invitation matchmaking
      v2 redesign [Dave 2026-05-02]: dropped 6-person hexagon (wrong metaphor — broadcast feel).
      Replaced with premium invitation-card hero: YOUR perspective, YOUR foursome, YOUR personalization. ===== -->
@@ -12477,9 +12617,13 @@ window.cs1m7Reverse = function() {
   #cs-gnr .gnr-env-svg { display:block; width:100%; height:auto; filter:drop-shadow(0 2px 10px rgba(184,149,74,0.20)); }
   #cs-gnr .gnr-env-text { position:absolute; top:72%; left:50%; transform:translate(-50%,-50%); width:88%; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1rem,1.55vw,1.35rem); font-weight:700; color:#1a1612; line-height:1.22; letter-spacing:-0.008em; }
   #cs-gnr .gnr-env-text em { font-style:italic; font-weight:500; color:#b8954a; }
-  /* Stage-2 reveal [Dave 2026-05-06 PM v2]: ONLY the 3 envelopes (and the down arrow above them) hide on load.
-     The "GnR envelope experience" headline stays visible so Dave can introduce the slide.
-     Each envelope animates in with translateY + scale stagger when slide advances. */
+  #cs-gnr .gnr-lonely-bg { position:absolute; inset:0; z-index:0; overflow:hidden; }
+  #cs-gnr .gnr-lonely-bg img { width:100%; height:100%; object-fit:cover; display:block; filter:saturate(0.88) contrast(0.95); }
+  #cs-gnr .gnr-lonely-bg::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,rgba(26,22,18,0.18) 0%,rgba(251,247,239,0.08) 45%,rgba(251,247,239,0.30) 100%); }
+  #cs-gnr .gnr-reveal-on-advance { opacity:0; transform:translateY(12px); transition:opacity 0.7s cubic-bezier(.45,.05,.18,1), transform 0.7s cubic-bezier(.45,.05,.18,1); pointer-events:none; }
+  #cs-gnr[data-shown="1"] .gnr-reveal-on-advance { opacity:1; transform:translateY(0); pointer-events:auto; }
+  html[data-export="1"] #cs-gnr .gnr-reveal-on-advance { opacity:1 !important; transform:none !important; pointer-events:auto !important; transition:none !important; }
+  /* Stage-2 reveal [Dave 2026-05-06 PM v2]: 3 envelopes animate in with translateY + scale stagger when slide advances. */
   #cs-gnr .gnr-stage2 { opacity: 0 !important; transition: opacity 0.55s cubic-bezier(.45,.05,.18,1); pointer-events: none; }
   #cs-gnr[data-shown="1"] .gnr-stage2 { opacity: 1 !important; pointer-events: auto; }
   #cs-gnr[data-shown="1"] .gnr-stage2.s2-2 { transition-delay: 0.10s; }
@@ -12612,15 +12756,16 @@ window.cs1m7Reverse = function() {
 
 <div class="casey-slide ds-focus" id="cs-gnr" data-shown="0" onclick="csGnrAdvance()" style="cursor:pointer">
 <section style="position:relative;min-height:100%;width:100%">
+<div class="gnr-lonely-bg" aria-hidden="true"><img src="design_refs/gnr_lonely_phone_background.png" alt=""/></div>
 <!-- [Dave 2026-05-18 LATEST] Eyebrow trimmed per Dave 'Autonomous, abundant connection's core product → Core product'. -->
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Core product</div>
-<div class="inner" style="padding-top:60px;text-align:center;max-width:1100px;margin:0 auto">
+<div class="gnr-reveal-on-advance" style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Core product</div>
+<div class="inner gnr-reveal-on-advance" style="position:relative;z-index:1;padding-top:60px;text-align:center;max-width:1100px;margin:0 auto">
 
   <!-- Headline moved BELOW the large envelope, ABOVE the 3 small envelopes [Dave 2026-05-03 PM] -->
 
   <!-- Headline ABOVE the large envelope — Dave 2026-05-06 PM: bumped ~25% larger to command the slide -->
   <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:700;color:#1a1612;line-height:1.12;letter-spacing:-0.022em;max-width:1180px;margin:0 auto 8px;text-align:center">
-    <em style="font-style:italic;font-weight:500;color:#b8954a">The rise of the personalized invitation feed</em>
+    <em style="font-style:italic;font-weight:500;color:#1a1612">The rise of the personalized invitation feed</em>
   </div>
 
   <!-- ===== Center stage: ENVELOPE IS THE HERO ===== -->
@@ -12653,11 +12798,11 @@ window.cs1m7Reverse = function() {
 
   <style>
     #cs-gnr .gnr-env-hero { opacity:0; transform:translateY(14px) rotate(-2deg); }
-    #cs-gnr.active .gnr-env-hero { animation: gnrEnvHeroIn 1.0s cubic-bezier(.45,.05,.18,1) forwards 0.30s; }
+    #cs-gnr.active[data-shown="1"] .gnr-env-hero { animation: gnrEnvHeroIn 1.0s cubic-bezier(.45,.05,.18,1) forwards 0.30s; }
     @keyframes gnrEnvHeroIn { to { opacity:1; transform:translateY(0) rotate(-1deg); } }
     /* Foursome strip is absolute-positioned at the BOTTOM of the envelope (top:86%) per Dave 2026-05-03 PM —
        was overlapping the GnR seal at top:64%. Keyframe preserves translate(-50%,-50%) centering throughout. */
-    #cs-gnr.active .gnr-fs-strip { animation: gnrFsStripIn 0.7s cubic-bezier(.45,.05,.18,1) forwards 1.10s; }
+    #cs-gnr.active[data-shown="1"] .gnr-fs-strip { animation: gnrFsStripIn 0.7s cubic-bezier(.45,.05,.18,1) forwards 1.10s; }
     @keyframes gnrFsStripIn {
       from { opacity:0; transform:translate(-50%, calc(-50% + 8px)); }
       to   { opacity:1; transform:translate(-50%, -50%); }
@@ -14287,7 +14432,7 @@ window.cs1m7Reverse = function() {
       <!-- [Dave 2026-05-18 LATEST] vd-name DELETED — founder identity moved to eyebrow above. -->
       <!-- [Dave 2026-05-18] Three-core-strengths line replaced with Steve Jobs quote — anchors the wheelhouse beat in his framing: customer-first → reverse-engineer the technology. -->
       <!-- [Dave 2026-05-18 LATEST] Quote shortened per Dave — drop "You've got to" so it reads as a clean imperative. New break sits after "work" for symmetric phrasing. -->
-      <div class="vd-hero" style="text-align:center">Silicon Valley has unlimited capital,<br>and the smartest technologists and product builders on earth.<br><em style="font-style:italic;color:#b8954a;font-weight:850">So why hasn&rsquo;t it solved this problem for the real-world social communities that need it?</em></div>
+      <div class="vd-hero" style="text-align:center">Silicon Valley has unlimited capital<br>and the smartest builders on earth.<br><em style="font-style:italic;color:#b8954a;font-weight:850">So why hasn&rsquo;t it solved this for real-world social communities?</em></div>
 
       <!-- 3-pillar row with circular icon badges [Dave 2026-05-12 LATEST · ChatGPT-style] -->
       <div class="v5-pillars">
@@ -15075,7 +15220,7 @@ window.cs1m7Reverse = function() {
     <div class="rka-head-row">
       <div class="rka-head-text">
         <!-- [Dave 2026-05-18 LATEST] Hero retitled "One Zoom call — the whole story." → "Our product today isn't just for pickleball." per Dave. Sub-line "Incumbent broken → running it by hand → first reaction to GnR." DELETED per Dave 'delete this'. -->
-        <h1 class="rka-hero">Our product today <em>isn&rsquo;t just for pickleball.</em></h1>
+        <h1 class="rka-hero">Our product <em>isn&rsquo;t just for pickleball.</em></h1>
       </div>
       <div class="rka-attr">
         <img src="assets/racketeer-logo.png" alt="Racketeer Padel Club" onerror="this.style.display='none'"/>
@@ -18964,7 +19109,7 @@ window.cs1m7Reverse = function() {
     font-family:'Fraunces','Playfair Display',Georgia,serif;
     font-size:clamp(0.92rem, 1.24vw, 1.16rem);
     font-weight:600; line-height:1.24; letter-spacing:-0.012em;
-    color:rgba(26,22,18,0.76); margin:12px auto 0; max-width:1120px;
+    color:rgba(26,22,18,0.76); margin:0 auto; max-width:1120px;
   }
   #cs-brand-codex .bc-top-sub strong { color:#c8462c; font-weight:850; }
 
@@ -19096,7 +19241,6 @@ window.cs1m7Reverse = function() {
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The next frontier</div>
 
   <div class="bc-top-band">
-    <p class="bc-top-eye">Brand promise</p>
     <p class="bc-top-sub">Our connection and unique value to each other in our communities &mdash; <strong>measured, multiplied, made abundant.</strong></p>
   </div>
 
@@ -20671,7 +20815,7 @@ window.cs1m7Reverse = function() {
             <div class="sc-bubble blue" style="max-width:none;white-space:nowrap">I&rsquo;m part of building <strong style="font-style:normal;font-weight:800">my community</strong></div>
           </div>
           <!-- [Dave 2026-05-14 PM v4] Behavior icons added — hand-up (show up), welcoming-arms (new face), swap-arrows (take spot). -->
-          <div class="sc-item"><span class="sc-item-icon"><svg viewBox="0 0 24 24"><path d="M12 13 V4 M8 8 L12 4 L16 8"/><path d="M5 13 V17 C5 19 6.5 20 9 20 H15 C17.5 20 19 19 19 17 V13"/></svg></span><span class="dash">&mdash;</span><span>The job is an open heart.</span></div>
+          <div class="sc-item"><span class="sc-item-icon"><svg viewBox="0 0 24 24"><path d="M12 13 V4 M8 8 L12 4 L16 8"/><path d="M5 13 V17 C5 19 6.5 20 9 20 H15 C17.5 20 19 19 19 17 V13"/></svg></span><span class="dash">&mdash;</span><span>The job is Give n Receive.</span></div>
           <div class="sc-item"><span class="sc-item-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 20 C5 16 7.5 13.5 12 13.5 C16.5 13.5 19 16 19 20"/><path d="M3 11 L5 13 M21 11 L19 13"/></svg></span><span class="dash">&mdash;</span><span>Play with the new face.</span></div>
           <div class="sc-item"><span class="sc-item-icon"><svg viewBox="0 0 24 24"><path d="M5 9 H17"/><polyline points="14 6, 17 9, 14 12"/><path d="M19 16 H7"/><polyline points="10 19, 7 16, 10 13"/></svg></span><span class="dash">&mdash;</span><span>Take my spot.</span></div>
         </div>
@@ -21254,18 +21398,24 @@ window.cs1m7Reverse = function() {
   #cs-magnetic .mg-side.left .mg-side-hero em{color:#5B8FD4}
   #cs-magnetic .mg-broadcast{width:100%;max-width:720px;height:auto;display:block;margin:auto 0 0}
   #cs-magnetic .mg-side.left .mg-outcome{display:none}
+  #cs-magnetic[data-stage="0"] .mg-broadcast,
+  #cs-magnetic[data-stage="0"] .mg-court{opacity:0;visibility:hidden;transform:translateY(18px) scale(.985);pointer-events:none}
+  #cs-magnetic[data-stage="1"] .mg-broadcast,
+  #cs-magnetic[data-stage="1"] .mg-court{opacity:1;visibility:visible;transform:none;transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  html[data-export="1"] #cs-magnetic .mg-broadcast,
+  html[data-export="1"] #cs-magnetic .mg-court{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important;pointer-events:auto!important}
 </style>
-<div class="casey-slide ds-focus" id="cs-magnetic">
+<div class="casey-slide ds-focus" id="cs-magnetic" data-stage="0" onclick="if(window.csMagneticAdvance) window.csMagneticAdvance(); event.stopPropagation()" style="cursor:pointer">
   <!-- [Dave 2026-05-18 LATEST v3] Background image made more visible per Dave. Image opacity 0.55→0.68; cream wash eased from 0.92/0.88/0.84/0.88 to 0.86/0.80/0.72/0.80 so the court/community image reads without sacrificing headline contrast. -->
   <img src="assets/cs-samecourt-bg.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;display:block;opacity:0.68" onerror="this.onerror=null;this.src='assets/cs-samecourt-pink3.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
   <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg, rgba(251,247,239,0.86) 0%, rgba(251,247,239,0.80) 22%, rgba(251,247,239,0.72) 55%, rgba(251,247,239,0.80) 100%)"></div>
   <!-- [Dave 2026-05-18 LATEST] Eyebrow ↔ above-court hero SWAPPED per Dave: '"Social pull" / "People are the product and the sales engine." swap places of that text (eg so "People are the product..." will go top left label of the slide and social pull will go right above the court)'. Eyebrow now carries the marketplace claim; "Social pull" moves to the above-court hero (.mg-side-hero on .mg-side.right). -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Social pull.</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Social pull</div>
   <section class="mg-stage">
 
     <!-- [Dave 2026-05-14 PM v4] Master header text SWAPPED with the eyebrow per Dave. Long category claim moved up to the eyebrow banner; this header is now the punchy 2-word slide title. -->
     <!-- [Dave 2026-05-18 LATEST] Second line wrapped in .mg-master-line2 (nowrap) so the 'Real-world social networking: everyone contributes local community value.' phrase always renders on a single row, paired with the font-size reduction in CSS above. -->
-    <h1 class="mg-master">The bedrock for me is how do I change the atomic unit of Airbnb from a home to a person?<span class="mg-source">- Brian Chesky</span></h1>
+    <h1 class="mg-master">How do I change the atomic unit of Airbnb from a home to a person?<span class="mg-source">- Brian Chesky</span></h1>
 
     <!-- [Dave 2026-05-17 v7] LEFT rating-only court (with X-mark) + VS divider DELETED per Dave 'delete what you see attached for the social pull slide'. Slide is now single-court (right marketplace) centered. Original twin-court layout preserved as red-dot alt cs-magnetic-orig to the LEFT. -->
     <div class="mg-compare">
@@ -21283,18 +21433,18 @@ window.cs1m7Reverse = function() {
           <rect x="20" y="20" width="180" height="90" rx="2" fill="rgba(91,143,212,0.045)" stroke="rgba(91,143,212,0.62)" stroke-width="1.7"/>
           <ellipse cx="72" cy="65" rx="92" ry="58" fill="url(#mgBroadcastGlow)"/>
           <g stroke="rgba(91,143,212,0.38)" stroke-width="1.2" stroke-linecap="round">
-            <line x1="72" y1="65" x2="152" y2="34"/><line x1="72" y1="65" x2="166" y2="50"/><line x1="72" y1="65" x2="174" y2="66"/><line x1="72" y1="65" x2="166" y2="82"/><line x1="72" y1="65" x2="152" y2="98"/>
+            <line x1="72" y1="65" x2="152" y2="34"/><line x1="72" y1="65" x2="166" y2="50"/><line x1="72" y1="65" x2="174" y2="66"/><line x1="72" y1="65" x2="166" y2="82"/><line x1="72" y1="65" x2="152" y2="96"/>
           </g>
           <g>
             <circle cx="72" cy="65" r="22" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="2.1"/>
             <circle cx="72" cy="58" r="7.5" fill="#5B8FD4"/>
             <path d="M55 84c4-11 12-17 17-17s13 6 17 17" fill="#5B8FD4" opacity=".85"/>
-            <text x="72" y="111" text-anchor="middle" font-family="Manrope,sans-serif" font-size="6.2" font-weight="900" letter-spacing="0.09em" fill="#5B8FD4">INFLUENCER</text>
+            <text x="72" y="104" text-anchor="middle" font-family="Manrope,sans-serif" font-size="5.8" font-weight="900" letter-spacing="0.08em" fill="#5B8FD4">INFLUENCER</text>
           </g>
           <g fill="rgba(26,22,18,0.34)" stroke="rgba(26,22,18,0.22)" stroke-width=".8">
-            <circle cx="152" cy="34" r="7"/><circle cx="166" cy="50" r="7"/><circle cx="174" cy="66" r="7"/><circle cx="166" cy="82" r="7"/><circle cx="152" cy="98" r="7"/>
+            <circle cx="152" cy="34" r="7"/><circle cx="166" cy="50" r="7"/><circle cx="174" cy="66" r="7"/><circle cx="166" cy="82" r="7"/><circle cx="152" cy="96" r="7"/>
           </g>
-          <text x="156" y="112" text-anchor="middle" font-family="Manrope,sans-serif" font-size="5.8" font-weight="900" letter-spacing="0.10em" fill="rgba(26,22,18,0.46)">PASSIVE FEED</text>
+          <text x="156" y="104" text-anchor="middle" font-family="Manrope,sans-serif" font-size="5.25" font-weight="900" letter-spacing="0.08em" fill="rgba(26,22,18,0.46)">PASSIVE FEED</text>
         </svg>
       </div>
 
@@ -21345,7 +21495,7 @@ window.cs1m7Reverse = function() {
             <!-- ANCHOR → REGULAR (top-left → bottom-right diagonal): regular shows up because anchor is there -->
             <line class="mg-edge mg-edge-anchor-regular" x1="48" y1="45" x2="172" y2="85" stroke="#c8462c"/>
             <!-- ANCHOR → REFERRER (top-left → bottom-left vertical): referrer is anchored by the anchor -->
-            <line class="mg-edge mg-edge-anchor-referrer" x1="48" y1="45" x2="48" y2="85" stroke="#168651"/>
+            <line class="mg-edge mg-edge-anchor-referrer" x1="48" y1="45" x2="48" y2="85" stroke="#b8954a"/>
             <!-- REFERRER → REFERRED (bottom-left → top-right diagonal): the actual referral act -->
             <line class="mg-edge mg-edge-referrer-referred" x1="48" y1="85" x2="172" y2="45" stroke="#3a7da3"/>
           </g>
@@ -21370,11 +21520,11 @@ window.cs1m7Reverse = function() {
             <text x="166" y="104" font-family="Manrope,sans-serif" font-size="6.65" font-weight="900" letter-spacing="0.04em" fill="#c8462c" text-anchor="middle">REGULAR</text>
           </g>
 
-          <!-- PLAYER 2 · REFERRER (green) — bottom-left · shows up third, also pulled in by anchor; their role is to bring others -->
+          <!-- PLAYER 2 · REFERRER (gold) — bottom-left · shows up third, also pulled in by anchor; their role is to bring others -->
           <g class="mg-player mg-player-referrer">
-            <circle cx="48" cy="85" r="11" fill="none" stroke="rgba(22,134,81,0.42)" stroke-width="0.9" stroke-dasharray="2 1.6"/>
-            <circle cx="48" cy="85" r="8" fill="#168651"/>
-            <text x="52" y="104" font-family="Manrope,sans-serif" font-size="6.65" font-weight="900" letter-spacing="0.04em" fill="#168651" text-anchor="middle">REFERRER</text>
+            <circle cx="48" cy="85" r="11" fill="none" stroke="rgba(184,149,74,0.50)" stroke-width="0.9" stroke-dasharray="2 1.6"/>
+            <circle cx="48" cy="85" r="8" fill="#b8954a"/>
+            <text x="52" y="104" font-family="Manrope,sans-serif" font-size="6.65" font-weight="900" letter-spacing="0.04em" fill="#b8954a" text-anchor="middle">REFERRER</text>
           </g>
 
           <!-- PLAYER 3 · REFERRED (blue) — top-right · shows up last, brought in via REFERRER's invitation -->
@@ -23025,6 +23175,7 @@ window.cs1m7Reverse = function() {
   #cs-fv6-img .fvi-c-mkt, #cs-fv6-pink .fvi-c-mkt { --fvi-c:#c0397c; --fvi-bg:rgba(192,57,124,0.10); }
   #cs-fv6-img .fvi-c3, #cs-fv6-pink .fvi-c3 { --fvi-c:#a87a35; --fvi-bg:rgba(184,149,74,0.12); }
   #cs-fv6-img .fvi-c-cascade, #cs-fv6-pink .fvi-c-cascade { --fvi-c:#b8954a; --fvi-bg:rgba(184,149,74,0.12); }
+  #cs-fv6-img .fvi-c-compound, #cs-fv6-pink .fvi-c-compound { --fvi-c:#b8954a; --fvi-bg:rgba(184,149,74,0.12); }
   #cs-fv6-img .fvi-c-recip, #cs-fv6-pink .fvi-c-recip { --fvi-c:#d65a3a; --fvi-bg:rgba(214,90,58,0.10); }
   #cs-fv6-img .fvi-c5, #cs-fv6-pink .fvi-c5 { --fvi-c:#168651; --fvi-bg:rgba(22,134,81,0.10); }
   #cs-fv6-img .fvi-c4, #cs-fv6-pink .fvi-c4 { --fvi-c:#5B8FD4; --fvi-bg:rgba(91,143,212,0.10); }
@@ -23082,17 +23233,17 @@ window.cs1m7Reverse = function() {
       <!-- [Dave 2026-05-17 v17] Test. card removed. -->
       <div class="fvi-card fvi-c2"><div class="fvi-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="2.4"/><circle cx="6" cy="17" r="2.4"/><circle cx="18" cy="17" r="2.4"/><line x1="12" y1="8.4" x2="6.8" y2="15"/><line x1="12" y1="8.4" x2="17.2" y2="15"/><line x1="8.2" y1="17" x2="15.8" y2="17"/></svg></div><div class="fvi-verb">Graph.</div></div>
       <div class="fvi-arrow">&rarr;</div>
-      <div class="fvi-card fvi-c-mkt"><div class="fvi-ico"><svg viewBox="0 0 24 24"><path d="M3 10 L3 14 L8 14 L18 19 L18 5 L8 10 Z"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="20" y1="15" x2="22" y2="15"/></svg></div><div class="fvi-verb">Sell.</div></div>
+      <div class="fvi-card fvi-c-mkt"><div class="fvi-ico"><svg viewBox="0 0 24 24"><rect x="3.5" y="6.5" width="17" height="11" rx="1.6"/><path d="M4 8 L12 13.5 L20 8"/></svg></div><div class="fvi-verb">Sell.</div></div>
       <div class="fvi-arrow">&rarr;</div>
       <div class="fvi-card fvi-c3"><div class="fvi-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="1.6"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/><circle cx="9" cy="14.5" r="0.85" fill="currentColor"/><circle cx="13" cy="14.5" r="0.85" fill="currentColor"/><circle cx="17" cy="14.5" r="0.85" fill="currentColor"/></svg></div><div class="fvi-verb">Coordinate.</div></div>
-      <div class="fvi-arrow">&rarr;</div>
-            <div class="fvi-card fvi-c-cascade"><div class="fvi-ico"><svg viewBox="0 0 24 24"><path d="M12 4v5"/><path d="M5 11h14"/><path d="M7 11v6"/><path d="M12 11v6"/><path d="M17 11v6"/><path d="M5 15l2 2 2-2"/><path d="M10 15l2 2 2-2"/><path d="M15 15l2 2 2-2"/></svg></div><div class="fvi-verb">Cascade.</div></div>
       <div class="fvi-arrow">&rarr;</div>
       <div class="fvi-card fvi-c-recip"><div class="fvi-ico"><svg viewBox="0 0 24 24"><path d="M 5 8 L 17 8"/><polyline points="14 5, 17 8, 14 11"/><path d="M 19 16 L 7 16"/><polyline points="10 19, 7 16, 10 13"/></svg></div><div class="fvi-verb">Reciprocate.</div></div>
       <div class="fvi-arrow">&rarr;</div>
       <div class="fvi-card fvi-c5"><div class="fvi-ico"><svg viewBox="0 0 24 24"><path d="M 12 20 C 7 17 2 13 2 8 C 2 5 4 3.5 6 3.5 C 8.4 3.5 10.5 4.8 12 7 C 13.5 4.8 15.6 3.5 18 3.5 C 20 3.5 22 5 22 8 C 22 13 17 17 12 20 Z"/></svg></div><div class="fvi-verb">Incentivize.</div></div>
       <div class="fvi-arrow">&rarr;</div>
       <div class="fvi-card fvi-c4"><div class="fvi-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.4"/><path d="M12 3 L12 5.6 M12 18.4 L12 21 M3 12 L5.6 12 M18.4 12 L21 12 M5.6 5.6 L7.5 7.5 M16.5 16.5 L18.4 18.4 M5.6 18.4 L7.5 16.5 M16.5 7.5 L18.4 5.6"/><circle cx="12" cy="12" r="6.4"/></svg></div><div class="fvi-verb">Automate.</div></div>
+      <div class="fvi-arrow">&rarr;</div>
+      <div class="fvi-card fvi-c-compound"><div class="fvi-ico"><svg viewBox="0 0 24 24"><path d="M5 17 C8 12 12 10 19 9"/><path d="M15 6 L19 9 L16 13"/><circle cx="6" cy="17" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="18" cy="9" r="1.8"/></svg></div><div class="fvi-verb">Compound.</div></div>
       <div class="fvi-arrow">&rarr;</div>
       <div class="fvi-card fvi-c6"><div class="fvi-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.6"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="7" y2="7"/><line x1="17" y1="17" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="7" y2="17"/><line x1="17" y1="7" x2="19.1" y2="4.9"/></svg></div><div class="fvi-verb">Abundance.</div></div>
     </div>
@@ -25391,7 +25542,7 @@ window.cs1m7Reverse = function() {
 <div class="inner" style="padding:50px 32px 24px;text-align:center;max-width:1180px;margin:0 auto">
 
   <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.6rem,3.2vw,2.5rem);font-weight:700;color:#1a1612;line-height:1.15;letter-spacing:-0.018em;max-width:1080px;margin:0 auto">
-    Imagine dropping <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#b8954a;font-style:italic;font-weight:500;font-size:0.78em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span> into any pickleball community.<br>
+    Imagine dropping <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#b8954a;font-style:italic;font-weight:500;font-size:0.78em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span> into any social sports community.<br>
     <em style="font-style:italic;font-weight:500;color:#b8954a">And it just works &mdash; compounding forever &mdash; at AI speed.</em>
   </div>
 
@@ -29498,21 +29649,87 @@ window.csA7m1Reverse = function() {
 
 
 
-<div class="casey-slide staff-slide" id="staff-nepc-02" style="display:none"><section class="staff-shell"><div class="staff-paper"></div><div class="staff-eyebrow">Human truth</div><div class="staff-count">Staff 1 / 8</div><h1 class="staff-title" style="max-width:1040px">Humans are wired for <span class="gold">live connection.</span></h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#1a1612;max-width:650px">A smile lands.<br><span style="color:#5B8FD4">The room opens.</span></div><div style="position:absolute;right:126px;bottom:82px;z-index:3;border-left:7px solid #c8462c;padding:22px 0 22px 32px;width:650px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:3.1rem;line-height:1.04;font-weight:760;color:#1a1612;background:rgba(255,252,244,.56)">The least digitized thing<br><span style="color:#c8462c;font-style:italic">is the signal.</span></div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><ellipse cx="580" cy="330" rx="390" ry="238" fill="rgba(255,252,244,.62)" stroke="rgba(184,149,74,.34)" stroke-width="2"/><circle cx="580" cy="330" r="245" fill="url(#sglow)"/><g fill="none" stroke="#b8954a" stroke-width="4" opacity=".70"><path d="M374 208 C458 108 676 104 768 206"/><path d="M316 358 C438 486 724 492 844 360"/><path d="M374 208 C496 320 628 354 844 360"/><path d="M768 206 C660 336 500 370 316 358"/></g><g filter="url(#sfx)"><circle cx="580" cy="330" r="88" fill="#fffaf0" stroke="#b8954a" stroke-width="5"/><path d="M543 326 C543 298 578 288 580 318 C584 288 617 298 617 326 C617 364 580 382 580 382 C580 382 543 364 543 326Z" fill="#c8462c"/></g><g transform="translate(374 208)"><circle r="58" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><circle cy="-14" r="16" fill="#5B8FD4"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#5B8FD4"/></g><g transform="translate(768 206)"><circle r="58" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><circle cy="-14" r="16" fill="#b8954a"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#b8954a"/></g><g transform="translate(316 358)"><circle r="58" fill="#fbf7ef" stroke="#c8462c" stroke-width="7"/><circle cy="-14" r="16" fill="#c8462c"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#c8462c"/></g><g transform="translate(844 360)"><circle r="58" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><circle cy="-14" r="16" fill="#5B8FD4"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#5B8FD4"/></g></svg></div></section></div>
+<div class="casey-slide staff-slide" id="staff-nepc-02" style="display:none"><section class="staff-shell"><div class="staff-paper"></div><div class="staff-eyebrow">Human truth</div><div class="staff-count">Staff 1 / 7</div><h1 class="staff-title" style="max-width:1040px">Humans are wired for <span class="gold">live connection.</span></h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#1a1612;max-width:650px">A smile lands.<br><span style="color:#5B8FD4">The room opens.</span></div><div style="position:absolute;right:126px;bottom:82px;z-index:3;border-left:7px solid #c8462c;padding:22px 0 22px 32px;width:650px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:3.1rem;line-height:1.04;font-weight:760;color:#1a1612;background:rgba(255,252,244,.56)">The least digitized thing<br><span style="color:#c8462c;font-style:italic">is the signal.</span></div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><ellipse cx="580" cy="330" rx="390" ry="238" fill="rgba(255,252,244,.62)" stroke="rgba(184,149,74,.34)" stroke-width="2"/><circle cx="580" cy="330" r="245" fill="url(#sglow)"/><g fill="none" stroke="#b8954a" stroke-width="4" opacity=".70"><path d="M374 208 C458 108 676 104 768 206"/><path d="M316 358 C438 486 724 492 844 360"/><path d="M374 208 C496 320 628 354 844 360"/><path d="M768 206 C660 336 500 370 316 358"/></g><g filter="url(#sfx)"><circle cx="580" cy="330" r="88" fill="#fffaf0" stroke="#b8954a" stroke-width="5"/><path d="M543 326 C543 298 578 288 580 318 C584 288 617 298 617 326 C617 364 580 382 580 382 C580 382 543 364 543 326Z" fill="#c8462c"/></g><g transform="translate(374 208)"><circle r="58" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><circle cy="-14" r="16" fill="#5B8FD4"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#5B8FD4"/></g><g transform="translate(768 206)"><circle r="58" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><circle cy="-14" r="16" fill="#b8954a"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#b8954a"/></g><g transform="translate(316 358)"><circle r="58" fill="#fbf7ef" stroke="#c8462c" stroke-width="7"/><circle cy="-14" r="16" fill="#c8462c"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#c8462c"/></g><g transform="translate(844 360)"><circle r="58" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><circle cy="-14" r="16" fill="#5B8FD4"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#5B8FD4"/></g></svg></div></section></div>
 
 <div class="casey-slide staff-slide" id="staff-nepc-03" style="display:none"><section class="staff-shell"><div class="staff-paper"></div><div class="staff-eyebrow">One event</div><div class="staff-count">Staff 2 / 8</div><h1 class="staff-title" style="max-width:1040px">One open heart can change the court.</h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#1a1612;max-width:650px">Sign up.<br><span style="color:#b8954a;font-style:italic">Show up open.</span><br>Everyone feels it.</div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><rect x="116" y="84" width="760" height="420" rx="18" fill="rgba(255,252,244,.72)" stroke="#b8954a" stroke-width="8"/><line x1="496" y1="84" x2="496" y2="504" stroke="#b8954a" stroke-width="7"/><line x1="116" y1="294" x2="876" y2="294" stroke="#b8954a" stroke-width="3" opacity=".38"/><g stroke="#b8954a" stroke-width="3" stroke-dasharray="10 16" opacity=".62"><path d="M248 210 C400 128 610 124 748 208"/><path d="M248 382 C402 492 614 492 748 382"/><path d="M248 210 C396 322 598 350 748 382"/></g><g transform="translate(248 210)"><circle r="58" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><circle cy="-14" r="16" fill="#5B8FD4"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#5B8FD4"/></g><g transform="translate(248 382)"><circle r="58" fill="#fbf7ef" stroke="#c8462c" stroke-width="7"/><circle cy="-14" r="16" fill="#c8462c"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#c8462c"/></g><g transform="translate(748 208)"><circle r="58" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><circle cy="-14" r="16" fill="#b8954a"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#b8954a"/></g><g transform="translate(748 382)"><circle r="58" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><circle cy="-14" r="16" fill="#5B8FD4"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#5B8FD4"/></g><g filter="url(#sfx)"><circle cx="496" cy="294" r="78" fill="#fffaf0" stroke="#c8462c" stroke-width="7"/><path d="M462 288 C462 258 495 252 497 282 C502 252 532 260 532 288 C532 325 497 343 497 343 C497 343 462 325 462 288Z" fill="#c8462c"/></g><path d="M892 294 L1038 294" stroke="#b8954a" stroke-width="6"/><path d="M1038 294 L1000 266 M1038 294 L1000 322" stroke="#b8954a" stroke-width="6"/><text x="1060" y="282" style="font-family:'Fraunces','Playfair Display',Georgia,serif;" font-size="62" font-weight="850" fill="#1a1612">repeat</text><text x="1060" y="338" style="font-family:'Manrope',sans-serif;" font-size="22" font-weight="900" letter-spacing="4" fill="#c8462c">DEMAND</text></svg></div></section></div>
 
-<div class="casey-slide staff-slide" id="staff-nepc-04" style="display:none"><section class="staff-shell dark"><div class="staff-paper"></div><div class="staff-eyebrow">Open heart mechanics</div><div class="staff-count">Staff 3 / 8</div><h1 class="staff-title" style="max-width:1040px">Openness is contagious.</h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#fbf7ef;max-width:650px"><span style="color:#b8954a;font-style:italic">One person</span><br>opens the room.</div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><circle cx="600" cy="325" r="285" fill="url(#sglow)" opacity=".8"/><g fill="none" stroke="#b8954a" stroke-width="3" opacity=".55"><circle cx="600" cy="325" r="130"/><circle cx="600" cy="325" r="225"/><circle cx="600" cy="325" r="310"/></g><g stroke="#b8954a" stroke-width="3" opacity=".65"><path d="M600 325 L318 218"/><path d="M600 325 L376 472"/><path d="M600 325 L792 160"/><path d="M600 325 L930 300"/><path d="M600 325 L820 500"/></g><g filter="url(#sfx)"><circle cx="600" cy="325" r="82" fill="#fbf7ef" stroke="#c8462c" stroke-width="6"/><path d="M566 320 C566 292 598 283 600 312 C604 283 635 292 635 320 C635 357 600 374 600 374 C600 374 566 357 566 320Z" fill="#c8462c"/></g><g transform="translate(318 218)"><circle r="58" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><circle cy="-14" r="16" fill="#5B8FD4"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#5B8FD4"/></g><g transform="translate(376 472)"><circle r="58" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><circle cy="-14" r="16" fill="#b8954a"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#b8954a"/></g><g transform="translate(792 160)"><circle r="58" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><circle cy="-14" r="16" fill="#5B8FD4"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#5B8FD4"/></g><g transform="translate(930 300)"><circle r="58" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><circle cy="-14" r="16" fill="#b8954a"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#b8954a"/></g><g transform="translate(820 500)"><circle r="58" fill="#fbf7ef" stroke="#c8462c" stroke-width="7"/><circle cy="-14" r="16" fill="#c8462c"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#c8462c"/></g><text x="600" y="625" text-anchor="middle" style="font-family:'Manrope',sans-serif;" font-size="23" font-weight="900" letter-spacing="5" fill="#fbf7ef" opacity=".78">THE ROOM CHANGES</text></svg></div></section></div>
+<div class="casey-slide staff-slide" id="staff-nepc-04" style="display:none"><section class="staff-shell dark"><div class="staff-paper"></div><div class="staff-eyebrow">Open heart mechanics</div><div class="staff-count">Staff 2 / 7</div><h1 class="staff-title" style="max-width:1040px">Openness is contagious.</h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#fbf7ef;max-width:650px"><span style="color:#b8954a;font-style:italic">One person</span><br>opens the room.</div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><circle cx="600" cy="325" r="285" fill="url(#sglow)" opacity=".8"/><g fill="none" stroke="#b8954a" stroke-width="3" opacity=".55"><circle cx="600" cy="325" r="130"/><circle cx="600" cy="325" r="225"/><circle cx="600" cy="325" r="310"/></g><g stroke="#b8954a" stroke-width="3" opacity=".65"><path d="M600 325 L318 218"/><path d="M600 325 L376 472"/><path d="M600 325 L792 160"/><path d="M600 325 L930 300"/><path d="M600 325 L820 500"/></g><g filter="url(#sfx)"><circle cx="600" cy="325" r="82" fill="#fbf7ef" stroke="#c8462c" stroke-width="6"/><path d="M566 320 C566 292 598 283 600 312 C604 283 635 292 635 320 C635 357 600 374 600 374 C600 374 566 357 566 320Z" fill="#c8462c"/></g><g transform="translate(318 218)"><circle r="58" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><circle cy="-14" r="16" fill="#5B8FD4"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#5B8FD4"/></g><g transform="translate(376 472)"><circle r="58" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><circle cy="-14" r="16" fill="#b8954a"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#b8954a"/></g><g transform="translate(792 160)"><circle r="58" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><circle cy="-14" r="16" fill="#5B8FD4"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#5B8FD4"/></g><g transform="translate(930 300)"><circle r="58" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><circle cy="-14" r="16" fill="#b8954a"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#b8954a"/></g><g transform="translate(820 500)"><circle r="58" fill="#fbf7ef" stroke="#c8462c" stroke-width="7"/><circle cy="-14" r="16" fill="#c8462c"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#c8462c"/></g><text x="600" y="625" text-anchor="middle" style="font-family:'Manrope',sans-serif;" font-size="23" font-weight="900" letter-spacing="5" fill="#fbf7ef" opacity=".78">THE ROOM CHANGES</text></svg></div></section></div>
 
-<div class="casey-slide staff-slide" id="staff-nepc-05" style="display:none"><section class="staff-shell"><div class="staff-paper"></div><div class="staff-eyebrow">Ripple</div><div class="staff-count">Staff 4 / 8</div><h1 class="staff-title" style="max-width:1040px">One good session keeps working.</h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#1a1612;max-width:650px">Session<br><span style="color:#b8954a;font-style:italic">to friendship</span><br>to demand.</div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><g transform="translate(578 320)"><circle r="300" fill="rgba(255,252,244,.58)" stroke="rgba(184,149,74,.22)"/><circle r="218" fill="none" stroke="#b8954a" stroke-width="5" opacity=".42"/><circle r="140" fill="none" stroke="#5B8FD4" stroke-width="5" opacity=".5"/><circle r="64" fill="#fbf7ef" stroke="#c8462c" stroke-width="7" filter="url(#sfx)"/><path d="M-30 -6 C-30 -35 -2 -41 0 -12 C5 -41 33 -35 33 -6 C33 30 0 48 0 48 C0 48 -30 30 -30 -6Z" fill="#c8462c"/><g style="font-family:'Manrope',sans-serif;" font-weight="900" letter-spacing="4" font-size="18" text-anchor="middle"><text y="-165" fill="#5B8FD4">FRIENDSHIP</text><text x="220" y="10" fill="#b8954a">PRIVATE COURT</text><text y="188" fill="#c8462c">NAME DRAW</text><text x="-230" y="10" fill="#1a1612">REPEAT</text></g></g><path d="M890 320 C982 312 1048 266 1100 200" fill="none" stroke="#c8462c" stroke-width="8"/><path d="M1100 200 L1092 250 M1100 200 L1048 212" fill="none" stroke="#c8462c" stroke-width="8"/></svg></div></section></div>
+<div class="casey-slide staff-slide" id="staff-nepc-05" style="display:none"><section class="staff-shell"><div class="staff-paper"></div><div class="staff-eyebrow">Ripple</div><div class="staff-count">Staff 3 / 7</div><h1 class="staff-title" style="max-width:1040px">One good session keeps working.</h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#1a1612;max-width:650px">Session<br><span style="color:#b8954a;font-style:italic">to friendship</span><br>to demand.</div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><g transform="translate(578 320)"><circle r="300" fill="rgba(255,252,244,.58)" stroke="rgba(184,149,74,.22)"/><circle r="218" fill="none" stroke="#b8954a" stroke-width="5" opacity=".42"/><circle r="140" fill="none" stroke="#5B8FD4" stroke-width="5" opacity=".5"/><circle r="64" fill="#fbf7ef" stroke="#c8462c" stroke-width="7" filter="url(#sfx)"/><path d="M-30 -6 C-30 -35 -2 -41 0 -12 C5 -41 33 -35 33 -6 C33 30 0 48 0 48 C0 48 -30 30 -30 -6Z" fill="#c8462c"/><g style="font-family:'Manrope',sans-serif;" font-weight="900" letter-spacing="4" font-size="18" text-anchor="middle"><text y="-165" fill="#5B8FD4">FRIENDSHIP</text><text x="220" y="10" fill="#b8954a">PRIVATE COURT</text><text y="188" fill="#c8462c">NAME DRAW</text><text x="-230" y="10" fill="#1a1612">REPEAT</text></g></g><path d="M890 320 C982 312 1048 266 1100 200" fill="none" stroke="#c8462c" stroke-width="8"/><path d="M1100 200 L1092 250 M1100 200 L1048 212" fill="none" stroke="#c8462c" stroke-width="8"/></svg></div></section></div>
 
-<div class="casey-slide staff-slide" id="staff-nepc-06" style="display:none"><section class="staff-shell"><div class="staff-paper"></div><div class="staff-eyebrow">Social pull</div><div class="staff-count">Staff 5 / 8</div><h1 class="staff-title" style="max-width:1040px">Some people make rooms fill.</h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#1a1612;max-width:650px"><span style="color:#5B8FD4">Magnets</span><br>are the hidden engine.</div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><g fill="none" stroke="#b8954a" stroke-width="4" opacity=".45"><path d="M222 168 C450 48 778 48 1010 168"/><path d="M178 308 C448 174 790 174 1054 308"/><path d="M222 466 C450 586 778 586 1010 466"/></g><g stroke="#b8954a" stroke-width="3" stroke-dasharray="10 16" opacity=".58"><path d="M604 318 L270 180"/><path d="M604 318 L944 178"/><path d="M604 318 L262 470"/><path d="M604 318 L944 472"/></g><g transform="translate(270 180)"><circle r="58" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><circle cy="-14" r="16" fill="#b8954a"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#b8954a"/></g><g transform="translate(944 178)"><circle r="58" fill="#fbf7ef" stroke="#c8462c" stroke-width="7"/><circle cy="-14" r="16" fill="#c8462c"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#c8462c"/></g><g transform="translate(262 470)"><circle r="58" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><circle cy="-14" r="16" fill="#5B8FD4"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#5B8FD4"/></g><g transform="translate(944 472)"><circle r="58" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><circle cy="-14" r="16" fill="#b8954a"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#b8954a"/></g><g filter="url(#sfx)"><circle cx="604" cy="318" r="106" fill="#fffaf0" stroke="#5B8FD4" stroke-width="8"/><text x="604" y="310" text-anchor="middle" style="font-family:'Fraunces','Playfair Display',Georgia,serif;" font-size="70" font-weight="900" fill="#5B8FD4">M</text><text x="604" y="360" text-anchor="middle" style="font-family:'Manrope',sans-serif;" font-size="18" font-weight="900" letter-spacing="4" fill="#1a1612">MAGNET</text></g><text x="604" y="625" text-anchor="middle" style="font-family:'Fraunces','Playfair Display',Georgia,serif;" font-size="56" font-weight="850" fill="#1a1612">Who makes people want to come back?</text></svg></div></section></div>
+<div class="casey-slide staff-slide" id="staff-nepc-06" style="display:none"><section class="staff-shell"><div class="staff-paper"></div><div class="staff-eyebrow">Social pull</div><div class="staff-count">Staff 4 / 7</div><h1 class="staff-title" style="max-width:1040px">Some people make rooms fill.</h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#1a1612;max-width:650px"><span style="color:#5B8FD4">Magnets</span><br>are the hidden engine.</div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><g fill="none" stroke="#b8954a" stroke-width="4" opacity=".45"><path d="M222 168 C450 48 778 48 1010 168"/><path d="M178 308 C448 174 790 174 1054 308"/><path d="M222 466 C450 586 778 586 1010 466"/></g><g stroke="#b8954a" stroke-width="3" stroke-dasharray="10 16" opacity=".58"><path d="M604 318 L270 180"/><path d="M604 318 L944 178"/><path d="M604 318 L262 470"/><path d="M604 318 L944 472"/></g><g transform="translate(270 180)"><circle r="58" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><circle cy="-14" r="16" fill="#b8954a"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#b8954a"/></g><g transform="translate(944 178)"><circle r="58" fill="#fbf7ef" stroke="#c8462c" stroke-width="7"/><circle cy="-14" r="16" fill="#c8462c"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#c8462c"/></g><g transform="translate(262 470)"><circle r="58" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><circle cy="-14" r="16" fill="#5B8FD4"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#5B8FD4"/></g><g transform="translate(944 472)"><circle r="58" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><circle cy="-14" r="16" fill="#b8954a"/><path d="M-31 39 C-18 12 18 12 31 39" fill="#b8954a"/></g><g filter="url(#sfx)"><circle cx="604" cy="318" r="106" fill="#fffaf0" stroke="#5B8FD4" stroke-width="8"/><text x="604" y="310" text-anchor="middle" style="font-family:'Fraunces','Playfair Display',Georgia,serif;" font-size="70" font-weight="900" fill="#5B8FD4">M</text><text x="604" y="360" text-anchor="middle" style="font-family:'Manrope',sans-serif;" font-size="18" font-weight="900" letter-spacing="4" fill="#1a1612">MAGNET</text></g><text x="604" y="625" text-anchor="middle" style="font-family:'Fraunces','Playfair Display',Georgia,serif;" font-size="56" font-weight="850" fill="#1a1612">Who makes people want to come back?</text></svg></div></section></div>
 
-<div class="casey-slide staff-slide" id="staff-nepc-07" style="display:none"><section class="staff-shell dark"><div class="staff-paper"></div><div class="staff-eyebrow">Technology layer</div><div class="staff-count">Staff 6 / 8</div><h1 class="staff-title" style="max-width:1040px">Technology helps the heart reach more people.</h1><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;left:110px;right:110px;width:calc(100% - 220px);"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><g transform="translate(125 300)" filter="url(#sfx)"><circle r="104" fill="#fbf7ef" stroke="#c8462c" stroke-width="7"/><path d="M-40 -4 C-40 -42 -3 -52 0 -16 C7 -52 43 -42 43 -4 C43 42 0 65 0 65 C0 65 -40 42 -40 -4Z" fill="#c8462c"/><text y="158" text-anchor="middle" style="font-family:'Manrope',sans-serif;" font-size="20" font-weight="900" letter-spacing="5" fill="#fbf7ef">HEART</text></g><path d="M260 300 L1010 300" stroke="#b8954a" stroke-width="8"/><path d="M1010 300 L964 268 M1010 300 L964 332" stroke="#b8954a" stroke-width="8"/><g style="font-family:'Fraunces','Playfair Display',Georgia,serif;" font-size="52" font-weight="850" text-anchor="middle" filter="url(#sfx)"><g transform="translate(405 300)"><rect x="-96" y="-72" width="192" height="144" rx="16" fill="rgba(251,247,239,.10)" stroke="rgba(251,247,239,.25)"/><text y="14" fill="#fbf7ef">match</text></g><g transform="translate(590 300)"><rect x="-96" y="-72" width="192" height="144" rx="16" fill="rgba(251,247,239,.10)" stroke="rgba(251,247,239,.25)"/><text y="14" fill="#fbf7ef">invite</text></g><g transform="translate(775 300)"><rect x="-96" y="-72" width="192" height="144" rx="16" fill="rgba(251,247,239,.10)" stroke="rgba(251,247,239,.25)"/><text y="14" fill="#fbf7ef">learn</text></g></g><g transform="translate(1085 300)" filter="url(#sfx)"><circle r="118" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="8"/><circle r="58" fill="none" stroke="#b8954a" stroke-width="4" opacity=".65"/><circle cx="-46" cy="18" r="16" fill="#5B8FD4"/><circle cx="42" cy="-22" r="16" fill="#c8462c"/><circle cx="38" cy="48" r="16" fill="#b8954a"/><path d="M-46 18 L42 -22 L38 48 L-46 18" fill="none" stroke="#b8954a" stroke-width="4"/><text y="164" text-anchor="middle" style="font-family:'Manrope',sans-serif;" font-size="20" font-weight="900" letter-spacing="5" fill="#fbf7ef">MORE CONNECTION</text></g></svg></div></section></div>
+<div class="casey-slide staff-slide" id="staff-nepc-07" style="display:none"><section class="staff-shell dark"><div class="staff-paper"></div><div class="staff-eyebrow">Technology layer</div><div class="staff-count">Staff 5 / 7</div><h1 class="staff-title" style="max-width:1040px">Technology helps the heart reach more people.</h1><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;left:110px;right:110px;width:calc(100% - 220px);"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><g transform="translate(125 300)" filter="url(#sfx)"><circle r="104" fill="#fbf7ef" stroke="#c8462c" stroke-width="7"/><path d="M-40 -4 C-40 -42 -3 -52 0 -16 C7 -52 43 -42 43 -4 C43 42 0 65 0 65 C0 65 -40 42 -40 -4Z" fill="#c8462c"/><text y="158" text-anchor="middle" style="font-family:'Manrope',sans-serif;" font-size="20" font-weight="900" letter-spacing="5" fill="#fbf7ef">HEART</text></g><path d="M260 300 L1010 300" stroke="#b8954a" stroke-width="8"/><path d="M1010 300 L964 268 M1010 300 L964 332" stroke="#b8954a" stroke-width="8"/><g style="font-family:'Fraunces','Playfair Display',Georgia,serif;" font-size="52" font-weight="850" text-anchor="middle" filter="url(#sfx)"><g transform="translate(405 300)"><rect x="-96" y="-72" width="192" height="144" rx="16" fill="rgba(251,247,239,.10)" stroke="rgba(251,247,239,.25)"/><text y="14" fill="#fbf7ef">match</text></g><g transform="translate(590 300)"><rect x="-96" y="-72" width="192" height="144" rx="16" fill="rgba(251,247,239,.10)" stroke="rgba(251,247,239,.25)"/><text y="14" fill="#fbf7ef">invite</text></g><g transform="translate(775 300)"><rect x="-96" y="-72" width="192" height="144" rx="16" fill="rgba(251,247,239,.10)" stroke="rgba(251,247,239,.25)"/><text y="14" fill="#fbf7ef">learn</text></g></g><g transform="translate(1085 300)" filter="url(#sfx)"><circle r="118" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="8"/><circle r="58" fill="none" stroke="#b8954a" stroke-width="4" opacity=".65"/><circle cx="-46" cy="18" r="16" fill="#5B8FD4"/><circle cx="42" cy="-22" r="16" fill="#c8462c"/><circle cx="38" cy="48" r="16" fill="#b8954a"/><path d="M-46 18 L42 -22 L38 48 L-46 18" fill="none" stroke="#b8954a" stroke-width="4"/><text y="164" text-anchor="middle" style="font-family:'Manrope',sans-serif;" font-size="20" font-weight="900" letter-spacing="5" fill="#fbf7ef">MORE CONNECTION</text></g></svg></div></section></div>
 
-<div class="casey-slide staff-slide" id="staff-nepc-08" style="display:none"><section class="staff-shell"><div class="staff-paper"></div><div class="staff-eyebrow">Operating loop</div><div class="staff-count">Staff 7 / 8</div><h1 class="staff-title" style="max-width:1040px">The club becomes a learning loop.</h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#1a1612;max-width:650px">Staff judgment.<br><span style="color:#b8954a;font-style:italic">Member generosity.</span><br>Software memory.</div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><circle cx="560" cy="315" r="250" fill="rgba(255,252,244,.62)" stroke="rgba(184,149,74,.32)"/><path d="M560 65 C790 75 930 235 880 437" fill="none" stroke="#b8954a" stroke-width="8"/><path d="M782 545 C590 673 348 607 258 405" fill="none" stroke="#5B8FD4" stroke-width="8"/><path d="M238 205 C326 27 538 -3 708 81" fill="none" stroke="#c8462c" stroke-width="8"/><g filter="url(#sfx)" style="font-family:'Fraunces','Playfair Display',Georgia,serif;" font-size="58" font-weight="850" text-anchor="middle"><g transform="translate(560 82)"><circle r="92" fill="#fbf7ef" stroke="#c8462c" stroke-width="7"/><text y="18" fill="#1a1612">Staff</text></g><g transform="translate(860 427)"><circle r="92" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><text y="18" fill="#1a1612">Play</text></g><g transform="translate(270 427)"><circle r="92" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><text y="18" fill="#1a1612">Learn</text></g><g transform="translate(560 315)"><circle r="118" fill="#1a1612" stroke="#b8954a" stroke-width="7"/><text y="0" fill="#fbf7ef">GnR</text><text y="48" style="font-family:'Manrope',sans-serif;" font-size="18" letter-spacing="5" fill="#b8954a">MEMORY</text></g></g></svg></div></section></div>
+<div class="casey-slide staff-slide" id="staff-nepc-08" style="display:none"><section class="staff-shell"><div class="staff-paper"></div><div class="staff-eyebrow">Operating loop</div><div class="staff-count">Staff 6 / 7</div><h1 class="staff-title" style="max-width:1040px">The club becomes a learning loop.</h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#1a1612;max-width:650px">Staff judgment.<br><span style="color:#b8954a;font-style:italic">Member generosity.</span><br>Software memory.</div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><circle cx="560" cy="315" r="250" fill="rgba(255,252,244,.62)" stroke="rgba(184,149,74,.32)"/><path d="M560 65 C790 75 930 235 880 437" fill="none" stroke="#b8954a" stroke-width="8"/><path d="M782 545 C590 673 348 607 258 405" fill="none" stroke="#5B8FD4" stroke-width="8"/><path d="M238 205 C326 27 538 -3 708 81" fill="none" stroke="#c8462c" stroke-width="8"/><g filter="url(#sfx)" style="font-family:'Fraunces','Playfair Display',Georgia,serif;" font-size="58" font-weight="850" text-anchor="middle"><g transform="translate(560 82)"><circle r="92" fill="#fbf7ef" stroke="#c8462c" stroke-width="7"/><text y="18" fill="#1a1612">Staff</text></g><g transform="translate(860 427)"><circle r="92" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="7"/><text y="18" fill="#1a1612">Play</text></g><g transform="translate(270 427)"><circle r="92" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><text y="18" fill="#1a1612">Learn</text></g><g transform="translate(560 315)"><circle r="118" fill="#1a1612" stroke="#b8954a" stroke-width="7"/><text y="0" fill="#fbf7ef">GnR</text><text y="48" style="font-family:'Manrope',sans-serif;" font-size="18" letter-spacing="5" fill="#b8954a">MEMORY</text></g></g></svg></div></section></div>
 
-<div class="casey-slide staff-slide" id="staff-nepc-09" style="display:none"><section class="staff-shell dark"><div class="staff-paper"></div><div class="staff-eyebrow">The point</div><div class="staff-count">Staff 8 / 8</div><h1 class="staff-title" style="max-width:1040px">The future starts on our courts.</h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#fbf7ef;max-width:650px"><span style="color:#b8954a;font-style:italic">Open hearts</span><br>made abundant.</div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><circle cx="620" cy="315" r="310" fill="url(#sglow)"/><rect x="318" y="136" width="604" height="330" rx="18" fill="rgba(251,247,239,.10)" stroke="#b8954a" stroke-width="7"/><line x1="620" y1="136" x2="620" y2="466" stroke="#b8954a" stroke-width="5"/><line x1="318" y1="301" x2="922" y2="301" stroke="#b8954a" stroke-width="3" opacity=".42"/><g stroke="#b8954a" stroke-width="3" opacity=".52"><path d="M620 301 C472 226 330 160 188 76"/><path d="M620 301 C802 212 964 148 1120 66"/><path d="M620 301 C444 402 312 496 164 596"/><path d="M620 301 C810 410 962 506 1110 596"/></g><g filter="url(#sfx)"><circle cx="620" cy="301" r="112" fill="#fbf7ef" stroke="#c8462c" stroke-width="8"/><path d="M574 293 C574 252 617 244 620 284 C626 244 666 253 666 293 C666 343 620 368 620 368 C620 368 574 343 574 293Z" fill="#c8462c"/><text x="620" y="526" text-anchor="middle" style="font-family:'Manrope',sans-serif;" font-size="22" font-weight="900" letter-spacing="5" fill="#fbf7ef">WHERE THE SYSTEM BECOMES REAL</text></g><g fill="#fbf7ef" opacity=".9"><circle cx="188" cy="76" r="13"/><circle cx="1120" cy="66" r="13"/><circle cx="164" cy="596" r="13"/><circle cx="1110" cy="596" r="13"/><circle cx="240" cy="496" r="9"/><circle cx="998" cy="506" r="9"/></g></svg></div></section></div>
+<div class="casey-slide staff-slide" id="staff-nepc-09" style="display:none"><section class="staff-shell dark"><div class="staff-paper"></div><div class="staff-eyebrow">The point</div><div class="staff-count">Staff 7 / 7</div><h1 class="staff-title" style="max-width:1040px">The future starts on our courts.</h1><div style="position:absolute;left:92px;bottom:104px;z-index:3;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.8vw,5.8rem);line-height:.96;font-weight:850;color:#fbf7ef;max-width:650px"><span style="color:#b8954a;font-style:italic">Open hearts</span><br>made abundant.</div><div style="position:absolute;right:80px;top:185px;width:1160px;height:650px;z-index:2;"><svg viewBox="0 0 1160 650" style="width:100%;height:100%;overflow:visible" role="img"><defs><filter id="sfx" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/></filter><radialGradient id="sglow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff4cc" stop-opacity=".95"/><stop offset=".55" stop-color="#f2c963" stop-opacity=".35"/><stop offset="1" stop-color="#b8954a" stop-opacity="0"/></radialGradient></defs><circle cx="620" cy="315" r="310" fill="url(#sglow)"/><rect x="318" y="136" width="604" height="330" rx="18" fill="rgba(251,247,239,.10)" stroke="#b8954a" stroke-width="7"/><line x1="620" y1="136" x2="620" y2="466" stroke="#b8954a" stroke-width="5"/><line x1="318" y1="301" x2="922" y2="301" stroke="#b8954a" stroke-width="3" opacity=".42"/><g stroke="#b8954a" stroke-width="3" opacity=".52"><path d="M620 301 C472 226 330 160 188 76"/><path d="M620 301 C802 212 964 148 1120 66"/><path d="M620 301 C444 402 312 496 164 596"/><path d="M620 301 C810 410 962 506 1110 596"/></g><g filter="url(#sfx)"><circle cx="620" cy="301" r="112" fill="#fbf7ef" stroke="#c8462c" stroke-width="8"/><path d="M574 293 C574 252 617 244 620 284 C626 244 666 253 666 293 C666 343 620 368 620 368 C620 368 574 343 574 293Z" fill="#c8462c"/><text x="620" y="526" text-anchor="middle" style="font-family:'Manrope',sans-serif;" font-size="22" font-weight="900" letter-spacing="5" fill="#fbf7ef">WHERE THE SYSTEM BECOMES REAL</text></g><g fill="#fbf7ef" opacity=".9"><circle cx="188" cy="76" r="13"/><circle cx="1120" cy="66" r="13"/><circle cx="164" cy="596" r="13"/><circle cx="1110" cy="596" r="13"/><circle cx="240" cy="496" r="9"/><circle cx="998" cy="506" r="9"/></g></svg></div></section></div>
+
+<!-- ===== cs-community-business - Community is a different kind of business. ===== -->
+<style>
+  #cs-community-business{background:#f3ead8!important;overflow:hidden;position:relative;color:#1a1612}
+  #cs-community-business:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 42%,rgba(251,247,239,.78) 0%,rgba(251,247,239,.38) 34%,rgba(184,149,74,.08) 72%,transparent 100%);pointer-events:none}
+  #cs-community-business .cb-stage{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:76px 84px 70px;text-align:center}
+  #cs-community-business .cb-title{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.2rem,6.7vw,7.15rem);font-weight:900;line-height:.94;letter-spacing:-.042em;margin:0;color:#1a1612;max-width:1340px}
+  #cs-community-business .cb-title em{display:block;font-style:italic;color:#c8462c;font-weight:900}
+  #cs-community-business .cb-sub{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.35rem,2vw,2.1rem);font-style:italic;font-weight:650;line-height:1.22;color:rgba(26,22,18,.62);margin:42px 0 58px;max-width:1000px}
+  #cs-community-business .cb-map{display:grid;grid-template-columns:1fr 82px 1fr 82px 1fr;gap:18px;align-items:stretch;width:min(1400px,100%);min-height:315px}
+  #cs-community-business .cb-card{background:rgba(251,247,239,.72);border:1.5px solid rgba(184,149,74,.28);box-shadow:0 20px 56px rgba(26,22,18,.08);padding:34px 38px;display:flex;flex-direction:column;justify-content:center;align-items:center;min-width:0}
+  #cs-community-business .cb-card.missing{border:1.8px dashed rgba(200,70,44,.38);background:rgba(251,247,239,.45)}
+  #cs-community-business .cb-card.gnr{border-color:rgba(184,149,74,.48)}
+  #cs-community-business .cb-label{font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:900;letter-spacing:.34em;text-transform:uppercase;color:rgba(26,22,18,.47);margin-bottom:26px}
+  #cs-community-business .missing .cb-label{color:#c8462c}
+  #cs-community-business .gnr .cb-label{color:#b8954a}
+  #cs-community-business .cb-stack{display:grid;gap:12px;width:100%;max-width:340px}
+  #cs-community-business .cb-stack div{font-family:'Manrope',sans-serif;font-size:1.42rem;font-weight:850;line-height:1;color:#1a1612;background:rgba(26,22,18,.045);border:1px solid rgba(26,22,18,.12);padding:17px 14px}
+  #cs-community-business .cb-missing-core{width:174px;height:174px;border-radius:50%;border:2px solid #c8462c;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(200,70,44,.035);font-family:'Fraunces','Playfair Display',Georgia,serif;color:#1a1612}
+  #cs-community-business .cb-missing-core strong{font-size:2.35rem;font-style:italic;color:#c8462c;line-height:.92}
+  #cs-community-business .cb-missing-core span{font-size:1.55rem;font-style:italic;line-height:1.05;margin-top:6px}
+  #cs-community-business .cb-owned{font-family:'Manrope',sans-serif;font-size:.82rem;font-weight:900;letter-spacing:.32em;text-transform:uppercase;color:rgba(26,22,18,.46);margin-top:28px}
+  #cs-community-business .cb-graph{width:240px;height:190px}
+  #cs-community-business .cb-graph path{fill:none;stroke:#b8954a;stroke-width:2}
+  #cs-community-business .cb-node circle:first-child{fill:#fbf7ef;stroke-width:4}
+  #cs-community-business .cb-node.blue circle:first-child{stroke:#5B8FD4}.cb-node.gold circle:first-child{stroke:#b8954a}.cb-node.red circle:first-child{stroke:#c8462c}.cb-node.ink circle:first-child{stroke:#1a1612}
+  #cs-community-business .cb-node .head{fill:#1a1612;stroke:none}.cb-node .body{fill:none;stroke:#1a1612;stroke-width:3;stroke-linecap:round}
+  #cs-community-business .cb-graph-label{font-family:'Manrope',sans-serif;font-size:.82rem;font-weight:900;letter-spacing:.28em;text-transform:uppercase;color:rgba(26,22,18,.50);margin-top:2px}
+  #cs-community-business .cb-arrow{display:flex;align-items:center;justify-content:center;color:rgba(184,149,74,.54)}
+  #cs-community-business .cb-arrow svg{width:72px;height:54px}
+  #cs-community-business .cb-close{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.15rem,3.3vw,3.7rem);font-weight:900;line-height:1.06;letter-spacing:-.028em;color:#1a1612;margin:58px 0 0;max-width:1500px}
+  #cs-community-business .cb-close em{display:block;font-style:italic;color:#c8462c}
+  #cs-community-business .cb-title,#cs-community-business .cb-sub,#cs-community-business .cb-card,#cs-community-business .cb-close{opacity:0;transform:translateY(12px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
+  #cs-community-business.casey-entered .cb-title{opacity:1;transform:none;transition-delay:.05s}
+  #cs-community-business.casey-entered .cb-sub{opacity:1;transform:none;transition-delay:.18s}
+  #cs-community-business.casey-entered .cb-card:nth-child(1){opacity:1;transform:none;transition-delay:.34s}
+  #cs-community-business.casey-entered .cb-card:nth-child(3){opacity:1;transform:none;transition-delay:.48s}
+  #cs-community-business.casey-entered .cb-card:nth-child(5){opacity:1;transform:none;transition-delay:.62s}
+  #cs-community-business.casey-entered .cb-close{opacity:1;transform:none;transition-delay:.78s}
+  html[data-export="1"] #cs-community-business .cb-title,html[data-export="1"] #cs-community-business .cb-sub,html[data-export="1"] #cs-community-business .cb-card,html[data-export="1"] #cs-community-business .cb-close{opacity:1!important;transform:none!important;transition:none!important}
+</style>
+<div class="casey-slide ds-focus" id="cs-community-business" style="display:none">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">The missing operating system</div>
+  <section class="cb-stage">
+    <h1 class="cb-title">Community is a different<em>kind of business.</em></h1>
+    <p class="cb-sub">The inputs are human: trust, timing, generosity, belonging.</p>
+    <div class="cb-map" aria-label="Today's stack, the missing layer, and the GnR stack">
+      <div class="cb-card"><div class="cb-label">Today's stack</div><div class="cb-stack"><div>Bookings</div><div>Payments</div><div>Messages</div></div></div>
+      <div class="cb-arrow"><svg viewBox="0 0 72 54"><path d="M8 27H58M42 12l16 15-16 15" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="cb-card missing"><div class="cb-label">Missing layer</div><div class="cb-missing-core"><strong>people</strong><span>understood</span></div><div class="cb-owned">No one owns this yet</div></div>
+      <div class="cb-arrow"><svg viewBox="0 0 72 54"><path d="M8 27H58M42 12l16 15-16 15" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="cb-card gnr">
+        <div class="cb-label">GnR stack</div>
+        <svg class="cb-graph" viewBox="0 0 240 190" role="img" aria-label="Invitation graph connecting four people">
+          <path d="M120 26C62 48 42 96 72 138M120 26c58 22 78 70 48 112M72 138c35 26 61 26 96 0M72 138C94 70 146 70 168 138"/>
+          <g class="cb-node gold" transform="translate(120 34)"><circle r="28"/><circle class="head" cy="-8" r="7"/><path class="body" d="M-14 16c7-16 21-16 28 0"/></g>
+          <g class="cb-node blue" transform="translate(55 114)"><circle r="28"/><circle class="head" cy="-8" r="7"/><path class="body" d="M-14 16c7-16 21-16 28 0"/></g>
+          <g class="cb-node red" transform="translate(185 114)"><circle r="28"/><circle class="head" cy="-8" r="7"/><path class="body" d="M-14 16c7-16 21-16 28 0"/></g>
+          <g class="cb-node ink" transform="translate(120 154)"><circle r="28"/><circle class="head" cy="-8" r="7"/><path class="body" d="M-14 16c7-16 21-16 28 0"/></g>
+        </svg>
+        <div class="cb-graph-label">Invitation graph</div>
+      </div>
+    </div>
+    <div class="cb-close">Community technology is unsolved because community is not a product problem.<em>It is a people problem.</em></div>
+  </section>
+</div>
 
 <nav class="casey-nav" id="cnav"></nav>
 <nav class="casey-concept-nav" id="conceptNav" aria-label="Concept review slides"></nav>
@@ -29572,13 +29789,15 @@ const SLIDE_ORDER = [
   'cs-2c',    //  5 Community · 6-card grid
   // [2026-05-04 Dave] cs-bh, cs-bh-vA, cs-bh-vC, cs-2b, cs-4 MERGED into single cs-thegap problem slide. Originals moved to APPENDIX as backups.
   'cs-thegap', //  3 MERGED — Our communities are full of understanding, we just never unlock it. 3 figures + rich network-bubbles + by-hand texting.
+  'cs-community-business', // Community is a different kind of business - missing people-understood layer.
   // [Dave 2026-05-24 LATER] cs-18-vd4 MOVED LATER. Founder/Steve Jobs wheelhouse beat was interrupting the product reveal here; investor needs the product before founder philosophy.
   // cs-bh2 (TOMORROW · multi-person synthesis) MOVED to APPENDIX per Dave 2026-05-03 PM — didn't land in main flow
   // cs-bh2-v2 (LIVING GRAPH) also in APPENDIX
   // cs-bh2-v3 (RADAR TOWER) DELETED — too abstract
   // [Dave 2026-05-07 PM via Claude Code brief] cs-once was inserted between cs-thegap (problem) and cs-gnr (product).
   // [Dave 2026-05-07 PM LATER] cs-once MOVED to END of APPENDIX per Dave: 'this slide design is terrible, has far too much content, and needs to be moved to the very end of the deck'.
-  'cs-gnr',   //  7 Introducing GnR · invitation matchmaking
+  'cs-cultural-shift', //  7 Bridge: Andreessen uncomfortable cultural shift + trapped human-social dataset.
+  'cs-gnr',   //  8 Introducing GnR · invitation matchmaking
   // [Dave 2026-05-24] Current post-Munger flow: samecourt -> magnetic -> wedgepb-codex -> fv6-img -> givefirst-art -> NEPC proof -> invitation mechanics.
   'cs-11d','cs-samecourt','cs-magnetic','cs-wedgepb-codex','cs-fv6-img','cs-givefirst-art','cs-11e','cs-11',
   // [Dave 2026-05-12 LATEST] cs-3 MOVED HERE — Dave: 'the "Pickleball is the fastest-growing, highest-velocity, densest social-signal community, ever." slide needs to follow the "No like button? No problem." slide'. cs-3 now sits right after cs-11.
@@ -29707,11 +29926,12 @@ const SLIDE_ALTS = {
   // Slot 4 (cs-1bm1 — was cs-a7m1) — no alts.
   6: [],
   // Slot 5 (cs-2c — was slot 5 was slot 6) — no alts.
-  7: ['cs-2c-measure-loop', 'cs-2c-invisible-layer', 'cs-2c-schedule-measure'],
+  7: ['cs-cultural-shift-pink1', 'cs-cultural-shift-pink2'],
+  8: ['cs-2c-measure-loop', 'cs-2c-invisible-layer', 'cs-2c-schedule-measure'],
   // Slot 6 (cs-thegap) - old like-button headline saved as pink-dot backup before 2026-05-24 rewrite.
   // [Dave 2026-05-25] Disconnected-community blue alt DELETED per Dave: 'delete this slide'. Removed from this slot and blue-dot classification; HTML retained as hidden rollback stub.
   // [Dave 2026-05-25] Like-button slide promoted back to main cs-thegap; digitized rewrite thrown away.
-  8: ['cs-emotion-smile', 'cs-emotion-help', 'cs-emotion-uncaptured'],
+  9: ['cs-emotion-smile', 'cs-emotion-help', 'cs-emotion-uncaptured'],
   // Slot 12 (cs-samecourt — was slot 12) — no alts.
 
   // [Dave 2026-05-19] cs-givefirst-art now owns slot 14 after Munger; cs-magnetic alts moved to slot 15 below.
@@ -29769,9 +29989,11 @@ const SLIDE_ALTS = {
   13: ['cs-magnetic-orig', 'cs-merge3'],
   // [Dave 2026-05-24] Blue-dot attempts for 'Pickleball silliness is a feature, not a bug' left of the main pickleball wedge slide.
   14: ['cs-pb-silly-feature', 'cs-pb-silly-social'],
+  // [Codex 2026-05-26] Racketeer path candidates belong under the Racketeer proof slide. They had drifted to slot 21 after the deck reorder, creating a broken 21/24 alt.
+  18: ['cs-racketeer-path1', 'cs-racketeer-path2', 'cs-racketeer-path3'],
   20: [],
   // [Dave 2026-05-19] Three new pink-dot Racketeer path attempts. Main Racketeer slide stays unchanged.
-  21: ['cs-racketeer-path1', 'cs-racketeer-path2', 'cs-racketeer-path3'],
+  21: [],
   // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug'. HTML retained as silent backup. Slot 19 was 20 was 21 before.
   // [Dave 2026-05-25] cs-mv6-networked removed from live slot-5 alts after rendering as a blank cream slide. HTML retained below as hidden rollback only.
   5: [],
@@ -30009,10 +30231,8 @@ const SEED_TOTAL = SEED_ORDER.length;
 
 const STAFF_ORDER = [
   'staff-nepc-02',
-  'staff-nepc-03',
   'staff-nepc-04',
   'staff-nepc-05',
-  'staff-nepc-06',
   'staff-nepc-07',
   'staff-nepc-08',
   'staff-nepc-09'
@@ -30161,6 +30381,20 @@ window.mgRightReplay = function() {
   // Restore — CSS-driven animations re-fire from their initial state (backwards-fill snaps
   // opacity:0 + start-transform back into place, then animation plays through)
   animated.forEach(el => { el.style.animation = ''; });
+};
+window.csMagneticAdvance = function() {
+  const slide = document.getElementById('cs-magnetic');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.stage === '1') return false;
+  slide.dataset.stage = '1';
+  return true;
+};
+window.csMagneticReverse = function() {
+  const slide = document.getElementById('cs-magnetic');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.stage !== '1') return false;
+  slide.dataset.stage = '0';
+  return true;
 };
 window.csThegapReverse = function() {
   const slide = document.getElementById('cs-thegap');
@@ -31329,6 +31563,7 @@ const slideLabels = [
   'Modern life · two imbalances',                    //  3 cs-1bm1
   "What's community?",                               //  3 cs-2c
   'Community technology is unsolved', //  4 cs-thegap
+  'The uncomfortable cultural shift',                //  7 cs-cultural-shift
   // cs-once label removed from main 2026-05-07 PM — moved to LAST appendix slide per Dave: 'this slide design is terrible, has far too much content, and needs to be moved to the very end of the deck'
   'Introducing Give n Receive',                      //  7 cs-gnr
   'The Secret Inside the Invitation · 70/0.6',      //  6 cs-11d
@@ -31420,7 +31655,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 → pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-2c-schedule-measure' || altId === 'cs-hct-system-pink1');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-2c-schedule-measure' || altId === 'cs-cultural-shift-pink1' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
@@ -31438,8 +31673,8 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // Alt-dot tooltip pulls live from the alt slide's own eyebrow text [Dave 2026-05-07 sync rule]
     const altLabel = getSlideEyebrowText(altId);
     altDot.title = altLabel ? (altLabel + ' (alt for slide ' + pos + ')') : (altId + ' (alt for slide ' + pos + ')');
-    // [Dave 2026-05-09 LATER] Alt dots now anchor RIGHTMOST dot at right:18 for every row regardless of alt count, then extend leftward. This keeps the rightmost-dot column visually consistent across rows with different numbers of alts (1-alt row, 3-alt row, 6-alt row all share the same right edge — only the left tail varies). Replaces the earlier centering-around-column-31 approach which made each row line up differently. Per Dave: 'everything here needs to be centered/aligned'.
-    altDot.style.right = (18 + i * 13) + 'px';
+    // [Dave 2026-05-09 LATER] Alt dots anchor the RIGHTMOST dot for every row regardless of alt count, then extend leftward. This keeps the rightmost-dot column visually consistent across rows with different numbers of alts (1-alt row, 3-alt row, 6-alt row all share the same right edge — only the left tail varies). Replaces the earlier centering-around-column-31 approach which made each row line up differently. Per Dave: 'everything here needs to be centered/aligned'.
+    altDot.style.right = (20 + i * 15) + 'px';
     altDot.onclick = (e) => {
       e.stopPropagation();
       window.altIndex = i + 1;
@@ -31835,6 +32070,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-11': 'cs11Advance',
     'cs-fw1': 'csFw1Advance',
     'cs-12m2': 'cs12m2Advance',
+    'cs-magnetic': 'csMagneticAdvance',
     'cs-25': 'cs25Advance',
     'cs-mv6': 'cs_mv6_Advance',
     'cs-a7m1': 'csA7m1Advance'
@@ -31878,6 +32114,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-11': 'cs11Reverse',
     'cs-fw1': 'csFw1Reverse',
     'cs-12m2': 'cs12m2Reverse',
+    'cs-magnetic': 'csMagneticReverse',
     'cs-25': 'cs25Reverse',
     'cs-mv6': 'cs_mv6_Reverse',
     'cs-a7m1': 'csA7m1Reverse'
@@ -32152,6 +32389,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 600);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-magnetic' && window.csMagneticAdvance && window.csMagneticAdvance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     // [Dave 2026-05-19] cs-fv6* workflow row — scroll-down reveals the row before next-slide nav.
     if (!inAppendix && /^cs-fv6/.test(SLIDE_ORDER[current - 1] || '') && window.csFv6Advance && window.csFv6Advance()) {
       setTimeout(() => { wheelLock = false; }, 400);
@@ -32297,6 +32538,10 @@ document.addEventListener('wheel', e => {
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt' && window.csSamecourtReverse && window.csSamecourtReverse()) {
       setTimeout(() => { wheelLock = false; }, 600);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-magnetic' && window.csMagneticReverse && window.csMagneticReverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
     if (!inAppendix && /^cs-fv6/.test(SLIDE_ORDER[current - 1] || '') && window.csFv6Reverse && window.csFv6Reverse()) {
