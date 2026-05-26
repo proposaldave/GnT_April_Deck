@@ -12378,6 +12378,91 @@ window.cs1m7Reverse = function() {
 <!-- Inside NEPC — bridges from cs-18 (founder built NEPC) into cs-11b (proof of operations there).
      Simplified Dave 2026-04-28: lighter framing, NEPC eyebrow, the 70/0.6 secret stays as the
      killer insight, closer is now the bridge into the operational proof slides. -->
+<!-- ===== cs-cultural-shift - new bridge after cs-thegap [Codex 2026-05-26] ===== -->
+<style>
+  #cs-cultural-shift, #cs-cultural-shift-pink1, #cs-cultural-shift-pink2 { background:#f3ead8 !important; overflow:hidden; position:relative; min-height:1080px; height:1080px; width:100%; }
+  #cs-cultural-shift .csu-eye, #cs-cultural-shift-pink1 .csu-eye, #cs-cultural-shift-pink2 .csu-eye { position:absolute; top:28px; left:48px; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#c8462c; z-index:10; }
+  #cs-cultural-shift .csu-stage { position:absolute; inset:0; padding:92px 92px 74px; display:grid; grid-template-columns:.88fr 1.12fr; gap:70px; align-items:center; }
+  #cs-cultural-shift .csu-orbit { position:relative; height:760px; }
+  #cs-cultural-shift .csu-orbit::before { content:""; position:absolute; inset:4%; border-radius:50%; background:radial-gradient(circle at 50% 48%, rgba(184,149,74,.22), transparent 38%), radial-gradient(circle at 50% 50%, rgba(91,143,212,.14), transparent 54%); filter:blur(2px); }
+  #cs-cultural-shift .csu-ring { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); border:1px solid rgba(184,149,74,.42); border-radius:50%; box-shadow:0 0 70px rgba(184,149,74,.12) inset; }
+  #cs-cultural-shift .csu-ring.r1 { width:560px; height:560px; }
+  #cs-cultural-shift .csu-ring.r2 { width:410px; height:410px; border-color:rgba(91,143,212,.28); }
+  #cs-cultural-shift .csu-ring.r3 { width:246px; height:246px; border-color:rgba(200,70,44,.26); }
+  #cs-cultural-shift .csu-head { position:absolute; width:154px; height:154px; border-radius:50%; background:linear-gradient(180deg,rgba(251,247,239,.92),rgba(255,246,222,.72)); border:1.4px solid rgba(26,22,18,.34); box-shadow:0 22px 60px rgba(26,22,18,.09), inset 0 0 44px rgba(184,149,74,.18); }
+  #cs-cultural-shift .csu-head::before { content:""; position:absolute; left:50%; bottom:-75px; transform:translateX(-50%); width:108px; height:92px; border-radius:58% 58% 18% 18%; background:#1a1612; opacity:.94; }
+  #cs-cultural-shift .csu-head::after { content:attr(data-signal); position:absolute; inset:22px 18px; display:flex; align-items:center; justify-content:center; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1rem; font-style:italic; font-weight:650; line-height:1.1; color:#1a1612; }
+  #cs-cultural-shift .csu-h1 { left:22px; top:104px; }
+  #cs-cultural-shift .csu-h2 { right:34px; top:176px; }
+  #cs-cultural-shift .csu-h3 { left:124px; bottom:98px; }
+  #cs-cultural-shift .csu-core { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:236px; height:236px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-align:center; padding:30px; font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.24em; text-transform:uppercase; line-height:1.5; color:#fbf7ef; background:radial-gradient(circle at 50% 34%, #5B8FD4 0%, #2d4f82 58%, #1a1612 100%); box-shadow:0 0 0 16px rgba(91,143,212,.10), 0 28px 90px rgba(91,143,212,.30); z-index:2; }
+  #cs-cultural-shift .csu-line { position:absolute; left:50%; top:50%; width:2px; height:260px; background:linear-gradient(#b8954a,rgba(184,149,74,0)); transform-origin:top center; opacity:.64; }
+  #cs-cultural-shift .csu-l1 { transform:rotate(238deg); }
+  #cs-cultural-shift .csu-l2 { transform:rotate(64deg); }
+  #cs-cultural-shift .csu-l3 { transform:rotate(156deg); }
+  #cs-cultural-shift .csu-quote { margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.45rem,5.9vw,6.25rem); line-height:.96; font-weight:850; letter-spacing:0; color:#1a1612; max-width:910px; }
+  #cs-cultural-shift .csu-quote em { color:#c8462c; font-style:italic; font-weight:850; }
+  #cs-cultural-shift .csu-author { margin-top:20px; font-family:'Manrope',sans-serif; font-size:.78rem; font-weight:850; letter-spacing:.22em; text-transform:uppercase; color:#b8954a; }
+  #cs-cultural-shift .csu-sub { margin-top:42px; max-width:790px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.6rem,2.45vw,2.55rem); line-height:1.12; font-weight:700; color:#1a1612; }
+  #cs-cultural-shift .csu-sub strong { color:#5B8FD4; font-weight:900; }
+  #cs-cultural-shift .csu-foot { margin-top:30px; display:inline-flex; gap:12px; align-items:center; font-family:'Manrope',sans-serif; font-size:.66rem; font-weight:850; letter-spacing:.20em; text-transform:uppercase; color:rgba(26,22,18,.60); }
+  #cs-cultural-shift .csu-foot i { width:38px; height:1px; background:#c8462c; display:block; }
+  #cs-cultural-shift-pink1 .csu-p1, #cs-cultural-shift-pink2 .csu-p2 { position:absolute; inset:0; display:grid; place-items:center; padding:90px; text-align:center; }
+  #cs-cultural-shift-pink1 .csu-p1::before { content:""; position:absolute; width:820px; height:820px; border-radius:50%; border:1px solid rgba(184,149,74,.38); box-shadow:0 0 0 80px rgba(184,149,74,.045), 0 0 0 210px rgba(91,143,212,.035); }
+  #cs-cultural-shift-pink1 h1, #cs-cultural-shift-pink2 h1 { margin:0; position:relative; z-index:2; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(4rem,7.2vw,7.6rem); line-height:.94; font-weight:880; letter-spacing:0; color:#1a1612; max-width:1220px; }
+  #cs-cultural-shift-pink1 h1 em, #cs-cultural-shift-pink2 h1 em { color:#c8462c; font-style:italic; }
+  #cs-cultural-shift-pink1 p, #cs-cultural-shift-pink2 p { position:relative; z-index:2; margin:36px auto 0; max-width:900px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.45rem,2.2vw,2.25rem); line-height:1.16; font-weight:650; color:rgba(26,22,18,.78); }
+  #cs-cultural-shift-pink2 .csu-grid { position:absolute; inset:150px 110px 130px; display:grid; grid-template-columns:repeat(7,1fr); grid-template-rows:repeat(4,1fr); gap:18px; opacity:.28; }
+  #cs-cultural-shift-pink2 .csu-cell { border:1px solid rgba(26,22,18,.12); background:rgba(251,247,239,.48); box-shadow:inset 0 0 38px rgba(184,149,74,.10); }
+  #cs-cultural-shift-pink2 .csu-cell:nth-child(3n) { border-color:rgba(91,143,212,.32); }
+  #cs-cultural-shift-pink2 .csu-cell:nth-child(5n) { border-color:rgba(200,70,44,.30); }
+</style>
+<div class="casey-slide ds-focus" id="cs-cultural-shift">
+  <div class="csu-eye">The uncomfortable cultural shift</div>
+  <section class="csu-stage">
+    <div class="csu-orbit" aria-hidden="true">
+      <div class="csu-ring r1"></div><div class="csu-ring r2"></div><div class="csu-ring r3"></div>
+      <div class="csu-line csu-l1"></div><div class="csu-line csu-l2"></div><div class="csu-line csu-l3"></div>
+      <div class="csu-head csu-h1" data-signal="who lifts the room"></div>
+      <div class="csu-head csu-h2" data-signal="who gives value"></div>
+      <div class="csu-head csu-h3" data-signal="who I want back"></div>
+      <div class="csu-core">Networkable human data</div>
+    </div>
+    <div>
+      <h1 class="csu-quote">&ldquo;The best startups tend to have an <em>uncomfortable cultural shift</em>&rdquo;</h1>
+      <div class="csu-author">Marc Andreessen</div>
+      <div class="csu-sub">The most valuable, networkable, untapped dataset on the planet is <strong>trapped in our heads</strong>.</div>
+      <div class="csu-foot"><i></i> GnR turns invisible social judgment into a trusted network layer.</div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-cultural-shift-pink1" style="display:none">
+  <div class="csu-eye">Pink candidate &middot; cultural shift</div>
+  <section class="csu-p1">
+    <div>
+      <h1>&ldquo;The best startups tend to have an <em>uncomfortable cultural shift</em>&rdquo;</h1>
+      <p>The shift: the value inside a community is not the score, the calendar, or the feed. It is what people privately know about each other.</p>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-cultural-shift-pink2" style="display:none">
+  <div class="csu-eye">Pink candidate &middot; trapped dataset</div>
+  <section class="csu-p2">
+    <div class="csu-grid" aria-hidden="true">
+      <div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div>
+      <div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div>
+      <div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div>
+      <div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div>
+    </div>
+    <div>
+      <h1>The most valuable dataset on the planet is <em>trapped in our heads.</em></h1>
+      <p>Every community already knows who creates value. Nobody has built the trusted system to network it.</p>
+    </div>
+  </section>
+</div>
+
 <!-- ===== cs-gnr — Introducing Give n Receive · invitation matchmaking
      v2 redesign [Dave 2026-05-02]: dropped 6-person hexagon (wrong metaphor — broadcast feel).
      Replaced with premium invitation-card hero: YOUR perspective, YOUR foursome, YOUR personalization. ===== -->
@@ -29578,7 +29663,8 @@ const SLIDE_ORDER = [
   // cs-bh2-v3 (RADAR TOWER) DELETED — too abstract
   // [Dave 2026-05-07 PM via Claude Code brief] cs-once was inserted between cs-thegap (problem) and cs-gnr (product).
   // [Dave 2026-05-07 PM LATER] cs-once MOVED to END of APPENDIX per Dave: 'this slide design is terrible, has far too much content, and needs to be moved to the very end of the deck'.
-  'cs-gnr',   //  7 Introducing GnR · invitation matchmaking
+  'cs-cultural-shift', //  7 Bridge: Andreessen uncomfortable cultural shift + trapped human-social dataset.
+  'cs-gnr',   //  8 Introducing GnR · invitation matchmaking
   // [Dave 2026-05-24] Current post-Munger flow: samecourt -> magnetic -> wedgepb-codex -> fv6-img -> givefirst-art -> NEPC proof -> invitation mechanics.
   'cs-11d','cs-samecourt','cs-magnetic','cs-wedgepb-codex','cs-fv6-img','cs-givefirst-art','cs-11e','cs-11',
   // [Dave 2026-05-12 LATEST] cs-3 MOVED HERE — Dave: 'the "Pickleball is the fastest-growing, highest-velocity, densest social-signal community, ever." slide needs to follow the "No like button? No problem." slide'. cs-3 now sits right after cs-11.
@@ -29707,11 +29793,12 @@ const SLIDE_ALTS = {
   // Slot 4 (cs-1bm1 — was cs-a7m1) — no alts.
   6: [],
   // Slot 5 (cs-2c — was slot 5 was slot 6) — no alts.
-  7: ['cs-2c-measure-loop', 'cs-2c-invisible-layer', 'cs-2c-schedule-measure'],
+  7: ['cs-cultural-shift-pink1', 'cs-cultural-shift-pink2'],
+  8: ['cs-2c-measure-loop', 'cs-2c-invisible-layer', 'cs-2c-schedule-measure'],
   // Slot 6 (cs-thegap) - old like-button headline saved as pink-dot backup before 2026-05-24 rewrite.
   // [Dave 2026-05-25] Disconnected-community blue alt DELETED per Dave: 'delete this slide'. Removed from this slot and blue-dot classification; HTML retained as hidden rollback stub.
   // [Dave 2026-05-25] Like-button slide promoted back to main cs-thegap; digitized rewrite thrown away.
-  8: ['cs-emotion-smile', 'cs-emotion-help', 'cs-emotion-uncaptured'],
+  9: ['cs-emotion-smile', 'cs-emotion-help', 'cs-emotion-uncaptured'],
   // Slot 12 (cs-samecourt — was slot 12) — no alts.
 
   // [Dave 2026-05-19] cs-givefirst-art now owns slot 14 after Munger; cs-magnetic alts moved to slot 15 below.
@@ -31329,6 +31416,7 @@ const slideLabels = [
   'Modern life · two imbalances',                    //  3 cs-1bm1
   "What's community?",                               //  3 cs-2c
   'Community technology is unsolved', //  4 cs-thegap
+  'The uncomfortable cultural shift',                //  7 cs-cultural-shift
   // cs-once label removed from main 2026-05-07 PM — moved to LAST appendix slide per Dave: 'this slide design is terrible, has far too much content, and needs to be moved to the very end of the deck'
   'Introducing Give n Receive',                      //  7 cs-gnr
   'The Secret Inside the Invitation · 70/0.6',      //  6 cs-11d
@@ -31420,7 +31508,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 → pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-2c-schedule-measure' || altId === 'cs-hct-system-pink1');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-2c-schedule-measure' || altId === 'cs-cultural-shift-pink1' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
