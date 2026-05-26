@@ -9123,6 +9123,9 @@ window.cs1m7Reverse = function() {
   #cs-thegap[data-shown="1"] [data-panel="3"],
   #cs-thegap[data-shown="2"] [data-panel="3"],
   #cs-thegap[data-shown="3"] [data-panel="3"] { opacity: 1; transform: translateY(0); transition-delay: 1.10s; }
+  #cs-thegap[data-shown="1"] [data-panel="4"],
+  #cs-thegap[data-shown="2"] [data-panel="4"],
+  #cs-thegap[data-shown="3"] [data-panel="4"] { opacity: 1; transform: translateY(0); transition-delay: 1.45s; }
   /* svg-wrap (containing the 3 panels) — hidden by default, visible after click. Shrunk so it
      coexists with the (now-also-shrunk) trapped graphic above it. */
   #cs-thegap .tg-svg-wrap { display: none; }
@@ -9964,7 +9967,7 @@ window.cs1m7Reverse = function() {
           <!-- ═══ PANEL 1 · COORDINATION → BY HAND ═══════════════════════════════
                Single texter manually fanning messages out to 4 separate people, one-by-one.
                No batching, no automation. The 'by hand' failure made physical. -->
-          <g data-panel="1">
+          <g data-panel="1" transform="translate(-55 0)">
             <ellipse cx="220" cy="150" rx="200" ry="120" fill="url(#tgPanelGlowOld)"/>
             <!-- [Dave 2026-05-15] Reverted to original simple silhouettes — the "realistic" upgrade with necks/oval heads/hair variations introduced weird artifacts (the long-hair target looked horned, the bun and cap silhouettes read as awkward shapes). Clean stick-figure silhouettes work better here. -->
             <!-- Texter silhouette (centered) -->
@@ -10005,6 +10008,41 @@ window.cs1m7Reverse = function() {
                Lone-giver content moved to LEFT slot (cx=690) via translate(-470, 0). Badge
                number stays "2" since this is now the second-revealed panel. -->
           <g data-panel="2">
+            <ellipse cx="515" cy="150" rx="170" ry="120" fill="url(#tgPanelGlowOld)"/>
+            <g transform="translate(515, 144)">
+              <g fill="#1a1612">
+                <g transform="translate(-92, 8)">
+                  <circle cx="0" cy="0" r="18"/>
+                  <path d="M -28 66 Q -28 14 -9 6 L 9 6 Q 28 14 28 66 Z"/>
+                </g>
+                <g transform="translate(94, -28)">
+                  <circle cx="0" cy="0" r="18"/>
+                  <path d="M -28 66 Q -28 14 -9 6 L 9 6 Q 28 14 28 66 Z"/>
+                </g>
+              </g>
+              <g stroke="#c8462c" stroke-width="1.7" stroke-dasharray="5 5" fill="none" stroke-linecap="round" opacity=".76">
+                <path d="M -56 28 C -18 -22 34 -46 72 -34"/>
+                <path d="M -58 48 C -10 20 26 20 62 48"/>
+              </g>
+              <g fill="#b8954a" opacity=".92">
+                <circle cx="-12" cy="-22" r="4.6"/>
+                <circle cx="22" cy="-42" r="3.8"/>
+                <circle cx="48" cy="-16" r="3.8"/>
+                <circle cx="-20" cy="24" r="3.6"/>
+                <circle cx="26" cy="30" r="4.2"/>
+              </g>
+              <g stroke="rgba(26,22,18,0.38)" stroke-width="1.6" stroke-linecap="round">
+                <g transform="translate(0, -2)"><line x1="-7" y1="-7" x2="7" y2="7"/><line x1="7" y1="-7" x2="-7" y2="7"/></g>
+              </g>
+            </g>
+            <g transform="translate(515, 308)">
+              <circle r="17" fill="rgba(200,70,44,0.06)" stroke="#c8462c" stroke-width="1.6"/>
+              <text text-anchor="middle" y="6" font-family="Manrope,sans-serif" font-size="16" font-weight="800" fill="#c8462c">2</text>
+            </g>
+            <text x="515" y="362" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="800" letter-spacing="2.5" fill="#c8462c">LATENT SUPPLY</text>
+          </g>
+
+          <g data-panel="3" transform="translate(165 0)">
             <ellipse cx="690" cy="150" rx="200" ry="120" fill="url(#tgPanelGlowOld)"/>
             <g transform="translate(-470, 0)">
               <!-- [Dave 2026-05-15] Reverted to original silhouettes — the realism upgrade made things worse. -->
@@ -10057,7 +10095,7 @@ window.cs1m7Reverse = function() {
             <!-- Numbered badge + caption -->
             <g transform="translate(690, 308)">
               <circle r="17" fill="rgba(200,70,44,0.06)" stroke="#c8462c" stroke-width="1.6"/>
-              <text text-anchor="middle" y="6" font-family="Manrope,sans-serif" font-size="16" font-weight="800" fill="#c8462c">2</text>
+              <text text-anchor="middle" y="6" font-family="Manrope,sans-serif" font-size="16" font-weight="800" fill="#c8462c">3</text>
             </g>
             <text x="690" y="362" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="800" letter-spacing="3" fill="#c8462c">NO TRUSTED RECIPROCITY</text>
           </g>
@@ -10066,7 +10104,7 @@ window.cs1m7Reverse = function() {
                [Dave 2026-05-17] SWAPPED with Panel 2 per 'swap positions of these two'.
                Clusters content moved to RIGHT slot (cx=1160) via translate(470, 0). Badge
                number is now "3" since this is the third-revealed panel. -->
-          <g data-panel="3">
+          <g data-panel="4" transform="translate(35 0)">
             <ellipse cx="1160" cy="150" rx="200" ry="120" fill="url(#tgPanelGlowOld)"/>
             <g transform="translate(470, 0)">
               <!-- Cluster A (top-left) -->
@@ -10124,7 +10162,7 @@ window.cs1m7Reverse = function() {
             <!-- Numbered badge + caption -->
             <g transform="translate(1160, 308)">
               <circle r="17" fill="rgba(200,70,44,0.06)" stroke="#c8462c" stroke-width="1.6"/>
-              <text text-anchor="middle" y="6" font-family="Manrope,sans-serif" font-size="16" font-weight="800" fill="#c8462c">3</text>
+              <text text-anchor="middle" y="6" font-family="Manrope,sans-serif" font-size="16" font-weight="800" fill="#c8462c">4</text>
             </g>
             <text x="1160" y="362" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="800" letter-spacing="3" fill="#c8462c">COMMUNITIES &#8594; CLIQUES</text>
           </g>
