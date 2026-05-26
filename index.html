@@ -9123,6 +9123,9 @@ window.cs1m7Reverse = function() {
   #cs-thegap[data-shown="1"] [data-panel="3"],
   #cs-thegap[data-shown="2"] [data-panel="3"],
   #cs-thegap[data-shown="3"] [data-panel="3"] { opacity: 1; transform: translateY(0); transition-delay: 1.10s; }
+  #cs-thegap[data-shown="1"] [data-panel="4"],
+  #cs-thegap[data-shown="2"] [data-panel="4"],
+  #cs-thegap[data-shown="3"] [data-panel="4"] { opacity: 1; transform: translateY(0); transition-delay: 1.45s; }
   /* svg-wrap (containing the 3 panels) — hidden by default, visible after click. Shrunk so it
      coexists with the (now-also-shrunk) trapped graphic above it. */
   #cs-thegap .tg-svg-wrap { display: none; }
@@ -9964,7 +9967,7 @@ window.cs1m7Reverse = function() {
           <!-- ═══ PANEL 1 · COORDINATION → BY HAND ═══════════════════════════════
                Single texter manually fanning messages out to 4 separate people, one-by-one.
                No batching, no automation. The 'by hand' failure made physical. -->
-          <g data-panel="1">
+          <g data-panel="1" transform="translate(-55 0)">
             <ellipse cx="220" cy="150" rx="200" ry="120" fill="url(#tgPanelGlowOld)"/>
             <!-- [Dave 2026-05-15] Reverted to original simple silhouettes — the "realistic" upgrade with necks/oval heads/hair variations introduced weird artifacts (the long-hair target looked horned, the bun and cap silhouettes read as awkward shapes). Clean stick-figure silhouettes work better here. -->
             <!-- Texter silhouette (centered) -->
@@ -10005,6 +10008,41 @@ window.cs1m7Reverse = function() {
                Lone-giver content moved to LEFT slot (cx=690) via translate(-470, 0). Badge
                number stays "2" since this is now the second-revealed panel. -->
           <g data-panel="2">
+            <ellipse cx="515" cy="150" rx="170" ry="120" fill="url(#tgPanelGlowOld)"/>
+            <g transform="translate(515, 144)">
+              <g fill="#1a1612">
+                <g transform="translate(-92, 8)">
+                  <circle cx="0" cy="0" r="18"/>
+                  <path d="M -28 66 Q -28 14 -9 6 L 9 6 Q 28 14 28 66 Z"/>
+                </g>
+                <g transform="translate(94, -28)">
+                  <circle cx="0" cy="0" r="18"/>
+                  <path d="M -28 66 Q -28 14 -9 6 L 9 6 Q 28 14 28 66 Z"/>
+                </g>
+              </g>
+              <g stroke="#c8462c" stroke-width="1.7" stroke-dasharray="5 5" fill="none" stroke-linecap="round" opacity=".76">
+                <path d="M -56 28 C -18 -22 34 -46 72 -34"/>
+                <path d="M -58 48 C -10 20 26 20 62 48"/>
+              </g>
+              <g fill="#b8954a" opacity=".92">
+                <circle cx="-12" cy="-22" r="4.6"/>
+                <circle cx="22" cy="-42" r="3.8"/>
+                <circle cx="48" cy="-16" r="3.8"/>
+                <circle cx="-20" cy="24" r="3.6"/>
+                <circle cx="26" cy="30" r="4.2"/>
+              </g>
+              <g stroke="rgba(26,22,18,0.38)" stroke-width="1.6" stroke-linecap="round">
+                <g transform="translate(0, -2)"><line x1="-7" y1="-7" x2="7" y2="7"/><line x1="7" y1="-7" x2="-7" y2="7"/></g>
+              </g>
+            </g>
+            <g transform="translate(515, 308)">
+              <circle r="17" fill="rgba(200,70,44,0.06)" stroke="#c8462c" stroke-width="1.6"/>
+              <text text-anchor="middle" y="6" font-family="Manrope,sans-serif" font-size="16" font-weight="800" fill="#c8462c">2</text>
+            </g>
+            <text x="515" y="362" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="800" letter-spacing="2.5" fill="#c8462c">LATENT SUPPLY</text>
+          </g>
+
+          <g data-panel="3" transform="translate(165 0)">
             <ellipse cx="690" cy="150" rx="200" ry="120" fill="url(#tgPanelGlowOld)"/>
             <g transform="translate(-470, 0)">
               <!-- [Dave 2026-05-15] Reverted to original silhouettes — the realism upgrade made things worse. -->
@@ -10057,7 +10095,7 @@ window.cs1m7Reverse = function() {
             <!-- Numbered badge + caption -->
             <g transform="translate(690, 308)">
               <circle r="17" fill="rgba(200,70,44,0.06)" stroke="#c8462c" stroke-width="1.6"/>
-              <text text-anchor="middle" y="6" font-family="Manrope,sans-serif" font-size="16" font-weight="800" fill="#c8462c">2</text>
+              <text text-anchor="middle" y="6" font-family="Manrope,sans-serif" font-size="16" font-weight="800" fill="#c8462c">3</text>
             </g>
             <text x="690" y="362" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="800" letter-spacing="3" fill="#c8462c">NO TRUSTED RECIPROCITY</text>
           </g>
@@ -10066,7 +10104,7 @@ window.cs1m7Reverse = function() {
                [Dave 2026-05-17] SWAPPED with Panel 2 per 'swap positions of these two'.
                Clusters content moved to RIGHT slot (cx=1160) via translate(470, 0). Badge
                number is now "3" since this is the third-revealed panel. -->
-          <g data-panel="3">
+          <g data-panel="4" transform="translate(35 0)">
             <ellipse cx="1160" cy="150" rx="200" ry="120" fill="url(#tgPanelGlowOld)"/>
             <g transform="translate(470, 0)">
               <!-- Cluster A (top-left) -->
@@ -10124,7 +10162,7 @@ window.cs1m7Reverse = function() {
             <!-- Numbered badge + caption -->
             <g transform="translate(1160, 308)">
               <circle r="17" fill="rgba(200,70,44,0.06)" stroke="#c8462c" stroke-width="1.6"/>
-              <text text-anchor="middle" y="6" font-family="Manrope,sans-serif" font-size="16" font-weight="800" fill="#c8462c">3</text>
+              <text text-anchor="middle" y="6" font-family="Manrope,sans-serif" font-size="16" font-weight="800" fill="#c8462c">4</text>
             </g>
             <text x="1160" y="362" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="800" letter-spacing="3" fill="#c8462c">COMMUNITIES &#8594; CLIQUES</text>
           </g>
@@ -12493,10 +12531,31 @@ window.cs1m7Reverse = function() {
   #cs-cultural-shift-pink1 h1, #cs-cultural-shift-pink2 h1 { margin:0; position:relative; z-index:2; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(4rem,7.2vw,7.6rem); line-height:.94; font-weight:880; letter-spacing:0; color:#1a1612; max-width:1220px; }
   #cs-cultural-shift-pink1 h1 em, #cs-cultural-shift-pink2 h1 em { color:#c8462c; font-style:italic; }
   #cs-cultural-shift-pink1 p, #cs-cultural-shift-pink2 p { position:relative; z-index:2; margin:36px auto 0; max-width:900px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.45rem,2.2vw,2.25rem); line-height:1.16; font-weight:650; color:rgba(26,22,18,.78); }
-  #cs-cultural-shift-pink2 .csu-grid { position:absolute; inset:150px 110px 130px; display:grid; grid-template-columns:repeat(7,1fr); grid-template-rows:repeat(4,1fr); gap:18px; opacity:.28; }
-  #cs-cultural-shift-pink2 .csu-cell { border:1px solid rgba(26,22,18,.12); background:rgba(251,247,239,.48); box-shadow:inset 0 0 38px rgba(184,149,74,.10); }
-  #cs-cultural-shift-pink2 .csu-cell:nth-child(3n) { border-color:rgba(91,143,212,.32); }
-  #cs-cultural-shift-pink2 .csu-cell:nth-child(5n) { border-color:rgba(200,70,44,.30); }
+  #cs-cultural-shift-pink2 .csu-p2 { overflow:hidden; }
+  #cs-cultural-shift-pink2 .csu-p2::before { content:""; position:absolute; inset:0; background:radial-gradient(circle at 50% 48%,rgba(251,247,239,.78),rgba(251,247,239,.20) 42%,rgba(243,234,216,.72) 74%), radial-gradient(circle at 24% 30%,rgba(91,143,212,.16),transparent 36%), radial-gradient(circle at 76% 67%,rgba(200,70,44,.13),transparent 34%); }
+  #cs-cultural-shift-pink2 .csu-mindscape { position:absolute; inset:86px 72px 72px; opacity:.78; pointer-events:none; }
+  #cs-cultural-shift-pink2 .csu-orbital { position:absolute; inset:0; width:100%; height:100%; overflow:visible; }
+  #cs-cultural-shift-pink2 .csu-orbital path { fill:none; stroke-width:2; stroke-linecap:round; stroke-dasharray:7 13; opacity:.64; }
+  #cs-cultural-shift-pink2 .csu-orbital .gold { stroke:#b8954a; }
+  #cs-cultural-shift-pink2 .csu-orbital .blue { stroke:#5B8FD4; }
+  #cs-cultural-shift-pink2 .csu-orbital .red { stroke:#c8462c; }
+  #cs-cultural-shift-pink2 .csu-headshape { position:absolute; width:290px; height:370px; border:1px solid rgba(26,22,18,.13); border-radius:48% 48% 42% 42% / 32% 32% 58% 58%; background:linear-gradient(180deg,rgba(255,252,246,.58),rgba(243,234,216,.24)); box-shadow:inset 0 0 60px rgba(184,149,74,.10),0 22px 54px rgba(26,22,18,.045); }
+  #cs-cultural-shift-pink2 .csu-headshape::before { content:""; position:absolute; left:50%; top:42px; transform:translateX(-50%); width:122px; height:122px; border-radius:50%; border:1px solid rgba(26,22,18,.15); background:rgba(251,247,239,.36); }
+  #cs-cultural-shift-pink2 .csu-headshape::after { content:""; position:absolute; left:50%; bottom:42px; transform:translateX(-50%); width:178px; height:106px; border-radius:48% 48% 0 0; border:1px solid rgba(26,22,18,.13); border-bottom:0; background:rgba(251,247,239,.28); }
+  #cs-cultural-shift-pink2 .csu-headshape.h1 { left:32px; top:26px; transform:rotate(-7deg); }
+  #cs-cultural-shift-pink2 .csu-headshape.h2 { right:52px; top:26px; transform:rotate(6deg); }
+  #cs-cultural-shift-pink2 .csu-headshape.h3 { left:50%; bottom:-36px; transform:translateX(-50%) scale(1.12); opacity:.62; }
+  #cs-cultural-shift-pink2 .csu-thought { position:absolute; width:13px; height:13px; border-radius:50%; background:#b8954a; box-shadow:0 0 0 9px rgba(184,149,74,.10),0 0 24px rgba(184,149,74,.24); }
+  #cs-cultural-shift-pink2 .csu-thought.blue { background:#5B8FD4; box-shadow:0 0 0 9px rgba(91,143,212,.10),0 0 24px rgba(91,143,212,.23); }
+  #cs-cultural-shift-pink2 .csu-thought.red { background:#c8462c; box-shadow:0 0 0 9px rgba(200,70,44,.10),0 0 24px rgba(200,70,44,.24); }
+  #cs-cultural-shift-pink2 .csu-thought.t1 { left:210px; top:132px; }
+  #cs-cultural-shift-pink2 .csu-thought.t2 { left:312px; top:250px; }
+  #cs-cultural-shift-pink2 .csu-thought.t3 { right:276px; top:128px; }
+  #cs-cultural-shift-pink2 .csu-thought.t4 { right:188px; top:276px; }
+  #cs-cultural-shift-pink2 .csu-thought.t5 { left:50%; bottom:150px; transform:translateX(-50%); }
+  #cs-cultural-shift-pink2 .csu-lockbox { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:min(760px,50vw); height:420px; border:1px solid rgba(200,70,44,.30); background:linear-gradient(135deg,rgba(251,247,239,.22),rgba(251,247,239,.06)); box-shadow:inset 0 0 90px rgba(200,70,44,.075),0 0 0 10px rgba(200,70,44,.026); }
+  #cs-cultural-shift-pink2 .csu-lockbox::before, #cs-cultural-shift-pink2 .csu-lockbox::after { content:""; position:absolute; inset:28px; border:1px solid rgba(91,143,212,.22); }
+  #cs-cultural-shift-pink2 .csu-lockbox::after { inset:70px; border-color:rgba(184,149,74,.25); }
 </style>
 <div class="casey-slide ds-focus" id="cs-cultural-shift">
   <div class="csu-eye">The uncomfortable cultural shift</div>
@@ -12531,11 +12590,22 @@ window.cs1m7Reverse = function() {
 <div class="casey-slide ds-focus" id="cs-cultural-shift-pink2" style="display:none">
   <div class="csu-eye">Pink candidate &middot; trapped dataset</div>
   <section class="csu-p2">
-    <div class="csu-grid" aria-hidden="true">
-      <div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div>
-      <div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div>
-      <div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div>
-      <div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div><div class="csu-cell"></div>
+    <div class="csu-mindscape" aria-hidden="true">
+      <svg class="csu-orbital" viewBox="0 0 1600 760" preserveAspectRatio="none">
+        <path class="gold" d="M178 210 C420 88 576 122 795 274 C1012 426 1182 462 1426 322"/>
+        <path class="blue" d="M224 492 C430 350 566 472 804 368 C1048 260 1198 176 1402 214"/>
+        <path class="red" d="M414 124 C522 342 662 438 804 382 C986 310 1086 416 1216 612"/>
+        <path class="gold" d="M292 642 C536 520 704 548 800 610 C946 704 1112 670 1348 536"/>
+      </svg>
+      <div class="csu-headshape h1"></div>
+      <div class="csu-headshape h2"></div>
+      <div class="csu-headshape h3"></div>
+      <div class="csu-lockbox"></div>
+      <i class="csu-thought t1 red"></i>
+      <i class="csu-thought t2 blue"></i>
+      <i class="csu-thought t3 gold"></i>
+      <i class="csu-thought t4 red"></i>
+      <i class="csu-thought t5 blue"></i>
     </div>
     <div>
       <h1>The most valuable dataset on the planet is <em>trapped in our heads.</em></h1>
@@ -12840,7 +12910,9 @@ window.cs1m7Reverse = function() {
 
   <!-- "GnR envelope experience" headline — always visible -->
   <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.5rem,2.9vw,2.3rem);font-weight:700;color:#1a1612;line-height:1.2;letter-spacing:-0.016em;max-width:1080px;margin:14px auto 0;text-align:center">
+    <span style="display:inline-block;padding:2px 14px 5px;border-radius:999px;background:rgba(251,247,239,0.72);box-shadow:0 8px 24px rgba(251,247,239,0.46)">
     Experience the <em style="font-style:italic;font-weight:500;color:#1a1612">envelope</em>
+    </span>
   </div>
   <!-- Pulsing arrow (no text) — moved BELOW headline per Dave 2026-05-06 PM v2; replaces the old dashed-black arrow. -->
   <div class="gnr-hint" style="margin:10px auto 0">
@@ -19858,7 +19930,7 @@ window.cs1m7Reverse = function() {
   #cs-1m8-title-C .tt-eyebrow-mark .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.04em; }
   #cs-1m8-title-C .tt-eyebrow-mark .r { color:#c8462c; }
 </style>
-<div class="casey-slide ds-focus tt-slide" id="cs-1m8-title-A" data-stage="0" onclick="if(window.csM8TitleAAdvance) window.csM8TitleAAdvance(); event.stopPropagation()" style="display:none;cursor:pointer">
+<div class="casey-slide ds-focus tt-slide trash-slide" id="cs-1m8-title-A" data-stage="0" onclick="if(window.csM8TitleAAdvance) window.csM8TitleAAdvance(); event.stopPropagation()" style="display:none;cursor:pointer">
   <img class="tt-bg" src="assets/cs-brand-codex.png" alt="Watercolor split image — phone+isolated figures on the left, real-community gathering on the right." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
 
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brings real human connection to our digital world</div>
@@ -19954,7 +20026,7 @@ window.cs1m7Reverse = function() {
      at 2.85rem peak. The brand promise becomes a medium-sized supporting
      headline rather than the hero. The diptych IS the slide.
      ═══════════════════════════════════════════════════════════════════════════ -->
-<div class="casey-slide ds-focus tt-slide" id="cs-1m8-title-C" style="display:none">
+<div class="casey-slide ds-focus tt-slide trash-slide" id="cs-1m8-title-C" style="display:none">
   <img class="tt-bg" src="assets/cs-brand-codex.png" alt="" onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
 
   <!-- Eyebrow integrates the company wordmark + the positioning phrase. -->
@@ -26678,21 +26750,21 @@ window.csA7m1Reverse = function() {
   #cs-2c .c2c-card { cursor: default; }
   #cs-2c .c2c-story-layer { position:absolute; inset:0; z-index:80; display:none; align-items:center; justify-content:center; padding:72px 88px; background:rgba(243,234,216,0.72); backdrop-filter:blur(2px); }
   #cs-2c .c2c-story-layer.is-open { display:flex; }
-  #cs-2c .c2c-story-panel { width:min(1480px,88vw); min-height:760px; position:relative; display:grid; grid-template-rows:auto auto 1fr auto; gap:18px; padding:50px 58px 44px; background:linear-gradient(180deg,rgba(251,247,239,0.98),rgba(243,234,216,0.96)); border:1.6px solid rgba(184,149,74,0.45); box-shadow:0 34px 95px rgba(26,22,18,0.22); }
+  #cs-2c .c2c-story-panel { width:min(1480px,88vw); min-height:760px; position:relative; display:grid; grid-template-rows:auto auto 1fr auto; gap:14px; padding:50px 58px 44px; background:linear-gradient(180deg,rgba(251,247,239,0.98),rgba(243,234,216,0.96)); border:1.6px solid rgba(184,149,74,0.45); box-shadow:0 34px 95px rgba(26,22,18,0.22); }
   #cs-2c .c2c-story-close { position:absolute; top:18px; right:22px; width:42px; height:42px; border:0; border-radius:50%; background:rgba(26,22,18,0.08); color:#1a1612; font-family:'Manrope',sans-serif; font-size:1.45rem; line-height:1; cursor:pointer; }
   #cs-2c .c2c-story-kicker { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:850; letter-spacing:.24em; text-transform:uppercase; color:#b8954a; }
   #cs-2c .c2c-story-title { margin:0; max-width:930px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.25rem,5.1vw,5.35rem); line-height:.98; font-weight:860; letter-spacing:-0.035em; color:#1a1612; }
   #cs-2c .c2c-story-title em { color:#c8462c; font-style:italic; }
-  #cs-2c .c2c-story-sub { max-width:990px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.18rem,1.72vw,1.72rem); line-height:1.24; font-weight:560; color:rgba(26,22,18,0.76); }
-  #cs-2c .c2c-story-body { display:grid; grid-template-columns:0.92fr 1.08fr; gap:44px; align-items:center; min-height:390px; }
+  #cs-2c .c2c-story-sub { max-width:760px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.02rem,1.35vw,1.36rem); line-height:1.18; font-weight:560; color:rgba(26,22,18,0.72); }
+  #cs-2c .c2c-story-body { display:grid; grid-template-columns:0.52fr 1.48fr; gap:34px; align-items:center; min-height:390px; }
   #cs-2c .c2c-story-flow { display:flex; flex-direction:column; gap:14px; }
-  #cs-2c .c2c-story-step { position:relative; padding:22px 24px 22px 82px; background:rgba(255,251,243,0.72); border:1.2px solid rgba(26,22,18,0.11); box-shadow:0 14px 34px rgba(26,22,18,0.07); }
+  #cs-2c .c2c-story-step { position:relative; padding:20px 20px 20px 76px; background:rgba(255,251,243,0.72); border:1.2px solid rgba(26,22,18,0.11); box-shadow:0 14px 34px rgba(26,22,18,0.07); }
   #cs-2c .c2c-story-num { position:absolute; left:24px; top:24px; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Manrope',sans-serif; font-size:.74rem; font-weight:900; color:#fffaf0; background:#5B8FD4; }
   #cs-2c .c2c-story-step:nth-child(2) .c2c-story-num { background:#b8954a; }
   #cs-2c .c2c-story-step:nth-child(3) .c2c-story-num { background:#c8462c; }
   #cs-2c .c2c-story-step h3 { margin:0 0 7px; font-family:'Manrope',sans-serif; font-size:.74rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:#1a1612; }
-  #cs-2c .c2c-story-step p { margin:0; font-family:'Manrope',sans-serif; font-size:1.02rem; line-height:1.45; font-weight:650; color:rgba(26,22,18,0.66); }
-  #cs-2c .c2c-story-graphic { position:relative; min-height:470px; border:1.3px solid rgba(184,149,74,0.22); background:radial-gradient(circle at 50% 48%, rgba(184,149,74,0.15), rgba(251,247,239,0.44) 42%, rgba(91,143,212,0.08) 100%); overflow:hidden; }
+  #cs-2c .c2c-story-step p { margin:0; font-family:'Manrope',sans-serif; font-size:.88rem; line-height:1.28; font-weight:650; color:rgba(26,22,18,0.62); }
+  #cs-2c .c2c-story-graphic { position:relative; min-height:500px; border:1.3px solid rgba(184,149,74,0.22); background:radial-gradient(circle at 50% 48%, rgba(184,149,74,0.15), rgba(251,247,239,0.44) 42%, rgba(91,143,212,0.08) 100%); overflow:hidden; }
   #cs-2c .c2c-story-orbit { position:absolute; inset:42px; border:1.2px dashed rgba(184,149,74,0.46); border-radius:50%; }
   #cs-2c .c2c-story-hub { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:150px; height:150px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.42rem; line-height:1.02; font-weight:850; color:#1a1612; background:#fbf7ef; border:1.8px solid rgba(184,149,74,0.7); box-shadow:0 0 0 8px rgba(184,149,74,0.10),0 18px 44px rgba(184,149,74,0.25); z-index:4; }
   #cs-2c .c2c-story-node { position:absolute; width:78px; height:78px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-align:center; padding:8px; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:900; line-height:1.08; letter-spacing:.08em; text-transform:uppercase; color:#1a1612; background:#fffaf0; border:1.6px solid var(--ring,#5B8FD4); box-shadow:0 0 0 7px rgba(91,143,212,0.10),0 12px 28px rgba(26,22,18,0.10); z-index:3; }
@@ -26956,15 +27028,15 @@ window.csA7m1Reverse = function() {
     <h1 class="ml-title">Two questions.<br><em>One engine.</em></h1>
     <div class="ml-map" aria-label="Two community questions answered by one GnR engine">
       <div class="ml-question blue">
-        <div class="ml-kicker">Question 1</div>
-        <div class="ml-line">Who should be together?</div>
+        <div class="ml-kicker">Schedule</div>
+        <div class="ml-line">Who belongs together?</div>
       </div>
       <div class="ml-engine" aria-hidden="true">
         <div class="ml-core"><b>GnR</b><small>schedule + measure</small></div>
       </div>
       <div class="ml-question red">
-        <div class="ml-kicker">Question 2</div>
-        <div class="ml-line">What actually happened?</div>
+        <div class="ml-kicker">Measure</div>
+        <div class="ml-line">Did connection happen?</div>
       </div>
     </div>
     <div class="ml-footer">Every invitation becomes <strong>measured connection.</strong></div>
@@ -29787,13 +29859,15 @@ window.csA7m1Reverse = function() {
   #cs-community-business .cb-close{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.15rem,3.3vw,3.7rem);font-weight:900;line-height:1.06;letter-spacing:-.028em;color:#1a1612;margin:58px 0 0;max-width:1500px}
   #cs-community-business .cb-close em{display:block;font-style:italic;color:#c8462c}
   #cs-community-business .cb-title,#cs-community-business .cb-sub,#cs-community-business .cb-card,#cs-community-business .cb-close{opacity:0;transform:translateY(12px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
+  #cs-community-business.active{display:flex!important;opacity:1!important;visibility:visible!important}
+  #cs-community-business.active .cb-stage,#cs-community-business.active .cb-stage *{visibility:visible!important}
   #cs-community-business.casey-entered .cb-title{opacity:1;transform:none;transition-delay:.05s}
   #cs-community-business.casey-entered .cb-sub{opacity:1;transform:none;transition-delay:.18s}
   #cs-community-business.casey-entered .cb-card:nth-child(1){opacity:1;transform:none;transition-delay:.34s}
   #cs-community-business.casey-entered .cb-card:nth-child(3){opacity:1;transform:none;transition-delay:.48s}
   #cs-community-business.casey-entered .cb-card:nth-child(5){opacity:1;transform:none;transition-delay:.62s}
   #cs-community-business.casey-entered .cb-close{opacity:1;transform:none;transition-delay:.78s}
-  #cs-community-business.active .cb-title,#cs-community-business.active .cb-sub,#cs-community-business.active .cb-card,#cs-community-business.active .cb-close{opacity:1;transform:none}
+  #cs-community-business.active .cb-title,#cs-community-business.active .cb-sub,#cs-community-business.active .cb-card,#cs-community-business.active .cb-close{opacity:1!important;transform:none!important}
   html[data-export="1"] #cs-community-business .cb-title,html[data-export="1"] #cs-community-business .cb-sub,html[data-export="1"] #cs-community-business .cb-card,html[data-export="1"] #cs-community-business .cb-close{opacity:1!important;transform:none!important;transition:none!important}
 </style>
 <div class="casey-slide ds-focus" id="cs-community-business" style="display:none">
@@ -29863,8 +29937,7 @@ const SLIDE_ORDER = [
   // 'cs-givefirst-slide2', // REMOVED — was duplicate at slot 2 with broken bg image
   // [Dave 2026-05-18 LATEST v4] Slot 2 PRIMARY swapped back to cs-1m8-title-A per Dave screenshot: large centered GnR wordmark + Give n Receive label + Live a life headline + full diptych. Previous main cs-1m8-title-B demoted to leftmost RED-DOT alt below.
   'cs-1m8',   //  2 BRAND FLOW - G n R wordmark/value split: what we give fuels communities, network sees/measures, people/moments reciprocated back.
-  // [Dave 2026-05-24] cs-brand-codex is MAIN slot 3 per Dave: Introducing Give 'n Receive / Invitation-based matchmaking. cs-1m8-envelopes is the pink-dot rollback to the left.
-  'cs-brand-codex', //  3 BRAND FLOW - Introducing Give 'n Receive / invitation-based matchmaking.
+  // [Dave 2026-05-26] cs-brand-codex MOVED OUT OF MAIN FLOW per screenshot request. It now lives as a pink-dot alt to the left of slide 1 (see SLIDE_ALTS[1]).
   // [Dave 2026-05-26] cs-mv6-merge MOVED LATE. Mission was too early in the product reveal; now lands in the final-quarter vision section after cs-wedge1.
   // [Dave 2026-05-18 LATEST v6] cs-brand-V8 REMOVED from main flow per Dave 'move this as a pink dot slide to the left of slide 2'. It now lives as the LEFTMOST pink-dot alt of cs-1m8 (see SLIDE_ALTS[2] below). All slots past slot 2 shift -1 → SLIDE_ALTS keys 4..25 all decrement by 1. HTML for cs-brand-V8 retained as-is below; only its position in nav changed.
   // 'cs-1m5' / 'cs-1m9' demoted to alts (see SLIDE_ALTS[1])
@@ -29998,7 +30071,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-17 LATEST PINK] Two pink-dot alts added at slot 1 — duplicates of cs-frontier-iconic with different bg images (cs-frontier-pink1 + cs-frontier-pink2). Same eyebrow/headline/structure, swapped hero img only. Fallback chain → cs-frontier-iconic-hero.png so they always render.
   // [Dave 2026-05-17 LATEST] cs-frontier-iconic REMOVED from slot-1 alts per Dave 'you can delete this slide'. HTML retained as silent backup.
   // [Dave 2026-05-18] cs-frontier-pink2 ALSO REMOVED per Dave 'delete the "1 / 24 (alt)" slide'. Slot 1 now has zero alts. HTML retained as silent backup.
-  1: [],
+  // [Dave 2026-05-26] cs-brand-codex moved out of main deck and registered here as the pink-dot slide immediately left of slide 1.
+  1: ['cs-brand-codex'],
   // [Codex 2026-05-24] New slide-2 HCT story variants. Pink-dot alts left of cs-hct-system.
   // [Dave 2026-05-25] cs-hct-system-pink1 moved to TRASH_ORDER per screenshot request.
   2: [],
@@ -30011,8 +30085,9 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v6] Brand pink-dot alts for cs-1m8 (slot 2). cs-brand-V8 demoted from main slot 3 → leftmost pink-dot alt here. cs-1m8-codexmerge + cs-1m8-envelopes added (codex-merge variants). cs-brand-mono REMOVED.
   // [Dave 2026-05-18 LATEST v9] cs-a7m1 added as a RED-DOT alt at the FAR LEFT of the slot-2 dot strip (furthest from primary). It's the old "Social media is an extremely narrow view" slide that just demoted from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'.
   // Plus the existing blue-dot title candidates + pink-dot brand alts. Order in array maps LEFT→RIGHT (index 0 = leftmost). Red-dot sits leftmost, then blue-dots, then pink-dots — color groups stay contiguous.
-  // [Dave 2026-05-18 LATEST v6] cs-1m8-codexmerge removed from slot 2 alts per Dave. cs-1m8-title-A remains primary. Order LEFT→RIGHT: red dots first, then blue, then pink.
-  3: ['cs-1m8-title-A', 'cs-1m8-title-C', 'cs-hc-market-planet', 'cs-hc-market-attention', 'cs-hc-market-latent'],
+  // [Dave 2026-05-18 LATEST v6] cs-1m8-codexmerge removed from slot 2 alts per Dave. Order LEFT→RIGHT: red dots first, then blue, then pink.
+  // [Dave 2026-05-26] cs-1m8-title-A + cs-1m8-title-C moved to TRASH_ORDER per screenshot request.
+  3: ['cs-hc-market-planet', 'cs-hc-market-attention', 'cs-hc-market-latent'],
   // [Dave 2026-05-18 LATEST v6+v9] All SLIDE_ALTS keys past slot 2 DECREMENTED by 1 (v6 = cs-brand-V8 demoted, v9 = cs-a7m1 demoted). Net effect: 4→3 (v6) →still 3 with v9, 5→5 still, 6→5 (v6), 14→13 (v6)→12 (v9), 15→14, 16→15, 24→23.
   // [Dave 2026-05-24] Slot 3 primary is cs-brand-codex; former main slot-3 slide cs-1m8-envelopes is preserved as the pink-dot alt immediately left of it.
   // Slot 3 alt: cs-1m8-envelopes (pink rollback).
@@ -30022,7 +30097,8 @@ const SLIDE_ALTS = {
   // Slot 5 (cs-2c — was slot 5 was slot 6) — no alts.
   // [Dave 2026-05-26] cs-cultural-shift-pink1 DELETED per screenshot request. HTML retained as hidden rollback stub.
   7: ['cs-cultural-shift-pink2'],
-  8: ['cs-2c-measure-loop', 'cs-2c-invisible-layer', 'cs-2c-schedule-measure'],
+  // [Dave 2026-05-26] cs-2c-schedule-measure DELETED per screenshot request. HTML retained as hidden rollback stub.
+  8: ['cs-2c-measure-loop', 'cs-2c-invisible-layer'],
   // Slot 6 (cs-thegap) - old like-button headline saved as pink-dot backup before 2026-05-24 rewrite.
   // [Dave 2026-05-25] Disconnected-community blue alt DELETED per Dave: 'delete this slide'. Removed from this slot and blue-dot classification; HTML retained as hidden rollback stub.
   // [Dave 2026-05-25] Like-button slide promoted back to main cs-thegap; digitized rewrite thrown away.
@@ -30268,6 +30344,8 @@ const TRASH_ORDER = [
   'cs-hct-system-pink1',
   'cs-1m8-black-backup',
   'cs-brand-V8',
+  'cs-1m8-title-A',
+  'cs-1m8-title-C',
 ];
 const TRASH_TOTAL = TRASH_ORDER.length;
 // Concept review rail. Separate from main deck, appendix, trash, and slot alts.
@@ -30652,7 +30730,7 @@ window.cs2cReverse = function() {
   return true;
 };
 
-window.C2C_STORIES = {"social-sports":{"kicker":"Social sports","title":"The club stops matching only by <em>skill.</em>","sub":"Give n Receive helps social sports communities form better groups by matching skill, chemistry, generosity, and who makes the session more fun.","steps":[["Players join","They say what kind of play and people they want."],["GnR matches","The system sees level, vibe, history, and who lifts the group."],["The session compounds","Better groups become repeat play, friendships, and fuller events."]],"nodes":["skill","vibe","trust","repeat","fun"],"proof":"The future of social sports is not just fair games. <strong>It is coordinated belonging.</strong>"},"hobbies":{"kicker":"Hobbies","title":"A hobby group becomes a <em>living invitation network.</em>","sub":"People do not just need a calendar. They need the right people to create with, learn with, and return to.","steps":[["Members signal interest","Skill level, taste, goals, and availability become useful."],["Small groups form","The right beginner, guide, peer, and host find each other."],["Momentum returns","The hobby becomes a community people keep choosing."]],"nodes":["learn","make","guide","peer","return"],"proof":"GnR turns shared interests into <strong>repeat connection.</strong>"},"college":{"kicker":"College","title":"A campus gets better at helping students <em>find their people.</em>","sub":"The first weeks of college should not depend on luck, extroversion, or random dorm assignment.","steps":[["Student signals","Interests, values, schedule, background, and what kind of belonging they want."],["Warm invitations","Meals, study groups, clubs, mentors, and activity circles matched with intent."],["Belonging faster","Students feel known before isolation becomes normal."]],"nodes":["mentor","meal","study","club","team"],"proof":"The campus becomes an <strong>active belonging engine.</strong>"},"neighborhoods":{"kicker":"Neighborhoods, cities & schools","title":"Local life stops being <em>strangers near each other.</em>","sub":"A neighborhood has latent connection everywhere: new families, helpers, teachers, parents, builders, and organizers.","steps":[["Local intent","People share what they can give, what they need, and where they naturally show up."],["Trusted introductions","Parents, neighbors, schools, and local organizers get useful matches."],["Civic fabric","The place becomes easier to enter, serve, and trust."]],"nodes":["parents","helpers","schools","neighbors","service"],"proof":"A city becomes more human when useful connection is <strong>coordinated locally.</strong>"},"fitness":{"kicker":"Fitness & gym groups","title":"The gym becomes a place where people <em>keep showing up.</em>","sub":"Health habits stick when the right people notice you, expect you, encourage you, and make the room feel good.","steps":[["New member","Goals, comfort level, class style, and preferred energy are captured."],["Matched energy","A buddy, class, coach, or group makes the next visit feel easier."],["Retention through connection","Showing up becomes social momentum, not individual willpower."]],"nodes":["goals","buddy","class","coach","return"],"proof":"GnR turns fitness from individual discipline into <strong>community momentum.</strong>"},"homeschool":{"kicker":"Homeschool groups","title":"Homeschool families get the <em>right circle</em> faster.","sub":"Families need learning pods, activity partners, parent support, skill-sharing, and safe social fit for their kids.","steps":[["Family profile","Ages, interests, learning style, parent capacity, and social needs become visible."],["Matched pods","Kids, parents, mentors, activities, and shared projects fit better."],["More abundance","Families feel less alone and the community has more ways to help itself."]],"nodes":["kids","parents","pods","mentors","support"],"proof":"The homeschool community becomes easier to enter, easier to trust, and easier to sustain."},"faith":{"kicker":"Faith communities","title":"A congregation becomes better at <em>pastoral coordination.</em>","sub":"People want to serve, be known, find small groups, welcome newcomers, and notice who needs support.","steps":[["Needs and gifts","The community can see who wants to help and who could use help."],["Right invitations","Small groups, service teams, hosts, mentors, and care circles form with intent."],["Community care scales","More people are welcomed, noticed, and invited into meaningful service."]],"nodes":["care","serve","host","mentor","welcome"],"proof":"GnR helps the community practice what it already believes: <strong>people are gifts to each other.</strong>"},"country-clubs":{"kicker":"Country clubs","title":"Day one: new member.<br>Day two: <em>welcomed into the club.</em>","sub":"Instead of waiting three or four years to meet the right members, a new member gets a warm, relevant invitation right away.","steps":[["Onboarding survey","The club learns background, interests, family, schedule, golf style, and what they want from club life."],["Matched welcome","Three existing members who enjoy welcoming new people invite them to play."],["Community fit","The new member feels known early, and the club gets better at matching what members came for."]],"nodes":["new member","welcomer","golf","family","club life"],"proof":"Give n Receive turns a country club from slow social discovery into <strong>intentional belonging.</strong>"}};
+window.C2C_STORIES = {"social-sports":{"kicker":"Social sports","title":"Better games become <em>repeat people.</em>","sub":"Skill gets the match started. Chemistry makes people come back.","steps":[["Signal","Level. Vibe. Availability."],["Match","Right game. Right people."],["Return","More play. More belonging."]],"nodes":["skill","vibe","trust","repeat","fun"],"proof":"Not just fair games. <strong>Coordinated belonging.</strong>"},"hobbies":{"kicker":"Hobbies","title":"Shared interest becomes <em>shared momentum.</em>","sub":"The right beginner, guide, host, and peer find each other faster.","steps":[["Signal","Taste. Skill. Goals."],["Gather","Make the small group."],["Repeat","Turn interest into habit."]],"nodes":["learn","make","guide","peer","return"],"proof":"A hobby becomes easier to <strong>keep choosing.</strong>"},"college":{"kicker":"College","title":"Students find their <em>people</em> faster.","sub":"Belonging cannot wait for luck, dorms, or extroversion.","steps":[["Signal","Interests. Values. Schedule."],["Invite","Meal. Club. Mentor. Team."],["Belong","Less lonely, sooner."]],"nodes":["mentor","meal","study","club","team"],"proof":"Campus becomes an <strong>active belonging engine.</strong>"},"neighborhoods":{"kicker":"Neighborhoods, cities & schools","title":"A place stops being <em>strangers nearby.</em>","sub":"Local gifts, needs, parents, helpers, and organizers become visible.","steps":[["See","Who can help."],["Connect","Trusted local introductions."],["Strengthen","The place works better."]],"nodes":["parents","helpers","schools","neighbors","service"],"proof":"Useful connection, <strong>coordinated locally.</strong>"},"fitness":{"kicker":"Fitness & gym groups","title":"The gym becomes a place people <em>return to.</em>","sub":"Habits stick when the room knows you and expects you back.","steps":[["Signal","Goals. Comfort. Energy."],["Pair","Buddy. Coach. Class."],["Return","Showing up gets easier."]],"nodes":["goals","buddy","class","coach","return"],"proof":"Fitness becomes <strong>community momentum.</strong>"},"homeschool":{"kicker":"Homeschool groups","title":"Families find the <em>right circle</em> faster.","sub":"Kids, parents, mentors, pods, and support fit together.","steps":[["See","Ages. Needs. Capacity."],["Fit","Pods. Projects. Partners."],["Abundance","Less alone. More help."]],"nodes":["kids","parents","pods","mentors","support"],"proof":"Easier to enter. Easier to trust. <strong>Easier to sustain.</strong>"},"faith":{"kicker":"Faith communities","title":"Care becomes <em>visible and coordinated.</em>","sub":"Gifts, needs, hosts, small groups, and service find their right place.","steps":[["See","Needs and gifts."],["Invite","Care. Serve. Host."],["Welcome","More people noticed."]],"nodes":["care","serve","host","mentor","welcome"],"proof":"People become <strong>gifts to each other.</strong>"},"country-clubs":{"kicker":"Country clubs","title":"New members are <em>welcomed immediately.</em>","sub":"The club knows who they are and who should invite them first.","steps":[["Know","Family. Interests. Schedule."],["Welcome","Three right members."],["Belong","Club life starts now."]],"nodes":["new member","welcomer","golf","family","club life"],"proof":"From slow social discovery to <strong>intentional belonging.</strong>"}};
 (function setupC2cStoryOverlay() {
   const slide = document.getElementById('cs-2c');
   if (!slide) return;
@@ -31830,7 +31908,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 → pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-2c-schedule-measure' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
