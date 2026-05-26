@@ -877,7 +877,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
 
 .casey-slide.active{opacity:1;visibility:visible;pointer-events:all;transition:opacity 0.18s ease, visibility 0s linear 0s}
 /* [Dave 2026-05-14 PM v4] Nav dot strip CENTERED vertically between the GnR wordmark (top) and the bottom-right control cluster. Was top:90px (anchored just under GnR mark); now top:50% translateY(-50%) so the strip sits in the visual middle of the right column. max-height keeps it from overlapping either edge. */
-.casey-nav{position:fixed;top:50%;right:42px;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:2px;z-index:999;background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);padding:6px 3px;border-radius:10px;border:1px solid rgba(26,22,18,0.10);max-height:calc(100vh - 220px);width:fit-content}
+.casey-nav{position:fixed;top:50%;right:42px;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;z-index:999;background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);padding:7px 4px;border-radius:10px;border:1px solid rgba(26,22,18,0.10);max-height:calc(100vh - 220px);width:fit-content}
 /* [Dave 2026-05-12 v3] PRESENTER MODE — default ON. Hides ALL chrome (nav dots + presenter cog + speaker-notes + annotation buttons + slide counter + slide search) for a clean live investor pitch. Z key toggles. [Dave 2026-05-14 PM v4] Slide counter (.casey-count) and slide search (#slideSearch) added to the hide list — they should only appear when Z is pressed, just like the dots. */
 body.presenter-mode .casey-nav,
 body.presenter-mode .casey-staff-nav,
@@ -916,12 +916,12 @@ body.presenter-mode #slideSearch { display: none !important; }
 #slideHistoryOverlay .shv-badge .shv-label{font-style:italic;font-weight:500;color:rgba(251,247,239,0.82)}
 #slideHistoryOverlay .shv-badge kbd{background:rgba(251,247,239,0.16);border:1px solid rgba(251,247,239,0.32);border-radius:4px;padding:1px 6px;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:#fbf7ef}
 #slideHistoryOverlay .shv-badge .shv-sep{opacity:0.32}
-.casey-dot{width:7px;height:7px;border-radius:50%;background:rgba(26,22,18,0.20);border:none;padding:0;cursor:pointer;transition:all 0.3s ease;flex-shrink:0;position:relative}
+.casey-dot{width:9px;height:9px;border-radius:50%;background:rgba(26,22,18,0.20);border:none;padding:0;cursor:pointer;transition:all 0.3s ease;flex-shrink:0;position:relative}
 .casey-dot:hover{background:rgba(255,255,255,0.35);transform:scale(1.3)}
 /* [Dave 2026-05-08] Custom tooltip — opens to the LEFT of the dot (away from viewport edge) since the nav strip lives at the right edge. Fixes 'Autonomous Community In...' cutoff issue Dave caught. */
 .casey-dot[data-tooltip]:hover::after{content:attr(data-tooltip);position:absolute;right:calc(100% + 12px);top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.88);color:#fff;font-family:'Manrope',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.04em;padding:6px 10px;border-radius:5px;white-space:nowrap;z-index:1001;pointer-events:none}
 /* [Dave 2026-05-08] Active dot is a VERTICAL pill (was horizontal) since the strip runs top-to-bottom */
-.casey-dot.on{background:#d4a853;box-shadow:0 0 10px rgba(212,168,83,0.6);height:18px;border-radius:4px}
+.casey-dot.on{background:#d4a853;box-shadow:0 0 10px rgba(212,168,83,0.6);height:20px;border-radius:4px}
 .casey-dot.review{background:#e04040 !important;box-shadow:0 0 14px rgba(224,64,64,0.85) !important;animation:reviewPulse 1.6s ease-in-out infinite}
 .casey-dot.review.on{background:#e04040 !important}
 .casey-dot.orange-review{background:#f28c28 !important;box-shadow:0 0 14px rgba(242,140,40,0.78) !important;animation:orangePulse 1.8s ease-in-out infinite}
@@ -929,7 +929,7 @@ body.presenter-mode #slideSearch { display: none !important; }
 .casey-dot.locked{background:#3dff7a !important;box-shadow:0 0 12px rgba(61,255,122,0.7) !important}
 .casey-dot.locked.on{background:#3dff7a !important;box-shadow:0 0 16px rgba(61,255,122,0.85) !important}
 /* [Dave 2026-05-08] Alt dots now stack to the LEFT of their parent dot (was below). Positioned via JS using the .right property — see the altDot.style.right loop. */
-.casey-dot.alt{position:absolute;top:50%;transform:translateY(-50%);right:18px;width:7px !important;height:7px !important;background:rgba(212,168,83,0.55);border:1px solid rgba(212,168,83,0.85);box-shadow:0 0 6px rgba(212,168,83,0.4)}
+.casey-dot.alt{position:absolute;top:50%;transform:translateY(-50%);right:20px;width:9px !important;height:9px !important;background:rgba(212,168,83,0.55);border:1px solid rgba(212,168,83,0.85);box-shadow:0 0 6px rgba(212,168,83,0.4)}
 .casey-dot.alt.review{background:#e04040 !important;border:1px solid #e04040 !important;box-shadow:0 0 8px rgba(224,64,64,0.95) !important}
 .casey-dot.alt.orange-review{background:#f28c28 !important;border:1px solid #f28c28 !important;box-shadow:0 0 9px rgba(242,140,40,0.95) !important;animation:orangePulse 1.8s ease-in-out infinite}
 @keyframes reviewPulse{0%,100%{box-shadow:0 0 14px rgba(224,64,64,0.85)}50%{box-shadow:0 0 22px rgba(224,64,64,1)}}
@@ -31442,8 +31442,8 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // Alt-dot tooltip pulls live from the alt slide's own eyebrow text [Dave 2026-05-07 sync rule]
     const altLabel = getSlideEyebrowText(altId);
     altDot.title = altLabel ? (altLabel + ' (alt for slide ' + pos + ')') : (altId + ' (alt for slide ' + pos + ')');
-    // [Dave 2026-05-09 LATER] Alt dots now anchor RIGHTMOST dot at right:18 for every row regardless of alt count, then extend leftward. This keeps the rightmost-dot column visually consistent across rows with different numbers of alts (1-alt row, 3-alt row, 6-alt row all share the same right edge — only the left tail varies). Replaces the earlier centering-around-column-31 approach which made each row line up differently. Per Dave: 'everything here needs to be centered/aligned'.
-    altDot.style.right = (18 + i * 13) + 'px';
+    // [Dave 2026-05-09 LATER] Alt dots anchor the RIGHTMOST dot for every row regardless of alt count, then extend leftward. This keeps the rightmost-dot column visually consistent across rows with different numbers of alts (1-alt row, 3-alt row, 6-alt row all share the same right edge — only the left tail varies). Replaces the earlier centering-around-column-31 approach which made each row line up differently. Per Dave: 'everything here needs to be centered/aligned'.
+    altDot.style.right = (20 + i * 15) + 'px';
     altDot.onclick = (e) => {
       e.stopPropagation();
       window.altIndex = i + 1;
