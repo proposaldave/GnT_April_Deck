@@ -30090,7 +30090,7 @@ const SLIDE_ORDER = [
   // cs-bh2-v3 (RADAR TOWER) DELETED — too abstract
   // [Dave 2026-05-07 PM via Claude Code brief] cs-once was inserted between cs-thegap (problem) and cs-gnr (product).
   // [Dave 2026-05-07 PM LATER] cs-once MOVED to END of APPENDIX per Dave: 'this slide design is terrible, has far too much content, and needs to be moved to the very end of the deck'.
-  'cs-cultural-shift', //  7 Bridge: Andreessen uncomfortable cultural shift + trapped human-social dataset.
+  // [Dave 2026-05-26] cs-cultural-shift MOVED to APPENDIX per screenshot request.
   'cs-gnr',   //  8 Introducing GnR · invitation matchmaking
   // [Dave 2026-05-24] Current post-Munger flow: samecourt -> magnetic -> wedgepb-codex -> fv6-img -> givefirst-art -> NEPC proof -> invitation mechanics.
   // [Dave 2026-05-26] cs-givefirst-art MOVED to APPENDIX per screenshot request.
@@ -30226,8 +30226,7 @@ const SLIDE_ALTS = {
   // Slot 4 (cs-1bm1 — was cs-a7m1) — no alts.
   6: [],
   // Slot 5 (cs-2c — was slot 5 was slot 6) — no alts.
-  // [Dave 2026-05-26] cs-cultural-shift-pink1 DELETED per screenshot request. HTML retained as hidden rollback stub.
-  7: ['cs-cultural-shift-pink2'],
+  // [Dave 2026-05-26] cs-cultural-shift moved to APPENDIX; pink candidate detached from active slide slots.
   // [Dave 2026-05-26] cs-2c-schedule-measure DELETED per screenshot request. HTML retained as hidden rollback stub.
   8: ['cs-2c-measure-loop', 'cs-2c-invisible-layer'],
   // Slot 6 (cs-thegap) - old like-button headline saved as pink-dot backup before 2026-05-24 rewrite.
@@ -30384,6 +30383,8 @@ const LOCKED_POSITIONS = [];
 // Appendix navigation order — Dave 2026-04-29: The Ask is the FIRST appendix slide
 // (so when investor clicks Appendix, they see the ask immediately if they ask "what are you raising?").
 const APPENDIX_ORDER = [
+  // [Dave 2026-05-26] cs-cultural-shift MOVED here from SLIDE_ORDER per screenshot request.
+  'cs-cultural-shift',
   // [Dave 2026-05-26] cs-givefirst-art MOVED here from SLIDE_ORDER per screenshot request: "You can't tell someone to open their heart."
   'cs-givefirst-art',
   // [Dave 2026-05-18 LATEST] cs-brand-att5 MOVED here from SLIDE_ALTS[3] per Dave 'move this slide to appendix'. The invisible→seen diptych ('A community of strangers' grey scatter → 'A community that gives back' connected G·n·R constellation). Preserved as appendix reference.
@@ -31954,7 +31955,6 @@ const slideLabels = [
   'Modern life · two imbalances',                    //  3 cs-1bm1
   "What's community?",                               //  3 cs-2c
   'Community technology is unsolved', //  4 cs-thegap
-  'The uncomfortable cultural shift',                //  7 cs-cultural-shift
   // cs-once label removed from main 2026-05-07 PM — moved to LAST appendix slide per Dave: 'this slide design is terrible, has far too much content, and needs to be moved to the very end of the deck'
   'Introducing Give n Receive',                      //  7 cs-gnr
   'The Secret Inside the Invitation · 70/0.6',      //  6 cs-11d
