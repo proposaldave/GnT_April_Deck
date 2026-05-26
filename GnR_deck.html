@@ -1408,8 +1408,8 @@ body.presenter-mode #slideSearch { display: none !important; }
        5. Larger tap targets on click-to-reveal elements where needed.
      ══════════════════════════════════════════════════════════════════════ */
   @media (hover: none) and (pointer: coarse) and (min-width: 769px) {
-    /* iPad/tablet: hide the bottom slide-dot bar entirely [Dave 2026-05-07 PM: 'For the iPad tablet version, I'd like you to not show the slide dots on the bottom']. Swipe + D/A still navigate. */
-    .casey-nav { display: none !important; }
+    /* iPad/tablet: keep the active main-deck dot rail visible and inset left of the review rails so stacked alt dots remain reachable. */
+    .casey-nav { display:flex !important; right:64px !important; }
     /* V8 particle galaxy: keep entrance, kill the infinite per-dot drift (saves GPU + battery on iPad) */
     #cs-brand-V8.casey-entered .v8-particles circle { animation-iteration-count: 1 !important; animation-duration: 1.6s !important; }
     /* V15 orbital ring spin (80s loop) — disable on touch; static dashed ring still renders */
