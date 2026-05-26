@@ -30375,6 +30375,8 @@ const CODEX_BG_REVIEW_ALTS = [
   { slot: 22, sourceId: 'cs-brand-V8',           id: 'cs-brand-V8-bg-green',           image: 'assets/cs-brand-codex.png' }
 ];
 
+const CODEX_BG_REVIEW_GLASS_CARD_ALTS = new Set(['cs-2c-bg-green']);
+
 CODEX_BG_REVIEW_ALTS.forEach(cfg => {
   if (SLIDE_ORDER[cfg.slot - 1] !== cfg.sourceId) return;
   const alts = SLIDE_ALTS[cfg.slot] || [];
@@ -32066,6 +32068,18 @@ function getSlideEyebrowText(slideId) {
       const scopedStyle = document.createElement('style');
       scopedStyle.textContent = inheritedCss.split('#' + cfg.sourceId).join('#' + cfg.id);
       clone.insertBefore(scopedStyle, clone.firstChild);
+    }
+    if (CODEX_BG_REVIEW_GLASS_CARD_ALTS.has(cfg.id)) {
+      const glassStyle = document.createElement('style');
+      glassStyle.textContent = `
+        #${cfg.id} .c2c-card {
+          background:rgba(251,247,239,.30) !important;
+          border:1px solid rgba(26,22,18,.14) !important;
+          box-shadow:0 18px 54px rgba(26,22,18,.055) !important;
+          backdrop-filter:blur(2px);
+        }
+      `;
+      clone.insertBefore(glassStyle, clone.firstChild);
     }
 
     const layer = document.createElement('div');
