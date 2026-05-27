@@ -18317,10 +18317,16 @@ window.cs1m7Reverse = function() {
 <!-- ── V8 · HUMAN VALUE, FINALLY SEEN — particle galaxy emerging into glowing n core, then radiating back out
         in red. Most emotional/brand variant. Inspired by ChatGPT 8-grid #7 — Dave 2026-05-07: 'this is good' ── -->
 <style>
-  #cs-brand-V8 { overflow:hidden; }
+  #cs-brand-V8 { overflow:hidden;cursor:pointer; }
   #cs-brand-V8 .v8-bg { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;opacity:.54;filter:saturate(.92) contrast(.98);pointer-events:none; }
   #cs-brand-V8 .v8-bg-wash { position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(251,247,239,.86) 0%,rgba(251,247,239,.66) 46%,rgba(251,247,239,.30) 100%),radial-gradient(circle at 72% 42%,rgba(26,22,18,.20),transparent 48%);pointer-events:none; }
-  #cs-brand-V8 .v8-stage { position:relative;z-index:2;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:64px 56px 50px;width:100%;gap:18px; }
+  #cs-brand-V8 .v8-stage { position:relative;z-index:2;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:64px 56px 50px;width:100%;gap:18px;opacity:0 !important;pointer-events:none !important;transform:translateY(34px) scale(.982) !important;filter:blur(8px);animation:none !important;transition:opacity .82s cubic-bezier(.22,1,.36,1),transform .82s cubic-bezier(.22,1,.36,1),filter .82s cubic-bezier(.22,1,.36,1); }
+  #cs-brand-V8[data-stage="1"] .v8-stage { opacity:1 !important;pointer-events:auto !important;transform:none !important;filter:none; }
+  #cs-brand-V8 .v8-header, #cs-brand-V8 .v8-galaxy-row, #cs-brand-V8 .v8-caption-row, #cs-brand-V8 .v8-contact { opacity:0;transform:translateY(20px); }
+  #cs-brand-V8[data-stage="1"].casey-entered .v8-header { animation:v8RevealLift .78s cubic-bezier(.22,1,.36,1) .05s forwards; }
+  #cs-brand-V8[data-stage="1"].casey-entered .v8-galaxy-row { animation:v8RevealSurge .95s cubic-bezier(.16,1,.3,1) .18s forwards; }
+  #cs-brand-V8[data-stage="1"].casey-entered .v8-caption-row { animation:v8RevealLift .72s cubic-bezier(.22,1,.36,1) .62s forwards; }
+  #cs-brand-V8[data-stage="1"].casey-entered .v8-contact { animation:v8RevealLift .65s cubic-bezier(.22,1,.36,1) .82s forwards; }
   #cs-brand-V8 .v8-hero { font-family:'Manrope',sans-serif;font-size:clamp(.95rem,1.2vw,1.2rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#1a1612;text-align:center; }
   #cs-brand-V8 .v8-claim { font-family:'Manrope',sans-serif;font-size:clamp(.92rem,1.05vw,1.1rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:rgba(26,22,18,0.78);text-align:center;line-height:1.7;margin-top:6px; }
   #cs-brand-V8 .v8-galaxy-row { position:relative;display:flex;align-items:center;justify-content:center;width:min(1700px,98%);margin-top:8px; }
@@ -18361,23 +18367,42 @@ window.cs1m7Reverse = function() {
   #cs-brand-V8 .v8-particles g { opacity: 0; }
   #cs-brand-V8 .v8-galaxy-row svg.v8-particles:first-of-type g { transform: translateX(-44px); }
   #cs-brand-V8 .v8-galaxy-row svg.v8-particles:last-of-type  g { transform: translateX(44px); }
-  #cs-brand-V8.casey-entered .v8-galaxy-row svg.v8-particles:first-of-type g { animation: v8GalaxyInL 1.6s cubic-bezier(.22,1,.36,1) 0.45s forwards; }
-  #cs-brand-V8.casey-entered .v8-galaxy-row svg.v8-particles:last-of-type  g { animation: v8GalaxyInR 1.6s cubic-bezier(.22,1,.36,1) 0.45s forwards; }
+  #cs-brand-V8[data-stage="1"].casey-entered .v8-galaxy-row svg.v8-particles:first-of-type g { animation: v8GalaxyInL 1.6s cubic-bezier(.22,1,.36,1) 0.45s forwards; }
+  #cs-brand-V8[data-stage="1"].casey-entered .v8-galaxy-row svg.v8-particles:last-of-type  g { animation: v8GalaxyInR 1.6s cubic-bezier(.22,1,.36,1) 0.45s forwards; }
   @keyframes v8GalaxyInL { from { opacity:0; transform: translateX(-44px); } to { opacity:1; transform: translateX(0); } }
   @keyframes v8GalaxyInR { from { opacity:0; transform: translateX(44px);  } to { opacity:1; transform: translateX(0); } }
+  @keyframes v8RevealLift { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes v8RevealSurge { from { opacity:0; transform:translateY(28px) scale(.94); } to { opacity:1; transform:translateY(0) scale(1); } }
   /* Each individual dot drifts subtly + continuously (atmospheric, not spinny) */
   @keyframes v8DotDriftR { 0%,100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
   @keyframes v8DotDriftL { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-6px); } }
-  #cs-brand-V8.casey-entered .v8-galaxy-row svg.v8-particles:first-of-type circle { animation: v8DotDriftR 5s ease-in-out infinite; animation-delay: 2.2s; transform-box: fill-box; transform-origin: center; }
-  #cs-brand-V8.casey-entered .v8-galaxy-row svg.v8-particles:last-of-type  circle { animation: v8DotDriftL 5s ease-in-out infinite; animation-delay: 2.2s; transform-box: fill-box; transform-origin: center; }
+  #cs-brand-V8[data-stage="1"].casey-entered .v8-galaxy-row svg.v8-particles:first-of-type circle { animation: v8DotDriftR 5s ease-in-out infinite; animation-delay: 2.2s; transform-box: fill-box; transform-origin: center; }
+  #cs-brand-V8[data-stage="1"].casey-entered .v8-galaxy-row svg.v8-particles:last-of-type  circle { animation: v8DotDriftL 5s ease-in-out infinite; animation-delay: 2.2s; transform-box: fill-box; transform-origin: center; }
   /* Stagger the per-dot drift so the galaxy feels alive, not synchronized */
   #cs-brand-V8.casey-entered .v8-particles circle:nth-child(3n+1)  { animation-delay: 2.2s; }
   #cs-brand-V8.casey-entered .v8-particles circle:nth-child(3n+2)  { animation-delay: 2.6s; animation-duration: 5.6s; }
   #cs-brand-V8.casey-entered .v8-particles circle:nth-child(3n)    { animation-delay: 3.0s; animation-duration: 6.2s; }
   /* Export mode (PDF) shows final state instantly */
+  html[data-export="1"] #cs-brand-V8 .v8-stage, html[data-export="1"] #cs-brand-V8 .v8-header, html[data-export="1"] #cs-brand-V8 .v8-galaxy-row, html[data-export="1"] #cs-brand-V8 .v8-caption-row, html[data-export="1"] #cs-brand-V8 .v8-contact { opacity:1 !important;transform:none !important;filter:none !important;animation:none !important; }
   html[data-export="1"] #cs-brand-V8 .v8-particles g { opacity:1 !important; transform: translateX(0) !important; animation:none !important; }
   html[data-export="1"] #cs-brand-V8 .v8-particles circle { animation:none !important; }
 </style>
+<script>
+window.csBrandV8Advance = function() {
+  const s = document.getElementById('cs-brand-V8');
+  if (!s) return false;
+  if ((parseInt(s.dataset.stage) || 0) >= 1) return false;
+  s.dataset.stage = '1';
+  return true;
+};
+window.csBrandV8Reverse = function() {
+  const s = document.getElementById('cs-brand-V8');
+  if (!s) return false;
+  if ((parseInt(s.dataset.stage) || 0) <= 0) return false;
+  s.dataset.stage = '0';
+  return true;
+};
+</script>
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
@@ -19020,7 +19045,7 @@ window.cs1m7Reverse = function() {
 </div>
 
 
-<div class="casey-slide ds-focus trash-slide" id="cs-brand-V8" style="display:none">
+<div class="casey-slide ds-focus trash-slide" id="cs-brand-V8" data-stage="0" onclick="if(window.csBrandV8Advance&&window.csBrandV8Advance()) event.stopPropagation()" style="display:none">
   <img class="v8-bg" src="assets/cs-brand-codex.png" alt="" onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
   <div class="v8-bg-wash" aria-hidden="true"></div>
   <!-- Eyebrow history: "Brand" → "Introducing Give n Receive". [Dave 2026-05-18 LATEST v3]: → 'Brand → live a life of abundant, autonomous connection.' per Dave's latest positioning eyebrow. Same mixed-case treatment as cs-1m8 above so the two slides share an identical eyebrow voice. -->
@@ -19091,7 +19116,7 @@ window.cs1m7Reverse = function() {
         </div>
       </div>
 
-      <div style="margin-top:14px;padding-top:16px;border-top:1px solid rgba(184,149,74,0.32);font-family:'Manrope',sans-serif;text-align:center;color:rgba(26,22,18,0.74);line-height:1.55">
+      <div class="v8-contact" style="margin-top:14px;padding-top:16px;border-top:1px solid rgba(184,149,74,0.32);font-family:'Manrope',sans-serif;text-align:center;color:rgba(26,22,18,0.74);line-height:1.55">
         <div style="font-size:.58rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;margin-bottom:6px">Final slide</div>
         <div style="font-size:.86rem;font-weight:800;color:#1a1612">Dave Velardo &middot; Founder &amp; CEO</div>
         <div style="font-size:.78rem;font-weight:600"><a href="mailto:dave@givenreceive.com" style="color:rgba(26,22,18,0.74);text-decoration:none;border-bottom:1px solid rgba(184,149,74,0.45)">dave@givenreceive.com</a> &middot; <a href="tel:+19786040223" style="color:rgba(26,22,18,0.74);text-decoration:none">978-604-0223</a></div>
@@ -32692,6 +32717,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-1m9': 'cs1m9Advance',
     'cs-1m8-title-A': 'csM8TitleAAdvance',
     'cs-1m8-title-B': 'csM8TitleBAdvance',
+    'cs-brand-V8': 'csBrandV8Advance',
     'cs-18-vd4': 'csVd4Advance',
     'cs-1': 'cs1Advance',
     'cs-1bm1': 'cs1bm1Advance',
@@ -32738,6 +32764,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-1m9': 'cs1m9Reverse',
     'cs-1m8-title-A': 'csM8TitleAReverse',
     'cs-1m8-title-B': 'csM8TitleBReverse',
+    'cs-brand-V8': 'csBrandV8Reverse',
     'cs-1': 'cs1Reverse',
     'cs-1bm1': 'cs1bm1Reverse',
     'cs-thegap': 'csThegapReverse',
