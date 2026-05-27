@@ -9158,6 +9158,12 @@ window.cs1m7Reverse = function() {
   #cs-thegap .tg-swap-like { display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; max-width:1440px; margin:6px auto 0; color:#1a1612; }
   #cs-thegap .tg-swap-like em,
   #cs-thegap .tg-swap-like .tg-like-period { color:#5B8FD4; }
+  #cs-thegap .tg-like-button-graphic { position:relative; }
+  #cs-thegap .tg-like-button-graphic::after {
+    content:""; position:absolute; left:-6px; right:-6px; top:50%; height:4px;
+    background:#c8462c; border-radius:999px; transform:translateY(-50%) rotate(-16deg);
+    box-shadow:0 1px 3px rgba(26,22,18,0.18); pointer-events:none;
+  }
   [id^="cs-thegap"] .tg-svg-wrap { width:100%; max-width:1380px; margin:6px auto 0; }
   [id^="cs-thegap"] .tg-svg-wrap svg { max-height:48vh; width:100%; height:auto; display:block; margin:0 auto; }
   #cs-thegap { background:#f3ead8 !important; overflow:hidden; }
@@ -10083,7 +10089,7 @@ window.cs1m7Reverse = function() {
       <!-- [Dave 2026-05-17 v3] tg-sub relocated here, BELOW the trapped-wrap graphic — lands as the caption to the visual story. -->
       <div class="tg-sub tg-swap-line tg-swap-like" style="opacity:1;transform:none">
         <span>Our communities don&rsquo;t have a <em>like button</em><span class="tg-like-period">.</span></span>
-        <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#5B8FD4;box-shadow:0 3px 8px rgba(91,143,212,0.30);flex-shrink:0">
+        <span class="tg-like-button-graphic" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#5B8FD4;box-shadow:0 3px 8px rgba(91,143,212,0.30);flex-shrink:0">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>
         </span>
       </div>
