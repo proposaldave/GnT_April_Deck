@@ -7480,7 +7480,7 @@ window.cs1m5Reverse = function() {
      image for assets/cs-frontier-pink1.png (sunset town/village wide-angle watercolor).
      Fallback chain → cs-frontier-iconic-hero.png so slide always renders.
      ═══════════════════════════════════════════════════════════════════════════ -->
-<div class="casey-slide ds-focus active casey-entered frontier-feeling-slide" id="cs-frontier-pink1" data-stage="1" onclick="csFrontierFeelingAdvance()" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 68%, #eadcc3 100%) !important;overflow:hidden">
+<div class="casey-slide ds-focus frontier-feeling-slide" id="cs-frontier-pink1" data-stage="1" onclick="csFrontierFeelingAdvance()" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 68%, #eadcc3 100%) !important;overflow:hidden">
   <style>
     #cs-frontier-pink1 .ms-stage{position:absolute;inset:0;padding:28px 48px 44px;color:#1a1612}
     #cs-frontier-pink1 .ms-paper{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,.045) 1px, transparent 0);background-size:4px 4px;opacity:.38;mix-blend-mode:multiply;pointer-events:none}
@@ -7601,7 +7601,7 @@ window.cs1m5Reverse = function() {
   .scale-option-slide.casey-entered .scale-head,.scale-option-slide.casey-entered .scale-footer{animation:none !important;opacity:1 !important}
 </style>
 
-<div class="casey-slide ds-focus scale-option-slide" id="cs-frontier-scale-pink-2">
+<div class="casey-slide ds-focus scale-option-slide active casey-entered" id="cs-frontier-scale-pink-2">
   <div class="scale-paper"></div>
   <div class="scale-eye">NEUROSCIENCE &bull; LONGITUDINAL &bull; PUBLIC HEALTH &bull; EPIDEMOLOGY</div>
   <div class="scale-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
@@ -30215,7 +30215,7 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-14] cs-intro6 INSERTED as new slot 1 per Dave: 'take the attached image and figure out how to leverage it to create a new slide just before the title slide for our new slide 1'. Cinematic science-proof opener (4-field convergence) lands BEFORE the wordmark title slide. All other main-flow slots shift +1.
   // [Dave 2026-05-14 MERGE] cs-intro6 + cs-frontier MERGED into a single slot-1 opener (cs-frontier carries the merged content). cs-intro6 demoted to red-dot alt at slot 1 for A/B comparison. All slots past slot 1 shift -1. Merge approach: hero now states the #1-predictor science truth, sub names the parabolic demand reality, curve carries the demand visualization, '4 sciences agree' strip grounds the claim, positioning band carves the category + wedge.
   // [Dave 2026-05-14 PM v4] cs-frontier-iconic PROMOTED to slot-1 primary per Dave 'I like this, let's make it the first slide, replacing current first slide which you can move to being a red dot slide to the left'. cs-frontier (former primary) demoted to first red-dot alt below.
-  'cs-frontier-pink1', //  1 PRIMARY · [Dave 2026-05-17 LATEST] Promoted from pink-dot alt → main slot 1 ('i like this, use this as main slide one and put current main slide one as a pink dot next to it'). Sunset town/village wide-angle watercolor bg + 'Real connection → #1 predictor of a fulfilling life' headline.
+  'cs-frontier-scale-pink-2', //  1 PRIMARY - [Dave 2026-05-27] Promoted from pink-dot alt per screenshot request; cs-frontier-pink1 demoted to slot-1 pink alt.
   // [Codex 2026-05-27] cs-fv6-img MOVED from slot 2 to the post-wedge product/workflow reveal after cs-wedgepb-codex per Dave screenshot request.
   // [Dave 2026-05-25] cs-hct-system moved to TRASH_ORDER per screenshot request.
   // [Dave 2026-05-17 PM] cs-givefirst-slide2 REMOVED from main flow per Dave: 'major bug' — bg image asset cs-givefirst-slide2.png was never saved to disk; slide was rendering with broken image alt text. The original cs-givefirst-art at slot 18 still carries the same content cleanly. HTML retained as silent backup; restore by re-adding this line.
@@ -30357,8 +30357,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-17 LATEST] cs-frontier-iconic REMOVED from slot-1 alts per Dave 'you can delete this slide'. HTML retained as silent backup.
   // [Dave 2026-05-18] cs-frontier-pink2 ALSO REMOVED per Dave 'delete the "1 / 24 (alt)" slide'. Slot 1 now has zero alts. HTML retained as silent backup.
   // [Dave 2026-05-26] cs-brand-codex moved from slot-1 pink-dot alt to TRASH_ORDER per screenshot request.
-  // [Codex 2026-05-27] cs-frontier-scale-pink and scale-option candidates published as slot-1 pink-dot alts.
-  1: ['cs-frontier-scale-pink', 'cs-frontier-scale-pink-2', 'cs-frontier-scale-pink-3', 'cs-frontier-scale-pink-4'],
+  // [Codex 2026-05-27] cs-frontier-scale-pink-2 promoted to primary; prior slide-1 cs-frontier-pink1 now sits as the adjacent pink-dot alt.
+  1: ['cs-frontier-scale-pink', 'cs-frontier-scale-pink-3', 'cs-frontier-scale-pink-4', 'cs-frontier-pink1'],
   // [Codex 2026-05-24] New slide-2 HCT story variants. Pink-dot alts left of cs-hct-system.
   // [Dave 2026-05-25] cs-hct-system-pink1 moved to TRASH_ORDER per screenshot request.
   2: ['cs-fv6-information-pink'],
