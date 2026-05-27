@@ -9213,10 +9213,10 @@ window.cs1m7Reverse = function() {
   #cs-thegap .tg-svg-wrap { display: none; }
   #cs-thegap[data-shown="1"] .tg-svg-wrap,
   #cs-thegap[data-shown="2"] .tg-svg-wrap,
-  #cs-thegap[data-shown="3"] .tg-svg-wrap { display: block; opacity: 1; margin-top: 4px; }
+  #cs-thegap[data-shown="3"] .tg-svg-wrap { display: block; opacity: 1; margin-top: -16px; }
   #cs-thegap[data-shown="1"] .tg-svg-wrap svg,
   #cs-thegap[data-shown="2"] .tg-svg-wrap svg,
-  #cs-thegap[data-shown="3"] .tg-svg-wrap svg { max-height: 32vh !important; }  /* [Dave 2026-05-17 v3] bumped 26vh → 32vh per Dave 'slightly increase the size of these graphics' */
+  #cs-thegap[data-shown="3"] .tg-svg-wrap svg { max-height: 27vh !important; }  /* [Dave 2026-05-26] Lifted/compacted bottom graphics so the final reveal sits clear of the slide controls. */
 
   /* Hint pulses while in trapped state, fades after first click */
   #cs-thegap .tg-hint { display: flex; align-items: center; justify-content: center; margin-top: 14px; opacity: 0.7; animation: tgHintPulse 1.8s ease-in-out infinite; transition: opacity 0.3s ease; }
@@ -9914,7 +9914,7 @@ window.cs1m7Reverse = function() {
   <section style="position:relative;min-height:100%;width:100%">
     <div class="tg-stage">
       <div class="tg-head" style="opacity:1;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-        <span>But real communities don&rsquo;t have a <em style="color:#5B8FD4">like button</em><span style="color:#5B8FD4">.</span></span>
+        <span>Our communities don&rsquo;t have a <em style="color:#5B8FD4">like button</em><span style="color:#5B8FD4">.</span></span>
         <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#5B8FD4;box-shadow:0 3px 8px rgba(91,143,212,0.30);flex-shrink:0">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>
         </span>
@@ -30187,9 +30187,9 @@ const SLIDE_ORDER = [
   // Originals cs-1b and cs-0a moved to APPENDIX as backups.
   // [Dave 2026-05-26] cs-1bm1 moved to TRASH_ORDER per screenshot request.
   // [Dave 2026-05-11] cs-a7 MOVED to APPENDIX per Dave: 'move this slide to the appendix'. The 'Social media is an extremely narrow view of human connection technology' beat now lives only in cs-a7m1 (slot 2 left card) — keeping it as a standalone slot 4 was redundant. cs-a7 retained in appendix as backup.
-  'cs-2c',    //  5 Community · 6-card grid
   // [2026-05-04 Dave] cs-bh, cs-bh-vA, cs-bh-vC, cs-2b, cs-4 MERGED into single cs-thegap problem slide. Originals moved to APPENDIX as backups.
   'cs-thegap', //  3 MERGED — Our communities are full of understanding, we just never unlock it. 3 figures + rich network-bubbles + by-hand texting.
+  'cs-2c',    //  5 Community · 6-card grid
   // [Codex 2026-05-26] cs-community-business moved to TRASH_ORDER per Dave: slide 5 / 20 and its alt were blank.
   // [Dave 2026-05-26] cs-samecourt MOVED EARLIER. The Munger/incentive-system thesis now lands before cultural/product reveal so investors understand the core behavior-change mechanism first.
   'cs-samecourt',
@@ -32108,8 +32108,8 @@ const slideLabels = [
   'Give n Receive',                                  //  1 cs-1
   'Social media · narrow view of human connection',  //  2 cs-a7 [Dave 2026-05-07: promoted to main slot 2]
   'Modern life · two imbalances',                    //  3 cs-1bm1
-  "What's community?",                               //  3 cs-2c
-  'Community technology is unsolved', //  4 cs-thegap
+  'Community technology is unsolved',                //  4 cs-thegap
+  "What's community?",                               //  5 cs-2c
   // cs-once label removed from main 2026-05-07 PM — moved to LAST appendix slide per Dave: 'this slide design is terrible, has far too much content, and needs to be moved to the very end of the deck'
   'Introducing Give n Receive',                      //  7 cs-gnr
   'The Secret Inside the Invitation · 70/0.6',      //  6 cs-11d
