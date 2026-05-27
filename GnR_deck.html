@@ -32305,7 +32305,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     altDot.className = 'casey-dot alt' + (isGreenAlt ? ' locked' : (isRedAlt ? ' review' : (isOrangeAlt || isReviewSlot ? ' orange-review' : (isBlackAlt ? ' black-alt' : (isPurpleAlt ? ' purple-alt' : (isPinkAlt ? ' pink-alt' : (isBlueAlt ? ' blue-alt' : '')))))));
     // Alt-dot tooltip pulls live from the alt slide's own eyebrow text [Dave 2026-05-07 sync rule]
     const altLabel = getSlideEyebrowText(altId);
-    altDot.title = altLabel ? (altLabel + ' (alt for slide ' + pos + ')') : (altId + ' (alt for slide ' + pos + ')');
+    altDot.title = altLabel ? (altLabel + ' (' + getAltLabel(i + 1) + ' for slide ' + pos + ')') : (altId + ' (' + getAltLabel(i + 1) + ' for slide ' + pos + ')');
     // [Dave 2026-05-09 LATER] Alt dots anchor the RIGHTMOST dot for every row regardless of alt count, then extend leftward. This keeps the rightmost-dot column visually consistent across rows with different numbers of alts (1-alt row, 3-alt row, 6-alt row all share the same right edge — only the left tail varies). Replaces the earlier centering-around-column-31 approach which made each row line up differently. Per Dave: 'everything here needs to be centered/aligned'.
     altDot.style.right = (20 + i * 15) + 'px';
     altDot.onclick = (e) => {
@@ -32327,7 +32327,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
       }
       // Update progress bar to the position (visually we are still at slide N)
       document.getElementById('cbar').style.width = ((pos / TOTAL) * 100) + '%';
-      document.getElementById('ccount').textContent = pos + ' / ' + TOTAL + ' (alt)';
+      document.getElementById('ccount').textContent = pos + ' / ' + TOTAL + ' (' + getAltLabel(i + 1) + ')';
       // Visual: glow this alt dot, dim siblings
       if (!syncCaseyDotHighlightToActiveSlide()) {
         document.querySelectorAll('.casey-dot').forEach(d => d.classList.remove('on'));
@@ -32454,6 +32454,16 @@ document.getElementById('ccount').textContent = '1 / ' + TOTAL;
 //   D / S / A   → fast scrubber for next/prev main slide (skip reveals)
 // Global altIndex tracks where we are within the current slide's alt row. 0 = primary, 1+ = alts L→R.
 window.altIndex = 0;
+function getAltLabel(index) {
+  let n = index;
+  let label = '';
+  while (n > 0) {
+    n -= 1;
+    label = String.fromCharCode(97 + (n % 26)) + label;
+    n = Math.floor(n / 26);
+  }
+  return 'alt-' + label;
+}
 // [Dave 2026-05-12] Presenter mode — default ON (nav dots hidden for clean live pitch).
 // Press Z to toggle, or click the cog button bottom-right. Persists across slides.
 document.body.classList.add('presenter-mode');
@@ -32623,7 +32633,7 @@ window.navigateAlt = function(direction) {
     const altId = alts[window.altIndex - 1];
     const target = document.getElementById(altId);
     if (target) { target.style.display = ''; target.classList.add('active'); void target.offsetWidth; target.classList.add('casey-entered'); if (target.dataset && target.dataset.stage !== undefined) target.dataset.stage = '0'; }
-    document.getElementById('ccount').textContent = current + ' / ' + TOTAL + ' (alt)';
+    document.getElementById('ccount').textContent = current + ' / ' + TOTAL + ' (' + getAltLabel(window.altIndex) + ')';
   }
   syncCaseyDotHighlightToActiveSlide();
   return true;
