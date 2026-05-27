@@ -30375,7 +30375,6 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-11] cs-a7 MOVED to APPENDIX per Dave: 'move this slide to the appendix'. The 'Social media is an extremely narrow view of human connection technology' beat now lives only in cs-a7m1 (slot 2 left card) — keeping it as a standalone slot 4 was redundant. cs-a7 retained in appendix as backup.
   // [2026-05-04 Dave] cs-bh, cs-bh-vA, cs-bh-vC, cs-2b, cs-4 MERGED into single cs-thegap problem slide. Originals moved to APPENDIX as backups.
   'cs-thegap', //  3 MERGED — Our communities are full of understanding, we just never unlock it. 3 figures + rich network-bubbles + by-hand texting.
-  'cs-2c',    //  5 Community · 6-card grid
   // [Codex 2026-05-26] cs-community-business moved to TRASH_ORDER per Dave: slide 5 / 20 and its alt were blank.
   // [Dave 2026-05-26] cs-samecourt MOVED EARLIER. The Munger/incentive-system thesis now lands before cultural/product reveal so investors understand the core behavior-change mechanism first.
   'cs-samecourt',
@@ -30408,6 +30407,7 @@ const SLIDE_ORDER = [
   // cs-a7 ("Social media is a very narrow view of human connection technology") MOVED BACK to APPENDIX 2026-05-03 PM per Dave
   // [Dave 2026-05-10 PM] cs-lab REMOVED from main flow + moved to RED-DOT alt at slot 17 (left of My Wheelhouse / cs-18). Per Dave: 'we either need to merge the slides or pick one of them to be the dave velardo founder slide'. cs-18 stays as primary founder slide; cs-lab is the comparison/merge candidate.
   'cs-27',    // CTO · Steve Callan
+  'cs-2c',    // Community · 6-card grid. Moved late per completed branch: community proof belongs after product/proof/founder setup.
   // cs-4 (Moat) → at slot 5
   // cs-16 (Every signal) → APPENDIX
   // cs-a3 (Pickleball TAM original) MOVED to APPENDIX 2026-05-03 PM per Dave
@@ -30525,7 +30525,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-26] cs-cultural-shift moved to APPENDIX; pink candidate detached from active slide slots.
   // [Dave 2026-05-26] cs-11d black-dot backup DELETED per screenshot request: remove active slot-7 alt registration; clone stub remains inert.
   // [Dave 2026-05-26] cs-2c-schedule-measure DELETED per screenshot request. HTML retained as hidden rollback stub.
-  8: ['cs-2c-measure-loop', 'cs-2c-invisible-layer'],
+  13: ['cs-2c-measure-loop', 'cs-2c-invisible-layer'],
   // Slot 6 (cs-thegap) - old like-button headline saved as pink-dot backup before 2026-05-24 rewrite.
   // [Dave 2026-05-25] Disconnected-community blue alt DELETED per Dave: 'delete this slide'. Removed from this slot and blue-dot classification; HTML retained as hidden rollback stub.
   // [Dave 2026-05-25] Like-button slide promoted back to main cs-thegap; digitized rewrite thrown away.
@@ -30623,7 +30623,7 @@ const SLIDE_ALTS = {
 // generated alts clone the active main slide at runtime, insert one emotional
 // image layer behind the cloned content, and register as same-slot green dots.
 const CODEX_BG_REVIEW_ALTS = [
-  { slot: 3,  sourceId: 'cs-2c',                 id: 'cs-2c-bg-green',                 image: 'assets/cs-2c-v2-community-listening.png' },
+  { slot: 13, sourceId: 'cs-2c',                 id: 'cs-2c-bg-green',                 image: 'assets/cs-2c-v2-community-listening.png' },
   { slot: 5,  sourceId: 'cs-samecourt',          id: 'cs-samecourt-bg-green',          image: 'assets/cs-samecourt-bg.png' },
   { slot: 7,  sourceId: 'cs-11d',                id: 'cs-11d-bg-green',                image: 'assets/cs-11d-cultural-shift-v2-bg.png' },
   { slot: 8,  sourceId: 'cs-11e',                id: 'cs-11e-bg-green',                image: 'assets/explorations/cs-11e-v3-faces-not-ratings.png' },
@@ -30877,7 +30877,6 @@ const SEED_ORDER = [
   'sd-seed-03',
   'sd-seed-05',
   'sd-seed-07',
-  'sd-seed-14',
   'sd-seed-15',
   'sd-seed-16'
 ];
