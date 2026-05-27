@@ -6831,6 +6831,7 @@ window.cs1m5Reverse = function() {
   @keyframes m8ArcIn { from { opacity:0; transform: translateX(-50%) translateY(-12px); } to { opacity:1; transform: translateX(-50%) translateY(0); } }
   @keyframes m8GlowPulse { 0%,100% { filter: drop-shadow(0 0 0 rgba(184,149,74,0)); } 35% { filter: drop-shadow(0 0 22px rgba(184,149,74,0.55)); } }
   @keyframes m8FadeUp { from { opacity:0; transform: translateY(10px); } to { opacity:1; transform: translateY(0); } }
+  @keyframes m8AutonomousIn { 0% { opacity:0; visibility:visible; transform:translateY(8px); } 100% { opacity:1; visibility:visible; transform:translateY(0); } }
   @keyframes m8FadeIn { from { opacity:0 } to { opacity:1 } }
 
   /* Initial hidden state for stage-0 (first visit + every re-entry, since data-stage
@@ -6839,6 +6840,7 @@ window.cs1m5Reverse = function() {
   #cs-1m8[data-stage="0"] .wm-n-wrap,
   #cs-1m8[data-stage="0"] .wm-R,
   #cs-1m8[data-stage="0"] .wm-arc { opacity:0; will-change:opacity,transform }
+  #cs-1m8[data-stage="0"] .m8-autonomous { opacity:0; visibility:hidden; transform:translateY(8px); will-change:opacity,transform }
   #cs-1m8[data-stage="0"] .m8-hint { opacity:0; will-change:opacity }
 
   /* Staggered letter cascade — fires on every slide entry (casey-entered re-added on each visit) */
@@ -6847,6 +6849,7 @@ window.cs1m5Reverse = function() {
   #cs-1m8.casey-entered[data-stage="0"] .wm-arc     { animation: m8ArcIn 0.55s cubic-bezier(.22,1,.36,1) backwards 0.60s; opacity:1; }
   #cs-1m8.casey-entered[data-stage="0"] .wm-R       { animation: m8RIn 0.85s cubic-bezier(.22,1,.36,1) backwards 0.80s; opacity:1; }
   #cs-1m8.casey-entered[data-stage="0"] .m8-wordmark { animation: m8GlowPulse 1.6s ease-in-out 1.30s 1 forwards; }
+  #cs-1m8.casey-entered[data-stage="0"] .m8-autonomous { animation:m8AutonomousIn 0.65s cubic-bezier(.22,1,.36,1) 1.75s both; }
   #cs-1m8.casey-entered[data-stage="0"] .m8-hint    { animation: m8FadeIn 0.55s ease-out backwards 1.50s; opacity:1; }
 
   html[data-export="1"] #cs-1m8 .wm-G,
