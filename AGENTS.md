@@ -136,10 +136,16 @@ NEXT:
 
 - Treat `GnR_deck.html` as canonical source and `index.html` as the GitHub Pages mirror.
 - Parallel edit sessions must use Worktree mode, create `deck/[short-task-name]`, commit, and not push.
-- Before editing a visible slide, identify the active source path from `SLIDE_ORDER`, `SLIDE_ALTS`, or `STAFF_ORDER`; if the requested element is only in an inactive variant, report `BLOCKED` instead of editing it.
-- Do not report `DONE` unless the requested change exists in the active live slide source.
-- Publish sessions run in Local mode on `main`, merge only reviewed safe `deck/*` branches, mirror `GnR_deck.html` to `index.html`, verify hashes, then push only when Dave explicitly requested publishing.
+- Codex owns verification. Dave should not have to identify failed edits manually after the fact.
+- Every edit session must create an acceptance contract before patching: requested change, expected active slide/section, expected visible result, likely touched files, and whether visual QA is required.
+- Before editing a visible slide, identify the active source path from `SLIDE_ORDER`, `SLIDE_ALTS`, or `STAFF_ORDER`; if the requested element is only in an inactive variant, port the intent to the active slide only when obvious, otherwise report `BLOCKED`.
+- Do not patch inactive variants unless Dave explicitly requested variants.
+- Do not report `DONE` unless the requested change exists in the active live slide source and required rendered/visual verification passed.
+- If verification fails, attempt one targeted correction, verify again, then report `BLOCKED` with root cause and next step.
+- Publish sessions run in Local mode on `main`, merge only verified safe `deck/*` branches, mirror `GnR_deck.html` to `index.html`, verify hashes, then push only when Dave explicitly requested publishing.
+- Publish reports must separate `MERGED AND LIVE`, `SKIPPED / NEEDS REVIEW`, `CONFLICTS`, and `NOT VERIFIED`.
 - Dirty unrelated local work must be preserved on a `preserve/[purpose]-local-change` branch before cleaning `main`; never silently drop, stash, reset, or overwrite it.
 - Skip risky delete/trash, inactive-variant, conflict, broken-ref, and unrelated branches during broad publish passes; list every skipped branch and reason.
 - If GitHub Pages looks stale, verify local HEAD, `origin/main`, raw GitHub source, and the cache-busted Pages URL before declaring publish failure.
+- Verify-live sessions must trace request -> branch -> commit -> active slide source -> index.html -> pushed main -> cache-busted URL -> rendered visible result.
 - If `.git/refs/**/desktop.ini` appears, treat it as broken Google Drive ref contamination. Report it and do not delete it unless Dave explicitly approves a ref repair.

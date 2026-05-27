@@ -1,5 +1,9 @@
 You are editing the Give n Receive investor deck in a Codex Worktree.
 
+CORE PRINCIPLE
+- Codex owns verification. Dave should not have to identify a failed edit after the fact.
+- Do not report DONE unless the requested edit is proven in the active rendered deck path.
+
 MODE CONTRACT
 - This must be Worktree mode. If this is Local mode, stop and report BLOCKED.
 - Start from current main-equivalent HEAD.
@@ -16,34 +20,70 @@ SOURCE CONTRACT
 - Keep the diff tiny and localized.
 - Preserve slide IDs, animation hooks, navigation, dot view, presenter behavior, and asset paths.
 
+ACCEPTANCE CONTRACT
+- Before editing, parse Dave's request into:
+  requested change
+  expected active slide/section
+  expected visible text/visual/layout result
+  files likely touched
+  whether visual QA is required
+- Use this contract as the pass/fail test for the session.
+
 ACTIVE SLIDE CONTRACT
 - Before editing, identify the active source path.
 - Main-flow targets must be present in SLIDE_ORDER.
 - Dot variants must be present in the correct SLIDE_ALTS[slot].
 - Staff targets must be present in STAFF_ORDER.
 - Red dots are alternate candidates at the same slot, not separate deck slides.
-- If the requested target exists only in an inactive retained HTML block, backup block, deleted block, appendix-only block, or stale variant, stop and report BLOCKED.
-- Do not report DONE unless the requested change exists in the active live slide source.
+- Confirm the requested target appears in the active slide source before patching.
+- If the target exists only in an inactive retained HTML block, backup block, deleted block, appendix-only block, or stale variant, do not edit it silently.
+- If the user's intent can be ported safely to the active slide, patch only the active slide and say so in ACTIVE SOURCE.
+- If the active target cannot be identified, stop and report BLOCKED with the exact reason and next step.
+
+EDIT CONTRACT
+- Edit only the active target unless Dave explicitly asks for variants.
+- Do not patch inactive variants as a proxy for the visible deck.
+- Keep the diff tiny.
+- Preserve navigation, animation hooks, slide IDs, and the design system.
 
 VALIDATION
-- For exact copy edits: verify old text absent or intentionally retained, new text present, and active slide ID/registry path correct.
-- For visual/layout edits: run visual QA unless Dave explicitly says source-only is enough.
+- Source verification is required for every edit: requested result exists in the active slide source and the active slide ID/registry path is correct.
+- For exact copy edits: verify old text absent or intentionally retained, new text present, and active slide source contains the requested result.
+- For visual/layout/copy-positioning/image/order changes: run visual/render verification and verify the rendered active slide shows the requested outcome.
+- If visual QA cannot run, do not report DONE for visual edits; report BLOCKED or ask Dave to approve source-only.
 - If browser/Playwright QA fails for tooling reasons, report the limitation and do source verification instead.
 - Run git diff --check before commit.
+
+SELF-CORRECTION LOOP
+- If verification fails, attempt one targeted correction.
+- Verify again.
+- If verification still fails, report BLOCKED with root cause and next step.
+- Do not keep guessing.
 
 COMMIT
 - Commit message: deck: [short task name]
 - Working tree must be clean after commit.
+
+HARD DONE RULE
+- Do not report DONE unless:
+  work is on a deck/[short-task-name] branch
+  a commit exists
+  working tree is clean
+  requested edit is verified against the active slide source
+  visual/render verification passed when required
+  nothing was pushed
 
 OUTPUT SECTIONS ONLY
 DONE
 BRANCH
 COMMIT
 TOUCHED
+ACCEPTANCE CONTRACT
 ACTIVE SOURCE
 CHANGE
 CHECKS
 VISUAL QA
+VERIFICATION NOTE
 PUSH
 BLOCKED
 

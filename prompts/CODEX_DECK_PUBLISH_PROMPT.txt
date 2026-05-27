@@ -7,6 +7,8 @@ PUBLISH CONTRACT
 - Do not delete branches or files.
 - Do not manually resolve broad conflicts in a publish pass.
 - Do not silently skip branches.
+- Publish only verified branches.
+- Do not claim all work is live unless every requested branch merged and verified.
 
 START CHECKS
 - Run git branch --show-current, git status --short, git remote -v, git log --oneline --decorate -20, and git worktree list.
@@ -19,7 +21,11 @@ BRANCH INVENTORY
 - List all local deck/* branches.
 - Classify each as already merged, safe candidate, conflict, risky/delete/trash, likely inactive-variant edit, unrelated, broken ref, or unknown.
 - For every branch skipped, report the branch and the reason.
-- Merge only safe completed deck/* branches Dave asked to publish or clearly approved.
+- Prefer branches whose final report or commit evidence indicates active-slide verification.
+- Skip branches that appear to edit inactive variants without active-source/render verification.
+- Skip delete/trash/risky branches.
+- Skip conflicts.
+- Merge only verified safe completed deck/* branches Dave asked to publish or clearly approved.
 - If a branch conflicts, abort that merge and list it under CONFLICTS. Do not fix it unless Dave asked for that branch specifically.
 
 MIRROR + VERIFY
@@ -36,13 +42,17 @@ LIVE CHECK
 - Verify raw GitHub source for main/index.html.
 - Verify GitHub Pages source where possible.
 - Clearly distinguish publish succeeded, branches skipped, and requested edit not live.
+- Report merged branches under MERGED AND LIVE only after source and live checks confirm the requested result is present.
+- Report skipped branches under SKIPPED / NEEDS REVIEW.
+- Report unverified branches under NOT VERIFIED.
 
 OUTPUT SECTIONS ONLY
 DONE
 CURRENT REPO STATE
-MERGED
-SKIPPED
+MERGED AND LIVE
+SKIPPED / NEEDS REVIEW
 CONFLICTS
+NOT VERIFIED
 MIRRORED
 CHECKS
 PUSH

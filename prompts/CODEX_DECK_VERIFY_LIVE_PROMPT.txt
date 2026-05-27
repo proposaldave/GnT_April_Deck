@@ -1,6 +1,7 @@
 Use Local mode.
 
 Goal: determine what is actually live for the Give n Receive deck without making content edits.
+Codex owns the trace. Dave should only need to provide the requested edit or branch.
 
 RULES
 - Do not edit deck content.
@@ -20,11 +21,29 @@ CHECKS
 6. Verify whether the target slide ID is active through SLIDE_ORDER, SLIDE_ALTS, or STAFF_ORDER.
 7. If needed for a visual/layout issue, open/render the active visible slide and compare against the source.
 
+TRACE REQUIREMENT
+- Given a requested edit or branch, trace:
+  request
+  branch
+  commit
+  active slide source
+  index.html mirror
+  pushed main
+  live cache-busted URL
+  rendered visible result
+- If a branch is not merged, identify whether it was skipped, conflicted, risky, or never published.
+- If source contains the change but render does not, identify whether the slide is hidden, inactive, behind an alt rail, or visually overridden.
+
 CLASSIFY THE ISSUE
 - cache: raw GitHub and cache-busted Pages have the change, canonical browser view is stale.
 - source not published: local or raw source lacks the change.
 - inactive variant: change exists only in retained/deleted/appendix/stale HTML, not active registry path.
 - skipped branch: change exists only on an unmerged branch.
+- conflict: branch was not merged because it conflicts.
+- wrong slide: edit landed on a different active slide/slot than Dave requested.
+- rendered hidden: source exists but visible render hides, covers, or does not reach it.
+- request ambiguity: requested target cannot be mapped to one active slide/section.
+- browser state: browser tab/session is stale even though cache-busted source is current.
 - visual mismatch: source contains the change but rendered layout does not match intent.
 
 OUTPUT SECTIONS ONLY
