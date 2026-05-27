@@ -14443,7 +14443,7 @@ window.cs1m7Reverse = function() {
     #cs-18-vd4 .v5-pillars { transform:translateX(-5.5vw); }
   }
   /* [Dave 2026-05-14 PM] Pillars are now FLIPPABLE cards — front shows just the badge, back shows the full content. perspective + cursor live on the pillar; the flex layout moves to the front/back faces inside .v5-flip-inner. */
-  [id^="cs-18-vd4"] .v5-pillar { position:relative;perspective:1400px;cursor:pointer;min-height:380px;padding:0 16px; }
+  [id^="cs-18-vd4"] .v5-pillar { position:relative;perspective:1400px;cursor:pointer;min-height:380px;padding:0 16px;background:transparent; }
   [id^="cs-18-vd4"] .v5-flip-inner { position:relative;width:100%;min-height:380px;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.4,0,.2,1) }
   [id^="cs-18-vd4"] .v5-pillar[data-flipped="1"] .v5-flip-inner { transform:rotateY(180deg) }
   [id^="cs-18-vd4"] .v5-flip-front,
