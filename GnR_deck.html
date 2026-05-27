@@ -10932,6 +10932,23 @@ window.cs1m7Reverse = function() {
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">The secret behind the invitation</div>
 <style>
+  #cs-11 {
+    position: relative;
+    overflow: hidden;
+    background: #fbf7ef url('assets/cs-11-invitation-background.png') center / cover no-repeat;
+  }
+  #cs-11::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(251,247,239,0.50);
+    pointer-events: none;
+    z-index: 0;
+  }
+  #cs-11 > section {
+    position: relative;
+    z-index: 1;
+  }
   /* cs-11 entrance — Dave 2026-04-29 v2:
      Phase 1: 4 invitation rows pop in one-by-one (left).
      Phase 2: 4 group clusters bloom in (right) — each cluster scales from its center.
