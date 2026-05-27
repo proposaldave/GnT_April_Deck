@@ -565,24 +565,33 @@ html[data-export="1"] #cs-2c .c2c-label { font-size: 0.95rem !important; }
    over inline styles via !important, so any existing eyebrow following the
    inline pattern (top:28px;left:48px + letter-spacing:.22em) auto-conforms.
    To opt in explicitly on new slides: <div class="slide-eyebrow">Label</div>.
-   Color = #b8954a (brand gold). To override per-slide thematic color, use a
+   Color = #c8462c (brand red) with a subtle cream readability backing. To override per-slide thematic color, use a
    higher-specificity rule like #cs-XYZ .slide-eyebrow { color: ... !important }.
    ============================================================================ */
 .casey-slide > div[style*="position:absolute"][style*="top:28px"][style*="left:48px"][style*="letter-spacing:.22em"],
 .casey-slide > section > div[style*="position:absolute"][style*="top:28px"][style*="left:48px"][style*="letter-spacing:.22em"],
 .casey-slide .slide-eyebrow,
-.casey-slide section .slide-eyebrow {
+.casey-slide section .slide-eyebrow,
+#cs-frontier-pink1 .ms-eye {
   font-family: var(--ui, 'Manrope', sans-serif) !important;
   font-size: 0.58rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.22em !important;
   text-transform: uppercase !important;
-  color: #b8954a !important;
+  color: #c8462c !important;
+  line-height: 1.35 !important;
+  padding: 4px 7px !important;
+  background: rgba(251,247,239,0.78) !important;
+  border-radius: 2px !important;
+  text-shadow:
+    0 0 6px rgba(251,247,239,1),
+    0 1px 1px rgba(26,22,18,0.20) !important;
   z-index: 10 !important;
 }
 /* Position rule split out so the .slide-eyebrow class also gets correct top-left placement */
 .casey-slide .slide-eyebrow,
-.casey-slide section .slide-eyebrow {
+.casey-slide section .slide-eyebrow,
+#cs-frontier-pink1 .ms-eye {
   position: absolute !important;
   top: 28px !important;
   left: 48px !important;
