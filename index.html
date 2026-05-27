@@ -7664,7 +7664,8 @@ window.cs1m5Reverse = function() {
       <!-- [Dave 2026-05-12 LATEST v2] Caption alignment: G is at translateX 85, R is at translateX 282 (asymmetric). Captions sit in a symmetric 2-col grid, so they don't naturally match the G/R visual centers. Solution — apply the SAME translates to each caption column as the wordmark uses, so caption centers track G and R precisely. (Was previously +95 on right only — overcorrected per Dave.) -->
       <div class="m8-caption" style="display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1300px,92%);align-items:start">
         <div class="m8-cap-left" style="text-align:center;transform:translateX(28px)">
-          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.35rem,1.75vw,1.75rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">What each of us<br><span style="color:#5B8FD4;font-weight:700">gives</span> is the fuel.</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:clamp(.58rem,.72vw,.76rem);font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:8px">The <strong style="color:#5B8FD4;font-weight:900">Fuel</strong></div>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,1.55vw,1.55rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">What we give</div>
         </div>
         <!-- [Dave 2026-05-17] Right cap translateX history: 28 → 86 → 140 → 100 → 70 → 50 → 30. Dave: "reposition this text a little more to the left". -->
         <!-- [Dave 2026-05-26] Centered under the large red R. -->
@@ -9113,6 +9114,13 @@ window.cs1m7Reverse = function() {
   [id^="cs-thegap"] .tg-head em { font-style:italic; font-weight:650; color:#c8462c; }
   [id^="cs-thegap"] .tg-sub { font-family:'Playfair Display',serif; font-size:clamp(1rem,1.5vw,1.3rem); color:rgba(26,22,18,0.75); line-height:1.4; max-width:1280px; margin:6px auto 0; }
   [id^="cs-thegap"] .tg-sub em { font-style:italic; color:#c8462c; font-weight:600; }
+  #cs-thegap .tg-swap-line { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.7rem,3vw,2.65rem); font-weight:700; color:#1a1612; line-height:1.08; letter-spacing:-0.02em; }
+  #cs-thegap .tg-swap-line em { font-style:italic; font-weight:650; }
+  #cs-thegap .tg-swap-private { max-width:1440px; margin:0 auto; }
+  #cs-thegap .tg-swap-private em { color:#c8462c; }
+  #cs-thegap .tg-swap-like { display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; max-width:1440px; margin:6px auto 0; color:#1a1612; }
+  #cs-thegap .tg-swap-like em,
+  #cs-thegap .tg-swap-like .tg-like-period { color:#5B8FD4; }
   [id^="cs-thegap"] .tg-svg-wrap { width:100%; max-width:1380px; margin:6px auto 0; }
   [id^="cs-thegap"] .tg-svg-wrap svg { max-height:48vh; width:100%; height:auto; display:block; margin:0 auto; }
   #cs-thegap { background:#f3ead8 !important; overflow:hidden; }
@@ -9925,11 +9933,8 @@ window.cs1m7Reverse = function() {
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">the most networkable, untapped dataset on the planet</div>
   <section style="position:relative;min-height:100%;width:100%">
     <div class="tg-stage">
-      <div class="tg-head" style="opacity:1;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-        <span>Our communities don&rsquo;t have a <em style="color:#5B8FD4">like button</em><span style="color:#5B8FD4">.</span></span>
-        <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#5B8FD4;box-shadow:0 3px 8px rgba(91,143,212,0.30);flex-shrink:0">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>
-        </span>
+      <div class="tg-head tg-swap-line tg-swap-private" style="opacity:1">
+        Our private thoughts and feelings about each other, <em>trapped in our heads</em>.
       </div>
       <!-- [Dave 2026-05-17 v3] tg-sub MOVED to AFTER the trapped-wrap graphic per Dave 'move the text "Our private thoughts and feelings..." underneath the attached graphic'. The line now lands as the verbal caption to the visual instead of preceding it. -->
 
@@ -10039,7 +10044,12 @@ window.cs1m7Reverse = function() {
       </div>
 
       <!-- [Dave 2026-05-17 v3] tg-sub relocated here, BELOW the trapped-wrap graphic — lands as the caption to the visual story. -->
-      <div class="tg-sub" style="opacity:1;transform:none">Our private thoughts and feelings about each other, <em>trapped in our heads</em>.</div>
+      <div class="tg-sub tg-swap-line tg-swap-like" style="opacity:1;transform:none">
+        <span>Our communities don&rsquo;t have a <em>like button</em><span class="tg-like-period">.</span></span>
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#5B8FD4;box-shadow:0 3px 8px rgba(91,143,212,0.30);flex-shrink:0">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>
+        </span>
+      </div>
 
       <!-- Click hint — pulses while in trapped state; fades after first advance -->
       <div class="tg-hint">
@@ -10107,25 +10117,25 @@ window.cs1m7Reverse = function() {
             <ellipse cx="515" cy="150" rx="170" ry="120" fill="url(#tgPanelGlowOld)"/>
             <g transform="translate(515, 144)">
               <g fill="#1a1612">
-                <g transform="translate(-92, 8)">
+                <g transform="translate(-116, 8)">
                   <circle cx="0" cy="0" r="18"/>
                   <path d="M -28 66 Q -28 14 -9 6 L 9 6 Q 28 14 28 66 Z"/>
                 </g>
-                <g transform="translate(94, -28)">
+                <g transform="translate(116, -28)">
                   <circle cx="0" cy="0" r="18"/>
                   <path d="M -28 66 Q -28 14 -9 6 L 9 6 Q 28 14 28 66 Z"/>
                 </g>
               </g>
               <g stroke="#c8462c" stroke-width="1.7" stroke-dasharray="5 5" fill="none" stroke-linecap="round" opacity=".76">
-                <path d="M -56 28 C -18 -22 34 -46 72 -34"/>
-                <path d="M -58 48 C -10 20 26 20 62 48"/>
+                <path d="M -72 30 C -30 -20 22 -42 64 -30"/>
+                <path d="M -74 50 C -20 20 22 20 70 50"/>
               </g>
               <g fill="#b8954a" opacity=".92">
-                <circle cx="-12" cy="-22" r="4.6"/>
-                <circle cx="22" cy="-42" r="3.8"/>
-                <circle cx="48" cy="-16" r="3.8"/>
-                <circle cx="-20" cy="24" r="3.6"/>
-                <circle cx="26" cy="30" r="4.2"/>
+                <circle cx="-18" cy="-22" r="4.6"/>
+                <circle cx="14" cy="-42" r="3.8"/>
+                <circle cx="42" cy="-16" r="3.8"/>
+                <circle cx="-28" cy="24" r="3.6"/>
+                <circle cx="18" cy="30" r="4.2"/>
               </g>
               <g stroke="rgba(26,22,18,0.38)" stroke-width="1.6" stroke-linecap="round">
                 <g transform="translate(0, -2)"><line x1="-7" y1="-7" x2="7" y2="7"/><line x1="7" y1="-7" x2="-7" y2="7"/></g>
@@ -10175,10 +10185,10 @@ window.cs1m7Reverse = function() {
                 </g>
               </g>
               <!-- GIVE arrow (solid red, lone figure → community) — no heart icon -->
-              <path d="M 1082 122 L 1188 122" stroke="#c8462c" stroke-width="2.4" fill="none" stroke-linecap="round" marker-end="url(#tgArrowRedOld)"/>
+              <path d="M 1096 122 L 1172 122" stroke="#c8462c" stroke-width="2.4" fill="none" stroke-linecap="round" marker-end="url(#tgArrowRedOld)"/>
               <!-- RETURN arrow (broken / dashed, community → lone figure) with '?' in the middle -->
               <g>
-                <path d="M 1196 170 L 1172 170 M 1160 170 L 1136 170 M 1124 170 L 1100 170" stroke="rgba(26,22,18,0.42)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                <path d="M 1182 170 L 1164 170 M 1152 170 L 1132 170 M 1120 170 L 1100 170" stroke="rgba(26,22,18,0.42)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
                 <!-- Broken arrowhead at left end (toward lone figure) -->
                 <path d="M 1086 170 L 1094 164 M 1086 170 L 1094 176 M 1086 170 L 1098 170" stroke="rgba(26,22,18,0.42)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
                 <!-- '?' midpoint -->
@@ -10942,7 +10952,7 @@ window.cs1m7Reverse = function() {
 <!-- 2026-05-02: cs-11 converted per Dave: header-only on load, BEFORE/AFTER as flip cards, 'Scheduling is measuring' as bottom card -->
 <div class="casey-slide ds-focus" id="cs-11" data-shown="1" data-left-flipped="0" data-right-flipped="0">
 <section style="position:relative;min-height:100%;width:100%">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">The secret behind the invitation</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">No like button? No problem.</div>
 <style>
   /* cs-11 entrance — Dave 2026-04-29 v2:
      Phase 1: 4 invitation rows pop in one-by-one (left).
@@ -11044,10 +11054,9 @@ window.cs1m7Reverse = function() {
 <div class="inner" style="padding-top:52px;text-align:center;max-width:1100px">
   <!-- Facebook-style "Like" button graphic DELETED 2026-05-06 per Dave -->
 
-  <!-- [Dave 2026-05-11 LATE] 'No like button? No problem.' promoted to main hero headline. -->
-  <!-- [Dave 2026-05-14] 'GnR measures connection at the exact same time as we schedule it.' subhead MOVED to BELOW the two cards per Dave. -->
+  <!-- [Dave 2026-05-27] 'GnR measures...' moved above the graphic; 'No like button? No problem.' becomes the eyebrow. -->
   <div class="display" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.1rem,3.8vw,3.3rem);color:#1a1612;line-height:1.08;margin-bottom:30px;font-weight:800;letter-spacing:-0.022em;max-width:1180px;margin-left:auto;margin-right:auto">
-    No <em style="font-style:italic;font-weight:700;color:#5B8FD4">like button</em>? <span style="color:#b8954a">No problem.</span>
+    <span class="gnr-inline-brand" aria-label="GnR"><span class="gnr-g">G</span><span class="gnr-n">n</span><span class="gnr-r">R</span></span> measures connection at the exact same time as it&rsquo;s scheduled.
   </div>
   <!-- cs11-hint removed Dave 2026-05-02: cards now visible from start, no reveal step needed. -->
 
@@ -11277,12 +11286,6 @@ window.cs1m7Reverse = function() {
       </div>
      </div>
     </div>
-  </div>
-
-  <!-- [Dave 2026-05-14 PM] 'GnR measures…' rewritten to 'We measure…' — founder-voice + single subject (same 'we' for measure + schedule). Cleaner grammar, stronger pitch voice.
-       [Dave 2026-05-17] Font size bumped (clamp 1.05/1.6/1.5 → 1.3/1.95/1.85) per Dave 'slightly increase font size'. -->
-  <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.3rem,1.95vw,1.85rem);color:rgba(26,22,18,0.78);line-height:1.32;margin:30px auto 0;font-weight:500;font-style:italic;letter-spacing:-0.012em;max-width:1180px;text-align:center">
-    <span class="gnr-inline-brand" aria-label="GnR"><span class="gnr-g">G</span><span class="gnr-n">n</span><span class="gnr-r">R</span></span> measures connection at the exact same time as it&rsquo;s scheduled.
   </div>
 
 </div>
@@ -12003,14 +12006,14 @@ window.cs1m7Reverse = function() {
   #cs-wedgepb-codex:is([data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-sub { opacity:1; transform:none; transition-delay:0.10s; }
   #cs-wedgepb-codex:is([data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-band-1,
   #cs-wedgepb-codex:is([data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-card:nth-child(1) { opacity:1; transform:none; transition-delay:0.12s; }
-  #cs-wedgepb-codex:is([data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-band-2,
-  #cs-wedgepb-codex:is([data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-card:nth-child(2) { opacity:1; transform:none; transition-delay:0.12s; }
-  #cs-wedgepb-codex:is([data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-band-3,
-  #cs-wedgepb-codex:is([data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-card:nth-child(3) { opacity:1; transform:none; transition-delay:0.12s; }
-  #cs-wedgepb-codex:is([data-stage="4"],[data-stage="5"]).casey-entered .wpc-band-4,
-  #cs-wedgepb-codex:is([data-stage="4"],[data-stage="5"]).casey-entered .wpc-card:nth-child(4) { opacity:1; transform:none; transition-delay:0.12s; }
-  #cs-wedgepb-codex[data-stage="5"].casey-entered .wpc-band-5,
-  #cs-wedgepb-codex[data-stage="5"].casey-entered .wpc-card:nth-child(5) { opacity:1; transform:none; transition-delay:0.12s; }
+  #cs-wedgepb-codex:is([data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-band-2,
+  #cs-wedgepb-codex:is([data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-card:nth-child(2) { opacity:1; transform:none; transition-delay:0.12s; }
+  #cs-wedgepb-codex:is([data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-band-3,
+  #cs-wedgepb-codex:is([data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-card:nth-child(3) { opacity:1; transform:none; transition-delay:0.12s; }
+  #cs-wedgepb-codex:is([data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-band-4,
+  #cs-wedgepb-codex:is([data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-card:nth-child(4) { opacity:1; transform:none; transition-delay:0.12s; }
+  #cs-wedgepb-codex:is([data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-band-5,
+  #cs-wedgepb-codex:is([data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"]).casey-entered .wpc-card:nth-child(5) { opacity:1; transform:none; transition-delay:0.12s; }
   html[data-export="1"] #cs-wedgepb-codex .wpc-head, html[data-export="1"] #cs-wedgepb-codex .wpc-sub, html[data-export="1"] #cs-wedgepb-codex .wpc-band, html[data-export="1"] #cs-wedgepb-codex .wpc-card { opacity:1 !important; transform:none !important; transition:none !important; }
 
   /* [Dave 2026-05-18 LATEST v3] cs-wedgepb-codex bg image MORE VISIBLE per Dave 'this slide i'd like the background image to be a little more visible' (after promotion to main primary). Opacity 0.78 → 0.95 + cream wash thinned even further from light (.55/.32/.40/.62) to faint (.35/.18/.22/.42). The codex watercolor is now the dominant visual layer; the funnel + cards float over it with their card chrome (white fills, blue rails, drop shadows) providing legibility. */
@@ -12955,7 +12958,7 @@ window.cs1m7Reverse = function() {
 <section style="position:relative;min-height:100%;width:100%">
 <div class="gnr-lonely-bg" aria-hidden="true"><img src="design_refs/gnr_loneliness_deck_style.png" alt=""/></div>
 <!-- [Dave 2026-05-18 LATEST] Eyebrow trimmed per Dave 'Autonomous, abundant connection's core product → Core product'. -->
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">The core product to solve loneliness</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">The core product to solve community and loneliness</div>
 <div class="inner gnr-reveal-on-advance" style="position:relative;z-index:1;padding-top:60px;text-align:center;max-width:1100px;margin:0 auto">
 
   <!-- Headline moved BELOW the large envelope, ABOVE the 3 small envelopes [Dave 2026-05-03 PM] -->
@@ -13201,7 +13204,7 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-11d .hg-flip-inner { transform: rotateY(180deg) !important; }
   #cs-11d .hg-ph .hg-env-flap { transform-origin: top; transform: rotateX(0deg); transition: transform .9s ease; }
   #cs-11d .hg-ph:hover .hg-env-flap { transform: rotateX(35deg); }
-  #cs-11d .c11d-bg { position:absolute; inset:0; z-index:0; background:url('assets/v2/cs-11d/v1-hero-implicit-signal.-preview.png') center/cover no-repeat; opacity:.64; pointer-events:none; }
+  #cs-11d .c11d-bg { position:absolute; inset:0; z-index:0; background:none; opacity:.64; pointer-events:none; }
   #cs-11d .c11d-bg::after { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 48%, rgba(243,234,216,.88) 0%, rgba(243,234,216,.72) 40%, rgba(243,234,216,.28) 100%); }
 </style>
 <div class="casey-slide ds-focus" id="cs-11d" data-left="0" data-right="0" style="cursor:default">
@@ -13270,12 +13273,17 @@ window.cs1m7Reverse = function() {
   #cs-11e.active .c11e-q1       { animation-delay: 1.55s; }
   #cs-11e.active .c11e-q2       { animation-delay: 1.75s; }
   #cs-11e.active .c11e-q3       { animation-delay: 1.95s; }
+  #cs-11e { overflow:hidden; }
+  #cs-11e .c11e-bg { position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden; }
+  #cs-11e .c11e-bg img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.54;filter:saturate(.92) contrast(.98); }
+  #cs-11e .c11e-bg::after { content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,247,239,.86) 0%,rgba(251,247,239,.66) 46%,rgba(251,247,239,.30) 100%),radial-gradient(circle at 72% 42%,rgba(26,22,18,.20),transparent 48%); }
   html[data-export="1"] #cs-11e .c11e-anim { opacity: 1 !important; animation: none !important; transform: none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-11e">
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+  <div class="c11e-bg" aria-hidden="true"><img src="assets/explorations/cs-11e-v3-faces-not-ratings.png" alt=""></div>
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#5B8FD4;z-index:10;">Founder-built community</div>
-  <div style="padding:32px 48px 80px;text-align:center;max-width:1180px;margin:0 auto;width:100%">
+  <div style="position:relative;z-index:2;padding:32px 48px 80px;text-align:center;max-width:1180px;margin:0 auto;width:100%">
     <!-- Big NEPC logo so the audience knows we're talking about New England Pickleball Club -->
     <img class="c11e-anim c11e-logo" src="nepc-logo.png" alt="New England Pickleball Club" style="display:block;margin:0 auto 18px;width:clamp(220px,26vw,320px);height:auto;mix-blend-mode:multiply"/>
     <div class="c11e-anim c11e-headline" style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.2vw,2.5rem);color:#1a1612;line-height:1.18;font-weight:700;margin-bottom:32px;max-width:1080px;margin-left:auto;margin-right:auto">
@@ -14455,7 +14463,8 @@ window.cs1m7Reverse = function() {
   [id^="cs-18-vd4"] .v5-pillar.p1 .v5-front-label { color:#8a6420; }
   [id^="cs-18-vd4"] .v5-pillar.p2 .v5-front-label { color:#3a73b8; }
   [id^="cs-18-vd4"] .v5-pillar.p3 .v5-front-label { color:#a8351f; }
-  #cs-18-vd4 .v5-pillar.p2 .v5-flip-front { transform:translateY(-34px); }
+  #cs-18-vd4 .v5-pillar.p2 .v5-flip-front { transform:translateY(-168px); }
+  #cs-18-vd4 .v5-pillar.p3 .v5-flip-front { transform:translateY(-72px); }
   /* [Dave 2026-05-18 LATEST] Wheelhouse unifier band — connects the 3 closed cards to one section label. */
   [id^="cs-18-vd4"] .v5-wheelhouse-band { position:relative; width:100%; max-width:1180px; margin:18px auto 4px; display:flex; flex-direction:column; align-items:center; }
   [id^="cs-18-vd4"] .v5-wh-svg { width:100%; height:56px; display:block; overflow:visible; }
@@ -14638,7 +14647,7 @@ window.cs1m7Reverse = function() {
      Vision (idea maze) + Foundation (NEPC lab) + Network (pickleball world trust + lifelong commitment). -->
 <div class="casey-slide ds-focus" id="cs-18-vd4">
   <!-- [Dave 2026-05-24] Eyebrow repurposed for Steve Jobs customer-first quote per Dave. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10;max-width:900px;line-height:1.35">Founder Wheelhouse</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10;max-width:900px;line-height:1.35">Wheelhouse</div>
   <section class="vd-stage">
     <div class="vd-wrap">
       <!-- [Dave 2026-05-18 LATEST] vd-name DELETED — founder identity moved to eyebrow above. -->
@@ -15379,9 +15388,10 @@ window.cs1m7Reverse = function() {
      All three quotes stacked in one column. Single Marcos attribution at top.
      ═══════════════════════════════════════════════════════════════════════════ -->
 <style>
-  #cs-racketeer-att-arc { background:radial-gradient(ellipse at 50% 40%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important; overflow:hidden; }
-  #cs-racketeer-att-arc::before { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 30%, rgba(212,168,83,0.16) 0%, rgba(212,168,83,0.04) 50%, transparent 75%); pointer-events:none; z-index:1; }
-  #cs-racketeer-att-arc .rka-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:64px 80px 50px; z-index:2; gap:14px; }
+  #cs-racketeer-att-arc { background:#fbf7ef !important; overflow:hidden; }
+  #cs-racketeer-att-arc::before { content:""; position:absolute; inset:0; background:url('assets/racketeer-pattern-bg.png') center/cover no-repeat; opacity:.44; filter:saturate(.94) contrast(1.05) brightness(1.03); pointer-events:none; z-index:1; }
+  #cs-racketeer-att-arc::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(251,247,239,.91) 0%, rgba(251,247,239,.66) 58%, rgba(251,247,239,.24) 100%),radial-gradient(ellipse at 50% 30%, rgba(212,168,83,0.18) 0%, rgba(212,168,83,0.05) 50%, transparent 75%); pointer-events:none; z-index:2; }
+  #cs-racketeer-att-arc .rka-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:64px 80px 50px; z-index:3; gap:14px; }
   #cs-racketeer-att-arc .rka-head-row { display:grid; grid-template-columns:1.4fr auto; gap:32px; width:100%; max-width:1500px; align-items:center; margin-bottom:6px; }
   #cs-racketeer-att-arc .rka-head-text { display:flex; flex-direction:column; gap:6px; }
   #cs-racketeer-att-arc .rka-hero { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.85rem,2.75vw,2.45rem); font-weight:850; line-height:1.10; letter-spacing:-0.022em; color:#1a1612; margin:0; }
@@ -17043,9 +17053,9 @@ window.cs1m7Reverse = function() {
   <section style="position:relative;width:100%;min-height:100%">
     <div class="m3-stage">
       <div class="m3-headline">
-        A pickleball community&rsquo;s <em>coordination stack</em>,<br>
-        rewired for <span class="gold">abundant, autonomous connection</span><br>
-        and <span class="blue">human value excnage</span>, becomes its <span class="blue">social network.</span>
+        Your community&rsquo;s <em>coordination stack</em>,<br>
+        rewired for <span class="gold">autonomous social coordination</span>,<br>
+        becomes its <span class="blue">social network.</span>
       </div>
 
       <!-- Compact on/off-court SVG with party clickable to open Krista -->
@@ -17391,7 +17401,7 @@ window.cs1m7Reverse = function() {
   <section style="position:relative;width:100%;min-height:100%">
     <div class="wd-stage">
       <!-- [Dave 2026-05-18 LATEST] Header REPLACED — the pickleball-coordination-stack line is the SOLE header above the graphic. [Dave 2026-05-18 LATEST v2] Forced into 3 lines per Dave (break after "stack," and again after "connection,"). -->
-      <div class="wd-tagline" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.45rem,2.3vw,2.15rem);font-style:italic;font-weight:700;color:#1a1612;line-height:1.20;letter-spacing:-0.015em;max-width:1500px;margin:0 auto 14px;text-align:center">A pickleball community&rsquo;s <em style="font-style:italic;font-weight:850;color:#5B8FD4">coordination stack</em>,<br>rewired for <em style="font-style:italic;font-weight:850;color:#b8954a">abundant, autonomous connection</em><br>and <em style="font-style:italic;font-weight:850;color:#5B8FD4">human value excnage</em>, becomes its <em style="font-style:italic;font-weight:850;color:#c8462c">social network</em>.</div>
+      <div class="wd-tagline" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.45rem,2.3vw,2.15rem);font-style:italic;font-weight:700;color:#1a1612;line-height:1.20;letter-spacing:-0.015em;max-width:1500px;margin:0 auto 14px;text-align:center">Your community&rsquo;s <em style="font-style:italic;font-weight:850;color:#5B8FD4">coordination stack</em>,<br>rewired for <em style="font-style:italic;font-weight:850;color:#b8954a">autonomous social coordination</em>,<br>becomes its <em style="font-style:italic;font-weight:850;color:#c8462c">social network</em>.</div>
       <div class="speaker-notes" data-slide="cs-wedge1" style="display:none">GnR is how every community and every person is already wired to function.</div>
 
       <div class="wd-svg-wrap">
@@ -18316,10 +18326,16 @@ window.cs1m7Reverse = function() {
 <!-- ── V8 · HUMAN VALUE, FINALLY SEEN — particle galaxy emerging into glowing n core, then radiating back out
         in red. Most emotional/brand variant. Inspired by ChatGPT 8-grid #7 — Dave 2026-05-07: 'this is good' ── -->
 <style>
-  #cs-brand-V8 { overflow:hidden; }
+  #cs-brand-V8 { overflow:hidden;cursor:pointer; }
   #cs-brand-V8 .v8-bg { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;opacity:.54;filter:saturate(.92) contrast(.98);pointer-events:none; }
   #cs-brand-V8 .v8-bg-wash { position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(251,247,239,.86) 0%,rgba(251,247,239,.66) 46%,rgba(251,247,239,.30) 100%),radial-gradient(circle at 72% 42%,rgba(26,22,18,.20),transparent 48%);pointer-events:none; }
-  #cs-brand-V8 .v8-stage { position:relative;z-index:2;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:64px 56px 50px;width:100%;gap:18px; }
+  #cs-brand-V8 .v8-stage { position:relative;z-index:2;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:64px 56px 50px;width:100%;gap:18px;opacity:0 !important;pointer-events:none !important;transform:translateY(34px) scale(.982) !important;filter:blur(8px);animation:none !important;transition:opacity .82s cubic-bezier(.22,1,.36,1),transform .82s cubic-bezier(.22,1,.36,1),filter .82s cubic-bezier(.22,1,.36,1); }
+  #cs-brand-V8[data-stage="1"] .v8-stage { opacity:1 !important;pointer-events:auto !important;transform:none !important;filter:none; }
+  #cs-brand-V8 .v8-header, #cs-brand-V8 .v8-galaxy-row, #cs-brand-V8 .v8-caption-row, #cs-brand-V8 .v8-contact { opacity:0;transform:translateY(20px); }
+  #cs-brand-V8[data-stage="1"].casey-entered .v8-header { animation:v8RevealLift .78s cubic-bezier(.22,1,.36,1) .05s forwards; }
+  #cs-brand-V8[data-stage="1"].casey-entered .v8-galaxy-row { animation:v8RevealSurge .95s cubic-bezier(.16,1,.3,1) .18s forwards; }
+  #cs-brand-V8[data-stage="1"].casey-entered .v8-caption-row { animation:v8RevealLift .72s cubic-bezier(.22,1,.36,1) .62s forwards; }
+  #cs-brand-V8[data-stage="1"].casey-entered .v8-contact { animation:v8RevealLift .65s cubic-bezier(.22,1,.36,1) .82s forwards; }
   #cs-brand-V8 .v8-hero { font-family:'Manrope',sans-serif;font-size:clamp(.95rem,1.2vw,1.2rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#1a1612;text-align:center; }
   #cs-brand-V8 .v8-claim { font-family:'Manrope',sans-serif;font-size:clamp(.92rem,1.05vw,1.1rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:rgba(26,22,18,0.78);text-align:center;line-height:1.7;margin-top:6px; }
   #cs-brand-V8 .v8-galaxy-row { position:relative;display:flex;align-items:center;justify-content:center;width:min(1700px,98%);margin-top:8px; }
@@ -18360,23 +18376,42 @@ window.cs1m7Reverse = function() {
   #cs-brand-V8 .v8-particles g { opacity: 0; }
   #cs-brand-V8 .v8-galaxy-row svg.v8-particles:first-of-type g { transform: translateX(-44px); }
   #cs-brand-V8 .v8-galaxy-row svg.v8-particles:last-of-type  g { transform: translateX(44px); }
-  #cs-brand-V8.casey-entered .v8-galaxy-row svg.v8-particles:first-of-type g { animation: v8GalaxyInL 1.6s cubic-bezier(.22,1,.36,1) 0.45s forwards; }
-  #cs-brand-V8.casey-entered .v8-galaxy-row svg.v8-particles:last-of-type  g { animation: v8GalaxyInR 1.6s cubic-bezier(.22,1,.36,1) 0.45s forwards; }
+  #cs-brand-V8[data-stage="1"].casey-entered .v8-galaxy-row svg.v8-particles:first-of-type g { animation: v8GalaxyInL 1.6s cubic-bezier(.22,1,.36,1) 0.45s forwards; }
+  #cs-brand-V8[data-stage="1"].casey-entered .v8-galaxy-row svg.v8-particles:last-of-type  g { animation: v8GalaxyInR 1.6s cubic-bezier(.22,1,.36,1) 0.45s forwards; }
   @keyframes v8GalaxyInL { from { opacity:0; transform: translateX(-44px); } to { opacity:1; transform: translateX(0); } }
   @keyframes v8GalaxyInR { from { opacity:0; transform: translateX(44px);  } to { opacity:1; transform: translateX(0); } }
+  @keyframes v8RevealLift { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes v8RevealSurge { from { opacity:0; transform:translateY(28px) scale(.94); } to { opacity:1; transform:translateY(0) scale(1); } }
   /* Each individual dot drifts subtly + continuously (atmospheric, not spinny) */
   @keyframes v8DotDriftR { 0%,100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
   @keyframes v8DotDriftL { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-6px); } }
-  #cs-brand-V8.casey-entered .v8-galaxy-row svg.v8-particles:first-of-type circle { animation: v8DotDriftR 5s ease-in-out infinite; animation-delay: 2.2s; transform-box: fill-box; transform-origin: center; }
-  #cs-brand-V8.casey-entered .v8-galaxy-row svg.v8-particles:last-of-type  circle { animation: v8DotDriftL 5s ease-in-out infinite; animation-delay: 2.2s; transform-box: fill-box; transform-origin: center; }
+  #cs-brand-V8[data-stage="1"].casey-entered .v8-galaxy-row svg.v8-particles:first-of-type circle { animation: v8DotDriftR 5s ease-in-out infinite; animation-delay: 2.2s; transform-box: fill-box; transform-origin: center; }
+  #cs-brand-V8[data-stage="1"].casey-entered .v8-galaxy-row svg.v8-particles:last-of-type  circle { animation: v8DotDriftL 5s ease-in-out infinite; animation-delay: 2.2s; transform-box: fill-box; transform-origin: center; }
   /* Stagger the per-dot drift so the galaxy feels alive, not synchronized */
   #cs-brand-V8.casey-entered .v8-particles circle:nth-child(3n+1)  { animation-delay: 2.2s; }
   #cs-brand-V8.casey-entered .v8-particles circle:nth-child(3n+2)  { animation-delay: 2.6s; animation-duration: 5.6s; }
   #cs-brand-V8.casey-entered .v8-particles circle:nth-child(3n)    { animation-delay: 3.0s; animation-duration: 6.2s; }
   /* Export mode (PDF) shows final state instantly */
+  html[data-export="1"] #cs-brand-V8 .v8-stage, html[data-export="1"] #cs-brand-V8 .v8-header, html[data-export="1"] #cs-brand-V8 .v8-galaxy-row, html[data-export="1"] #cs-brand-V8 .v8-caption-row, html[data-export="1"] #cs-brand-V8 .v8-contact { opacity:1 !important;transform:none !important;filter:none !important;animation:none !important; }
   html[data-export="1"] #cs-brand-V8 .v8-particles g { opacity:1 !important; transform: translateX(0) !important; animation:none !important; }
   html[data-export="1"] #cs-brand-V8 .v8-particles circle { animation:none !important; }
 </style>
+<script>
+window.csBrandV8Advance = function() {
+  const s = document.getElementById('cs-brand-V8');
+  if (!s) return false;
+  if ((parseInt(s.dataset.stage) || 0) >= 1) return false;
+  s.dataset.stage = '1';
+  return true;
+};
+window.csBrandV8Reverse = function() {
+  const s = document.getElementById('cs-brand-V8');
+  if (!s) return false;
+  if ((parseInt(s.dataset.stage) || 0) <= 0) return false;
+  s.dataset.stage = '0';
+  return true;
+};
+</script>
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
@@ -19019,7 +19054,7 @@ window.cs1m7Reverse = function() {
 </div>
 
 
-<div class="casey-slide ds-focus trash-slide" id="cs-brand-V8" style="display:none">
+<div class="casey-slide ds-focus trash-slide" id="cs-brand-V8" data-stage="0" onclick="if(window.csBrandV8Advance&&window.csBrandV8Advance()) event.stopPropagation()" style="display:none">
   <img class="v8-bg" src="assets/cs-brand-codex.png" alt="" onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
   <div class="v8-bg-wash" aria-hidden="true"></div>
   <!-- Eyebrow history: "Brand" → "Introducing Give n Receive". [Dave 2026-05-18 LATEST v3]: → 'Brand → live a life of abundant, autonomous connection.' per Dave's latest positioning eyebrow. Same mixed-case treatment as cs-1m8 above so the two slides share an identical eyebrow voice. -->
@@ -19090,7 +19125,7 @@ window.cs1m7Reverse = function() {
         </div>
       </div>
 
-      <div style="margin-top:14px;padding-top:16px;border-top:1px solid rgba(184,149,74,0.32);font-family:'Manrope',sans-serif;text-align:center;color:rgba(26,22,18,0.74);line-height:1.55">
+      <div class="v8-contact" style="margin-top:14px;padding-top:16px;border-top:1px solid rgba(184,149,74,0.32);font-family:'Manrope',sans-serif;text-align:center;color:rgba(26,22,18,0.74);line-height:1.55">
         <div style="font-size:.58rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;margin-bottom:6px">Final slide</div>
         <div style="font-size:.86rem;font-weight:800;color:#1a1612">Dave Velardo &middot; Founder &amp; CEO</div>
         <div style="font-size:.78rem;font-weight:600"><a href="mailto:dave@givenreceive.com" style="color:rgba(26,22,18,0.74);text-decoration:none;border-bottom:1px solid rgba(184,149,74,0.45)">dave@givenreceive.com</a> &middot; <a href="tel:+19786040223" style="color:rgba(26,22,18,0.74);text-decoration:none">978-604-0223</a></div>
@@ -20874,7 +20909,7 @@ window.cs1m7Reverse = function() {
   <div class="scf-wash" aria-hidden="true"></div>
   <!-- [Codex 2026-05-26] Background restored with the full give-first community image; stage 0 intentionally shows only the image and eyebrow. -->
   <!-- [Dave 2026-05-18] Eyebrow ↔ headline SWAPPED. Eyebrow now carries the slide-mechanic label ("Flip the incentive → Unleash connection & community"); the Munger quote is promoted to the slide HEADER. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Community incentive system</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Community incentive system unsolved → solved</div>
   <section class="sc-stage">
     <div class="sc-wrap">
       <h1 class="sc-hero"><span style="font-style:italic">&ldquo;Show me the incentive and I&rsquo;ll show you the outcome&rdquo;</span>&nbsp; <em style="font-style:italic;color:#b8954a;font-weight:850">&mdash; Charlie Munger</em></h1>
@@ -20886,7 +20921,7 @@ window.cs1m7Reverse = function() {
           <!-- [Dave 2026-05-14 PM v3] SWAPPED per Dave: eye-row label moved to TOP (section header for the column), bubble moved to JUST ABOVE the dashes (testimonial below the graphic). -->
           <div class="sc-col-eye-row">
             <div class="sc-col-icon red"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#c8462c" stroke-width="1.6"/><circle cx="12" cy="12" r="5" stroke="#c8462c" stroke-width="1.6"/><circle cx="12" cy="12" r="1.8" fill="#c8462c"/></svg></div>
-            <div class="sc-col-eye">Coordination by <strong>skill rating</strong></div>
+            <div class="sc-col-eye">Coordination by <strong style="font-weight:900">skill rating</strong></div>
           </div>
           <!-- [Dave 2026-05-14 PM] COMMUNITY-LEVEL graphic — parallel to cs-magnetic's court: shows the community FRAGMENTED into 3 isolated cliques. No inter-cluster edges. Visualizes what rating-driven incentives DO to a community. -->
           <div class="sc-community">
@@ -20974,7 +21009,7 @@ window.cs1m7Reverse = function() {
           <!-- [Dave 2026-05-14 PM v3] SWAPPED per Dave: eye-row label moved to TOP, bubble moved to JUST ABOVE the dashes (testimonial below the graphic). -->
           <div class="sc-col-eye-row">
             <div class="sc-col-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#5B8FD4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20 C3 16 5 14 9 14 C13 14 15 16 15 20"/><path d="M14 19 C14 16.5 15.5 15 17 15 C19 15 21 16.5 21 19"/></svg></div>
-            <div class="sc-col-eye">Coordination by <strong>networked reciprocity</strong></div>
+            <div class="sc-col-eye">Coordination by <strong style="font-weight:900">networked reciprocity</strong></div>
           </div>
           <!-- [Dave 2026-05-14 PM] COMMUNITY-LEVEL graphic — parallel to cs-magnetic's marketplace court: shows the SAME community NETWORKED into a dense web. Same number of nodes as the left side, now connected by reciprocity edges through a warm glow. Visualizes what GnR-driven incentives DO to a community. -->
           <div class="sc-community">
@@ -21666,7 +21701,7 @@ window.cs1m7Reverse = function() {
   <img src="assets/cs-samecourt-bg.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;display:block;opacity:0.68" onerror="this.onerror=null;this.src='assets/cs-samecourt-pink3.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
   <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg, rgba(251,247,239,0.86) 0%, rgba(251,247,239,0.80) 22%, rgba(251,247,239,0.72) 55%, rgba(251,247,239,0.80) 100%)"></div>
   <!-- [Dave 2026-05-18 LATEST] Eyebrow ↔ above-court hero SWAPPED per Dave: '"Social pull" / "People are the product and the sales engine." swap places of that text (eg so "People are the product..." will go top left label of the slide and social pull will go right above the court)'. Eyebrow now carries the marketplace claim; "Social pull" moves to the above-court hero (.mg-side-hero on .mg-side.right). -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Social pull powers real communities</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">social pull</div>
   <section class="mg-stage">
 
     <!-- [Dave 2026-05-14 PM v4] Master header text SWAPPED with the eyebrow per Dave. Long category claim moved up to the eyebrow banner; this header is now the punchy 2-word slide title. -->
@@ -24771,7 +24806,7 @@ window.cs1m7Reverse = function() {
      rightmost pink dot).
      ═══════════════════════════════════════════════════════════════════════════ -->
 <style>
-  #cs-mv6-merge { position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important; }
+  #cs-mv6-merge { position:absolute;inset:0;width:100%;height:100%;min-height:100%;overflow:hidden;background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important; }
   #cs-mv6-merge::before { content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:
     radial-gradient(ellipse 48% 42% at 82% 22%, rgba(184,149,74,.18) 0%, rgba(184,149,74,.06) 42%, rgba(184,149,74,0) 72%),
     linear-gradient(118deg, transparent 0 39%, rgba(91,143,212,.12) 39.2%, rgba(91,143,212,.12) 39.7%, transparent 40% 100%),
@@ -30187,7 +30222,7 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-14 MERGE] cs-intro6 + cs-frontier MERGED into a single slot-1 opener (cs-frontier carries the merged content). cs-intro6 demoted to red-dot alt at slot 1 for A/B comparison. All slots past slot 1 shift -1. Merge approach: hero now states the #1-predictor science truth, sub names the parabolic demand reality, curve carries the demand visualization, '4 sciences agree' strip grounds the claim, positioning band carves the category + wedge.
   // [Dave 2026-05-14 PM v4] cs-frontier-iconic PROMOTED to slot-1 primary per Dave 'I like this, let's make it the first slide, replacing current first slide which you can move to being a red dot slide to the left'. cs-frontier (former primary) demoted to first red-dot alt below.
   'cs-frontier-pink1', //  1 PRIMARY · [Dave 2026-05-17 LATEST] Promoted from pink-dot alt → main slot 1 ('i like this, use this as main slide one and put current main slide one as a pink dot next to it'). Sunset town/village wide-angle watercolor bg + 'Real connection → #1 predictor of a fulfilling life' headline.
-  'cs-fv6-img', //  2 Real human connection technology - moved up per Dave 2026-05-26.
+  // [Codex 2026-05-27] cs-fv6-img MOVED from slot 2 to the post-wedge product/workflow reveal after cs-wedgepb-codex per Dave screenshot request.
   // [Dave 2026-05-25] cs-hct-system moved to TRASH_ORDER per screenshot request.
   // [Dave 2026-05-17 PM] cs-givefirst-slide2 REMOVED from main flow per Dave: 'major bug' — bg image asset cs-givefirst-slide2.png was never saved to disk; slide was rendering with broken image alt text. The original cs-givefirst-art at slot 18 still carries the same content cleanly. HTML retained as silent backup; restore by re-adding this line.
   // 'cs-givefirst-slide2', // REMOVED — was duplicate at slot 2 with broken bg image
@@ -30222,7 +30257,7 @@ const SLIDE_ORDER = [
   'cs-gnr',   //  8 Introducing GnR · invitation matchmaking
   // [Dave 2026-05-26] Current post-product flow after earlier incentive-system thesis: magnetic -> wedgepb-codex -> fv6-img -> NEPC proof -> invitation mechanics.
   // [Dave 2026-05-26] cs-givefirst-art MOVED to APPENDIX per screenshot request.
-  'cs-11d','cs-magnetic','cs-wedgepb-codex','cs-11e','cs-11',
+  'cs-11d','cs-magnetic','cs-wedgepb-codex','cs-fv6-img','cs-11e','cs-11',
   // [Dave 2026-05-12 LATEST] cs-3 MOVED HERE — Dave: 'the "Pickleball is the fastest-growing, highest-velocity, densest social-signal community, ever." slide needs to follow the "No like button? No problem." slide'. cs-3 now sits right after cs-11.
   'cs-3',           // Pickleball 24 unique social experiences per week — fastest-growing, highest-velocity, densest social-signal community
   // [Dave 2026-05-24] Prior move comments were superseded by the current post-Munger block; cs-19 now follows cs-3 after the invitation-mechanics beat.
@@ -30749,7 +30784,7 @@ window.csWedgepbCodexAdvance = function() {
   const slide = document.getElementById('cs-wedgepb-codex');
   if (!slide || !slide.classList.contains('active')) return false;
   const stage = parseInt(slide.dataset.stage || '0', 10);
-  if (stage >= 5) return false;
+  if (stage >= 1) return false;
   slide.dataset.stage = String(stage + 1);
   return true;
 };
@@ -32691,6 +32726,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-1m9': 'cs1m9Advance',
     'cs-1m8-title-A': 'csM8TitleAAdvance',
     'cs-1m8-title-B': 'csM8TitleBAdvance',
+    'cs-brand-V8': 'csBrandV8Advance',
     'cs-18-vd4': 'csVd4Advance',
     'cs-1': 'cs1Advance',
     'cs-1bm1': 'cs1bm1Advance',
@@ -32737,6 +32773,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-1m9': 'cs1m9Reverse',
     'cs-1m8-title-A': 'csM8TitleAReverse',
     'cs-1m8-title-B': 'csM8TitleBReverse',
+    'cs-brand-V8': 'csBrandV8Reverse',
     'cs-1': 'cs1Reverse',
     'cs-1bm1': 'cs1bm1Reverse',
     'cs-thegap': 'csThegapReverse',
