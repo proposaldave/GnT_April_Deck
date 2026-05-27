@@ -22,6 +22,7 @@ BRANCH INVENTORY
 - Classify each as already merged, safe candidate, conflict, risky/delete/trash, likely inactive-variant edit, unrelated, broken ref, or unknown.
 - Treat completed Codex worktree sessions shown by a solid status dot in the app UI as publish candidates.
 - Do not make Dave identify completed branches manually. Resolve the likely matching deck/* branch from the session/task name, worktree list, branch name, and commit message.
+- Before reporting DONE, audit remaining checked-out deck/* worktrees and recent deck/* branches against main. If any clean safe completed-session branch remains unpublished, merge it in this publish pass; otherwise list it under SKIPPED / NEEDS REVIEW, CONFLICTS, or NOT VERIFIED with the exact reason.
 - For every branch skipped, report the branch and the reason.
 - Prefer branches whose final report or commit evidence indicates active-slide verification.
 - Skip branches that appear to edit inactive variants without active-source/render verification.

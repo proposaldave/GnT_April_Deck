@@ -145,6 +145,7 @@ NEXT:
 - Publish sessions run in Local mode on `main`, merge only verified safe `deck/*` branches, mirror `GnR_deck.html` to `index.html`, verify hashes, then push only when Dave explicitly requested publishing.
 - A completed Codex worktree session in the app UI, shown by a solid status dot, is a publish candidate. Publish control should locate the matching `deck/*` branch and publish it automatically if it merges cleanly and passes active-source checks.
 - Do not wait for Dave to identify each completed branch manually. If a completed branch is unsafe, skip it with the exact reason and next step.
+- After every publish, audit remaining checked-out `deck/*` worktrees and recent `deck/*` branches for clean completed-session candidates before reporting done. If the branch is safe, publish it in the same pass; if not, classify it as skipped, conflict, risky, or not verified.
 - Publish reports must separate `MERGED AND LIVE`, `SKIPPED / NEEDS REVIEW`, `CONFLICTS`, and `NOT VERIFIED`.
 - Dirty unrelated local work must be preserved on a `preserve/[purpose]-local-change` branch before cleaning `main`; never silently drop, stash, reset, or overwrite it.
 - Skip risky delete/trash, inactive-variant, conflict, broken-ref, and unrelated branches during broad publish passes; list every skipped branch and reason.

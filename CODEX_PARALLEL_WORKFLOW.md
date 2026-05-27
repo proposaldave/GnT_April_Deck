@@ -45,6 +45,8 @@ Publish merges only verified safe branches and reports exactly what went live.
 Completed-session rule:
 A solid status dot in the Codex app means the worktree session is done. Publish control should treat the matching `deck/*` branch as a publish candidate, not wait for Dave to name it again. Merge it if it is clean and active-source verified; otherwise skip it with the exact blocker.
 
+Before declaring a publish pass done, run a completed-session audit: compare `git worktree list --porcelain`, local `deck/*` branches, merge status, branch commit messages, and current `main`. Publish every clean safe completed candidate found in that audit, and list every skipped candidate with its blocker.
+
 Never run multiple Local edit sessions against `GnR_deck.html`.
 Never edit the old `pitch_visuals` copy during parallel work.
 Never push from parallel edit sessions.
