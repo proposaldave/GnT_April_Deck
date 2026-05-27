@@ -42,6 +42,9 @@ Publish:
 Deck Ops session -> Work locally -> main -> use publish prompt.
 Publish merges only verified safe branches and reports exactly what went live.
 
+Completed-session rule:
+A solid status dot in the Codex app means the worktree session is done. Publish control should treat the matching `deck/*` branch as a publish candidate, not wait for Dave to name it again. Merge it if it is clean and active-source verified; otherwise skip it with the exact blocker.
+
 Never run multiple Local edit sessions against `GnR_deck.html`.
 Never edit the old `pitch_visuals` copy during parallel work.
 Never push from parallel edit sessions.
