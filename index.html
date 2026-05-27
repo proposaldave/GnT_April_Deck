@@ -7562,73 +7562,23 @@ window.cs1m5Reverse = function() {
   <style>
     #cs-frontier-scale-pink .scale-paper{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,.036) 1px, transparent 0);background-size:4px 4px;opacity:.34;pointer-events:none}
     #cs-frontier-scale-pink .scale-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a}
-    #cs-frontier-scale-pink .scale-mark{position:absolute;top:28px;right:44px;z-index:5;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.04rem;font-weight:850;line-height:1}
-    #cs-frontier-scale-pink .scale-mark .g{color:#5B8FD4}#cs-frontier-scale-pink .scale-mark .n{color:#b8954a;font-style:italic}#cs-frontier-scale-pink .scale-mark .r{color:#c8462c}
     #cs-frontier-scale-pink .scale-stage{position:absolute;inset:0;color:#1a1612}
-    #cs-frontier-scale-pink .scale-head{position:absolute;left:50%;top:62px;z-index:3;transform:translateX(-50%);width:min(1410px,84vw);margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.9rem,5.25vw,6rem);font-weight:850;line-height:.95;letter-spacing:0;text-align:center;color:#1a1612}
+    #cs-frontier-scale-pink .scale-head{position:absolute;left:80px;right:80px;top:70px;z-index:3;margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.1rem,4.25vw,4.95rem);font-weight:850;line-height:1.02;letter-spacing:0;text-align:center;color:#1a1612}
+    #cs-frontier-scale-pink .scale-head span{display:block}
     #cs-frontier-scale-pink .scale-head em{font-style:italic;color:#b8954a;font-weight:850}
     #cs-frontier-scale-pink .scale-image-wrap{position:absolute;left:104px;right:104px;top:340px;height:430px;z-index:2;overflow:hidden;background:#fbf7ef;box-shadow:0 28px 78px rgba(74,53,26,.14)}
-    #cs-frontier-scale-pink .scale-image-wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(251,247,239,.08), rgba(251,247,239,.18) 49%, rgba(255,226,157,.08));pointer-events:none}
-    #cs-frontier-scale-pink .scale-image{position:absolute;inset:0;width:100%;height:100%;display:block}
-    #cs-frontier-scale-pink .scale-footer{position:absolute;left:50%;bottom:78px;z-index:3;transform:translateX(-50%);width:min(1420px,86vw);display:flex;align-items:center;justify-content:center;gap:30px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.9rem,2.28vw,2.58rem);font-weight:850;line-height:1.04;color:#1a1612;text-align:center;white-space:nowrap}
+    #cs-frontier-scale-pink .scale-image-wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(251,247,239,.08), rgba(251,247,239,0) 34%, rgba(255,226,157,.08));pointer-events:none}
+    #cs-frontier-scale-pink .scale-image{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center center}
+    #cs-frontier-scale-pink .scale-footer{position:absolute;left:160px;right:160px;bottom:82px;z-index:3;display:flex;align-items:center;justify-content:center;gap:30px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.55rem,1.86vw,2.12rem);font-weight:850;line-height:1.08;color:#1a1612;text-align:center;white-space:normal}
     #cs-frontier-scale-pink .scale-footer:before,#cs-frontier-scale-pink .scale-footer:after{content:"";display:block;flex:1;max-width:250px;height:1px;background:linear-gradient(90deg, transparent, rgba(184,149,74,.42))}
     #cs-frontier-scale-pink .scale-footer:after{background:linear-gradient(90deg, rgba(184,149,74,.42), transparent)}
   </style>
   <div class="scale-paper"></div>
   <div class="scale-eye">NEUROSCIENCE &bull; LONGITUDINAL &bull; PUBLIC HEALTH &bull; EPIDEMOLOGY</div>
-  <div class="scale-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
   <section class="scale-stage">
-    <h1 class="scale-head">The <em>#1 predictor</em> of a fulfilling life is still invisible to technology.</h1>
+    <h1 class="scale-head"><span>The <em>#1 predictor</em> of a fulfilling life</span><span>is still invisible to technology.</span></h1>
     <div class="scale-image-wrap" aria-label="Technology metrics balanced against real human connection">
-      <svg class="scale-image" viewBox="0 0 1269 379" role="img" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
-        <defs>
-          <radialGradient id="scaleGlow" cx="74%" cy="46%" r="34%"><stop offset="0" stop-color="#ffd986" stop-opacity=".78"/><stop offset=".48" stop-color="#f8d894" stop-opacity=".25"/><stop offset="1" stop-color="#fbf7ef" stop-opacity="0"/></radialGradient>
-          <linearGradient id="panShade" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff8e8" stop-opacity=".88"/><stop offset=".5" stop-color="#b8954a" stop-opacity=".16"/><stop offset="1" stop-color="#4c3a22" stop-opacity=".70"/></linearGradient>
-          <linearGradient id="cardShade" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2a2825"/><stop offset="1" stop-color="#11100e"/></linearGradient>
-          <filter id="softShadow" x="-25%" y="-35%" width="150%" height="170%"><feDropShadow dx="0" dy="16" stdDeviation="12" flood-color="#1a1612" flood-opacity=".18"/></filter>
-          <filter id="warmBlur"><feGaussianBlur stdDeviation="16"/></filter>
-        </defs>
-        <rect width="1269" height="379" fill="#fbf7ef"/>
-        <rect width="1269" height="379" fill="url(#scaleGlow)"/>
-        <ellipse cx="278" cy="263" rx="276" ry="42" fill="#b8954a" opacity=".12"/>
-        <ellipse cx="278" cy="279" rx="276" ry="54" fill="url(#panShade)"/>
-        <ellipse cx="974" cy="260" rx="242" ry="44" fill="#b8954a" opacity=".13"/>
-        <ellipse cx="974" cy="278" rx="242" ry="54" fill="url(#panShade)"/>
-        <path d="M304 248 C454 245 529 244 634 245 C745 246 820 245 966 244" fill="none" stroke="#7d642e" stroke-width="7" stroke-linecap="round" opacity=".62"/>
-        <path d="M637 239 L684 350 H590 Z" fill="#6d532f" opacity=".78" filter="url(#softShadow)"/>
-        <circle cx="637" cy="239" r="28" fill="#b8954a" filter="url(#softShadow)"/>
-        <circle cx="637" cy="239" r="11" fill="#ffe28c"/>
-        <g filter="url(#softShadow)">
-          <rect x="78" y="82" width="118" height="74" rx="13" fill="url(#cardShade)"/>
-          <rect x="193" y="16" width="126" height="96" rx="14" fill="url(#cardShade)"/>
-          <rect x="330" y="90" width="116" height="90" rx="13" fill="url(#cardShade)"/>
-          <rect x="230" y="160" width="166" height="92" rx="13" fill="url(#cardShade)"/>
-          <rect x="118" y="139" width="188" height="114" rx="12" fill="#171614"/>
-        </g>
-        <g font-family="Manrope, Arial, sans-serif" text-anchor="middle" fill="#fbf7ef">
-          <text x="137" y="122" font-size="22" font-weight="800">2.1K</text><text x="137" y="141" font-size="9" font-weight="800" letter-spacing="1.7" opacity=".62">LIKES</text>
-          <text x="256" y="58" font-size="23" font-weight="800">12,845</text><text x="256" y="80" font-size="9" font-weight="800" letter-spacing="1.4" opacity=".62">FOLLOWERS</text>
-          <text x="388" y="129" font-size="22" font-weight="800">87%</text><text x="388" y="150" font-size="9" font-weight="800" letter-spacing="1.4" opacity=".62">PRODUCTIVITY</text>
-          <text x="313" y="198" font-size="21" font-weight="800">6h 42m</text><text x="313" y="220" font-size="9" font-weight="800" letter-spacing="1.4" opacity=".62">SCREEN TIME</text>
-        </g>
-        <g transform="translate(138 166)">
-          <path d="M16 66H174" stroke="#fbf7ef" stroke-opacity=".17"/>
-          <rect x="24" y="52" width="18" height="14" fill="#5B8FD4" opacity=".66"/>
-          <rect x="61" y="42" width="18" height="24" fill="#5B8FD4" opacity=".66"/>
-          <rect x="98" y="32" width="18" height="34" fill="#5B8FD4" opacity=".66"/>
-          <path d="M18 57L55 47L92 54L132 31L168 42" fill="none" stroke="#b8954a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        </g>
-        <g fill="#4f3b22" opacity=".92" filter="url(#softShadow)">
-          <circle cx="842" cy="146" r="24"/><rect x="816" y="170" width="52" height="92" rx="25"/>
-          <circle cx="930" cy="166" r="26"/><rect x="904" y="192" width="52" height="84" rx="24"/>
-          <circle cx="1016" cy="145" r="25"/><rect x="990" y="170" width="52" height="94" rx="24"/>
-          <circle cx="1100" cy="178" r="24"/><rect x="1076" y="202" width="49" height="74" rx="22"/>
-          <circle cx="1182" cy="156" r="25"/><rect x="1156" y="181" width="52" height="86" rx="23"/>
-        </g>
-        <g fill="#c8943d" opacity=".38"><circle cx="930" cy="166" r="26"/><rect x="904" y="192" width="52" height="84" rx="24"/><circle cx="1016" cy="145" r="25"/></g>
-        <rect x="990" y="170" width="52" height="94" rx="24" fill="#b8954a" opacity=".25"/>
-        <g filter="url(#warmBlur)" opacity=".54"><circle cx="999" cy="128" r="96" fill="#ffd986"/></g>
-      </svg>
+      <img class="scale-image" src="assets/cs-frontier-scale-pink.png" alt="Technology metrics balanced against real human connection">
     </div>
     <div class="scale-footer">What we're most wired for isn't measured</div>
   </section>
