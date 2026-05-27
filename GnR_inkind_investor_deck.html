@@ -241,7 +241,7 @@
 <nav class="nav" id="nav"></nav>
 <div class="count" id="count"></div>
 
-<main id="deck">
+<main>
   <section class="slide active" data-slot="1"><div class="canvas">
     <div class="visual cover">
       <img src="assets/inkind/visuals/court_credit_offer.png" alt="">
@@ -278,6 +278,21 @@
       </div>
       <div class="compare-arrow">&rarr;</div>
       <div class="compare-signal"><div class="visual-chip blue">Capital</div><div class="visual-chip">Capacity</div><div class="visual-chip red">Curated group</div></div>
+    </div>
+  </div></section>
+
+  <section class="slide" data-slot="4"><div class="canvas">
+    <div class="operator-slide">
+      <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="eyebrow">inKind operator wedge</div>
+      <div class="operator-title"><span class="gold">Cash now</span> for capacity that would expire anyway.</div>
+      <div class="operator-sub">The club owner does not need to buy software first. They sell controlled dead-zone inventory, get guaranteed revenue, and let GnR take demand risk.</div>
+      <div class="operator-stack">
+        <div class="operator-card"><div class="operator-num">1</div><h3>Pre-buy off-peak court inventory</h3><p>Club defines the windows. No peak-time displacement. No member cannibalization.</p></div>
+        <div class="operator-card blue"><div class="operator-num">2</div><h3>Require the data needed to invite</h3><p>Availability, levels, preferences, attendance, history, and response behavior become the input layer.</p></div>
+        <div class="operator-card red"><div class="operator-num">3</div><h3>Fill courts with curated groups</h3><p>Players are not buying cheap slots. They are saying yes to people, timing, and social fit.</p></div>
+      </div>
+      <div class="operator-dollar"><strong>$10K</strong><span>trial capital<br>off-peak only</span></div>
     </div>
   </div></section>
 
@@ -402,26 +417,9 @@
 
 </main>
 
-<div class="trash-bin" id="trash-bin" hidden>
-  <section class="slide trash-slide" data-trash-title="inKind operator wedge"><div class="canvas">
-    <div class="operator-slide">
-      <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
-      <div class="eyebrow">inKind operator wedge</div>
-      <div class="operator-title"><span class="gold">Cash now</span> for capacity that would expire anyway.</div>
-      <div class="operator-sub">The club owner does not need to buy software first. They sell controlled dead-zone inventory, get guaranteed revenue, and let GnR take demand risk.</div>
-      <div class="operator-stack">
-        <div class="operator-card"><div class="operator-num">1</div><h3>Pre-buy off-peak court inventory</h3><p>Club defines the windows. No peak-time displacement. No member cannibalization.</p></div>
-        <div class="operator-card blue"><div class="operator-num">2</div><h3>Require the data needed to invite</h3><p>Availability, levels, preferences, attendance, history, and response behavior become the input layer.</p></div>
-        <div class="operator-card red"><div class="operator-num">3</div><h3>Fill courts with curated groups</h3><p>Players are not buying cheap slots. They are saying yes to people, timing, and social fit.</p></div>
-      </div>
-      <div class="operator-dollar"><strong>$10K</strong><span>trial capital<br>off-peak only</span></div>
-    </div>
-  </div></section>
-</div>
-
 <script>
-const deck=document.getElementById('deck'),trashBin=document.getElementById('trash-bin'),nav=document.getElementById('nav'),count=document.getElementById('count'),progress=document.getElementById('progress');
-const mainSlides=[...deck.querySelectorAll(':scope > .slide')].filter(s=>!s.dataset.altFor),trashSlides=[...trashBin.querySelectorAll('.trash-slide')],allSlides=[...deck.querySelectorAll('.slide'),...trashSlides],altsBySlot=new Map();let currentSlot=0,currentAlt=-1,currentTrash=-1;
+const allSlides=[...document.querySelectorAll('.slide')],nav=document.getElementById('nav'),count=document.getElementById('count'),progress=document.getElementById('progress');
+const mainSlides=allSlides.filter(s=>!s.dataset.altFor),altsBySlot=new Map();let currentSlot=0,currentAlt=-1;
 allSlides.filter(s=>s.dataset.altFor).forEach(s=>{const slot=Number(s.dataset.altFor)-1;if(!altsBySlot.has(slot))altsBySlot.set(slot,[]);altsBySlot.get(slot).push(s)});
 const rows=[];
 mainSlides.forEach((_,i)=>{
@@ -431,13 +429,6 @@ mainSlides.forEach((_,i)=>{
   row.append(main);nav.appendChild(row);rows.push({row,main});
 });
 function updateNav(){
-  if(currentTrash>=0){
-    rows.forEach(r=>{r.main.classList.remove('on');r.main.setAttribute('aria-current','false')});
-    count.textContent=`Trash ${currentTrash+1} / ${trashSlides.length}`;
-    progress.style.width='100%';
-    location.hash=currentTrash===0?'#trash':`#trash-${currentTrash+1}`;
-    return;
-  }
   const activeSlide=document.querySelector('.slide.active');
   const activeIndex=mainSlides.indexOf(activeSlide);
   if(activeIndex>=0){currentSlot=activeIndex;currentAlt=-1}
@@ -451,9 +442,8 @@ function updateNav(){
   location.hash=`#${currentSlot+1}`;
 }
 function activate(slide){allSlides.forEach(s=>s.classList.toggle('active',s===slide));const frame=slide.querySelector('.source-frame');if(frame&&frame.contentDocument?.readyState==='complete')initSourceFrame(frame);updateNav()}
-function showMain(i){currentTrash=-1;trashBin.hidden=true;deck.hidden=false;currentSlot=Math.max(0,Math.min(mainSlides.length-1,i));currentAlt=-1;activate(mainSlides[currentSlot])}
+function showMain(i){currentSlot=Math.max(0,Math.min(mainSlides.length-1,i));currentAlt=-1;activate(mainSlides[currentSlot])}
 function showAlt(slot,i){const alts=altsBySlot.get(slot)||[];if(!alts.length)return false;currentSlot=slot;currentAlt=Math.max(0,Math.min(alts.length-1,i));activate(alts[currentAlt]);return true}
-function showTrash(i=0){if(!trashSlides.length)return false;deck.hidden=true;trashBin.hidden=false;currentTrash=Math.max(0,Math.min(trashSlides.length-1,i));activate(trashSlides[currentTrash]);return true}
 function sourceStep(dir){
   const slide=currentAlt>=0?(altsBySlot.get(currentSlot)||[])[currentAlt]:mainSlides[currentSlot];
   const frame=slide?.querySelector('.source-frame');
@@ -473,7 +463,6 @@ function horizontal(dir){
   return false;
 }
 document.addEventListener('keydown',e=>{
-  if(['t','T'].includes(e.key)){e.preventDefault();currentTrash>=0?showMain(currentSlot):showTrash(0);return}
   if(['ArrowLeft'].includes(e.key)){e.preventDefault();horizontal(-1);return}
   if(['ArrowRight'].includes(e.key)){e.preventDefault();horizontal(1);return}
   if(['ArrowDown',' ','d','D','PageDown'].includes(e.key)){e.preventDefault();next();return}
@@ -619,18 +608,13 @@ function removeCascadeBox(doc){
 }
 document.querySelectorAll('.source-frame').forEach(frame=>frame.addEventListener('load',()=>initSourceFrame(frame)));
 let x=0;document.addEventListener('touchstart',e=>x=e.changedTouches[0].clientX,{passive:true});document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-x;if(Math.abs(dx)>48)(dx<0?next:prev)()},{passive:true});
-new MutationObserver(()=>updateNav()).observe(deck,{subtree:true,childList:false,attributes:true,attributeFilter:['class']});
+new MutationObserver(()=>updateNav()).observe(document.getElementById('deck'),{subtree:true,childList:false,attributes:true,attributeFilter:['class']});
 window.addEventListener('hashchange',()=>{
-  const hash=location.hash.replace('#','');
-  if(/^trash(?:-\d+)?$/i.test(hash)){const n=parseInt(hash.replace(/^trash-?/i,''),10);showTrash(Number.isFinite(n)?n-1:0);return}
-  const n=parseInt(hash,10);
+  const n=parseInt(location.hash.replace('#',''),10);
   if(Number.isFinite(n)&&n>=1&&n<=mainSlides.length&&n-1!==currentSlot)showMain(n-1);
 });
 const hash=location.hash.replace('#',''),slotNum=parseInt(hash,10);
-if(/^trash(?:-\d+)?$/i.test(hash)){
-  const n=parseInt(hash.replace(/^trash-?/i,''),10);
-  showTrash(Number.isFinite(n)?n-1:0);
-}else if(Number.isFinite(slotNum)&&/v$/i.test(hash)){
+if(Number.isFinite(slotNum)&&/v$/i.test(hash)){
   if(!showAlt(slotNum-1,0))showMain(slotNum-1);
 }else{
   showMain(Number.isFinite(slotNum)?slotNum-1:0);
