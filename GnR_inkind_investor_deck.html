@@ -13,6 +13,7 @@
   body{display:grid;place-items:center}
   .progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),var(--gold),var(--red));z-index:50;transition:width .25s ease}
   .nav{position:fixed;top:50%;left:24px;transform:translateY(-50%);z-index:60;display:flex;flex-direction:column;gap:7px;padding:10px 9px;border-radius:12px;background:rgba(26,22,18,.10);border:1px solid rgba(26,22,18,.10);backdrop-filter:blur(8px)}
+  .nav-row{position:relative;display:grid;grid-template-columns:8px;align-items:center;min-height:8px}
   .dot{width:8px;height:8px;border-radius:50%;border:0;background:rgba(26,22,18,.28);cursor:pointer;transition:all .18s ease}
   .dot.on{height:18px;border-radius:5px;background:var(--gold);box-shadow:0 0 12px rgba(184,149,74,.70)}
   .count{position:fixed;right:32px;bottom:24px;z-index:55;font-size:.62rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,.50)}
@@ -20,6 +21,7 @@
   .slide.active{display:grid}
   .canvas{position:relative;width:min(100vw,177.7778vh);height:min(100vh,56.25vw);overflow:hidden;background:#f3ead8;box-shadow:0 0 0 1px rgba(26,22,18,.04)}
   .source-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .source-frame{position:absolute;inset:0;width:100%;height:100%;border:0;background:#f3ead8;display:block}
   .inkind-slide{position:absolute;inset:0;background:#f3ead8;background-image:radial-gradient(rgba(184,149,74,.12) .8px,transparent .8px);background-size:8px 8px;padding:54px 72px;display:flex;flex-direction:column}
   .eyebrow{position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
   .brand{position:absolute;top:18px;right:28px;font-family:'Fraunces',Georgia,serif;font-size:1rem;font-weight:850;letter-spacing:-.04em}
@@ -82,6 +84,7 @@
   .visual.right .visual-copy{left:auto;right:72px;width:760px}
   .visual.center .visual-copy{left:50%;top:50%;transform:translate(-50%,-50%);width:1040px;text-align:center}
   .visual-copy .eyebrow{position:static;margin-bottom:28px}
+  .visual .eyebrow.corner{position:absolute;top:28px;left:48px;z-index:3;margin:0}
   .visual-title{font-family:'Fraunces',Georgia,serif;font-size:6.25rem;line-height:.90;font-weight:850;letter-spacing:0;color:var(--ink)}
   .visual-title .red{color:var(--red)}.visual-title .gold{color:var(--gold);font-style:italic}.visual-title .blue{color:var(--blue)}
   .visual-sub{font-family:'Fraunces',Georgia,serif;font-size:1.8rem;line-height:1.18;font-weight:750;color:rgba(26,22,18,.72);margin-top:26px;max-width:760px}
@@ -90,6 +93,63 @@
   .visual.right .visual-proof{left:auto;right:72px}
   .visual-chip{border:1.5px solid rgba(184,149,74,.38);background:rgba(251,247,239,.74);border-radius:999px;padding:12px 18px;font-size:.74rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,22,18,.68)}
   .visual-chip.red{border-color:rgba(200,70,44,.42);color:var(--red)}.visual-chip.blue{border-color:rgba(91,143,212,.42);color:var(--blue)}
+  .inkind-badge{display:inline-flex;align-items:center;gap:14px;width:max-content;margin:0 0 24px;padding:9px 16px 9px 12px;border-radius:10px;background:rgba(26,22,18,.86);box-shadow:0 12px 32px rgba(26,22,18,.12)}
+  .inkind-badge img{position:static;width:58px;height:40px;object-fit:contain}
+  .inkind-badge span{font-size:.64rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:rgba(243,234,216,.86)}
+  .compare-clean{position:absolute;inset:0;background:#f3ead8;overflow:hidden}
+  .compare-clean>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.96) contrast(1.02)}
+  .compare-clean:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(243,234,216,.96) 0%,rgba(243,234,216,.88) 36%,rgba(243,234,216,.44) 65%,rgba(243,234,216,.14) 100%)}
+  .compare-clean .brand,.compare-clean .eyebrow,.compare-title,.compare-sub,.compare-panels,.compare-arrow,.compare-signal{z-index:2}
+  .compare-clean .eyebrow{color:var(--gold)}
+  .compare-title{position:absolute;left:112px;top:204px;width:805px;font-family:'Fraunces',Georgia,serif;font-size:5.25rem;line-height:.92;font-weight:850;letter-spacing:0;color:var(--ink)}
+  .compare-title .red{color:var(--red)}.compare-title .blue{color:var(--blue)}.compare-title .gold{color:var(--gold);font-style:italic}
+  .compare-sub{position:absolute;left:112px;top:672px;width:720px;font-size:1.52rem;line-height:1.28;font-weight:850;color:rgba(26,22,18,.62)}
+  .compare-panels{position:absolute;right:104px;top:214px;width:665px;display:grid;gap:22px}
+  .compare-panel{border:1.5px solid rgba(184,149,74,.38);background:rgba(251,247,239,.76);border-radius:10px;padding:28px 32px;box-shadow:0 16px 40px rgba(26,22,18,.08);backdrop-filter:blur(5px)}
+  .compare-panel.red{border-color:rgba(200,70,44,.42);background:rgba(200,70,44,.055)}
+  .compare-label{font-size:.66rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  .compare-panel.red .compare-label{color:var(--red)}
+  .compare-line{font-family:'Fraunces',Georgia,serif;font-size:2.9rem;line-height:1.02;font-weight:850;color:var(--ink)}
+  .compare-caption{font-size:1.03rem;line-height:1.3;font-weight:800;color:rgba(26,22,18,.58);margin-top:12px}
+  .compare-arrow{position:absolute;left:850px;top:454px;font-family:'Fraunces',Georgia,serif;font-size:5.8rem;line-height:1;color:rgba(184,149,74,.82);text-shadow:0 2px 10px rgba(251,247,239,.88)}
+  .compare-signal{position:absolute;left:112px;bottom:62px;display:flex;gap:14px}
+  .measure-slide{position:absolute;inset:0;background:#f3ead8;background-image:radial-gradient(rgba(184,149,74,.14) .8px,transparent .8px);background-size:8px 8px}
+  .measure-title{position:absolute;left:104px;top:178px;width:900px;font-family:'Fraunces',Georgia,serif;font-size:5.35rem;line-height:.94;font-weight:850;letter-spacing:0;color:var(--ink)}
+  .measure-title .gold{color:var(--gold);font-style:italic}.measure-title .blue{color:var(--blue)}
+  .measure-copy{position:absolute;left:108px;top:610px;width:720px;font-size:1.35rem;line-height:1.32;font-weight:850;color:rgba(26,22,18,.62)}
+  .measure-network{position:absolute;right:118px;top:188px;width:760px;height:570px;border:1.5px solid rgba(184,149,74,.32);border-radius:10px;background:rgba(251,247,239,.54);box-shadow:0 18px 46px rgba(26,22,18,.045);overflow:hidden}
+  .measure-network:before{content:"";position:absolute;inset:78px;border-radius:50%;border:1px dashed rgba(184,149,74,.24)}
+  .measure-network:after{content:"";position:absolute;left:50%;top:50%;width:300px;height:300px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(184,149,74,.12),rgba(184,149,74,0) 70%)}
+  .m-line{position:absolute;height:2px;background:rgba(184,149,74,.50);transform-origin:left center;z-index:1}
+  .m-line.blue{background:rgba(91,143,212,.52)}.m-line.red{background:rgba(200,70,44,.50)}
+  .m-node{position:absolute;z-index:2;display:grid;place-items:center;width:116px;height:116px;border-radius:50%;border:2px solid rgba(184,149,74,.72);background:rgba(251,247,239,.92);font-size:.78rem;font-weight:900;letter-spacing:.10em;text-transform:uppercase;color:rgba(26,22,18,.72);box-shadow:0 12px 32px rgba(26,22,18,.08)}
+  .m-node.blue{border-color:rgba(91,143,212,.78);color:var(--blue)}.m-node.red{border-color:rgba(200,70,44,.78);color:var(--red)}
+  .m-node.center{left:318px;top:220px;width:132px;height:132px;font-family:'Fraunces',Georgia,serif;font-size:2.2rem;letter-spacing:-.04em;text-transform:none;color:var(--ink);border-color:rgba(184,149,74,.90)}
+  .m-node.center .g{color:var(--blue)}.m-node.center .n{color:var(--gold);font-style:italic}.m-node.center .r{color:var(--red)}
+  .measure-footer{position:absolute;left:104px;right:104px;bottom:48px;border-top:1px solid rgba(184,149,74,.34);padding-top:18px;display:flex;justify-content:space-between;gap:36px;font-size:.68rem;font-weight:900;letter-spacing:.20em;text-transform:uppercase;color:rgba(26,22,18,.52)}
+  .offer-slide{position:absolute;inset:0;overflow:hidden;background:#f3ead8}
+  .offer-slide>img,.lab-slide>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .offer-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(243,234,216,.95) 0%,rgba(243,234,216,.82) 30%,rgba(243,234,216,.32) 57%,rgba(243,234,216,0) 100%)}
+  .offer-title{position:absolute;z-index:2;left:72px;top:112px;width:870px;font-family:'Fraunces',Georgia,serif;font-size:6.55rem;line-height:.88;font-weight:850;color:var(--ink)}
+  .offer-title .red{color:var(--red)}.offer-title .gold{color:var(--gold);font-style:italic}
+  .offer-sub{position:absolute;z-index:2;left:76px;top:600px;width:760px;font-family:'Fraunces',Georgia,serif;font-size:1.82rem;line-height:1.15;font-weight:750;color:rgba(26,22,18,.72)}
+  .offer-chip-row{position:absolute;z-index:2;left:76px;bottom:64px;display:flex;gap:14px}
+  .offer-mechanic{position:absolute;z-index:2;right:78px;bottom:58px;width:640px;display:flex;justify-content:flex-end;gap:14px}
+  .offer-token{min-width:170px;padding:15px 18px;border:1.5px solid rgba(184,149,74,.44);border-radius:999px;background:rgba(251,247,239,.76);font-size:.72rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:rgba(26,22,18,.68);box-shadow:0 14px 30px rgba(26,22,18,.08)}
+  .offer-token.blue{border-color:rgba(91,143,212,.48);color:var(--blue)}.offer-token.red{border-color:rgba(200,70,44,.48);color:var(--red)}
+  .lab-slide{position:absolute;inset:0;overflow:hidden;background:#f3ead8}
+  .lab-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(243,234,216,.96) 0%,rgba(243,234,216,.86) 38%,rgba(243,234,216,.38) 68%,rgba(243,234,216,0) 100%)}
+  .lab-title{position:absolute;z-index:2;left:72px;top:116px;width:1040px;font-family:'Fraunces',Georgia,serif;font-size:6.1rem;line-height:.89;font-weight:850;color:var(--ink)}
+  .lab-title .blue{color:var(--blue)}.lab-title .red{color:var(--red)}.lab-title .gold{color:var(--gold);font-style:italic}
+  .lab-sub{position:absolute;z-index:2;left:76px;top:642px;width:900px;font-family:'Fraunces',Georgia,serif;font-size:1.62rem;line-height:1.17;font-weight:750;color:rgba(26,22,18,.72)}
+  .lab-token-row{position:absolute;z-index:2;left:76px;bottom:58px;display:flex;gap:14px}
+  .lab-token{padding:13px 18px;border:1.5px solid rgba(184,149,74,.42);border-radius:999px;background:rgba(251,247,239,.72);font-size:.72rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:rgba(26,22,18,.68)}
+  .lab-token.blue{border-color:rgba(91,143,212,.44);color:var(--blue)}.lab-token.red{border-color:rgba(200,70,44,.44);color:var(--red)}
+  .dupr-stamp{position:absolute;z-index:2;right:108px;top:102px;width:250px;height:250px;border:1.6px solid rgba(200,70,44,.48);border-radius:50%;display:grid;place-items:center;text-align:center;background:rgba(251,247,239,.58);box-shadow:0 18px 48px rgba(26,22,18,.08);transform:rotate(-7deg)}
+  .dupr-stamp strong{font-family:'Fraunces',Georgia,serif;font-size:2.45rem;line-height:.92;font-weight:850;color:var(--red)}
+  .dupr-stamp span{display:block;margin-top:9px;font-size:.62rem;line-height:1.25;font-weight:900;letter-spacing:.20em;text-transform:uppercase;color:rgba(26,22,18,.52)}
+  .nepc-logo-card{position:absolute;z-index:2;right:126px;bottom:126px;width:260px;height:260px;border:1.6px solid rgba(91,143,212,.42);border-radius:18px;background:rgba(251,247,239,.70);display:grid;place-items:center;box-shadow:0 18px 48px rgba(26,22,18,.08);backdrop-filter:blur(4px)}
+  .nepc-logo-card img{position:static!important;width:182px!important;height:auto!important;object-fit:contain!important}
   .cover:after{background:linear-gradient(90deg,rgba(243,234,216,.94) 0%,rgba(243,234,216,.78) 34%,rgba(243,234,216,.14) 68%,rgba(243,234,216,0) 100%)}
   .cover .visual-copy{top:88px;width:980px}
   .cover-title{font-family:'Fraunces',Georgia,serif;font-size:7.7rem;line-height:.86;font-weight:850;letter-spacing:0;color:var(--ink)}
@@ -99,6 +159,81 @@
   .cover-contact .name{font-family:'Fraunces',Georgia,serif;font-size:2rem;font-weight:850;color:var(--ink)}
   .cover-contact .details{display:flex;gap:18px;flex-wrap:wrap}
   .cover-contact a{color:inherit;text-decoration:none}
+  .inkind-frame{position:absolute;inset:0;overflow:hidden;background:#f3ead8;background-image:radial-gradient(rgba(184,149,74,.13) .8px,transparent .8px);background-size:8px 8px}
+  .inkind-frame:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 48%,rgba(91,143,212,.14) 0%,rgba(91,143,212,0) 34%),linear-gradient(90deg,rgba(251,247,239,.76) 0%,rgba(251,247,239,.34) 58%,rgba(251,247,239,.92) 100%)}
+  .ik-logo{position:absolute;z-index:2;left:72px;top:78px;width:132px;height:auto}
+  .ik-title{position:absolute;z-index:2;left:72px;top:185px;width:840px;font-family:'Fraunces',Georgia,serif;font-size:6.1rem;line-height:.9;font-weight:850;color:var(--ink)}
+  .ik-title .gold{color:var(--gold);font-style:italic}.ik-title .red{color:var(--red)}.ik-title .blue{color:var(--blue)}
+  .ik-sub{position:absolute;z-index:2;left:76px;top:574px;width:835px;font-family:'Fraunces',Georgia,serif;font-size:1.78rem;line-height:1.17;font-weight:750;color:rgba(26,22,18,.72)}
+  .ik-map{position:absolute;z-index:2;right:78px;top:154px;width:690px;display:grid;gap:18px}
+  .ik-row{display:grid;grid-template-columns:170px 1fr;gap:16px;align-items:stretch}
+  .ik-tag{display:grid;place-items:center;border:1.5px solid rgba(184,149,74,.42);border-radius:10px;background:rgba(251,247,239,.76);font-size:.7rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+  .ik-box{border:1.5px solid rgba(184,149,74,.34);border-radius:10px;background:rgba(251,247,239,.70);padding:20px 22px;box-shadow:0 14px 34px rgba(26,22,18,.055)}
+  .ik-box h3{font-size:1.22rem;line-height:1.15;font-weight:900;color:var(--ink);margin-bottom:6px}
+  .ik-box p{font-size:.96rem;line-height:1.3;font-weight:780;color:rgba(26,22,18,.58)}
+  .ik-row.gnr .ik-tag{border-color:rgba(200,70,44,.42);color:var(--red);background:rgba(200,70,44,.055)}
+  .ik-row.gnr .ik-box{border-color:rgba(200,70,44,.36);background:rgba(200,70,44,.045)}
+  .ik-proof{position:absolute;z-index:2;left:76px;bottom:58px;display:flex;gap:14px}
+  .ik-loop{position:absolute;z-index:2;right:86px;bottom:72px;width:610px;height:210px}
+  .ik-loop:before{content:"";position:absolute;inset:8px 38px;border:2px dashed rgba(184,149,74,.48);border-radius:999px}
+  .loop-node{position:absolute;width:132px;height:132px;border-radius:50%;display:grid;place-items:center;text-align:center;border:2px solid rgba(184,149,74,.54);background:rgba(251,247,239,.86);font-size:.7rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase;color:rgba(26,22,18,.62);box-shadow:0 14px 34px rgba(26,22,18,.06)}
+  .loop-node.blue{border-color:rgba(91,143,212,.58);color:var(--blue)}.loop-node.red{border-color:rgba(200,70,44,.58);color:var(--red)}.loop-node.gold{color:var(--gold)}
+  .operator-slide{position:absolute;inset:0;overflow:hidden;background:#f3ead8;background-image:radial-gradient(rgba(184,149,74,.13) .8px,transparent .8px);background-size:8px 8px}
+  .operator-slide:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,247,239,.96) 0%,rgba(251,247,239,.74) 43%,rgba(251,247,239,.24) 70%,rgba(251,247,239,.88) 100%)}
+  .operator-title{position:absolute;z-index:2;left:72px;top:110px;width:1050px;font-family:'Fraunces',Georgia,serif;font-size:6.35rem;line-height:.88;font-weight:850;color:var(--ink)}
+  .operator-title .red{color:var(--red)}.operator-title .gold{color:var(--gold);font-style:italic}.operator-title .blue{color:var(--blue)}
+  .operator-sub{position:absolute;z-index:2;left:78px;top:548px;width:780px;font-family:'Fraunces',Georgia,serif;font-size:1.75rem;line-height:1.16;font-weight:750;color:rgba(26,22,18,.70)}
+  .operator-stack{position:absolute;z-index:2;right:82px;top:118px;width:620px;display:grid;gap:18px}
+  .operator-card{position:relative;border:1.6px solid rgba(184,149,74,.42);border-radius:12px;background:rgba(251,247,239,.75);padding:24px 26px 24px 92px;box-shadow:0 16px 38px rgba(26,22,18,.07)}
+  .operator-card.red{border-color:rgba(200,70,44,.42);background:rgba(200,70,44,.055)}.operator-card.blue{border-color:rgba(91,143,212,.45);background:rgba(91,143,212,.065)}
+  .operator-num{position:absolute;left:24px;top:24px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#fff;font-weight:900}
+  .operator-card.red .operator-num{background:var(--red)}.operator-card.blue .operator-num{background:var(--blue)}
+  .operator-card h3{font-size:1.25rem;line-height:1.12;font-weight:900;color:var(--ink);margin-bottom:7px}
+  .operator-card p{font-size:.98rem;line-height:1.3;font-weight:780;color:rgba(26,22,18,.60)}
+  .operator-dollar{position:absolute;z-index:2;left:76px;bottom:68px;display:flex;align-items:center;gap:16px}
+  .operator-dollar strong{font-family:'Fraunces',Georgia,serif;font-size:4.9rem;line-height:.88;color:var(--red)}
+  .operator-dollar span{font-size:.78rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,.55)}
+  .lab-bridge{position:absolute;inset:0;overflow:hidden;background:#f3ead8}
+  .lab-bridge img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .lab-bridge:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(243,234,216,.96) 0%,rgba(243,234,216,.88) 34%,rgba(243,234,216,.40) 68%,rgba(243,234,216,.08) 100%)}
+  .lab-bridge-title{position:absolute;z-index:2;left:72px;top:104px;width:1040px;font-family:'Fraunces',Georgia,serif;font-size:6rem;line-height:.89;font-weight:850;color:var(--ink)}
+  .lab-bridge-title .gold{color:var(--gold);font-style:italic}.lab-bridge-title .red{color:var(--red)}
+  .lab-bridge-sub{position:absolute;z-index:2;left:76px;top:578px;width:830px;font-family:'Fraunces',Georgia,serif;font-size:1.72rem;line-height:1.17;font-weight:750;color:rgba(26,22,18,.70)}
+  .lab-bridge-proof{position:absolute;z-index:2;left:76px;bottom:58px;display:flex;gap:14px}
+  .pull-slide{position:absolute;inset:0;overflow:hidden;background:#f3ead8}
+  .pull-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .pull-slide:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 58% 48%,rgba(251,247,239,.12) 0%,rgba(251,247,239,.70) 48%,rgba(251,247,239,.95) 100%)}
+  .pull-title{position:absolute;z-index:2;left:72px;top:104px;width:1020px;font-family:'Fraunces',Georgia,serif;font-size:6.1rem;line-height:.89;font-weight:850;color:var(--ink)}
+  .pull-title .blue{color:var(--blue)}.pull-title .gold{color:var(--gold);font-style:italic}.pull-title .red{color:var(--red)}
+  .pull-sub{position:absolute;z-index:2;left:76px;top:610px;width:830px;font-family:'Fraunces',Georgia,serif;font-size:1.72rem;line-height:1.17;font-weight:750;color:rgba(26,22,18,.70)}
+  .pull-flow{position:absolute;z-index:2;right:74px;top:150px;width:610px;height:585px}
+  .pull-bubble{position:absolute;width:168px;height:168px;border-radius:50%;display:grid;place-items:center;text-align:center;border:2px solid rgba(184,149,74,.58);background:rgba(251,247,239,.78);font-size:.76rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,22,18,.62);box-shadow:0 18px 45px rgba(26,22,18,.10)}
+  .pull-bubble.red{border-color:rgba(200,70,44,.60);color:var(--red)}.pull-bubble.blue{border-color:rgba(91,143,212,.62);color:var(--blue)}.pull-bubble.gold{color:var(--gold)}
+  .pull-line{position:absolute;height:2px;background:linear-gradient(90deg,rgba(184,149,74,.05),rgba(184,149,74,.70),rgba(91,143,212,.10));transform-origin:left center}
+  .how-slide{position:absolute;inset:0;overflow:hidden;background:radial-gradient(circle at 52% 46%,rgba(184,149,74,.32) 0%,rgba(184,149,74,.10) 18%,rgba(91,143,212,.13) 34%,rgba(26,22,18,.96) 72%,#120f0c 100%);color:#fbf7ef}
+  .how-slide:before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(251,247,239,.12) .8px,transparent .8px),radial-gradient(rgba(184,149,74,.22) 1px,transparent 1px);background-size:9px 9px,52px 52px;opacity:.34}
+  .how-slide:after{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 50% 48%,rgba(200,70,44,.18),transparent 24%),radial-gradient(circle at 68% 42%,rgba(91,143,212,.22),transparent 28%);filter:blur(18px)}
+  .how-slide .brand{color:#fbf7ef;z-index:4}.how-slide .eyebrow{color:var(--gold);z-index:4}
+  .how-head{position:absolute;z-index:4;left:72px;top:76px;width:1180px}
+  .how-title{font-family:'Fraunces',Georgia,serif;font-size:4.9rem;line-height:.92;font-weight:850;color:#fbf7ef;letter-spacing:0}
+  .how-title .gold{color:var(--gold);font-style:italic}.how-title .blue{color:var(--blue)}
+  .how-sub{margin-top:18px;font-size:1.12rem;line-height:1.34;font-weight:850;color:rgba(251,247,239,.72);max-width:850px}
+  .how-col{position:absolute;z-index:4;top:292px;width:390px;display:grid;gap:24px}
+  .how-col.left{left:72px}.how-col.right{right:72px}
+  .how-item{position:relative;display:grid;grid-template-columns:58px 1fr;gap:16px;align-items:center;min-height:78px}
+  .how-col.right .how-item{grid-template-columns:58px 1fr}
+  .how-icon{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;border:1.6px solid rgba(184,149,74,.68);background:rgba(251,247,239,.08);box-shadow:0 0 28px rgba(184,149,74,.22);font-size:.62rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+  .how-col.right .how-icon{border-color:rgba(91,143,212,.62);color:var(--blue);box-shadow:0 0 28px rgba(91,143,212,.24)}
+  .how-item h3{font-size:1.05rem;line-height:1.12;font-weight:900;color:#fbf7ef;margin-bottom:5px}
+  .how-item p{font-size:.82rem;line-height:1.28;font-weight:750;color:rgba(251,247,239,.60)}
+  .how-visual{position:absolute;z-index:3;left:50%;top:552px;transform:translate(-50%,-50%);width:850px;height:610px}
+  .how-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:178px;height:178px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,rgba(200,70,44,.38) 0%,rgba(184,149,74,.16) 54%,rgba(26,22,18,.74) 100%);border:2px solid rgba(184,149,74,.70);box-shadow:0 0 54px rgba(200,70,44,.38),0 0 110px rgba(91,143,212,.18)}
+  .how-core span{font-family:'Fraunces',Georgia,serif;font-size:2.55rem;font-weight:850;color:#fbf7ef}.how-core .n{color:var(--gold);font-style:italic}.how-core .r{color:var(--red)}
+  .how-orbit{position:absolute;inset:48px;border:1px solid rgba(251,247,239,.10);border-radius:50%;box-shadow:inset 0 0 52px rgba(184,149,74,.12)}
+  .how-orbit.o2{inset:108px;border-style:dashed;border-color:rgba(91,143,212,.18)}.how-orbit.o3{inset:178px;border-color:rgba(200,70,44,.20)}
+  .how-chip-row{position:absolute;z-index:4;left:50%;bottom:48px;transform:translateX(-50%);display:flex;gap:14px}
+  .how-chip{padding:12px 18px;border:1.5px solid rgba(184,149,74,.42);border-radius:999px;background:rgba(251,247,239,.08);font-size:.72rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:rgba(251,247,239,.70);backdrop-filter:blur(10px)}
+  .how-chip.blue{border-color:rgba(91,143,212,.50);color:var(--blue)}.how-chip.red{border-color:rgba(200,70,44,.50);color:#ff8b74}
 </style>
 </head>
 <body>
@@ -107,93 +242,398 @@
 <div class="count" id="count"></div>
 
 <main>
-  <section class="slide active"><div class="canvas">
+  <section class="slide active" data-slot="1"><div class="canvas">
     <div class="visual cover">
-      <img src="assets/inkind/visuals/inkind_social_layer.png" alt="">
-      <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
-      <div class="visual-copy">
-        <div class="eyebrow">Investor deck for inKind audience</div>
-        <div class="cover-title"><span class="blue">Give</span> <span class="gold">n</span> <span class="red">Receive</span></div>
-        <div class="cover-sub">The inKind capacity mechanic, rebuilt for social sports.</div>
-      </div>
-      <div class="cover-contact">
-        <div class="name">Dave Velardo &middot; Founder &amp; CEO</div>
-        <div class="details"><a href="mailto:dave@gnt.ai">dave@gnt.ai</a><span>978-604-0223</span><a href="https://v2.gnt.ai">v2.gnt.ai</a></div>
-      </div>
-    </div>
-  </div></section>
-
-  <section class="slide"><div class="canvas">
-    <div class="visual">
-      <img src="assets/inkind/visuals/inkind_social_layer.png" alt="">
-      <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
-      <div class="visual-copy">
-        <div class="eyebrow">Investor frame for inKind audience</div>
-        <div class="visual-title"><span class="gold">inKind</span> buys empty tables. <span class="red">GnR</span> buys empty courts.</div>
-        <div class="visual-sub">Same capacity mechanic. Bigger social layer: the match can be worth more than the slot.</div>
-      </div>
-      <div class="visual-proof"><div class="visual-chip blue">Buy capacity</div><div class="visual-chip">Package demand</div><div class="visual-chip red">Sell belonging</div></div>
-    </div>
-  </div></section>
-
-  <section class="slide"><div class="canvas"><img class="source-img" src="assets/inkind/source_slides/03_broken_paradigm.png" alt="Copied slide from original GnR deck"></div></section>
-  <section class="slide"><div class="canvas"><img class="source-img" src="assets/inkind/source_slides/04_product.png" alt="Copied slide from original GnR deck"></div></section>
-
-  <section class="slide"><div class="canvas">
-    <div class="visual">
       <img src="assets/inkind/visuals/court_credit_offer.png" alt="">
       <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
       <div class="visual-copy">
-        <div class="eyebrow">Court credit launch program</div>
-        <div class="visual-title"><span class="red">$10K</span> upfront. Off-peak only. We fill it.</div>
-        <div class="visual-sub">A club-owner offer they understand in ten seconds: cash for dead-zone courts, no peak-time cannibalization.</div>
+        <div class="cover-title"><span class="blue">Give</span> <span class="gold">n</span> <span class="red">Receive</span></div>
+        <div class="cover-sub">The inKind restaurant F&amp;B credit model &rarr; adapted and transformed for social sports.</div>
       </div>
-      <div class="visual-proof"><div class="visual-chip">Guaranteed revenue</div><div class="visual-chip blue">Curated demand</div><div class="visual-chip red">No member displacement</div></div>
+      <div class="cover-contact">
+        <div class="name">Dave Velardo &middot; Founder &amp; CEO</div>
+        <div class="details"><a href="mailto:dave@givenreceive.com">dave@givenreceive.com</a><span>978-604-0223</span></div>
+      </div>
     </div>
   </div></section>
 
-  <section class="slide"><div class="canvas"><img class="source-img" src="assets/inkind/source_slides/06_live_lab.png" alt="Copied slide from original GnR deck"></div></section>
-  <section class="slide"><div class="canvas"><img class="source-img" src="assets/inkind/source_slides/07_hidden_signal.png" alt="Copied slide from original GnR deck"></div></section>
-  <section class="slide"><div class="canvas"><img class="source-img" src="assets/inkind/source_slides/08_intelligence.png" alt="Copied slide from original GnR deck"></div></section>
+  <section class="slide" data-slot="2"><div class="canvas">
+    <div class="compare-clean">
+      <img src="assets/inkind/visuals/inkind_social_layer.png" alt="">
+      <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="eyebrow">inKind translation</div>
+      <div class="compare-title"><span class="gold">Cash now</span> for capacity that becomes <span class="red">demand later.</span></div>
+      <div class="compare-sub">Same operator wedge: cash now for controlled future capacity. New twist: GnR does not just resell the slot. It creates the group.</div>
+      <div class="compare-panels">
+        <div class="compare-panel">
+          <div class="compare-label">inKind</div>
+          <div class="compare-line">Pre-buy future F&amp;B value.</div>
+          <div class="compare-caption">Restaurant gets capital. Diners redeem later. Empty tables become app-driven demand.</div>
+        </div>
+        <div class="compare-panel red">
+          <div class="compare-label">Give n Receive</div>
+          <div class="compare-line">Pre-buy off-peak court value.</div>
+          <div class="compare-caption">Club gets guaranteed revenue. Players receive curated games with people they actually want to see.</div>
+        </div>
+      </div>
+      <div class="compare-arrow">&rarr;</div>
+      <div class="compare-signal"><div class="visual-chip blue">Capital</div><div class="visual-chip">Capacity</div><div class="visual-chip red">Curated group</div></div>
+    </div>
+  </div></section>
 
-  <section class="slide"><div class="canvas">
-    <div class="visual right">
+  <section class="slide" data-slot="3"><div class="canvas">
+    <div class="inkind-frame">
+      <img class="ik-logo" src="assets/inkind/logos/inkind_logo.svg" alt="inKind logo">
+      <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="ik-title">What <span class="gold">inKind</span> proved for restaurants, GnR can prove for clubs.</div>
+      <div class="ik-sub">Buy expiring capacity before the operator needs software. Use a demand engine to bring people back later. Let every redemption teach the system what fills the next one.</div>
+      <div class="ik-map">
+        <div class="ik-row"><div class="ik-tag">Capacity</div><div class="ik-box"><h3>Perishable inventory</h3><p>F&amp;B credit and empty court-hours both expire if nobody shows up.</p></div></div>
+        <div class="ik-row"><div class="ik-tag">Capital</div><div class="ik-box"><h3>Operator-friendly wedge</h3><p>The first yes is cash and demand, not another dashboard to learn.</p></div></div>
+        <div class="ik-row gnr"><div class="ik-tag">GnR</div><div class="ik-box"><h3>Social coordination layer</h3><p>The product is not a cheaper slot. It is the right invitation to the right group.</p></div></div>
+      </div>
+      <div class="ik-proof"><div class="visual-chip blue">Buy capacity</div><div class="visual-chip">Package demand</div><div class="visual-chip red">Learn who returns</div></div>
+    </div>
+  </div></section>
+
+  <section class="slide" data-slot="4"><div class="canvas">
+    <div class="operator-slide">
+      <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="eyebrow">inKind operator wedge</div>
+      <div class="operator-title"><span class="gold">Cash now</span> for capacity that would expire anyway.</div>
+      <div class="operator-sub">The club owner does not need to buy software first. They sell controlled dead-zone inventory, get guaranteed revenue, and let GnR take demand risk.</div>
+      <div class="operator-stack">
+        <div class="operator-card"><div class="operator-num">1</div><h3>Pre-buy off-peak court inventory</h3><p>Club defines the windows. No peak-time displacement. No member cannibalization.</p></div>
+        <div class="operator-card blue"><div class="operator-num">2</div><h3>Require the data needed to invite</h3><p>Availability, levels, preferences, attendance, history, and response behavior become the input layer.</p></div>
+        <div class="operator-card red"><div class="operator-num">3</div><h3>Fill courts with curated groups</h3><p>Players are not buying cheap slots. They are saying yes to people, timing, and social fit.</p></div>
+      </div>
+      <div class="operator-dollar"><strong>$10K</strong><span>trial capital<br>off-peak only</span></div>
+    </div>
+  </div></section>
+
+  <section class="slide" data-slot="5"><div class="canvas">
+    <div class="lab-bridge">
+      <img src="assets/inkind/visuals/inkind_social_layer.png" alt="">
+      <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="eyebrow">Founder-built lab</div>
+      <div class="lab-bridge-title">inKind learned restaurants by operating them. <span class="red">We built the club.</span></div>
+      <div class="lab-bridge-sub">NEPC is not a case study. It is the owned operating lab for true social matchmaking, autonomous scheduling, and community compounding across the full day.</div>
+      <div class="lab-bridge-proof"><div class="visual-chip blue">Own the environment</div><div class="visual-chip">See the real behavior</div><div class="visual-chip red">Build the engine</div></div>
+    </div>
+  </div></section>
+
+  <section class="slide" data-slot="6"><div class="canvas">
+    <div class="pull-slide">
       <img src="assets/inkind/visuals/vibe_anchors.png" alt="">
       <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
-      <div class="visual-copy">
-        <div class="eyebrow">Vibe anchors</div>
-        <div class="visual-title">Some people make the <span class="gold">room</span> fill.</div>
-        <div class="visual-sub">GnR learns who creates pull, then sends the invitation that makes the game, lunch, or table happen.</div>
+      <div class="eyebrow">Social pull</div>
+      <div class="pull-title">The same person who fills a court can fill a <span class="gold">table.</span></div>
+      <div class="pull-sub">Pickleball is an upstream signal for real-world plans: play, lunch, dinner, referrals, repeat groups. GnR learns who creates pull and sends the invitation that makes the next gathering happen.</div>
+      <div class="pull-flow">
+        <div class="pull-line" style="left:108px;top:184px;width:310px;transform:rotate(19deg)"></div>
+        <div class="pull-line" style="left:278px;top:287px;width:244px;transform:rotate(28deg)"></div>
+        <div class="pull-line" style="left:112px;top:376px;width:322px;transform:rotate(-18deg)"></div>
+        <div class="pull-bubble blue" style="left:0;top:118px">Court<br>session</div>
+        <div class="pull-bubble gold" style="left:218px;top:218px">Social<br>pull</div>
+        <div class="pull-bubble red" style="right:0;top:84px">Lunch<br>after</div>
+        <div class="pull-bubble" style="right:26px;bottom:88px">Repeat<br>group</div>
       </div>
-      <div class="visual-proof"><div class="visual-chip red">Social pull</div><div class="visual-chip">Invitation graph</div><div class="visual-chip blue">Portable demand</div></div>
+      <div class="ik-proof"><div class="visual-chip blue">Play together</div><div class="visual-chip">Eat together</div><div class="visual-chip red">Return together</div></div>
     </div>
   </div></section>
 
-  <section class="slide"><div class="canvas"><img class="source-img" src="assets/inkind/source_slides/10_competition.png" alt="Copied slide from original GnR deck"></div></section>
-  <section class="slide"><div class="canvas"><img class="source-img" src="assets/inkind/source_slides/11_expansion.png" alt="Copied slide from original GnR deck"></div></section>
+  <section class="slide" data-slot="7"><div class="canvas">
+    <div class="how-slide">
+      <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="eyebrow">How it works</div>
+      <div class="how-head">
+        <div class="how-title">Real-world signals in. <span class="gold">Intelligent coordination</span> out.</div>
+        <div class="how-sub">GnR converts the messy human layer around every booking into an invitation graph that can fill courts, form better groups, and compound community demand.</div>
+      </div>
+      <div class="how-col left">
+        <div class="how-item"><div class="how-icon">RSVP</div><div><h3>Invitations + RSVPs</h3><p>Who says yes, who declines, who waits, who brings energy.</p></div></div>
+        <div class="how-item"><div class="how-icon">CAL</div><div><h3>Scheduling + availability</h3><p>When people can show up, and which windows actually unlock demand.</p></div></div>
+        <div class="how-item"><div class="how-icon">PLAY</div><div><h3>Behavioral signals</h3><p>Who plays together again, who creates flow, who anchors the room.</p></div></div>
+        <div class="how-item"><div class="how-icon">REF</div><div><h3>Feedback + referrals</h3><p>What players thought, who they invite, and why they return.</p></div></div>
+      </div>
+      <div class="how-visual">
+        <svg viewBox="0 0 850 610" width="850" height="610" aria-hidden="true">
+          <defs>
+            <radialGradient id="howGlow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fbf7ef" stop-opacity=".90"/><stop offset="34%" stop-color="#b8954a" stop-opacity=".45"/><stop offset="100%" stop-color="#5B8FD4" stop-opacity="0"/></radialGradient>
+            <linearGradient id="howIn" x1="0" x2="1"><stop offset="0" stop-color="#c8462c"/><stop offset="1" stop-color="#b8954a"/></linearGradient>
+            <linearGradient id="howOut" x1="0" x2="1"><stop offset="0" stop-color="#b8954a"/><stop offset="1" stop-color="#5B8FD4"/></linearGradient>
+            <filter id="howBlur"><feGaussianBlur stdDeviation="3"/></filter>
+          </defs>
+          <circle cx="425" cy="305" r="260" fill="url(#howGlow)" opacity=".46"/>
+          <g fill="none" stroke-linecap="round">
+            <path d="M18 150 C145 150 240 230 335 286" stroke="url(#howIn)" stroke-width="3" opacity=".82"/>
+            <path d="M18 246 C150 246 236 274 337 300" stroke="url(#howIn)" stroke-width="2.4" opacity=".70"/>
+            <path d="M18 354 C146 354 240 330 337 313" stroke="url(#howIn)" stroke-width="2.4" opacity=".70"/>
+            <path d="M18 452 C144 452 242 382 337 328" stroke="url(#howIn)" stroke-width="3" opacity=".82"/>
+            <path d="M515 284 C614 232 700 162 830 132" stroke="url(#howOut)" stroke-width="3" opacity=".86"/>
+            <path d="M515 300 C632 282 710 242 830 224" stroke="url(#howOut)" stroke-width="2.4" opacity=".72"/>
+            <path d="M515 316 C632 332 710 374 830 394" stroke="url(#howOut)" stroke-width="2.4" opacity=".72"/>
+            <path d="M515 330 C615 384 704 474 830 500" stroke="url(#howOut)" stroke-width="3" opacity=".86"/>
+            <path d="M216 302 C292 180 548 160 642 282 C750 420 480 514 334 414 C206 326 280 118 498 108" stroke="#fbf7ef" stroke-width="1" opacity=".15"/>
+            <path d="M262 222 C382 118 610 228 586 358 C558 512 292 480 262 332 C244 246 338 176 486 202" stroke="#b8954a" stroke-width="1.2" opacity=".28"/>
+            <path d="M328 406 C252 250 382 92 560 186 C704 262 638 486 434 468 C322 458 252 388 250 304" stroke="#5B8FD4" stroke-width="1" opacity=".24"/>
+          </g>
+          <g filter="url(#howBlur)" opacity=".7">
+            <circle cx="425" cy="305" r="132" fill="none" stroke="#c8462c" stroke-width="2"/>
+            <circle cx="425" cy="305" r="205" fill="none" stroke="#5B8FD4" stroke-width="1.4"/>
+          </g>
+          <g fill="#fbf7ef">
+            <circle cx="160" cy="150" r="5"/><circle cx="216" cy="250" r="4"/><circle cx="174" cy="452" r="5"/><circle cx="668" cy="168" r="5"/><circle cx="722" cy="302" r="4"/><circle cx="672" cy="474" r="5"/>
+            <circle cx="372" cy="152" r="4" fill="#5B8FD4"/><circle cx="526" cy="154" r="5" fill="#b8954a"/><circle cx="586" cy="410" r="4" fill="#c8462c"/><circle cx="318" cy="420" r="5" fill="#b8954a"/>
+          </g>
+          <g fill="none" stroke="#fbf7ef" stroke-opacity=".42">
+            <circle cx="425" cy="305" r="84"/><circle cx="425" cy="305" r="166"/><circle cx="425" cy="305" r="246"/>
+          </g>
+        </svg>
+        <div class="how-orbit"></div><div class="how-orbit o2"></div><div class="how-orbit o3"></div>
+        <div class="how-core"><span><span class="g">G</span><span class="n">n</span><span class="r">R</span></span></div>
+      </div>
+      <div class="how-col right">
+        <div class="how-item"><div class="how-icon">FIT</div><div><h3>Smart matchmaking</h3><p>The right people together, not just the right skill rating.</p></div></div>
+        <div class="how-item"><div class="how-icon">AUTO</div><div><h3>Proactive scheduling</h3><p>Sessions that fill themselves without coordinator drag.</p></div></div>
+        <div class="how-item"><div class="how-icon">AI</div><div><h3>Conversational AI</h3><p>Coordinate like a teammate through SMS-first workflows.</p></div></div>
+        <div class="how-item"><div class="how-icon">REP</div><div><h3>Stronger communities</h3><p>More connection, more repeats, more off-peak demand.</p></div></div>
+      </div>
+      <div class="how-chip-row"><div class="how-chip blue">Invitation graph</div><div class="how-chip">Autonomous scheduling</div><div class="how-chip red">Community demand</div></div>
+    </div>
+  </div></section>
 
-  <section class="slide"><div class="canvas">
-    <div class="visual center">
-      <img src="assets/inkind/visuals/raise_background.png" alt="">
+  <section class="slide" data-slot="11"><div class="canvas">
+    <div class="visual">
+      <img src="assets/inkind/visuals/inkind_social_layer.png" alt="">
       <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
       <div class="visual-copy">
-        <div class="eyebrow">Raise</div>
-        <div class="visual-title"><span class="red">$2.5M</span> seed at <span class="gold">$10M</span> pre.</div>
-        <div class="visual-sub">For the Give n Receive technology company. NEPC is not included; it remains the operating lab.</div>
+        <div class="eyebrow">Capacity becomes social demand</div>
+        <div class="inkind-badge"><img src="assets/inkind/logos/inkind_logo.svg" alt="inKind logo"><span>mechanic translated</span></div>
+        <div class="visual-title">The <span class="gold">inKind</span> model, transformed for social sports.</div>
+        <div class="visual-sub">Prepaid restaurant value becomes dining demand. Prepaid court value becomes curated social demand. The extra layer is the Invitation Graph.</div>
       </div>
-      <div class="visual-proof" style="left:50%;transform:translateX(-50%)"><div class="visual-chip">Close the loop</div><div class="visual-chip blue">Launch external clubs</div><div class="visual-chip red">Harden the graph</div></div>
+      <div class="visual-proof"><div class="visual-chip blue">Prepaid capacity</div><div class="visual-chip">Curated demand</div><div class="visual-chip red">Invitation graph</div></div>
     </div>
   </div></section>
+
+  <section class="slide" data-slot="13"><div class="canvas">
+    <div class="lab-slide">
+      <img src="assets/inkind/visuals/inkind_social_layer.png" alt="">
+      <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="eyebrow">Founder-built lab</div>
+      <div class="lab-title">We turned down <span class="red">DUPR.</span> Then we built the lab for what ratings miss.</div>
+      <div class="lab-sub">New England Pickleball Club exists to solve true social matchmaking, true autonomous scheduling, and community compounding from the inside.</div>
+      <div class="dupr-stamp"><div><strong>DUPR</strong><span>Skill-rating era</span></div></div>
+      <div class="nepc-logo-card"><img src="assets/inkind/logos/nepc_logo.svg" alt="New England Pickleball Club logo"></div>
+      <div class="lab-token-row"><div class="lab-token blue">Social matchmaking</div><div class="lab-token">Autonomous scheduling</div><div class="lab-token red">Community compounding</div></div>
+    </div>
+  </div></section>
+
 </main>
 
 <script>
-const slides=[...document.querySelectorAll('.slide')],nav=document.getElementById('nav'),count=document.getElementById('count'),progress=document.getElementById('progress');let current=0;
-slides.forEach((_,i)=>{const b=document.createElement('button');b.className='dot';b.type='button';b.onclick=()=>show(i);nav.appendChild(b)});
-function show(i){current=Math.max(0,Math.min(slides.length-1,i));slides.forEach((s,n)=>s.classList.toggle('active',n===current));[...nav.children].forEach((d,n)=>d.classList.toggle('on',n===current));count.textContent=`Slide ${current+1} / ${slides.length}`;progress.style.width=(current/(slides.length-1)*100)+'%';location.hash='#'+(current+1)}
-function next(){show(current+1)}function prev(){show(current-1)}
-document.addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown',' ','d','D','s','S','PageDown'].includes(e.key)){e.preventDefault();next()}if(['ArrowLeft','ArrowUp','a','A','w','W','PageUp'].includes(e.key)){e.preventDefault();prev()}})
+const allSlides=[...document.querySelectorAll('.slide')],nav=document.getElementById('nav'),count=document.getElementById('count'),progress=document.getElementById('progress');
+const mainSlides=allSlides.filter(s=>!s.dataset.altFor),altsBySlot=new Map();let currentSlot=0,currentAlt=-1;
+allSlides.filter(s=>s.dataset.altFor).forEach(s=>{const slot=Number(s.dataset.altFor)-1;if(!altsBySlot.has(slot))altsBySlot.set(slot,[]);altsBySlot.get(slot).push(s)});
+const rows=[];
+mainSlides.forEach((_,i)=>{
+  const row=document.createElement('div');row.className='nav-row';
+  const main=document.createElement('button');main.className='dot';main.type='button';main.onclick=()=>showMain(i);
+  main.dataset.index=String(i);
+  row.append(main);nav.appendChild(row);rows.push({row,main});
+});
+function updateNav(){
+  const activeSlide=document.querySelector('.slide.active');
+  const activeIndex=mainSlides.indexOf(activeSlide);
+  if(activeIndex>=0){currentSlot=activeIndex;currentAlt=-1}
+  rows.forEach((r,i)=>{
+    const isActive=i===currentSlot;
+    r.main.classList.toggle('on',isActive);
+    r.main.setAttribute('aria-current',isActive?'true':'false');
+  });
+  count.textContent=`Slide ${currentSlot+1} / ${mainSlides.length}`;
+  progress.style.width=(currentSlot/(mainSlides.length-1)*100)+'%';
+  location.hash=`#${currentSlot+1}`;
+}
+function activate(slide){allSlides.forEach(s=>s.classList.toggle('active',s===slide));const frame=slide.querySelector('.source-frame');if(frame&&frame.contentDocument?.readyState==='complete')initSourceFrame(frame);updateNav()}
+function showMain(i){currentSlot=Math.max(0,Math.min(mainSlides.length-1,i));currentAlt=-1;activate(mainSlides[currentSlot])}
+function showAlt(slot,i){const alts=altsBySlot.get(slot)||[];if(!alts.length)return false;currentSlot=slot;currentAlt=Math.max(0,Math.min(alts.length-1,i));activate(alts[currentAlt]);return true}
+function sourceStep(dir){
+  const slide=currentAlt>=0?(altsBySlot.get(currentSlot)||[])[currentAlt]:mainSlides[currentSlot];
+  const frame=slide?.querySelector('.source-frame');
+  if(!frame)return false;
+  const id=frame.dataset.sourceId;
+  const map={1:{'cs-1m8':'cs1m8Advance','cs-gnr':'csGnrAdvance','cs-samecourt':'csSamecourtAdvance','cs-11':'cs11Advance'},'-1':{'cs-1m8':'cs1m8Reverse','cs-gnr':'csGnrReverse','cs-samecourt':'csSamecourtReverse','cs-11':'cs11Reverse'}};
+  try{
+    const fn=frame.contentWindow?.[map[dir]?.[id]];
+    return typeof fn==='function' ? !!fn() : false;
+  }catch(err){return false}
+}
+function next(){if(sourceStep(1))return;showMain(currentSlot+1)}function prev(){if(sourceStep(-1))return;showMain(currentSlot-1)}
+function horizontal(dir){
+  const alts=altsBySlot.get(currentSlot)||[];
+  if(dir<0 && currentAlt<alts.length-1)return showAlt(currentSlot,currentAlt+1);
+  if(dir>0 && currentAlt>=0){if(currentAlt===0)showMain(currentSlot);else showAlt(currentSlot,currentAlt-1);return true}
+  return false;
+}
+document.addEventListener('keydown',e=>{
+  if(['ArrowLeft'].includes(e.key)){e.preventDefault();horizontal(-1);return}
+  if(['ArrowRight'].includes(e.key)){e.preventDefault();horizontal(1);return}
+  if(['ArrowDown',' ','d','D','PageDown'].includes(e.key)){e.preventDefault();next();return}
+  if(['ArrowUp','a','A','w','W','PageUp'].includes(e.key)){e.preventDefault();prev();return}
+});
+let wheelLock=false;
+document.addEventListener('wheel',e=>{
+  e.preventDefault();
+  if(wheelLock || Math.abs(e.deltaY)<24)return;
+  wheelLock=true;
+  e.deltaY>0?next():prev();
+  setTimeout(()=>wheelLock=false,520);
+},{passive:false});
+function initSourceFrame(frame){
+  const id=frame.dataset.sourceId;
+  try{
+    const win=frame.contentWindow,doc=win.document;
+    let chromeKiller=doc.getElementById('gnr-inkind-hide-source-chrome');
+    if(!chromeKiller){
+      chromeKiller=doc.createElement('style');
+      chromeKiller.id='gnr-inkind-hide-source-chrome';
+      chromeKiller.textContent='.casey-nav,.casey-bar,.casey-count,#appendixBtn,#trashBtn{display:none!important;visibility:hidden!important;pointer-events:none!important}';
+      doc.head.appendChild(chromeKiller);
+    }
+    if(!frame.dataset.navBound){
+      frame.dataset.navBound='1';
+      const routeWheel=e=>{
+        e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
+        if(wheelLock || Math.abs(e.deltaY)<24)return;
+        wheelLock=true;
+        e.deltaY>0?next():prev();
+        setTimeout(()=>wheelLock=false,520);
+      };
+      const routeKey=e=>{
+        if(!['ArrowLeft','ArrowRight','ArrowDown',' ','d','D','PageDown','ArrowUp','a','A','w','W','PageUp'].includes(e.key))return;
+        e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
+        if(['ArrowLeft'].includes(e.key)){horizontal(-1);return}
+        if(['ArrowRight'].includes(e.key)){horizontal(1);return}
+        if(['ArrowDown',' ','d','D','PageDown'].includes(e.key)){next();return}
+        if(['ArrowUp','a','A','w','W','PageUp'].includes(e.key)){prev();return}
+      };
+      const blockSourceClick=e=>{
+        e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
+        if(sourceStep(1))return;
+        showSourceOnly(doc,frame.dataset.sourceId);
+      };
+      win.addEventListener('wheel',routeWheel,{passive:false,capture:true});
+      doc.addEventListener('wheel',routeWheel,{passive:false,capture:true});
+      win.addEventListener('keydown',routeKey,{capture:true});
+      doc.addEventListener('keydown',routeKey,{capture:true});
+      win.addEventListener('click',blockSourceClick,{capture:true});
+      doc.addEventListener('click',blockSourceClick,{capture:true});
+    }
+    showSourceOnly(doc,id);
+    applySourceTextOverrides(doc);
+  }catch(err){console.warn('Could not initialize source slide',id,err)}
+}
+function showSourceOnly(doc,id){
+  doc.querySelectorAll('.casey-slide').forEach(s=>{s.classList.remove('active','casey-entered');s.style.display='none'});
+  const target=doc.getElementById(id);
+  if(!target)return;
+  target.style.display='block';
+  target.classList.add('active','casey-entered');
+  if(id==='cs-samecourt')target.dataset.stage='0';
+  if(id==='cs-gnr'){
+    target.dataset.shown='0';
+    target.querySelectorAll('.env-card').forEach(card=>card.dataset.open='0');
+  }
+  if(id==='cs-11'){target.dataset.shown='1';target.dataset.leftFlipped='0';target.dataset.rightFlipped='0'}
+}
+function applySourceTextOverrides(doc){
+  prepareInvitationFeedSlide(doc);
+  const brandCodex=doc.getElementById('cs-brand-codex');
+  if(brandCodex){
+    [...brandCodex.querySelectorAll('*')].forEach(el=>{
+      const text=el.textContent.trim().toLowerCase();
+      if(text==='the next frontier')el.replaceChildren('Real human connection technology');
+      if(text==='brand promise')el.style.display='none';
+    });
+  }
+  doc.querySelectorAll('.casey-slide span').forEach(el=>{
+    if(el.textContent.trim()==='The job is an open heart.')el.textContent='The job is Give n Receive.';
+    if(el.textContent.trim()==='But real communities don\u2019t have a like button.'){
+      [...el.childNodes].forEach(node=>{
+        if(node.nodeType===Node.TEXT_NODE){
+          node.textContent=node.textContent.replace('But real communities don\u2019t have a ','But our communities don\u2019t have a ');
+        }
+      });
+    }
+  });
+  doc.querySelectorAll('text').forEach(el=>{
+    const text=el.textContent.trim();
+    if(text==='VIBES ANCHOR')el.setAttribute('fill','#5B8FD4');
+    if(text==='NEW REFERRAL')el.setAttribute('fill','#c8462c');
+  });
+  doc.querySelectorAll('.wpc-sub,.pb-head').forEach(el=>{
+    if(!el.textContent.includes('first global human value exchange network'))return;
+    el.innerHTML='<span class="wpc-sub-chip"><strong style="color:#5B8FD4;font-weight:850;font-style:normal">Pickleball</strong> &rarr; fastest wedge to the <em>first global <span style="text-decoration:underline;text-decoration-thickness:0.08em;text-underline-offset:0.12em">autonomous social coordination</span> network</em>.</span>';
+  });
+  removeCascadeBox(doc);
+  setTimeout(()=>removeCascadeBox(doc),120);
+  setTimeout(()=>removeCascadeBox(doc),500);
+}
+function prepareInvitationFeedSlide(doc){
+  const slide=doc.getElementById('cs-gnr');
+  if(!slide)return;
+  let style=doc.getElementById('gnr-inkind-invitation-feed-bg');
+  if(!style){
+    style=doc.createElement('style');
+    style.id='gnr-inkind-invitation-feed-bg';
+    style.textContent=`
+      #cs-gnr{background:#f3ead8!important;overflow:hidden!important}
+      #cs-gnr section{background:transparent!important;overflow:hidden!important}
+      #cs-gnr section::before{
+        content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+        background:
+          linear-gradient(90deg,rgba(243,234,216,.16) 0%,rgba(243,234,216,.06) 46%,rgba(243,234,216,.28) 100%),
+          linear-gradient(180deg,rgba(243,234,216,.06) 0%,rgba(243,234,216,.18) 100%),
+          url("assets/inkind/visuals/invitation_feed_lonely_bg.png");
+        background-size:cover;background-position:center center;
+        transform:scale(1.01);
+      }
+      #cs-gnr section::after{
+        content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+        background:radial-gradient(circle at 50% 28%,rgba(243,234,216,.36),rgba(243,234,216,.02) 34%,rgba(26,22,18,.04) 100%);
+      }
+      #cs-gnr section>*{position:relative;z-index:2}
+      #cs-gnr[data-shown="0"] section>*{opacity:0!important;transform:translateY(16px);pointer-events:none!important}
+      #cs-gnr[data-shown="1"] section>*{animation:gnrInvitationFeedContentIn .72s cubic-bezier(.16,1,.3,1) both}
+      #cs-gnr[data-shown="1"] .gnr-env-hero{animation-delay:.22s!important}
+      @keyframes gnrInvitationFeedContentIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+    `;
+    doc.head.appendChild(style);
+  }
+}
+function removeCascadeBox(doc){
+  doc.querySelectorAll('.fvi-card,.fv-card').forEach(card=>{
+    if(!/Cascade\./.test(card.textContent))return;
+    const next=card.nextElementSibling;
+    if(next?.classList.contains('fvi-arrow')||next?.classList.contains('fv-arrow'))next.remove();
+    card.remove();
+  });
+}
+document.querySelectorAll('.source-frame').forEach(frame=>frame.addEventListener('load',()=>initSourceFrame(frame)));
 let x=0;document.addEventListener('touchstart',e=>x=e.changedTouches[0].clientX,{passive:true});document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-x;if(Math.abs(dx)>48)(dx<0?next:prev)()},{passive:true});
-const h=parseInt(location.hash.replace('#',''),10);show(Number.isFinite(h)?h-1:0);
+new MutationObserver(()=>updateNav()).observe(document.getElementById('deck'),{subtree:true,childList:false,attributes:true,attributeFilter:['class']});
+window.addEventListener('hashchange',()=>{
+  const n=parseInt(location.hash.replace('#',''),10);
+  if(Number.isFinite(n)&&n>=1&&n<=mainSlides.length&&n-1!==currentSlot)showMain(n-1);
+});
+const hash=location.hash.replace('#',''),slotNum=parseInt(hash,10);
+if(Number.isFinite(slotNum)&&/v$/i.test(hash)){
+  if(!showAlt(slotNum-1,0))showMain(slotNum-1);
+}else{
+  showMain(Number.isFinite(slotNum)?slotNum-1:0);
+}
 </script>
 </body>
 </html>
