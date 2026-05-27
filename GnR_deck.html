@@ -26854,6 +26854,8 @@ window.csA7m1Reverse = function() {
   #cs-2c { background:#1a1612 !important; overflow:hidden; position:relative; }
   #cs-2c::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; background:url('assets/cs-2c-v2-community-listening.png') center/cover no-repeat !important; opacity:.54; filter:saturate(.92) contrast(.98); mix-blend-mode:normal; }
   #cs-2c::after { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; background:linear-gradient(90deg,rgba(251,247,239,.86) 0%,rgba(251,247,239,.66) 46%,rgba(251,247,239,.30) 100%),radial-gradient(circle at 72% 42%,rgba(26,22,18,.20),transparent 48%) !important; }
+  #cs-2c[data-shown="0"] .inner { opacity:0 !important; visibility:hidden !important; transform:translateY(14px) !important; animation:none !important; pointer-events:none !important; transition:opacity .62s cubic-bezier(.22,1,.36,1), transform .62s cubic-bezier(.22,1,.36,1), visibility 0s linear .62s; }
+  #cs-2c[data-shown="1"] .inner { opacity:1 !important; visibility:visible !important; transform:none !important; animation:none !important; pointer-events:auto !important; transition:opacity .62s cubic-bezier(.22,1,.36,1), transform .62s cubic-bezier(.22,1,.36,1), visibility 0s linear 0s; }
   #cs-2c .c2c-grid { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); gap:clamp(7px,0.8vw,12px); max-width:1820px; margin:48px auto 0; padding:0 clamp(14px,1.8vw,28px); align-items:stretch; }
   /* PERMANENT card-height equality [Dave 2026-05-07 — third correction]: align-items:stretch on grid + aspect-ratio + label min-height of 2 lines.
      Single-line labels (e.g. 'Neighborhoods') now reserve the same vertical space as two-line labels ('Colleges & Universities') so every card renders identical height regardless of label copy. Do NOT regress this. */
@@ -26882,7 +26884,7 @@ window.csA7m1Reverse = function() {
   #cs-2c .c2c-bar-fill { height:100%; border-radius:3px; transform-origin:left; transform:scaleX(0); transition:transform 0.85s cubic-bezier(.45,.05,.18,1); }
   #cs-2c .c2c-bar-fill.red { background:#c8462c; }
   #cs-2c .c2c-bar-fill.green { background:#2a8a4f; }
-  #cs-2c.active .c2c-bar-fill { transform:scaleX(1); }
+  #cs-2c[data-shown="1"] .c2c-bar-fill { transform:scaleX(1); }
   html[data-export="1"] #cs-2c .c2c-bar-fill { transform:scaleX(1) !important; transition:none !important; }
   #cs-2c .c2c-paradigm { margin-top:auto; padding-top:8px; font-family:'Manrope',sans-serif; font-size:.5rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(200,70,44,0.85); display:flex; align-items:center; gap:4px; }
   #cs-2c .c2c-card.c2c-highlight .c2c-paradigm { color:rgba(200,70,44,0.85); }
@@ -26890,17 +26892,17 @@ window.csA7m1Reverse = function() {
   /* Cascade entrance — cards stagger in left to right */
   @keyframes c2cFadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
   #cs-2c .c2c-card { opacity:0; }
-  #cs-2c.active .c2c-card { animation: c2cFadeUp 0.6s cubic-bezier(.45,.05,.18,1) forwards; }
+  #cs-2c[data-shown="1"] .c2c-card { animation: c2cFadeUp 0.6s cubic-bezier(.45,.05,.18,1) forwards; }
   /* [Dave 2026-05-17] Stagger extended to 9 cards after Hobbies was added — 9th card (Country Clubs) was animating first because it had no delay rule. Now goes strict left-to-right. */
-  #cs-2c.active .c2c-card:nth-child(1) { animation-delay: 0.5s; }
-  #cs-2c.active .c2c-card:nth-child(2) { animation-delay: 0.65s; }
-  #cs-2c.active .c2c-card:nth-child(3) { animation-delay: 0.80s; }
-  #cs-2c.active .c2c-card:nth-child(4) { animation-delay: 0.95s; }
-  #cs-2c.active .c2c-card:nth-child(5) { animation-delay: 1.10s; }
-  #cs-2c.active .c2c-card:nth-child(6) { animation-delay: 1.25s; }
-  #cs-2c.active .c2c-card:nth-child(7) { animation-delay: 1.40s; }
-  #cs-2c.active .c2c-card:nth-child(8) { animation-delay: 1.55s; }
-  #cs-2c.active .c2c-card:nth-child(9) { animation-delay: 1.70s; }
+  #cs-2c[data-shown="1"] .c2c-card:nth-child(1) { animation-delay: 0.5s; }
+  #cs-2c[data-shown="1"] .c2c-card:nth-child(2) { animation-delay: 0.65s; }
+  #cs-2c[data-shown="1"] .c2c-card:nth-child(3) { animation-delay: 0.80s; }
+  #cs-2c[data-shown="1"] .c2c-card:nth-child(4) { animation-delay: 0.95s; }
+  #cs-2c[data-shown="1"] .c2c-card:nth-child(5) { animation-delay: 1.10s; }
+  #cs-2c[data-shown="1"] .c2c-card:nth-child(6) { animation-delay: 1.25s; }
+  #cs-2c[data-shown="1"] .c2c-card:nth-child(7) { animation-delay: 1.40s; }
+  #cs-2c[data-shown="1"] .c2c-card:nth-child(8) { animation-delay: 1.55s; }
+  #cs-2c[data-shown="1"] .c2c-card:nth-child(9) { animation-delay: 1.70s; }
   html[data-export="1"] #cs-2c .c2c-card { opacity:1 !important; animation:none !important; transform:none !important; }
 
   /* Click-reveal: "Our communities run on human connection." text below grid [Dave 2026-05-03] */
