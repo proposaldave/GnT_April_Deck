@@ -25,6 +25,9 @@ BRANCH INVENTORY
 - Before reporting DONE, audit remaining checked-out deck/* worktrees and recent deck/* branches against main. No completed-session branch may disappear into a generic skipped bucket.
 - For each completed-session branch, do one of three things: merge it cleanly, port the requested intent onto current main when a direct merge would roll back newer live work, or report BLOCKED with the exact conflict/risk and next action.
 - For every branch not published, report the branch and the blocker. Do not use "skipped" as a final state for completed work unless the blocker is explicit and actionable.
+- For every completed-session branch, inspect the branch diff from its merge-base, not just branch name or merge status. Extract the visible text, slide IDs, CSS selectors, JS functions, assets, and registry entries it intended to change.
+- Do not mark a branch integrated with an `ours` merge until the branch intent is verified in current main/source/render. If the intent is missing, port it first, verify it, then record integration.
+- If a branch is already an ancestor of main but the visible requested result is absent, treat it as a failed publish and repair/port the intent before DONE.
 - Prefer branches whose final report or commit evidence indicates active-slide verification.
 - Do not publish branches that appear to edit inactive variants without active-source/render verification; either port the intent to the active source when obvious or report BLOCKED.
 - Do not blindly merge delete/trash/risky branches; if Dave clearly requested that finished branch, apply the deletion/trash intent surgically to current main or report BLOCKED.

@@ -6781,7 +6781,8 @@ window.cs1m5Reverse = function() {
   /* Pulsing arrow — visible at stages 0/1/2 (still more to come), hides at stage 3 (final state) */
   #cs-1m8 .m8-hint { display:flex;align-items:center;justify-content:center;margin-top:36px;opacity:1;visibility:visible;transform:translateX(-92px);transition:opacity 0.4s ease, visibility 0s linear 0s }
   #cs-1m8[data-stage="3"] .m8-hint { opacity:0;visibility:hidden;transition:opacity 0.4s ease, visibility 0s linear 0.4s }
-  #cs-1m8 .m8-autonomous { font-family:'Manrope',sans-serif;font-size:clamp(.76rem,.96vw,.98rem);font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#b8954a;line-height:1.3;margin-top:-14px;margin-bottom:18px;opacity:1;visibility:visible;transform:translateY(0);transition:opacity .35s ease, transform .35s ease, visibility 0s linear 0s }
+  #cs-1m8 .m8-autonomous { font-family:'Manrope',sans-serif;font-size:clamp(.76rem,.96vw,.98rem);font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#b8954a;line-height:1.3;margin-top:-14px;margin-bottom:18px;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1), visibility 0s linear .65s }
+  #cs-1m8[data-stage="0"] .m8-autonomous.m8-autonomous-in { opacity:1;visibility:visible;transform:translateY(0);transition:opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1), visibility 0s linear 0s }
   #cs-1m8:not([data-stage="0"]) .m8-autonomous { opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s ease, transform .25s ease, visibility 0s linear .25s }
   @keyframes m8HintBob { 0%,100% { transform:translateY(0);opacity:0.85 } 50% { transform:translateY(8px);opacity:0.45 } }
   #cs-1m8 .m8-hint svg { animation:m8HintBob 2.2s ease-in-out infinite }
@@ -7694,6 +7695,41 @@ window.cs1m5Reverse = function() {
     <div>978-604-0223</div>
   </div>
 </div>
+
+<script>
+(function(){
+  const slideId = 'cs-1m8';
+  const delayMs = 1750;
+  let revealTimer = null;
+
+  function syncAutonomousSubtitle(){
+    const slide = document.getElementById(slideId);
+    const label = slide && slide.querySelector('.m8-autonomous');
+    if (!slide || !label) return;
+
+    clearTimeout(revealTimer);
+    label.classList.remove('m8-autonomous-in');
+
+    if (!slide.classList.contains('active') || slide.dataset.stage !== '0') return;
+
+    revealTimer = setTimeout(function(){
+      if (slide.classList.contains('active') && slide.dataset.stage === '0') {
+        label.classList.add('m8-autonomous-in');
+      }
+    }, delayMs);
+  }
+
+  function bootAutonomousSubtitle(){
+    const slide = document.getElementById(slideId);
+    if (!slide) return;
+    syncAutonomousSubtitle();
+    new MutationObserver(syncAutonomousSubtitle).observe(slide, { attributes:true, attributeFilter:['class','data-stage'] });
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bootAutonomousSubtitle);
+  else bootAutonomousSubtitle();
+})();
+</script>
 
 <!-- [Dave 2026-05-24] BLACK-DOT rollback backup of cs-1m8 before spirit/community + network digitizes copy edit. -->
 <div class="casey-slide ds-measure trash-slide" id="cs-1m8-black-backup" data-stage="0" onclick="this.dataset.stage = Math.min(3, (parseInt(this.dataset.stage)||0) + 1)" style="display:none;background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">

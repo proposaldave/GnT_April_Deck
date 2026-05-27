@@ -47,6 +47,9 @@ A solid status dot in the Codex app means the worktree session is done. Publish 
 
 Before declaring a publish pass done, run a completed-session audit: compare `git worktree list --porcelain`, local `deck/*` branches, merge status, branch commit messages, and current `main`. Every completed candidate must be merged, ported, or blocked with evidence. Do not leave completed work behind under a generic skipped label.
 
+Branch-intent audit:
+For every completed-session branch, diff the branch against its merge-base and extract the actual intent: visible text, active slide IDs, selectors, JavaScript hooks, assets, and registry edits. Verify that intent exists in current `main` before calling it integrated. An `ours` merge is allowed only after the intent has already been ported and verified. If a branch is an ancestor of `main` but the visible result is absent, treat it as a failed publish and repair it before reporting `DONE`.
+
 Never run multiple Local edit sessions against `GnR_deck.html`.
 Never edit the old `pitch_visuals` copy during parallel work.
 Never push from parallel edit sessions.
