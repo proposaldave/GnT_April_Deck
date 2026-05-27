@@ -15379,9 +15379,10 @@ window.cs1m7Reverse = function() {
      All three quotes stacked in one column. Single Marcos attribution at top.
      ═══════════════════════════════════════════════════════════════════════════ -->
 <style>
-  #cs-racketeer-att-arc { background:radial-gradient(ellipse at 50% 40%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important; overflow:hidden; }
-  #cs-racketeer-att-arc::before { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 30%, rgba(212,168,83,0.16) 0%, rgba(212,168,83,0.04) 50%, transparent 75%); pointer-events:none; z-index:1; }
-  #cs-racketeer-att-arc .rka-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:64px 80px 50px; z-index:2; gap:14px; }
+  #cs-racketeer-att-arc { background:#fbf7ef !important; overflow:hidden; }
+  #cs-racketeer-att-arc::before { content:""; position:absolute; inset:0; background:url('assets/racketeer-pattern-bg.png') center/cover no-repeat; opacity:.44; filter:saturate(.94) contrast(1.05) brightness(1.03); pointer-events:none; z-index:1; }
+  #cs-racketeer-att-arc::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(251,247,239,.91) 0%, rgba(251,247,239,.66) 58%, rgba(251,247,239,.24) 100%),radial-gradient(ellipse at 50% 30%, rgba(212,168,83,0.18) 0%, rgba(212,168,83,0.05) 50%, transparent 75%); pointer-events:none; z-index:2; }
+  #cs-racketeer-att-arc .rka-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:64px 80px 50px; z-index:3; gap:14px; }
   #cs-racketeer-att-arc .rka-head-row { display:grid; grid-template-columns:1.4fr auto; gap:32px; width:100%; max-width:1500px; align-items:center; margin-bottom:6px; }
   #cs-racketeer-att-arc .rka-head-text { display:flex; flex-direction:column; gap:6px; }
   #cs-racketeer-att-arc .rka-hero { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.85rem,2.75vw,2.45rem); font-weight:850; line-height:1.10; letter-spacing:-0.022em; color:#1a1612; margin:0; }
