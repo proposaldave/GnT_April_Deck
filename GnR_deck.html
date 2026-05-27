@@ -7649,6 +7649,45 @@ window.cs1m5Reverse = function() {
 </div>
 
 
+<!-- cs-1m8-bg-reveal-pink - pink-dot background-first title variant [Codex 2026-05-27]
+     Same-slot alt for active main slide cs-1m8. Load state shows only eyebrow + contact + generated background;
+     first click/scroll reveals the Give n Receive wordmark and autonomous social coordination line. -->
+<div class="casey-slide ds-measure" id="cs-1m8-bg-reveal-pink" data-stage="0" onclick="window.cs1m8BgRevealPinkAdvance && window.cs1m8BgRevealPinkAdvance()" style="display:none;background:#f3ead8 !important;overflow:hidden;">
+  <style>
+    #cs-1m8-bg-reveal-pink .m8p-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;opacity:.88;filter:saturate(.96) contrast(.98)}
+    #cs-1m8-bg-reveal-pink .m8p-paper{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.055) 1px,transparent 0);background-size:4px 4px;opacity:.42;pointer-events:none;mix-blend-mode:multiply}
+    #cs-1m8-bg-reveal-pink .m8p-wash{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 48%,rgba(251,247,239,.78) 0%,rgba(251,247,239,.46) 33%,rgba(251,247,239,.12) 68%,rgba(251,247,239,.04) 100%),linear-gradient(90deg,rgba(243,234,216,.84) 0%,rgba(243,234,216,.44) 34%,rgba(243,234,216,.10) 70%);pointer-events:none}
+    #cs-1m8-bg-reveal-pink .m8p-stage{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#1a1612;padding:0 60px;z-index:3}
+    #cs-1m8-bg-reveal-pink .m8p-wordmark{position:relative;display:flex;align-items:baseline;justify-content:center;width:auto;margin:0 auto 32px;line-height:1;opacity:0;visibility:hidden;transform:translateY(18px) scale(.985);transition:opacity .78s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1),visibility 0s linear .78s}
+    #cs-1m8-bg-reveal-pink[data-stage="1"] .m8p-wordmark{opacity:1;visibility:visible;transform:none;transition:opacity .9s cubic-bezier(.22,1,.36,1),transform 1s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+    #cs-1m8-bg-reveal-pink .wm-letter{display:inline-block;font-family:'Fraunces','Playfair Display',Georgia,serif;line-height:1}
+    #cs-1m8-bg-reveal-pink .wm-G,#cs-1m8-bg-reveal-pink .wm-ive{font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px}
+    #cs-1m8-bg-reveal-pink .wm-R,#cs-1m8-bg-reveal-pink .wm-eceive{font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px}
+    #cs-1m8-bg-reveal-pink .wm-n-wrap{display:inline-flex;position:relative;align-items:baseline;justify-content:center;padding:0 40px}
+    #cs-1m8-bg-reveal-pink .wm-n{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:128px;font-weight:400;font-style:italic;color:#b8954a;line-height:1}
+    #cs-1m8-bg-reveal-pink .wm-arc{position:absolute;left:calc(50% + 7px);top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none}
+    #cs-1m8-bg-reveal-pink .m8p-autonomous{font-family:'Manrope',sans-serif;font-size:clamp(.76rem,.96vw,.98rem);font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#b8954a;line-height:1.3;margin-top:-14px;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .68s ease .32s,transform .82s cubic-bezier(.22,1,.36,1) .32s,visibility 0s linear 1s}
+    #cs-1m8-bg-reveal-pink[data-stage="1"] .m8p-autonomous{opacity:1;visibility:visible;transform:none;transition:opacity .74s ease .38s,transform .86s cubic-bezier(.22,1,.36,1) .38s,visibility 0s linear 0s}
+    html[data-export="1"] #cs-1m8-bg-reveal-pink .m8p-wordmark,html[data-export="1"] #cs-1m8-bg-reveal-pink .m8p-autonomous{opacity:1!important;visibility:visible!important;transform:none!important}
+  </style>
+  <img class="m8p-bg" src="assets/cs-1m8-bg-reveal-pink.png" alt=""/>
+  <div class="m8p-paper"></div>
+  <div class="m8p-wash"></div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">a new type of community coordination system</div>
+  <div class="m8p-stage">
+    <div class="m8p-wordmark" aria-label="Give n Receive">
+      <span class="wm-letter wm-G">G</span><span class="wm-letter wm-ive">ive</span><span class="wm-n-wrap"><svg class="wm-arc" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><path d="M 4 26 Q 30 -2 56 26" stroke="#b8954a" stroke-width="2.2" fill="none" opacity="0.85" stroke-linecap="round"/><circle cx="4" cy="26" r="3.4" fill="#5B8FD4"/><circle cx="56" cy="26" r="3.4" fill="#c8462c"/></svg><span class="wm-n">n</span></span><span class="wm-letter wm-R">R</span><span class="wm-letter wm-eceive">eceive</span>
+    </div>
+    <div class="m8p-autonomous">autonomous social coordination</div>
+  </div>
+  <div style="position:absolute;bottom:30px;left:36px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(26,22,18,0.72);font-weight:500;line-height:1.85;z-index:10">
+    <div style="color:#1a1612;font-weight:700">Dave Velardo</div>
+    <div style="color:rgba(26,22,18,0.62)">Founder &amp; CEO</div>
+    <div><a href="mailto:dave@givenreceive.com" style="color:rgba(26,22,18,0.78);text-decoration:none;border-bottom:1px solid rgba(184,149,74,0.55)">dave@givenreceive.com</a></div>
+    <div>978-604-0223</div>
+  </div>
+</div>
+
 <div class="casey-slide ds-measure" id="cs-1m8" data-stage="0" onclick="this.dataset.stage = Math.min(3, (parseInt(this.dataset.stage)||0) + 1)" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
   <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
@@ -7794,6 +7833,22 @@ window.cs1m8Reverse = function() {
   const stage = parseInt(s.dataset.stage) || 0;
   if (stage <= 0) return false;
   s.dataset.stage = String(stage - 1);
+  return true;
+};
+window.cs1m8BgRevealPinkAdvance = function() {
+  const s = document.getElementById('cs-1m8-bg-reveal-pink');
+  if (!s) return false;
+  const stage = parseInt(s.dataset.stage) || 0;
+  if (stage >= 1) return false;
+  s.dataset.stage = '1';
+  return true;
+};
+window.cs1m8BgRevealPinkReverse = function() {
+  const s = document.getElementById('cs-1m8-bg-reveal-pink');
+  if (!s) return false;
+  const stage = parseInt(s.dataset.stage) || 0;
+  if (stage <= 0) return false;
+  s.dataset.stage = '0';
   return true;
 };
 // [Dave 2026-05-18 LATEST] cs-1m8-title-A staged reveal handlers — 3 stages (0/1/2):
@@ -30407,7 +30462,7 @@ const SLIDE_ALTS = {
   1: ['cs-frontier-scale-pink', 'cs-frontier-scale-pink-2', 'cs-frontier-scale-pink-3', 'cs-frontier-scale-pink-4'],
   // [Codex 2026-05-24] New slide-2 HCT story variants. Pink-dot alts left of cs-hct-system.
   // [Dave 2026-05-25] cs-hct-system-pink1 moved to TRASH_ORDER per screenshot request.
-  2: ['cs-fv6-information-pink'],
+  2: ['cs-1m8-bg-reveal-pink', 'cs-fv6-information-pink'],
   // [Dave 2026-05-18] Brand-slide review batch — 4 PURPLE-DOT alts of cs-brand-V8 originally.
   // [Dave 2026-05-18 LATEST] Dave deleted att1 (The Question), att2 (Tech & Open Heart), att4 (Humanity/Community/Technology) via 3 separate 'delete this slide' messages. Only att3 (Four Truths) survives as the purple-dot alt. HTML for the deleted attempts retained as silent backups.
   // [Dave 2026-05-18 LATEST v4] cs-brand-V8 alts MOVED to key 18 (above). Slot 23 now = cs-27 (CTO Steve Callan) with no alts.
@@ -32371,7 +32426,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 → pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
@@ -32755,6 +32810,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-1m5': 'cs1m5Advance',
     'cs-1m7': 'cs1m7Advance',
     'cs-1m8': 'cs1m8Advance',
+    'cs-1m8-bg-reveal-pink': 'cs1m8BgRevealPinkAdvance',
     'cs-1m8-black-backup': 'cs1m8BlackBackupAdvance',
     'cs-1m9': 'cs1m9Advance',
     'cs-1m8-title-A': 'csM8TitleAAdvance',
@@ -32802,6 +32858,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-1m5': 'cs1m5Reverse',
     'cs-1m7': 'cs1m7Reverse',
     'cs-1m8': 'cs1m8Reverse',
+    'cs-1m8-bg-reveal-pink': 'cs1m8BgRevealPinkReverse',
     'cs-1m8-black-backup': 'cs1m8BlackBackupReverse',
     'cs-1m9': 'cs1m9Reverse',
     'cs-1m8-title-A': 'csM8TitleAReverse',
@@ -33026,6 +33083,10 @@ document.addEventListener('wheel', e => {
         setTimeout(() => { wheelLock = false; }, 400);
         return;
       }
+      if (activeAlt && activeAlt.id === 'cs-1m8-bg-reveal-pink' && window.cs1m8BgRevealPinkAdvance && window.cs1m8BgRevealPinkAdvance()) {
+        setTimeout(() => { wheelLock = false; }, 400);
+        return;
+      }
       if (activeAlt && activeAlt.id === 'cs-1m8' && window.cs1m8Advance && window.cs1m8Advance()) {
         setTimeout(() => { wheelLock = false; }, 400);
         return;
@@ -33184,6 +33245,10 @@ document.addEventListener('wheel', e => {
         return;
       }
       if (activeAlt && activeAlt.id === 'cs-1m8-black-backup' && window.cs1m8BlackBackupReverse && window.cs1m8BlackBackupReverse()) {
+        setTimeout(() => { wheelLock = false; }, 400);
+        return;
+      }
+      if (activeAlt && activeAlt.id === 'cs-1m8-bg-reveal-pink' && window.cs1m8BgRevealPinkReverse && window.cs1m8BgRevealPinkReverse()) {
         setTimeout(() => { wheelLock = false; }, 400);
         return;
       }
