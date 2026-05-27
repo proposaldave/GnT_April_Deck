@@ -131,3 +131,15 @@ NEXT:
 - Company name is Give n Receive, abbreviated GnR.
 - Never use Give n Take, GnT, or Give ’n Take.
 - Brand palette: warm cream #fbf7ef, ink #1a1612, gold #b8954a, blue #5B8FD4, red #c8462c. Never use green.
+
+## Deck Ops / Publish Control
+
+- Treat `GnR_deck.html` as canonical source and `index.html` as the GitHub Pages mirror.
+- Parallel edit sessions must use Worktree mode, create `deck/[short-task-name]`, commit, and not push.
+- Before editing a visible slide, identify the active source path from `SLIDE_ORDER`, `SLIDE_ALTS`, or `STAFF_ORDER`; if the requested element is only in an inactive variant, report `BLOCKED` instead of editing it.
+- Do not report `DONE` unless the requested change exists in the active live slide source.
+- Publish sessions run in Local mode on `main`, merge only reviewed safe `deck/*` branches, mirror `GnR_deck.html` to `index.html`, verify hashes, then push only when Dave explicitly requested publishing.
+- Dirty unrelated local work must be preserved on a `preserve/[purpose]-local-change` branch before cleaning `main`; never silently drop, stash, reset, or overwrite it.
+- Skip risky delete/trash, inactive-variant, conflict, broken-ref, and unrelated branches during broad publish passes; list every skipped branch and reason.
+- If GitHub Pages looks stale, verify local HEAD, `origin/main`, raw GitHub source, and the cache-busted Pages URL before declaring publish failure.
+- If `.git/refs/**/desktop.ini` appears, treat it as broken Google Drive ref contamination. Report it and do not delete it unless Dave explicitly approves a ref repair.

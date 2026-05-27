@@ -1,0 +1,46 @@
+Use Local mode.
+
+Goal: find and protect a safe restore baseline without destructive recovery.
+
+RULES
+- Do not reset --hard.
+- Do not force push.
+- Do not delete branches or files.
+- Do not use guessed hashes.
+- Do not edit deck content.
+- Preserve all work before testing recovery paths.
+
+START
+1. Run git branch --show-current, git status --short, git remote -v, git log --oneline --decorate -40, git reflog --oneline -40, and git worktree list.
+2. Create a backup branch first: preserve/pre-recovery-[yyyymmdd-hhmm]
+3. Verify requested hashes with git cat-file -t before using them.
+4. Search current repo history, reflog, backup branches, preserve branches, and remote refs for actual recoverable commits.
+5. If a short hash fails, test whether a leading-zero or longer full hash exists in local history before concluding it is external.
+
+BASELINE CANDIDATES
+Report exactly three candidates when possible:
+- safest current state
+- safest prior published state
+- safest known-good deck state before the suspect batch
+
+FOR EACH CANDIDATE
+- commit/branch
+- message
+- files changed relative to current main
+- why candidate
+- risk
+
+RECOVERY PLAN
+- Recommend one baseline.
+- If restore is requested later, use a reversible branch or normal revert/cherry-pick plan.
+- Never run destructive commands without Dave explicitly approving the exact command.
+
+OUTPUT SECTIONS ONLY
+DONE
+BACKUP
+HASH CHECK
+BASELINE CANDIDATES
+RECOMMENDED BASELINE
+RECOVERY PLAN
+DO NOT DO
+BLOCKED

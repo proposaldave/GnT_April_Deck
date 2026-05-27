@@ -1,0 +1,38 @@
+Use Local mode.
+
+Goal: determine what is actually live for the Give n Receive deck without making content edits.
+
+RULES
+- Do not edit deck content.
+- Do not merge, reset, delete, force push, or clean.
+- Do not assume browser cache equals publish failure.
+- Prefer source evidence before visual debugging.
+
+CHECKS
+1. Confirm branch, clean/dirty state, local HEAD, origin/main, and remote main.
+2. Confirm GnR_deck.html and index.html exist and whether their hashes match.
+3. Check raw GitHub source for main/index.html.
+4. Check GitHub Pages source at:
+   https://proposaldave.github.io/GnR_Deck/
+   and cache-busted:
+   https://proposaldave.github.io/GnR_Deck/?v=[short-commit-hash]
+5. If Dave reports a missing visible edit, locate the requested text/element in local source, raw GitHub source, and Pages source.
+6. Verify whether the target slide ID is active through SLIDE_ORDER, SLIDE_ALTS, or STAFF_ORDER.
+7. If needed for a visual/layout issue, open/render the active visible slide and compare against the source.
+
+CLASSIFY THE ISSUE
+- cache: raw GitHub and cache-busted Pages have the change, canonical browser view is stale.
+- source not published: local or raw source lacks the change.
+- inactive variant: change exists only in retained/deleted/appendix/stale HTML, not active registry path.
+- skipped branch: change exists only on an unmerged branch.
+- visual mismatch: source contains the change but rendered layout does not match intent.
+
+OUTPUT SECTIONS ONLY
+DONE
+STATE
+LIVE SOURCE
+REQUESTED EDIT STATUS
+ACTIVE SOURCE
+DIAGNOSIS
+NEXT
+BLOCKED

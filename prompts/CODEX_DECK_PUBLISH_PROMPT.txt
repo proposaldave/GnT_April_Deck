@@ -1,20 +1,50 @@
-Use Local mode.
+Use Local mode on main.
 
-Verify expected branch and status.
-Ensure GnR_deck.html and index.html are identical before publish.
-Push only when Dave explicitly requests.
-After pushing main to origin, run:
+PUBLISH CONTRACT
+- Do not edit deck content except conflict resolutions explicitly approved by Dave.
+- Do not reset --hard.
+- Do not force push.
+- Do not delete branches or files.
+- Do not manually resolve broad conflicts in a publish pass.
+- Do not silently skip branches.
 
-git rev-parse --short HEAD
+START CHECKS
+- Run git branch --show-current, git status --short, git remote -v, git log --oneline --decorate -20, and git worktree list.
+- Confirm local HEAD, origin/main, and remote main.
+- If main is dirty, identify every dirty file.
+- If dirty work is unrelated, preserve it on preserve/[file-purpose]-local-change before cleaning main.
+- Never discard dirty work.
 
-Then report:
+BRANCH INVENTORY
+- List all local deck/* branches.
+- Classify each as already merged, safe candidate, conflict, risky/delete/trash, likely inactive-variant edit, unrelated, broken ref, or unknown.
+- For every branch skipped, report the branch and the reason.
+- Merge only safe completed deck/* branches Dave asked to publish or clearly approved.
+- If a branch conflicts, abort that merge and list it under CONFLICTS. Do not fix it unless Dave asked for that branch specifically.
 
-Canonical URL:
-https://proposaldave.github.io/GnR_Deck/
+MIRROR + VERIFY
+- After accepted merges, copy GnR_deck.html to index.html.
+- Verify GnR_deck.html and index.html hash-identical.
+- Run git diff --check.
+- Commit publish changes on main.
+- Push only when Dave explicitly asked to publish.
 
-Cache-busted verification URL:
-https://proposaldave.github.io/GnR_Deck/?v=[short-commit-hash]
+LIVE CHECK
+- After push, report:
+  Canonical URL: https://proposaldave.github.io/GnR_Deck/
+  Cache-busted verification URL: https://proposaldave.github.io/GnR_Deck/?v=[short-commit-hash]
+- Verify raw GitHub source for main/index.html.
+- Verify GitHub Pages source where possible.
+- Clearly distinguish publish succeeded, branches skipped, and requested edit not live.
 
-Immediately after publish, Dave should check the cache-busted verification URL. The canonical URL is still the real public URL, but the browser may show stale cached content for a short time.
-Report published URL/status.
-Do not redesign or edit content.
+OUTPUT SECTIONS ONLY
+DONE
+CURRENT REPO STATE
+MERGED
+SKIPPED
+CONFLICTS
+MIRRORED
+CHECKS
+PUSH
+LIVE
+BLOCKED

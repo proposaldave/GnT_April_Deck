@@ -1,32 +1,46 @@
 You are editing the Give n Receive investor deck in a Codex Worktree.
 
-This is a parallel edit session.
-It must end with a real Git branch and commit.
-If the session is Local, stop and report BLOCKED.
+MODE CONTRACT
+- This must be Worktree mode. If this is Local mode, stop and report BLOCKED.
+- Start from current main-equivalent HEAD.
+- Create a branch before editing: deck/[short-task-name]
+- End with a real commit.
+- Do not push.
 
-Start from main.
-Create a branch before editing.
-Branch format: deck/[short-task-name]
+SOURCE CONTRACT
+- Edit only GnR_deck.html unless Dave explicitly requests assets.
+- Do not edit index.html in a parallel edit session.
+- Do not edit pitch_visuals.
+- Do not regenerate images unless Dave explicitly asks.
+- Do not refactor, reformat, lint, prettify, or restructure the deck.
+- Keep the diff tiny and localized.
+- Preserve slide IDs, animation hooks, navigation, dot view, presenter behavior, and asset paths.
 
-Edit only GnR_deck.html unless the task explicitly requires assets.
-Do not edit index.html.
-Do not edit pitch_visuals.
-Do not push.
-Do not open Chrome or Playwright unless explicitly requested.
-Do not generate images unless explicitly requested.
-Do not refactor/reformat/restructure.
-Keep the diff tiny.
-Preserve slide IDs, animation hooks, navigation, dot view, and presenter behavior.
+ACTIVE SLIDE CONTRACT
+- Before editing, identify the active source path.
+- Main-flow targets must be present in SLIDE_ORDER.
+- Dot variants must be present in the correct SLIDE_ALTS[slot].
+- Staff targets must be present in STAFF_ORDER.
+- Red dots are alternate candidates at the same slot, not separate deck slides.
+- If the requested target exists only in an inactive retained HTML block, backup block, deleted block, appendix-only block, or stale variant, stop and report BLOCKED.
+- Do not report DONE unless the requested change exists in the active live slide source.
 
-Commit message format: deck: [short task name]
+VALIDATION
+- For exact copy edits: verify old text absent or intentionally retained, new text present, and active slide ID/registry path correct.
+- For visual/layout edits: run visual QA unless Dave explicitly says source-only is enough.
+- If browser/Playwright QA fails for tooling reasons, report the limitation and do source verification instead.
+- Run git diff --check before commit.
 
-Report DONE only if branch exists, commit exists, working tree is clean, and nothing was pushed.
+COMMIT
+- Commit message: deck: [short task name]
+- Working tree must be clean after commit.
 
-Output sections only:
+OUTPUT SECTIONS ONLY
 DONE
 BRANCH
 COMMIT
 TOUCHED
+ACTIVE SOURCE
 CHANGE
 CHECKS
 VISUAL QA
