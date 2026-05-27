@@ -26832,7 +26832,8 @@ window.csA7m1Reverse = function() {
 
 <!-- ===== cs-2c — Real-world social communities · 6-card grid (ported from pitch-communities.html, paper-mode) [Dave 2026-04-30 PM evening] ===== -->
 <style>
-  #cs-2c { background:#1a1612 !important; overflow:hidden; position:relative; }
+  #cs-2c { background:#1a1612 !important; overflow:hidden; position:relative; min-height:100vh; }
+  #cs-2c > section { min-height:100vh; height:100%; }
   #cs-2c::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; background:url('assets/cs-2c-v2-community-listening.png') center/cover no-repeat !important; opacity:.54; filter:saturate(.92) contrast(.98); mix-blend-mode:normal; }
   #cs-2c::after { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; background:linear-gradient(90deg,rgba(251,247,239,.86) 0%,rgba(251,247,239,.66) 46%,rgba(251,247,239,.30) 100%),radial-gradient(circle at 72% 42%,rgba(26,22,18,.20),transparent 48%) !important; }
   #cs-2c .c2c-grid { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); gap:clamp(7px,0.8vw,12px); max-width:1820px; margin:48px auto 0; padding:0 clamp(14px,1.8vw,28px); align-items:stretch; }
