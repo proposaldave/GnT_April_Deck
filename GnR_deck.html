@@ -30481,7 +30481,8 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-14] cs-intro6 INSERTED as new slot 1 per Dave: 'take the attached image and figure out how to leverage it to create a new slide just before the title slide for our new slide 1'. Cinematic science-proof opener (4-field convergence) lands BEFORE the wordmark title slide. All other main-flow slots shift +1.
   // [Dave 2026-05-14 MERGE] cs-intro6 + cs-frontier MERGED into a single slot-1 opener (cs-frontier carries the merged content). cs-intro6 demoted to red-dot alt at slot 1 for A/B comparison. All slots past slot 1 shift -1. Merge approach: hero now states the #1-predictor science truth, sub names the parabolic demand reality, curve carries the demand visualization, '4 sciences agree' strip grounds the claim, positioning band carves the category + wedge.
   // [Dave 2026-05-14 PM v4] cs-frontier-iconic PROMOTED to slot-1 primary per Dave 'I like this, let's make it the first slide, replacing current first slide which you can move to being a red dot slide to the left'. cs-frontier (former primary) demoted to first red-dot alt below.
-  'cs-frontier-brand-bg-pink', //  1 PRIMARY - [Dave 2026-05-27] Promoted from pink-dot alt per screenshot request; cs-frontier-scale-pink-2 and former slide 2 cs-1m8 demoted to slot-1 pink alts.
+  'cs-frontier-brand-bg-pink', //  1 PRIMARY - [Dave 2026-05-27] Promoted from pink-dot alt per screenshot request; cs-frontier-scale-pink-2 and cs-frontier-pink1 remain slot-1 pink alts.
+  'cs-1m8', //  2 PRIMARY - [Codex 2026-05-28] Promoted from slot-1 pink alt per screenshot request, immediately after the neuroscience opener.
   // [Codex 2026-05-27] cs-fv6-img MOVED from slot 2 to the post-wedge product/workflow reveal after cs-wedgepb-codex per Dave screenshot request.
   // [Dave 2026-05-25] cs-hct-system moved to TRASH_ORDER per screenshot request.
   // [Dave 2026-05-17 PM] cs-givefirst-slide2 REMOVED from main flow per Dave: 'major bug' — bg image asset cs-givefirst-slide2.png was never saved to disk; slide was rendering with broken image alt text. The original cs-givefirst-art at slot 18 still carries the same content cleanly. HTML retained as silent backup; restore by re-adding this line.
@@ -30627,7 +30628,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18] cs-frontier-pink2 ALSO REMOVED per Dave 'delete the "1 / 24 (alt)" slide'. Slot 1 now has zero alts. HTML retained as silent backup.
   // [Dave 2026-05-26] cs-brand-codex moved from slot-1 pink-dot alt to TRASH_ORDER per screenshot request.
   // [Codex 2026-05-27] cs-frontier-scale-pink-2 promoted to primary; other scale candidates removed from active slot-1 alts per Dave delete requests.
-  1: ['cs-1m8', 'cs-frontier-scale-pink-2', 'cs-frontier-pink1'],
+  1: ['cs-frontier-scale-pink-2', 'cs-frontier-pink1'],
   // [Codex 2026-05-24] New slide-2 HCT story variants. Pink-dot alts left of cs-hct-system.
   // [Dave 2026-05-25] cs-hct-system-pink1 moved to TRASH_ORDER per screenshot request.
   // Slot-2 cs-1m8 alts detached after cs-1m8 moved to slot-1 pink alt.
@@ -30635,7 +30636,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST] Dave deleted att1 (The Question), att2 (Tech & Open Heart), att4 (Humanity/Community/Technology) via 3 separate 'delete this slide' messages. Only att3 (Four Truths) survives as the purple-dot alt. HTML for the deleted attempts retained as silent backups.
   // [Dave 2026-05-18 LATEST v4] cs-brand-V8 alts MOVED to key 18 (above). Slot 23 now = cs-27 (CTO Steve Callan) with no alts.
   // [Dave 2026-05-18 LATEST v9] cs-fw1 was slot 24; now slot 23 after cs-a7m1 demotion (was 25 before cs-brand-V8 v6). cs-16 stays as PINK-DOT alt.
-  24: ['cs-16'],
+  25: ['cs-16'],
   // [Dave 2026-05-17 LATEST] NEW slot 2 = cs-givefirst-slide2 (give-first duplicate). No alts. All keys past slot 1 shifted +1.
   // [Dave 2026-05-18 LATEST v6] Brand pink-dot alts for cs-1m8 (slot 2). cs-brand-V8 demoted from main slot 3 → leftmost pink-dot alt here. cs-1m8-codexmerge + cs-1m8-envelopes added (codex-merge variants). cs-brand-mono REMOVED.
   // [Dave 2026-05-18 LATEST v9] cs-a7m1 added as a RED-DOT alt at the FAR LEFT of the slot-2 dot strip (furthest from primary). It's the old "Social media is an extremely narrow view" slide that just demoted from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'.
@@ -30643,14 +30644,14 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v6] cs-1m8-codexmerge removed from slot 2 alts per Dave. Order LEFT→RIGHT: red dots first, then blue, then pink.
   // [Dave 2026-05-26] cs-1m8-title-A + cs-1m8-title-C moved to TRASH_ORDER per screenshot request.
   // [Dave 2026-05-26] cs-2c-purple-image-river + cs-2c-purple-image-constellation DELETED per screenshot request. HTML retained as hidden rollback stubs.
-  2: ['cs-hc-market-planet', 'cs-hc-market-attention', 'cs-hc-market-latent'],
+  3: ['cs-hc-market-planet', 'cs-hc-market-attention', 'cs-hc-market-latent'],
   // [Dave 2026-05-18 LATEST v6+v9] All SLIDE_ALTS keys past slot 2 DECREMENTED by 1 (v6 = cs-brand-V8 demoted, v9 = cs-a7m1 demoted). Net effect: 4→3 (v6) →still 3 with v9, 5→5 still, 6→5 (v6), 14→13 (v6)→12 (v9), 15→14, 16→15, 24→23.
   // [Dave 2026-05-24] Slot 3 primary is cs-brand-codex; former main slot-3 slide cs-1m8-envelopes is preserved as the pink-dot alt immediately left of it.
   // Slot 3 alt: cs-1m8-envelopes (pink rollback).
   // [Codex 2026-05-26] Removed slot-4 alt per screenshot request: delete the 4 / 20 (alt) slide.
-  3: [],
+  4: [],
   // Slot 4 (cs-1bm1 — was cs-a7m1) — no alts.
-  5: [],
+  6: [],
   // Slot 5 (cs-2c — was slot 5 was slot 6) — no alts.
   // [Dave 2026-05-26] cs-cultural-shift moved to APPENDIX; pink candidate detached from active slide slots.
   // [Dave 2026-05-26] cs-11d black-dot backup DELETED per screenshot request: remove active slot-7 alt registration; clone stub remains inert.
@@ -30659,7 +30660,7 @@ const SLIDE_ALTS = {
   // Slot 6 (cs-thegap) - old like-button headline saved as pink-dot backup before 2026-05-24 rewrite.
   // [Dave 2026-05-25] Disconnected-community blue alt DELETED per Dave: 'delete this slide'. Removed from this slot and blue-dot classification; HTML retained as hidden rollback stub.
   // [Dave 2026-05-25] Like-button slide promoted back to main cs-thegap; digitized rewrite thrown away.
-  8: ['cs-emotion-smile', 'cs-emotion-help', 'cs-emotion-uncaptured'],
+  9: ['cs-emotion-smile', 'cs-emotion-help', 'cs-emotion-uncaptured'],
   // Slot 12 (cs-samecourt — was slot 12) — no alts.
 
   // [Dave 2026-05-19] cs-givefirst-art now owns slot 14 after Munger; cs-magnetic alts moved to slot 15 below.
@@ -30713,20 +30714,20 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v4] cs-brand-codex added as 2nd PINK-DOT alt (codex split-image watercolor).
   // [Dave 2026-05-18 LATEST v5] All brand pink-dot alts RELOCATED from slot 3 (cs-brand-V8) → slot 2 (cs-1m8) per Dave 'move these two slides and any new brand slide you are working on as pink dot slides next to the slide with the text below: What we give fuels our communities.' That's cs-1m8 — which sits at slot 2 in SLIDE_ORDER. cs-1m8-fuels (the new particle-galaxy variant anchored to "What we give fuels our communities.") also added here. Slot 3 (cs-brand-V8) now carries no alts; if Dave wants the brand alts to live under the brand slide again later, just move them back.
   // [Dave 2026-05-19] Slot 14 = cs-fv6-img after Munger; slot 15 = cs-givefirst-art; slot 16 = cs-magnetic.
-  15: [], // [Dave 2026-05-26] cs-givefirst-brand detached after cs-givefirst-art moved to appendix.
+  16: [], // [Dave 2026-05-26] cs-givefirst-brand detached after cs-givefirst-art moved to appendix.
   // [Codex 2026-05-27] Slot-13/14 alts detached after cs-3 and cs-19 were removed from the active flow.
-  12: [],
   13: [],
+  14: [],
   // [Dave 2026-05-26] Racketeer proof slide moved to appendix; detach same-slot Racketeer path alts from the main flow.
-  12: ['cs-2c-measure-loop', 'cs-2c-invisible-layer'],
-  19: [],
-  // [Dave 2026-05-19] Three new pink-dot Racketeer path attempts. Main Racketeer slide stays unchanged.
+  13: ['cs-2c-measure-loop', 'cs-2c-invisible-layer'],
   20: [],
+  // [Dave 2026-05-19] Three new pink-dot Racketeer path attempts. Main Racketeer slide stays unchanged.
+  21: [],
   // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug'. HTML retained as silent backup. Slot 19 was 20 was 21 before.
   // [Dave 2026-05-25] cs-mv6-networked removed from live slot-5 alts after rendering as a blank cream slide. HTML retained below as hidden rollback only.
-  4: [],
+  5: [],
   // [Dave 2026-05-20] Dinner/Torch VC alt moved to TRASH_ORDER so it stays recoverable without occupying the deck/appendix review system.
-  23: [],
+  24: [],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
   // [Dave 2026-05-15] Key shifted 20 → 21 after cs-givefirst inserted at slot 18 (after the Wheelhouse slide). cs-16 is now at slot 21.
   // [Dave 2026-05-14 PM v4 c] cs-funnel added as second red-dot alt (further LEFT than cs-16old) per Dave: 'create a new red dot slide to the left of this one, and rethink it, reimagine it as a SALES FUNNEL — a human value sales funnel which is exactly what GnR is.'
