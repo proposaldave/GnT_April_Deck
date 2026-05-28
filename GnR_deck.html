@@ -7684,27 +7684,65 @@ window.cs1m5Reverse = function() {
     #cs-1m8-bg-reveal-pink .m8p-paper{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.055) 1px,transparent 0);background-size:4px 4px;opacity:.42;pointer-events:none;mix-blend-mode:multiply}
     #cs-1m8-bg-reveal-pink .m8p-wash{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 48%,rgba(251,247,239,.78) 0%,rgba(251,247,239,.46) 33%,rgba(251,247,239,.12) 68%,rgba(251,247,239,.04) 100%),linear-gradient(90deg,rgba(243,234,216,.84) 0%,rgba(243,234,216,.44) 34%,rgba(243,234,216,.10) 70%);pointer-events:none}
     #cs-1m8-bg-reveal-pink .m8p-stage{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#1a1612;padding:0 60px;z-index:3}
-    #cs-1m8-bg-reveal-pink .m8p-wordmark{position:relative;display:flex;align-items:baseline;justify-content:center;width:auto;margin:0 auto 32px;line-height:1;opacity:0;visibility:hidden;transform:translateY(18px) scale(.985);transition:opacity .78s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1),visibility 0s linear .78s}
-    #cs-1m8-bg-reveal-pink[data-stage="1"] .m8p-wordmark{opacity:1;visibility:visible;transform:none;transition:opacity .9s cubic-bezier(.22,1,.36,1),transform 1s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+    #cs-1m8-bg-reveal-pink .m8-wordmark{position:relative;display:flex;align-items:baseline;justify-content:center;width:auto;margin:0 auto 32px;line-height:1}
     #cs-1m8-bg-reveal-pink .wm-letter{display:inline-block;font-family:'Fraunces','Playfair Display',Georgia,serif;line-height:1}
     #cs-1m8-bg-reveal-pink .wm-G,#cs-1m8-bg-reveal-pink .wm-ive{font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px}
     #cs-1m8-bg-reveal-pink .wm-R,#cs-1m8-bg-reveal-pink .wm-eceive{font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px}
     #cs-1m8-bg-reveal-pink .wm-n-wrap{display:inline-flex;position:relative;align-items:baseline;justify-content:center;padding:0 40px}
     #cs-1m8-bg-reveal-pink .wm-n{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:128px;font-weight:400;font-style:italic;color:#b8954a;line-height:1}
     #cs-1m8-bg-reveal-pink .wm-arc{position:absolute;left:calc(50% + 7px);top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none}
-    #cs-1m8-bg-reveal-pink .m8p-autonomous{font-family:'Manrope',sans-serif;font-size:clamp(.76rem,.96vw,.98rem);font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#b8954a;line-height:1.3;margin-top:-14px;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .68s ease .32s,transform .82s cubic-bezier(.22,1,.36,1) .32s,visibility 0s linear 1s}
-    #cs-1m8-bg-reveal-pink[data-stage="1"] .m8p-autonomous{opacity:1;visibility:visible;transform:none;transition:opacity .74s ease .38s,transform .86s cubic-bezier(.22,1,.36,1) .38s,visibility 0s linear 0s}
-    html[data-export="1"] #cs-1m8-bg-reveal-pink .m8p-wordmark,html[data-export="1"] #cs-1m8-bg-reveal-pink .m8p-autonomous{opacity:1!important;visibility:visible!important;transform:none!important}
+    #cs-1m8-bg-reveal-pink .wm-letter,#cs-1m8-bg-reveal-pink .wm-n-wrap,#cs-1m8-bg-reveal-pink .wm-arc{transition:transform .95s cubic-bezier(.22,1,.36,1),opacity .55s cubic-bezier(.45,.05,.18,1);will-change:transform,opacity;backface-visibility:hidden}
+    #cs-1m8-bg-reveal-pink:not([data-stage="0"]) .wm-ive,#cs-1m8-bg-reveal-pink:not([data-stage="0"]) .wm-eceive{opacity:0;transform:scaleX(0)}
+    #cs-1m8-bg-reveal-pink:not([data-stage="0"]) .wm-G{transform:translateX(85px) scale(1.4);transition-delay:.25s}
+    #cs-1m8-bg-reveal-pink:not([data-stage="0"]) .wm-R{transform:translateX(282px) scale(1.4);transition-delay:.25s}
+    #cs-1m8-bg-reveal-pink:not([data-stage="0"]) .wm-n-wrap{transform:translateX(110px) scale(1.3);transition-delay:.25s}
+    #cs-1m8-bg-reveal-pink:not([data-stage="0"]) .wm-arc{transform:translateX(-50%) translateY(-12px);transition-delay:.25s}
+    #cs-1m8-bg-reveal-pink .m8-autonomous{font-family:'Manrope',sans-serif;font-size:clamp(.76rem,.96vw,.98rem);font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#b8954a;line-height:1.3;margin-top:-14px;margin-bottom:18px;opacity:1;visibility:visible;transform:none;transition:opacity .25s ease,transform .25s ease,visibility 0s linear 0s}
+    #cs-1m8-bg-reveal-pink:not([data-stage="0"]) .m8-autonomous{opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s ease,transform .25s ease,visibility 0s linear .25s}
+    #cs-1m8-bg-reveal-pink .m8-caption{opacity:0;visibility:hidden;transform:translateY(8px);max-height:0;overflow:hidden;transition:opacity .55s ease,transform .55s ease,max-height .6s cubic-bezier(.22,1,.36,1),visibility 0s linear .55s}
+    #cs-1m8-bg-reveal-pink:not([data-stage="0"]) .m8-caption{opacity:1;visibility:visible;transform:none;max-height:400px;transition:opacity .75s ease .6s,transform .75s ease .6s,max-height .75s cubic-bezier(.22,1,.36,1) .6s,visibility 0s linear 0s}
+    #cs-1m8-bg-reveal-pink .m8-cap-right{opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .55s ease,transform .55s ease,visibility 0s linear .55s}
+    #cs-1m8-bg-reveal-pink[data-stage="3"] .m8-cap-right{opacity:1;visibility:visible;transform:none;transition:opacity .8s ease .15s,transform .8s ease .15s,visibility 0s linear 0s}
+    #cs-1m8-bg-reveal-pink .m8-network{opacity:0;visibility:hidden;transform:translateY(8px);max-height:0;overflow:hidden;transition:opacity .55s ease,transform .55s ease,max-height .6s cubic-bezier(.22,1,.36,1),visibility 0s linear .55s}
+    #cs-1m8-bg-reveal-pink[data-stage="2"] .m8-network,#cs-1m8-bg-reveal-pink[data-stage="3"] .m8-network{opacity:1;visibility:visible;transform:none;max-height:200px;transition:opacity .75s ease .15s,transform .75s ease .15s,max-height .75s cubic-bezier(.22,1,.36,1) .15s,visibility 0s linear 0s}
+    #cs-1m8-bg-reveal-pink .m8-hint{display:flex;align-items:center;justify-content:center;margin-top:36px;opacity:1;visibility:visible;transform:translateX(-92px);transition:opacity .4s ease,visibility 0s linear 0s}
+    #cs-1m8-bg-reveal-pink[data-stage="3"] .m8-hint{opacity:0;visibility:hidden;transition:opacity .4s ease,visibility 0s linear .4s}
+    #cs-1m8-bg-reveal-pink .m8-hint svg{animation:m8HintBob 2.2s ease-in-out infinite}
+    #cs-1m8-bg-reveal-pink[data-stage="3"] .m8-hint svg{animation:none}
+    html[data-export="1"] #cs-1m8-bg-reveal-pink .wm-ive,html[data-export="1"] #cs-1m8-bg-reveal-pink .wm-eceive{opacity:1!important;transform:none!important}
+    html[data-export="1"] #cs-1m8-bg-reveal-pink .wm-G,html[data-export="1"] #cs-1m8-bg-reveal-pink .wm-R,html[data-export="1"] #cs-1m8-bg-reveal-pink .wm-n-wrap{transform:none!important}
+    html[data-export="1"] #cs-1m8-bg-reveal-pink .wm-arc{transform:translateX(-50%)!important}
+    html[data-export="1"] #cs-1m8-bg-reveal-pink .m8-caption,html[data-export="1"] #cs-1m8-bg-reveal-pink .m8-network,html[data-export="1"] #cs-1m8-bg-reveal-pink .m8-cap-right{opacity:1!important;visibility:visible!important;transform:none!important;max-height:none!important}
+    html[data-export="1"] #cs-1m8-bg-reveal-pink .m8-hint,html[data-export="1"] #cs-1m8-bg-reveal-pink .m8-autonomous{display:none!important}
   </style>
   <img class="m8p-bg" src="assets/cs-1m8-bg-reveal-pink.png" alt=""/>
   <div class="m8p-paper"></div>
   <div class="m8p-wash"></div>
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">a new type of community coordination system</div>
   <div class="m8p-stage">
-    <div class="m8p-wordmark" aria-label="Give n Receive">
+    <div class="m8-wordmark" aria-label="Give n Receive">
       <span class="wm-letter wm-G">G</span><span class="wm-letter wm-ive">ive</span><span class="wm-n-wrap"><svg class="wm-arc" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><path d="M 4 26 Q 30 -2 56 26" stroke="#b8954a" stroke-width="2.2" fill="none" opacity="0.85" stroke-linecap="round"/><circle cx="4" cy="26" r="3.4" fill="#5B8FD4"/><circle cx="56" cy="26" r="3.4" fill="#c8462c"/></svg><span class="wm-n">n</span></span><span class="wm-letter wm-R">R</span><span class="wm-letter wm-eceive">eceive</span>
     </div>
-    <div class="m8p-autonomous">autonomous social coordination</div>
+    <div class="m8-autonomous">autonomous social coordination</div>
+    <div class="m8-caption" style="display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1300px,92%);align-items:start">
+      <div class="m8-cap-left" style="text-align:center;transform:translateX(28px)">
+        <div style="font-family:'Manrope',sans-serif;font-size:clamp(.58rem,.72vw,.76rem);font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:8px">The <strong style="color:#1a1612;font-weight:900">Fuel</strong></div>
+        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,1.55vw,1.55rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">What we <em style="font-style:italic;font-weight:700;color:#5B8FD4">give</em></div>
+      </div>
+      <div class="m8-cap-right" style="text-align:center;transform:translateX(-30px)">
+        <div style="font-family:'Manrope',sans-serif;font-size:clamp(.58rem,.72vw,.76rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:10px">Your People &middot; Your Moments</div>
+        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#c8462c">Reciprocated</em> back.</div>
+      </div>
+    </div>
+    <div class="m8-network" style="margin-top:24px;text-align:center;transform:translateX(10px)">
+      <div style="font-family:'Manrope',sans-serif;font-size:clamp(.58rem,.72vw,.76rem);font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:8px">The <strong style="color:#b8954a;font-weight:900">Network</strong></div>
+      <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,1.55vw,1.55rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">Sees.</div>
+    </div>
+    <div class="m8-hint">
+      <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 14 4 L 14 22 M 14 22 L 6 14 M 14 22 L 22 14" fill="none" stroke="#b8954a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
   </div>
   <div style="position:absolute;bottom:30px;left:36px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(26,22,18,0.72);font-weight:500;line-height:1.85;z-index:10">
     <div style="color:#1a1612;font-weight:700">Dave Velardo</div>
@@ -7865,8 +7903,8 @@ window.cs1m8BgRevealPinkAdvance = function() {
   const s = document.getElementById('cs-1m8-bg-reveal-pink');
   if (!s) return false;
   const stage = parseInt(s.dataset.stage) || 0;
-  if (stage >= 1) return false;
-  s.dataset.stage = '1';
+  if (stage >= 3) return false;
+  s.dataset.stage = String(stage + 1);
   return true;
 };
 window.cs1m8BgRevealPinkReverse = function() {
@@ -7874,7 +7912,7 @@ window.cs1m8BgRevealPinkReverse = function() {
   if (!s) return false;
   const stage = parseInt(s.dataset.stage) || 0;
   if (stage <= 0) return false;
-  s.dataset.stage = '0';
+  s.dataset.stage = String(stage - 1);
   return true;
 };
 // [Dave 2026-05-18 LATEST] cs-1m8-title-A staged reveal handlers — 3 stages (0/1/2):
