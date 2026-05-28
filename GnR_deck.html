@@ -11103,6 +11103,53 @@ window.cs1m7Reverse = function() {
   #cs-11 > section > .inner {
     padding-top: 0 !important;
   }
+  #cs-11 > section {
+    box-sizing: border-box;
+    padding: 84px 130px 118px 88px;
+  }
+  #cs-11 > section > .inner {
+    max-width: 1240px !important;
+    width: min(1240px, calc(100vw - 330px));
+    margin-top: 136px;
+    transform: none !important;
+    animation: none !important;
+  }
+  #cs-11 .display {
+    font-size: clamp(2.3rem,3.9vw,3.45rem) !important;
+    margin-bottom: 24px !important;
+  }
+  #cs-11 .cs11-cards-row {
+    max-width: 1180px !important;
+    gap: 30px !important;
+    margin: 26px auto 0 auto !important;
+    flex-wrap: nowrap !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+  #cs-11 .cs11-cards-row > div:nth-child(2) {
+    flex: 0 0 84px;
+    min-width: 84px !important;
+  }
+  #cs-11 .cs11-cards-row > div:nth-child(2) svg {
+    width: 72px;
+    height: 84px;
+  }
+  #cs-11 .cs11-flip-wrap {
+    flex: 0 1 480px;
+    min-width: 360px;
+    max-width: 480px;
+  }
+  #cs-11 .cs11-flip-inner {
+    min-height: 430px;
+  }
+  #cs-11 .cs11-flip-front {
+    min-height: 430px !important;
+    padding: 38px !important;
+  }
+  #cs-11 .cs11-flip-back {
+    min-height: 430px;
+    box-sizing: border-box;
+  }
   /* cs-11 entrance — Dave 2026-04-29 v2:
      Phase 1: 4 invitation rows pop in one-by-one (left).
      Phase 2: 4 group clusters bloom in (right) — each cluster scales from its center.
