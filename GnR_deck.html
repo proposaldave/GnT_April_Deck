@@ -11126,13 +11126,16 @@ window.cs1m7Reverse = function() {
     position: absolute;
     inset: 0;
     overflow: hidden;
-    background: #fbf7ef !important;
+    background: radial-gradient(ellipse at 50% 42%,#fbf7ef 0%,#f3ead8 65%,#e9dcc4 100%) !important;
   }
   #cs-11::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(251,247,239,0.50);
+    background-image: radial-gradient(circle at 1px 1px,rgba(26,22,18,0.05) 1px,transparent 0);
+    background-size: 4px 4px;
+    opacity: 0.45;
+    mix-blend-mode: multiply;
     pointer-events: none;
     z-index: 0;
   }
