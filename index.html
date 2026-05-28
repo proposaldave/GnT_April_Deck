@@ -7482,7 +7482,7 @@ window.cs1m5Reverse = function() {
      image for assets/cs-frontier-pink1.png (sunset town/village wide-angle watercolor).
      Fallback chain → cs-frontier-iconic-hero.png so slide always renders.
      ═══════════════════════════════════════════════════════════════════════════ -->
-<div class="casey-slide ds-focus active casey-entered" id="cs-frontier-brand-bg-pink" style="background:#f3ead8 !important;overflow:hidden">
+<div class="casey-slide ds-focus active casey-entered" id="cs-frontier-brand-bg-pink" data-stage="0" onclick="csFrontierBrandBgAdvance()" style="background:#f3ead8 !important;overflow:hidden">
   <style>
     #cs-frontier-brand-bg-pink .bgp-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
     #cs-frontier-brand-bg-pink .bgp-wash{position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,247,239,.72) 0%,rgba(251,247,239,.30) 25%,rgba(251,247,239,.04) 56%,rgba(251,247,239,.58) 100%);pointer-events:none}
@@ -7491,6 +7491,12 @@ window.cs1m5Reverse = function() {
     #cs-frontier-brand-bg-pink .bgp-head{position:absolute;left:70px;right:70px;top:116px;z-index:3;margin:0 auto;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.4rem,5.25vw,5.9rem);font-weight:850;line-height:.98;letter-spacing:0;text-align:center;max-width:1500px;color:#1a1612;text-shadow:0 1px 3px rgba(251,247,239,.82),0 16px 34px rgba(251,247,239,.30)}
     #cs-frontier-brand-bg-pink .bgp-head em{font-style:italic;color:#b8954a;font-weight:850}
     #cs-frontier-brand-bg-pink .bgp-footer{position:absolute;left:50%;bottom:58px;z-index:3;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:22px;width:min(1220px,78vw);font-family:'Manrope',sans-serif;font-size:clamp(.82rem,.94vw,1.02rem);font-weight:850;letter-spacing:.18em;line-height:1.22;text-transform:none;color:#c8462c;text-align:center}
+    #cs-frontier-brand-bg-pink .bgp-head,#cs-frontier-brand-bg-pink .bgp-footer{opacity:0;visibility:hidden;transition:opacity .62s cubic-bezier(.22,1,.36,1),transform .62s cubic-bezier(.22,1,.36,1),visibility 0s linear .62s}
+    #cs-frontier-brand-bg-pink .bgp-head{transform:translateY(16px)}
+    #cs-frontier-brand-bg-pink .bgp-footer{transform:translateX(-50%) translateY(10px)}
+    #cs-frontier-brand-bg-pink[data-stage="1"] .bgp-head,#cs-frontier-brand-bg-pink[data-stage="1"] .bgp-footer{opacity:1;visibility:visible;transition-delay:.04s,.04s,0s}
+    #cs-frontier-brand-bg-pink[data-stage="1"] .bgp-head{transform:translateY(0)}
+    #cs-frontier-brand-bg-pink[data-stage="1"] .bgp-footer{transform:translateX(-50%) translateY(0)}
     #cs-frontier-brand-bg-pink .bgp-footer:before,#cs-frontier-brand-bg-pink .bgp-footer:after{content:"";height:1px;flex:1;max-width:170px;background:linear-gradient(90deg,transparent,rgba(184,149,74,.62))}
     #cs-frontier-brand-bg-pink .bgp-footer:after{background:linear-gradient(90deg,rgba(184,149,74,.62),transparent)}
   </style>
@@ -31499,6 +31505,24 @@ window.csFrontierFeelingReverse = function() {
   return true;
 };
 
+// cs-frontier-brand-bg-pink - one-step foreground reveal [Codex 2026-05-27]
+window.csFrontierBrandBgAdvance = function() {
+  const slide = document.getElementById('cs-frontier-brand-bg-pink');
+  if (!slide || !slide.classList.contains('active')) return false;
+  const stage = parseInt(slide.dataset.stage || '0', 10);
+  if (stage >= 1) return false;
+  slide.dataset.stage = String(stage + 1);
+  return true;
+};
+window.csFrontierBrandBgReverse = function() {
+  const slide = document.getElementById('cs-frontier-brand-bg-pink');
+  if (!slide || !slide.classList.contains('active')) return false;
+  const stage = parseInt(slide.dataset.stage || '0', 10);
+  if (stage <= 0) return false;
+  slide.dataset.stage = String(stage - 1);
+  return true;
+};
+
 // cs-3 (24 unique social experiences) — click-reveal: 4 .scored cards + closer text hidden until click [Dave 2026-05-01]
 window.cs3Advance = function() {
   const slide = document.getElementById('cs-3');
@@ -32905,6 +32929,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-thegap': 'csThegapAdvance',
     'cs-once': 'csOnceAdvance',
     'cs-frontier': 'csFrontierAdvance',
+    'cs-frontier-brand-bg-pink': 'csFrontierBrandBgAdvance',
     'cs-measure': 'csMeasureAdvance',
     'cs-byproduct': 'csByproductAdvance',
     'cs-onandoff': 'csOnandoffAdvance',
@@ -32952,6 +32977,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-thegap': 'csThegapReverse',
     'cs-once': 'csOnceReverse',
     'cs-frontier': 'csFrontierReverse',
+    'cs-frontier-brand-bg-pink': 'csFrontierBrandBgReverse',
     'cs-measure': 'csMeasureReverse',
     'cs-byproduct': 'csByproductReverse',
     'cs-onandoff': 'csOnandoffReverse',
