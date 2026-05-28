@@ -30990,16 +30990,21 @@ let staffCurrent = 1;
 window.csWedgepbCodexAdvance = function() {
   const slide = document.getElementById('cs-wedgepb-codex');
   if (!slide || !slide.classList.contains('active')) return false;
+  const cards = Array.from(slide.querySelectorAll('.wpc-card'));
   const stage = parseInt(slide.dataset.stage || '0', 10);
-  if (stage >= 1) return false;
+  if (stage >= cards.length) return false;
+  if (stage === 0) cards.forEach(card => card.classList.remove('flipped'));
   slide.dataset.stage = String(stage + 1);
+  if (cards[stage]) cards[stage].classList.add('flipped');
   return true;
 };
 window.csWedgepbCodexReverse = function() {
   const slide = document.getElementById('cs-wedgepb-codex');
   if (!slide || !slide.classList.contains('active')) return false;
+  const cards = Array.from(slide.querySelectorAll('.wpc-card'));
   const stage = parseInt(slide.dataset.stage || '0', 10);
   if (stage <= 0) return false;
+  if (cards[stage - 1]) cards[stage - 1].classList.remove('flipped');
   slide.dataset.stage = String(stage - 1);
   return true;
 };
