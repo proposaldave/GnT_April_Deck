@@ -14561,7 +14561,7 @@ window.cs1m7Reverse = function() {
   /* 3-pillar row */
   [id^="cs-18-vd4"] .v5-pillars { display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;width:100%;max-width:1180px;align-items:stretch;margin-top:12px; }
   @media (hover:none) and (pointer:coarse) and (orientation:landscape) {
-    #cs-18-vd4 .v5-pillars { transform:translateX(-5.5vw); }
+    #cs-18-vd4 .v5-pillars { transform:none; }
   }
   /* [Dave 2026-05-14 PM] Pillars are now FLIPPABLE cards — front shows just the badge, back shows the full content. perspective + cursor live on the pillar; the flex layout moves to the front/back faces inside .v5-flip-inner. */
   [id^="cs-18-vd4"] .v5-pillar { position:relative;perspective:1400px;cursor:pointer;min-height:380px;padding:0 16px;background:transparent; }
@@ -14577,8 +14577,8 @@ window.cs1m7Reverse = function() {
   [id^="cs-18-vd4"] .v5-pillar.p2 .v5-front-label { color:#3a73b8; }
   [id^="cs-18-vd4"] .v5-pillar.p3 .v5-front-label { color:#a8351f; }
   #cs-18-vd4 .v5-pillar.p1 .v5-flip-front { transform:translateY(48px); }
-  #cs-18-vd4 .v5-pillar.p2 .v5-flip-front { transform:translateY(-138px); }
-  #cs-18-vd4 .v5-pillar.p3 .v5-flip-front { transform:translateY(-24px); }
+  #cs-18-vd4 .v5-pillar.p2 .v5-flip-front { transform:translate(-142px,-138px); }
+  #cs-18-vd4 .v5-pillar.p3 .v5-flip-front { transform:translate(-236px,-24px); }
   /* [Dave 2026-05-18 LATEST] Wheelhouse unifier band — connects the 3 closed cards to one section label. */
   [id^="cs-18-vd4"] .v5-wheelhouse-band { position:relative; width:100%; max-width:1180px; margin:18px auto 4px; display:flex; flex-direction:column; align-items:center; }
   [id^="cs-18-vd4"] .v5-wh-svg { width:100%; height:56px; display:block; overflow:visible; }
