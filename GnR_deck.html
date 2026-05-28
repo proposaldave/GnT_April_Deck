@@ -7482,6 +7482,26 @@ window.cs1m5Reverse = function() {
      image for assets/cs-frontier-pink1.png (sunset town/village wide-angle watercolor).
      Fallback chain → cs-frontier-iconic-hero.png so slide always renders.
      ═══════════════════════════════════════════════════════════════════════════ -->
+<div class="casey-slide ds-focus" id="cs-frontier-brand-bg-pink" style="display:none;background:#f3ead8 !important;overflow:hidden">
+  <style>
+    #cs-frontier-brand-bg-pink .bgp-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
+    #cs-frontier-brand-bg-pink .bgp-wash{position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,247,239,.72) 0%,rgba(251,247,239,.30) 25%,rgba(251,247,239,.04) 56%,rgba(251,247,239,.58) 100%);pointer-events:none}
+    #cs-frontier-brand-bg-pink .bgp-paper{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.04) 1px,transparent 0);background-size:4px 4px;opacity:.32;mix-blend-mode:multiply;pointer-events:none}
+    #cs-frontier-brand-bg-pink .bgp-eye{position:absolute;top:28px;left:48px;z-index:3;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a}
+    #cs-frontier-brand-bg-pink .bgp-head{position:absolute;left:70px;right:70px;top:116px;z-index:3;margin:0 auto;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.4rem,5.25vw,5.9rem);font-weight:850;line-height:.98;letter-spacing:0;text-align:center;max-width:1500px;color:#1a1612;text-shadow:0 1px 3px rgba(251,247,239,.82),0 16px 34px rgba(251,247,239,.30)}
+    #cs-frontier-brand-bg-pink .bgp-head em{font-style:italic;color:#b8954a;font-weight:850}
+    #cs-frontier-brand-bg-pink .bgp-footer{position:absolute;left:50%;bottom:58px;z-index:3;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:22px;width:min(1220px,78vw);font-family:'Manrope',sans-serif;font-size:clamp(.82rem,.94vw,1.02rem);font-weight:850;letter-spacing:.18em;line-height:1.22;text-transform:none;color:#c8462c;text-align:center}
+    #cs-frontier-brand-bg-pink .bgp-footer:before,#cs-frontier-brand-bg-pink .bgp-footer:after{content:"";height:1px;flex:1;max-width:170px;background:linear-gradient(90deg,transparent,rgba(184,149,74,.62))}
+    #cs-frontier-brand-bg-pink .bgp-footer:after{background:linear-gradient(90deg,rgba(184,149,74,.62),transparent)}
+  </style>
+  <img class="bgp-img" src="assets/cs-brand-codex.png" alt="">
+  <div class="bgp-wash"></div>
+  <div class="bgp-paper"></div>
+  <div class="bgp-eye">NEUROSCIENCE &bull; LONGITUDINAL &bull; PUBLIC HEALTH &bull; EPIDEMOLOGY</div>
+  <h1 class="bgp-head">The <em>#1 predictor</em> of a fulfilling life is still invisible to technology.</h1>
+  <div class="bgp-footer"><span>What we're wired for isn't measured</span></div>
+</div>
+
 <div class="casey-slide ds-focus active casey-entered frontier-feeling-slide" id="cs-frontier-pink1" data-stage="0" onclick="csFrontierFeelingAdvance()" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 68%, #eadcc3 100%) !important;overflow:hidden">
   <style>
     #cs-frontier-pink1 .ms-stage{position:absolute;inset:0;padding:28px 48px 44px;color:#1a1612}
@@ -30499,7 +30519,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18] cs-frontier-pink2 ALSO REMOVED per Dave 'delete the "1 / 24 (alt)" slide'. Slot 1 now has zero alts. HTML retained as silent backup.
   // [Dave 2026-05-26] cs-brand-codex moved from slot-1 pink-dot alt to TRASH_ORDER per screenshot request.
   // [Codex 2026-05-27] cs-frontier-scale-pink-2 promoted to primary; other scale candidates removed from active slot-1 alts per Dave delete requests.
-  1: ['cs-frontier-pink1'],
+  1: ['cs-frontier-brand-bg-pink', 'cs-frontier-pink1'],
   // [Codex 2026-05-24] New slide-2 HCT story variants. Pink-dot alts left of cs-hct-system.
   // [Dave 2026-05-25] cs-hct-system-pink1 moved to TRASH_ORDER per screenshot request.
   2: ['cs-1m8-bg-reveal-pink', 'cs-fv6-information-pink'],
@@ -32462,7 +32482,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 → pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
