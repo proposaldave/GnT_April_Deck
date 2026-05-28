@@ -11123,9 +11123,10 @@ window.cs1m7Reverse = function() {
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">No like button? No problem.</div>
 <style>
   #cs-11 {
-    position: relative;
+    position: absolute;
+    inset: 0;
     overflow: hidden;
-    background: #fbf7ef url('assets/cs-11-invitation-background.png') center / cover no-repeat;
+    background: #fbf7ef !important;
   }
   #cs-11::before {
     content: "";
@@ -11154,7 +11155,7 @@ window.cs1m7Reverse = function() {
   #cs-11 > section > .inner {
     max-width: 1240px !important;
     width: min(1240px, calc(100vw - 330px));
-    margin-top: 136px;
+    margin-top: 158px;
     transform: none !important;
     animation: none !important;
   }
