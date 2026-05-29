@@ -12,6 +12,76 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#1a1612">
 <title>Give n Receive &mdash; Pitch Deck</title>
+<!-- ===== club-community-engineering brainstorm slides [Codex 2026-05-29] ===== -->
+<style>
+  #cs-club-os, #cs-club-social-loop, #cs-club-anti-dupr {
+    background:#f3ead8 !important; overflow:hidden; position:relative; min-height:1080px; height:1080px; width:100%; color:#1a1612;
+  }
+  #cs-club-os .cco-eye, #cs-club-social-loop .cco-eye, #cs-club-anti-dupr .cco-eye {
+    position:absolute; top:28px; left:48px; z-index:10;
+    font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#c8462c;
+  }
+  .club-build-stage { position:absolute; inset:0; box-sizing:border-box; padding:90px 78px 58px; z-index:2; }
+  .club-build-kicker { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.24em; text-transform:uppercase; color:#b8954a; margin-bottom:22px; }
+  .club-build-title { margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.45rem,5.4vw,6.2rem); line-height:.98; font-weight:900; letter-spacing:0; color:#1a1612; text-wrap:balance; }
+  .club-build-title em { color:#c8462c; font-style:italic; }
+  .club-build-sub { margin:24px 0 0; max-width:980px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.3rem,1.95vw,2.05rem); line-height:1.2; font-weight:650; color:rgba(26,22,18,.76); }
+  .club-build-chip { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:9px 16px; border:1px solid rgba(184,149,74,.38); background:rgba(251,247,239,.78); border-radius:7px; box-shadow:0 10px 24px rgba(26,22,18,.05); font-family:'Manrope',sans-serif; font-size:.74rem; font-weight:900; letter-spacing:.15em; text-transform:uppercase; color:#1a1612; }
+  .club-build-chip.hot { border-color:rgba(200,70,44,.58); background:rgba(200,70,44,.08); color:#c8462c; }
+  .club-build-chip.blue { border-color:rgba(91,143,212,.48); background:rgba(91,143,212,.08); color:#335f95; }
+  .club-build-mark { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:3.15rem; font-weight:900; line-height:1; letter-spacing:0; }
+  .club-build-mark .g { color:#5B8FD4; } .club-build-mark .n { color:#b8954a; font-style:italic; font-weight:650; } .club-build-mark .r { color:#c8462c; }
+  .club-build-anim { opacity:0; transform:translateY(14px); transition:opacity .75s cubic-bezier(.22,1,.36,1), transform .75s cubic-bezier(.22,1,.36,1); }
+  .casey-entered .club-build-anim { opacity:1; transform:none; }
+  .casey-entered .club-build-anim:nth-child(2) { transition-delay:.12s; }
+  .casey-entered .club-build-anim:nth-child(3) { transition-delay:.24s; }
+  .casey-entered .club-build-anim:nth-child(4) { transition-delay:.36s; }
+  html[data-export="1"] .club-build-anim { opacity:1 !important; transform:none !important; transition:none !important; }
+
+  #cs-club-os .cco-stage { display:grid; grid-template-columns:.95fr 1.05fr; gap:54px; align-items:center; }
+  #cs-club-os .cco-offer { position:relative; height:740px; }
+  #cs-club-os .cco-core { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:270px; height:270px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; text-align:center; background:#1a1612; color:#fbf7ef; box-shadow:0 24px 80px rgba(26,22,18,.18), 0 0 0 18px rgba(184,149,74,.12); }
+  #cs-club-os .cco-core small { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:900; letter-spacing:.24em; text-transform:uppercase; color:#f1d788; }
+  #cs-club-os .cco-spoke { position:absolute; width:280px; padding:22px 24px; border:1.4px solid rgba(184,149,74,.42); background:rgba(251,247,239,.88); border-radius:8px; box-shadow:0 18px 46px rgba(26,22,18,.07); }
+  #cs-club-os .cco-spoke b { display:block; font-family:'Manrope',sans-serif; font-size:.70rem; font-weight:900; letter-spacing:.20em; text-transform:uppercase; color:#c8462c; margin-bottom:10px; }
+  #cs-club-os .cco-spoke span { display:block; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.55rem; font-weight:800; line-height:1.05; color:#1a1612; }
+  #cs-club-os .cco-s1 { left:0; top:28px; } #cs-club-os .cco-s2 { right:8px; top:92px; } #cs-club-os .cco-s3 { left:24px; bottom:92px; } #cs-club-os .cco-s4 { right:0; bottom:24px; }
+  #cs-club-os .cco-line { position:absolute; left:50%; top:50%; width:2px; height:250px; transform-origin:top center; background:linear-gradient(#b8954a,rgba(184,149,74,0)); opacity:.62; }
+  #cs-club-os .cco-l1 { transform:rotate(236deg); } #cs-club-os .cco-l2 { transform:rotate(48deg); } #cs-club-os .cco-l3 { transform:rotate(142deg); } #cs-club-os .cco-l4 { transform:rotate(-42deg); }
+  #cs-club-os .cco-close { margin-top:36px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; max-width:880px; }
+
+  #cs-club-social-loop .cco-stage { display:grid; grid-template-columns:1.04fr .96fr; gap:50px; align-items:center; }
+  #cs-club-social-loop .loop-board { position:relative; height:730px; border:2px solid rgba(91,143,212,.38); background:linear-gradient(90deg,rgba(91,143,212,.10) 0 49.8%,rgba(251,247,239,.74) 49.8% 50.2%,rgba(91,143,212,.10) 50.2% 100%); box-shadow:inset 0 0 0 26px rgba(251,247,239,.55),0 28px 80px rgba(26,22,18,.08); }
+  #cs-club-social-loop .loop-net { position:absolute; left:50%; top:36px; bottom:36px; width:2px; background:repeating-linear-gradient(to bottom,rgba(26,22,18,.42) 0 9px,transparent 9px 17px); }
+  #cs-club-social-loop .loop-step { position:absolute; width:270px; padding:20px 22px; border:1.4px solid rgba(26,22,18,.13); background:rgba(251,247,239,.91); border-radius:8px; box-shadow:0 16px 42px rgba(26,22,18,.08); }
+  #cs-club-social-loop .loop-step b { display:block; font-family:'Manrope',sans-serif; font-size:.66rem; font-weight:900; letter-spacing:.20em; text-transform:uppercase; color:#5B8FD4; margin-bottom:8px; }
+  #cs-club-social-loop .loop-step span { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.45rem; font-weight:850; line-height:1.04; }
+  #cs-club-social-loop .loop-a { left:34px; top:42px; } #cs-club-social-loop .loop-b { right:36px; top:118px; } #cs-club-social-loop .loop-c { left:58px; bottom:142px; } #cs-club-social-loop .loop-d { right:44px; bottom:48px; }
+  #cs-club-social-loop .loop-ball { position:absolute; left:49%; top:46%; width:46px; height:46px; border-radius:50%; background:#c8462c; box-shadow:0 0 0 14px rgba(200,70,44,.12),0 14px 30px rgba(200,70,44,.24); }
+  #cs-club-social-loop .loop-caption { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:245px; padding:20px; text-align:center; background:#1a1612; color:#fbf7ef; border-radius:8px; box-shadow:0 20px 54px rgba(26,22,18,.20); }
+  #cs-club-social-loop .loop-caption b { display:block; font-family:'Manrope',sans-serif; font-size:.64rem; font-weight:900; letter-spacing:.20em; text-transform:uppercase; color:#f1d788; margin-bottom:10px; }
+  #cs-club-social-loop .loop-caption span { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.7rem; font-weight:850; line-height:1.02; }
+  #cs-club-social-loop .loop-foot { margin-top:30px; display:flex; flex-wrap:wrap; gap:10px; }
+
+  #cs-club-anti-dupr .cco-stage { display:flex; flex-direction:column; justify-content:center; gap:36px; }
+  #cs-club-anti-dupr .adu-head { text-align:center; max-width:1320px; margin:0 auto; }
+  #cs-club-anti-dupr .adu-compare { display:grid; grid-template-columns:1fr 128px 1fr; gap:28px; align-items:stretch; }
+  #cs-club-anti-dupr .adu-panel { min-height:470px; padding:40px 42px 36px; border:1.4px solid rgba(184,149,74,.30); background:rgba(251,247,239,.82); border-radius:8px; box-shadow:0 18px 52px rgba(26,22,18,.06); display:flex; flex-direction:column; gap:22px; }
+  #cs-club-anti-dupr .adu-panel.bad { border-left:7px solid #c8462c; }
+  #cs-club-anti-dupr .adu-panel.good { border-left:7px solid #5B8FD4; background:linear-gradient(180deg,rgba(251,247,239,.96),rgba(251,247,239,.78)); }
+  #cs-club-anti-dupr .adu-label { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.28em; text-transform:uppercase; }
+  #cs-club-anti-dupr .bad .adu-label { color:#c8462c; } #cs-club-anti-dupr .good .adu-label { color:#5B8FD4; }
+  #cs-club-anti-dupr .adu-panel h2 { margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:3.05rem; font-weight:900; line-height:1.02; letter-spacing:0; color:#1a1612; }
+  #cs-club-anti-dupr .adu-proof { font-family:'Manrope',sans-serif; font-size:.78rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:rgba(26,22,18,.52); padding:15px 0; border-top:1px solid rgba(184,149,74,.28); border-bottom:1px solid rgba(184,149,74,.28); }
+  #cs-club-anti-dupr .adu-points { display:grid; gap:14px; margin-top:auto; }
+  #cs-club-anti-dupr .adu-point { position:relative; padding-left:22px; font-family:'Manrope',sans-serif; font-size:1.26rem; font-weight:780; line-height:1.18; color:#1a1612; }
+  #cs-club-anti-dupr .adu-point:before { content:''; position:absolute; left:0; top:.45em; width:8px; height:8px; border-radius:50%; background:#b8954a; }
+  #cs-club-anti-dupr .bad .adu-point:before { background:#c8462c; } #cs-club-anti-dupr .good .adu-point:before { background:#5B8FD4; }
+  #cs-club-anti-dupr .adu-mid { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; text-align:center; }
+  #cs-club-anti-dupr .adu-mid-line { width:1px; height:98px; background:linear-gradient(180deg,rgba(200,70,44,.55),rgba(184,149,74,.75),rgba(91,143,212,.55)); }
+  #cs-club-anti-dupr .adu-mid-copy { font-family:'Manrope',sans-serif; font-size:.68rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:rgba(26,22,18,.58); line-height:1.55; }
+</style>
+
 <style>
   /* [Dave 2026-05-15] iPad / iOS Safari polish — added with the rest of the audit pass:
      • Tap-highlight: kill the gray flash on every tap (looked twitchy on cards/nav).
@@ -13702,6 +13772,93 @@ window.cs1m7Reverse = function() {
 </div>
 
 <!-- ===== cs-11d — card-flip on the two stat cards (envelope back-faces) [Dave 2026-04-30 PM] ===== -->
+<div class="casey-slide ds-focus" id="cs-club-os">
+  <div class="cco-eye">club owner offer</div>
+  <section class="club-build-stage cco-stage">
+    <div class="club-build-anim">
+      <div class="club-build-kicker">We are not just selling software</div>
+      <h1 class="club-build-title">We sell the club its <em>social operating system.</em></h1>
+      <p class="club-build-sub">Product, marketing, events, content, and invitation-based match picking arrive as one positive human-connection machine.</p>
+      <div class="cco-close">
+        <span class="club-build-chip hot">fun people found</span>
+        <span class="club-build-chip blue">events filled</span>
+        <span class="club-build-chip">staff energized</span>
+      </div>
+    </div>
+    <div class="cco-offer club-build-anim" aria-hidden="true">
+      <div class="cco-line cco-l1"></div><div class="cco-line cco-l2"></div><div class="cco-line cco-l3"></div><div class="cco-line cco-l4"></div>
+      <div class="cco-core"><div class="club-build-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div><small>human connection</small></div>
+      <div class="cco-spoke cco-s1"><b>Product</b><span>Who should play with whom.</span></div>
+      <div class="cco-spoke cco-s2"><b>Marketing</b><span>A story members want to join.</span></div>
+      <div class="cco-spoke cco-s3"><b>Social</b><span>Events people talk about after.</span></div>
+      <div class="cco-spoke cco-s4"><b>Brand</b><span>The club becomes the place that gives.</span></div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-club-social-loop">
+  <div class="cco-eye">community growth system</div>
+  <section class="club-build-stage cco-stage">
+    <div class="loop-board club-build-anim" aria-hidden="true">
+      <div class="loop-net"></div><div class="loop-ball"></div>
+      <div class="loop-step loop-a"><b>01 influx</b><span>Lower-level socials welcome the next wave.</span></div>
+      <div class="loop-step loop-b"><b>02 scouts</b><span>Find the intermediate players who love the silly human part.</span></div>
+      <div class="loop-step loop-c"><b>03 invites</b><span>Match by energy, generosity, and belonging.</span></div>
+      <div class="loop-step loop-d"><b>04 media</b><span>Turn the room into proof the club is alive.</span></div>
+      <div class="loop-caption"><b>the loop</b><span>Every event creates the next event.</span></div>
+    </div>
+    <div class="club-build-anim">
+      <div class="club-build-kicker">The tactic stack</div>
+      <h1 class="club-build-title">Engineer the room until the community starts <em>pulling itself forward.</em></h1>
+      <p class="club-build-sub">The club keeps a healthy influx of new players, identifies the members who spread fun, and gives them the right invitations to become community gravity.</p>
+      <div class="loop-foot">
+        <span class="club-build-chip blue">newcomer nights</span>
+        <span class="club-build-chip hot">silly-event heroes</span>
+        <span class="club-build-chip">social media proof</span>
+        <span class="club-build-chip">repeatable belonging</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-club-anti-dupr">
+  <div class="cco-eye">anti-DUPR position</div>
+  <section class="club-build-stage cco-stage">
+    <div class="adu-head club-build-anim">
+      <div class="club-build-kicker">The positive alternative to ratings culture</div>
+      <h1 class="club-build-title">Ratings sort people. <em>Give n Receive connects them.</em></h1>
+    </div>
+    <div class="adu-compare club-build-anim">
+      <div class="adu-panel bad">
+        <div class="adu-label">Rating-first club</div>
+        <h2>Everyone protects a number.</h2>
+        <div class="adu-proof">Skill anxiety &middot; brittle events &middot; staff drag</div>
+        <div class="adu-points">
+          <div class="adu-point">Players avoid the wrong game.</div>
+          <div class="adu-point">New people stay invisible.</div>
+          <div class="adu-point">Scheduling feels like conflict management.</div>
+        </div>
+      </div>
+      <div class="adu-mid" aria-hidden="true">
+        <div class="adu-mid-line"></div>
+        <div class="club-build-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+        <div class="adu-mid-copy">brand<br>events<br>social<br>matches</div>
+        <div class="adu-mid-line"></div>
+      </div>
+      <div class="adu-panel good">
+        <div class="adu-label">GnR club</div>
+        <h2>Everyone wants back in.</h2>
+        <div class="adu-proof">Human connection &middot; invitation trust &middot; staff fun</div>
+        <div class="adu-points">
+          <div class="adu-point">Players are chosen for what they give.</div>
+          <div class="adu-point">Events create stories worth sharing.</div>
+          <div class="adu-point">The club becomes the positive place that spreads connection.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
 <style>
   #cs-11d .hg-flip-wrap { perspective: 1500px; min-height: 220px; }
   #cs-11d .hg-flip-inner { position: relative; width: 100%; min-height: 220px; transition: transform 0.85s cubic-bezier(.45,.05,.18,1); transform-style: preserve-3d; }
@@ -31236,6 +31393,9 @@ const SLIDE_ORDER = [
   // [Codex 2026-05-26] cs-community-business moved to TRASH_ORDER per Dave: slide 5 / 20 and its alt were blank.
   // [Dave 2026-05-26] cs-samecourt MOVED EARLIER. The Munger/incentive-system thesis now lands before cultural/product reveal so investors understand the core behavior-change mechanism first.
   'cs-gnr',   //  4 Introducing GnR - invitation matchmaking
+  'cs-club-os',
+  'cs-club-social-loop',
+  'cs-club-anti-dupr',
   'cs-samecourt',
   // [Dave 2026-05-24 LATER] cs-18-vd4 MOVED LATER. Founder/Steve Jobs wheelhouse beat was interrupting the product reveal here; investor needs the product before founder philosophy.
   // cs-bh2 (TOMORROW · multi-person synthesis) MOVED to APPENDIX per Dave 2026-05-03 PM — didn't land in main flow
@@ -33190,6 +33350,9 @@ const slideLabels = [
   "Give n Receive = community",                     //  5 cs-2c
   // cs-once label removed from main 2026-05-07 PM — moved to LAST appendix slide per Dave: 'this slide design is terrible, has far too much content, and needs to be moved to the very end of the deck'
   'Introducing Give n Receive',                      //  7 cs-gnr
+  'Club owner offer',
+  'Community growth system',
+  'Anti-DUPR position',
   'The Secret Inside the Invitation · 70/0.6',      //  6 cs-11d
   'Scheduling is measuring',                         //  7 cs-11
   'NEPC proof · $210K court fees',                   //  9 cs-11e
