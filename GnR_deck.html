@@ -7705,10 +7705,17 @@ window.cs1m5Reverse = function() {
   #cs-frontier-scale-pink-2 .scale-image-wrap{inset:0;width:auto;height:auto;z-index:1;box-shadow:none;background-color:#fbf7ef;background-size:cover;background-repeat:no-repeat;background-position:center center;filter:saturate(1.06) contrast(1.03)}
   #cs-frontier-scale-pink-2 .scale-image-wrap:after{background:linear-gradient(180deg, rgba(251,247,239,.94) 0%, rgba(251,247,239,.88) 23%, rgba(251,247,239,.48) 37%, rgba(251,247,239,.05) 58%, rgba(251,247,239,.78) 100%)}
   #cs-frontier-scale-pink-2 .scale-head span{display:block}
-  #cs-frontier-scale-pink-2 .scale-footer{left:72%;bottom:46px !important;width:min(900px,46vw);z-index:8 !important;opacity:1!important;visibility:visible!important;color:#c8462c;font-size:clamp(1.5rem,1.78vw,2.08rem);text-shadow:0 2px 8px rgba(251,247,239,.82)}
+  #cs-frontier-scale-pink-2 .scale-head,#cs-frontier-scale-pink-2 .scale-mark,#cs-frontier-scale-pink-2 .scale-footer{opacity:0!important;visibility:hidden!important;transition:opacity .62s cubic-bezier(.22,1,.36,1),transform .62s cubic-bezier(.22,1,.36,1),visibility 0s linear .62s}
+  #cs-frontier-scale-pink-2 .scale-head{transform:translateX(-50%) translateY(12px)}
+  #cs-frontier-scale-pink-2 .scale-mark{transform:translateY(10px)}
+  #cs-frontier-scale-pink-2 .scale-footer{left:72%;bottom:46px !important;width:min(900px,46vw);z-index:8 !important;transform:translateX(-50%) translateY(10px);color:#c8462c;font-size:clamp(1.5rem,1.78vw,2.08rem);text-shadow:0 2px 8px rgba(251,247,239,.82)}
+  #cs-frontier-scale-pink-2[data-stage="1"] .scale-head,#cs-frontier-scale-pink-2[data-stage="1"] .scale-mark,#cs-frontier-scale-pink-2[data-stage="2"] .scale-head,#cs-frontier-scale-pink-2[data-stage="2"] .scale-mark{opacity:1!important;visibility:visible!important;transition-delay:.04s, .04s, 0s}
+  #cs-frontier-scale-pink-2[data-stage="1"] .scale-head,#cs-frontier-scale-pink-2[data-stage="2"] .scale-head{transform:translateX(-50%) translateY(0)}
+  #cs-frontier-scale-pink-2[data-stage="1"] .scale-mark,#cs-frontier-scale-pink-2[data-stage="2"] .scale-mark{transform:translateY(0)}
+  #cs-frontier-scale-pink-2[data-stage="2"] .scale-footer{opacity:1!important;visibility:visible!important;transform:translateX(-50%) translateY(0);transition-delay:.1s, .1s, 0s}
 </style>
 
-<div class="casey-slide ds-focus scale-option-slide active casey-entered" id="cs-frontier-scale-pink-2">
+<div class="casey-slide ds-focus scale-option-slide active casey-entered" id="cs-frontier-scale-pink-2" data-stage="0" onclick="if(window.csFrontierScalePink2Advance && window.csFrontierScalePink2Advance()) event.stopPropagation()" style="cursor:pointer">
   <div class="scale-paper"></div>
   <div class="scale-eye">NEUROSCIENCE &bull; LONGITUDINAL &bull; PUBLIC HEALTH &bull; EPIDEMOLOGY</div>
   <div class="scale-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
@@ -32595,6 +32602,24 @@ window.csFrontierBrandBgReverse = function() {
   return true;
 };
 
+// cs-frontier-scale-pink-2 - active opener staged reveal [Codex 2026-05-29]
+window.csFrontierScalePink2Advance = function() {
+  const slide = document.getElementById('cs-frontier-scale-pink-2');
+  if (!slide || !slide.classList.contains('active')) return false;
+  const stage = parseInt(slide.dataset.stage || '0', 10);
+  if (stage >= 2) return false;
+  slide.dataset.stage = String(stage + 1);
+  return true;
+};
+window.csFrontierScalePink2Reverse = function() {
+  const slide = document.getElementById('cs-frontier-scale-pink-2');
+  if (!slide || !slide.classList.contains('active')) return false;
+  const stage = parseInt(slide.dataset.stage || '0', 10);
+  if (stage <= 0) return false;
+  slide.dataset.stage = String(stage - 1);
+  return true;
+};
+
 // cs-3 (24 unique social experiences) — click-reveal: 4 .scored cards + closer text hidden until click [Dave 2026-05-01]
 window.cs3Advance = function() {
   const slide = document.getElementById('cs-3');
@@ -34006,6 +34031,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-once': 'csOnceAdvance',
     'cs-frontier': 'csFrontierAdvance',
     'cs-frontier-brand-bg-pink': 'csFrontierBrandBgAdvance',
+    'cs-frontier-scale-pink-2': 'csFrontierScalePink2Advance',
     'cs-measure': 'csMeasureAdvance',
     'cs-byproduct': 'csByproductAdvance',
     'cs-onandoff': 'csOnandoffAdvance',
@@ -34054,6 +34080,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-once': 'csOnceReverse',
     'cs-frontier': 'csFrontierReverse',
     'cs-frontier-brand-bg-pink': 'csFrontierBrandBgReverse',
+    'cs-frontier-scale-pink-2': 'csFrontierScalePink2Reverse',
     'cs-measure': 'csMeasureReverse',
     'cs-byproduct': 'csByproductReverse',
     'cs-onandoff': 'csOnandoffReverse',
@@ -34305,6 +34332,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-frontier-scale-pink-2' && window.csFrontierScalePink2Advance && window.csFrontierScalePink2Advance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     // [Dave 2026-05-18 LATEST] cs-18-vd4 — wheel-block until pillars finish entering.
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-18-vd4' && window.csVd4Advance && window.csVd4Advance()) {
       setTimeout(() => { wheelLock = false; }, 400);
@@ -34467,6 +34498,10 @@ document.addEventListener('wheel', e => {
     }
     // [Dave 2026-05-18 LATEST v3] cs-1m8-title-B (slot 2 primary) — 4-stage wheel-reverse.
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8-title-B' && window.csM8TitleBReverse && window.csM8TitleBReverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-frontier-scale-pink-2' && window.csFrontierScalePink2Reverse && window.csFrontierScalePink2Reverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
