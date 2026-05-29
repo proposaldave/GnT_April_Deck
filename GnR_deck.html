@@ -7483,7 +7483,7 @@ window.cs1m5Reverse = function() {
      image for assets/cs-frontier-pink1.png (sunset town/village wide-angle watercolor).
      Fallback chain → cs-frontier-iconic-hero.png so slide always renders.
      ═══════════════════════════════════════════════════════════════════════════ -->
-<div class="casey-slide ds-focus active casey-entered" id="cs-frontier-brand-bg-pink" data-stage="0" onclick="csFrontierBrandBgAdvance()" style="background:#f3ead8 !important;overflow:hidden">
+<div class="casey-slide ds-focus" id="cs-frontier-brand-bg-pink" data-stage="0" onclick="csFrontierBrandBgAdvance()" style="display:none;background:#f3ead8 !important;overflow:hidden">
   <style>
     #cs-frontier-brand-bg-pink .bgp-img{position:absolute;top:-7%;left:-5%;width:110%;height:116%;object-fit:cover;object-position:center 54%;display:block;filter:saturate(1.08) contrast(1.04) brightness(1.02);transform:scale(1.015);transform-origin:center center}
     #cs-frontier-brand-bg-pink .bgp-wash{position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,247,239,.82) 0%,rgba(251,247,239,.42) 21%,rgba(251,247,239,.02) 52%,rgba(251,247,239,.48) 100%),radial-gradient(ellipse at 50% 50%,rgba(251,247,239,0) 42%,rgba(243,234,216,.28) 100%);pointer-events:none}
@@ -7634,15 +7634,16 @@ window.cs1m5Reverse = function() {
   #cs-frontier-scale-pink-2 .scale-head{z-index:4;text-shadow:0 2px 6px rgba(251,247,239,.72),0 12px 34px rgba(251,247,239,.54)}
   #cs-frontier-scale-pink-2 .scale-image-wrap{inset:0;width:auto;height:auto;z-index:1;box-shadow:none;background-color:#fbf7ef;background-size:cover;background-repeat:no-repeat;background-position:center center;filter:saturate(1.06) contrast(1.03)}
   #cs-frontier-scale-pink-2 .scale-image-wrap:after{background:linear-gradient(180deg, rgba(251,247,239,.94) 0%, rgba(251,247,239,.88) 23%, rgba(251,247,239,.48) 37%, rgba(251,247,239,.05) 58%, rgba(251,247,239,.78) 100%)}
-  #cs-frontier-scale-pink-2 .scale-footer{bottom:46px !important;z-index:8 !important;opacity:1!important;visibility:visible!important;text-shadow:0 2px 8px rgba(251,247,239,.82)}
+  #cs-frontier-scale-pink-2 .scale-head span{display:block}
+  #cs-frontier-scale-pink-2 .scale-footer{left:65%;bottom:46px !important;width:min(980px,54vw);z-index:8 !important;opacity:1!important;visibility:visible!important;color:#c8462c;font-size:clamp(1.72rem,2.05vw,2.36rem);text-shadow:0 2px 8px rgba(251,247,239,.82)}
 </style>
 
-<div class="casey-slide ds-focus scale-option-slide" id="cs-frontier-scale-pink-2">
+<div class="casey-slide ds-focus scale-option-slide active casey-entered" id="cs-frontier-scale-pink-2">
   <div class="scale-paper"></div>
   <div class="scale-eye">NEUROSCIENCE &bull; LONGITUDINAL &bull; PUBLIC HEALTH &bull; EPIDEMOLOGY</div>
   <div class="scale-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
   <section class="scale-stage">
-    <h1 class="scale-head">The <em>#1 predictor</em> of a fulfilling life is still invisible to technology.</h1>
+    <h1 class="scale-head"><span>The <em>#1 predictor</em> of a fulfilling life</span><span>is still invisible to technology.</span></h1>
     <div class="scale-image-wrap" style="background-image:url('assets/cs-frontier-scale-pink-2-recreated.png')" aria-label="Technology metrics balanced against real human connection"></div>
     <div class="scale-footer">What we're wired for isn't measured</div>
   </section>
@@ -31170,7 +31171,7 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-14] cs-intro6 INSERTED as new slot 1 per Dave: 'take the attached image and figure out how to leverage it to create a new slide just before the title slide for our new slide 1'. Cinematic science-proof opener (4-field convergence) lands BEFORE the wordmark title slide. All other main-flow slots shift +1.
   // [Dave 2026-05-14 MERGE] cs-intro6 + cs-frontier MERGED into a single slot-1 opener (cs-frontier carries the merged content). cs-intro6 demoted to red-dot alt at slot 1 for A/B comparison. All slots past slot 1 shift -1. Merge approach: hero now states the #1-predictor science truth, sub names the parabolic demand reality, curve carries the demand visualization, '4 sciences agree' strip grounds the claim, positioning band carves the category + wedge.
   // [Dave 2026-05-14 PM v4] cs-frontier-iconic PROMOTED to slot-1 primary per Dave 'I like this, let's make it the first slide, replacing current first slide which you can move to being a red dot slide to the left'. cs-frontier (former primary) demoted to first red-dot alt below.
-  'cs-frontier-brand-bg-pink', //  1 PRIMARY - [Dave 2026-05-27] Promoted from pink-dot alt per screenshot request; cs-frontier-scale-pink-2 and cs-frontier-pink1 remain slot-1 pink alts.
+  'cs-frontier-scale-pink-2', //  1 PRIMARY - [Codex 2026-05-29] Promoted from slot-1 alt per screenshot request; previous primary cs-frontier-brand-bg-pink moved to trash.
   'cs-1m8', //  2 PRIMARY - [Codex 2026-05-28] Promoted from slot-1 pink alt per screenshot request, immediately after the neuroscience opener.
   // [Codex 2026-05-27] cs-fv6-img MOVED from slot 2 to the post-wedge product/workflow reveal after cs-wedgepb-codex per Dave screenshot request.
   // [Dave 2026-05-25] cs-hct-system moved to TRASH_ORDER per screenshot request.
@@ -31329,7 +31330,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18] cs-frontier-pink2 ALSO REMOVED per Dave 'delete the "1 / 24 (alt)" slide'. Slot 1 now has zero alts. HTML retained as silent backup.
   // [Dave 2026-05-26] cs-brand-codex moved from slot-1 pink-dot alt to TRASH_ORDER per screenshot request.
   // [Codex 2026-05-27] cs-frontier-scale-pink-2 promoted to primary; other scale candidates removed from active slot-1 alts per Dave delete requests.
-  1: ['cs-frontier-scale-pink-2', 'cs-frontier-pink1'],
+  1: ['cs-frontier-pink1'],
   // [Codex 2026-05-24] New slide-2 HCT story variants. Pink-dot alts left of cs-hct-system.
   // [Dave 2026-05-25] cs-hct-system-pink1 moved to TRASH_ORDER per screenshot request.
   // Slot-2 cs-1m8 alts detached after cs-1m8 moved to slot-1 pink alt.
@@ -31658,6 +31659,7 @@ const TRASH_ORDER = [
   'cs-brand-V8',
   'cs-1m8-title-A',
   'cs-1m8-title-C',
+  'cs-frontier-brand-bg-pink',
 ];
 const TRASH_TOTAL = TRASH_ORDER.length;
 // Concept review rail. Separate from main deck, appendix, trash, and slot alts.
