@@ -19845,6 +19845,18 @@ window.csBrandV8Reverse = function() {
   #cs-value-screen .room-person.p7 { left:54px; top:84px; background:#fbf7ef; }
   #cs-value-screen .screen-core { position:absolute; left:43%; top:50%; transform:translate(-50%,-50%); width:245px; min-height:122px; display:flex; align-items:center; justify-content:center; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:2.18rem; font-style:italic; font-weight:850; line-height:1.03; color:#fbf7ef; text-shadow:0 2px 18px rgba(0,0,0,.46); z-index:2; }
 
+  #cs-app-store-people { background:#1a1612 !important; overflow:hidden; }
+  #cs-app-store-people .asp-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; filter:saturate(.96) contrast(1.03); z-index:0; }
+  #cs-app-store-people .asp-wash { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(90deg, rgba(251,247,239,.92) 0%, rgba(251,247,239,.80) 32%, rgba(251,247,239,.36) 61%, rgba(26,22,18,.20) 100%), linear-gradient(180deg, rgba(251,247,239,.58) 0%, rgba(251,247,239,.08) 58%, rgba(26,22,18,.34) 100%); }
+  #cs-app-store-people .asp-eye { position:absolute; top:28px; left:48px; z-index:3; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#c8462c; }
+  #cs-app-store-people .asp-stage { position:absolute; inset:0; z-index:2; display:grid; grid-template-columns:minmax(560px,.72fr) minmax(620px,.88fr); align-items:center; gap:54px; padding:104px 76px 62px; }
+  #cs-app-store-people .asp-quote { margin:0; max-width:790px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.4rem,5.5vw,6.1rem); font-weight:850; line-height:.98; letter-spacing:-.026em; color:#1a1612; text-wrap:balance; }
+  #cs-app-store-people .asp-quote em { color:#b8954a; font-style:italic; }
+  #cs-app-store-people .asp-video { width:100%; aspect-ratio:16/9; border:1px solid rgba(184,149,74,.62); background:#1a1612; box-shadow:0 24px 54px rgba(26,22,18,.28); overflow:hidden; }
+  #cs-app-store-people .asp-video iframe { display:block; width:100%; height:100%; border:0; background:#1a1612; }
+  #cs-app-store-people.casey-entered .asp-quote, #cs-app-store-people.casey-entered .asp-video { animation:vcRise .76s cubic-bezier(.22,1,.36,1) both; }
+  #cs-app-store-people.casey-entered .asp-video { animation-delay:.16s; }
+
   #cs-value-product .vb-stage { grid-template-columns:1fr; justify-items:center; text-align:center; }
   #cs-value-product .product-strip { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:12px; margin:34px 0 22px; max-width:1480px; }
   #cs-value-product .vb-head { max-width:1320px; }
@@ -19916,6 +19928,18 @@ window.csBrandV8Reverse = function() {
         <span class="room-person p7"></span>
       </div>
       <div class="screen-core">the product is<br>human connection</div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-app-store-people" style="display:none">
+  <img class="asp-bg" src="assets/cs-app-store-people-bg.png" alt="">
+  <div class="asp-wash" aria-hidden="true"></div>
+  <div class="asp-eye">App Store for People</div>
+  <section class="asp-stage">
+    <h1 class="asp-quote">&ldquo;I envision an app store for <em>people.</em>&rdquo;</h1>
+    <div class="asp-video">
+      <iframe src="https://drive.google.com/file/d/1sk44-woFi5l384ue0QtzHSBXLPLhkTc3/preview" allow="autoplay; fullscreen" allowfullscreen title="Brian Chesky app store for people video"></iframe>
     </div>
   </section>
 </div>
@@ -31450,6 +31474,7 @@ const SLIDE_ORDER = [
   'cs-mv6-merge', // HUMANITY'S ENDGAME - mission/demand curve moved to final-quarter vision section.
   'cs-value-choice', // [Codex 2026-05-28] New active brainstorm slide: most valuable product is abundant human connection.
   'cs-value-screen',
+  'cs-app-store-people',
   // [Codex 2026-05-29] cs-value-product removed from active main flow per Dave screenshot delete request. HTML remains as rollback source.
   // [Codex 2026-05-27] cs-18-vd4 removed from active main flow per Dave screenshot delete request. HTML remains as rollback source.
   // [Dave 2026-05-12 LATEST] cs-onandoff MOVED DOWN — now immediately after cs-fv6. [Dave 2026-05-14 PM v4] cs-onandoff DELETED per Dave 'delete this slide'. HTML retained for rollback.
