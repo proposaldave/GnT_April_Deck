@@ -19639,16 +19639,35 @@ window.csBrandV8Reverse = function() {
   #cs-value-ladder .ladder-row.final .rank { color:#c8462c; }
   #cs-value-ladder .ladder-row.final .vb-chip { min-height:72px; font-size:1.32rem; border-width:1.6px; box-shadow:0 14px 34px rgba(184,149,74,0.12); }
 
-  #cs-value-screen { background:#1a1612 !important; }
-  #cs-value-screen .vb-stage { grid-template-columns:1fr .82fr; gap:54px; }
+  #cs-value-screen { background:#1a1612 !important; overflow:hidden; }
+  #cs-value-screen::before { content:""; position:absolute; inset:0; background:
+    linear-gradient(90deg, rgba(26,22,18,0.96) 0%, rgba(26,22,18,0.88) 38%, rgba(26,22,18,0.42) 72%, rgba(26,22,18,0.70) 100%),
+    url('assets/cs-human-connection-value-bg.png') center/cover no-repeat; opacity:.68; filter:saturate(.9) contrast(1.08); }
+  #cs-value-screen::after { content:""; position:absolute; inset:0; background:
+    radial-gradient(circle at 77% 58%, rgba(184,149,74,.28), transparent 26%),
+    radial-gradient(circle at 78% 24%, rgba(91,143,212,.22), transparent 22%); pointer-events:none; }
+  #cs-value-screen .vb-stage { grid-template-columns:1fr .92fr; gap:48px; }
   #cs-value-screen .vb-kicker, #cs-value-screen .vb-head, #cs-value-screen .vb-sub { color:#fbf7ef; }
   #cs-value-screen .vb-head em { color:#b8954a; }
-  #cs-value-screen .screen-stack { position:relative; height:610px; }
-  #cs-value-screen .screen-card { position:absolute; border-radius:8px; border:1px solid rgba(91,143,212,0.32); background:linear-gradient(180deg, rgba(91,143,212,0.20), rgba(26,22,18,0.72)); box-shadow:0 18px 42px rgba(0,0,0,0.30); }
-  #cs-value-screen .screen-card.one { left:8%; top:8%; width:44%; height:28%; }
-  #cs-value-screen .screen-card.two { right:4%; top:18%; width:48%; height:34%; }
-  #cs-value-screen .screen-card.three { left:24%; bottom:4%; width:56%; height:42%; border-color:rgba(200,70,44,0.42); background:linear-gradient(180deg, rgba(200,70,44,0.18), rgba(26,22,18,0.74)); }
-  #cs-value-screen .screen-core { position:absolute; left:50%; top:52%; transform:translate(-50%,-50%); width:330px; height:330px; border-radius:50%; border:1.6px solid rgba(184,149,74,0.76); background:radial-gradient(circle, rgba(184,149,74,0.42), rgba(184,149,74,0.12) 48%, rgba(184,149,74,0) 70%); display:flex; align-items:center; justify-content:center; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:2rem; font-style:italic; font-weight:850; line-height:1.08; color:#fbf7ef; padding:34px; box-shadow:0 0 70px rgba(184,149,74,0.22); }
+  #cs-value-screen .screen-stack { position:relative; height:650px; }
+  #cs-value-screen .screen-card { position:absolute; border-radius:8px; border:1px solid rgba(91,143,212,0.38); background:linear-gradient(180deg, rgba(91,143,212,0.24), rgba(26,22,18,0.76)); box-shadow:0 18px 42px rgba(0,0,0,0.32), inset 0 1px 0 rgba(251,247,239,0.08); }
+  #cs-value-screen .screen-card::before { content:""; position:absolute; left:20px; right:20px; top:18px; height:8px; border-radius:99px; background:linear-gradient(90deg, rgba(91,143,212,.95) 0 16%, transparent 16% 24%, rgba(91,143,212,.72) 24% 43%, transparent 43% 53%, rgba(251,247,239,.55) 53% 62%, transparent 62% 100%); opacity:.9; }
+  #cs-value-screen .screen-card.one { left:4%; top:2%; width:42%; height:25%; }
+  #cs-value-screen .screen-card.two { right:5%; top:12%; width:50%; height:30%; }
+  #cs-value-screen .screen-card.three { left:15%; bottom:3%; width:74%; height:40%; border-color:rgba(200,70,44,0.48); background:linear-gradient(180deg, rgba(200,70,44,0.20), rgba(26,22,18,0.80)); }
+  #cs-value-screen .screen-path { position:absolute; left:47%; top:27%; width:28%; height:32%; border-right:2px solid rgba(184,149,74,.56); border-bottom:2px solid rgba(184,149,74,.56); border-radius:0 0 90px 0; filter:drop-shadow(0 0 12px rgba(184,149,74,.32)); }
+  #cs-value-screen .screen-room { position:absolute; left:43%; top:50%; transform:translate(-50%,-50%); width:372px; height:372px; border-radius:50%; border:1.8px solid rgba(184,149,74,0.86); background:radial-gradient(circle, rgba(184,149,74,0.38), rgba(184,149,74,0.13) 50%, rgba(184,149,74,0.03) 72%); box-shadow:0 0 90px rgba(184,149,74,0.24), inset 0 0 46px rgba(251,247,239,0.04); }
+  #cs-value-screen .screen-room::before { content:""; position:absolute; inset:72px; border-radius:50%; border:1px solid rgba(251,247,239,.30); background:rgba(26,22,18,.34); box-shadow:0 0 28px rgba(184,149,74,.20); }
+  #cs-value-screen .screen-room::after { content:""; position:absolute; left:50%; top:50%; width:230px; height:1px; transform:translate(-50%,-50%) rotate(34deg); background:rgba(251,247,239,.24); box-shadow:0 0 0 1px rgba(251,247,239,.08), 0 -70px 0 rgba(251,247,239,.14), 0 70px 0 rgba(251,247,239,.14); }
+  #cs-value-screen .room-person { position:absolute; width:26px; height:26px; border-radius:50%; background:#fbf7ef; box-shadow:0 0 22px rgba(251,247,239,.40); }
+  #cs-value-screen .room-person.p1 { left:50%; top:22px; transform:translateX(-50%); background:#5B8FD4; }
+  #cs-value-screen .room-person.p2 { right:54px; top:84px; background:#b8954a; }
+  #cs-value-screen .room-person.p3 { right:34px; top:190px; background:#c8462c; }
+  #cs-value-screen .room-person.p4 { right:98px; bottom:44px; background:#fbf7ef; }
+  #cs-value-screen .room-person.p5 { left:98px; bottom:44px; background:#b8954a; }
+  #cs-value-screen .room-person.p6 { left:34px; top:190px; background:#5B8FD4; }
+  #cs-value-screen .room-person.p7 { left:54px; top:84px; background:#fbf7ef; }
+  #cs-value-screen .screen-core { position:absolute; left:43%; top:50%; transform:translate(-50%,-50%); width:245px; min-height:122px; display:flex; align-items:center; justify-content:center; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:2.18rem; font-style:italic; font-weight:850; line-height:1.03; color:#fbf7ef; text-shadow:0 2px 18px rgba(0,0,0,.46); z-index:2; }
 
   #cs-value-product .vb-stage { grid-template-columns:1fr; justify-items:center; text-align:center; }
   #cs-value-product .product-strip { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:12px; margin:34px 0 22px; max-width:1480px; }
@@ -19709,6 +19728,16 @@ window.csBrandV8Reverse = function() {
       <div class="screen-card one"></div>
       <div class="screen-card two"></div>
       <div class="screen-card three"></div>
+      <div class="screen-path"></div>
+      <div class="screen-room">
+        <span class="room-person p1"></span>
+        <span class="room-person p2"></span>
+        <span class="room-person p3"></span>
+        <span class="room-person p4"></span>
+        <span class="room-person p5"></span>
+        <span class="room-person p6"></span>
+        <span class="room-person p7"></span>
+      </div>
       <div class="screen-core">the product is<br>human connection</div>
     </div>
   </section>
