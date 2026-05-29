@@ -11236,6 +11236,7 @@ window.cs1m7Reverse = function() {
   #cs-11[data-left-flipped="1"]  .cs11-flip-left  { transform: rotateY(180deg); }
   #cs-11[data-right-flipped="1"] .cs11-flip-right { transform: rotateY(180deg); }
   #cs-11 .cs11-flip-hint { position:absolute; bottom:6px; right:12px; font-family:'Manrope',sans-serif; font-size:.42rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(26,22,18,0.32); pointer-events:none; }
+  #cs-11 .cs11-card-number { position:absolute; top:18px; left:20px; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Manrope',sans-serif; font-size:.78rem; font-weight:800; color:#1a1612; background:rgba(251,247,239,0.86); border:1px solid rgba(184,149,74,0.52); box-shadow:0 8px 18px rgba(26,22,18,0.08); z-index:3; pointer-events:none; }
   html[data-export="1"] #cs-11 .cs11-flip-inner { transform: rotateY(180deg) !important; transition: none !important; }
   html[data-export="1"] #cs-11 .cs11-flip-hint  { display: none !important; }
 
@@ -11295,6 +11296,7 @@ window.cs1m7Reverse = function() {
      <div class="cs11-flip-inner cs11-flip-left">
       <!-- FRONT: invitation FEED — stack of 4 envelopes cascading like an inbox, NO TEXT [Dave 2026-05-02 PM] -->
       <div class="cs11-flip-front" style="background:rgba(91,143,212,0.04);border:1.5px solid rgba(91,143,212,0.42);border-radius:14px;padding:32px;display:flex;align-items:center;justify-content:center;min-height:300px;position:relative">
+        <span class="cs11-card-number">1</span>
         <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
           <!-- [Dave 2026-05-14] Whole envelope stack shifted UP by 18 (each Y -18) so the graphic sits at the viewBox optical center instead of biased down. Previously the content midpoint was at y≈127 vs viewBox center 110, leaving dead space at the top and the stack hugging the FLIP hint at the bottom. -->
           <!-- Envelope 4 (deepest, smallest, most faded — bottom of feed) -->
@@ -11330,6 +11332,7 @@ window.cs1m7Reverse = function() {
       </div>
       <!-- BACK: existing invitation feed UI [Dave 2026-05-02 PM: this is what flip reveals] -->
       <div class="cs11-flip-back" style="background:rgba(91,143,212,0.04);border:1px solid rgba(91,143,212,0.32);border-radius:14px;padding:18px 18px 16px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;position:absolute;inset:0;transform:rotateY(180deg)">
+      <span class="cs11-card-number">1</span>
       <div style="font-family:'Manrope',sans-serif;font-size:.92rem;font-weight:800;letter-spacing:.30em;text-transform:uppercase;color:rgba(26,22,18,0.7);text-align:center;margin-bottom:18px">Before the room</div>
 
       <!-- Vertical feed — Dave 2026-04-29: looks like Instagram/inbox feed.
@@ -11464,6 +11467,7 @@ window.cs1m7Reverse = function() {
      <div class="cs11-flip-inner cs11-flip-right">
       <!-- FRONT: ONE group of 4 — graphic only, no eyebrow on load [Dave 2026-05-03 PM: 'IN THE ROOM' only on BACK] -->
       <div class="cs11-flip-front" style="background:rgba(61,255,122,0.04);border:1.5px solid rgba(61,255,122,0.42);border-radius:14px;padding:32px;display:flex;align-items:center;justify-content:center;min-height:300px;position:relative">
+        <span class="cs11-card-number">2</span>
         <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="90" cy="90" r="68" fill="rgba(61,255,122,0.05)" stroke="rgba(61,255,122,0.50)" stroke-width="2.4" stroke-dasharray="7 5"/>
           <circle cx="68" cy="68" r="14" fill="rgba(91,143,212,0.30)" stroke="#5B8FD4" stroke-width="2"/>
@@ -11475,6 +11479,7 @@ window.cs1m7Reverse = function() {
       </div>
       <!-- BACK: 4 group circles + 'IN THE ROOM' eyebrow (parallel to FRONT and to LEFT 'BEFORE THE ROOM') -->
       <div class="cs11-flip-back" style="background:rgba(61,255,122,0.04);border:1px solid rgba(61,255,122,0.32);border-radius:14px;padding:32px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:absolute;inset:0;transform:rotateY(180deg)">
+        <span class="cs11-card-number">2</span>
         <div style="font-family:'Manrope',sans-serif;font-size:.92rem;font-weight:800;letter-spacing:.30em;text-transform:uppercase;color:rgba(42,138,79,0.95);text-align:center">In the room</div>
         <svg class="cs11-cluster-svg" viewBox="0 0 240 240" width="240" height="240" shape-rendering="geometricPrecision">
           <!-- 4 group clusters: native 240px geometry replaces scaled-up mini-SVG so the icons stay sharp. -->
