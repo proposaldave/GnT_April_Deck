@@ -7510,7 +7510,7 @@ window.cs1m5Reverse = function() {
   <div class="bgp-footer"><span>what we're most wired for isn't measured</span></div>
 </div>
 
-<div class="casey-slide ds-focus frontier-feeling-slide" id="cs-frontier-pink1" data-stage="0" onclick="csFrontierFeelingAdvance()" style="display:none;background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 68%, #eadcc3 100%) !important;overflow:hidden">
+<div class="casey-slide ds-focus frontier-feeling-slide trash-slide" id="cs-frontier-pink1" data-stage="0" onclick="csFrontierFeelingAdvance()" style="display:none;background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 68%, #eadcc3 100%) !important;overflow:hidden">
   <style>
     #cs-frontier-pink1 .ms-stage{position:absolute;inset:0;padding:28px 48px 44px;color:#1a1612}
     #cs-frontier-pink1 .ms-paper{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,.045) 1px, transparent 0);background-size:4px 4px;opacity:.38;mix-blend-mode:multiply;pointer-events:none}
@@ -31329,7 +31329,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18] cs-frontier-pink2 ALSO REMOVED per Dave 'delete the "1 / 24 (alt)" slide'. Slot 1 now has zero alts. HTML retained as silent backup.
   // [Dave 2026-05-26] cs-brand-codex moved from slot-1 pink-dot alt to TRASH_ORDER per screenshot request.
   // [Codex 2026-05-27] cs-frontier-scale-pink-2 promoted to primary; other scale candidates removed from active slot-1 alts per Dave delete requests.
-  1: ['cs-frontier-scale-pink-2', 'cs-frontier-pink1'],
+  // [Codex 2026-05-29] cs-frontier-pink1 moved to TRASH_ORDER per screenshot request.
+  1: ['cs-frontier-scale-pink-2'],
   // [Codex 2026-05-24] New slide-2 HCT story variants. Pink-dot alts left of cs-hct-system.
   // [Dave 2026-05-25] cs-hct-system-pink1 moved to TRASH_ORDER per screenshot request.
   // Slot-2 cs-1m8 alts detached after cs-1m8 moved to slot-1 pink alt.
@@ -31649,6 +31650,7 @@ const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 const TRASH_ORDER = [
   'cs-community-business',
   'cs-brand-codex',
+  'cs-frontier-pink1',
   'cs-1bm1',
   'cs-ask',
   'cs-ask-coasts',
