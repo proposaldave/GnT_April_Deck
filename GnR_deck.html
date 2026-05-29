@@ -12516,6 +12516,289 @@ window.cs1m7Reverse = function() {
 </div>
 
 <!-- [Dave 2026-05-18 LATEST] cs-pbfirst slide DELETED per Dave 'delete this slide' (the 17/25 alt with 'Pickleball → fastest wedge to the world's first autonomous human value exchange network' + 5-card wedge). Hidden via display:none !important + data-deleted="1" so the dot disappears from nav AND the slide is unreachable. Black-dot registration also removed from SLIDE_ALTS[17]. Existing csPbfirstAdvance/Reverse functions retained as inert defensive references for any keyboard/wheel handler paths that still mention cs-pbfirst — they no-op because the slide is no longer in the nav order. -->
+<!-- [Codex 2026-05-28] Active main-flow attempts: pickleball silliness as feature, feed, and anti-DUPR wedge. -->
+<style>
+  #cs-pb-silliness-feature,
+  #cs-pb-silliness-scroll,
+  #cs-pb-silliness-dupr { background:#f3ead8 !important; overflow:hidden; position:absolute; inset:0; color:#1a1612; }
+  #cs-pb-silliness-feature::before,
+  #cs-pb-silliness-scroll::before,
+  #cs-pb-silliness-dupr::before {
+    content:""; position:absolute; inset:0; pointer-events:none; z-index:0;
+    background:
+      linear-gradient(90deg, rgba(91,143,212,.10), transparent 26%, transparent 74%, rgba(200,70,44,.08)),
+      radial-gradient(ellipse at 52% 94%, rgba(184,149,74,.22), transparent 48%);
+  }
+  #cs-pb-silliness-feature .psj-eye,
+  #cs-pb-silliness-scroll .psj-eye,
+  #cs-pb-silliness-dupr .psj-eye {
+    position:absolute; top:28px; left:48px; z-index:5;
+    font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em;
+    text-transform:uppercase; color:#c8462c;
+  }
+  #cs-pb-silliness-feature .psj-stage,
+  #cs-pb-silliness-scroll .psj-stage,
+  #cs-pb-silliness-dupr .psj-stage {
+    position:absolute; inset:0; z-index:2; box-sizing:border-box;
+    padding:82px 82px 58px; display:grid; gap:42px; align-items:center;
+  }
+  .psj-title {
+    margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:clamp(3.5rem,5.55vw,6.25rem); line-height:.96; font-weight:900;
+    letter-spacing:0; color:#1a1612; text-wrap:balance;
+  }
+  .psj-title em { color:#5B8FD4; font-style:italic; }
+  .psj-sub {
+    margin:22px 0 0; max-width:780px; font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:1.82rem; line-height:1.16; font-weight:650; color:rgba(26,22,18,.72);
+  }
+  .psj-chip {
+    border:1px solid rgba(184,149,74,.36); background:rgba(251,247,239,.88);
+    box-shadow:0 14px 32px rgba(26,22,18,.07);
+    font-family:'Manrope',sans-serif; font-size:.76rem; font-weight:900; letter-spacing:.16em;
+    text-transform:uppercase; color:#1a1612;
+  }
+  #cs-pb-silliness-feature .psj-stage { grid-template-columns:.9fr 1.1fr; }
+  #cs-pb-silliness-feature .psj-board { position:relative; height:720px; }
+  #cs-pb-silliness-feature .psj-court {
+    position:absolute; inset:62px 12px 36px; border:3px solid rgba(91,143,212,.42);
+    background:linear-gradient(90deg, rgba(91,143,212,.12) 0 49.8%, rgba(251,247,239,.70) 49.8% 50.2%, rgba(91,143,212,.12) 50.2% 100%);
+    box-shadow:inset 0 0 0 24px rgba(251,247,239,.50), 0 28px 80px rgba(26,22,18,.10);
+  }
+  #cs-pb-silliness-feature .psj-court::before,
+  #cs-pb-silliness-feature .psj-court::after {
+    content:""; position:absolute; left:0; right:0; height:2px; background:rgba(91,143,212,.34);
+  }
+  #cs-pb-silliness-feature .psj-court::before { top:38%; }
+  #cs-pb-silliness-feature .psj-court::after { bottom:38%; }
+  #cs-pb-silliness-feature .psj-net {
+    position:absolute; left:50%; top:34px; bottom:34px; width:2px;
+    background:repeating-linear-gradient(to bottom, rgba(26,22,18,.48) 0 8px, transparent 8px 16px);
+  }
+  #cs-pb-silliness-feature .psj-ball {
+    position:absolute; left:51%; top:42%; width:42px; height:42px; border-radius:50%;
+    background:#c8462c; box-shadow:0 0 0 13px rgba(200,70,44,.12), 0 16px 28px rgba(200,70,44,.24);
+  }
+  #cs-pb-silliness-feature .psj-ball::before,
+  #cs-pb-silliness-feature .psj-ball::after {
+    content:""; position:absolute; width:7px; height:7px; border-radius:50%; background:#f3ead8; top:12px;
+  }
+  #cs-pb-silliness-feature .psj-ball::before { left:11px; }
+  #cs-pb-silliness-feature .psj-ball::after { right:11px; }
+  #cs-pb-silliness-feature .psj-trail {
+    position:absolute; left:17%; top:27%; width:67%; height:34%;
+    border-top:6px solid #b8954a; border-radius:50%; transform:rotate(-9deg); opacity:.72;
+  }
+  #cs-pb-silliness-feature .psj-feature-pill {
+    position:absolute; padding:13px 16px; min-width:150px; text-align:center;
+  }
+  #cs-pb-silliness-feature .p1 { left:4%; top:4%; }
+  #cs-pb-silliness-feature .p2 { right:5%; top:8%; }
+  #cs-pb-silliness-feature .p3 { left:9%; bottom:11%; }
+  #cs-pb-silliness-feature .p4 { right:8%; bottom:10%; }
+  #cs-pb-silliness-feature .psj-bug {
+    position:absolute; left:34%; bottom:4px; width:320px; padding:18px 20px;
+    background:#1a1612; color:#fbf7ef; border-left:7px solid #c8462c;
+    box-shadow:0 20px 44px rgba(26,22,18,.18);
+  }
+  #cs-pb-silliness-feature .psj-bug b {
+    display:block; margin-bottom:8px; font-family:'Manrope',sans-serif; font-size:.68rem;
+    font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:#f7df9a;
+  }
+  #cs-pb-silliness-feature .psj-bug span {
+    display:block; font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:1.72rem; line-height:1.02; font-weight:850;
+  }
+  #cs-pb-silliness-scroll .psj-stage { grid-template-columns:.88fr 1.12fr; }
+  #cs-pb-silliness-scroll .psj-feed {
+    position:relative; height:720px; display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+    transform:rotate(-3deg);
+  }
+  #cs-pb-silliness-scroll .psj-column { display:grid; gap:18px; }
+  #cs-pb-silliness-scroll .psj-moment {
+    min-height:150px; padding:20px 20px 18px; display:flex; flex-direction:column; justify-content:space-between;
+    border:1px solid rgba(184,149,74,.34); background:rgba(251,247,239,.88);
+    box-shadow:0 18px 44px rgba(26,22,18,.08);
+  }
+  #cs-pb-silliness-scroll .psj-moment strong {
+    font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:2.18rem; line-height:.98; font-weight:900;
+    color:#1a1612;
+  }
+  #cs-pb-silliness-scroll .psj-moment span {
+    font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.16em; text-transform:uppercase;
+    color:#5B8FD4;
+  }
+  #cs-pb-silliness-scroll .psj-moment.hot { background:#1a1612; border-color:#1a1612; }
+  #cs-pb-silliness-scroll .psj-moment.hot strong { color:#fbf7ef; }
+  #cs-pb-silliness-scroll .psj-moment.hot span { color:#f7df9a; }
+  #cs-pb-silliness-scroll .psj-scroll-line {
+    position:absolute; left:50%; top:2%; bottom:2%; width:5px; background:#c8462c;
+    box-shadow:0 0 0 10px rgba(200,70,44,.10); transform:translateX(-50%);
+  }
+  #cs-pb-silliness-scroll .psj-fast {
+    display:inline-grid; grid-template-columns:repeat(3,auto); gap:10px; margin-top:28px;
+  }
+  #cs-pb-silliness-scroll .psj-fast span { padding:13px 16px; }
+  #cs-pb-silliness-dupr .psj-stage { grid-template-columns:1fr 1fr; }
+  #cs-pb-silliness-dupr .psj-versus {
+    display:grid; grid-template-columns:1fr 86px 1fr; gap:24px; align-items:stretch; min-height:640px;
+  }
+  #cs-pb-silliness-dupr .psj-panel {
+    position:relative; padding:34px; overflow:hidden; border:1px solid rgba(184,149,74,.34);
+    background:rgba(251,247,239,.86); box-shadow:0 22px 60px rgba(26,22,18,.08);
+  }
+  #cs-pb-silliness-dupr .psj-panel.dark { background:#1a1612; color:#fbf7ef; border-color:#1a1612; }
+  #cs-pb-silliness-dupr .psj-panel h2 {
+    margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:3.4rem; line-height:.96;
+    font-weight:900;
+  }
+  #cs-pb-silliness-dupr .psj-panel h2 em { color:#c8462c; font-style:italic; }
+  #cs-pb-silliness-dupr .psj-panel.dark h2 em { color:#f7df9a; }
+  #cs-pb-silliness-dupr .psj-rating {
+    margin-top:48px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+  }
+  #cs-pb-silliness-dupr .psj-score {
+    min-height:96px; display:grid; place-items:center; border:1px solid rgba(251,247,239,.20);
+    font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:2.6rem; font-weight:900; color:#fbf7ef;
+  }
+  #cs-pb-silliness-dupr .psj-score.muted { color:rgba(251,247,239,.28); }
+  #cs-pb-silliness-dupr .psj-lock {
+    margin-top:30px; padding:18px 20px; border-left:6px solid #c8462c; background:rgba(251,247,239,.07);
+    font-family:'Manrope',sans-serif; font-size:.84rem; line-height:1.28; font-weight:900; letter-spacing:.12em; text-transform:uppercase;
+  }
+  #cs-pb-silliness-dupr .psj-vs {
+    align-self:center; justify-self:center; width:72px; height:72px; border-radius:50%; display:grid; place-items:center;
+    background:#b8954a; color:#fbf7ef; font-family:'Manrope',sans-serif; font-size:.68rem; font-weight:900;
+    letter-spacing:.18em; text-transform:uppercase; box-shadow:0 16px 40px rgba(184,149,74,.24);
+  }
+  #cs-pb-silliness-dupr .psj-room {
+    position:relative; margin-top:38px; height:350px; border:2px solid rgba(91,143,212,.34);
+    background:linear-gradient(90deg, rgba(91,143,212,.11) 0 49.8%, rgba(251,247,239,.62) 49.8% 50.2%, rgba(91,143,212,.11) 50.2% 100%);
+  }
+  #cs-pb-silliness-dupr .psj-person {
+    position:absolute; width:54px; height:54px; border-radius:50%; background:#5B8FD4;
+    box-shadow:0 0 0 10px rgba(91,143,212,.10);
+  }
+  #cs-pb-silliness-dupr .psj-person::after {
+    content:""; position:absolute; left:50%; top:64px; width:76px; height:42px; border-radius:38px 38px 8px 8px;
+    background:#5B8FD4; transform:translateX(-50%); opacity:.9;
+  }
+  #cs-pb-silliness-dupr .a { left:14%; top:18%; }
+  #cs-pb-silliness-dupr .b { left:42%; top:8%; background:#b8954a; }
+  #cs-pb-silliness-dupr .b::after { background:#b8954a; }
+  #cs-pb-silliness-dupr .c { right:18%; top:24%; background:#c8462c; }
+  #cs-pb-silliness-dupr .c::after { background:#c8462c; }
+  #cs-pb-silliness-dupr .d { left:28%; bottom:22%; background:#b8954a; }
+  #cs-pb-silliness-dupr .d::after { background:#b8954a; }
+  #cs-pb-silliness-dupr .e { right:30%; bottom:18%; }
+  #cs-pb-silliness-dupr .psj-room svg { position:absolute; inset:0; width:100%; height:100%; overflow:visible; }
+  #cs-pb-silliness-dupr .psj-proof {
+    position:absolute; left:34px; right:34px; bottom:28px; display:grid; grid-template-columns:repeat(3,1fr); gap:10px;
+  }
+  #cs-pb-silliness-dupr .psj-proof span { padding:12px 10px; text-align:center; }
+  #cs-pb-silliness-feature .psj-anim,
+  #cs-pb-silliness-scroll .psj-anim,
+  #cs-pb-silliness-dupr .psj-anim { opacity:0; transform:translateY(14px); transition:opacity .75s cubic-bezier(.22,1,.36,1), transform .75s cubic-bezier(.22,1,.36,1); }
+  #cs-pb-silliness-feature.casey-entered .psj-anim,
+  #cs-pb-silliness-scroll.casey-entered .psj-anim,
+  #cs-pb-silliness-dupr.casey-entered .psj-anim { opacity:1; transform:none; }
+  #cs-pb-silliness-feature.casey-entered .psj-anim:nth-child(2),
+  #cs-pb-silliness-scroll.casey-entered .psj-anim:nth-child(2),
+  #cs-pb-silliness-dupr.casey-entered .psj-anim:nth-child(2) { transition-delay:.14s; }
+  html[data-export="1"] #cs-pb-silliness-feature .psj-anim,
+  html[data-export="1"] #cs-pb-silliness-scroll .psj-anim,
+  html[data-export="1"] #cs-pb-silliness-dupr .psj-anim { opacity:1 !important; transform:none !important; transition:none !important; }
+</style>
+
+<div class="casey-slide ds-focus psj-slide" id="cs-pb-silliness-feature" style="display:none">
+  <div class="psj-eye">why pickleball works</div>
+  <section class="psj-stage">
+    <div class="psj-copy psj-anim">
+      <h1 class="psj-title">Pickleball silliness is a <em>feature</em>, not a bug.</h1>
+      <p class="psj-sub">The joke lowers the guard. The guard is where community starts.</p>
+    </div>
+    <div class="psj-board psj-anim" aria-hidden="true">
+      <div class="psj-court"><div class="psj-net"></div><div class="psj-trail"></div><div class="psj-ball"></div></div>
+      <div class="psj-chip psj-feature-pill p1">silly name</div>
+      <div class="psj-chip psj-feature-pill p2">tiny paddle</div>
+      <div class="psj-chip psj-feature-pill p3">lucky net drip</div>
+      <div class="psj-chip psj-feature-pill p4">dinks count</div>
+      <div class="psj-bug"><b>bug report closed</b><span>The weird parts make people visible.</span></div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus psj-slide" id="cs-pb-silliness-scroll" style="display:none">
+  <div class="psj-eye">social feed in the real world</div>
+  <section class="psj-stage">
+    <div class="psj-copy psj-anim">
+      <h1 class="psj-title">The fastest-scrolling sport is <em>people</em>, not posts.</h1>
+      <p class="psj-sub">Laugh, rotate, rematch, text, repeat. Every five minutes creates another reason to connect.</p>
+      <div class="psj-fast">
+        <span class="psj-chip">silliest</span>
+        <span class="psj-chip">most fun</span>
+        <span class="psj-chip">fastest scroll</span>
+      </div>
+    </div>
+    <div class="psj-feed psj-anim" aria-hidden="true">
+      <div class="psj-scroll-line"></div>
+      <div class="psj-column">
+        <div class="psj-moment"><strong>laugh</strong><span>guard down</span></div>
+        <div class="psj-moment hot"><strong>rotate</strong><span>new mix</span></div>
+        <div class="psj-moment"><strong>dink</strong><span>absurd word</span></div>
+      </div>
+      <div class="psj-column" style="transform:translateY(-46px)">
+        <div class="psj-moment hot"><strong>rematch</strong><span>instant story</span></div>
+        <div class="psj-moment"><strong>intro</strong><span>new person</span></div>
+        <div class="psj-moment hot"><strong>vibe</strong><span>signal captured</span></div>
+      </div>
+      <div class="psj-column" style="transform:translateY(38px)">
+        <div class="psj-moment"><strong>text</strong><span>group chat</span></div>
+        <div class="psj-moment hot"><strong>show up</strong><span>again</span></div>
+        <div class="psj-moment"><strong>belong</strong><span>the product</span></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus psj-slide" id="cs-pb-silliness-dupr" style="display:none">
+  <div class="psj-eye">anti-DUPR by nature</div>
+  <section class="psj-stage">
+    <div class="psj-copy psj-anim">
+      <h1 class="psj-title">DUPR turns a silly sport into a scoreboard.</h1>
+      <p class="psj-sub">GnR turns the silliness into the graph: who makes the room better, who people want again, who creates belonging.</p>
+    </div>
+    <div class="psj-versus psj-anim">
+      <div class="psj-panel dark">
+        <h2>Protect the <em>number.</em></h2>
+        <div class="psj-rating">
+          <div class="psj-score muted">3.7</div>
+          <div class="psj-score">3.9</div>
+          <div class="psj-score muted">4.1</div>
+        </div>
+        <div class="psj-lock">Play up. Avoid risk. Winning becomes the identity.</div>
+      </div>
+      <div class="psj-vs">vs</div>
+      <div class="psj-panel">
+        <h2>Make the room <em>better.</em></h2>
+        <div class="psj-room">
+          <svg viewBox="0 0 620 350" aria-hidden="true">
+            <path d="M110 78 C210 24 335 36 446 90" fill="none" stroke="#b8954a" stroke-width="5" opacity=".72"/>
+            <path d="M126 254 C230 306 390 308 492 246" fill="none" stroke="#5B8FD4" stroke-width="5" opacity=".62"/>
+            <path d="M166 98 L286 68 L452 114 L382 258 L214 272 Z" fill="none" stroke="#c8462c" stroke-width="4" opacity=".48"/>
+          </svg>
+          <div class="psj-person a"></div><div class="psj-person b"></div><div class="psj-person c"></div><div class="psj-person d"></div><div class="psj-person e"></div>
+        </div>
+        <div class="psj-proof">
+          <span class="psj-chip">fun to play with</span>
+          <span class="psj-chip">invited back</span>
+          <span class="psj-chip">community signal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
 <div class="casey-slide ds-focus" id="cs-pbfirst" style="display:none !important" data-deleted="1">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Give n Receive&rsquo;s #1 secret</div>
   <section class="pb-stage">
@@ -30866,6 +31149,10 @@ const SLIDE_ORDER = [
   'cs-brand-V8',   // Brand promise · live a life of abundant, autonomous connection + Dave contact
   'cs-gnr-business-outcomes', // [Codex 2026-05-28] Community-business stakes: low GnR fragility vs high GnR pricing power and meaning.
   'cs-fw1',        // Restored after brand promise — flywheel · 'Drop GnR into any pickleball club. It just works. And compounds forever — at AI speed.'
+  // [Codex 2026-05-28] Active end-of-flow candidates so the silliness attempts are visible without shifting existing slot-indexed alts.
+  'cs-pb-silliness-feature',
+  'cs-pb-silliness-scroll',
+  'cs-pb-silliness-dupr',
   // ===== ORANGE REVIEW SECTION · HC PARADIGM CANDIDATES (Dave 2026-05-04) =====
   // 10 candidate slides drafting the Human Connection paradigm reframe. Status = REVIEW
   // (orange top border + orange eyebrow). Sit at the end of main flow before APPENDIX.
