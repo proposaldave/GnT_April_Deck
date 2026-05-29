@@ -22240,7 +22240,7 @@ window.csBrandV8Reverse = function() {
 <!-- cs-magnetic-v2 (THEN/NOW two-column "rating era / marketplace era" slide) FULLY DELETED 2026-05-15 per Dave 'you can probably just delete this slide'. ~215 lines of style + HTML removed. cs-magnetic (twin-courts version) restored as the slot-12 primary in SLIDE_ORDER + SLIDE_ALTS[12] emptied. -->
 <!-- End cs-magnetic-v2 deletion marker. -->
 
-<!-- ===== cs-magnetic-reciprocity-system + cs-magnetic-human-value-market - WHITE-DOT ALTS for active cs-magnetic slot [Codex 2026-05-28] ===== -->
+<!-- ===== cs-magnetic-human-value-market + same-slot magnetic alts [Codex 2026-05-29] ===== -->
 <style>
   #cs-magnetic-reciprocity-system,
   #cs-magnetic-human-value-market{background:#fbf7ef!important;overflow:hidden}
@@ -22280,6 +22280,27 @@ window.csBrandV8Reverse = function() {
   .spwd-slide .spwd-step{min-height:76px;border-radius:8px;background:rgba(184,149,74,.10);border:1px solid rgba(184,149,74,.34);display:grid;place-items:center;padding:10px;font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:950;letter-spacing:.12em;text-transform:uppercase;color:#1a1612;text-align:center}
   .spwd-slide .spwd-step.blue{background:rgba(91,143,212,.11);border-color:rgba(91,143,212,.34)}
   .spwd-slide .spwd-step.red{background:rgba(200,70,44,.09);border-color:rgba(200,70,44,.30);color:#c8462c}
+  #cs-magnetic-human-value-market .spwd-bg.frontier{opacity:.88}
+  #cs-magnetic-human-value-market .spwd-wash.frontier{background:linear-gradient(90deg,rgba(251,247,239,.70) 0%,rgba(251,247,239,.55) 39%,rgba(251,247,239,.18) 68%,rgba(251,247,239,.30) 100%)}
+  #cs-magnetic-human-value-market .spwd-eyebrow{color:#b8954a}
+  #cs-magnetic-human-value-market .spwd-market{grid-template-columns:.95fr 1.05fr;gap:70px;padding:112px 86px 76px}
+  #cs-magnetic-human-value-market .spwd-market-copy{position:relative;max-width:760px;padding:34px 38px 38px;border-radius:8px;background:rgba(251,247,239,.70);border:1.4px solid rgba(91,143,212,.32);box-shadow:0 22px 58px rgba(26,22,18,.12)}
+  #cs-magnetic-human-value-market .spwd-market-copy .spwd-era-label{color:#5B8FD4;margin-bottom:18px}
+  #cs-magnetic-human-value-market .spwd-market-title{font-size:clamp(3.15rem,5.35vw,5.95rem);line-height:.9;margin-bottom:24px}
+  #cs-magnetic-human-value-market .spwd-market-sub{font-size:clamp(1.04rem,1.24vw,1.32rem);max-width:650px;color:rgba(26,22,18,.78)}
+  #cs-magnetic-human-value-market .spwd-era-stack{gap:22px;max-width:680px;justify-self:end}
+  #cs-magnetic-human-value-market .spwd-era-card{background:rgba(251,247,239,.74);backdrop-filter:blur(5px);padding:32px 34px;border-color:rgba(26,22,18,.13)}
+  #cs-magnetic-human-value-market .spwd-era-card.next{border-color:rgba(184,149,74,.54);box-shadow:0 24px 62px rgba(184,149,74,.18)}
+  #cs-magnetic-human-value-market .spwd-era-note{font-family:'Manrope',sans-serif;font-size:clamp(.94rem,1.08vw,1.1rem);line-height:1.44;font-weight:800;color:rgba(26,22,18,.72);margin:16px 0 0}
+  #cs-magnetic-human-value-market .spwd-market-copy,
+  #cs-magnetic-human-value-market .spwd-era-card{opacity:0;transform:translateY(16px);transition:opacity .68s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
+  #cs-magnetic-human-value-market.casey-entered .spwd-market-copy,
+  #cs-magnetic-human-value-market.casey-entered .spwd-era-stack{animation:none!important}
+  #cs-magnetic-human-value-market.casey-entered .spwd-market-copy{opacity:1;transform:none;transition-delay:.18s}
+  #cs-magnetic-human-value-market.casey-entered .spwd-era-card.old{opacity:1;transform:none;transition-delay:.52s}
+  #cs-magnetic-human-value-market.casey-entered .spwd-era-card.next{opacity:1;transform:none;transition-delay:.82s}
+  html[data-export="1"] #cs-magnetic-human-value-market .spwd-market-copy,
+  html[data-export="1"] #cs-magnetic-human-value-market .spwd-era-card{opacity:1!important;transform:none!important;animation:none!important}
 </style>
 <div class="casey-slide ds-focus spwd-slide" id="cs-magnetic-reciprocity-system" style="display:none">
   <img class="spwd-bg soft" src="assets/cs-samecourt-bg.png" alt="" onerror="this.onerror=null;this.src='assets/cs-fv6-measured-connection-bg.png'"/>
@@ -22337,29 +22358,24 @@ window.csBrandV8Reverse = function() {
   </section>
 </div>
 <div class="casey-slide ds-focus spwd-slide" id="cs-magnetic-human-value-market" style="display:none">
-  <img class="spwd-bg deep" src="assets/cs-mv6-networked-reciprocity.png" alt="" onerror="this.onerror=null;this.src='assets/explorations/community-value-final/attention-connection-synthetic-visual.png'"/>
-  <div class="spwd-wash dark"></div>
-  <div class="spwd-eyebrow" style="color:#b8954a">human value marketplace</div>
+  <img class="spwd-bg frontier" src="assets/cs-magnetic-human-value-market-bg.png" alt="" onerror="this.onerror=null;this.src='assets/cs-mv6-networked-reciprocity.png'"/>
+  <div class="spwd-wash frontier"></div>
+  <div class="spwd-eyebrow">last frontier</div>
   <section class="spwd-market">
     <div class="spwd-market-copy">
-      <h1 class="spwd-market-title">The most human thing we do is becoming <em>measurable.</em></h1>
-      <p class="spwd-market-sub">Social media compensated attention capture. <strong>GnR compensates connection creation</strong>: the giving, receiving, hosting, inviting, and trust-building that make life feel full.</p>
+      <div class="spwd-era-label">Last frontier</div>
+      <h1 class="spwd-market-title">What we&rsquo;re most wired for is becoming <em>measurable</em></h1>
+      <p class="spwd-market-sub">Influencers were paid because attention became measurable. <strong>GnR compensates connection creation</strong>: the giving, receiving, hosting, inviting, and trust-building that make life feel full.</p>
     </div>
     <div class="spwd-era-stack">
       <div class="spwd-era-card old">
         <div class="spwd-era-label">Last frontier</div>
-        <h2>Influencers were paid because attention became measurable.</h2>
+        <h2>Attention became measurable, so influence became a market.</h2>
       </div>
-      <div class="spwd-era-card">
+      <div class="spwd-era-card next">
         <div class="spwd-era-label">Next frontier</div>
         <h2><em>Community builders</em> get paid when real-world connection becomes measurable.</h2>
-      </div>
-      <div class="spwd-loop" aria-hidden="true">
-        <div class="spwd-step blue">give</div>
-        <div class="spwd-step">measure</div>
-        <div class="spwd-step">route</div>
-        <div class="spwd-step red">compensate</div>
-        <div class="spwd-step blue">receive</div>
+        <p class="spwd-era-note">The next market is not more attention. It is the trust, generosity, invitations, and belonging that make people come back.</p>
       </div>
     </div>
   </section>
@@ -31209,7 +31225,7 @@ const SLIDE_ORDER = [
   'cs-11d','cs-11e','cs-11',
   // [Codex 2026-05-27] cs-3 restored after Dave flagged the pickleball wedge slide missing from the active deck.
   'cs-3',
-  'cs-magnetic',
+  'cs-magnetic-human-value-market',
   // [Codex 2026-05-28] Active outlier slide moved into the post-24-social-experiences cluster while preserving the social-pull move.
   'cs-wedgepb-codex',
   'cs-merge3',
@@ -31362,8 +31378,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-25] Disconnected-community blue alt DELETED per Dave: 'delete this slide'. Removed from this slot and blue-dot classification; HTML retained as hidden rollback stub.
   // [Dave 2026-05-25] Like-button slide promoted back to main cs-thegap; digitized rewrite thrown away.
   9: ['cs-emotion-smile', 'cs-emotion-help', 'cs-emotion-uncaptured'],
-  // [Codex 2026-05-28] White-dot concept alts for active slot 10 (cs-magnetic): split rating-vs-reciprocity and measured/compensated human value from the attached social-pull slide without touching the primary.
-  10: ['cs-magnetic-reciprocity-system', 'cs-magnetic-human-value-market'],
+  // [Codex 2026-05-29] Human-value market slide promoted to active slot 10; prior social-pull primary retained as same-slot alt.
+  10: ['cs-magnetic-reciprocity-system', 'cs-magnetic'],
   // Slot 12 (cs-samecourt — was slot 12) — no alts.
 
   // [Dave 2026-05-19] cs-givefirst-art now owns slot 14 after Munger; cs-magnetic alts moved to slot 15 below.
