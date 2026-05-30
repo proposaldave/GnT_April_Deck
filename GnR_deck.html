@@ -31510,7 +31510,6 @@ const SLIDE_ORDER = [
   // [Codex 2026-05-26] cs-community-business moved to TRASH_ORDER per Dave: slide 5 / 20 and its alt were blank.
   // [Dave 2026-05-26] cs-samecourt MOVED EARLIER. The Munger/incentive-system thesis now lands before cultural/product reveal so investors understand the core behavior-change mechanism first.
   'cs-gnr',   //  4 Introducing GnR - invitation matchmaking
-  'cs-club-os',
   'cs-club-social-loop',
   'cs-club-anti-dupr',
   'cs-samecourt',
@@ -31575,6 +31574,7 @@ const SLIDE_ORDER = [
   'cs-fw1',        // Restored after brand promise — flywheel · 'Drop GnR into any pickleball club. It just works. And compounds forever — at AI speed.'
   // [Codex 2026-05-28] Active end-of-flow candidates so the silliness attempts are visible without shifting existing slot-indexed alts.
   'cs-pb-silliness-feature',
+  'cs-club-os',
   // [Codex 2026-05-29] cs-pb-silliness-scroll moved to TRASH_ORDER per Dave screenshot delete request. HTML remains as rollback source.
   // [Codex 2026-05-29] cs-pb-silliness-dupr removed from active main flow per Dave screenshot delete request. HTML remains as rollback source.
   // ===== ORANGE REVIEW SECTION · HC PARADIGM CANDIDATES (Dave 2026-05-04) =====
@@ -31655,7 +31655,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST] Dave deleted att1 (The Question), att2 (Tech & Open Heart), att4 (Humanity/Community/Technology) via 3 separate 'delete this slide' messages. Only att3 (Four Truths) survives as the purple-dot alt. HTML for the deleted attempts retained as silent backups.
   // [Dave 2026-05-18 LATEST v4] cs-brand-V8 alts MOVED to key 18 (above). Slot 23 now = cs-27 (CTO Steve Callan) with no alts.
   // [Dave 2026-05-18 LATEST v9] cs-fw1 was slot 24; now slot 23 after cs-a7m1 demotion (was 25 before cs-brand-V8 v6). cs-16 stays as PINK-DOT alt.
-  25: ['cs-16'],
+  24: ['cs-16'],
   // [Dave 2026-05-17 LATEST] NEW slot 2 = cs-givefirst-slide2 (give-first duplicate). No alts. All keys past slot 1 shifted +1.
   // [Dave 2026-05-18 LATEST v6] Brand pink-dot alts for cs-1m8 (slot 2). cs-brand-V8 demoted from main slot 3 → leftmost pink-dot alt here. cs-1m8-codexmerge + cs-1m8-envelopes added (codex-merge variants). cs-brand-mono REMOVED.
   // [Dave 2026-05-18 LATEST v9] cs-a7m1 added as a RED-DOT alt at the FAR LEFT of the slot-2 dot strip (furthest from primary). It's the old "Social media is an extremely narrow view" slide that just demoted from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'.
@@ -31679,9 +31679,9 @@ const SLIDE_ALTS = {
   // Slot 6 (cs-thegap) - old like-button headline saved as pink-dot backup before 2026-05-24 rewrite.
   // [Dave 2026-05-25] Disconnected-community blue alt DELETED per Dave: 'delete this slide'. Removed from this slot and blue-dot classification; HTML retained as hidden rollback stub.
   // [Dave 2026-05-25] Like-button slide promoted back to main cs-thegap; digitized rewrite thrown away.
-  9: ['cs-emotion-smile', 'cs-emotion-help', 'cs-emotion-uncaptured'],
+  8: ['cs-emotion-smile', 'cs-emotion-help', 'cs-emotion-uncaptured'],
   // [Codex 2026-05-29] Community incentive systems promoted to active slot 10; human-value market retained as same-slot alt.
-  10: ['cs-magnetic-human-value-market', 'cs-magnetic'],
+  9: ['cs-magnetic-human-value-market', 'cs-magnetic'],
   // Slot 12 (cs-samecourt — was slot 12) — no alts.
 
   // [Dave 2026-05-19] cs-givefirst-art now owns slot 14 after Munger; cs-magnetic alts moved to slot 15 below.
@@ -31736,13 +31736,13 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v5] All brand pink-dot alts RELOCATED from slot 3 (cs-brand-V8) → slot 2 (cs-1m8) per Dave 'move these two slides and any new brand slide you are working on as pink dot slides next to the slide with the text below: What we give fuels our communities.' That's cs-1m8 — which sits at slot 2 in SLIDE_ORDER. cs-1m8-fuels (the new particle-galaxy variant anchored to "What we give fuels our communities.") also added here. Slot 3 (cs-brand-V8) now carries no alts; if Dave wants the brand alts to live under the brand slide again later, just move them back.
   // [Dave 2026-05-19] Slot 14 = cs-fv6-img after Munger; slot 15 = cs-givefirst-art; slot 16 = cs-magnetic.
   16: [], // [Dave 2026-05-26] cs-givefirst-brand detached after cs-givefirst-art moved to appendix.
-  17: ['cs-unmeasured-value'],
+  16: ['cs-unmeasured-value'],
   // [Codex 2026-05-27] Slot-13/14 alts detached after cs-3 and cs-19 were removed from the active flow.
-  12: ['cs-racketeer-padel-club-pink'],
+  11: ['cs-racketeer-padel-club-pink'],
   13: [],
   14: [],
   // [Dave 2026-05-26] Racketeer proof slide moved to appendix; detach same-slot Racketeer path alts from the main flow.
-  13: ['cs-2c-measure-loop', 'cs-2c-invisible-layer'],
+  12: ['cs-2c-measure-loop', 'cs-2c-invisible-layer'],
   20: [],
   // [Dave 2026-05-19] Three new pink-dot Racketeer path attempts. Main Racketeer slide stays unchanged.
   21: [],
@@ -31750,7 +31750,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-25] cs-mv6-networked removed from live slot-5 alts after rendering as a blank cream slide. HTML retained below as hidden rollback only.
   5: [],
   // [Dave 2026-05-20] Dinner/Torch VC alt moved to TRASH_ORDER so it stays recoverable without occupying the deck/appendix review system.
-  24: [],
+  23: [],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
   // [Dave 2026-05-15] Key shifted 20 → 21 after cs-givefirst inserted at slot 18 (after the Wheelhouse slide). cs-16 is now at slot 21.
   // [Dave 2026-05-14 PM v4 c] cs-funnel added as second red-dot alt (further LEFT than cs-16old) per Dave: 'create a new red dot slide to the left of this one, and rethink it, reimagine it as a SALES FUNNEL — a human value sales funnel which is exactly what GnR is.'
