@@ -50,18 +50,46 @@
   #cs-club-os .cco-l1 { transform:rotate(236deg); } #cs-club-os .cco-l2 { transform:rotate(48deg); } #cs-club-os .cco-l3 { transform:rotate(142deg); } #cs-club-os .cco-l4 { transform:rotate(-42deg); }
   #cs-club-os .cco-close { margin-top:36px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; max-width:880px; }
 
-  #cs-club-social-loop .cco-stage { display:grid; grid-template-columns:1.04fr .96fr; gap:50px; align-items:center; }
-  #cs-club-social-loop .loop-board { position:relative; height:730px; border:2px solid rgba(91,143,212,.38); background:linear-gradient(90deg,rgba(91,143,212,.10) 0 49.8%,rgba(251,247,239,.74) 49.8% 50.2%,rgba(91,143,212,.10) 50.2% 100%); box-shadow:inset 0 0 0 26px rgba(251,247,239,.55),0 28px 80px rgba(26,22,18,.08); }
-  #cs-club-social-loop .loop-net { position:absolute; left:50%; top:36px; bottom:36px; width:2px; background:repeating-linear-gradient(to bottom,rgba(26,22,18,.42) 0 9px,transparent 9px 17px); }
-  #cs-club-social-loop .loop-step { position:absolute; width:270px; padding:20px 22px; border:1.4px solid rgba(26,22,18,.13); background:rgba(251,247,239,.91); border-radius:8px; box-shadow:0 16px 42px rgba(26,22,18,.08); }
-  #cs-club-social-loop .loop-step b { display:block; font-family:'Manrope',sans-serif; font-size:.66rem; font-weight:900; letter-spacing:.20em; text-transform:uppercase; color:#5B8FD4; margin-bottom:8px; }
-  #cs-club-social-loop .loop-step span { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.45rem; font-weight:850; line-height:1.04; }
-  #cs-club-social-loop .loop-a { left:34px; top:42px; } #cs-club-social-loop .loop-b { right:36px; top:118px; } #cs-club-social-loop .loop-c { left:58px; bottom:142px; } #cs-club-social-loop .loop-d { right:44px; bottom:48px; }
-  #cs-club-social-loop .loop-ball { position:absolute; left:49%; top:46%; width:46px; height:46px; border-radius:50%; background:#c8462c; box-shadow:0 0 0 14px rgba(200,70,44,.12),0 14px 30px rgba(200,70,44,.24); }
-  #cs-club-social-loop .loop-caption { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:245px; padding:20px; text-align:center; background:#1a1612; color:#fbf7ef; border-radius:8px; box-shadow:0 20px 54px rgba(26,22,18,.20); }
-  #cs-club-social-loop .loop-caption b { display:block; font-family:'Manrope',sans-serif; font-size:.64rem; font-weight:900; letter-spacing:.20em; text-transform:uppercase; color:#f1d788; margin-bottom:10px; }
-  #cs-club-social-loop .loop-caption span { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.7rem; font-weight:850; line-height:1.02; }
-  #cs-club-social-loop .loop-foot { margin-top:30px; display:flex; flex-wrap:wrap; gap:10px; }
+  #cs-club-social-loop .cco-stage { display:block; }
+  #cs-club-social-loop .loop-hero { position:absolute; top:160px; left:0; right:0; width:1260px; max-width:calc(100% - 180px); margin:0 auto; text-align:center; z-index:5; }
+  #cs-club-social-loop .loop-hero .club-build-title { font-size:clamp(3.25rem,4.55vw,5.15rem); line-height:1; }
+  #cs-club-social-loop .loop-proofline { margin:18px auto 0; display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border:1px solid rgba(184,149,74,.42); background:rgba(251,247,239,.84); border-radius:7px; box-shadow:0 12px 28px rgba(26,22,18,.06); font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:#5B8FD4; }
+  #cs-club-social-loop .loop-proofline:before, #cs-club-social-loop .loop-proofline:after { content:''; width:8px; height:8px; border-radius:50%; background:#c8462c; box-shadow:18px 0 0 #b8954a,36px 0 0 #5B8FD4; }
+  #cs-club-social-loop .loop-proofline:after { transform:scaleX(-1); }
+  #cs-club-social-loop .loop-system { position:absolute; left:0; right:0; top:465px; width:1280px; height:440px; max-width:calc(100% - 190px); margin:0 auto; z-index:3; }
+  #cs-club-social-loop .loop-system:before { content:''; position:absolute; inset:0; border:1.5px solid rgba(184,149,74,.30); border-radius:8px; background:
+    radial-gradient(circle at 50% 50%, rgba(184,149,74,.17) 0 96px, rgba(184,149,74,.06) 97px 175px, transparent 176px),
+    radial-gradient(circle at 50% 50%, transparent 0 264px, rgba(91,143,212,.10) 265px 266px, transparent 267px),
+    linear-gradient(90deg, rgba(91,143,212,.10) 0 49.8%, rgba(251,247,239,.75) 49.8% 50.2%, rgba(200,70,44,.07) 50.2% 100%),
+    repeating-linear-gradient(0deg, rgba(26,22,18,.035) 0 1px, transparent 1px 16px),
+    #fbf7ef; box-shadow:0 28px 78px rgba(26,22,18,.08), inset 0 0 0 28px rgba(251,247,239,.56); }
+  #cs-club-social-loop .loop-path { position:absolute; left:50%; top:50%; width:690px; height:300px; transform:translate(-50%,-50%); border:2px solid rgba(184,149,74,.72); border-left-color:rgba(91,143,212,.58); border-bottom-color:rgba(200,70,44,.58); border-radius:50%; }
+  #cs-club-social-loop .loop-path:before, #cs-club-social-loop .loop-path:after { content:''; position:absolute; width:0; height:0; border-top:11px solid transparent; border-bottom:11px solid transparent; }
+  #cs-club-social-loop .loop-path:before { right:45px; top:26px; border-left:18px solid #b8954a; transform:rotate(26deg); }
+  #cs-club-social-loop .loop-path:after { left:67px; bottom:10px; border-right:18px solid #c8462c; transform:rotate(24deg); }
+  #cs-club-social-loop .loop-core { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:205px; height:205px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px; text-align:center; background:#fbf7ef; border:2px solid rgba(184,149,74,.72); box-shadow:0 18px 58px rgba(26,22,18,.13),0 0 0 18px rgba(184,149,74,.11),0 0 0 56px rgba(91,143,212,.045); }
+  #cs-club-social-loop .loop-core small { font-family:'Manrope',sans-serif; font-size:.56rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:#b8954a; }
+  #cs-club-social-loop .loop-node { position:absolute; width:230px; min-height:76px; padding:15px 18px 15px 48px; border:1.4px solid rgba(184,149,74,.42); background:rgba(251,247,239,.91); border-radius:8px; box-shadow:0 16px 40px rgba(26,22,18,.07); }
+  #cs-club-social-loop .loop-node:before { content:''; position:absolute; left:18px; top:23px; width:16px; height:16px; border-radius:50%; border:2px solid #b8954a; background:rgba(251,247,239,.95); }
+  #cs-club-social-loop .loop-node b { display:block; font-family:'Manrope',sans-serif; font-size:.66rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:#1a1612; }
+  #cs-club-social-loop .loop-node span { display:block; margin-top:5px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.2rem; font-weight:780; line-height:1.05; color:rgba(26,22,18,.76); }
+  #cs-club-social-loop .loop-a { left:134px; top:54px; border-color:rgba(91,143,212,.48); } #cs-club-social-loop .loop-a:before { border-color:#5B8FD4; }
+  #cs-club-social-loop .loop-b { left:516px; top:14px; }
+  #cs-club-social-loop .loop-c { right:122px; top:116px; border-color:rgba(200,70,44,.42); } #cs-club-social-loop .loop-c:before { border-color:#c8462c; }
+  #cs-club-social-loop .loop-d { right:264px; bottom:28px; border-color:rgba(91,143,212,.48); } #cs-club-social-loop .loop-d:before { border-color:#5B8FD4; }
+  #cs-club-social-loop .loop-e { left:268px; bottom:34px; }
+  #cs-club-social-loop .loop-source { position:absolute; left:42px; bottom:55px; width:170px; height:132px; border:1.5px dashed rgba(91,143,212,.70); border-radius:8px; background:rgba(91,143,212,.06); box-shadow:0 14px 34px rgba(26,22,18,.045); }
+  #cs-club-social-loop .loop-source b { position:absolute; left:14px; top:-28px; font-family:'Manrope',sans-serif; font-size:.66rem; font-weight:900; letter-spacing:.20em; text-transform:uppercase; color:#5B8FD4; }
+  #cs-club-social-loop .loop-source span { position:absolute; left:14px; right:14px; bottom:-46px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.02rem; font-style:italic; line-height:1.1; color:rgba(26,22,18,.70); }
+  #cs-club-social-loop .loop-source i { position:absolute; left:18px; right:18px; height:1.5px; background:rgba(91,143,212,.34); }
+  #cs-club-social-loop .loop-source i:nth-child(2) { top:38px; } #cs-club-social-loop .loop-source i:nth-child(3) { top:62px; } #cs-club-social-loop .loop-source i:nth-child(4) { top:86px; }
+  #cs-club-social-loop .loop-rail { position:absolute; right:36px; top:54px; bottom:54px; width:88px; border-left:12px solid rgba(26,22,18,.20); }
+  #cs-club-social-loop .loop-rail:before { content:''; position:absolute; left:-8px; top:0; bottom:0; width:4px; border-radius:4px; background:repeating-linear-gradient(to bottom, rgba(26,22,18,.32) 0 8px, transparent 8px 22px); }
+  #cs-club-social-loop .loop-rail span { position:absolute; right:0; display:block; width:52px; height:14px; border-radius:10px; background:repeating-linear-gradient(to right, #5B8FD4 0 8px, transparent 8px 17px); }
+  #cs-club-social-loop .loop-rail span:nth-child(1) { top:22px; }
+  #cs-club-social-loop .loop-rail span:nth-child(2) { top:138px; background:repeating-linear-gradient(to right, #b8954a 0 8px, transparent 8px 17px); }
+  #cs-club-social-loop .loop-rail span:nth-child(3) { bottom:92px; background:repeating-linear-gradient(to right, #c8462c 0 8px, transparent 8px 17px); }
+  #cs-club-social-loop .loop-foot { position:absolute; left:0; right:0; bottom:-56px; display:flex; justify-content:center; gap:10px; }
 
   #cs-club-anti-dupr .cco-stage { display:flex; flex-direction:column; justify-content:center; gap:36px; }
   #cs-club-anti-dupr .adu-head { text-align:center; max-width:1320px; margin:0 auto; }
@@ -14045,25 +14073,29 @@ window.cs1m7Reverse = function() {
 </div>
 
 <div class="casey-slide ds-focus" id="cs-club-social-loop">
-  <div class="cco-eye">community growth system</div>
+  <div class="cco-eye">autonomous social coordination</div>
   <section class="club-build-stage cco-stage">
-    <div class="loop-board club-build-anim" aria-hidden="true">
-      <div class="loop-net"></div><div class="loop-ball"></div>
-      <div class="loop-step loop-a"><b>01 influx</b><span>Lower-level socials welcome the next wave.</span></div>
-      <div class="loop-step loop-b"><b>02 scouts</b><span>Find the intermediate players who love the silly human part.</span></div>
-      <div class="loop-step loop-c"><b>03 invites</b><span>Match by energy, generosity, and belonging.</span></div>
-      <div class="loop-step loop-d"><b>04 media</b><span>Turn the room into proof the club is alive.</span></div>
-      <div class="loop-caption"><b>the loop</b><span>Every event creates the next event.</span></div>
-    </div>
-    <div class="club-build-anim">
-      <div class="club-build-kicker">The tactic stack</div>
+    <div class="loop-hero club-build-anim">
       <h1 class="club-build-title">Engineer the room until the community starts <em>pulling itself forward.</em></h1>
-      <p class="club-build-sub">The club keeps a healthy influx of new players, identifies the members who spread fun, and gives them the right invitations to become community gravity.</p>
+      <div class="loop-proofline">every touchpoint trains the next invitation</div>
+    </div>
+    <div class="loop-system club-build-anim">
+      <div class="loop-path"></div>
+      <div class="loop-source"><b>coldstart</b><i></i><i></i><i></i><span>history + private booking data</span></div>
+      <div class="loop-core">
+        <div class="club-build-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+        <small>community engine</small>
+      </div>
+      <div class="loop-node loop-a"><b>signals</b><span>touchpoints become training data</span></div>
+      <div class="loop-node loop-b"><b>invites</b><span>sequential, social, curated</span></div>
+      <div class="loop-node loop-c"><b>rsvps</b><span>partners, opponents, waitlist</span></div>
+      <div class="loop-node loop-d"><b>courts</b><span>right people, right time</span></div>
+      <div class="loop-node loop-e"><b>stories</b><span>proof that pulls the next wave</span></div>
+      <div class="loop-rail"><span></span><span></span><span></span></div>
       <div class="loop-foot">
-        <span class="club-build-chip blue">newcomer nights</span>
-        <span class="club-build-chip hot">silly-event heroes</span>
-        <span class="club-build-chip">social media proof</span>
-        <span class="club-build-chip">repeatable belonging</span>
+        <span class="club-build-chip blue">agentic invitations</span>
+        <span class="club-build-chip hot">compounding community value</span>
+        <span class="club-build-chip">autonomous fills</span>
       </div>
     </div>
   </section>
