@@ -19898,10 +19898,12 @@ window.csBrandV8Reverse = function() {
   #cs-app-store-people .asp-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; filter:saturate(.96) contrast(1.03); z-index:0; }
   #cs-app-store-people .asp-wash { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(90deg, rgba(251,247,239,.92) 0%, rgba(251,247,239,.80) 32%, rgba(251,247,239,.36) 61%, rgba(26,22,18,.20) 100%), linear-gradient(180deg, rgba(251,247,239,.58) 0%, rgba(251,247,239,.08) 58%, rgba(26,22,18,.34) 100%); }
   #cs-app-store-people .asp-eye { position:absolute; top:28px; left:48px; z-index:3; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#c8462c; }
-  #cs-app-store-people .asp-stage { position:absolute; inset:0; z-index:2; display:grid; grid-template-columns:minmax(560px,.72fr) minmax(620px,.88fr); align-items:center; gap:54px; padding:104px 76px 62px; }
+  #cs-app-store-people .asp-stage { position:absolute; inset:0; z-index:2; display:grid; grid-template-columns:minmax(560px,.72fr) minmax(560px,.78fr); align-items:center; gap:54px; padding:104px 76px 62px; }
+  #cs-app-store-people .asp-copy { max-width:790px; }
   #cs-app-store-people .asp-quote { margin:0; max-width:790px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.4rem,5.5vw,6.1rem); font-weight:850; line-height:.98; letter-spacing:-.026em; color:#1a1612; text-wrap:balance; }
   #cs-app-store-people .asp-quote em { color:#b8954a; font-style:italic; }
-  #cs-app-store-people .asp-video { width:100%; aspect-ratio:16/9; border:1px solid rgba(184,149,74,.62); background:#1a1612; box-shadow:0 24px 54px rgba(26,22,18,.28); overflow:hidden; }
+  #cs-app-store-people .asp-byline { margin-top:24px; font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:800; letter-spacing:.20em; text-transform:uppercase; color:#b8954a; }
+  #cs-app-store-people .asp-video { width:92%; justify-self:center; aspect-ratio:16/9; border:1px solid rgba(184,149,74,.62); background:#1a1612; box-shadow:0 24px 54px rgba(26,22,18,.28); overflow:hidden; }
   #cs-app-store-people .asp-video iframe { display:block; width:100%; height:100%; border:0; background:#1a1612; }
   #cs-app-store-people.casey-entered .asp-quote, #cs-app-store-people.casey-entered .asp-video { animation:vcRise .76s cubic-bezier(.22,1,.36,1) both; }
   #cs-app-store-people.casey-entered .asp-video { animation-delay:.16s; }
@@ -19986,7 +19988,10 @@ window.csBrandV8Reverse = function() {
   <div class="asp-wash" aria-hidden="true"></div>
   <div class="asp-eye">App Store for People</div>
   <section class="asp-stage">
-    <h1 class="asp-quote">&ldquo;I envision an app store for <em>people.</em>&rdquo;</h1>
+    <div class="asp-copy">
+      <h1 class="asp-quote">&ldquo;I envision an app store for <em>people.</em>&rdquo;</h1>
+      <div class="asp-byline">Brian Chesky</div>
+    </div>
     <div class="asp-video">
       <iframe src="https://drive.google.com/file/d/1sk44-woFi5l384ue0QtzHSBXLPLhkTc3/preview" allow="autoplay; fullscreen" allowfullscreen title="Brian Chesky app store for people video"></iframe>
     </div>
