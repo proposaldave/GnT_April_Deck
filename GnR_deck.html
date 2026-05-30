@@ -20012,6 +20012,7 @@ window.csBrandV8Reverse = function() {
   #cs-value-choice .vc-stage { position:absolute; inset:0; z-index:2; display:grid; grid-template-columns:minmax(660px, 0.92fr) 1fr; align-items:center; gap:44px; padding:92px 78px 60px; }
   #cs-value-choice .vc-question { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3rem, 4.55vw, 5.1rem); font-weight:850; line-height:0.98; letter-spacing:-0.026em; color:#fbf7ef; max-width:900px; margin:0 0 26px; text-shadow:0 2px 22px rgba(26,22,18,0.38); }
   #cs-value-choice .vc-question em { font-style:italic; color:#b8954a; }
+  #cs-value-choice .vc-question .vc-tail { display:inline-block; margin-left:.14em; }
   #cs-value-choice .vc-list { display:flex; flex-direction:column; gap:8px; max-width:720px; }
   #cs-value-choice .vc-item { display:grid; grid-template-columns:48px minmax(0,1fr) auto; align-items:center; gap:14px; min-height:58px; padding:9px 13px; border-radius:7px; background:rgba(251,247,239,0.10); border:1px solid rgba(251,247,239,0.16); color:rgba(251,247,239,0.72); font-family:'Manrope',sans-serif; }
   #cs-value-choice .vc-copy { min-width:0; display:flex; flex-direction:column; gap:3px; }
@@ -20046,6 +20047,11 @@ window.csBrandV8Reverse = function() {
   #cs-value-choice.casey-entered .vc-right { animation-delay:.35s; }
   @keyframes vcRise { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
   html[data-export="1"] #cs-value-choice .vc-question, html[data-export="1"] #cs-value-choice .vc-list, html[data-export="1"] #cs-value-choice .vc-right { opacity:1 !important; transform:none !important; animation:none !important; }
+
+  #cs-value-choice-image-only-pink { background:#1a1612 !important; overflow:hidden; }
+  #cs-value-choice-image-only-pink .vcio-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; display:block; filter:saturate(1.02) contrast(1.02); }
+  #cs-value-choice-image-only-pink.casey-entered .vcio-bg { animation:vcRise .75s cubic-bezier(.22,1,.36,1) both; }
+  html[data-export="1"] #cs-value-choice-image-only-pink .vcio-bg { opacity:1 !important; transform:none !important; animation:none !important; }
 
   .value-brainstorm { background:#fbf7ef !important; overflow:hidden; }
   .value-brainstorm .vb-stage { position:absolute; inset:0; display:grid; align-items:center; padding:92px 74px 58px; z-index:2; }
@@ -20116,16 +20122,17 @@ window.csBrandV8Reverse = function() {
   #cs-value-product .product-answer em { color:#c8462c; font-style:italic; }
 </style>
 <div class="casey-slide ds-focus" id="cs-value-choice">
-  <img class="vc-bg" src="assets/cs-human-connection-value-bg.png" alt="Abundant human connection glowing brighter than surrounding screens."/>
+  <img class="vc-bg" src="assets/cs-human-connection-value-bg-v2.png" alt="Abundant human connection glowing brighter than surrounding screens."/>
   <div class="vc-wash" aria-hidden="true"></div>
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The value question</div>
   <section class="vc-stage">
     <div>
-      <h1 class="vc-question">Which product is <em>most valuable</em>?</h1>
+      <h1 class="vc-question">Which &quot;product&quot; is <em>most valuable</em> <span class="vc-tail">to you?</span></h1>
       <div class="vc-list">
+        <div class="vc-item"><div class="vc-icon coke">C</div><div class="vc-copy"><b>Coca-Cola</b><small>iconic everyday consumption</small></div><div class="vc-dollars">$1T+ sold</div></div>
         <div class="vc-item"><div class="vc-icon netflix">N</div><div class="vc-copy"><b>Netflix</b><small>streaming subscription</small></div><div class="vc-dollars">$300B+ sold</div></div>
         <div class="vc-item"><div class="vc-icon iphone"></div><div class="vc-copy"><b>iPhone</b><small>3B devices shipped</small></div><div class="vc-dollars">$2T+ sold</div></div>
-        <div class="vc-item"><div class="vc-icon google">G</div><div class="vc-copy"><b>Google Ads</b><small>the world's information</small></div><div class="vc-dollars">$3T+ sold</div></div>
+        <div class="vc-item"><div class="vc-icon google">G</div><div class="vc-copy"><b>Google Search</b><small>the world's information</small></div><div class="vc-dollars">$3T+ ads sold</div></div>
         <div class="vc-item"><div class="vc-icon ai" title="OpenAI · Anthropic" aria-label="OpenAI and Anthropic logos">
           <svg viewBox="0 0 36 36" width="24" height="24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <g fill="none" stroke="#1a1612" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -20138,14 +20145,17 @@ window.csBrandV8Reverse = function() {
             <path d="M27.4 13.6h9.2L52 50.4h-9.2l-3.1-7.6H22.3l-3.1 7.6H10z" fill="#c8462c"/>
             <path d="M32 23.2 25.4 39h13.2z" fill="#fbf7ef"/>
           </svg>
-        </div><div class="vc-copy"><b>AI</b><small>the world's intelligence</small></div><div class="vc-dollars">$2.5T spend</div></div>
-        <div class="vc-item"><div class="vc-icon coke">C</div><div class="vc-copy"><b>Coca-Cola</b><small>iconic everyday consumption</small></div><div class="vc-dollars">$1T+ sold</div></div>
-        <div class="vc-item answer"><div class="vc-icon room"></div><div class="vc-copy"><b>Abundant human connection</b><div class="vc-gnr-line"><span class="vc-gnr-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span><span>the connection people remember</span></div></div><div class="vc-dollars">?</div></div>
+        </div><div class="vc-copy"><b>AI</b><small>intelligence at your fingertips</small></div><div class="vc-dollars">$2.5T spend</div></div>
+        <div class="vc-item answer"><div class="vc-icon room"></div><div class="vc-copy"><b>Abundant human connection</b><div class="vc-gnr-line"><span class="vc-gnr-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span><span>abundant, autonomous connection</span></div></div><div class="vc-dollars">?</div></div>
       </div>
     </div>
     <div class="vc-right">
     </div>
   </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-value-choice-image-only-pink" style="display:none" aria-label="Image-only visual concept for the value question">
+  <img class="vcio-bg" src="assets/cs-value-choice-image-only-pink.png" alt="Visual hierarchy of products orbiting a brighter human connection circle."/>
 </div>
 
 <div class="casey-slide ds-focus value-brainstorm" id="cs-value-ladder" style="display:none">
@@ -32097,6 +32107,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-19] Slot 14 = cs-fv6-img after Munger; slot 15 = cs-givefirst-art; slot 16 = cs-magnetic.
   16: [], // [Dave 2026-05-26] cs-givefirst-brand detached after cs-givefirst-art moved to appendix.
   16: ['cs-unmeasured-value'],
+  19: ['cs-value-choice-image-only-pink'],
   // [Codex 2026-05-27] Slot-13/14 alts detached after cs-3 and cs-19 were removed from the active flow.
   15: ['cs-racketeer-padel-club-pink'],
   13: [],
@@ -34118,7 +34129,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 → pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-padel-club-pink' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-padel-club-pink' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
