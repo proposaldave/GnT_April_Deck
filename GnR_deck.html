@@ -28251,7 +28251,8 @@ window.csA7m1Reverse = function() {
   /* Hidden community-type story overlays [Codex 2026-05-24]
      Cards remain visually neutral; Dave can secretly open a slide-within-slide while pitching. */
   #cs-2c { cursor: default !important; }
-  #cs-2c .c2c-card { cursor: default; }
+  #cs-2c .c2c-card { cursor: pointer; }
+  #cs-2c .c2c-card:focus-visible { outline:2px solid #b8954a; outline-offset:5px; }
   #cs-2c .c2c-story-layer { position:absolute; inset:0; z-index:80; display:none; align-items:center; justify-content:center; padding:72px 88px; background:rgba(243,234,216,0.72); backdrop-filter:blur(2px); }
   #cs-2c .c2c-story-layer.is-open { display:flex; }
   #cs-2c .c2c-story-panel { width:min(1480px,88vw); min-height:760px; position:relative; display:grid; grid-template-rows:auto auto 1fr auto; gap:14px; padding:50px 58px 44px; background:linear-gradient(180deg,rgba(251,247,239,0.98),rgba(243,234,216,0.96)); border:1.6px solid rgba(184,149,74,0.45); box-shadow:0 34px 95px rgba(26,22,18,0.22); }
@@ -28268,11 +28269,21 @@ window.csA7m1Reverse = function() {
   #cs-2c .c2c-story-step:nth-child(3) .c2c-story-num { background:#c8462c; }
   #cs-2c .c2c-story-step h3 { margin:0 0 7px; font-family:'Manrope',sans-serif; font-size:.74rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:#1a1612; }
   #cs-2c .c2c-story-step p { margin:0; font-family:'Manrope',sans-serif; font-size:.88rem; line-height:1.28; font-weight:650; color:rgba(26,22,18,0.62); }
-  #cs-2c .c2c-story-graphic { position:relative; min-height:500px; border:1.3px solid rgba(184,149,74,0.22); background:radial-gradient(circle at 50% 48%, rgba(184,149,74,0.15), rgba(251,247,239,0.44) 42%, rgba(91,143,212,0.08) 100%); overflow:hidden; }
-  #cs-2c .c2c-story-orbit { position:absolute; inset:42px; border:1.2px dashed rgba(184,149,74,0.46); border-radius:50%; }
-  #cs-2c .c2c-story-hub { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:150px; height:150px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.42rem; line-height:1.02; font-weight:850; color:#1a1612; background:#fbf7ef; border:1.8px solid rgba(184,149,74,0.7); box-shadow:0 0 0 8px rgba(184,149,74,0.10),0 18px 44px rgba(184,149,74,0.25); z-index:4; }
-  #cs-2c .c2c-story-node { position:absolute; width:78px; height:78px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-align:center; padding:8px; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:900; line-height:1.08; letter-spacing:.08em; text-transform:uppercase; color:#1a1612; background:#fffaf0; border:1.6px solid var(--ring,#5B8FD4); box-shadow:0 0 0 7px rgba(91,143,212,0.10),0 12px 28px rgba(26,22,18,0.10); z-index:3; }
-  #cs-2c .c2c-story-line { position:absolute; height:1.7px; background:linear-gradient(90deg,rgba(184,149,74,0),rgba(184,149,74,0.72),rgba(200,70,44,0.45)); transform-origin:left center; z-index:2; }
+  #cs-2c .c2c-story-graphic { position:relative; min-height:500px; padding:28px; border:1.3px solid rgba(184,149,74,0.22); background:radial-gradient(circle at 50% 48%, rgba(184,149,74,0.15), rgba(251,247,239,0.44) 42%, rgba(91,143,212,0.08) 100%); overflow:hidden; display:grid; place-items:center; }
+  #cs-2c .c2c-story-route { width:100%; min-height:420px; display:grid; grid-template-columns:.9fr 44px 1.02fr 44px 1.08fr; gap:12px; align-items:center; }
+  #cs-2c .c2c-story-block { min-height:330px; padding:22px 20px; display:flex; flex-direction:column; gap:14px; justify-content:center; background:rgba(255,251,243,0.74); border:1.2px solid rgba(184,149,74,0.26); border-radius:8px; box-shadow:0 18px 42px rgba(26,22,18,0.08); }
+  #cs-2c .c2c-story-block h4 { margin:0; font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:950; letter-spacing:.21em; text-transform:uppercase; color:#b8954a; }
+  #cs-2c .c2c-story-profile { border-left:5px solid #5B8FD4; }
+  #cs-2c .c2c-story-feed { border-left:5px solid #c8462c; }
+  #cs-2c .c2c-story-moments { border-left:5px solid #b8954a; }
+  #cs-2c .c2c-story-tokens { display:flex; flex-wrap:wrap; gap:8px; }
+  #cs-2c .c2c-story-token { padding:9px 11px; font-family:'Manrope',sans-serif; font-size:.72rem; line-height:1; font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:#1a1612; background:rgba(91,143,212,0.11); border:1px solid rgba(91,143,212,0.28); border-radius:999px; }
+  #cs-2c .c2c-story-feed-card { padding:13px 14px; background:#fbf7ef; border:1px solid rgba(200,70,44,0.25); border-radius:8px; font-family:'Manrope',sans-serif; font-size:.86rem; line-height:1.15; font-weight:850; color:#1a1612; box-shadow:0 10px 24px rgba(200,70,44,0.08); }
+  #cs-2c .c2c-story-feed-card strong { display:block; margin-bottom:4px; font-size:.56rem; letter-spacing:.18em; text-transform:uppercase; color:#c8462c; }
+  #cs-2c .c2c-story-moment-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  #cs-2c .c2c-story-moment { min-height:74px; display:flex; align-items:center; justify-content:center; text-align:center; padding:10px; font-family:'Manrope',sans-serif; font-size:.72rem; line-height:1.1; font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:#1a1612; background:rgba(184,149,74,0.10); border:1px solid rgba(184,149,74,0.30); border-radius:8px; }
+  #cs-2c .c2c-story-note { margin-top:auto; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.06rem; line-height:1.15; font-style:italic; color:rgba(26,22,18,0.70); }
+  #cs-2c .c2c-story-arrow { display:flex; align-items:center; justify-content:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:2.7rem; font-weight:850; color:#b8954a; }
   #cs-2c .c2c-story-proof { margin-top:2px; padding-top:18px; border-top:1px solid rgba(184,149,74,0.28); font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.12rem,1.65vw,1.65rem); line-height:1.24; font-style:italic; color:#1a1612; }
   #cs-2c .c2c-story-proof strong { color:#c8462c; font-style:normal; }
   @media (max-width: 1400px) {
@@ -28280,6 +28291,9 @@ window.csA7m1Reverse = function() {
     #cs-2c .c2c-story-panel { min-height:690px; padding:40px 44px 36px; }
     #cs-2c .c2c-story-body { grid-template-columns:1fr; gap:26px; }
     #cs-2c .c2c-story-graphic { min-height:300px; }
+    #cs-2c .c2c-story-route { min-height:300px; grid-template-columns:1fr; }
+    #cs-2c .c2c-story-arrow { transform:rotate(90deg); font-size:2rem; }
+    #cs-2c .c2c-story-block { min-height:auto; }
   }
 
 </style>
@@ -28293,7 +28307,7 @@ window.csA7m1Reverse = function() {
 
   <div class="c2c-grid">
     <!-- [Dave 2026-05-11 LATE] Highlight removed — all 8 cards equal weight in the new converging-to-hub design. -->
-    <div class="c2c-card" data-c2c-story="social-sports">
+    <div class="c2c-card" data-c2c-story="social-sports" role="button" tabindex="0" aria-label="Open Social Sports story">
       <div class="c2c-icon" style="display:flex;align-items:center;justify-content:center">
         <!-- Pickleball icon — yellow ball with the iconic holes pattern -->
         <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28336,39 +28350,39 @@ window.csA7m1Reverse = function() {
     </div>
 
     <!-- [Dave 2026-05-17] Hobbies MOVED to position #2 per 'make hobbies the second one'. Sits between Social Sports and College in the natural-community reading order. -->
-    <div class="c2c-card" data-c2c-story="hobbies">
+    <div class="c2c-card" data-c2c-story="hobbies" role="button" tabindex="0" aria-label="Open Hobbies story">
       <div class="c2c-icon">&#x1F3A8;</div>
       <div class="c2c-label">Hobbies</div>
     </div>
 
     <!-- Reorder per Dave 2026-05-06 PM: #2 Colleges, #3 Neighbors moved up -->
-    <div class="c2c-card" data-c2c-story="college">
+    <div class="c2c-card" data-c2c-story="college" role="button" tabindex="0" aria-label="Open College story">
       <div class="c2c-icon">&#x1F393;</div>
       <div class="c2c-label">College</div>
     </div>
 
     <!-- [Dave 2026-05-18 LATEST] Neighborhoods + Cities & Schools MERGED into a single card per Dave 'let's merge neighborhoods, cities, and schools into one. So that there's just one box for those three instead of neighborhoods and then cities and schools having two separate boxes'. Standalone Neighborhoods + Cities & Schools cards both deleted; one combined card replaces them. -->
-    <div class="c2c-card" data-c2c-story="neighborhoods">
+    <div class="c2c-card" data-c2c-story="neighborhoods" role="button" tabindex="0" aria-label="Open Neighborhoods, Cities, and Schools story">
       <div class="c2c-icon">&#x1F3D8;&#xFE0F;</div>
       <div class="c2c-label">Neighborhoods,<br>Cities &amp; Schools</div>
     </div>
 
-    <div class="c2c-card" data-c2c-story="fitness">
+    <div class="c2c-card" data-c2c-story="fitness" role="button" tabindex="0" aria-label="Open Fitness and Gym Groups story">
       <div class="c2c-icon">&#x1F9D8;</div>
       <div class="c2c-label">Fitness &amp;<br>Gym Groups</div>
     </div>
 
-    <div class="c2c-card" data-c2c-story="homeschool">
+    <div class="c2c-card" data-c2c-story="homeschool" role="button" tabindex="0" aria-label="Open Homeschool Groups story">
       <div class="c2c-icon">&#x1F4DA;</div>
       <div class="c2c-label">Homeschool<br>Groups</div>
     </div>
 
-    <div class="c2c-card" data-c2c-story="faith">
+    <div class="c2c-card" data-c2c-story="faith" role="button" tabindex="0" aria-label="Open Faith Communities story">
       <div class="c2c-icon">&#x26EA;</div>
       <div class="c2c-label">Faith<br>Communities</div>
     </div>
 
-    <div class="c2c-card" data-c2c-story="country-clubs">
+    <div class="c2c-card" data-c2c-story="country-clubs" role="button" tabindex="0" aria-label="Open Country Clubs story">
       <div class="c2c-icon">&#x26F3;</div>
       <div class="c2c-label">Country<br>Clubs</div>
     </div>
@@ -28498,6 +28512,88 @@ window.csA7m1Reverse = function() {
       <div class="c2c-story-proof" id="c2cStoryProof"></div>
     </div>
   </div>
+  <script type="application/json" id="c2cStorySource">{
+    "social-sports": {
+      "kicker": "Social sports",
+      "title": "Every match becomes the <em>next right invitation.</em>",
+      "sub": "GnR learns level, vibe, schedule, and who makes people want to come back.",
+      "steps": [["Learn","Skill. vibe. availability."],["Invite","Right game. right people."],["Compound","Repeat people, not random games."]],
+      "profile": ["level","vibe","availability","chemistry"],
+      "feed": [["Game","Balanced Tuesday match"],["Welcome","Newcomer + welcomer"],["Return","Post-game table"]],
+      "moments": ["fair game","fun foursome","repeat crew","league captain"],
+      "proof": "The future of social sports is not a bracket. <strong>It is a personalized invitation feed.</strong>"
+    },
+    "hobbies": {
+      "kicker": "Hobbies",
+      "title": "Interest becomes <em>shared momentum.</em>",
+      "sub": "Beginners, guides, peers, projects, and hosts find each other faster.",
+      "steps": [["Learn","Taste. skill. goals."],["Gather","Guide, peer, host."],["Repeat","Interest turns into habit."]],
+      "profile": ["taste","skill","project","pace"],
+      "feed": [["Start","Beginner circle"],["Guide","Mentor maker"],["Share","Show-and-tell night"]],
+      "moments": ["learn","make","teach","return"],
+      "proof": "The future hobby community makes it easier to <strong>keep showing up.</strong>"
+    },
+    "college": {
+      "kicker": "College",
+      "title": "Belonging starts before <em>loneliness hardens.</em>",
+      "sub": "Students get meals, clubs, study groups, and mentors by fit, not luck.",
+      "steps": [["Know","Interests. values. schedule."],["Invite","Meal. club. mentor."],["Belong","Less lonely, sooner."]],
+      "profile": ["major","values","schedule","interests"],
+      "feed": [["Meal","First-week table"],["Club","Right room intro"],["Mentor","Alumni coffee"]],
+      "moments": ["meal table","study group","club intro","mentor coffee"],
+      "proof": "The future campus is an <strong>active belonging engine.</strong>"
+    },
+    "neighborhoods": {
+      "kicker": "Neighborhoods, cities & schools",
+      "title": "A place stops being <em>strangers nearby.</em>",
+      "sub": "Parents, helpers, schools, elders, and organizers become visible through trusted invitations.",
+      "steps": [["Map","Kids. needs. local gifts."],["Invite","Walk, meal, project."],["Strengthen","The place works better."]],
+      "profile": ["kids","needs","skills","nearby"],
+      "feed": [["School","Pickup walk"],["Home","Tool-lending intro"],["Block","Small dinner"]],
+      "moments": ["parents","helpers","schools","neighbors"],
+      "proof": "The future neighborhood is a <strong>trusted local invitation layer.</strong>"
+    },
+    "fitness": {
+      "kicker": "Fitness & gym groups",
+      "title": "The gym becomes a room that <em>expects you back.</em>",
+      "sub": "Goals, comfort, schedule, and energy become buddy, class, and coach invitations.",
+      "steps": [["Learn","Goals. comfort. energy."],["Pair","Buddy, coach, class."],["Return","Showing up gets easier."]],
+      "profile": ["goal","comfort","energy","schedule"],
+      "feed": [["Buddy","Beginner partner"],["Class","Right-energy group"],["Coach","Check-in moment"]],
+      "moments": ["buddy","coach","class","return"],
+      "proof": "The future fitness business retains people by matching them into <strong>community momentum.</strong>"
+    },
+    "homeschool": {
+      "kicker": "Homeschool groups",
+      "title": "Families find the <em>right circle</em> faster.",
+      "sub": "Ages, learning goals, parent capacity, pods, mentors, and support fit together.",
+      "steps": [["See","Ages. needs. capacity."],["Fit","Pods, projects, partners."],["Support","Less alone. more help."]],
+      "profile": ["ages","needs","capacity","interests"],
+      "feed": [["Pod","Project group"],["Parent","Swap support"],["Mentor","One-hour help"]],
+      "moments": ["kids","parents","pods","support"],
+      "proof": "The future homeschool group turns isolated families into a <strong>support graph.</strong>"
+    },
+    "faith": {
+      "kicker": "Faith communities",
+      "title": "Care finds the <em>person who needs it.</em>",
+      "sub": "Gifts, needs, hosts, service, and small groups route to the right invitation.",
+      "steps": [["See","Needs and gifts."],["Invite","Care. serve. host."],["Welcome","People are noticed sooner."]],
+      "profile": ["season","need","gift","capacity"],
+      "feed": [["Care","Meal train"],["Serve","Right team"],["Host","Small group table"]],
+      "moments": ["care","serve","host","welcome"],
+      "proof": "The future faith community does not rely on memory. <strong>It routes care.</strong>"
+    },
+    "country-clubs": {
+      "kicker": "Country clubs",
+      "title": "Day one feels like <em>you already belong.</em>",
+      "sub": "Onboarding becomes an invitation engine: golf, dinner, family, service, and introductions.",
+      "steps": [["Survey","Family. interests. pace."],["Feed","Golf with relevant members."],["Belong","Dinner before awkward months."]],
+      "profile": ["new member","golf","dinner","family"],
+      "feed": [["Golf","Saturday foursome"],["Dinner","Relevant table"],["Family","Clinic invite"]],
+      "moments": ["golf partner","dinner table","welcoming couple","club life"],
+      "proof": "The future country club is a <strong>personalized invitation feed</strong>, not a directory."
+    }
+  }</script>
 </section>
 </div>
 
@@ -32385,11 +32481,99 @@ window.cs2cReverse = function() {
   return true;
 };
 
-window.C2C_STORIES = {"social-sports":{"kicker":"Social sports","title":"Better games become <em>repeat people.</em>","sub":"Skill gets the match started. Chemistry makes people come back.","steps":[["Signal","Level. Vibe. Availability."],["Match","Right game. Right people."],["Return","More play. More belonging."]],"nodes":["skill","vibe","trust","repeat","fun"],"proof":"Not just fair games. <strong>Coordinated belonging.</strong>"},"hobbies":{"kicker":"Hobbies","title":"Shared interest becomes <em>shared momentum.</em>","sub":"The right beginner, guide, host, and peer find each other faster.","steps":[["Signal","Taste. Skill. Goals."],["Gather","Make the small group."],["Repeat","Turn interest into habit."]],"nodes":["learn","make","guide","peer","return"],"proof":"A hobby becomes easier to <strong>keep choosing.</strong>"},"college":{"kicker":"College","title":"Students find their <em>people</em> faster.","sub":"Belonging cannot wait for luck, dorms, or extroversion.","steps":[["Signal","Interests. Values. Schedule."],["Invite","Meal. Club. Mentor. Team."],["Belong","Less lonely, sooner."]],"nodes":["mentor","meal","study","club","team"],"proof":"Campus becomes an <strong>active belonging engine.</strong>"},"neighborhoods":{"kicker":"Neighborhoods, cities & schools","title":"A place stops being <em>strangers nearby.</em>","sub":"Local gifts, needs, parents, helpers, and organizers become visible.","steps":[["See","Who can help."],["Connect","Trusted local introductions."],["Strengthen","The place works better."]],"nodes":["parents","helpers","schools","neighbors","service"],"proof":"Useful connection, <strong>coordinated locally.</strong>"},"fitness":{"kicker":"Fitness & gym groups","title":"The gym becomes a place people <em>return to.</em>","sub":"Habits stick when the room knows you and expects you back.","steps":[["Signal","Goals. Comfort. Energy."],["Pair","Buddy. Coach. Class."],["Return","Showing up gets easier."]],"nodes":["goals","buddy","class","coach","return"],"proof":"Fitness becomes <strong>community momentum.</strong>"},"homeschool":{"kicker":"Homeschool groups","title":"Families find the <em>right circle</em> faster.","sub":"Kids, parents, mentors, pods, and support fit together.","steps":[["See","Ages. Needs. Capacity."],["Fit","Pods. Projects. Partners."],["Abundance","Less alone. More help."]],"nodes":["kids","parents","pods","mentors","support"],"proof":"Easier to enter. Easier to trust. <strong>Easier to sustain.</strong>"},"faith":{"kicker":"Faith communities","title":"Care becomes <em>visible and coordinated.</em>","sub":"Gifts, needs, hosts, small groups, and service find their right place.","steps":[["See","Needs and gifts."],["Invite","Care. Serve. Host."],["Welcome","More people noticed."]],"nodes":["care","serve","host","mentor","welcome"],"proof":"People become <strong>gifts to each other.</strong>"},"country-clubs":{"kicker":"Country clubs","title":"New members are <em>welcomed immediately.</em>","sub":"The club knows who they are and who should invite them first.","steps":[["Know","Family. Interests. Schedule."],["Welcome","Three right members."],["Belong","Club life starts now."]],"nodes":["new member","welcomer","golf","family","club life"],"proof":"From slow social discovery to <strong>intentional belonging.</strong>"}};
+window.C2C_STORIES = {
+  "social-sports": {
+    "kicker": "Social sports",
+    "title": "Every match becomes the <em>next right invitation.</em>",
+    "sub": "GnR learns level, vibe, schedule, and who makes people want to come back.",
+    "steps": [["Learn","Skill. vibe. availability."],["Invite","Right game. right people."],["Compound","Repeat people, not random games."]],
+    "profile": ["level","vibe","availability","chemistry"],
+    "feed": [["Game","Balanced Tuesday match"],["Welcome","Newcomer + welcomer"],["Return","Post-game table"]],
+    "moments": ["fair game","fun foursome","repeat crew","league captain"],
+    "proof": "The future of social sports is not a bracket. <strong>It is a personalized invitation feed.</strong>"
+  },
+  "hobbies": {
+    "kicker": "Hobbies",
+    "title": "Interest becomes <em>shared momentum.</em>",
+    "sub": "Beginners, guides, peers, projects, and hosts find each other faster.",
+    "steps": [["Learn","Taste. skill. goals."],["Gather","Guide, peer, host."],["Repeat","Interest turns into habit."]],
+    "profile": ["taste","skill","project","pace"],
+    "feed": [["Start","Beginner circle"],["Guide","Mentor maker"],["Share","Show-and-tell night"]],
+    "moments": ["learn","make","teach","return"],
+    "proof": "The future hobby community makes it easier to <strong>keep showing up.</strong>"
+  },
+  "college": {
+    "kicker": "College",
+    "title": "Belonging starts before <em>loneliness hardens.</em>",
+    "sub": "Students get meals, clubs, study groups, and mentors by fit, not luck.",
+    "steps": [["Know","Interests. values. schedule."],["Invite","Meal. club. mentor."],["Belong","Less lonely, sooner."]],
+    "profile": ["major","values","schedule","interests"],
+    "feed": [["Meal","First-week table"],["Club","Right room intro"],["Mentor","Alumni coffee"]],
+    "moments": ["meal table","study group","club intro","mentor coffee"],
+    "proof": "The future campus is an <strong>active belonging engine.</strong>"
+  },
+  "neighborhoods": {
+    "kicker": "Neighborhoods, cities & schools",
+    "title": "A place stops being <em>strangers nearby.</em>",
+    "sub": "Parents, helpers, schools, elders, and organizers become visible through trusted invitations.",
+    "steps": [["Map","Kids. needs. local gifts."],["Invite","Walk, meal, project."],["Strengthen","The place works better."]],
+    "profile": ["kids","needs","skills","nearby"],
+    "feed": [["School","Pickup walk"],["Home","Tool-lending intro"],["Block","Small dinner"]],
+    "moments": ["parents","helpers","schools","neighbors"],
+    "proof": "The future neighborhood is a <strong>trusted local invitation layer.</strong>"
+  },
+  "fitness": {
+    "kicker": "Fitness & gym groups",
+    "title": "The gym becomes a room that <em>expects you back.</em>",
+    "sub": "Goals, comfort, schedule, and energy become buddy, class, and coach invitations.",
+    "steps": [["Learn","Goals. comfort. energy."],["Pair","Buddy, coach, class."],["Return","Showing up gets easier."]],
+    "profile": ["goal","comfort","energy","schedule"],
+    "feed": [["Buddy","Beginner partner"],["Class","Right-energy group"],["Coach","Check-in moment"]],
+    "moments": ["buddy","coach","class","return"],
+    "proof": "The future fitness business retains people by matching them into <strong>community momentum.</strong>"
+  },
+  "homeschool": {
+    "kicker": "Homeschool groups",
+    "title": "Families find the <em>right circle</em> faster.",
+    "sub": "Ages, learning goals, parent capacity, pods, mentors, and support fit together.",
+    "steps": [["See","Ages. needs. capacity."],["Fit","Pods, projects, partners."],["Support","Less alone. more help."]],
+    "profile": ["ages","needs","capacity","interests"],
+    "feed": [["Pod","Project group"],["Parent","Swap support"],["Mentor","One-hour help"]],
+    "moments": ["kids","parents","pods","support"],
+    "proof": "The future homeschool group turns isolated families into a <strong>support graph.</strong>"
+  },
+  "faith": {
+    "kicker": "Faith communities",
+    "title": "Care finds the <em>person who needs it.</em>",
+    "sub": "Gifts, needs, hosts, service, and small groups route to the right invitation.",
+    "steps": [["See","Needs and gifts."],["Invite","Care. serve. host."],["Welcome","People are noticed sooner."]],
+    "profile": ["season","need","gift","capacity"],
+    "feed": [["Care","Meal train"],["Serve","Right team"],["Host","Small group table"]],
+    "moments": ["care","serve","host","welcome"],
+    "proof": "The future faith community does not rely on memory. <strong>It routes care.</strong>"
+  },
+  "country-clubs": {
+    "kicker": "Country clubs",
+    "title": "Day one feels like <em>you already belong.</em>",
+    "sub": "Onboarding becomes an invitation engine: golf, dinner, family, service, and introductions.",
+    "steps": [["Survey","Family. interests. pace."],["Feed","Golf with relevant members."],["Belong","Dinner before awkward months."]],
+    "profile": ["new member","golf","dinner","family"],
+    "feed": [["Golf","Saturday foursome"],["Dinner","Relevant table"],["Family","Clinic invite"]],
+    "moments": ["golf partner","dinner table","welcoming couple","club life"],
+    "proof": "The future country club is a <strong>personalized invitation feed</strong>, not a directory."
+  }
+};
 (function setupC2cStoryOverlay() {
   const slide = document.getElementById('cs-2c');
   if (!slide) return;
-  const stories = window.C2C_STORIES || {};
+  let stories = window.C2C_STORIES || {};
+  const storySource = slide.querySelector('#c2cStorySource');
+  if (storySource && storySource.textContent) {
+    try {
+      stories = JSON.parse(storySource.textContent);
+      window.C2C_STORIES = stories;
+    } catch (error) {}
+  }
   const layer = document.getElementById('c2cStoryLayer');
   const title = document.getElementById('c2cStoryTitle');
   const kicker = document.getElementById('c2cStoryKicker');
@@ -32401,22 +32585,24 @@ window.C2C_STORIES = {"social-sports":{"kicker":"Social sports","title":"Better 
   if (!layer || !title || !kicker || !sub || !flow || !graphic || !proof || !close) return;
   function esc(text) { return String(text || '').replace(/[&<>"']/g, function(ch) { return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[ch]; }); }
   function stepHtml(step, index) { return '<div class="c2c-story-step"><div class="c2c-story-num">' + (index + 1) + '</div><h3>' + esc(step[0]) + '</h3><p>' + esc(step[1]) + '</p></div>'; }
+  function tokenHtml(text) { return '<span class="c2c-story-token">' + esc(text) + '</span>'; }
+  function feedHtml(item) {
+    const label = Array.isArray(item) ? item[0] : 'Invite';
+    const text = Array.isArray(item) ? item[1] : item;
+    return '<div class="c2c-story-feed-card"><strong>' + esc(label) + '</strong>' + esc(text) + '</div>';
+  }
+  function momentHtml(text) { return '<div class="c2c-story-moment">' + esc(text) + '</div>'; }
   function renderGraphic(story) {
-    const nodes = story.nodes || [];
-    const positions = [[50,18],[82,40],[70,77],[30,77],[18,40]];
-    let lines = '';
-    for (let i = 0; i < nodes.length && i < positions.length; i++) {
-      const x = positions[i][0], y = positions[i][1], dx = 50 - x, dy = 50 - y;
-      const len = Math.sqrt(dx * dx + dy * dy) * 4.3;
-      const angle = Math.atan2(dy, dx) * 180 / Math.PI;
-      lines += '<div class="c2c-story-line" style="left:' + x + '%;top:' + y + '%;width:' + len + 'px;transform:rotate(' + angle + 'deg)"></div>';
-    }
-    let nodeHtml = '';
-    for (let i = 0; i < nodes.length && i < positions.length; i++) {
-      const ring = i % 3 === 0 ? '#5B8FD4' : (i % 3 === 1 ? '#b8954a' : '#c8462c');
-      nodeHtml += '<div class="c2c-story-node" style="--ring:' + ring + ';left:calc(' + positions[i][0] + '% - 39px);top:calc(' + positions[i][1] + '% - 39px)">' + esc(nodes[i]) + '</div>';
-    }
-    return '<div class="c2c-story-orbit"></div>' + lines + '<div class="c2c-story-hub">Give<br>n<br>Receive</div>' + nodeHtml;
+    const profile = story.profile || [];
+    const feed = story.feed || [];
+    const moments = story.moments || story.nodes || [];
+    return '<div class="c2c-story-route">' +
+      '<div class="c2c-story-block c2c-story-profile"><h4>Onboard</h4><div class="c2c-story-tokens">' + profile.map(tokenHtml).join('') + '</div><div class="c2c-story-note">learns who this person is</div></div>' +
+      '<div class="c2c-story-arrow">&rarr;</div>' +
+      '<div class="c2c-story-block c2c-story-feed"><h4>Personalized invitation feed</h4>' + feed.map(feedHtml).join('') + '</div>' +
+      '<div class="c2c-story-arrow">&rarr;</div>' +
+      '<div class="c2c-story-block c2c-story-moments"><h4>Real-world moments</h4><div class="c2c-story-moment-grid">' + moments.map(momentHtml).join('') + '</div><div class="c2c-story-note">the community gets easier to enter</div></div>' +
+      '</div>';
   }
   window.c2cOpenStory = function(key, event) {
     if (event) { event.preventDefault(); event.stopPropagation(); }
@@ -32441,6 +32627,9 @@ window.C2C_STORIES = {"social-sports":{"kicker":"Social sports","title":"Better 
   };
   slide.querySelectorAll('.c2c-card[data-c2c-story]').forEach(function(card) {
     card.addEventListener('click', function(event) { return window.c2cOpenStory(card.getAttribute('data-c2c-story'), event); });
+    card.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter' || event.key === ' ') return window.c2cOpenStory(card.getAttribute('data-c2c-story'), event);
+    });
   });
   close.addEventListener('click', window.c2cCloseStory);
   layer.addEventListener('click', function(event) { if (event.target === layer) window.c2cCloseStory(event); });
