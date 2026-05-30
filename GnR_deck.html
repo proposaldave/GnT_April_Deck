@@ -19511,6 +19511,36 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-brand-V8 .v8-stage, html[data-export="1"] #cs-brand-V8 .v8-header, html[data-export="1"] #cs-brand-V8 .v8-galaxy-row, html[data-export="1"] #cs-brand-V8 .v8-caption-row, html[data-export="1"] #cs-brand-V8 .v8-contact { opacity:1 !important;transform:none !important;filter:none !important;animation:none !important; }
   html[data-export="1"] #cs-brand-V8 .v8-particles g { opacity:1 !important; transform: translateX(0) !important; animation:none !important; }
   html[data-export="1"] #cs-brand-V8 .v8-particles circle { animation:none !important; }
+
+  .brand-bg-story { background:#1a1612 !important; overflow:hidden; color:#fbf7ef; }
+  .brand-bg-story .bbs-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; z-index:0; opacity:.96; filter:saturate(1.08) contrast(1.08) brightness(.74); transform:scale(1.012); pointer-events:none; }
+  .brand-bg-story .bbs-wash { position:absolute; inset:0; z-index:1; background:
+    linear-gradient(90deg,rgba(26,22,18,.90) 0%,rgba(26,22,18,.72) 30%,rgba(26,22,18,.25) 58%,rgba(26,22,18,.64) 100%),
+    radial-gradient(circle at 53% 53%,rgba(184,149,74,.08),rgba(26,22,18,.06) 33%,rgba(26,22,18,.38) 76%);
+    pointer-events:none; }
+  .brand-bg-story .bbs-eyebrow { position:absolute; top:28px; left:48px; z-index:4; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#c8462c; }
+  .brand-bg-story .bbs-copy { position:absolute; left:76px; top:138px; z-index:3; max-width:710px; }
+  .brand-bg-story .bbs-copy h1 { margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(4.15rem,6.1vw,6.65rem); font-weight:850; line-height:.94; letter-spacing:-.026em; color:#fbf7ef; text-shadow:0 3px 26px rgba(26,22,18,.60); text-wrap:balance; }
+  .brand-bg-story .bbs-copy h1 em { color:#b8954a; font-style:italic; font-weight:850; }
+  .brand-bg-story .bbs-copy p { margin:26px 0 0; max-width:660px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.32rem,1.7vw,1.72rem); font-weight:600; line-height:1.32; color:rgba(251,247,239,.84); text-shadow:0 2px 18px rgba(26,22,18,.55); }
+  .brand-bg-story .bbs-copy p em { color:#b8954a; font-style:italic; font-weight:760; }
+  .brand-bg-story .bbs-bottom { position:absolute; left:76px; bottom:76px; z-index:3; width:min(660px,42vw); padding-top:18px; border-top:1px solid rgba(184,149,74,.62); font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.24em; text-transform:uppercase; color:rgba(251,247,239,.78); }
+  .brand-bg-story .bbs-bottom b { color:#b8954a; font-weight:950; }
+  .brand-bg-story .bbs-rail { position:absolute; right:210px; bottom:78px; z-index:3; width:390px; display:grid; gap:14px; }
+  .brand-bg-story .bbs-rail span { display:block; padding-left:18px; border-left:2px solid rgba(184,149,74,.64); font-family:'Manrope',sans-serif; font-size:.70rem; font-weight:900; letter-spacing:.20em; text-transform:uppercase; color:rgba(251,247,239,.70); text-shadow:0 1px 12px rgba(26,22,18,.62); }
+  .brand-bg-story .bbs-rail span:nth-child(2) { border-left-color:#5B8FD4; color:rgba(187,213,247,.86); }
+  .brand-bg-story .bbs-rail span:nth-child(3) { border-left-color:#c8462c; color:rgba(248,196,183,.86); }
+  #cs-brand-bg-story-product .bbs-copy { top:154px; max-width:760px; }
+  #cs-brand-bg-story-product .bbs-copy h1 { max-width:760px; }
+  #cs-brand-bg-story-product .bbs-bottom { width:min(760px,46vw); }
+  #cs-brand-bg-story-os .bbs-copy { top:128px; max-width:790px; }
+  #cs-brand-bg-story-os .bbs-copy h1 { font-size:clamp(3.9rem,5.75vw,6.25rem); }
+  #cs-brand-bg-story-os .bbs-bottom { width:min(730px,46vw); }
+  .brand-bg-story.casey-entered .bbs-copy, .brand-bg-story.casey-entered .bbs-bottom, .brand-bg-story.casey-entered .bbs-rail { animation:bbsRise .72s cubic-bezier(.22,1,.36,1) both; }
+  .brand-bg-story.casey-entered .bbs-bottom { animation-delay:.18s; }
+  .brand-bg-story.casey-entered .bbs-rail { animation-delay:.30s; }
+  @keyframes bbsRise { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:none; } }
+  html[data-export="1"] .brand-bg-story .bbs-copy, html[data-export="1"] .brand-bg-story .bbs-bottom, html[data-export="1"] .brand-bg-story .bbs-rail { opacity:1 !important; transform:none !important; animation:none !important; }
 </style>
 <script>
 window.csBrandV8Advance = function() {
@@ -20509,6 +20539,60 @@ window.csBrandV8Reverse = function() {
 
       <!-- [Dave 2026-05-26] Contact restored because cs-brand-V8 is now the closing slide immediately after Steve Callan. -->
 
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus brand-bg-story" id="cs-brand-bg-story-map" style="display:none">
+  <img class="bbs-bg" src="assets/cs-brand-promise-community-bg.png" alt="A real-world community circle connected by warm network light."/>
+  <div class="bbs-wash" aria-hidden="true"></div>
+  <div class="bbs-eyebrow">the network under every community</div>
+  <section class="bbs-stage" aria-label="Every community is already a network">
+    <div class="bbs-copy">
+      <h1>Every community is already a <em>network.</em></h1>
+      <p>GnR makes the hidden connections visible enough to return value back.</p>
+    </div>
+    <div class="bbs-bottom"><b>The center is the asset.</b> The devices are just the edge.</div>
+    <div class="bbs-rail" aria-hidden="true">
+      <span>phones capture signals</span>
+      <span>AI reads the pattern</span>
+      <span>people get each other back</span>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus brand-bg-story" id="cs-brand-bg-story-product" style="display:none">
+  <img class="bbs-bg" src="assets/cs-brand-promise-community-bg.png" alt="People gathered in a glowing community circle while technology sits around the edge."/>
+  <div class="bbs-wash" aria-hidden="true"></div>
+  <div class="bbs-eyebrow">the product is human connection</div>
+  <section class="bbs-stage" aria-label="The next product is not on a screen">
+    <div class="bbs-copy">
+      <h1>The next product is <em>not</em> on a screen.</h1>
+      <p>It is the room becoming easier to find, measure, and give back to.</p>
+    </div>
+    <div class="bbs-bottom"><b>Human connection, made abundant.</b></div>
+    <div class="bbs-rail" aria-hidden="true">
+      <span>what you give</span>
+      <span>who it helps</span>
+      <span>what comes back</span>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus brand-bg-story" id="cs-brand-bg-story-os" style="display:none">
+  <img class="bbs-bg" src="assets/cs-brand-promise-community-bg.png" alt="A community operating system visual with people at the center and technology around the perimeter."/>
+  <div class="bbs-wash" aria-hidden="true"></div>
+  <div class="bbs-eyebrow">the operating system for the circle</div>
+  <section class="bbs-stage" aria-label="Give n Receive is the operating system for the circle">
+    <div class="bbs-copy">
+      <h1>Give n Receive is the OS for the <em>circle.</em></h1>
+      <p>It sees who gives value. It measures what brings people alive. It returns the right people, moments, and belonging.</p>
+    </div>
+    <div class="bbs-bottom"><b>A community that compounds itself.</b></div>
+    <div class="bbs-rail" aria-hidden="true">
+      <span>see the room</span>
+      <span>measure the fit</span>
+      <span>reciprocate the value</span>
     </div>
   </section>
 </div>
@@ -32323,7 +32407,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v5] All brand pink-dot alts RELOCATED from slot 3 (cs-brand-V8) → slot 2 (cs-1m8) per Dave 'move these two slides and any new brand slide you are working on as pink dot slides next to the slide with the text below: What we give fuels our communities.' That's cs-1m8 — which sits at slot 2 in SLIDE_ORDER. cs-1m8-fuels (the new particle-galaxy variant anchored to "What we give fuels our communities.") also added here. Slot 3 (cs-brand-V8) now carries no alts; if Dave wants the brand alts to live under the brand slide again later, just move them back.
   // [Dave 2026-05-19] Slot 14 = cs-fv6-img after Munger; slot 15 = cs-givefirst-art; slot 16 = cs-magnetic.
   16: [], // [Codex 2026-05-30] cs-unmeasured-value deleted per attached screenshot request; previous detached slot remains empty.
-  19: ['cs-value-choice-image-only-pink'],
+  19: ['cs-brand-bg-story-map', 'cs-brand-bg-story-product', 'cs-brand-bg-story-os', 'cs-value-choice-image-only-pink'],
   // [Codex 2026-05-27] Slot-13/14 alts detached after cs-3 and cs-19 were removed from the active flow.
   15: ['cs-racketeer-padel-club-pink'],
   13: [],
@@ -34358,7 +34442,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 — explicit override since slot 2 is not the REVIEW_POSITION.
     // [Dave 2026-05-10 PM] cs-16old + cs-lab also RED-DOT (cs-16old = restored complicated engine slide at slot 20; cs-lab = founder-slot alternate to cs-18 'My Wheelhouse').
     // [Dave 2026-05-18 LATEST v9] cs-a7m1 added to red-dot list (demoted from main slot 3 to red-dot alt of slot 2). [Dave 2026-05-17 v7] cs-magnetic-orig RESTORED as red-dot per Dave 'add a red dot slide to left of social pull slide' — was momentarily classified as black-dot but the explicit isPinkAlt check above for cs-merge3 doesn't affect cs-magnetic-orig, so it lands as red-dot here.
-    const isRedAlt = (altId === 'cs-16old' || altId === 'cs-lab' || altId === 'cs-18' || altId === 'cs-18-vd1' || altId === 'cs-18-vd5' || altId === 'cs-wedgefunnel' || altId === 'cs-1m8-title-A' || altId === 'cs-magnetic-orig');
+    const isRedAlt = (altId === 'cs-16old' || altId === 'cs-lab' || altId === 'cs-18' || altId === 'cs-18-vd1' || altId === 'cs-18-vd5' || altId === 'cs-wedgefunnel' || altId === 'cs-1m8-title-A' || altId === 'cs-magnetic-orig' || altId === 'cs-brand-bg-story-map' || altId === 'cs-brand-bg-story-product' || altId === 'cs-brand-bg-story-os');
     // [Dave 2026-05-18 LATEST] BLACK-DOT alts — slides reviewed + decided to leave as-is.
     // [Dave 2026-05-18 LATEST] cs-pbfirst removed from black-dot list — slide DELETED per Dave 'delete this slide'.
     const isBlackAlt = (altId === 'cs-magnetic-orig' || altId === 'cs-1m8-black-backup' || altId === 'cs-11d-black-backup');
