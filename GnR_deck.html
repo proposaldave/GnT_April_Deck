@@ -12811,30 +12811,227 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-pb-silliness-feature .psj-anim,
   html[data-export="1"] #cs-pb-silliness-scroll .psj-anim,
   html[data-export="1"] #cs-pb-silliness-dupr .psj-anim { opacity:1 !important; transform:none !important; transition:none !important; }
+  #cs-pb-silliness-feature,
+  #cs-pb-silliness-carnival-pink,
+  #cs-pb-silliness-ritual-pink {
+    background:#f3ead8 !important;
+    overflow:hidden;
+    position:absolute;
+    inset:0;
+    color:#1a1612;
+  }
+  #cs-pb-silliness-feature.active,
+  #cs-pb-silliness-carnival-pink.active,
+  #cs-pb-silliness-ritual-pink.active { display:block !important; }
+  .psb-eye {
+    position:absolute; top:28px; left:48px; z-index:7;
+    font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+    color:#c8462c;
+  }
+  .psb-bg {
+    position:absolute; inset:0; overflow:hidden;
+    background:
+      radial-gradient(circle at 18% 24%, rgba(91,143,212,.22) 0 8%, transparent 22%),
+      radial-gradient(circle at 76% 20%, rgba(184,149,74,.22) 0 10%, transparent 24%),
+      radial-gradient(circle at 84% 78%, rgba(200,70,44,.18) 0 8%, transparent 23%),
+      linear-gradient(135deg, #fbf7ef 0%, #f3ead8 48%, #eadfca 100%);
+  }
+  .psb-court {
+    position:absolute; left:6.2%; right:5.4%; top:10.8%; bottom:8.2%;
+    border:3px solid rgba(91,143,212,.72);
+    box-shadow:0 34px 90px rgba(26,22,18,.14), inset 0 0 0 22px rgba(251,247,239,.38);
+    background:
+      linear-gradient(90deg, transparent 0 49.8%, rgba(26,22,18,.36) 49.8% 50.2%, transparent 50.2% 100%),
+      linear-gradient(0deg, transparent 0 32%, rgba(91,143,212,.42) 32% 32.3%, transparent 32.3% 67.7%, rgba(91,143,212,.42) 67.7% 68%, transparent 68% 100%),
+      linear-gradient(90deg, rgba(91,143,212,.09), rgba(251,247,239,.54) 52%, rgba(184,149,74,.10));
+  }
+  .psb-court::before {
+    content:""; position:absolute; left:50%; top:-3px; bottom:-3px; width:3px;
+    background:repeating-linear-gradient(to bottom, rgba(26,22,18,.48) 0 9px, transparent 9px 18px);
+  }
+  .psb-arc {
+    position:absolute; width:42%; height:18%; border-top:6px solid rgba(184,149,74,.78); border-radius:50%;
+    transform:rotate(-8deg); left:29%; top:39%;
+  }
+  .psb-ball {
+    position:absolute; width:54px; height:54px; border-radius:50%; background:#c8462c; left:56%; top:50%;
+    box-shadow:0 0 0 18px rgba(200,70,44,.13), 0 20px 42px rgba(26,22,18,.18);
+  }
+  .psb-ball::before,
+  .psb-ball::after { content:""; position:absolute; width:8px; height:8px; border-radius:50%; background:#fbf7ef; top:18px; }
+  .psb-ball::before { left:15px; }
+  .psb-ball::after { right:15px; }
+  .psb-label,
+  .psb-chip,
+  .psb-ticket {
+    position:absolute;
+    font-family:'Manrope',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.15em;
+    font-weight:900;
+    color:#1a1612;
+    background:rgba(251,247,239,.88);
+    border:1px solid rgba(184,149,74,.34);
+    box-shadow:0 18px 38px rgba(26,22,18,.11);
+  }
+  .psb-label { padding:15px 22px; font-size:.73rem; }
+  .psb-label b { display:block; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.74rem; line-height:.92; letter-spacing:0; text-transform:none; color:#5B8FD4; margin-top:5px; }
+  .psb-chip { padding:12px 16px; font-size:.66rem; border-left:5px solid #c8462c; }
+  .psb-ticket { padding:17px 19px; font-size:.68rem; transform:rotate(var(--r,0deg)); }
+  .psb-ticket b { display:block; margin-bottom:5px; color:#c8462c; }
+  .psb-story {
+    position:absolute; left:110px; bottom:94px; width:690px; z-index:6;
+    padding:28px 34px 30px;
+    background:linear-gradient(90deg, rgba(26,22,18,.96), rgba(26,22,18,.88)) !important;
+    border-left:7px solid #c8462c;
+    box-shadow:0 28px 70px rgba(26,22,18,.24);
+  }
+  .psb-kicker {
+    margin:0 0 12px;
+    font-family:'Manrope',sans-serif; font-size:.72rem; line-height:1.1; letter-spacing:.19em; text-transform:uppercase; font-weight:900;
+    color:#b8954a;
+  }
+  .psb-story h1 {
+    margin:0;
+    font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:3.42rem; line-height:.93; letter-spacing:-.015em; font-weight:900;
+    color:#fbf7ef;
+  }
+  .psb-story h1 em { color:#5B8FD4; font-style:italic; }
+  .psb-story p:last-child {
+    margin:18px 0 0;
+    font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.16rem; line-height:1.22; font-weight:650;
+    color:rgba(251,247,239,.82);
+  }
+  .psb-side-note {
+    position:absolute; right:88px; bottom:82px; width:390px; z-index:6;
+    font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.65rem; line-height:1.06; font-weight:850;
+    color:#1a1612;
+    background:rgba(251,247,239,.97);
+    border:1px solid rgba(184,149,74,.34);
+    padding:24px 26px;
+    box-shadow:0 22px 48px rgba(26,22,18,.12);
+  }
+  .psb-side-note b { color:#c8462c; }
+  .psb-line {
+    position:absolute; height:2px; background:rgba(91,143,212,.45); transform-origin:left center;
+  }
+  .psb-silly-stack { position:absolute; right:82px; top:126px; display:grid; gap:10px; z-index:4; }
+  .psb-silly-stack span {
+    display:block; width:210px; padding:12px 13px; background:rgba(251,247,239,.82); border:1px solid rgba(184,149,74,.32);
+    font-family:'Manrope',sans-serif; font-size:.64rem; line-height:1.05; font-weight:900; letter-spacing:.13em; text-transform:uppercase; color:#1a1612;
+    box-shadow:0 12px 24px rgba(26,22,18,.08);
+  }
+  .psb-version-title {
+    position:absolute; left:78px; top:104px; z-index:6; max-width:1060px;
+    font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:5.25rem; line-height:.92; letter-spacing:-.027em; font-weight:900;
+  }
+  .psb-version-title em { color:#5B8FD4; font-style:italic; }
+  .psb-version-sub {
+    position:absolute; left:82px; top:316px; z-index:6; max-width:780px;
+    font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.7rem; line-height:1.18; font-weight:650; color:rgba(26,22,18,.74);
+  }
+  .psb-carnival .psb-court { left:40%; right:5.5%; top:13%; bottom:9%; transform:rotate(-2.4deg); }
+  .psb-carnival .psb-ticket { width:220px; text-align:center; }
+  .psb-ritual .psb-court { left:7%; right:7%; top:20%; bottom:13%; }
+  .psb-ritual-path {
+    position:absolute; left:126px; right:126px; top:438px; height:186px; z-index:5;
+    border-top:5px solid rgba(184,149,74,.74); border-radius:50%; transform:rotate(-2deg);
+  }
+  .psb-step {
+    position:absolute; z-index:6; width:232px; min-height:122px; padding:20px 20px 18px;
+    background:rgba(251,247,239,.9); border:1px solid rgba(184,149,74,.36); box-shadow:0 18px 38px rgba(26,22,18,.11);
+  }
+  .psb-step b { display:block; font-family:'Manrope',sans-serif; font-size:.67rem; letter-spacing:.16em; text-transform:uppercase; color:#c8462c; margin-bottom:8px; }
+  .psb-step span { display:block; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.5rem; line-height:1.04; font-weight:850; color:#1a1612; }
+  .psb-slide .psb-bg,
+  .psb-slide .psb-story,
+  .psb-slide .psb-version-title,
+  .psb-slide .psb-version-sub,
+  .psb-slide .psb-side-note,
+  .psb-slide .psb-step { opacity:0; transform:translateY(14px); transition:opacity .72s cubic-bezier(.22,1,.36,1), transform .72s cubic-bezier(.22,1,.36,1); }
+  .psb-slide.casey-entered .psb-bg,
+  .psb-slide.casey-entered .psb-story,
+  .psb-slide.casey-entered .psb-version-title,
+  .psb-slide.casey-entered .psb-version-sub,
+  .psb-slide.casey-entered .psb-side-note,
+  .psb-slide.casey-entered .psb-step { opacity:1; transform:none; }
+  .psb-slide.casey-entered .psb-story,
+  .psb-slide.casey-entered .psb-side-note { transition-delay:.16s; }
+  .psb-slide.casey-entered .psb-step:nth-of-type(2) { transition-delay:.12s; }
+  .psb-slide.casey-entered .psb-step:nth-of-type(3) { transition-delay:.20s; }
+  .psb-slide.casey-entered .psb-step:nth-of-type(4) { transition-delay:.28s; }
+  .psb-slide.casey-entered .psb-step:nth-of-type(5) { transition-delay:.36s; }
+  html[data-export="1"] .psb-slide .psb-bg,
+  html[data-export="1"] .psb-slide .psb-story,
+  html[data-export="1"] .psb-slide .psb-version-title,
+  html[data-export="1"] .psb-slide .psb-version-sub,
+  html[data-export="1"] .psb-slide .psb-side-note,
+  html[data-export="1"] .psb-slide .psb-step { opacity:1 !important; transform:none !important; transition:none !important; }
 </style>
 
-<div class="casey-slide ds-focus psj-slide" id="cs-pb-silliness-feature" style="display:none">
-  <div class="psj-eye">why pickleball works</div>
-  <section class="psj-stage">
-    <div class="psj-copy psj-anim">
-      <h1 class="psj-title">Pickleball is silly because it <em>lowers ego.</em></h1>
-      <p class="psj-sub">That is why it works socially: people laugh, rotate, apologize for net drips, and show who they are before they protect a rating.</p>
-      <p class="psj-sub psj-kuhn-byline">&ldquo;People were not taking pickleball seriously... it was a weird sport with a funny name. I thought that was just a vast market mistake.&rdquo; &mdash; Steve Kuhn &middot; MLP / DUPR founder</p>
-      <div class="psj-signal">
-        <div class="psj-signal-row"><b>Surface</b><span>silly name, dinks, kitchen, wiffle ball</span></div>
-        <div class="psj-signal-row"><b>Effect</b><span>guard down, belonging up, signal visible</span></div>
-        <div class="psj-signal-row"><b>Scale</b><span>24.3M players; 171.8% growth from 2022-2025</span></div>
-      </div>
+<div class="casey-slide ds-focus psj-slide psb-slide" id="cs-pb-silliness-feature" style="display:none">
+  <div class="psb-eye">why pickleball works</div>
+  <div class="psb-bg" aria-hidden="true">
+    <div class="psb-court"></div>
+    <div class="psb-arc"></div>
+    <div class="psb-ball"></div>
+    <div class="psb-line" style="left:18%;top:27%;width:33%;transform:rotate(13deg)"></div>
+    <div class="psb-line" style="left:47%;top:61%;width:31%;transform:rotate(-18deg)"></div>
+    <div class="psb-label" style="left:10%;top:15%">absurd word<b>dink</b></div>
+    <div class="psb-label" style="right:19%;top:18%">off-limits place<b>kitchen</b></div>
+    <div class="psb-label" style="left:22%;top:43%">lucky apology<b>net drip</b></div>
+    <div class="psb-label" style="right:12%;top:52%">toy ball<b>wiffle</b></div>
+    <div class="psb-ticket" style="left:62%;bottom:23%;--r:5deg"><b>ritual</b>tap paddles with the person you just tried to beat</div>
+    <div class="psb-ticket" style="left:39%;top:18%;--r:-4deg"><b>rotation</b>strangers become partners every ten minutes</div>
+    <div class="psb-chip" style="left:13%;bottom:27%">laugh first</div>
+    <div class="psb-chip" style="left:33%;bottom:18%">say sorry</div>
+    <div class="psb-chip" style="right:29%;bottom:13%">play again</div>
+    <div class="psb-silly-stack">
+      <span>funny name</span>
+      <span>underhand serve</span>
+      <span>skinny singles</span>
+      <span>open play chaos</span>
+      <span>ratings talk</span>
+      <span>everybody rotates</span>
     </div>
-    <div class="psj-board psj-anim" aria-hidden="true">
-      <div class="psj-court"><div class="psj-net"></div><div class="psj-trail"></div><div class="psj-ball"></div></div>
-      <div class="psj-chip psj-feature-pill p1">silly name</div>
-      <div class="psj-chip psj-feature-pill p2">kitchen zone</div>
-      <div class="psj-chip psj-feature-pill p3">lucky net drip</div>
-      <div class="psj-chip psj-feature-pill p4">dinks count</div>
-      <div class="psj-bug"><b>ego down</b><span>The weird parts make the social signal visible.</span></div>
-    </div>
-  </section>
+  </div>
+  <div class="psb-story">
+    <p class="psb-kicker">all the silly parts are the product</p>
+    <h1>The weird parts <em>lower ego.</em></h1>
+    <p>Adults say ridiculous words, apologize for lucky shots, rotate with strangers, and laugh before they posture. That is why pickleball becomes a social wedge.</p>
+  </div>
+  <div class="psb-side-note"><b>Silly</b> makes the signal visible: who welcomes, who laughs, who includes, who gets invited back.</div>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psb-slide psb-carnival" id="cs-pb-silliness-carnival-pink" style="display:none">
+  <div class="psb-eye">why pickleball works</div>
+  <div class="psb-bg" aria-hidden="true">
+    <div class="psb-court"></div>
+    <div class="psb-ball" style="left:73%;top:39%"></div>
+    <div class="psb-ticket" style="left:41%;top:18%;--r:-8deg"><b>name</b>pickleball</div>
+    <div class="psb-ticket" style="right:10%;top:24%;--r:5deg"><b>place</b>the kitchen</div>
+    <div class="psb-ticket" style="left:50%;top:46%;--r:4deg"><b>shot</b>dink</div>
+    <div class="psb-ticket" style="right:15%;bottom:19%;--r:-5deg"><b>proof</b>net cord apology</div>
+    <div class="psb-ticket" style="left:67%;bottom:36%;--r:8deg"><b>object</b>plastic ball</div>
+  </div>
+  <h1 class="psb-version-title">Every silly word is an <em>ego trapdoor.</em></h1>
+  <p class="psb-version-sub">The sport disarms status before anyone can defend it. Then the room can see the human signal GnR measures.</p>
+  <div class="psb-side-note" style="right:auto;left:82px;bottom:88px;width:560px">Silliness turns competition into belonging: laugh, rotate, include, remember, invite back.</div>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psb-slide psb-ritual" id="cs-pb-silliness-ritual-pink" style="display:none">
+  <div class="psb-eye">why pickleball works</div>
+  <div class="psb-bg" aria-hidden="true">
+    <div class="psb-court"></div>
+    <div class="psb-ritual-path"></div>
+    <div class="psb-ball" style="left:48%;top:45%"></div>
+  </div>
+  <h1 class="psb-version-title">The game teaches belonging before <em>status.</em></h1>
+  <p class="psb-version-sub">A goofy ritual loop creates the exact behaviors a real-world social network needs.</p>
+  <div class="psb-step" style="left:132px;bottom:122px"><b>01 silly name</b><span>guard drops before the first point</span></div>
+  <div class="psb-step" style="left:480px;bottom:214px"><b>02 mixed partners</b><span>new people become safe fast</span></div>
+  <div class="psb-step" style="right:518px;bottom:168px"><b>03 lucky shot</b><span>the apology is part of the charm</span></div>
+  <div class="psb-step" style="right:142px;bottom:246px"><b>04 paddle tap</b><span>the room decides who it wants again</span></div>
 </div>
 
 <div class="casey-slide ds-focus psj-slide" id="cs-pb-silliness-scroll" style="display:none">
@@ -31860,6 +32057,8 @@ const SLIDE_ALTS = {
   5: [],
   // [Dave 2026-05-20] Dinner/Torch VC alt moved to TRASH_ORDER so it stays recoverable without occupying the deck/appendix review system.
   24: [],
+  // [Codex 2026-05-29] Pink-dot image-led silliness variants for active final slide cs-pb-silliness-feature.
+  27: ['cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink'],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
   // [Dave 2026-05-15] Key shifted 20 → 21 after cs-givefirst inserted at slot 18 (after the Wheelhouse slide). cs-16 is now at slot 21.
   // [Dave 2026-05-14 PM v4 c] cs-funnel added as second red-dot alt (further LEFT than cs-16old) per Dave: 'create a new red dot slide to the left of this one, and rethink it, reimagine it as a SALES FUNNEL — a human value sales funnel which is exactly what GnR is.'
@@ -33864,7 +34063,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 → pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-padel-club-pink' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-padel-club-pink' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
