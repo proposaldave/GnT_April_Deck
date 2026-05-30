@@ -21,6 +21,14 @@ CHECKS
 6. Verify whether the target slide ID is active through SLIDE_ORDER, SLIDE_ALTS, or STAFF_ORDER.
 7. If needed for a visual/layout issue, open/render the active visible slide and compare against the source.
 
+MISSING-SLIDE TRACE
+- If Dave reports a slide disappeared, treat it as a deck regression until proven otherwise.
+- Search current source and recent history for the missing slide by visible text, slide ID, nearby comments, and screenshot context.
+- Compare current `SLIDE_ORDER` against recent published commits and branch diffs to identify when the slide left active order.
+- Classify whether the slide is still in HTML but missing from `SLIDE_ORDER`, moved to `SLIDE_ALTS`, moved to `APPENDIX_ORDER`, moved to `TRASH_ORDER`, deleted from HTML, or hidden by render/state.
+- If the slide is still in source and the restore is obvious, the next action is to restore its active registry entry and update shifted `SLIDE_ALTS`, not to ask Dave to find the branch.
+- If `SLIDE_ORDER` changed, run or recommend `tools/verify_slide_order_guard.ps1` and report added/removed active slide IDs.
+
 FAILED-EDIT PHRASE TRACE
 - If Dave says "didn't I ask..." or names a visible phrase, trace the phrase across all local deck/* branches, not only checked-out worktrees.
 - Search by exact old text, likely replacement text, nearby slide ID, and screenshot context.
@@ -50,6 +58,7 @@ CLASSIFY THE ISSUE
 - skipped branch: change exists only on an unmerged branch.
 - conflict: branch was not merged because it conflicts.
 - wrong slide: edit landed on a different active slide/slot than Dave requested.
+- missing slide: slide exists in history/source but is absent from the active registry path.
 - rendered hidden: source exists but visible render hides, covers, or does not reach it.
 - request ambiguity: requested target cannot be mapped to one active slide/section.
 - browser state: browser tab/session is stale even though cache-busted source is current.

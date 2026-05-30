@@ -33,6 +33,8 @@ This repo contains a large single-file HTML investor pitch deck. Treat every dec
 - For layout/visual changes, use scoped CSS/HTML edits and one focused visual check.
 - For deleting a slide, prefer removing it from active deck order / alt registries / navigation first. Delete the HTML block only when clearly safe or explicitly requested.
 - For moving or restoring slides with animations, preserve the active slide ID when that avoids risky JS rewiring.
+- SLIDE_ORDER is protected inventory. Do not remove any existing active slide ID from `SLIDE_ORDER` unless Dave explicitly requested that exact slide be deleted, trashed, moved to appendix, or moved to an alt rail in the current task.
+- Before committing or publishing any change that touches `SLIDE_ORDER`, compare before/after order and report `ADDED_SLIDES`, `REMOVED_SLIDES`, and the reason for every removed slide. If an active slide disappeared without explicit request, restore it before `DONE`.
 - For mirror files, identify the canonical deck file first, edit canonical first, then mirror to the existing GitHub Pages files such as `sites/GnR_Deck/GnR_deck.html` and `sites/GnR_Deck/index.html` if that is the repo's established workflow. Do not hand-edit mirrors differently from canonical.
 
 ### Brand rules
@@ -155,6 +157,8 @@ NEXT:
 - Publish reports must separate `MERGED AND LIVE`, `SKIPPED / NEEDS REVIEW`, `CONFLICTS`, and `NOT VERIFIED`.
 - Dirty unrelated local work must be preserved on a `preserve/[purpose]-local-change` branch before cleaning `main`; never silently drop, stash, reset, or overwrite it.
 - Do not use `skip` as a silent final state for completed work. Risky delete/trash, inactive-variant, conflict, broken-ref, and unrelated branches must be listed as `BLOCKED`, `CONFLICTS`, or `NOT VERIFIED` with evidence; if Dave clearly requested the finished branch and the intent is safe to port, apply that intent surgically.
+- Publish control must run a slide-inventory guard before every publish commit when `SLIDE_ORDER` changed. Use `tools/verify_slide_order_guard.ps1` or equivalent before/after parsing. Any unauthorized active slide removal is a publish blocker, not a warning.
+- If restoring or inserting a main-flow slide shifts later positions, publish control must update the affected `SLIDE_ALTS` keys so existing visible/alt relationships do not silently move to the wrong active slide.
 - If GitHub Pages looks stale, verify local HEAD, `origin/main`, raw GitHub source, and the cache-busted Pages URL before declaring publish failure.
 - Verify-live sessions must trace request -> branch -> commit -> active slide source -> index.html -> pushed main -> cache-busted URL -> rendered visible result.
 - If `.git/refs/**/desktop.ini` appears, treat it as broken Google Drive ref contamination. Report it and do not delete it unless Dave explicitly approves a ref repair.

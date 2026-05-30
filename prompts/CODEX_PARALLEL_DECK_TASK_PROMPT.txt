@@ -19,6 +19,7 @@ SOURCE CONTRACT
 - Do not refactor, reformat, lint, prettify, or restructure the deck.
 - Keep the diff tiny and localized.
 - Preserve slide IDs, animation hooks, navigation, dot view, presenter behavior, and asset paths.
+- Protect SLIDE_ORDER as the active-slide inventory. Do not remove any existing ID from SLIDE_ORDER unless Dave explicitly requested that exact slide to be deleted, trashed, moved to appendix, or moved to an alt rail in this task.
 
 ACCEPTANCE CONTRACT
 - Before editing, parse Dave's request into:
@@ -45,11 +46,15 @@ EDIT CONTRACT
 - Do not patch inactive variants as a proxy for the visible deck.
 - Keep the diff tiny.
 - Preserve navigation, animation hooks, slide IDs, and the design system.
+- If changing SLIDE_ORDER, capture before/after active-slide IDs. Report ADDED_SLIDES and REMOVED_SLIDES. Every removed slide must map to Dave's explicit request.
+- If an active slide ID disappears accidentally while merging, moving, restoring, or editing another slide, restore it before commit.
+- If a slide insertion or restore shifts later slots, update affected SLIDE_ALTS keys in the same branch or report BLOCKED.
 
 VALIDATION
 - Source verification is required for every edit: requested result exists in the active slide source and the active slide ID/registry path is correct.
 - For exact copy edits: verify old text absent or intentionally retained, new text present, and active slide source contains the requested result.
 - For visual/layout/copy-positioning/image/order changes: run visual/render verification and verify the rendered active slide shows the requested outcome.
+- If SLIDE_ORDER changed, run `tools/verify_slide_order_guard.ps1 -BaseRef HEAD -TargetRef WORKTREE` before commit. If it reports unauthorized removed slides, restore them or report BLOCKED. Do not commit a branch that accidentally removes an active slide.
 - If visual QA cannot run, do not report DONE for visual edits; report BLOCKED or ask Dave to approve source-only.
 - If browser/Playwright QA fails for tooling reasons, report the limitation and do source verification instead.
 - Run git diff --check before commit.
@@ -72,6 +77,7 @@ PUBLISH TRACE
   exact visible text markers changed
   exact CSS selectors/properties changed for layout or positioning edits
   exact registry keys changed for slide order, alts, trash, appendix, or staff order
+  ADDED_SLIDES and REMOVED_SLIDES if SLIDE_ORDER changed
   exact asset paths added or changed
   source verification command/result
   visual QA method/result when required

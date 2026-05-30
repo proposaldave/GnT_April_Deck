@@ -21,6 +21,14 @@
 - Visual/layout/copy-positioning/image/order edits require rendered evidence unless Dave explicitly approves source-only.
 - If verification fails, Codex attempts one targeted correction, verifies again, then reports `BLOCKED` with the root cause.
 
+## Slide Inventory Guard
+
+- `SLIDE_ORDER` is the active-slide inventory, not just implementation detail.
+- No edit or publish session may remove an ID from `SLIDE_ORDER` unless Dave explicitly requested that exact slide be deleted, trashed, moved to appendix, or moved to an alt rail.
+- Any session that changes `SLIDE_ORDER` must report `ADDED_SLIDES`, `REMOVED_SLIDES`, and the active-slot reason for every removed slide.
+- If a slide disappears without explicit request, restore it before committing or publishing.
+- Use `tools/verify_slide_order_guard.ps1 -BaseRef <before> -TargetRef WORKTREE` during edit sessions and before publish commits whenever order changes. After commit, `-TargetRef HEAD` is also acceptable.
+
 ## Publish Sessions
 
 1. Use Local mode on `main`.
@@ -29,8 +37,10 @@
 4. Build the publish universe from checked-out worktrees plus every local `refs/heads/deck/*` branch, especially branches not contained in `origin/main`.
 5. Merge verified safe `deck/*` branches; when a completed branch is stale but the intent is clear, port the intent surgically onto current `main` instead of dropping it.
 6. Do not use `skip` as a silent final state for completed work. If a completed branch cannot be merged or ported, report `BLOCKED` with the exact branch, blocker, and next action.
-7. Copy `GnR_deck.html` to `index.html`, verify hash identity, push if requested, then verify raw GitHub and Pages source.
-8. Report exactly what is `MERGED AND LIVE`, `SKIPPED / NEEDS REVIEW`, `CONFLICTS`, and `NOT VERIFIED`.
+7. If `SLIDE_ORDER` changed, run the slide inventory guard before committing. Unauthorized active-slide removal is a hard blocker, not a warning.
+8. If a restored or inserted slide shifts later active slots, update affected `SLIDE_ALTS` keys in the same publish pass.
+9. Copy `GnR_deck.html` to `index.html`, verify hash identity, push if requested, then verify raw GitHub and Pages source.
+10. Report exactly what is `MERGED AND LIVE`, `SKIPPED / NEEDS REVIEW`, `CONFLICTS`, and `NOT VERIFIED`.
 
 ## Dave Workflow
 

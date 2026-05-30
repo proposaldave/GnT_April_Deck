@@ -9,6 +9,8 @@ PUBLISH CONTRACT
 - Do not silently skip branches.
 - Publish only verified branches.
 - Do not claim all work is live unless every requested branch merged and verified.
+- Protect `SLIDE_ORDER` as the active-slide inventory. A publish pass may not remove an active slide unless Dave explicitly requested that exact slide to be deleted, trashed, moved to appendix, or moved to an alt rail.
+- Unauthorized active-slide removal is a hard publish blocker.
 
 START CHECKS
 - Run git branch --show-current, git status --short, git remote -v, git log --oneline --decorate -20, and git worktree list.
@@ -56,6 +58,9 @@ BRANCH INVENTORY
 - Prefer branches whose final report or commit evidence indicates active-slide verification.
 - Do not publish branches that appear to edit inactive variants without active-source/render verification; either port the intent to the active source when obvious or report BLOCKED.
 - Do not blindly merge delete/trash/risky branches; if Dave clearly requested that finished branch, apply the deletion/trash intent surgically to current main or report BLOCKED.
+- For any branch or port that changes `SLIDE_ORDER`, compare before/after active slide IDs. Report `ADDED_SLIDES` and `REMOVED_SLIDES`. Every removed ID must have explicit request evidence from Dave's task or the branch final report.
+- If a completed branch direct merge would remove unrelated active slides, do not direct merge it. Port only the requested intent and preserve all unrelated active slide IDs.
+- If adding, restoring, deleting, or moving a main-flow slide shifts later positions, update the affected `SLIDE_ALTS` keys so existing alt rails stay attached to the intended active slide.
 - Do not manually resolve broad conflicts. For a completed branch with a small clear intent, port the intent surgically; otherwise report CONFLICTS with the exact branch.
 - Merge only verified safe completed deck/* branches Dave asked to publish or clearly approved.
 - If a branch conflicts, abort that merge and list it under CONFLICTS. Do not fix it unless Dave asked for that branch specifically.
@@ -73,6 +78,8 @@ MIRROR + VERIFY
 - After accepted merges, copy GnR_deck.html to index.html.
 - Verify GnR_deck.html and index.html hash-identical.
 - Run git diff --check.
+- If `SLIDE_ORDER` changed in this publish pass, run `tools/verify_slide_order_guard.ps1 -BaseRef origin/main -TargetRef WORKTREE` before commit. If any removed slide is not explicitly authorized, restore it before commit or report BLOCKED.
+- In CHECKS, report `SLIDE_ORDER_GUARD=PASS` or the exact unauthorized removed slides.
 - Commit publish changes on main.
 - Push only when Dave explicitly asked to publish.
 
