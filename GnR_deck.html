@@ -20251,6 +20251,45 @@ window.csBrandV8Reverse = function() {
   #cs-value-choice-image-only-pink .vcio-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; display:block; filter:saturate(1.02) contrast(1.02); }
   #cs-value-choice-image-only-pink.casey-entered .vcio-bg { animation:vcRise .75s cubic-bezier(.22,1,.36,1) both; }
   html[data-export="1"] #cs-value-choice-image-only-pink .vcio-bg { opacity:1 !important; transform:none !important; animation:none !important; }
+  #cs-value-choice-image-annotated-pink,
+  #cs-value-choice-image-receipts-pink { background:#1a1612 !important; overflow:hidden; }
+  #cs-value-choice-image-annotated-pink .vcio-bg,
+  #cs-value-choice-image-receipts-pink .vcio-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; display:block; filter:saturate(1.04) contrast(1.03); }
+  #cs-value-choice-image-annotated-pink .vcio-scrim,
+  #cs-value-choice-image-receipts-pink .vcio-scrim { position:absolute; inset:0; pointer-events:none; background:radial-gradient(circle at 50% 51%, rgba(184,149,74,.04), transparent 24%), linear-gradient(180deg, rgba(26,22,18,.10) 0%, rgba(26,22,18,.03) 50%, rgba(26,22,18,.22) 100%); z-index:1; }
+  .vcio-question { position:absolute; top:28px; left:48px; z-index:4; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#c8462c; }
+  .vcio-label { position:absolute; z-index:3; display:grid; grid-template-columns:38px minmax(0,1fr); align-items:center; column-gap:10px; min-width:210px; max-width:286px; padding:9px 11px; border-radius:7px; border:1px solid rgba(251,247,239,.18); background:rgba(26,22,18,.58); box-shadow:0 14px 34px rgba(0,0,0,.24), inset 0 1px 0 rgba(251,247,239,.08); color:#fbf7ef; backdrop-filter:blur(6px); }
+  .vcio-label b { display:block; font-family:'Manrope',sans-serif; font-size:.70rem; font-weight:900; letter-spacing:.15em; text-transform:uppercase; color:#fbf7ef; line-height:1.1; }
+  .vcio-label small { display:block; margin-top:3px; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:#b8954a; line-height:1.15; }
+  .vcio-mark { width:38px; height:38px; border-radius:7px; display:flex; align-items:center; justify-content:center; font-family:'Manrope',sans-serif; font-weight:950; position:relative; overflow:hidden; box-shadow:inset 0 0 0 1px rgba(251,247,239,.14); }
+  .vcio-mark.netflix { background:linear-gradient(135deg,#1a1612,#711411); color:#c8462c; font-size:1.42rem; }
+  .vcio-mark.apple { background:linear-gradient(180deg,#f8f3ea,#8b908f); }
+  .vcio-mark.apple svg { width:21px; height:25px; fill:#1a1612; }
+  .vcio-mark.google { background:conic-gradient(from -45deg,#4285f4 0 25%,#34a853 0 50%,#fbbc05 0 75%,#ea4335 0); color:#fbf7ef; font-size:1rem; }
+  .vcio-mark.coke { background:#c8462c; }
+  .vcio-mark.coke::before { content:"Coca\A Cola"; white-space:pre; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:.67rem; font-weight:900; font-style:italic; line-height:.78; color:#fbf7ef; text-align:center; transform:rotate(-7deg); }
+  .vcio-mark.ai { gap:2px; background:linear-gradient(135deg, rgba(251,247,239,.94), rgba(184,149,74,.32)); }
+  .vcio-mark.ai svg { display:block; }
+  .vcio-label.tv { left:9.4%; top:7.7%; }
+  .vcio-label.phone { left:5.2%; top:31.2%; }
+  .vcio-label.search { left:6.5%; bottom:16.2%; }
+  .vcio-label.speaker { left:39.8%; bottom:7.2%; }
+  .vcio-label.laptop { right:6.2%; top:8.4%; }
+  .vcio-label.cola { right:5.3%; bottom:20.5%; }
+  #cs-value-choice-image-receipts-pink .vcio-question { color:#b8954a; }
+  #cs-value-choice-image-receipts-pink .vcio-caption { position:absolute; left:50%; bottom:44px; transform:translateX(-50%); z-index:4; display:flex; align-items:center; justify-content:center; gap:10px; padding:12px 16px; border-radius:7px; border:1px solid rgba(184,149,74,.48); background:rgba(26,22,18,.68); box-shadow:0 18px 44px rgba(0,0,0,.28); font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.34rem; font-weight:850; font-style:italic; color:#fbf7ef; white-space:nowrap; }
+  #cs-value-choice-image-receipts-pink .vcio-caption em { color:#c8462c; font-style:italic; }
+  #cs-value-choice-image-receipts-pink .vcio-receipts { position:absolute; left:56px; right:56px; bottom:118px; z-index:3; display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:10px; }
+  #cs-value-choice-image-receipts-pink .vcio-receipt { min-height:72px; padding:10px 11px; border-radius:7px; border:1px solid rgba(251,247,239,.16); background:rgba(26,22,18,.62); box-shadow:0 12px 30px rgba(0,0,0,.22); display:grid; grid-template-columns:34px 1fr; column-gap:9px; align-items:center; }
+  #cs-value-choice-image-receipts-pink .vcio-receipt .vcio-mark { width:34px; height:34px; }
+  #cs-value-choice-image-receipts-pink .vcio-receipt b { display:block; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:900; letter-spacing:.13em; text-transform:uppercase; color:#fbf7ef; line-height:1.12; }
+  #cs-value-choice-image-receipts-pink .vcio-receipt small { display:block; margin-top:4px; font-family:'Manrope',sans-serif; font-size:.54rem; font-weight:950; letter-spacing:.14em; text-transform:uppercase; color:#b8954a; line-height:1.12; }
+  #cs-value-choice-image-annotated-pink.casey-entered .vcio-label,
+  #cs-value-choice-image-receipts-pink.casey-entered .vcio-receipt,
+  #cs-value-choice-image-receipts-pink.casey-entered .vcio-caption { animation:vcRise .62s cubic-bezier(.22,1,.36,1) both; }
+  html[data-export="1"] #cs-value-choice-image-annotated-pink .vcio-label,
+  html[data-export="1"] #cs-value-choice-image-receipts-pink .vcio-receipt,
+  html[data-export="1"] #cs-value-choice-image-receipts-pink .vcio-caption { opacity:1 !important; transform:none !important; animation:none !important; }
 
   .value-brainstorm { background:#fbf7ef !important; overflow:hidden; }
   .value-brainstorm .vb-stage { position:absolute; inset:0; display:grid; align-items:center; padding:92px 74px 58px; z-index:2; }
@@ -20355,6 +20394,32 @@ window.csBrandV8Reverse = function() {
 
 <div class="casey-slide ds-focus" id="cs-value-choice-image-only-pink" style="display:none" aria-label="Image-only visual concept for the value question">
   <img class="vcio-bg" src="assets/cs-value-choice-image-only-pink.png" alt="Visual hierarchy of products orbiting a brighter human connection circle."/>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-value-choice-image-annotated-pink" style="display:none" aria-label="Annotated product value visual concept">
+  <img class="vcio-bg" src="assets/cs-value-choice-image-only-pink.png" alt="Human connection circle surrounded by products with value labels."/>
+  <div class="vcio-scrim" aria-hidden="true"></div>
+  <div class="vcio-question">Which product is most valuable to you?</div>
+  <div class="vcio-label tv"><div class="vcio-mark netflix">N</div><div><b>Netflix</b><small>$300B+ sold</small></div></div>
+  <div class="vcio-label phone"><div class="vcio-mark apple"><svg viewBox="0 0 64 76" aria-hidden="true"><path d="M45.6 39.5c-.1-8 6.5-11.8 6.8-12-3.8-5.5-9.6-6.2-11.6-6.3-4.9-.5-9.5 2.9-12 2.9-2.6 0-6.4-2.8-10.5-2.7-5.4.1-10.4 3.2-13.2 8.1-5.7 9.9-1.5 24.4 4 32.4 2.7 3.9 5.9 8.2 10.1 8.1 4.1-.2 5.6-2.6 10.5-2.6 4.9 0 6.3 2.6 10.6 2.5 4.4-.1 7.2-4 9.8-7.9 3.1-4.5 4.4-8.9 4.5-9.1-.1-.1-8.9-3.4-9-13.4zM37.6 16.1c2.2-2.7 3.7-6.4 3.3-10.1-3.2.1-7.1 2.1-9.4 4.8-2.1 2.4-3.9 6.2-3.4 9.9 3.6.3 7.2-1.8 9.5-4.6z"/></svg></div><div><b>Apple iPhone</b><small>$2T+ sold</small></div></div>
+  <div class="vcio-label search"><div class="vcio-mark google">G</div><div><b>Google Search</b><small>$3T+ ads sold</small></div></div>
+  <div class="vcio-label speaker"><div class="vcio-mark ai"><svg viewBox="0 0 36 36" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#1a1612" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="18" rx="14" ry="5.8"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(60 18 18)"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(120 18 18)"/></g></svg></div><div><b>AI assistant</b><small>$2.5T spend</small></div></div>
+  <div class="vcio-label laptop"><div class="vcio-mark ai"><svg viewBox="0 0 36 36" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#1a1612" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="18" rx="14" ry="5.8"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(60 18 18)"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(120 18 18)"/></g></svg><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.5 14.6 9.4 22 12l-7.4 2.6L12 21.5l-2.6-6.9L2 12l7.4-2.6z" fill="#c8462c"/></svg></div><div><b>AI models</b><small>$2.5T spend</small></div></div>
+  <div class="vcio-label cola"><div class="vcio-mark coke"></div><div><b>Coca-Cola</b><small>$1T+ sold</small></div></div>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-value-choice-image-receipts-pink" style="display:none" aria-label="Receipts-led product value visual concept">
+  <img class="vcio-bg" src="assets/cs-value-choice-image-only-pink.png" alt="Human connection circle with branded product receipts."/>
+  <div class="vcio-scrim" aria-hidden="true"></div>
+  <div class="vcio-question">Which product is most valuable to you?</div>
+  <div class="vcio-receipts">
+    <div class="vcio-receipt"><div class="vcio-mark netflix">N</div><div><b>Netflix</b><small>$300B+ sold</small></div></div>
+    <div class="vcio-receipt"><div class="vcio-mark apple"><svg viewBox="0 0 64 76" aria-hidden="true"><path d="M45.6 39.5c-.1-8 6.5-11.8 6.8-12-3.8-5.5-9.6-6.2-11.6-6.3-4.9-.5-9.5 2.9-12 2.9-2.6 0-6.4-2.8-10.5-2.7-5.4.1-10.4 3.2-13.2 8.1-5.7 9.9-1.5 24.4 4 32.4 2.7 3.9 5.9 8.2 10.1 8.1 4.1-.2 5.6-2.6 10.5-2.6 4.9 0 6.3 2.6 10.6 2.5 4.4-.1 7.2-4 9.8-7.9 3.1-4.5 4.4-8.9 4.5-9.1-.1-.1-8.9-3.4-9-13.4zM37.6 16.1c2.2-2.7 3.7-6.4 3.3-10.1-3.2.1-7.1 2.1-9.4 4.8-2.1 2.4-3.9 6.2-3.4 9.9 3.6.3 7.2-1.8 9.5-4.6z"/></svg></div><div><b>iPhone</b><small>$2T+ sold</small></div></div>
+    <div class="vcio-receipt"><div class="vcio-mark google">G</div><div><b>Google Search</b><small>$3T+ ads sold</small></div></div>
+    <div class="vcio-receipt"><div class="vcio-mark ai"><svg viewBox="0 0 36 36" width="18" height="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#1a1612" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="18" rx="14" ry="5.8"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(60 18 18)"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(120 18 18)"/></g></svg></div><div><b>AI</b><small>$2.5T spend</small></div></div>
+    <div class="vcio-receipt"><div class="vcio-mark coke"></div><div><b>Coca-Cola</b><small>$1T+ sold</small></div></div>
+  </div>
+  <div class="vcio-caption">All that value or <em>this room?</em></div>
 </div>
 
 <div class="casey-slide ds-focus value-brainstorm" id="cs-value-ladder" style="display:none">
@@ -32356,7 +32421,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v5] All brand pink-dot alts RELOCATED from slot 3 (cs-brand-V8) → slot 2 (cs-1m8) per Dave 'move these two slides and any new brand slide you are working on as pink dot slides next to the slide with the text below: What we give fuels our communities.' That's cs-1m8 — which sits at slot 2 in SLIDE_ORDER. cs-1m8-fuels (the new particle-galaxy variant anchored to "What we give fuels our communities.") also added here. Slot 3 (cs-brand-V8) now carries no alts; if Dave wants the brand alts to live under the brand slide again later, just move them back.
   // [Dave 2026-05-19] Slot 14 = cs-fv6-img after Munger; slot 15 = cs-givefirst-art; slot 16 = cs-magnetic.
   16: [], // [Codex 2026-05-30] cs-unmeasured-value deleted per attached screenshot request; previous detached slot remains empty.
-  19: ['cs-value-choice-image-only-pink'],
+  18: ['cs-value-choice-image-annotated-pink', 'cs-value-choice-image-receipts-pink', 'cs-value-choice-image-only-pink'],
   // [Codex 2026-05-27] Slot-13/14 alts detached after cs-3 and cs-19 were removed from the active flow.
   15: ['cs-racketeer-padel-club-pink'],
   13: [],
@@ -34381,7 +34446,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 → pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-padel-club-pink' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-club-anti-dupr' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-silliness-story-score-pink' || altId === 'cs-pb-silliness-story-decision-pink' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-annotated-pink' || altId === 'cs-value-choice-image-receipts-pink' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-padel-club-pink' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-club-anti-dupr' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-silliness-story-score-pink' || altId === 'cs-pb-silliness-story-decision-pink' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
