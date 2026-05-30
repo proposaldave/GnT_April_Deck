@@ -17,6 +17,20 @@
   #cs-club-os, #cs-club-social-loop, #cs-club-anti-dupr {
     background:#f3ead8 !important; overflow:hidden; position:relative; min-height:1080px; height:1080px; width:100%; color:#1a1612;
   }
+  #cs-club-os::before {
+    content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+    background:
+      linear-gradient(90deg,rgba(243,234,216,.98) 0%,rgba(243,234,216,.93) 36%,rgba(243,234,216,.63) 63%,rgba(243,234,216,.22) 100%),
+      url('assets/gnr_vnext_community_builders.png') right center/cover no-repeat;
+    opacity:.86; filter:saturate(.88) contrast(.96);
+  }
+  #cs-club-os::after {
+    content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:
+      radial-gradient(circle at 73% 50%,rgba(91,143,212,.18) 0%,rgba(91,143,212,.08) 22%,transparent 40%),
+      radial-gradient(circle at 55% 82%,rgba(200,70,44,.12) 0%,transparent 34%),
+      linear-gradient(180deg,rgba(251,247,239,.18),rgba(251,247,239,.52));
+  }
   #cs-club-os .cco-eye, #cs-club-social-loop .cco-eye, #cs-club-anti-dupr .cco-eye {
     position:absolute; top:28px; left:48px; z-index:10;
     font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#c8462c;
@@ -38,30 +52,87 @@
   .casey-entered .club-build-anim:nth-child(4) { transition-delay:.36s; }
   html[data-export="1"] .club-build-anim { opacity:1 !important; transform:none !important; transition:none !important; }
 
-  #cs-club-os .cco-stage { display:grid; grid-template-columns:.95fr 1.05fr; gap:54px; align-items:center; }
-  #cs-club-os .cco-offer { position:relative; height:740px; }
-  #cs-club-os .cco-core { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:270px; height:270px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; text-align:center; background:#1a1612; color:#fbf7ef; box-shadow:0 24px 80px rgba(26,22,18,.18), 0 0 0 18px rgba(184,149,74,.12); }
+  #cs-club-os .cco-stage { display:grid; grid-template-columns:.93fr 1.07fr; gap:42px; align-items:center; }
+  #cs-club-os .cco-stage > .club-build-anim:first-child { position:relative; z-index:3; }
+  #cs-club-os .club-build-title { max-width:860px; text-shadow:0 14px 34px rgba(251,247,239,.56); }
+  #cs-club-os .club-build-sub { max-width:790px; text-shadow:0 10px 26px rgba(251,247,239,.72); }
+  #cs-club-os .cco-offer { position:relative; height:760px; isolation:isolate; }
+  #cs-club-os .cco-offer::before {
+    content:""; position:absolute; inset:42px 26px 18px 12px; z-index:0; border:1.5px solid rgba(184,149,74,.34); border-radius:28px;
+    background:
+      linear-gradient(90deg,rgba(91,143,212,.11) 0 1px,transparent 1px 118px),
+      linear-gradient(180deg,rgba(184,149,74,.13) 0 1px,transparent 1px 96px),
+      radial-gradient(circle at 49% 50%,rgba(251,247,239,.90),rgba(251,247,239,.54) 42%,rgba(251,247,239,.24) 68%,transparent 100%);
+    background-size:118px 100%,100% 96px,100% 100%;
+    box-shadow:inset 0 0 0 14px rgba(251,247,239,.30),0 28px 92px rgba(26,22,18,.13);
+  }
+  #cs-club-os .cco-offer::after {
+    content:""; position:absolute; left:50%; top:50%; z-index:1; width:520px; height:520px; transform:translate(-50%,-50%); border-radius:50%;
+    background:conic-gradient(from 18deg,rgba(91,143,212,.22),rgba(184,149,74,.18),rgba(200,70,44,.20),rgba(184,149,74,.18),rgba(91,143,212,.22));
+    opacity:.72; filter:blur(.2px);
+  }
+  #cs-club-os .cco-core { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); z-index:4; width:264px; height:264px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; text-align:center; background:radial-gradient(circle at 50% 37%,rgba(91,143,212,.18),transparent 38%),#1a1612; color:#fbf7ef; box-shadow:0 24px 80px rgba(26,22,18,.22),0 0 0 18px rgba(184,149,74,.14),0 0 0 46px rgba(251,247,239,.28); }
+  #cs-club-os .cco-core::before { content:""; position:absolute; inset:-78px; border-radius:50%; border:1px dashed rgba(26,22,18,.18); }
+  #cs-club-os .cco-core::after {
+    content:""; position:absolute; inset:-118px; border-radius:50%;
+    background:
+      radial-gradient(circle at 18% 35%,#5B8FD4 0 6px,transparent 7px),
+      radial-gradient(circle at 82% 28%,#5B8FD4 0 6px,transparent 7px),
+      radial-gradient(circle at 21% 74%,#c8462c 0 6px,transparent 7px),
+      radial-gradient(circle at 79% 76%,#b8954a 0 6px,transparent 7px);
+    opacity:.92;
+  }
   #cs-club-os .cco-core small { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:900; letter-spacing:.24em; text-transform:uppercase; color:#f1d788; }
-  #cs-club-os .cco-spoke { position:absolute; width:280px; padding:22px 24px; border:1.4px solid rgba(184,149,74,.42); background:rgba(251,247,239,.88); border-radius:8px; box-shadow:0 18px 46px rgba(26,22,18,.07); }
+  #cs-club-os .cco-spoke { position:absolute; z-index:5; width:294px; padding:22px 24px 24px; border:1.4px solid rgba(184,149,74,.42); background:linear-gradient(180deg,rgba(251,247,239,.94),rgba(251,247,239,.82)); border-radius:8px; box-shadow:0 22px 58px rgba(26,22,18,.13); backdrop-filter:blur(3px); }
+  #cs-club-os .cco-spoke::before { content:""; position:absolute; left:18px; right:18px; top:-8px; height:5px; border-radius:999px; background:linear-gradient(90deg,#5B8FD4,#b8954a,#c8462c); opacity:.62; }
+  #cs-club-os .cco-spoke::after { content:""; position:absolute; right:18px; top:19px; width:8px; height:8px; border-radius:50%; background:#5B8FD4; box-shadow:14px 0 0 rgba(91,143,212,.74),28px 0 0 rgba(91,143,212,.46); }
   #cs-club-os .cco-spoke b { display:block; font-family:'Manrope',sans-serif; font-size:.70rem; font-weight:900; letter-spacing:.20em; text-transform:uppercase; color:#c8462c; margin-bottom:10px; }
   #cs-club-os .cco-spoke span { display:block; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.55rem; font-weight:800; line-height:1.05; color:#1a1612; }
-  #cs-club-os .cco-s1 { left:0; top:28px; } #cs-club-os .cco-s2 { right:8px; top:92px; } #cs-club-os .cco-s3 { left:24px; bottom:92px; } #cs-club-os .cco-s4 { right:0; bottom:24px; }
-  #cs-club-os .cco-line { position:absolute; left:50%; top:50%; width:2px; height:250px; transform-origin:top center; background:linear-gradient(#b8954a,rgba(184,149,74,0)); opacity:.62; }
+  #cs-club-os .cco-s1 { left:0; top:36px; } #cs-club-os .cco-s2 { right:8px; top:106px; } #cs-club-os .cco-s3 { left:28px; bottom:102px; } #cs-club-os .cco-s4 { right:0; bottom:30px; }
+  #cs-club-os .cco-line { position:absolute; left:50%; top:50%; z-index:2; width:2px; height:285px; transform-origin:top center; background:linear-gradient(#c8462c 0%,#b8954a 44%,rgba(184,149,74,0) 100%); opacity:.62; }
   #cs-club-os .cco-l1 { transform:rotate(236deg); } #cs-club-os .cco-l2 { transform:rotate(48deg); } #cs-club-os .cco-l3 { transform:rotate(142deg); } #cs-club-os .cco-l4 { transform:rotate(-42deg); }
   #cs-club-os .cco-close { margin-top:36px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; max-width:880px; }
 
-  #cs-club-social-loop .cco-stage { display:grid; grid-template-columns:1.04fr .96fr; gap:50px; align-items:center; }
-  #cs-club-social-loop .loop-board { position:relative; height:730px; border:2px solid rgba(91,143,212,.38); background:linear-gradient(90deg,rgba(91,143,212,.10) 0 49.8%,rgba(251,247,239,.74) 49.8% 50.2%,rgba(91,143,212,.10) 50.2% 100%); box-shadow:inset 0 0 0 26px rgba(251,247,239,.55),0 28px 80px rgba(26,22,18,.08); }
-  #cs-club-social-loop .loop-net { position:absolute; left:50%; top:36px; bottom:36px; width:2px; background:repeating-linear-gradient(to bottom,rgba(26,22,18,.42) 0 9px,transparent 9px 17px); }
-  #cs-club-social-loop .loop-step { position:absolute; width:270px; padding:20px 22px; border:1.4px solid rgba(26,22,18,.13); background:rgba(251,247,239,.91); border-radius:8px; box-shadow:0 16px 42px rgba(26,22,18,.08); }
-  #cs-club-social-loop .loop-step b { display:block; font-family:'Manrope',sans-serif; font-size:.66rem; font-weight:900; letter-spacing:.20em; text-transform:uppercase; color:#5B8FD4; margin-bottom:8px; }
-  #cs-club-social-loop .loop-step span { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.45rem; font-weight:850; line-height:1.04; }
-  #cs-club-social-loop .loop-a { left:34px; top:42px; } #cs-club-social-loop .loop-b { right:36px; top:118px; } #cs-club-social-loop .loop-c { left:58px; bottom:142px; } #cs-club-social-loop .loop-d { right:44px; bottom:48px; }
-  #cs-club-social-loop .loop-ball { position:absolute; left:49%; top:46%; width:46px; height:46px; border-radius:50%; background:#c8462c; box-shadow:0 0 0 14px rgba(200,70,44,.12),0 14px 30px rgba(200,70,44,.24); }
-  #cs-club-social-loop .loop-caption { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:245px; padding:20px; text-align:center; background:#1a1612; color:#fbf7ef; border-radius:8px; box-shadow:0 20px 54px rgba(26,22,18,.20); }
-  #cs-club-social-loop .loop-caption b { display:block; font-family:'Manrope',sans-serif; font-size:.64rem; font-weight:900; letter-spacing:.20em; text-transform:uppercase; color:#f1d788; margin-bottom:10px; }
-  #cs-club-social-loop .loop-caption span { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.7rem; font-weight:850; line-height:1.02; }
-  #cs-club-social-loop .loop-foot { margin-top:30px; display:flex; flex-wrap:wrap; gap:10px; }
+  #cs-club-social-loop .cco-stage { display:block; }
+  #cs-club-social-loop .loop-hero { position:absolute; top:160px; left:0; right:0; width:1260px; max-width:calc(100% - 180px); margin:0 auto; text-align:center; z-index:5; }
+  #cs-club-social-loop .loop-hero .club-build-title { font-size:clamp(3.25rem,4.55vw,5.15rem); line-height:1; }
+  #cs-club-social-loop .loop-proofline { margin:18px auto 0; display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border:1px solid rgba(184,149,74,.42); background:rgba(251,247,239,.84); border-radius:7px; box-shadow:0 12px 28px rgba(26,22,18,.06); font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:#5B8FD4; }
+  #cs-club-social-loop .loop-proofline:before, #cs-club-social-loop .loop-proofline:after { content:''; width:8px; height:8px; border-radius:50%; background:#c8462c; box-shadow:18px 0 0 #b8954a,36px 0 0 #5B8FD4; }
+  #cs-club-social-loop .loop-proofline:after { transform:scaleX(-1); }
+  #cs-club-social-loop .loop-system { position:absolute; left:0; right:0; top:465px; width:1280px; height:440px; max-width:calc(100% - 190px); margin:0 auto; z-index:3; }
+  #cs-club-social-loop .loop-system:before { content:''; position:absolute; inset:0; border:1.5px solid rgba(184,149,74,.30); border-radius:8px; background:
+    radial-gradient(circle at 50% 50%, rgba(184,149,74,.17) 0 96px, rgba(184,149,74,.06) 97px 175px, transparent 176px),
+    radial-gradient(circle at 50% 50%, transparent 0 264px, rgba(91,143,212,.10) 265px 266px, transparent 267px),
+    linear-gradient(90deg, rgba(91,143,212,.10) 0 49.8%, rgba(251,247,239,.75) 49.8% 50.2%, rgba(200,70,44,.07) 50.2% 100%),
+    repeating-linear-gradient(0deg, rgba(26,22,18,.035) 0 1px, transparent 1px 16px),
+    #fbf7ef; box-shadow:0 28px 78px rgba(26,22,18,.08), inset 0 0 0 28px rgba(251,247,239,.56); }
+  #cs-club-social-loop .loop-path { position:absolute; left:50%; top:50%; width:690px; height:300px; transform:translate(-50%,-50%); border:2px solid rgba(184,149,74,.72); border-left-color:rgba(91,143,212,.58); border-bottom-color:rgba(200,70,44,.58); border-radius:50%; }
+  #cs-club-social-loop .loop-path:before, #cs-club-social-loop .loop-path:after { content:''; position:absolute; width:0; height:0; border-top:11px solid transparent; border-bottom:11px solid transparent; }
+  #cs-club-social-loop .loop-path:before { right:45px; top:26px; border-left:18px solid #b8954a; transform:rotate(26deg); }
+  #cs-club-social-loop .loop-path:after { left:67px; bottom:10px; border-right:18px solid #c8462c; transform:rotate(24deg); }
+  #cs-club-social-loop .loop-core { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:205px; height:205px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px; text-align:center; background:#fbf7ef; border:2px solid rgba(184,149,74,.72); box-shadow:0 18px 58px rgba(26,22,18,.13),0 0 0 18px rgba(184,149,74,.11),0 0 0 56px rgba(91,143,212,.045); }
+  #cs-club-social-loop .loop-core small { font-family:'Manrope',sans-serif; font-size:.56rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:#b8954a; }
+  #cs-club-social-loop .loop-node { position:absolute; width:230px; min-height:76px; padding:15px 18px 15px 48px; border:1.4px solid rgba(184,149,74,.42); background:rgba(251,247,239,.91); border-radius:8px; box-shadow:0 16px 40px rgba(26,22,18,.07); }
+  #cs-club-social-loop .loop-node:before { content:''; position:absolute; left:18px; top:23px; width:16px; height:16px; border-radius:50%; border:2px solid #b8954a; background:rgba(251,247,239,.95); }
+  #cs-club-social-loop .loop-node b { display:block; font-family:'Manrope',sans-serif; font-size:.66rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:#1a1612; }
+  #cs-club-social-loop .loop-node span { display:block; margin-top:5px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.2rem; font-weight:780; line-height:1.05; color:rgba(26,22,18,.76); }
+  #cs-club-social-loop .loop-a { left:134px; top:54px; border-color:rgba(91,143,212,.48); } #cs-club-social-loop .loop-a:before { border-color:#5B8FD4; }
+  #cs-club-social-loop .loop-b { left:516px; top:14px; }
+  #cs-club-social-loop .loop-c { right:122px; top:116px; border-color:rgba(200,70,44,.42); } #cs-club-social-loop .loop-c:before { border-color:#c8462c; }
+  #cs-club-social-loop .loop-d { right:264px; bottom:28px; border-color:rgba(91,143,212,.48); } #cs-club-social-loop .loop-d:before { border-color:#5B8FD4; }
+  #cs-club-social-loop .loop-e { left:268px; bottom:34px; }
+  #cs-club-social-loop .loop-source { position:absolute; left:42px; bottom:55px; width:170px; height:132px; border:1.5px dashed rgba(91,143,212,.70); border-radius:8px; background:rgba(91,143,212,.06); box-shadow:0 14px 34px rgba(26,22,18,.045); }
+  #cs-club-social-loop .loop-source b { position:absolute; left:14px; top:-28px; font-family:'Manrope',sans-serif; font-size:.66rem; font-weight:900; letter-spacing:.20em; text-transform:uppercase; color:#5B8FD4; }
+  #cs-club-social-loop .loop-source span { position:absolute; left:14px; right:14px; bottom:-46px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.02rem; font-style:italic; line-height:1.1; color:rgba(26,22,18,.70); }
+  #cs-club-social-loop .loop-source i { position:absolute; left:18px; right:18px; height:1.5px; background:rgba(91,143,212,.34); }
+  #cs-club-social-loop .loop-source i:nth-child(2) { top:38px; } #cs-club-social-loop .loop-source i:nth-child(3) { top:62px; } #cs-club-social-loop .loop-source i:nth-child(4) { top:86px; }
+  #cs-club-social-loop .loop-rail { position:absolute; right:36px; top:54px; bottom:54px; width:88px; border-left:12px solid rgba(26,22,18,.20); }
+  #cs-club-social-loop .loop-rail:before { content:''; position:absolute; left:-8px; top:0; bottom:0; width:4px; border-radius:4px; background:repeating-linear-gradient(to bottom, rgba(26,22,18,.32) 0 8px, transparent 8px 22px); }
+  #cs-club-social-loop .loop-rail span { position:absolute; right:0; display:block; width:52px; height:14px; border-radius:10px; background:repeating-linear-gradient(to right, #5B8FD4 0 8px, transparent 8px 17px); }
+  #cs-club-social-loop .loop-rail span:nth-child(1) { top:22px; }
+  #cs-club-social-loop .loop-rail span:nth-child(2) { top:138px; background:repeating-linear-gradient(to right, #b8954a 0 8px, transparent 8px 17px); }
+  #cs-club-social-loop .loop-rail span:nth-child(3) { bottom:92px; background:repeating-linear-gradient(to right, #c8462c 0 8px, transparent 8px 17px); }
+  #cs-club-social-loop .loop-foot { position:absolute; left:0; right:0; bottom:-56px; display:flex; justify-content:center; gap:10px; }
 
   #cs-club-anti-dupr .cco-stage { display:flex; flex-direction:column; justify-content:center; gap:36px; }
   #cs-club-anti-dupr .adu-head { text-align:center; max-width:1320px; margin:0 auto; }
@@ -7722,7 +7793,7 @@ window.cs1m5Reverse = function() {
   <section class="scale-stage">
     <h1 class="scale-head"><span>The <em>#1 predictor</em> of a fulfilling life</span><span>is still invisible to technology.</span></h1>
     <div class="scale-image-wrap" style="background-image:url('assets/cs-frontier-scale-pink-2-recreated.png')" aria-label="Technology metrics balanced against real human connection"></div>
-    <div class="scale-footer">What we're wired for isn't measured</div>
+    <div class="scale-footer">What we're most wired for isn't measured</div>
   </section>
 </div>
 
@@ -12413,7 +12484,7 @@ window.cs1m7Reverse = function() {
   <div class="wpc-codex-wash" aria-hidden="true"></div>
   <!-- [Dave 2026-05-17 v14] Eyebrow changed to "Give n Receive's #1 secret" per Dave. -->
   <!-- [Dave 2026-05-18 LATEST] Eyebrow simplified per Dave 'change "Give n Receive's #1 secret · codex bg" to "Give n Receive's #1 secret"'. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">secret outlier wedge to the next frontier</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">secret outlier wedge → next frontier</div>
   <section class="wpc-stage">
 
     <!-- [Dave 2026-05-17 v12] "Pickleball is the wedge. Human connection is the category." headline DELETED from visible slide + moved to speaker notes per Dave. Sub-headline ("Pickleball → fastest wedge...") remains as the lead-in. -->
@@ -12426,7 +12497,7 @@ window.cs1m7Reverse = function() {
 
       <!-- LEFT · funnel -->
       <div class="wpc-funnel">
-        <div class="wpc-band wpc-band-1"><span>Human Connection Technology</span></div>
+        <div class="wpc-band wpc-band-1"><span>Real world social networking</span></div>
         <div class="wpc-band wpc-band-2"><span>Communities</span></div>
         <div class="wpc-band wpc-band-3"><span>Social Sports</span></div>
         <!-- [Dave 2026-05-18 LATEST] Arrowhead element added inside Pickleball band so it sits at the band's vertical center via ::after stem + this chunky arrowhead, pointing right toward the 5 cards. -->
@@ -12967,6 +13038,63 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] .psb-slide .psb-version-sub,
   html[data-export="1"] .psb-slide .psb-side-note,
   html[data-export="1"] .psb-slide .psb-step { opacity:1 !important; transform:none !important; transition:none !important; }
+  #cs-pb-silliness-image-net-pink,
+  #cs-pb-silliness-image-open-pink,
+  #cs-pb-silliness-image-map-pink {
+    background:#1a1612 !important; overflow:hidden; position:absolute; inset:0; color:#fbf7ef;
+  }
+  #cs-pb-silliness-image-net-pink.active,
+  #cs-pb-silliness-image-open-pink.active,
+  #cs-pb-silliness-image-map-pink.active { display:block !important; }
+  .psg-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+  .psg-scrim { position:absolute; inset:0; z-index:1; pointer-events:none; }
+  #cs-pb-silliness-image-net-pink .psg-scrim {
+    background:linear-gradient(90deg, rgba(11,20,31,.78) 0%, rgba(11,20,31,.36) 34%, rgba(11,20,31,.04) 62%),
+      linear-gradient(0deg, rgba(11,20,31,.82) 0%, rgba(11,20,31,.28) 38%, transparent 70%);
+  }
+  #cs-pb-silliness-image-open-pink .psg-scrim {
+    background:linear-gradient(90deg, rgba(251,247,239,.92) 0%, rgba(251,247,239,.58) 34%, transparent 66%);
+  }
+  #cs-pb-silliness-image-map-pink .psg-scrim {
+    background:linear-gradient(90deg, transparent 0%, rgba(11,20,31,.12) 49%, rgba(11,20,31,.86) 72%, rgba(11,20,31,.94) 100%);
+  }
+  .psg-eye {
+    position:absolute; top:28px; left:48px; z-index:5;
+    font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em;
+    text-transform:uppercase; color:#c8462c;
+  }
+  .psg-copy { position:absolute; z-index:3; max-width:760px; }
+  .psg-copy h1 {
+    margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.65rem,5.2vw,5.8rem);
+    line-height:.94; letter-spacing:0; font-weight:900; color:inherit;
+  }
+  .psg-copy h1 em { font-style:italic; color:#f7df9a; }
+  .psg-copy p {
+    margin:22px 0 0; max-width:660px; font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:1.38rem; line-height:1.18; font-weight:650;
+  }
+  .psg-copy.dark p,
+  .psg-copy.right p { color:rgba(251,247,239,.84); }
+  .psg-copy.dark { left:78px; bottom:76px; color:#fbf7ef; text-shadow:0 3px 22px rgba(0,0,0,.48); }
+  .psg-copy.paper { left:78px; top:104px; color:#1a1612; text-shadow:0 1px 0 rgba(251,247,239,.72); }
+  .psg-copy.paper h1 em { color:#5B8FD4; }
+  .psg-copy.paper p { color:rgba(26,22,18,.74); }
+  .psg-copy.right { right:82px; top:132px; max-width:620px; color:#fbf7ef; text-shadow:0 3px 22px rgba(0,0,0,.52); }
+  .psg-tags { margin-top:24px; display:flex; flex-wrap:wrap; gap:10px; }
+  .psg-tags span {
+    display:inline-flex; align-items:center; min-height:36px; padding:0 12px;
+    border:1px solid rgba(247,223,154,.38); background:rgba(26,22,18,.36);
+    font-family:'Manrope',sans-serif; font-size:.63rem; font-weight:900; letter-spacing:.15em;
+    text-transform:uppercase; color:#fbf7ef;
+  }
+  .psg-copy.paper .psg-tags span { color:#1a1612; background:rgba(251,247,239,.76); border-color:rgba(184,149,74,.38); }
+  .psg-slide .psg-bg,
+  .psg-slide .psg-copy { opacity:0; transform:scale(1.018); transition:opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
+  .psg-slide .psg-copy { transform:translateY(16px); }
+  .psg-slide.casey-entered .psg-bg,
+  .psg-slide.casey-entered .psg-copy { opacity:1; transform:none; }
+  html[data-export="1"] .psg-slide .psg-bg,
+  html[data-export="1"] .psg-slide .psg-copy { opacity:1 !important; transform:none !important; transition:none !important; }
 </style>
 
 <div class="casey-slide ds-focus psj-slide psb-slide" id="cs-pb-silliness-feature" style="display:none">
@@ -13032,6 +13160,39 @@ window.cs1m7Reverse = function() {
   <div class="psb-step" style="left:480px;bottom:214px"><b>02 mixed partners</b><span>new people become safe fast</span></div>
   <div class="psb-step" style="right:518px;bottom:168px"><b>03 lucky shot</b><span>the apology is part of the charm</span></div>
   <div class="psb-step" style="right:142px;bottom:246px"><b>04 paddle tap</b><span>the room decides who it wants again</span></div>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psg-slide" id="cs-pb-silliness-image-net-pink" style="display:none">
+  <div class="psg-eye slide-eyebrow">why pickleball works</div>
+  <img class="psg-bg" src="assets/cs-pb-silliness-image-net-tap.png" alt="Image-generated pickleball club scene: lucky net shot, laughing players, paddle tap, and open-play community." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png'"/>
+  <div class="psg-scrim" aria-hidden="true"></div>
+  <div class="psg-copy dark">
+    <h1>The joke is the <em>wedge.</em></h1>
+    <p>A goofy game makes strangers laugh before they posture. That is the opening GnR can measure.</p>
+    <div class="psg-tags"><span>net drip</span><span>paddle tap</span><span>guard down</span></div>
+  </div>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psg-slide" id="cs-pb-silliness-image-open-pink" style="display:none">
+  <div class="psg-eye slide-eyebrow">why pickleball works</div>
+  <img class="psg-bg" src="assets/cs-pb-silliness-image-open-play.png" alt="Image-generated open-play pickleball scene: mixed partners laughing through silly rituals and social rotation." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png'"/>
+  <div class="psg-scrim" aria-hidden="true"></div>
+  <div class="psg-copy paper">
+    <h1>Silliness turns competition into <em>belonging.</em></h1>
+    <p>The room keeps rotating: beginners, obsessives, retirees, founders, friends. The absurdity makes everyone legible.</p>
+    <div class="psg-tags"><span>kitchen</span><span>dink</span><span>rematch</span></div>
+  </div>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psg-slide" id="cs-pb-silliness-image-map-pink" style="display:none">
+  <div class="psg-eye slide-eyebrow">why pickleball works</div>
+  <img class="psg-bg" src="assets/cs-pb-silliness-image-social-map.png" alt="Image-generated pickleball social-map scene: playful court rituals become visible community signals." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png'"/>
+  <div class="psg-scrim" aria-hidden="true"></div>
+  <div class="psg-copy right">
+    <h1>A social machine disguised as a <em>joke.</em></h1>
+    <p>Every funny ritual creates a visible signal: who includes, who welcomes, who gets invited back.</p>
+    <div class="psg-tags"><span>laugh</span><span>rotate</span><span>invite back</span></div>
+  </div>
 </div>
 
 <div class="casey-slide ds-focus psj-slide" id="cs-pb-silliness-scroll" style="display:none">
@@ -14045,25 +14206,29 @@ window.cs1m7Reverse = function() {
 </div>
 
 <div class="casey-slide ds-focus" id="cs-club-social-loop">
-  <div class="cco-eye">community growth system</div>
+  <div class="cco-eye">autonomous social coordination</div>
   <section class="club-build-stage cco-stage">
-    <div class="loop-board club-build-anim" aria-hidden="true">
-      <div class="loop-net"></div><div class="loop-ball"></div>
-      <div class="loop-step loop-a"><b>01 influx</b><span>Lower-level socials welcome the next wave.</span></div>
-      <div class="loop-step loop-b"><b>02 scouts</b><span>Find the intermediate players who love the silly human part.</span></div>
-      <div class="loop-step loop-c"><b>03 invites</b><span>Match by energy, generosity, and belonging.</span></div>
-      <div class="loop-step loop-d"><b>04 media</b><span>Turn the room into proof the club is alive.</span></div>
-      <div class="loop-caption"><b>the loop</b><span>Every event creates the next event.</span></div>
-    </div>
-    <div class="club-build-anim">
-      <div class="club-build-kicker">The tactic stack</div>
+    <div class="loop-hero club-build-anim">
       <h1 class="club-build-title">Engineer the room until the community starts <em>pulling itself forward.</em></h1>
-      <p class="club-build-sub">The club keeps a healthy influx of new players, identifies the members who spread fun, and gives them the right invitations to become community gravity.</p>
+      <div class="loop-proofline">every touchpoint trains the next invitation</div>
+    </div>
+    <div class="loop-system club-build-anim">
+      <div class="loop-path"></div>
+      <div class="loop-source"><b>coldstart</b><i></i><i></i><i></i><span>history + private booking data</span></div>
+      <div class="loop-core">
+        <div class="club-build-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+        <small>community engine</small>
+      </div>
+      <div class="loop-node loop-a"><b>signals</b><span>touchpoints become training data</span></div>
+      <div class="loop-node loop-b"><b>invites</b><span>sequential, social, curated</span></div>
+      <div class="loop-node loop-c"><b>rsvps</b><span>partners, opponents, waitlist</span></div>
+      <div class="loop-node loop-d"><b>courts</b><span>right people, right time</span></div>
+      <div class="loop-node loop-e"><b>stories</b><span>proof that pulls the next wave</span></div>
+      <div class="loop-rail"><span></span><span></span><span></span></div>
       <div class="loop-foot">
-        <span class="club-build-chip blue">newcomer nights</span>
-        <span class="club-build-chip hot">silly-event heroes</span>
-        <span class="club-build-chip">social media proof</span>
-        <span class="club-build-chip">repeatable belonging</span>
+        <span class="club-build-chip blue">agentic invitations</span>
+        <span class="club-build-chip hot">compounding community value</span>
+        <span class="club-build-chip">autonomous fills</span>
       </div>
     </div>
   </section>
@@ -20012,6 +20177,7 @@ window.csBrandV8Reverse = function() {
   #cs-value-choice .vc-stage { position:absolute; inset:0; z-index:2; display:grid; grid-template-columns:minmax(660px, 0.92fr) 1fr; align-items:center; gap:44px; padding:92px 78px 60px; }
   #cs-value-choice .vc-question { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3rem, 4.55vw, 5.1rem); font-weight:850; line-height:0.98; letter-spacing:-0.026em; color:#fbf7ef; max-width:900px; margin:0 0 26px; text-shadow:0 2px 22px rgba(26,22,18,0.38); }
   #cs-value-choice .vc-question em { font-style:italic; color:#b8954a; }
+  #cs-value-choice .vc-question .vc-tail { display:inline-block; margin-left:.14em; }
   #cs-value-choice .vc-list { display:flex; flex-direction:column; gap:8px; max-width:720px; }
   #cs-value-choice .vc-item { display:grid; grid-template-columns:48px minmax(0,1fr) auto; align-items:center; gap:14px; min-height:58px; padding:9px 13px; border-radius:7px; background:rgba(251,247,239,0.10); border:1px solid rgba(251,247,239,0.16); color:rgba(251,247,239,0.72); font-family:'Manrope',sans-serif; }
   #cs-value-choice .vc-copy { min-width:0; display:flex; flex-direction:column; gap:3px; }
@@ -20046,6 +20212,11 @@ window.csBrandV8Reverse = function() {
   #cs-value-choice.casey-entered .vc-right { animation-delay:.35s; }
   @keyframes vcRise { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
   html[data-export="1"] #cs-value-choice .vc-question, html[data-export="1"] #cs-value-choice .vc-list, html[data-export="1"] #cs-value-choice .vc-right { opacity:1 !important; transform:none !important; animation:none !important; }
+
+  #cs-value-choice-image-only-pink { background:#1a1612 !important; overflow:hidden; }
+  #cs-value-choice-image-only-pink .vcio-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; display:block; filter:saturate(1.02) contrast(1.02); }
+  #cs-value-choice-image-only-pink.casey-entered .vcio-bg { animation:vcRise .75s cubic-bezier(.22,1,.36,1) both; }
+  html[data-export="1"] #cs-value-choice-image-only-pink .vcio-bg { opacity:1 !important; transform:none !important; animation:none !important; }
 
   .value-brainstorm { background:#fbf7ef !important; overflow:hidden; }
   .value-brainstorm .vb-stage { position:absolute; inset:0; display:grid; align-items:center; padding:92px 74px 58px; z-index:2; }
@@ -20098,12 +20269,12 @@ window.csBrandV8Reverse = function() {
   #cs-app-store-people .asp-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; filter:saturate(.96) contrast(1.03); z-index:0; }
   #cs-app-store-people .asp-wash { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(90deg, rgba(251,247,239,.92) 0%, rgba(251,247,239,.80) 32%, rgba(251,247,239,.36) 61%, rgba(26,22,18,.20) 100%), linear-gradient(180deg, rgba(251,247,239,.58) 0%, rgba(251,247,239,.08) 58%, rgba(26,22,18,.34) 100%); }
   #cs-app-store-people .asp-eye { position:absolute; top:28px; left:48px; z-index:3; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#c8462c; }
-  #cs-app-store-people .asp-stage { position:absolute; inset:0; z-index:2; display:grid; grid-template-columns:minmax(560px,.72fr) minmax(560px,.78fr); align-items:center; gap:54px; padding:104px 76px 62px; }
-  #cs-app-store-people .asp-copy { max-width:790px; }
+  #cs-app-store-people .asp-stage { position:absolute; inset:0; z-index:2; display:grid; grid-template-columns:minmax(560px,.72fr) minmax(560px,.78fr); align-items:center; gap:24px; padding:104px 76px 62px; }
+  #cs-app-store-people .asp-copy { max-width:790px; justify-self:end; }
   #cs-app-store-people .asp-quote { margin:0; max-width:790px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.4rem,5.5vw,6.1rem); font-weight:850; line-height:.98; letter-spacing:-.026em; color:#1a1612; text-wrap:balance; }
   #cs-app-store-people .asp-quote em { color:#b8954a; font-style:italic; }
   #cs-app-store-people .asp-byline { margin-top:24px; font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:800; letter-spacing:.20em; text-transform:uppercase; color:#b8954a; }
-  #cs-app-store-people .asp-video { width:92%; justify-self:center; aspect-ratio:16/9; border:1px solid rgba(184,149,74,.62); background:#1a1612; box-shadow:0 24px 54px rgba(26,22,18,.28); overflow:hidden; }
+  #cs-app-store-people .asp-video { width:92%; justify-self:start; aspect-ratio:16/9; border:1px solid rgba(184,149,74,.62); background:#1a1612; box-shadow:0 24px 54px rgba(26,22,18,.28); overflow:hidden; }
   #cs-app-store-people .asp-video iframe { display:block; width:100%; height:100%; border:0; background:#1a1612; }
   #cs-app-store-people.casey-entered .asp-quote, #cs-app-store-people.casey-entered .asp-video { animation:vcRise .76s cubic-bezier(.22,1,.36,1) both; }
   #cs-app-store-people.casey-entered .asp-video { animation-delay:.16s; }
@@ -20116,16 +20287,17 @@ window.csBrandV8Reverse = function() {
   #cs-value-product .product-answer em { color:#c8462c; font-style:italic; }
 </style>
 <div class="casey-slide ds-focus" id="cs-value-choice">
-  <img class="vc-bg" src="assets/cs-human-connection-value-bg.png" alt="Abundant human connection glowing brighter than surrounding screens."/>
+  <img class="vc-bg" src="assets/cs-human-connection-value-bg-v2.png" alt="Abundant human connection glowing brighter than surrounding screens."/>
   <div class="vc-wash" aria-hidden="true"></div>
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The value question</div>
   <section class="vc-stage">
     <div>
-      <h1 class="vc-question">Which product is <em>most valuable</em>?</h1>
+      <h1 class="vc-question">Which &quot;product&quot; is <em>most valuable</em> <span class="vc-tail">to you?</span></h1>
       <div class="vc-list">
+        <div class="vc-item"><div class="vc-icon coke">C</div><div class="vc-copy"><b>Coca-Cola</b><small>iconic everyday consumption</small></div><div class="vc-dollars">$1T+ sold</div></div>
         <div class="vc-item"><div class="vc-icon netflix">N</div><div class="vc-copy"><b>Netflix</b><small>streaming subscription</small></div><div class="vc-dollars">$300B+ sold</div></div>
         <div class="vc-item"><div class="vc-icon iphone"></div><div class="vc-copy"><b>iPhone</b><small>3B devices shipped</small></div><div class="vc-dollars">$2T+ sold</div></div>
-        <div class="vc-item"><div class="vc-icon google">G</div><div class="vc-copy"><b>Google Ads</b><small>the world's information</small></div><div class="vc-dollars">$3T+ sold</div></div>
+        <div class="vc-item"><div class="vc-icon google">G</div><div class="vc-copy"><b>Google Search</b><small>the world's information</small></div><div class="vc-dollars">$3T+ ads sold</div></div>
         <div class="vc-item"><div class="vc-icon ai" title="OpenAI · Anthropic" aria-label="OpenAI and Anthropic logos">
           <svg viewBox="0 0 36 36" width="24" height="24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <g fill="none" stroke="#1a1612" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -20138,14 +20310,17 @@ window.csBrandV8Reverse = function() {
             <path d="M27.4 13.6h9.2L52 50.4h-9.2l-3.1-7.6H22.3l-3.1 7.6H10z" fill="#c8462c"/>
             <path d="M32 23.2 25.4 39h13.2z" fill="#fbf7ef"/>
           </svg>
-        </div><div class="vc-copy"><b>AI</b><small>the world's intelligence</small></div><div class="vc-dollars">$2.5T spend</div></div>
-        <div class="vc-item"><div class="vc-icon coke">C</div><div class="vc-copy"><b>Coca-Cola</b><small>iconic everyday consumption</small></div><div class="vc-dollars">$1T+ sold</div></div>
-        <div class="vc-item answer"><div class="vc-icon room"></div><div class="vc-copy"><b>Abundant human connection</b><div class="vc-gnr-line"><span class="vc-gnr-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span><span>the connection people remember</span></div></div><div class="vc-dollars">?</div></div>
+        </div><div class="vc-copy"><b>AI</b><small>intelligence at your fingertips</small></div><div class="vc-dollars">$2.5T spend</div></div>
+        <div class="vc-item answer"><div class="vc-icon room"></div><div class="vc-copy"><b>Abundant human connection</b><div class="vc-gnr-line"><span class="vc-gnr-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span><span>abundant, autonomous connection</span></div></div><div class="vc-dollars">?</div></div>
       </div>
     </div>
     <div class="vc-right">
     </div>
   </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-value-choice-image-only-pink" style="display:none" aria-label="Image-only visual concept for the value question">
+  <img class="vcio-bg" src="assets/cs-value-choice-image-only-pink.png" alt="Visual hierarchy of products orbiting a brighter human connection circle."/>
 </div>
 
 <div class="casey-slide ds-focus value-brainstorm" id="cs-value-ladder" style="display:none">
@@ -20195,9 +20370,9 @@ window.csBrandV8Reverse = function() {
 </div>
 
 <div class="casey-slide ds-focus" id="cs-app-store-people" style="display:none">
-  <img class="asp-bg" src="assets/cs-app-store-people-bg.png" alt="">
+  <img class="asp-bg" src="assets/cs-app-store-people-pickleball-bg.png" alt="">
   <div class="asp-wash" aria-hidden="true"></div>
-  <div class="asp-eye">App Store for People</div>
+  <div class="asp-eye">The destiny of pickleball</div>
   <section class="asp-stage">
     <div class="asp-copy">
       <h1 class="asp-quote">&ldquo;I envision an app store for <em>people.</em>&rdquo;</h1>
@@ -20243,7 +20418,8 @@ window.csBrandV8Reverse = function() {
   @keyframes umvTitleIn { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
   html[data-export="1"] #cs-unmeasured-value .umv-title { opacity:1 !important; transform:none !important; animation:none !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-unmeasured-value" style="display:none">
+<!-- [Codex 2026-05-30] cs-unmeasured-value removed from active SLIDE_ALTS[16] per attached-slide delete request; HTML retained hidden as rollback source. -->
+<div class="casey-slide ds-focus" id="cs-unmeasured-value" data-deleted="1" style="display:none !important">
   <img class="umv-bg" src="assets/cs-unmeasured-value-bg.png" alt="A warm pickleball community gathered together after play."/>
   <div class="umv-wash" aria-hidden="true"></div>
   <div class="umv-eyebrow" style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">brand promise</div>
@@ -22185,7 +22361,7 @@ window.csBrandV8Reverse = function() {
             <div class="sc-head red">
               <svg viewBox="0 0 24 24" fill="none" stroke="#c8462c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 21 C5 16.5 8 14 12 14 C16 14 19 16.5 19 21"/></svg>
             </div>
-            <div class="sc-bubble red">Competitive results are <strong style="font-style:normal;font-weight:800">measured</strong></div>
+            <div class="sc-bubble red">Competitive results are <strong style="font-style:normal;font-weight:800">measured</strong> by 50+ racquet sports products</div>
           </div>
           <!-- [Dave 2026-05-14 PM v4] Behavior icons added — shield (protect), down-arrow with strike (don't play down), exit-figure (skip helping). -->
           <div class="sc-item"><span class="sc-item-icon"><svg viewBox="0 0 24 24"><path d="M12 3 L19 6 V12 C19 16.5 15.5 19.5 12 21 C8.5 19.5 5 16.5 5 12 V6 Z"/></svg></span><span class="dash">&mdash;</span><span>I&rsquo;m a 3.9.</span></div>
@@ -22894,11 +23070,11 @@ window.csBrandV8Reverse = function() {
 <div class="casey-slide ds-focus spwd-slide" id="cs-magnetic-human-value-market" style="display:none">
   <img class="spwd-bg frontier" src="assets/cs-magnetic-human-value-market-bg.png" alt="" onerror="this.onerror=null;this.src='assets/cs-mv6-networked-reciprocity.png'"/>
   <div class="spwd-wash frontier"></div>
-  <div class="spwd-eyebrow">market frontiers</div>
+  <div class="spwd-eyebrow">It's the next frontier</div>
   <section class="spwd-market">
     <div class="spwd-market-copy">
       <div class="spwd-era-label">Last frontier</div>
-      <h1 class="spwd-market-title">When the invisible became <em>measurable</em>, markets appeared.</h1>
+      <h1 class="spwd-market-title">As online behavior became <em>measurable</em>, markets appeared.</h1>
       <div class="spwd-frontier-list" aria-label="Last frontier became measurable markets">
         <div class="spwd-frontier-row">
           <div class="spwd-frontier-dot">01</div>
@@ -22906,11 +23082,11 @@ window.csBrandV8Reverse = function() {
         </div>
         <div class="spwd-frontier-row">
           <div class="spwd-frontier-dot">02</div>
-          <div><h2>Commerce</h2><p>became marketplaces</p></div><div class="spwd-frontier-value">platforms</div>
+          <div><h2>Intent</h2><p>became search</p></div><div class="spwd-frontier-value">search markets</div>
         </div>
         <div class="spwd-frontier-row">
           <div class="spwd-frontier-dot">03</div>
-          <div><h2>Location</h2><p>became networks</p></div><div class="spwd-frontier-value">mobility</div>
+          <div><h2>Movement</h2><p>became routes</p></div><div class="spwd-frontier-value">mobility</div>
         </div>
       </div>
     </div>
@@ -26262,38 +26438,44 @@ window.csBrandV8Reverse = function() {
   #cs-mv6-merge .mg2-jobs-eye { font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.34em;text-transform:uppercase;color:#b8954a; }
   #cs-mv6-merge .mg2-job { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(.9rem,1.12vw,1.06rem);font-style:italic;font-weight:600;color:#1a1612; }
   #cs-mv6-merge .mg2-job-sep { color:rgba(184,149,74,0.6);font-weight:500; }
+  @keyframes mg2RevealUp { from { opacity:0;transform:translateY(14px); } to { opacity:1;transform:translateY(0); } }
+  @keyframes mg2EyebrowIn { from { opacity:0;transform:translateY(6px); } to { opacity:1;transform:translateY(0); } }
+  @keyframes mg2MissionEyeIn { from { opacity:0;transform:translateY(6px);letter-spacing:0.38em; } to { opacity:1;transform:translateY(0);letter-spacing:0.26em; } }
+  #cs-mv6-merge .mg2-eyebrow { position:absolute;top:28px;left:48px;z-index:10;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;opacity:0;transform:translateY(6px); }
+  #cs-mv6-merge.casey-entered .mg2-eyebrow { animation:mg2EyebrowIn 0.55s cubic-bezier(.22,1,.36,1) 0.75s both; }
   /* Entry animations — [Dave 2026-05-17 LATEST] upgraded from plain fade to fade-UP (translateY 14→0) so the MISSION beat and headline land with deliberate movement on slide load. MISSION eyebrow span (.mg2-mission-eye) animates a beat before the rest of the head text. */
   #cs-mv6-merge .mg2-head, #cs-mv6-merge .mg2-sub, #cs-mv6-merge .mg2-chart, #cs-mv6-merge .mg2-jobs { opacity:0;transform:translateY(14px);transition:opacity 0.75s cubic-bezier(.22,1,.36,1),transform 0.75s cubic-bezier(.22,1,.36,1); }
-  #cs-mv6-merge.casey-entered .mg2-head    { opacity:1;transform:translateY(0);transition-delay:0.10s; }
-  #cs-mv6-merge.casey-entered .mg2-sub     { opacity:1;transform:translateY(0);transition-delay:0.30s; }
-  #cs-mv6-merge.casey-entered .mg2-chart   { opacity:1;transform:translateY(0);transition-delay:0.45s; }
-  #cs-mv6-merge.casey-entered .mg2-jobs    { opacity:1;transform:translateY(0);transition-delay:1.10s; }
+  #cs-mv6-merge.casey-entered .mg2-head    { animation:mg2RevealUp 0.75s cubic-bezier(.22,1,.36,1) 0.85s both; }
+  #cs-mv6-merge.casey-entered .mg2-sub     { animation:mg2RevealUp 0.75s cubic-bezier(.22,1,.36,1) 1.05s both; }
+  #cs-mv6-merge.casey-entered .mg2-chart   { animation:mg2RevealUp 0.75s cubic-bezier(.22,1,.36,1) 1.20s both; }
+  #cs-mv6-merge.casey-entered .mg2-jobs    { animation:mg2RevealUp 0.75s cubic-bezier(.22,1,.36,1) 1.85s both; }
   /* MISSION eyebrow lands first — small upward drift + brief letter-spacing settle for emphasis */
   #cs-mv6-merge .mg2-mission-eye { display:inline-block;opacity:0;transform:translateY(6px);letter-spacing:0.38em;transition:opacity 0.55s cubic-bezier(.22,1,.36,1),transform 0.55s cubic-bezier(.22,1,.36,1),letter-spacing 0.65s cubic-bezier(.22,1,.36,1); }
-  #cs-mv6-merge.casey-entered .mg2-mission-eye { opacity:1;transform:translateY(0);letter-spacing:0.26em;transition-delay:0.10s; }
+  #cs-mv6-merge.casey-entered .mg2-mission-eye { animation:mg2MissionEyeIn 0.55s cubic-bezier(.22,1,.36,1) 0.85s both; }
   @keyframes mg2CurveDraw { from { stroke-dashoffset: 2400; } to { stroke-dashoffset: 0; } }
   #cs-mv6-merge .mg2-curve-path { stroke-dasharray:2400;stroke-dashoffset:2400; }
   /* [Dave 2026-05-18 LATEST] Animation speed bumped per Dave 'have the animation begin and be slightly faster'. Duration 2.4s → 1.5s. Delay 0.95s → 0.30s so the curve starts drawing almost immediately on slide entry. */
-  #cs-mv6-merge.casey-entered .mg2-curve-path { animation:mg2CurveDraw 1.5s cubic-bezier(.55,0,.65,.55) forwards 0.30s; }
+  #cs-mv6-merge.casey-entered .mg2-curve-path { animation:mg2CurveDraw 1.5s cubic-bezier(.55,0,.65,.55) forwards 1.05s; }
   @keyframes mg2EndPulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.16); } }
   #cs-mv6-merge .mg2-end-pt { transform-origin:center;transform-box:fill-box; }
-  #cs-mv6-merge.casey-entered .mg2-end-pt { animation:mg2EndPulse 2.4s ease-in-out infinite 3.4s; }
+  #cs-mv6-merge.casey-entered .mg2-end-pt { animation:mg2EndPulse 2.4s ease-in-out infinite 4.15s; }
   /* [Dave 2026-05-17 LATEST jaw-drop] Outer halo behind the endpoint — slower, larger breath, suggesting the future radiating outward. */
   @keyframes mg2HaloBreath { 0%,100% { opacity:0.55; transform:scale(0.92); } 50% { opacity:1; transform:scale(1.18); } }
   #cs-mv6-merge .mg2-end-halo-outer { transform-origin:center;transform-box:fill-box;opacity:0; }
-  #cs-mv6-merge.casey-entered .mg2-end-halo-outer { animation:mg2HaloBreath 4.4s ease-in-out infinite 3.0s; }
+  #cs-mv6-merge.casey-entered .mg2-end-halo-outer { animation:mg2HaloBreath 4.4s ease-in-out infinite 3.75s; }
   /* "YOU ARE HERE · 2026" marker — sits on the curve between AI (2022) and HUMAN CONNECTION (2030). Lands LAST so the audience reads the chart fully before locating themselves on it. */
   #cs-mv6-merge .mg2-here { opacity:0;transition:opacity 0.85s cubic-bezier(.22,1,.36,1); }
-  #cs-mv6-merge.casey-entered .mg2-here { opacity:1;transition-delay:3.8s; }
+  #cs-mv6-merge.casey-entered .mg2-here { opacity:1;transition-delay:4.55s; }
   @keyframes mg2HereDotPulse { 0%,100% { transform:scale(1);opacity:1; } 50% { transform:scale(1.45);opacity:0.65; } }
   #cs-mv6-merge .mg2-here-dot { transform-origin:center;transform-box:fill-box; }
-  #cs-mv6-merge.casey-entered .mg2-here-dot { animation:mg2HereDotPulse 1.8s ease-in-out infinite 4.2s; }
+  #cs-mv6-merge.casey-entered .mg2-here-dot { animation:mg2HereDotPulse 1.8s ease-in-out infinite 4.95s; }
   /* Cosmic gold backdrop at top-right of chart — suggests "the future is being born here" without adding clutter. */
   #cs-mv6-merge .mg2-stage::after { content:"";position:absolute;top:36px;right:28px;width:38%;height:50%;background:radial-gradient(ellipse 60% 70% at 78% 28%, rgba(255,220,140,0.18) 0%, rgba(232,180,80,0.08) 35%, rgba(184,149,74,0) 70%);pointer-events:none;z-index:0;opacity:0;transition:opacity 1.4s cubic-bezier(.22,1,.36,1) 1.0s; }
   #cs-mv6-merge.casey-entered .mg2-stage::after { opacity:1; }
   html[data-export="1"] #cs-mv6-merge .mg2-end-halo-outer,
   html[data-export="1"] #cs-mv6-merge .mg2-here,
-  html[data-export="1"] #cs-mv6-merge .mg2-here-dot { opacity:1 !important;transform:none !important;animation:none !important; }
+  html[data-export="1"] #cs-mv6-merge .mg2-here-dot,
+  html[data-export="1"] #cs-mv6-merge .mg2-eyebrow { opacity:1 !important;transform:none !important;animation:none !important; }
   html[data-export="1"] #cs-mv6-merge .mg2-stage::after { opacity:1 !important;transition:none !important; }
   html[data-export="1"] #cs-mv6-merge .mg2-head,
   html[data-export="1"] #cs-mv6-merge .mg2-sub,
@@ -26304,7 +26486,7 @@ window.csBrandV8Reverse = function() {
 </style>
 <div class="casey-slide ds-focus" id="cs-mv6-merge" style="display:none">
   <!-- [Dave 2026-05-18 LATEST] Eyebrow "The future of off-screen connection" → "Mission". Internal mg2-mission-eye-block ("Mission" + rule) DELETED — the eyebrow now carries the Mission framing, so the redundant in-slide "Mission" label and its gold rule are gone. Headline rises directly under the chart. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">We're wired for this</div>
+  <div class="mg2-eyebrow">We're wired for this</div>
   <section class="mg2-stage">
 
     <div class="mg2-headwrap">
@@ -27325,101 +27507,52 @@ window.csBrandV8Reverse = function() {
 <!-- ===== cs-gnr-business-outcomes · Community-business stakes [Codex 2026-05-28] ===== -->
 <style>
   #cs-gnr-business-outcomes{background:#f3ead8!important;overflow:hidden}
-  #cs-gnr-business-outcomes .gbo-stage{position:relative;min-height:100%;width:100%;box-sizing:border-box;padding:78px 72px 50px;display:flex;align-items:center;justify-content:center}
-  #cs-gnr-business-outcomes .gbo-stage:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(184,149,74,.10) 1px,transparent 1px),linear-gradient(0deg,rgba(184,149,74,.08) 1px,transparent 1px);background-size:180px 100%,100% 128px;opacity:.34;pointer-events:none}
-  #cs-gnr-business-outcomes .gbo-shell{position:relative;z-index:1;width:min(1510px,100%);margin:0 auto;display:flex;flex-direction:column;gap:22px}
-  #cs-gnr-business-outcomes .gbo-title{margin:0 auto;text-align:center;max-width:1280px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:4.28rem;font-weight:850;line-height:.98;color:#1a1612}
+  #cs-gnr-business-outcomes .gbo-stage{position:relative;min-height:100%;width:100%;box-sizing:border-box;padding:90px 86px 64px;display:flex;align-items:center;justify-content:center}
+  #cs-gnr-business-outcomes .gbo-stage:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(184,149,74,.10) 1px,transparent 1px),linear-gradient(0deg,rgba(184,149,74,.08) 1px,transparent 1px);background-size:190px 100%,100% 138px;opacity:.26;pointer-events:none}
+  #cs-gnr-business-outcomes .gbo-shell{position:relative;z-index:1;width:min(1360px,100%);margin:0 auto;display:grid;gap:34px;text-align:center}
+  #cs-gnr-business-outcomes .gbo-title{margin:0 auto;max-width:1160px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:5.15rem;font-weight:850;line-height:.96;color:#1a1612}
   #cs-gnr-business-outcomes .gbo-title em{font-style:italic;color:#b8954a;font-weight:850}
-  #cs-gnr-business-outcomes .gbo-title .blue{color:#5B8FD4;font-style:normal}
-  #cs-gnr-business-outcomes .gbo-sub{font-family:'Manrope',sans-serif;font-size:.76rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,.56);text-align:center}
-  #cs-gnr-business-outcomes .gbo-compare{display:grid;grid-template-columns:minmax(0,.94fr) 162px minmax(0,1fr);gap:24px;align-items:stretch}
-  #cs-gnr-business-outcomes .gbo-panel{position:relative;min-height:508px;padding:32px 36px 30px;box-sizing:border-box;background:rgba(251,247,239,.88);border:1.4px solid rgba(184,149,74,.28);border-radius:8px;display:grid;grid-template-rows:auto 190px auto auto;gap:18px;box-shadow:0 18px 50px rgba(26,22,18,.07);overflow:hidden}
-  #cs-gnr-business-outcomes .gbo-panel:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,247,239,.20),rgba(184,149,74,.08));pointer-events:none}
-  #cs-gnr-business-outcomes .gbo-panel>*{position:relative;z-index:1}
-  #cs-gnr-business-outcomes .gbo-panel.low{border-left:8px solid #c8462c}
-  #cs-gnr-business-outcomes .gbo-panel.high{border-left:8px solid #5B8FD4;box-shadow:0 24px 68px rgba(91,143,212,.16),0 0 0 1px rgba(184,149,74,.14) inset}
-  #cs-gnr-business-outcomes .gbo-label{font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:900;letter-spacing:.30em;text-transform:uppercase}
-  #cs-gnr-business-outcomes .gbo-panel.low .gbo-label{color:#c8462c}
-  #cs-gnr-business-outcomes .gbo-panel.high .gbo-label{color:#5B8FD4}
-  #cs-gnr-business-outcomes .gbo-network{width:100%;height:190px;border:1px solid rgba(184,149,74,.24);border-radius:7px;background:rgba(251,247,239,.58)}
-  #cs-gnr-business-outcomes .gbo-panel h2{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.86rem;font-weight:850;line-height:1.02;color:#1a1612}
-  #cs-gnr-business-outcomes .gbo-panel h2 em{font-style:italic;font-weight:750}
-  #cs-gnr-business-outcomes .gbo-panel.low h2 em{color:#c8462c}
-  #cs-gnr-business-outcomes .gbo-panel.high h2 em{color:#b8954a}
-  #cs-gnr-business-outcomes .gbo-proof{font-family:'Manrope',sans-serif;font-size:1.02rem;font-weight:820;line-height:1.35;color:rgba(26,22,18,.68);padding:17px 0 0;border-top:1px solid rgba(184,149,74,.28)}
-  #cs-gnr-business-outcomes .gbo-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
-  #cs-gnr-business-outcomes .gbo-chip{font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;padding:8px 10px;border-radius:999px;background:rgba(251,247,239,.82);border:1px solid rgba(184,149,74,.32);color:rgba(26,22,18,.62)}
-  #cs-gnr-business-outcomes .gbo-panel.low .gbo-chip{border-color:rgba(200,70,44,.30);color:#c8462c}
-  #cs-gnr-business-outcomes .gbo-panel.high .gbo-chip{border-color:rgba(91,143,212,.34);color:#5B8FD4}
-  #cs-gnr-business-outcomes .gbo-center{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;color:#1a1612}
-  #cs-gnr-business-outcomes .gbo-arrow{width:152px;height:76px}
-  #cs-gnr-business-outcomes .gbo-mark{width:106px;height:106px;border-radius:50%;display:grid;place-items:center;background:#fbf7ef;border:1.8px solid rgba(184,149,74,.58);box-shadow:0 18px 44px rgba(184,149,74,.20)}
-  #cs-gnr-business-outcomes .gbo-mark span{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.9rem;font-weight:900;line-height:1}
-  #cs-gnr-business-outcomes .gbo-mark .g{color:#5B8FD4}.gbo-mark .n{color:#b8954a;font-style:italic;font-weight:600}.gbo-mark .r{color:#c8462c}
-  #cs-gnr-business-outcomes .gbo-center-copy{font-family:'Manrope',sans-serif;font-size:.64rem;font-weight:900;line-height:1.35;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,.58);max-width:140px}
-  #cs-gnr-business-outcomes .gbo-center-copy strong{display:block;color:#1a1612;font-size:.76rem;letter-spacing:.13em}
-  #cs-gnr-business-outcomes .gbo-footer{margin:0 auto;max-width:1260px;text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.74rem;font-weight:760;line-height:1.18;color:#1a1612;padding:15px 26px;border-top:1px solid rgba(184,149,74,.36);border-bottom:1px solid rgba(184,149,74,.36)}
-  #cs-gnr-business-outcomes .gbo-footer strong{font-weight:850;color:#b8954a}
-  #cs-gnr-business-outcomes svg text{font-family:'Manrope',sans-serif;letter-spacing:.12em;text-transform:uppercase}
+  #cs-gnr-business-outcomes .gbo-sub{margin:0 auto;max-width:900px;font-family:'Manrope',sans-serif;font-size:1.18rem;font-weight:800;line-height:1.42;color:rgba(26,22,18,.68)}
+  #cs-gnr-business-outcomes .gbo-path{display:grid;grid-template-columns:1fr 82px 1fr 82px 1fr;align-items:stretch;gap:0;margin-top:4px}
+  #cs-gnr-business-outcomes .gbo-step{min-height:218px;padding:28px 24px 26px;box-sizing:border-box;background:rgba(251,247,239,.82);border:1.4px solid rgba(184,149,74,.30);border-top:7px solid #b8954a;border-radius:8px;display:flex;flex-direction:column;justify-content:space-between;text-align:left;box-shadow:0 18px 46px rgba(26,22,18,.06)}
+  #cs-gnr-business-outcomes .gbo-step.low{border-top-color:#c8462c}
+  #cs-gnr-business-outcomes .gbo-step.high{border-top-color:#5B8FD4}
+  #cs-gnr-business-outcomes .gbo-label{font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,.52)}
+  #cs-gnr-business-outcomes .gbo-step.low .gbo-label{color:#c8462c}
+  #cs-gnr-business-outcomes .gbo-step.high .gbo-label{color:#5B8FD4}
+  #cs-gnr-business-outcomes .gbo-step h2{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.35rem;font-weight:850;line-height:1.02;color:#1a1612}
+  #cs-gnr-business-outcomes .gbo-step p{margin:0;font-family:'Manrope',sans-serif;font-size:1rem;font-weight:760;line-height:1.35;color:rgba(26,22,18,.68)}
+  #cs-gnr-business-outcomes .gbo-arrow{display:grid;place-items:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:3.35rem;font-weight:850;color:#b8954a}
+  #cs-gnr-business-outcomes .gbo-result{margin:0 auto;max-width:1040px;padding:22px 34px;border-top:1px solid rgba(184,149,74,.38);border-bottom:1px solid rgba(184,149,74,.38);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2rem;font-weight:780;line-height:1.2;color:#1a1612}
+  #cs-gnr-business-outcomes .gbo-result strong{color:#b8954a;font-weight:850}
   html[data-export="1"] #cs-gnr-business-outcomes *{animation:none!important;transition:none!important}
 </style>
 <div class="casey-slide ds-focus" id="cs-gnr-business-outcomes">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Community business health</div>
   <section class="gbo-stage">
     <div class="gbo-shell">
-      <h1 class="gbo-title">Humans go where <em>GnR connection</em> is <span class="blue">highest.</span></h1>
-      <div class="gbo-sub">Same courts. Same sport. Different social gravity.</div>
-      <div class="gbo-compare">
-        <div class="gbo-panel low">
-          <div class="gbo-label">Low GnR connection</div>
-          <svg class="gbo-network" viewBox="0 0 560 220" role="img" aria-label="Low GnR club: scattered players on interchangeable courts.">
-            <rect x="18" y="20" width="524" height="180" rx="6" fill="rgba(251,247,239,.34)" stroke="rgba(184,149,74,.34)" stroke-width="2"/>
-            <path d="M280 20V200M18 110H542M150 20V200M410 20V200" stroke="rgba(184,149,74,.30)" stroke-width="2"/>
-            <path d="M78 74 C118 42 160 42 198 76M96 150 C142 184 176 180 214 142M350 72 C392 40 438 46 478 80" fill="none" stroke="#c8462c" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 9" opacity=".38"/>
-            <circle cx="82" cy="72" r="8" fill="#c8462c"/><circle cx="202" cy="76" r="7" fill="rgba(26,22,18,.42)"/>
-            <circle cx="96" cy="150" r="7" fill="rgba(26,22,18,.38)"/><circle cx="218" cy="142" r="8" fill="#c8462c"/>
-            <circle cx="354" cy="72" r="8" fill="rgba(26,22,18,.36)"/><circle cx="480" cy="80" r="7" fill="#c8462c"/>
-            <circle cx="452" cy="154" r="7" fill="rgba(26,22,18,.34)"/>
-            <text x="280" y="194" text-anchor="middle" font-size="12" font-weight="900" fill="rgba(26,22,18,.44)">interchangeable utility</text>
-          </svg>
-          <h2>A club people can <em>replace.</em></h2>
-          <div class="gbo-proof">The value is the court. Members compare price, distance, and open time slots.</div>
-          <div class="gbo-chips"><span class="gbo-chip">book and leave</span><span class="gbo-chip">price sensitive</span><span class="gbo-chip">no memory</span></div>
+      <h1 class="gbo-title">Humans will go wherever they feel the most <em>Give n Receive</em></h1>
+      <p class="gbo-sub">GnR gives clubs the measurable reason members stay, invite, and bring their lives back.</p>
+      <div class="gbo-path">
+        <div class="gbo-step low">
+          <div class="gbo-label">Without GnR</div>
+          <h2>Replaceable venue</h2>
+          <p>Members compare price, distance, and open time slots.</p>
         </div>
-
-        <div class="gbo-center" aria-hidden="true">
-          <svg class="gbo-arrow" viewBox="0 0 180 82">
-            <path d="M14 44 C54 12 112 12 158 44" fill="none" stroke="#b8954a" stroke-width="3.2" stroke-linecap="round"/>
-            <path d="M143 28 L162 44 L143 60" fill="none" stroke="#b8954a" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="26" cy="46" r="5" fill="#c8462c"/><circle cx="70" cy="24" r="5" fill="#b8954a"/><circle cx="118" cy="25" r="5" fill="#5B8FD4"/>
-          </svg>
-          <div class="gbo-mark"><span><span class="g">G</span><span class="n">n</span><span class="r">R</span></span></div>
-          <div class="gbo-center-copy">raises <strong>connection density</strong></div>
-          <svg class="gbo-arrow" viewBox="0 0 180 82">
-            <path d="M14 38 C56 72 116 72 158 38" fill="none" stroke="#5B8FD4" stroke-width="3.2" stroke-linecap="round"/>
-            <path d="M143 22 L162 38 L143 54" fill="none" stroke="#5B8FD4" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="34" cy="44" r="5" fill="#b8954a"/><circle cx="83" cy="62" r="5" fill="#5B8FD4"/><circle cx="126" cy="56" r="5" fill="#c8462c"/>
-          </svg>
+        <div class="gbo-arrow" aria-hidden="true">&rarr;</div>
+        <div class="gbo-step">
+          <div class="gbo-label">GnR layer</div>
+          <h2>Connection density</h2>
+          <p>Who fits. Who gives. Who is missed. Who needs the invite.</p>
         </div>
-
-        <div class="gbo-panel high">
-          <div class="gbo-label">High GnR connection</div>
-          <svg class="gbo-network" viewBox="0 0 560 220" role="img" aria-label="High GnR club: connected players pulled into one dense community.">
-            <rect x="18" y="20" width="524" height="180" rx="6" fill="rgba(251,247,239,.34)" stroke="rgba(184,149,74,.34)" stroke-width="2"/>
-            <path d="M280 20V200M18 110H542M150 20V200M410 20V200" stroke="rgba(184,149,74,.25)" stroke-width="2"/>
-            <path d="M92 128L172 86L260 112L340 58L442 92L470 152L350 166L260 112L172 154L92 128M172 86L172 154M340 58L350 166M442 92L350 166M260 112L470 152" fill="none" stroke="#5B8FD4" stroke-width="3.1" stroke-linecap="round" opacity=".72"/>
-            <path d="M122 48 C218 22 314 24 424 54" fill="none" stroke="#b8954a" stroke-width="4" stroke-linecap="round" opacity=".58"/>
-            <circle cx="92" cy="128" r="9" fill="#5B8FD4"/><circle cx="172" cy="86" r="9" fill="#b8954a"/><circle cx="260" cy="112" r="11" fill="#c8462c"/>
-            <circle cx="340" cy="58" r="9" fill="#5B8FD4"/><circle cx="442" cy="92" r="9" fill="#b8954a"/><circle cx="470" cy="152" r="9" fill="#5B8FD4"/>
-            <circle cx="350" cy="166" r="9" fill="#b8954a"/><circle cx="172" cy="154" r="9" fill="#5B8FD4"/>
-            <text x="280" y="194" text-anchor="middle" font-size="12" font-weight="900" fill="#5B8FD4">compounding social gravity</text>
-          </svg>
-          <h2>A club people will <em>follow.</em></h2>
-          <div class="gbo-proof">The value is the people. Members feel known, invited, missed, and needed.</div>
-          <div class="gbo-chips"><span class="gbo-chip">known by name</span><span class="gbo-chip">invited into fit</span><span class="gbo-chip">missed when absent</span></div>
+        <div class="gbo-arrow" aria-hidden="true">&rarr;</div>
+        <div class="gbo-step high">
+          <div class="gbo-label">With GnR</div>
+          <h2>Hard-to-leave club</h2>
+          <p>Members stay for the people, not just the court.</p>
         </div>
       </div>
-      <div class="gbo-footer"><strong>The future:</strong> people rearrange their lives around the communities where their GnR connection is highest.</div>
+      <p class="gbo-result"><strong>Business outcome:</strong> retention, referrals, and pricing power come from the social graph.</p>
     </div>
   </section>
 </div>
@@ -28779,83 +28912,83 @@ window.csA7m1Reverse = function() {
   <script type="application/json" id="c2cStorySource">{
     "social-sports": {
       "kicker": "Social sports",
-      "title": "Every match becomes the <em>next right invitation.</em>",
-      "sub": "GnR learns level, vibe, schedule, and who makes people want to come back.",
-      "steps": [["Learn","Skill. vibe. availability."],["Invite","Right game. right people."],["Compound","Repeat people, not random games."]],
-      "profile": ["level","vibe","availability","chemistry"],
-      "feed": [["Game","Balanced Tuesday match"],["Welcome","Newcomer + welcomer"],["Return","Post-game table"]],
-      "moments": ["fair game","fun foursome","repeat crew","league captain"],
-      "proof": "The future of social sports is not a bracket. <strong>It is a personalized invitation feed.</strong>"
+      "title": "Right game. <em>Right people.</em>",
+      "sub": "GnR turns signup data into better invites.",
+      "steps": [["Know","Level. time. vibe."],["Invite","Best match."],["Repeat","People come back."]],
+      "profile": ["level","time","vibe"],
+      "feed": [["Play","Right game"],["Meet","Welcomer"],["Return","Next invite"]],
+      "moments": ["good game","new friend","repeat crew","captain"],
+      "proof": "Social sports become <strong>repeatable belonging.</strong>"
     },
     "hobbies": {
       "kicker": "Hobbies",
-      "title": "Interest becomes <em>shared momentum.</em>",
-      "sub": "Beginners, guides, peers, projects, and hosts find each other faster.",
-      "steps": [["Learn","Taste. skill. goals."],["Gather","Guide, peer, host."],["Repeat","Interest turns into habit."]],
-      "profile": ["taste","skill","project","pace"],
-      "feed": [["Start","Beginner circle"],["Guide","Mentor maker"],["Share","Show-and-tell night"]],
+      "title": "Interest becomes <em>a group.</em>",
+      "sub": "GnR finds the person, host, and next meetup.",
+      "steps": [["Know","Interest. skill. pace."],["Invite","Peer or host."],["Return","Habit forms."]],
+      "profile": ["interest","skill","pace"],
+      "feed": [["Start","Beginner table"],["Guide","Mentor"],["Share","Meetup"]],
       "moments": ["learn","make","teach","return"],
-      "proof": "The future hobby community makes it easier to <strong>keep showing up.</strong>"
+      "proof": "Hobbies become <strong>easy to enter.</strong>"
     },
     "college": {
       "kicker": "College",
-      "title": "Belonging starts before <em>loneliness hardens.</em>",
-      "sub": "Students get meals, clubs, study groups, and mentors by fit, not luck.",
-      "steps": [["Know","Interests. values. schedule."],["Invite","Meal. club. mentor."],["Belong","Less lonely, sooner."]],
-      "profile": ["major","values","schedule","interests"],
-      "feed": [["Meal","First-week table"],["Club","Right room intro"],["Mentor","Alumni coffee"]],
-      "moments": ["meal table","study group","club intro","mentor coffee"],
-      "proof": "The future campus is an <strong>active belonging engine.</strong>"
+      "title": "Students find <em>their people.</em>",
+      "sub": "GnR routes meals, clubs, study groups, and mentors.",
+      "steps": [["Know","Major. schedule. interests."],["Invite","Meal. club. mentor."],["Belong","Less lonely."]],
+      "profile": ["major","schedule","interests"],
+      "feed": [["Meal","First table"],["Club","Right room"],["Mentor","Coffee"]],
+      "moments": ["meal","club","study","mentor"],
+      "proof": "Campus becomes <strong>belonging by design.</strong>"
     },
     "neighborhoods": {
       "kicker": "Neighborhoods, cities & schools",
-      "title": "A place stops being <em>strangers nearby.</em>",
-      "sub": "Parents, helpers, schools, elders, and organizers become visible through trusted invitations.",
-      "steps": [["Map","Kids. needs. local gifts."],["Invite","Walk, meal, project."],["Strengthen","The place works better."]],
-      "profile": ["kids","needs","skills","nearby"],
-      "feed": [["School","Pickup walk"],["Home","Tool-lending intro"],["Block","Small dinner"]],
-      "moments": ["parents","helpers","schools","neighbors"],
-      "proof": "The future neighborhood is a <strong>trusted local invitation layer.</strong>"
+      "title": "Neighbors stop being <em>strangers.</em>",
+      "sub": "GnR makes nearby needs and helpers visible.",
+      "steps": [["See","People. needs. gifts."],["Invite","Walk. meal. project."],["Trust","Local help grows."]],
+      "profile": ["nearby","need","gift"],
+      "feed": [["Help","Borrow tool"],["School","Pickup walk"],["Meal","Block table"]],
+      "moments": ["walk","school","dinner","help"],
+      "proof": "A place becomes <strong>a trusted network.</strong>"
     },
     "fitness": {
       "kicker": "Fitness & gym groups",
-      "title": "The gym becomes a room that <em>expects you back.</em>",
-      "sub": "Goals, comfort, schedule, and energy become buddy, class, and coach invitations.",
-      "steps": [["Learn","Goals. comfort. energy."],["Pair","Buddy, coach, class."],["Return","Showing up gets easier."]],
-      "profile": ["goal","comfort","energy","schedule"],
-      "feed": [["Buddy","Beginner partner"],["Class","Right-energy group"],["Coach","Check-in moment"]],
-      "moments": ["buddy","coach","class","return"],
-      "proof": "The future fitness business retains people by matching them into <strong>community momentum.</strong>"
+      "title": "People come back <em>because they belong.</em>",
+      "sub": "GnR matches goals to buddies, classes, and coaches.",
+      "steps": [["Know","Goal. comfort. time."],["Pair","Buddy or class."],["Return","Attendance grows."]],
+      "profile": ["goal","time","comfort"],
+      "feed": [["Buddy","First partner"],["Class","Right level"],["Coach","Check-in"]],
+      "moments": ["buddy","class","coach","return"],
+      "proof": "Retention becomes <strong>community momentum.</strong>"
     },
     "homeschool": {
       "kicker": "Homeschool groups",
       "title": "Families find the <em>right circle</em> faster.",
-      "sub": "Ages, learning goals, parent capacity, pods, mentors, and support fit together.",
-      "steps": [["See","Ages. needs. capacity."],["Fit","Pods, projects, partners."],["Support","Less alone. more help."]],
-      "profile": ["ages","needs","capacity","interests"],
-      "feed": [["Pod","Project group"],["Parent","Swap support"],["Mentor","One-hour help"]],
-      "moments": ["kids","parents","pods","support"],
-      "proof": "The future homeschool group turns isolated families into a <strong>support graph.</strong>"
+      "sub": "GnR matches kids, parents, pods, and mentors.",
+      "steps": [["See","Age. need. capacity."],["Match","Pod or mentor."],["Support","Less alone."]],
+      "profile": ["age","need","capacity"],
+      "feed": [["Pod","Project group"],["Parent","Swap help"],["Mentor","One hour"]],
+      "moments": ["kids","parents","pod","mentor"],
+      "proof": "Homeschool becomes <strong>a support graph.</strong>"
     },
     "faith": {
       "kicker": "Faith communities",
-      "title": "Care finds the <em>person who needs it.</em>",
-      "sub": "Gifts, needs, hosts, service, and small groups route to the right invitation.",
-      "steps": [["See","Needs and gifts."],["Invite","Care. serve. host."],["Welcome","People are noticed sooner."]],
-      "profile": ["season","need","gift","capacity"],
-      "feed": [["Care","Meal train"],["Serve","Right team"],["Host","Small group table"]],
+      "title": "Care reaches <em>the right person.</em>",
+      "sub": "GnR turns needs and gifts into simple care invites.",
+      "steps": [["See","Need. gift. season."],["Invite","Care team."],["Welcome","People noticed."]],
+      "profile": ["need","gift","season"],
+      "feed": [["Care","Meal train"],["Serve","Right team"],["Host","Small table"]],
       "moments": ["care","serve","host","welcome"],
-      "proof": "The future faith community does not rely on memory. <strong>It routes care.</strong>"
+      "proof": "Faith communities <strong>route care.</strong>"
     },
     "country-clubs": {
       "kicker": "Country clubs",
-      "title": "Day one feels like <em>you already belong.</em>",
-      "sub": "Onboarding becomes an invitation engine: golf, dinner, family, service, and introductions.",
-      "steps": [["Survey","Family. interests. pace."],["Feed","Golf with relevant members."],["Belong","Dinner before awkward months."]],
-      "profile": ["new member","golf","dinner","family"],
-      "feed": [["Golf","Saturday foursome"],["Dinner","Relevant table"],["Family","Clinic invite"]],
-      "moments": ["golf partner","dinner table","welcoming couple","club life"],
-      "proof": "The future country club is a <strong>personalized invitation feed</strong>, not a directory."
+      "title": "New members feel <em>known fast.</em>",
+      "sub": "GnR routes golf, dinner, family, and welcome invites.",
+      "steps": [["Know","Family. pace. interests."],["Invite","Game or table."],["Belong","No awkward months."]],
+      "profile": ["golf","family","pace"],
+      "feed": [["Golf","Right foursome"],["Dinner","Good table"],["Family","Clinic"]],
+      "moments": ["golf","dinner","family","welcome"],
+      "proof": "A club becomes <strong>personalized welcome.</strong>"
     }
   }</script>
 </section>
@@ -31888,7 +32021,7 @@ const SLIDE_ORDER = [
   'cs-gnr-business-outcomes', // [Codex 2026-05-29] Simplified community-business stakes slide moved next to the cs-magnetic white-dot concept cluster.
   // [Codex 2026-05-28] Active outlier slide moved into the post-24-social-experiences cluster while preserving the social-pull move.
   'cs-wedgepb-codex',
-  'cs-merge3',
+  // [Codex 2026-05-30] cs-merge3 moved to TRASH_ORDER per Dave screenshot request.
   'cs-fv6-img',
   // [Codex 2026-05-27] cs-19 removed from active main flow per completed delete-branch request. HTML remains as rollback source.
   // [Codex 2026-05-26] cs-racketeer-att-arc RESTORED to main deck per Dave: "find the racketeer slide and put it back in the main deck."
@@ -32095,8 +32228,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v4] cs-brand-codex added as 2nd PINK-DOT alt (codex split-image watercolor).
   // [Dave 2026-05-18 LATEST v5] All brand pink-dot alts RELOCATED from slot 3 (cs-brand-V8) → slot 2 (cs-1m8) per Dave 'move these two slides and any new brand slide you are working on as pink dot slides next to the slide with the text below: What we give fuels our communities.' That's cs-1m8 — which sits at slot 2 in SLIDE_ORDER. cs-1m8-fuels (the new particle-galaxy variant anchored to "What we give fuels our communities.") also added here. Slot 3 (cs-brand-V8) now carries no alts; if Dave wants the brand alts to live under the brand slide again later, just move them back.
   // [Dave 2026-05-19] Slot 14 = cs-fv6-img after Munger; slot 15 = cs-givefirst-art; slot 16 = cs-magnetic.
-  16: [], // [Dave 2026-05-26] cs-givefirst-brand detached after cs-givefirst-art moved to appendix.
-  16: ['cs-unmeasured-value'],
+  16: [], // [Codex 2026-05-30] cs-unmeasured-value deleted per attached screenshot request; previous detached slot remains empty.
+  19: ['cs-value-choice-image-only-pink'],
   // [Codex 2026-05-27] Slot-13/14 alts detached after cs-3 and cs-19 were removed from the active flow.
   15: ['cs-racketeer-padel-club-pink'],
   13: [],
@@ -32111,7 +32244,7 @@ const SLIDE_ALTS = {
   5: [],
   // [Dave 2026-05-20] Dinner/Torch VC alt moved to TRASH_ORDER so it stays recoverable without occupying the deck/appendix review system.
   // [Codex 2026-05-30] Pink-dot image-led silliness variants for current active cs-pb-silliness-feature slot.
-  23: ['cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink'],
+  23: ['cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink', 'cs-pb-silliness-image-net-pink', 'cs-pb-silliness-image-open-pink', 'cs-pb-silliness-image-map-pink'],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
   // [Dave 2026-05-15] Key shifted 20 → 21 after cs-givefirst inserted at slot 18 (after the Wheelhouse slide). cs-16 is now at slot 21.
   // [Dave 2026-05-14 PM v4 c] cs-funnel added as second red-dot alt (further LEFT than cs-16old) per Dave: 'create a new red dot slide to the left of this one, and rethink it, reimagine it as a SALES FUNNEL — a human value sales funnel which is exactly what GnR is.'
@@ -32202,7 +32335,7 @@ if (document.documentElement.dataset.pdf === '1') {
   })();
 }
 const ORANGE_REVIEW_POSITIONS = [];
-const ORANGE_REVIEW_ALTS = ['cs-merge3'];
+const ORANGE_REVIEW_ALTS = [];
 // LOCKED_POSITIONS: emptied per Dave 2026-05-07 — green dots removed from nav, red review dot kept.
 // Locked-state still tracked in comments/git; just no longer rendered as a UI marker.
 const LOCKED_POSITIONS = [];
@@ -32341,6 +32474,7 @@ const TRASH_ORDER = [
   'cs-frontier-brand-bg-pink',
   'cs-value-screen',
   'cs-magnetic-reciprocity-system',
+  'cs-merge3',
 ];
 const TRASH_TOTAL = TRASH_ORDER.length;
 // Concept review rail. Separate from main deck, appendix, trash, and slot alts.
@@ -32864,11 +32998,11 @@ window.C2C_STORIES = {
     const feed = story.feed || [];
     const moments = story.moments || story.nodes || [];
     return '<div class="c2c-story-route">' +
-      '<div class="c2c-story-block c2c-story-profile"><h4>Onboard</h4><div class="c2c-story-tokens">' + profile.map(tokenHtml).join('') + '</div><div class="c2c-story-note">learns who this person is</div></div>' +
+      '<div class="c2c-story-block c2c-story-profile"><h4>Know</h4><div class="c2c-story-tokens">' + profile.map(tokenHtml).join('') + '</div></div>' +
       '<div class="c2c-story-arrow">&rarr;</div>' +
-      '<div class="c2c-story-block c2c-story-feed"><h4>Personalized invitation feed</h4>' + feed.map(feedHtml).join('') + '</div>' +
+      '<div class="c2c-story-block c2c-story-feed"><h4>Invite</h4>' + feed.map(feedHtml).join('') + '</div>' +
       '<div class="c2c-story-arrow">&rarr;</div>' +
-      '<div class="c2c-story-block c2c-story-moments"><h4>Real-world moments</h4><div class="c2c-story-moment-grid">' + moments.map(momentHtml).join('') + '</div><div class="c2c-story-note">the community gets easier to enter</div></div>' +
+      '<div class="c2c-story-block c2c-story-moments"><h4>Belong</h4><div class="c2c-story-moment-grid">' + moments.map(momentHtml).join('') + '</div></div>' +
       '</div>';
   }
   window.c2cOpenStory = function(key, event) {
@@ -34118,7 +34252,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 → pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-padel-club-pink' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-padel-club-pink' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
