@@ -31539,7 +31539,7 @@ const SLIDE_ORDER = [
   'cs-wedge1',     // "The next great network is the one that helps us find ourselves and find each other."
   'cs-mv6-merge', // HUMANITY'S ENDGAME - mission/demand curve moved to final-quarter vision section.
   'cs-value-choice', // [Codex 2026-05-28] New active brainstorm slide: most valuable product is abundant human connection.
-  'cs-value-screen',
+  // [Codex 2026-05-29] cs-value-screen moved to TRASH_ORDER per Dave screenshot delete request. HTML remains as rollback source.
   'cs-app-store-people',
   // [Codex 2026-05-29] cs-value-product removed from active main flow per Dave screenshot delete request. HTML remains as rollback source.
   // [Codex 2026-05-27] cs-18-vd4 removed from active main flow per Dave screenshot delete request. HTML remains as rollback source.
@@ -31655,7 +31655,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST] Dave deleted att1 (The Question), att2 (Tech & Open Heart), att4 (Humanity/Community/Technology) via 3 separate 'delete this slide' messages. Only att3 (Four Truths) survives as the purple-dot alt. HTML for the deleted attempts retained as silent backups.
   // [Dave 2026-05-18 LATEST v4] cs-brand-V8 alts MOVED to key 18 (above). Slot 23 now = cs-27 (CTO Steve Callan) with no alts.
   // [Dave 2026-05-18 LATEST v9] cs-fw1 was slot 24; now slot 23 after cs-a7m1 demotion (was 25 before cs-brand-V8 v6). cs-16 stays as PINK-DOT alt.
-  25: ['cs-16'],
+  24: ['cs-16'],
   // [Dave 2026-05-17 LATEST] NEW slot 2 = cs-givefirst-slide2 (give-first duplicate). No alts. All keys past slot 1 shifted +1.
   // [Dave 2026-05-18 LATEST v6] Brand pink-dot alts for cs-1m8 (slot 2). cs-brand-V8 demoted from main slot 3 → leftmost pink-dot alt here. cs-1m8-codexmerge + cs-1m8-envelopes added (codex-merge variants). cs-brand-mono REMOVED.
   // [Dave 2026-05-18 LATEST v9] cs-a7m1 added as a RED-DOT alt at the FAR LEFT of the slot-2 dot strip (furthest from primary). It's the old "Social media is an extremely narrow view" slide that just demoted from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'.
@@ -31750,7 +31750,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-25] cs-mv6-networked removed from live slot-5 alts after rendering as a blank cream slide. HTML retained below as hidden rollback only.
   5: [],
   // [Dave 2026-05-20] Dinner/Torch VC alt moved to TRASH_ORDER so it stays recoverable without occupying the deck/appendix review system.
-  24: [],
+  23: [],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
   // [Dave 2026-05-15] Key shifted 20 → 21 after cs-givefirst inserted at slot 18 (after the Wheelhouse slide). cs-16 is now at slot 21.
   // [Dave 2026-05-14 PM v4 c] cs-funnel added as second red-dot alt (further LEFT than cs-16old) per Dave: 'create a new red dot slide to the left of this one, and rethink it, reimagine it as a SALES FUNNEL — a human value sales funnel which is exactly what GnR is.'
@@ -31978,6 +31978,7 @@ const TRASH_ORDER = [
   'cs-1m8-title-C',
   'cs-pb-silliness-scroll',
   'cs-frontier-brand-bg-pink',
+  'cs-value-screen',
 ];
 const TRASH_TOTAL = TRASH_ORDER.length;
 // Concept review rail. Separate from main deck, appendix, trash, and slot alts.
