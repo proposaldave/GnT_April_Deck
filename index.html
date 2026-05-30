@@ -12811,30 +12811,227 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-pb-silliness-feature .psj-anim,
   html[data-export="1"] #cs-pb-silliness-scroll .psj-anim,
   html[data-export="1"] #cs-pb-silliness-dupr .psj-anim { opacity:1 !important; transform:none !important; transition:none !important; }
+  #cs-pb-silliness-feature,
+  #cs-pb-silliness-carnival-pink,
+  #cs-pb-silliness-ritual-pink {
+    background:#f3ead8 !important;
+    overflow:hidden;
+    position:absolute;
+    inset:0;
+    color:#1a1612;
+  }
+  #cs-pb-silliness-feature.active,
+  #cs-pb-silliness-carnival-pink.active,
+  #cs-pb-silliness-ritual-pink.active { display:block !important; }
+  .psb-eye {
+    position:absolute; top:28px; left:48px; z-index:7;
+    font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+    color:#c8462c;
+  }
+  .psb-bg {
+    position:absolute; inset:0; overflow:hidden;
+    background:
+      radial-gradient(circle at 18% 24%, rgba(91,143,212,.22) 0 8%, transparent 22%),
+      radial-gradient(circle at 76% 20%, rgba(184,149,74,.22) 0 10%, transparent 24%),
+      radial-gradient(circle at 84% 78%, rgba(200,70,44,.18) 0 8%, transparent 23%),
+      linear-gradient(135deg, #fbf7ef 0%, #f3ead8 48%, #eadfca 100%);
+  }
+  .psb-court {
+    position:absolute; left:6.2%; right:5.4%; top:10.8%; bottom:8.2%;
+    border:3px solid rgba(91,143,212,.72);
+    box-shadow:0 34px 90px rgba(26,22,18,.14), inset 0 0 0 22px rgba(251,247,239,.38);
+    background:
+      linear-gradient(90deg, transparent 0 49.8%, rgba(26,22,18,.36) 49.8% 50.2%, transparent 50.2% 100%),
+      linear-gradient(0deg, transparent 0 32%, rgba(91,143,212,.42) 32% 32.3%, transparent 32.3% 67.7%, rgba(91,143,212,.42) 67.7% 68%, transparent 68% 100%),
+      linear-gradient(90deg, rgba(91,143,212,.09), rgba(251,247,239,.54) 52%, rgba(184,149,74,.10));
+  }
+  .psb-court::before {
+    content:""; position:absolute; left:50%; top:-3px; bottom:-3px; width:3px;
+    background:repeating-linear-gradient(to bottom, rgba(26,22,18,.48) 0 9px, transparent 9px 18px);
+  }
+  .psb-arc {
+    position:absolute; width:42%; height:18%; border-top:6px solid rgba(184,149,74,.78); border-radius:50%;
+    transform:rotate(-8deg); left:29%; top:39%;
+  }
+  .psb-ball {
+    position:absolute; width:54px; height:54px; border-radius:50%; background:#c8462c; left:56%; top:50%;
+    box-shadow:0 0 0 18px rgba(200,70,44,.13), 0 20px 42px rgba(26,22,18,.18);
+  }
+  .psb-ball::before,
+  .psb-ball::after { content:""; position:absolute; width:8px; height:8px; border-radius:50%; background:#fbf7ef; top:18px; }
+  .psb-ball::before { left:15px; }
+  .psb-ball::after { right:15px; }
+  .psb-label,
+  .psb-chip,
+  .psb-ticket {
+    position:absolute;
+    font-family:'Manrope',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.15em;
+    font-weight:900;
+    color:#1a1612;
+    background:rgba(251,247,239,.88);
+    border:1px solid rgba(184,149,74,.34);
+    box-shadow:0 18px 38px rgba(26,22,18,.11);
+  }
+  .psb-label { padding:15px 22px; font-size:.73rem; }
+  .psb-label b { display:block; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.74rem; line-height:.92; letter-spacing:0; text-transform:none; color:#5B8FD4; margin-top:5px; }
+  .psb-chip { padding:12px 16px; font-size:.66rem; border-left:5px solid #c8462c; }
+  .psb-ticket { padding:17px 19px; font-size:.68rem; transform:rotate(var(--r,0deg)); }
+  .psb-ticket b { display:block; margin-bottom:5px; color:#c8462c; }
+  .psb-story {
+    position:absolute; left:110px; bottom:94px; width:690px; z-index:6;
+    padding:28px 34px 30px;
+    background:linear-gradient(90deg, rgba(26,22,18,.96), rgba(26,22,18,.88)) !important;
+    border-left:7px solid #c8462c;
+    box-shadow:0 28px 70px rgba(26,22,18,.24);
+  }
+  .psb-kicker {
+    margin:0 0 12px;
+    font-family:'Manrope',sans-serif; font-size:.72rem; line-height:1.1; letter-spacing:.19em; text-transform:uppercase; font-weight:900;
+    color:#b8954a;
+  }
+  .psb-story h1 {
+    margin:0;
+    font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:3.42rem; line-height:.93; letter-spacing:-.015em; font-weight:900;
+    color:#fbf7ef;
+  }
+  .psb-story h1 em { color:#5B8FD4; font-style:italic; }
+  .psb-story p:last-child {
+    margin:18px 0 0;
+    font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.16rem; line-height:1.22; font-weight:650;
+    color:rgba(251,247,239,.82);
+  }
+  .psb-side-note {
+    position:absolute; right:88px; bottom:82px; width:390px; z-index:6;
+    font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.65rem; line-height:1.06; font-weight:850;
+    color:#1a1612;
+    background:rgba(251,247,239,.97);
+    border:1px solid rgba(184,149,74,.34);
+    padding:24px 26px;
+    box-shadow:0 22px 48px rgba(26,22,18,.12);
+  }
+  .psb-side-note b { color:#c8462c; }
+  .psb-line {
+    position:absolute; height:2px; background:rgba(91,143,212,.45); transform-origin:left center;
+  }
+  .psb-silly-stack { position:absolute; right:82px; top:126px; display:grid; gap:10px; z-index:4; }
+  .psb-silly-stack span {
+    display:block; width:210px; padding:12px 13px; background:rgba(251,247,239,.82); border:1px solid rgba(184,149,74,.32);
+    font-family:'Manrope',sans-serif; font-size:.64rem; line-height:1.05; font-weight:900; letter-spacing:.13em; text-transform:uppercase; color:#1a1612;
+    box-shadow:0 12px 24px rgba(26,22,18,.08);
+  }
+  .psb-version-title {
+    position:absolute; left:78px; top:104px; z-index:6; max-width:1060px;
+    font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:5.25rem; line-height:.92; letter-spacing:-.027em; font-weight:900;
+  }
+  .psb-version-title em { color:#5B8FD4; font-style:italic; }
+  .psb-version-sub {
+    position:absolute; left:82px; top:316px; z-index:6; max-width:780px;
+    font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.7rem; line-height:1.18; font-weight:650; color:rgba(26,22,18,.74);
+  }
+  .psb-carnival .psb-court { left:40%; right:5.5%; top:13%; bottom:9%; transform:rotate(-2.4deg); }
+  .psb-carnival .psb-ticket { width:220px; text-align:center; }
+  .psb-ritual .psb-court { left:7%; right:7%; top:20%; bottom:13%; }
+  .psb-ritual-path {
+    position:absolute; left:126px; right:126px; top:438px; height:186px; z-index:5;
+    border-top:5px solid rgba(184,149,74,.74); border-radius:50%; transform:rotate(-2deg);
+  }
+  .psb-step {
+    position:absolute; z-index:6; width:232px; min-height:122px; padding:20px 20px 18px;
+    background:rgba(251,247,239,.9); border:1px solid rgba(184,149,74,.36); box-shadow:0 18px 38px rgba(26,22,18,.11);
+  }
+  .psb-step b { display:block; font-family:'Manrope',sans-serif; font-size:.67rem; letter-spacing:.16em; text-transform:uppercase; color:#c8462c; margin-bottom:8px; }
+  .psb-step span { display:block; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.5rem; line-height:1.04; font-weight:850; color:#1a1612; }
+  .psb-slide .psb-bg,
+  .psb-slide .psb-story,
+  .psb-slide .psb-version-title,
+  .psb-slide .psb-version-sub,
+  .psb-slide .psb-side-note,
+  .psb-slide .psb-step { opacity:0; transform:translateY(14px); transition:opacity .72s cubic-bezier(.22,1,.36,1), transform .72s cubic-bezier(.22,1,.36,1); }
+  .psb-slide.casey-entered .psb-bg,
+  .psb-slide.casey-entered .psb-story,
+  .psb-slide.casey-entered .psb-version-title,
+  .psb-slide.casey-entered .psb-version-sub,
+  .psb-slide.casey-entered .psb-side-note,
+  .psb-slide.casey-entered .psb-step { opacity:1; transform:none; }
+  .psb-slide.casey-entered .psb-story,
+  .psb-slide.casey-entered .psb-side-note { transition-delay:.16s; }
+  .psb-slide.casey-entered .psb-step:nth-of-type(2) { transition-delay:.12s; }
+  .psb-slide.casey-entered .psb-step:nth-of-type(3) { transition-delay:.20s; }
+  .psb-slide.casey-entered .psb-step:nth-of-type(4) { transition-delay:.28s; }
+  .psb-slide.casey-entered .psb-step:nth-of-type(5) { transition-delay:.36s; }
+  html[data-export="1"] .psb-slide .psb-bg,
+  html[data-export="1"] .psb-slide .psb-story,
+  html[data-export="1"] .psb-slide .psb-version-title,
+  html[data-export="1"] .psb-slide .psb-version-sub,
+  html[data-export="1"] .psb-slide .psb-side-note,
+  html[data-export="1"] .psb-slide .psb-step { opacity:1 !important; transform:none !important; transition:none !important; }
 </style>
 
-<div class="casey-slide ds-focus psj-slide" id="cs-pb-silliness-feature" style="display:none">
-  <div class="psj-eye">why pickleball works</div>
-  <section class="psj-stage">
-    <div class="psj-copy psj-anim">
-      <h1 class="psj-title">Pickleball is silly because it <em>lowers ego.</em></h1>
-      <p class="psj-sub">That is why it works socially: people laugh, rotate, apologize for net drips, and show who they are before they protect a rating.</p>
-      <p class="psj-sub psj-kuhn-byline">&ldquo;People were not taking pickleball seriously... it was a weird sport with a funny name. I thought that was just a vast market mistake.&rdquo; &mdash; Steve Kuhn &middot; MLP / DUPR founder</p>
-      <div class="psj-signal">
-        <div class="psj-signal-row"><b>Surface</b><span>silly name, dinks, kitchen, wiffle ball</span></div>
-        <div class="psj-signal-row"><b>Effect</b><span>guard down, belonging up, signal visible</span></div>
-        <div class="psj-signal-row"><b>Scale</b><span>24.3M players; 171.8% growth from 2022-2025</span></div>
-      </div>
+<div class="casey-slide ds-focus psj-slide psb-slide" id="cs-pb-silliness-feature" style="display:none">
+  <div class="psb-eye">why pickleball works</div>
+  <div class="psb-bg" aria-hidden="true">
+    <div class="psb-court"></div>
+    <div class="psb-arc"></div>
+    <div class="psb-ball"></div>
+    <div class="psb-line" style="left:18%;top:27%;width:33%;transform:rotate(13deg)"></div>
+    <div class="psb-line" style="left:47%;top:61%;width:31%;transform:rotate(-18deg)"></div>
+    <div class="psb-label" style="left:10%;top:15%">absurd word<b>dink</b></div>
+    <div class="psb-label" style="right:19%;top:18%">off-limits place<b>kitchen</b></div>
+    <div class="psb-label" style="left:22%;top:43%">lucky apology<b>net drip</b></div>
+    <div class="psb-label" style="right:12%;top:52%">toy ball<b>wiffle</b></div>
+    <div class="psb-ticket" style="left:62%;bottom:23%;--r:5deg"><b>ritual</b>tap paddles with the person you just tried to beat</div>
+    <div class="psb-ticket" style="left:39%;top:18%;--r:-4deg"><b>rotation</b>strangers become partners every ten minutes</div>
+    <div class="psb-chip" style="left:13%;bottom:27%">laugh first</div>
+    <div class="psb-chip" style="left:33%;bottom:18%">say sorry</div>
+    <div class="psb-chip" style="right:29%;bottom:13%">play again</div>
+    <div class="psb-silly-stack">
+      <span>funny name</span>
+      <span>underhand serve</span>
+      <span>skinny singles</span>
+      <span>open play chaos</span>
+      <span>ratings talk</span>
+      <span>everybody rotates</span>
     </div>
-    <div class="psj-board psj-anim" aria-hidden="true">
-      <div class="psj-court"><div class="psj-net"></div><div class="psj-trail"></div><div class="psj-ball"></div></div>
-      <div class="psj-chip psj-feature-pill p1">silly name</div>
-      <div class="psj-chip psj-feature-pill p2">kitchen zone</div>
-      <div class="psj-chip psj-feature-pill p3">lucky net drip</div>
-      <div class="psj-chip psj-feature-pill p4">dinks count</div>
-      <div class="psj-bug"><b>ego down</b><span>The weird parts make the social signal visible.</span></div>
-    </div>
-  </section>
+  </div>
+  <div class="psb-story">
+    <p class="psb-kicker">all the silly parts are the product</p>
+    <h1>The weird parts <em>lower ego.</em></h1>
+    <p>Adults say ridiculous words, apologize for lucky shots, rotate with strangers, and laugh before they posture. That is why pickleball becomes a social wedge.</p>
+  </div>
+  <div class="psb-side-note"><b>Silly</b> makes the signal visible: who welcomes, who laughs, who includes, who gets invited back.</div>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psb-slide psb-carnival" id="cs-pb-silliness-carnival-pink" style="display:none">
+  <div class="psb-eye">why pickleball works</div>
+  <div class="psb-bg" aria-hidden="true">
+    <div class="psb-court"></div>
+    <div class="psb-ball" style="left:73%;top:39%"></div>
+    <div class="psb-ticket" style="left:41%;top:18%;--r:-8deg"><b>name</b>pickleball</div>
+    <div class="psb-ticket" style="right:10%;top:24%;--r:5deg"><b>place</b>the kitchen</div>
+    <div class="psb-ticket" style="left:50%;top:46%;--r:4deg"><b>shot</b>dink</div>
+    <div class="psb-ticket" style="right:15%;bottom:19%;--r:-5deg"><b>proof</b>net cord apology</div>
+    <div class="psb-ticket" style="left:67%;bottom:36%;--r:8deg"><b>object</b>plastic ball</div>
+  </div>
+  <h1 class="psb-version-title">Every silly word is an <em>ego trapdoor.</em></h1>
+  <p class="psb-version-sub">The sport disarms status before anyone can defend it. Then the room can see the human signal GnR measures.</p>
+  <div class="psb-side-note" style="right:auto;left:82px;bottom:88px;width:560px">Silliness turns competition into belonging: laugh, rotate, include, remember, invite back.</div>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psb-slide psb-ritual" id="cs-pb-silliness-ritual-pink" style="display:none">
+  <div class="psb-eye">why pickleball works</div>
+  <div class="psb-bg" aria-hidden="true">
+    <div class="psb-court"></div>
+    <div class="psb-ritual-path"></div>
+    <div class="psb-ball" style="left:48%;top:45%"></div>
+  </div>
+  <h1 class="psb-version-title">The game teaches belonging before <em>status.</em></h1>
+  <p class="psb-version-sub">A goofy ritual loop creates the exact behaviors a real-world social network needs.</p>
+  <div class="psb-step" style="left:132px;bottom:122px"><b>01 silly name</b><span>guard drops before the first point</span></div>
+  <div class="psb-step" style="left:480px;bottom:214px"><b>02 mixed partners</b><span>new people become safe fast</span></div>
+  <div class="psb-step" style="right:518px;bottom:168px"><b>03 lucky shot</b><span>the apology is part of the charm</span></div>
+  <div class="psb-step" style="right:142px;bottom:246px"><b>04 paddle tap</b><span>the room decides who it wants again</span></div>
 </div>
 
 <div class="casey-slide ds-focus psj-slide" id="cs-pb-silliness-scroll" style="display:none">
@@ -16140,11 +16337,11 @@ window.cs1m7Reverse = function() {
 <style>
   #cs-racketeer-att-arc { background:#fbf7ef !important; overflow:hidden; }
   #cs-racketeer-att-arc::before { content:""; position:absolute; inset:0; background:
-    linear-gradient(90deg, rgba(251,247,239,.96) 0%, rgba(251,247,239,.86) 50%, rgba(251,247,239,.54) 76%, rgba(251,247,239,.32) 100%),
-    linear-gradient(180deg, rgba(251,247,239,.64) 0%, rgba(251,247,239,.12) 46%, rgba(26,22,18,.20) 100%),
+    linear-gradient(90deg, rgba(251,247,239,.93) 0%, rgba(251,247,239,.80) 50%, rgba(251,247,239,.46) 76%, rgba(251,247,239,.24) 100%),
+    linear-gradient(180deg, rgba(251,247,239,.58) 0%, rgba(251,247,239,.08) 46%, rgba(26,22,18,.18) 100%),
     url("assets/cs-racketeer-padel-club-indoor-bg.png") center center / cover no-repeat,
     #fbf7ef; pointer-events:none; z-index:1; }
-  #cs-racketeer-att-arc::after { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 63% 78%, rgba(184,149,74,0.16) 0%, rgba(184,149,74,0.06) 38%, transparent 70%),linear-gradient(90deg, rgba(251,247,239,.34) 0%, transparent 38%, rgba(251,247,239,.24) 100%); pointer-events:none; z-index:2; }
+  #cs-racketeer-att-arc::after { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 63% 78%, rgba(184,149,74,0.12) 0%, rgba(184,149,74,0.04) 38%, transparent 70%),linear-gradient(90deg, rgba(251,247,239,.28) 0%, transparent 38%, rgba(251,247,239,.18) 100%); pointer-events:none; z-index:2; }
   #cs-racketeer-att-arc .rka-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:64px 80px 50px; z-index:3; gap:14px; }
   #cs-racketeer-att-arc .rka-head-row { display:grid; grid-template-columns:1.4fr auto; gap:32px; width:100%; max-width:1500px; align-items:center; margin-bottom:6px; }
   #cs-racketeer-att-arc .rka-head-text { display:flex; flex-direction:column; gap:6px; }
@@ -19831,9 +20028,12 @@ window.csBrandV8Reverse = function() {
   #cs-value-choice .vc-icon.iphone { background:linear-gradient(180deg,#f8f3ea,#8b908f); }
   #cs-value-choice .vc-icon.iphone::before { content:""; width:20px; height:32px; border-radius:5px; border:2px solid #1a1612; background:linear-gradient(180deg,#2d3235,#0e1012); box-shadow:0 0 0 2px rgba(251,247,239,0.52); }
   #cs-value-choice .vc-icon.google { background:conic-gradient(from -45deg,#4285f4 0 25%,#34a853 0 50%,#fbbc05 0 75%,#ea4335 0); color:#fbf7ef; font-size:1.2rem; }
-  #cs-value-choice .vc-icon.ai { background:radial-gradient(circle at 50% 46%, rgba(91,143,212,0.90), rgba(26,22,18,0.88) 64%); }
-  #cs-value-choice .vc-icon.ai::before, #cs-value-choice .vc-icon.room::before { content:""; width:24px; height:24px; border-radius:50%; border:1px solid rgba(251,247,239,0.62); box-shadow:0 -14px 0 -8px #fbf7ef, 13px 8px 0 -8px #fbf7ef, -13px 8px 0 -8px #fbf7ef; }
-  #cs-value-choice .vc-icon.coke { background:#c8462c; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.45rem; font-style:italic; }
+  #cs-value-choice .vc-icon.ai { gap:2px; background:linear-gradient(135deg, rgba(251,247,239,0.92), rgba(184,149,74,0.30)); }
+  #cs-value-choice .vc-icon.ai svg { display:block; flex:0 0 auto; }
+  #cs-value-choice .vc-icon.room::before { content:""; width:24px; height:24px; border-radius:50%; border:1px solid rgba(251,247,239,0.62); box-shadow:0 -14px 0 -8px #fbf7ef, 13px 8px 0 -8px #fbf7ef, -13px 8px 0 -8px #fbf7ef; }
+  #cs-value-choice .vc-icon.coke { background:#c8462c; font-size:0; box-shadow:inset 0 0 0 1px rgba(251,247,239,0.18), 0 8px 18px rgba(200,70,44,0.24); }
+  #cs-value-choice .vc-icon.coke::before { content:"Coca\A Cola"; white-space:pre; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:.82rem; font-weight:900; font-style:italic; line-height:.78; letter-spacing:-.01em; color:#fbf7ef; text-align:center; transform:rotate(-7deg); text-shadow:0 1px 0 rgba(26,22,18,.18); }
+  #cs-value-choice .vc-icon.coke::after { content:""; position:absolute; left:8px; right:8px; bottom:10px; height:2px; border-radius:999px; background:#fbf7ef; transform:rotate(-8deg); opacity:.86; }
   #cs-value-choice .vc-icon.room { background:radial-gradient(circle, rgba(184,149,74,0.82), rgba(26,22,18,0.78) 68%); }
   #cs-value-choice .vc-item.answer { background:rgba(184,149,74,0.22); border-color:rgba(184,149,74,0.72); color:#fbf7ef; box-shadow:0 12px 38px rgba(184,149,74,0.18); }
   #cs-value-choice .vc-item.answer .vc-copy b { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.12rem; font-style:italic; letter-spacing:0; text-transform:none; color:#fbf7ef; }
@@ -19898,10 +20098,12 @@ window.csBrandV8Reverse = function() {
   #cs-app-store-people .asp-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; filter:saturate(.96) contrast(1.03); z-index:0; }
   #cs-app-store-people .asp-wash { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(90deg, rgba(251,247,239,.92) 0%, rgba(251,247,239,.80) 32%, rgba(251,247,239,.36) 61%, rgba(26,22,18,.20) 100%), linear-gradient(180deg, rgba(251,247,239,.58) 0%, rgba(251,247,239,.08) 58%, rgba(26,22,18,.34) 100%); }
   #cs-app-store-people .asp-eye { position:absolute; top:28px; left:48px; z-index:3; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#c8462c; }
-  #cs-app-store-people .asp-stage { position:absolute; inset:0; z-index:2; display:grid; grid-template-columns:minmax(560px,.72fr) minmax(620px,.88fr); align-items:center; gap:54px; padding:104px 76px 62px; }
+  #cs-app-store-people .asp-stage { position:absolute; inset:0; z-index:2; display:grid; grid-template-columns:minmax(560px,.72fr) minmax(560px,.78fr); align-items:center; gap:54px; padding:104px 76px 62px; }
+  #cs-app-store-people .asp-copy { max-width:790px; }
   #cs-app-store-people .asp-quote { margin:0; max-width:790px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.4rem,5.5vw,6.1rem); font-weight:850; line-height:.98; letter-spacing:-.026em; color:#1a1612; text-wrap:balance; }
   #cs-app-store-people .asp-quote em { color:#b8954a; font-style:italic; }
-  #cs-app-store-people .asp-video { width:100%; aspect-ratio:16/9; border:1px solid rgba(184,149,74,.62); background:#1a1612; box-shadow:0 24px 54px rgba(26,22,18,.28); overflow:hidden; }
+  #cs-app-store-people .asp-byline { margin-top:24px; font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:800; letter-spacing:.20em; text-transform:uppercase; color:#b8954a; }
+  #cs-app-store-people .asp-video { width:92%; justify-self:center; aspect-ratio:16/9; border:1px solid rgba(184,149,74,.62); background:#1a1612; box-shadow:0 24px 54px rgba(26,22,18,.28); overflow:hidden; }
   #cs-app-store-people .asp-video iframe { display:block; width:100%; height:100%; border:0; background:#1a1612; }
   #cs-app-store-people.casey-entered .asp-quote, #cs-app-store-people.casey-entered .asp-video { animation:vcRise .76s cubic-bezier(.22,1,.36,1) both; }
   #cs-app-store-people.casey-entered .asp-video { animation-delay:.16s; }
@@ -19924,13 +20126,24 @@ window.csBrandV8Reverse = function() {
         <div class="vc-item"><div class="vc-icon netflix">N</div><div class="vc-copy"><b>Netflix</b><small>streaming subscription</small></div><div class="vc-dollars">$300B+ sold</div></div>
         <div class="vc-item"><div class="vc-icon iphone"></div><div class="vc-copy"><b>iPhone</b><small>3B devices shipped</small></div><div class="vc-dollars">$2T+ sold</div></div>
         <div class="vc-item"><div class="vc-icon google">G</div><div class="vc-copy"><b>Google Ads</b><small>the world's information</small></div><div class="vc-dollars">$3T+ sold</div></div>
-        <div class="vc-item"><div class="vc-icon ai"></div><div class="vc-copy"><b>AI</b><small>the world's intelligence</small></div><div class="vc-dollars">$2.5T spend</div></div>
+        <div class="vc-item"><div class="vc-icon ai" title="OpenAI · Anthropic" aria-label="OpenAI and Anthropic logos">
+          <svg viewBox="0 0 36 36" width="24" height="24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g fill="none" stroke="#1a1612" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(0 18 18)"/>
+              <ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(60 18 18)"/>
+              <ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(120 18 18)"/>
+            </g>
+          </svg>
+          <svg viewBox="0 0 64 64" width="19" height="19" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M27.4 13.6h9.2L52 50.4h-9.2l-3.1-7.6H22.3l-3.1 7.6H10z" fill="#c8462c"/>
+            <path d="M32 23.2 25.4 39h13.2z" fill="#fbf7ef"/>
+          </svg>
+        </div><div class="vc-copy"><b>AI</b><small>the world's intelligence</small></div><div class="vc-dollars">$2.5T spend</div></div>
         <div class="vc-item"><div class="vc-icon coke">C</div><div class="vc-copy"><b>Coca-Cola</b><small>iconic everyday consumption</small></div><div class="vc-dollars">$1T+ sold</div></div>
-        <div class="vc-item answer"><div class="vc-icon room"></div><div class="vc-copy"><b>Abundant human connection</b><div class="vc-gnr-line"><span class="vc-gnr-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span><span>the room people remember</span></div></div><div class="vc-dollars">?</div></div>
+        <div class="vc-item answer"><div class="vc-icon room"></div><div class="vc-copy"><b>Abundant human connection</b><div class="vc-gnr-line"><span class="vc-gnr-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span><span>the connection people remember</span></div></div><div class="vc-dollars">?</div></div>
       </div>
     </div>
     <div class="vc-right">
-      <h2 class="vc-answer">The answer is not on the screen.<br><em>It is the room.</em></h2>
     </div>
   </section>
 </div>
@@ -19986,7 +20199,10 @@ window.csBrandV8Reverse = function() {
   <div class="asp-wash" aria-hidden="true"></div>
   <div class="asp-eye">App Store for People</div>
   <section class="asp-stage">
-    <h1 class="asp-quote">&ldquo;I envision an app store for <em>people.</em>&rdquo;</h1>
+    <div class="asp-copy">
+      <h1 class="asp-quote">&ldquo;I envision an app store for <em>people.</em>&rdquo;</h1>
+      <div class="asp-byline">Brian Chesky</div>
+    </div>
     <div class="asp-video">
       <iframe src="https://drive.google.com/file/d/1sk44-woFi5l384ue0QtzHSBXLPLhkTc3/preview" allow="autoplay; fullscreen" allowfullscreen title="Brian Chesky app store for people video"></iframe>
     </div>
@@ -22568,28 +22784,31 @@ window.csBrandV8Reverse = function() {
   .spwd-slide .spwd-step{min-height:76px;border-radius:8px;background:rgba(184,149,74,.10);border:1px solid rgba(184,149,74,.34);display:grid;place-items:center;padding:10px;font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:950;letter-spacing:.12em;text-transform:uppercase;color:#1a1612;text-align:center}
   .spwd-slide .spwd-step.blue{background:rgba(91,143,212,.11);border-color:rgba(91,143,212,.34)}
   .spwd-slide .spwd-step.red{background:rgba(200,70,44,.09);border-color:rgba(200,70,44,.30);color:#c8462c}
-  #cs-magnetic-human-value-market .spwd-bg.frontier{opacity:.88}
-  #cs-magnetic-human-value-market .spwd-wash.frontier{background:linear-gradient(90deg,rgba(251,247,239,.84) 0%,rgba(251,247,239,.68) 43%,rgba(251,247,239,.42) 60%,rgba(251,247,239,.22) 100%)}
+  #cs-magnetic-human-value-market .spwd-bg.frontier{opacity:.78;filter:saturate(.92) contrast(1.04)}
+  #cs-magnetic-human-value-market .spwd-wash.frontier{background:radial-gradient(circle at 76% 46%,rgba(184,149,74,.06) 0%,rgba(184,149,74,0) 34%),linear-gradient(90deg,rgba(251,247,239,.94) 0%,rgba(251,247,239,.82) 39%,rgba(251,247,239,.54) 68%,rgba(251,247,239,.78) 100%)}
   #cs-magnetic-human-value-market .spwd-eyebrow{color:#b8954a}
-  #cs-magnetic-human-value-market .spwd-market{grid-template-columns:.88fr 1.12fr;gap:42px;padding:110px 86px 76px}
+  #cs-magnetic-human-value-market .spwd-market{grid-template-columns:.82fr 1.18fr;gap:34px;padding:108px 76px 62px}
   #cs-magnetic-human-value-market .spwd-market-copy,
-  #cs-magnetic-human-value-market .spwd-era-stack{position:relative;border-radius:8px;background:rgba(251,247,239,.72);border:1.4px solid rgba(26,22,18,.12);box-shadow:0 22px 58px rgba(26,22,18,.10);backdrop-filter:blur(5px);overflow:hidden}
-  #cs-magnetic-human-value-market .spwd-market-copy{min-height:680px;padding:34px 38px 38px;border-color:rgba(91,143,212,.26)}
-  #cs-magnetic-human-value-market .spwd-era-stack{min-height:680px;display:grid;grid-template-rows:auto 1fr auto;gap:0;max-width:980px;justify-self:stretch;padding:34px 42px 36px;border-color:rgba(184,149,74,.48);background:rgba(251,247,239,.78)}
-  #cs-magnetic-human-value-market .spwd-market-copy .spwd-era-label{color:#5B8FD4;margin-bottom:26px}
-  #cs-magnetic-human-value-market .spwd-market-title{font-size:clamp(2.25rem,4.05vw,4.65rem);line-height:.94;margin:0 0 34px}
+  #cs-magnetic-human-value-market .spwd-era-stack{position:relative;border-radius:8px;background:rgba(251,247,239,.76);border:1.4px solid rgba(26,22,18,.12);box-shadow:0 26px 70px rgba(26,22,18,.12);backdrop-filter:blur(5px);overflow:hidden}
+  #cs-magnetic-human-value-market .spwd-market-copy{min-height:692px;padding:38px 40px 38px;border-color:rgba(91,143,212,.30)}
+  #cs-magnetic-human-value-market .spwd-market-copy::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,#5B8FD4 0%,#b8954a 51%,#c8462c 100%)}
+  #cs-magnetic-human-value-market .spwd-era-stack{min-height:692px;display:grid;grid-template-rows:auto 1fr auto;gap:0;max-width:1010px;justify-self:stretch;padding:42px 48px 38px;border-color:rgba(184,149,74,.54);background:rgba(251,247,239,.84)}
+  #cs-magnetic-human-value-market .spwd-era-stack::before{content:"";position:absolute;inset:24px;border:1px solid rgba(184,149,74,.22);border-radius:8px;pointer-events:none}
+  #cs-magnetic-human-value-market .spwd-market-copy .spwd-era-label{color:#5B8FD4;margin-bottom:20px}
+  #cs-magnetic-human-value-market .spwd-market-title{font-size:clamp(2.35rem,4.2vw,4.85rem);line-height:.92;margin:0 0 28px}
   #cs-magnetic-human-value-market .spwd-market-sub{font-size:clamp(.92rem,1.02vw,1.08rem);max-width:none;color:rgba(26,22,18,.66)}
-  #cs-magnetic-human-value-market .spwd-frontier-list{display:grid;gap:16px;margin-top:28px}
-  #cs-magnetic-human-value-market .spwd-frontier-row{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:center;padding:16px 0;border-top:1px solid rgba(26,22,18,.12)}
-  #cs-magnetic-human-value-market .spwd-frontier-dot{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:rgba(91,143,212,.12);border:1.5px solid rgba(91,143,212,.45);font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:950;letter-spacing:.08em;color:#5B8FD4}
+  #cs-magnetic-human-value-market .spwd-frontier-list{display:grid;gap:0;margin-top:22px}
+  #cs-magnetic-human-value-market .spwd-frontier-row{display:grid;grid-template-columns:48px 1fr auto;gap:16px;align-items:center;padding:18px 0;border-top:1px solid rgba(26,22,18,.12)}
+  #cs-magnetic-human-value-market .spwd-frontier-dot{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:rgba(91,143,212,.12);border:1.5px solid rgba(91,143,212,.45);font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:950;letter-spacing:.08em;color:#5B8FD4}
   #cs-magnetic-human-value-market .spwd-frontier-row:nth-child(2) .spwd-frontier-dot{background:rgba(184,149,74,.13);border-color:rgba(184,149,74,.48);color:#b8954a}
   #cs-magnetic-human-value-market .spwd-frontier-row:nth-child(3) .spwd-frontier-dot{background:rgba(200,70,44,.10);border-color:rgba(200,70,44,.38);color:#c8462c}
-  #cs-magnetic-human-value-market .spwd-frontier-row h2{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.14rem,1.46vw,1.52rem);line-height:1.06;font-weight:850;color:#1a1612;margin:0}
+  #cs-magnetic-human-value-market .spwd-frontier-row h2{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.22rem,1.62vw,1.74rem);line-height:1.03;font-weight:850;color:#1a1612;margin:0}
   #cs-magnetic-human-value-market .spwd-frontier-row p{font-family:'Manrope',sans-serif;font-size:.78rem;line-height:1.25;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:rgba(26,22,18,.54);margin:5px 0 0}
-  #cs-magnetic-human-value-market .spwd-next-title{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.4rem,4.7vw,5.45rem);line-height:.9;font-weight:850;letter-spacing:0;color:#1a1612;margin:0;max-width:760px}
+  #cs-magnetic-human-value-market .spwd-frontier-value{font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,.44);white-space:nowrap}
+  #cs-magnetic-human-value-market .spwd-next-title{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.55rem,4.92vw,5.75rem);line-height:.88;font-weight:850;letter-spacing:0;color:#1a1612;margin:0;max-width:790px}
   #cs-magnetic-human-value-market .spwd-next-title em{font-style:italic;color:#b8954a}
-  #cs-magnetic-human-value-market .spwd-connection-map{align-self:center;justify-self:center;width:min(820px,100%);height:auto;margin:-8px 0 -2px;display:block}
-  #cs-magnetic-human-value-market .spwd-next-line{font-family:'Manrope',sans-serif;font-size:clamp(1.02rem,1.18vw,1.22rem);line-height:1.35;font-weight:900;color:rgba(26,22,18,.74);max-width:720px;margin:0}
+  #cs-magnetic-human-value-market .spwd-connection-map{align-self:center;justify-self:center;width:min(880px,100%);height:auto;margin:-20px 0 -10px;display:block}
+  #cs-magnetic-human-value-market .spwd-next-line{font-family:'Manrope',sans-serif;font-size:clamp(1.04rem,1.2vw,1.24rem);line-height:1.34;font-weight:900;color:rgba(26,22,18,.74);max-width:760px;margin:0}
   #cs-magnetic-human-value-market .spwd-next-line strong{color:#c8462c;font-weight:950}
   #cs-magnetic-human-value-market .spwd-market-copy,
   #cs-magnetic-human-value-market .spwd-era-stack{opacity:0;transform:translateY(16px);transition:opacity .68s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
@@ -22678,20 +22897,20 @@ window.csBrandV8Reverse = function() {
   <div class="spwd-eyebrow">market frontiers</div>
   <section class="spwd-market">
     <div class="spwd-market-copy">
-      <div class="spwd-era-label">Last frontiers</div>
+      <div class="spwd-era-label">Last frontier</div>
       <h1 class="spwd-market-title">When the invisible became <em>measurable</em>, markets appeared.</h1>
-      <div class="spwd-frontier-list" aria-label="Last frontiers became measurable markets">
+      <div class="spwd-frontier-list" aria-label="Last frontier became measurable markets">
         <div class="spwd-frontier-row">
           <div class="spwd-frontier-dot">01</div>
-          <div><h2>Attention</h2><p>became influence</p></div>
+          <div><h2>Attention</h2><p>became influence</p></div><div class="spwd-frontier-value">ad markets</div>
         </div>
         <div class="spwd-frontier-row">
           <div class="spwd-frontier-dot">02</div>
-          <div><h2>Commerce</h2><p>became marketplaces</p></div>
+          <div><h2>Commerce</h2><p>became marketplaces</p></div><div class="spwd-frontier-value">platforms</div>
         </div>
         <div class="spwd-frontier-row">
           <div class="spwd-frontier-dot">03</div>
-          <div><h2>Location</h2><p>became networks</p></div>
+          <div><h2>Location</h2><p>became networks</p></div><div class="spwd-frontier-value">mobility</div>
         </div>
       </div>
     </div>
@@ -22705,18 +22924,20 @@ window.csBrandV8Reverse = function() {
         </defs>
         <ellipse cx="460" cy="216" rx="338" ry="176" fill="url(#spwdNextGlow)"/>
         <g fill="none" stroke-linecap="round">
-          <path d="M246 126 C342 56 578 56 674 126" stroke="rgba(91,143,212,.52)" stroke-width="4"/>
-          <path d="M246 306 C342 374 578 374 674 306" stroke="rgba(200,70,44,.50)" stroke-width="4"/>
-          <path d="M246 126 C332 220 558 226 674 306" stroke="rgba(184,149,74,.62)" stroke-width="4"/>
-          <path d="M674 126 C574 220 356 226 246 306" stroke="rgba(184,149,74,.62)" stroke-width="4"/>
-          <path d="M460 94 C512 164 512 270 460 338 C408 270 408 164 460 94" stroke="rgba(26,22,18,.22)" stroke-width="3"/>
+          <path d="M246 126 C342 56 578 56 674 126" stroke="rgba(91,143,212,.54)" stroke-width="5"/>
+          <path d="M246 306 C342 374 578 374 674 306" stroke="rgba(200,70,44,.52)" stroke-width="5"/>
+          <path d="M246 126 C332 220 558 226 674 306" stroke="rgba(184,149,74,.66)" stroke-width="5"/>
+          <path d="M674 126 C574 220 356 226 246 306" stroke="rgba(184,149,74,.66)" stroke-width="5"/>
+          <path d="M460 94 C512 164 512 270 460 338 C408 270 408 164 460 94" stroke="rgba(26,22,18,.24)" stroke-width="4"/>
+          <path d="M246 126 C404 160 516 160 674 126" stroke="rgba(26,22,18,.18)" stroke-width="3" stroke-dasharray="10 14"/>
+          <path d="M246 306 C404 272 516 272 674 306" stroke="rgba(26,22,18,.18)" stroke-width="3" stroke-dasharray="10 14"/>
         </g>
         <g filter="url(#spwdSoftShadow)" font-family="Manrope,sans-serif" font-size="18" font-weight="950" letter-spacing=".08em" text-anchor="middle">
           <g transform="translate(246 126)"><circle r="58" fill="#5B8FD4"/><text y="7" fill="#fbf7ef">GIVE</text></g>
           <g transform="translate(674 126)"><circle r="58" fill="#b8954a"/><text y="7" fill="#fbf7ef">HOST</text></g>
           <g transform="translate(246 306)"><circle r="58" fill="#c8462c"/><text y="7" fill="#fbf7ef">INVITE</text></g>
           <g transform="translate(674 306)"><circle r="58" fill="#1a1612"/><text y="7" fill="#fbf7ef">TRUST</text></g>
-          <g transform="translate(460 216)"><circle r="84" fill="#fbf7ef" stroke="#b8954a" stroke-width="6"/><text y="-5" fill="#1a1612" font-family="Fraunces,Georgia,serif" font-size="34" letter-spacing="0">value</text><text y="31" fill="#c8462c" font-size="21">MARKET</text></g>
+          <g transform="translate(460 216)"><circle r="92" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><text y="-16" fill="#1a1612" font-family="Fraunces,Georgia,serif" font-size="38" letter-spacing="0">human</text><text y="20" fill="#1a1612" font-family="Fraunces,Georgia,serif" font-size="38" letter-spacing="0">value</text><text y="52" fill="#c8462c" font-size="19">MARKET</text></g>
         </g>
       </svg>
       <p class="spwd-next-line"><strong>GnR measures contribution</strong>: who creates trust, belonging, invitations, and return play.</p>
@@ -27104,58 +27325,101 @@ window.csBrandV8Reverse = function() {
 <!-- ===== cs-gnr-business-outcomes · Community-business stakes [Codex 2026-05-28] ===== -->
 <style>
   #cs-gnr-business-outcomes{background:#f3ead8!important;overflow:hidden}
-  #cs-gnr-business-outcomes .gbo-stage{position:relative;min-height:100%;width:100%;box-sizing:border-box;padding:88px 76px 56px;display:flex;align-items:center;justify-content:center}
-  #cs-gnr-business-outcomes .gbo-shell{width:min(1480px,100%);margin:0 auto;display:flex;flex-direction:column;gap:28px}
-  #cs-gnr-business-outcomes .gbo-title{margin:0 auto;text-align:center;max-width:1160px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:4.55rem;font-weight:850;line-height:.98;color:#1a1612}
+  #cs-gnr-business-outcomes .gbo-stage{position:relative;min-height:100%;width:100%;box-sizing:border-box;padding:78px 72px 50px;display:flex;align-items:center;justify-content:center}
+  #cs-gnr-business-outcomes .gbo-stage:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(184,149,74,.10) 1px,transparent 1px),linear-gradient(0deg,rgba(184,149,74,.08) 1px,transparent 1px);background-size:180px 100%,100% 128px;opacity:.34;pointer-events:none}
+  #cs-gnr-business-outcomes .gbo-shell{position:relative;z-index:1;width:min(1510px,100%);margin:0 auto;display:flex;flex-direction:column;gap:22px}
+  #cs-gnr-business-outcomes .gbo-title{margin:0 auto;text-align:center;max-width:1280px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:4.28rem;font-weight:850;line-height:.98;color:#1a1612}
   #cs-gnr-business-outcomes .gbo-title em{font-style:italic;color:#b8954a;font-weight:850}
-  #cs-gnr-business-outcomes .gbo-sub{font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,.54);text-align:center}
-  #cs-gnr-business-outcomes .gbo-compare{display:grid;grid-template-columns:minmax(0,1fr) 126px minmax(0,1fr);gap:30px;align-items:stretch}
-  #cs-gnr-business-outcomes .gbo-panel{position:relative;min-height:326px;padding:42px 48px;box-sizing:border-box;background:rgba(251,247,239,.82);border:1.4px solid rgba(184,149,74,.28);border-radius:8px;display:flex;flex-direction:column;justify-content:center;gap:26px;box-shadow:0 18px 50px rgba(26,22,18,.06)}
-  #cs-gnr-business-outcomes .gbo-panel.low{border-left:7px solid #c8462c}
-  #cs-gnr-business-outcomes .gbo-panel.high{border-left:7px solid #5B8FD4;background:linear-gradient(180deg,rgba(251,247,239,.94),rgba(251,247,239,.78));box-shadow:0 20px 58px rgba(91,143,212,.10),0 0 0 1px rgba(184,149,74,.12) inset}
-  #cs-gnr-business-outcomes .gbo-label{font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;letter-spacing:.30em;text-transform:uppercase}
+  #cs-gnr-business-outcomes .gbo-title .blue{color:#5B8FD4;font-style:normal}
+  #cs-gnr-business-outcomes .gbo-sub{font-family:'Manrope',sans-serif;font-size:.76rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,.56);text-align:center}
+  #cs-gnr-business-outcomes .gbo-compare{display:grid;grid-template-columns:minmax(0,.94fr) 162px minmax(0,1fr);gap:24px;align-items:stretch}
+  #cs-gnr-business-outcomes .gbo-panel{position:relative;min-height:508px;padding:32px 36px 30px;box-sizing:border-box;background:rgba(251,247,239,.88);border:1.4px solid rgba(184,149,74,.28);border-radius:8px;display:grid;grid-template-rows:auto 190px auto auto;gap:18px;box-shadow:0 18px 50px rgba(26,22,18,.07);overflow:hidden}
+  #cs-gnr-business-outcomes .gbo-panel:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,247,239,.20),rgba(184,149,74,.08));pointer-events:none}
+  #cs-gnr-business-outcomes .gbo-panel>*{position:relative;z-index:1}
+  #cs-gnr-business-outcomes .gbo-panel.low{border-left:8px solid #c8462c}
+  #cs-gnr-business-outcomes .gbo-panel.high{border-left:8px solid #5B8FD4;box-shadow:0 24px 68px rgba(91,143,212,.16),0 0 0 1px rgba(184,149,74,.14) inset}
+  #cs-gnr-business-outcomes .gbo-label{font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:900;letter-spacing:.30em;text-transform:uppercase}
   #cs-gnr-business-outcomes .gbo-panel.low .gbo-label{color:#c8462c}
   #cs-gnr-business-outcomes .gbo-panel.high .gbo-label{color:#5B8FD4}
-  #cs-gnr-business-outcomes .gbo-panel h2{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:3.1rem;font-weight:850;line-height:1.02;color:#1a1612}
+  #cs-gnr-business-outcomes .gbo-network{width:100%;height:190px;border:1px solid rgba(184,149,74,.24);border-radius:7px;background:rgba(251,247,239,.58)}
+  #cs-gnr-business-outcomes .gbo-panel h2{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.86rem;font-weight:850;line-height:1.02;color:#1a1612}
   #cs-gnr-business-outcomes .gbo-panel h2 em{font-style:italic;font-weight:750}
   #cs-gnr-business-outcomes .gbo-panel.low h2 em{color:#c8462c}
   #cs-gnr-business-outcomes .gbo-panel.high h2 em{color:#b8954a}
-  #cs-gnr-business-outcomes .gbo-proof{font-family:'Manrope',sans-serif;font-size:1.08rem;font-weight:850;letter-spacing:0;text-transform:none;color:rgba(26,22,18,.62);padding:18px 0 0;border-top:1px solid rgba(184,149,74,.26)}
-  #cs-gnr-business-outcomes .gbo-center{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px;color:#1a1612}
-  #cs-gnr-business-outcomes .gbo-mark{width:116px;height:116px;border-radius:50%;display:grid;place-items:center;background:#fbf7ef;border:1.8px solid rgba(184,149,74,.55);box-shadow:0 18px 44px rgba(184,149,74,.18)}
-  #cs-gnr-business-outcomes .gbo-mark span{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:3.05rem;font-weight:900;line-height:1}
+  #cs-gnr-business-outcomes .gbo-proof{font-family:'Manrope',sans-serif;font-size:1.02rem;font-weight:820;line-height:1.35;color:rgba(26,22,18,.68);padding:17px 0 0;border-top:1px solid rgba(184,149,74,.28)}
+  #cs-gnr-business-outcomes .gbo-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+  #cs-gnr-business-outcomes .gbo-chip{font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;padding:8px 10px;border-radius:999px;background:rgba(251,247,239,.82);border:1px solid rgba(184,149,74,.32);color:rgba(26,22,18,.62)}
+  #cs-gnr-business-outcomes .gbo-panel.low .gbo-chip{border-color:rgba(200,70,44,.30);color:#c8462c}
+  #cs-gnr-business-outcomes .gbo-panel.high .gbo-chip{border-color:rgba(91,143,212,.34);color:#5B8FD4}
+  #cs-gnr-business-outcomes .gbo-center{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;color:#1a1612}
+  #cs-gnr-business-outcomes .gbo-arrow{width:152px;height:76px}
+  #cs-gnr-business-outcomes .gbo-mark{width:106px;height:106px;border-radius:50%;display:grid;place-items:center;background:#fbf7ef;border:1.8px solid rgba(184,149,74,.58);box-shadow:0 18px 44px rgba(184,149,74,.20)}
+  #cs-gnr-business-outcomes .gbo-mark span{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.9rem;font-weight:900;line-height:1}
   #cs-gnr-business-outcomes .gbo-mark .g{color:#5B8FD4}.gbo-mark .n{color:#b8954a;font-style:italic;font-weight:600}.gbo-mark .r{color:#c8462c}
-  #cs-gnr-business-outcomes .gbo-center-line{width:1px;height:92px;background:linear-gradient(180deg,rgba(200,70,44,.55),rgba(184,149,74,.75),rgba(91,143,212,.55))}
-  #cs-gnr-business-outcomes .gbo-footer{margin:0 auto;max-width:1180px;text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.72rem;font-weight:760;line-height:1.18;color:#1a1612;padding:16px 26px;border-top:1px solid rgba(184,149,74,.36);border-bottom:1px solid rgba(184,149,74,.36)}
+  #cs-gnr-business-outcomes .gbo-center-copy{font-family:'Manrope',sans-serif;font-size:.64rem;font-weight:900;line-height:1.35;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,.58);max-width:140px}
+  #cs-gnr-business-outcomes .gbo-center-copy strong{display:block;color:#1a1612;font-size:.76rem;letter-spacing:.13em}
+  #cs-gnr-business-outcomes .gbo-footer{margin:0 auto;max-width:1260px;text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.74rem;font-weight:760;line-height:1.18;color:#1a1612;padding:15px 26px;border-top:1px solid rgba(184,149,74,.36);border-bottom:1px solid rgba(184,149,74,.36)}
   #cs-gnr-business-outcomes .gbo-footer strong{font-weight:850;color:#b8954a}
+  #cs-gnr-business-outcomes svg text{font-family:'Manrope',sans-serif;letter-spacing:.12em;text-transform:uppercase}
   html[data-export="1"] #cs-gnr-business-outcomes *{animation:none!important;transition:none!important}
 </style>
 <div class="casey-slide ds-focus" id="cs-gnr-business-outcomes">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Community business health</div>
   <section class="gbo-stage">
     <div class="gbo-shell">
-      <h1 class="gbo-title"><em>GnR makes a club irreplaceable.</em></h1>
-      <div class="gbo-sub">Same courts. Different social physics.</div>
+      <h1 class="gbo-title">Humans go where <em>GnR connection</em> is <span class="blue">highest.</span></h1>
+      <div class="gbo-sub">Same courts. Same sport. Different social gravity.</div>
       <div class="gbo-compare">
         <div class="gbo-panel low">
-          <div class="gbo-label">Low GnR</div>
-          <h2>A place people <em>use.</em></h2>
-          <div class="gbo-proof">People shop on price.</div>
+          <div class="gbo-label">Low GnR connection</div>
+          <svg class="gbo-network" viewBox="0 0 560 220" role="img" aria-label="Low GnR club: scattered players on interchangeable courts.">
+            <rect x="18" y="20" width="524" height="180" rx="6" fill="rgba(251,247,239,.34)" stroke="rgba(184,149,74,.34)" stroke-width="2"/>
+            <path d="M280 20V200M18 110H542M150 20V200M410 20V200" stroke="rgba(184,149,74,.30)" stroke-width="2"/>
+            <path d="M78 74 C118 42 160 42 198 76M96 150 C142 184 176 180 214 142M350 72 C392 40 438 46 478 80" fill="none" stroke="#c8462c" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 9" opacity=".38"/>
+            <circle cx="82" cy="72" r="8" fill="#c8462c"/><circle cx="202" cy="76" r="7" fill="rgba(26,22,18,.42)"/>
+            <circle cx="96" cy="150" r="7" fill="rgba(26,22,18,.38)"/><circle cx="218" cy="142" r="8" fill="#c8462c"/>
+            <circle cx="354" cy="72" r="8" fill="rgba(26,22,18,.36)"/><circle cx="480" cy="80" r="7" fill="#c8462c"/>
+            <circle cx="452" cy="154" r="7" fill="rgba(26,22,18,.34)"/>
+            <text x="280" y="194" text-anchor="middle" font-size="12" font-weight="900" fill="rgba(26,22,18,.44)">interchangeable utility</text>
+          </svg>
+          <h2>A club people can <em>replace.</em></h2>
+          <div class="gbo-proof">The value is the court. Members compare price, distance, and open time slots.</div>
+          <div class="gbo-chips"><span class="gbo-chip">book and leave</span><span class="gbo-chip">price sensitive</span><span class="gbo-chip">no memory</span></div>
         </div>
 
         <div class="gbo-center" aria-hidden="true">
-          <div class="gbo-center-line"></div>
+          <svg class="gbo-arrow" viewBox="0 0 180 82">
+            <path d="M14 44 C54 12 112 12 158 44" fill="none" stroke="#b8954a" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M143 28 L162 44 L143 60" fill="none" stroke="#b8954a" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="26" cy="46" r="5" fill="#c8462c"/><circle cx="70" cy="24" r="5" fill="#b8954a"/><circle cx="118" cy="25" r="5" fill="#5B8FD4"/>
+          </svg>
           <div class="gbo-mark"><span><span class="g">G</span><span class="n">n</span><span class="r">R</span></span></div>
-          <div class="gbo-center-line"></div>
+          <div class="gbo-center-copy">raises <strong>connection density</strong></div>
+          <svg class="gbo-arrow" viewBox="0 0 180 82">
+            <path d="M14 38 C56 72 116 72 158 38" fill="none" stroke="#5B8FD4" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M143 22 L162 38 L143 54" fill="none" stroke="#5B8FD4" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="34" cy="44" r="5" fill="#b8954a"/><circle cx="83" cy="62" r="5" fill="#5B8FD4"/><circle cx="126" cy="56" r="5" fill="#c8462c"/>
+          </svg>
         </div>
 
         <div class="gbo-panel high">
-          <div class="gbo-label">High GnR</div>
-          <h2>A place people <em>belong.</em></h2>
-          <div class="gbo-proof">Leaving feels expensive.</div>
+          <div class="gbo-label">High GnR connection</div>
+          <svg class="gbo-network" viewBox="0 0 560 220" role="img" aria-label="High GnR club: connected players pulled into one dense community.">
+            <rect x="18" y="20" width="524" height="180" rx="6" fill="rgba(251,247,239,.34)" stroke="rgba(184,149,74,.34)" stroke-width="2"/>
+            <path d="M280 20V200M18 110H542M150 20V200M410 20V200" stroke="rgba(184,149,74,.25)" stroke-width="2"/>
+            <path d="M92 128L172 86L260 112L340 58L442 92L470 152L350 166L260 112L172 154L92 128M172 86L172 154M340 58L350 166M442 92L350 166M260 112L470 152" fill="none" stroke="#5B8FD4" stroke-width="3.1" stroke-linecap="round" opacity=".72"/>
+            <path d="M122 48 C218 22 314 24 424 54" fill="none" stroke="#b8954a" stroke-width="4" stroke-linecap="round" opacity=".58"/>
+            <circle cx="92" cy="128" r="9" fill="#5B8FD4"/><circle cx="172" cy="86" r="9" fill="#b8954a"/><circle cx="260" cy="112" r="11" fill="#c8462c"/>
+            <circle cx="340" cy="58" r="9" fill="#5B8FD4"/><circle cx="442" cy="92" r="9" fill="#b8954a"/><circle cx="470" cy="152" r="9" fill="#5B8FD4"/>
+            <circle cx="350" cy="166" r="9" fill="#b8954a"/><circle cx="172" cy="154" r="9" fill="#5B8FD4"/>
+            <text x="280" y="194" text-anchor="middle" font-size="12" font-weight="900" fill="#5B8FD4">compounding social gravity</text>
+          </svg>
+          <h2>A club people will <em>follow.</em></h2>
+          <div class="gbo-proof">The value is the people. Members feel known, invited, missed, and needed.</div>
+          <div class="gbo-chips"><span class="gbo-chip">known by name</span><span class="gbo-chip">invited into fit</span><span class="gbo-chip">missed when absent</span></div>
         </div>
       </div>
-      <div class="gbo-footer"><strong>Social energy</strong> becomes retention, referrals, and pricing power.</div>
+      <div class="gbo-footer"><strong>The future:</strong> people rearrange their lives around the communities where their GnR connection is highest.</div>
     </div>
   </section>
 </div>
@@ -28251,7 +28515,8 @@ window.csA7m1Reverse = function() {
   /* Hidden community-type story overlays [Codex 2026-05-24]
      Cards remain visually neutral; Dave can secretly open a slide-within-slide while pitching. */
   #cs-2c { cursor: default !important; }
-  #cs-2c .c2c-card { cursor: default; }
+  #cs-2c .c2c-card { cursor: pointer; }
+  #cs-2c .c2c-card:focus-visible { outline:2px solid #b8954a; outline-offset:5px; }
   #cs-2c .c2c-story-layer { position:absolute; inset:0; z-index:80; display:none; align-items:center; justify-content:center; padding:72px 88px; background:rgba(243,234,216,0.72); backdrop-filter:blur(2px); }
   #cs-2c .c2c-story-layer.is-open { display:flex; }
   #cs-2c .c2c-story-panel { width:min(1480px,88vw); min-height:760px; position:relative; display:grid; grid-template-rows:auto auto 1fr auto; gap:14px; padding:50px 58px 44px; background:linear-gradient(180deg,rgba(251,247,239,0.98),rgba(243,234,216,0.96)); border:1.6px solid rgba(184,149,74,0.45); box-shadow:0 34px 95px rgba(26,22,18,0.22); }
@@ -28268,11 +28533,21 @@ window.csA7m1Reverse = function() {
   #cs-2c .c2c-story-step:nth-child(3) .c2c-story-num { background:#c8462c; }
   #cs-2c .c2c-story-step h3 { margin:0 0 7px; font-family:'Manrope',sans-serif; font-size:.74rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:#1a1612; }
   #cs-2c .c2c-story-step p { margin:0; font-family:'Manrope',sans-serif; font-size:.88rem; line-height:1.28; font-weight:650; color:rgba(26,22,18,0.62); }
-  #cs-2c .c2c-story-graphic { position:relative; min-height:500px; border:1.3px solid rgba(184,149,74,0.22); background:radial-gradient(circle at 50% 48%, rgba(184,149,74,0.15), rgba(251,247,239,0.44) 42%, rgba(91,143,212,0.08) 100%); overflow:hidden; }
-  #cs-2c .c2c-story-orbit { position:absolute; inset:42px; border:1.2px dashed rgba(184,149,74,0.46); border-radius:50%; }
-  #cs-2c .c2c-story-hub { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:150px; height:150px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.42rem; line-height:1.02; font-weight:850; color:#1a1612; background:#fbf7ef; border:1.8px solid rgba(184,149,74,0.7); box-shadow:0 0 0 8px rgba(184,149,74,0.10),0 18px 44px rgba(184,149,74,0.25); z-index:4; }
-  #cs-2c .c2c-story-node { position:absolute; width:78px; height:78px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-align:center; padding:8px; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:900; line-height:1.08; letter-spacing:.08em; text-transform:uppercase; color:#1a1612; background:#fffaf0; border:1.6px solid var(--ring,#5B8FD4); box-shadow:0 0 0 7px rgba(91,143,212,0.10),0 12px 28px rgba(26,22,18,0.10); z-index:3; }
-  #cs-2c .c2c-story-line { position:absolute; height:1.7px; background:linear-gradient(90deg,rgba(184,149,74,0),rgba(184,149,74,0.72),rgba(200,70,44,0.45)); transform-origin:left center; z-index:2; }
+  #cs-2c .c2c-story-graphic { position:relative; min-height:500px; padding:28px; border:1.3px solid rgba(184,149,74,0.22); background:radial-gradient(circle at 50% 48%, rgba(184,149,74,0.15), rgba(251,247,239,0.44) 42%, rgba(91,143,212,0.08) 100%); overflow:hidden; display:grid; place-items:center; }
+  #cs-2c .c2c-story-route { width:100%; min-height:420px; display:grid; grid-template-columns:.9fr 44px 1.02fr 44px 1.08fr; gap:12px; align-items:center; }
+  #cs-2c .c2c-story-block { min-height:330px; padding:22px 20px; display:flex; flex-direction:column; gap:14px; justify-content:center; background:rgba(255,251,243,0.74); border:1.2px solid rgba(184,149,74,0.26); border-radius:8px; box-shadow:0 18px 42px rgba(26,22,18,0.08); }
+  #cs-2c .c2c-story-block h4 { margin:0; font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:950; letter-spacing:.21em; text-transform:uppercase; color:#b8954a; }
+  #cs-2c .c2c-story-profile { border-left:5px solid #5B8FD4; }
+  #cs-2c .c2c-story-feed { border-left:5px solid #c8462c; }
+  #cs-2c .c2c-story-moments { border-left:5px solid #b8954a; }
+  #cs-2c .c2c-story-tokens { display:flex; flex-wrap:wrap; gap:8px; }
+  #cs-2c .c2c-story-token { padding:9px 11px; font-family:'Manrope',sans-serif; font-size:.72rem; line-height:1; font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:#1a1612; background:rgba(91,143,212,0.11); border:1px solid rgba(91,143,212,0.28); border-radius:999px; }
+  #cs-2c .c2c-story-feed-card { padding:13px 14px; background:#fbf7ef; border:1px solid rgba(200,70,44,0.25); border-radius:8px; font-family:'Manrope',sans-serif; font-size:.86rem; line-height:1.15; font-weight:850; color:#1a1612; box-shadow:0 10px 24px rgba(200,70,44,0.08); }
+  #cs-2c .c2c-story-feed-card strong { display:block; margin-bottom:4px; font-size:.56rem; letter-spacing:.18em; text-transform:uppercase; color:#c8462c; }
+  #cs-2c .c2c-story-moment-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  #cs-2c .c2c-story-moment { min-height:74px; display:flex; align-items:center; justify-content:center; text-align:center; padding:10px; font-family:'Manrope',sans-serif; font-size:.72rem; line-height:1.1; font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:#1a1612; background:rgba(184,149,74,0.10); border:1px solid rgba(184,149,74,0.30); border-radius:8px; }
+  #cs-2c .c2c-story-note { margin-top:auto; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.06rem; line-height:1.15; font-style:italic; color:rgba(26,22,18,0.70); }
+  #cs-2c .c2c-story-arrow { display:flex; align-items:center; justify-content:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:2.7rem; font-weight:850; color:#b8954a; }
   #cs-2c .c2c-story-proof { margin-top:2px; padding-top:18px; border-top:1px solid rgba(184,149,74,0.28); font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.12rem,1.65vw,1.65rem); line-height:1.24; font-style:italic; color:#1a1612; }
   #cs-2c .c2c-story-proof strong { color:#c8462c; font-style:normal; }
   @media (max-width: 1400px) {
@@ -28280,6 +28555,9 @@ window.csA7m1Reverse = function() {
     #cs-2c .c2c-story-panel { min-height:690px; padding:40px 44px 36px; }
     #cs-2c .c2c-story-body { grid-template-columns:1fr; gap:26px; }
     #cs-2c .c2c-story-graphic { min-height:300px; }
+    #cs-2c .c2c-story-route { min-height:300px; grid-template-columns:1fr; }
+    #cs-2c .c2c-story-arrow { transform:rotate(90deg); font-size:2rem; }
+    #cs-2c .c2c-story-block { min-height:auto; }
   }
 
 </style>
@@ -28288,12 +28566,12 @@ window.csA7m1Reverse = function() {
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">It&rsquo;s community that brings us together</div>
 <div class="inner" style="padding-top:48px;text-align:center;max-width:1700px;margin:0 auto">
   <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.4vw,2.8rem);font-weight:700;color:#1a1612;line-height:1.15;letter-spacing:-0.018em;max-width:1300px;margin:0 auto 32px">
-    <span class="gnr-inline-brand"><span class="gnr-g">Give</span>&nbsp; <span class="gnr-n">n</span>&nbsp; <span class="gnr-r">Receive</span></span> is what community is
+    Community is <span class="gnr-inline-brand"><span class="gnr-g">Give</span>&nbsp; <span class="gnr-n">n</span>&nbsp; <span class="gnr-r">Receive</span></span>
   </div>
 
   <div class="c2c-grid">
     <!-- [Dave 2026-05-11 LATE] Highlight removed — all 8 cards equal weight in the new converging-to-hub design. -->
-    <div class="c2c-card" data-c2c-story="social-sports">
+    <div class="c2c-card" data-c2c-story="social-sports" role="button" tabindex="0" aria-label="Open Social Sports story">
       <div class="c2c-icon" style="display:flex;align-items:center;justify-content:center">
         <!-- Pickleball icon — yellow ball with the iconic holes pattern -->
         <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28336,39 +28614,39 @@ window.csA7m1Reverse = function() {
     </div>
 
     <!-- [Dave 2026-05-17] Hobbies MOVED to position #2 per 'make hobbies the second one'. Sits between Social Sports and College in the natural-community reading order. -->
-    <div class="c2c-card" data-c2c-story="hobbies">
+    <div class="c2c-card" data-c2c-story="hobbies" role="button" tabindex="0" aria-label="Open Hobbies story">
       <div class="c2c-icon">&#x1F3A8;</div>
       <div class="c2c-label">Hobbies</div>
     </div>
 
     <!-- Reorder per Dave 2026-05-06 PM: #2 Colleges, #3 Neighbors moved up -->
-    <div class="c2c-card" data-c2c-story="college">
+    <div class="c2c-card" data-c2c-story="college" role="button" tabindex="0" aria-label="Open College story">
       <div class="c2c-icon">&#x1F393;</div>
       <div class="c2c-label">College</div>
     </div>
 
     <!-- [Dave 2026-05-18 LATEST] Neighborhoods + Cities & Schools MERGED into a single card per Dave 'let's merge neighborhoods, cities, and schools into one. So that there's just one box for those three instead of neighborhoods and then cities and schools having two separate boxes'. Standalone Neighborhoods + Cities & Schools cards both deleted; one combined card replaces them. -->
-    <div class="c2c-card" data-c2c-story="neighborhoods">
+    <div class="c2c-card" data-c2c-story="neighborhoods" role="button" tabindex="0" aria-label="Open Neighborhoods, Cities, and Schools story">
       <div class="c2c-icon">&#x1F3D8;&#xFE0F;</div>
       <div class="c2c-label">Neighborhoods,<br>Cities &amp; Schools</div>
     </div>
 
-    <div class="c2c-card" data-c2c-story="fitness">
+    <div class="c2c-card" data-c2c-story="fitness" role="button" tabindex="0" aria-label="Open Fitness and Gym Groups story">
       <div class="c2c-icon">&#x1F9D8;</div>
       <div class="c2c-label">Fitness &amp;<br>Gym Groups</div>
     </div>
 
-    <div class="c2c-card" data-c2c-story="homeschool">
+    <div class="c2c-card" data-c2c-story="homeschool" role="button" tabindex="0" aria-label="Open Homeschool Groups story">
       <div class="c2c-icon">&#x1F4DA;</div>
       <div class="c2c-label">Homeschool<br>Groups</div>
     </div>
 
-    <div class="c2c-card" data-c2c-story="faith">
+    <div class="c2c-card" data-c2c-story="faith" role="button" tabindex="0" aria-label="Open Faith Communities story">
       <div class="c2c-icon">&#x26EA;</div>
       <div class="c2c-label">Faith<br>Communities</div>
     </div>
 
-    <div class="c2c-card" data-c2c-story="country-clubs">
+    <div class="c2c-card" data-c2c-story="country-clubs" role="button" tabindex="0" aria-label="Open Country Clubs story">
       <div class="c2c-icon">&#x26F3;</div>
       <div class="c2c-label">Country<br>Clubs</div>
     </div>
@@ -28498,6 +28776,88 @@ window.csA7m1Reverse = function() {
       <div class="c2c-story-proof" id="c2cStoryProof"></div>
     </div>
   </div>
+  <script type="application/json" id="c2cStorySource">{
+    "social-sports": {
+      "kicker": "Social sports",
+      "title": "Every match becomes the <em>next right invitation.</em>",
+      "sub": "GnR learns level, vibe, schedule, and who makes people want to come back.",
+      "steps": [["Learn","Skill. vibe. availability."],["Invite","Right game. right people."],["Compound","Repeat people, not random games."]],
+      "profile": ["level","vibe","availability","chemistry"],
+      "feed": [["Game","Balanced Tuesday match"],["Welcome","Newcomer + welcomer"],["Return","Post-game table"]],
+      "moments": ["fair game","fun foursome","repeat crew","league captain"],
+      "proof": "The future of social sports is not a bracket. <strong>It is a personalized invitation feed.</strong>"
+    },
+    "hobbies": {
+      "kicker": "Hobbies",
+      "title": "Interest becomes <em>shared momentum.</em>",
+      "sub": "Beginners, guides, peers, projects, and hosts find each other faster.",
+      "steps": [["Learn","Taste. skill. goals."],["Gather","Guide, peer, host."],["Repeat","Interest turns into habit."]],
+      "profile": ["taste","skill","project","pace"],
+      "feed": [["Start","Beginner circle"],["Guide","Mentor maker"],["Share","Show-and-tell night"]],
+      "moments": ["learn","make","teach","return"],
+      "proof": "The future hobby community makes it easier to <strong>keep showing up.</strong>"
+    },
+    "college": {
+      "kicker": "College",
+      "title": "Belonging starts before <em>loneliness hardens.</em>",
+      "sub": "Students get meals, clubs, study groups, and mentors by fit, not luck.",
+      "steps": [["Know","Interests. values. schedule."],["Invite","Meal. club. mentor."],["Belong","Less lonely, sooner."]],
+      "profile": ["major","values","schedule","interests"],
+      "feed": [["Meal","First-week table"],["Club","Right room intro"],["Mentor","Alumni coffee"]],
+      "moments": ["meal table","study group","club intro","mentor coffee"],
+      "proof": "The future campus is an <strong>active belonging engine.</strong>"
+    },
+    "neighborhoods": {
+      "kicker": "Neighborhoods, cities & schools",
+      "title": "A place stops being <em>strangers nearby.</em>",
+      "sub": "Parents, helpers, schools, elders, and organizers become visible through trusted invitations.",
+      "steps": [["Map","Kids. needs. local gifts."],["Invite","Walk, meal, project."],["Strengthen","The place works better."]],
+      "profile": ["kids","needs","skills","nearby"],
+      "feed": [["School","Pickup walk"],["Home","Tool-lending intro"],["Block","Small dinner"]],
+      "moments": ["parents","helpers","schools","neighbors"],
+      "proof": "The future neighborhood is a <strong>trusted local invitation layer.</strong>"
+    },
+    "fitness": {
+      "kicker": "Fitness & gym groups",
+      "title": "The gym becomes a room that <em>expects you back.</em>",
+      "sub": "Goals, comfort, schedule, and energy become buddy, class, and coach invitations.",
+      "steps": [["Learn","Goals. comfort. energy."],["Pair","Buddy, coach, class."],["Return","Showing up gets easier."]],
+      "profile": ["goal","comfort","energy","schedule"],
+      "feed": [["Buddy","Beginner partner"],["Class","Right-energy group"],["Coach","Check-in moment"]],
+      "moments": ["buddy","coach","class","return"],
+      "proof": "The future fitness business retains people by matching them into <strong>community momentum.</strong>"
+    },
+    "homeschool": {
+      "kicker": "Homeschool groups",
+      "title": "Families find the <em>right circle</em> faster.",
+      "sub": "Ages, learning goals, parent capacity, pods, mentors, and support fit together.",
+      "steps": [["See","Ages. needs. capacity."],["Fit","Pods, projects, partners."],["Support","Less alone. more help."]],
+      "profile": ["ages","needs","capacity","interests"],
+      "feed": [["Pod","Project group"],["Parent","Swap support"],["Mentor","One-hour help"]],
+      "moments": ["kids","parents","pods","support"],
+      "proof": "The future homeschool group turns isolated families into a <strong>support graph.</strong>"
+    },
+    "faith": {
+      "kicker": "Faith communities",
+      "title": "Care finds the <em>person who needs it.</em>",
+      "sub": "Gifts, needs, hosts, service, and small groups route to the right invitation.",
+      "steps": [["See","Needs and gifts."],["Invite","Care. serve. host."],["Welcome","People are noticed sooner."]],
+      "profile": ["season","need","gift","capacity"],
+      "feed": [["Care","Meal train"],["Serve","Right team"],["Host","Small group table"]],
+      "moments": ["care","serve","host","welcome"],
+      "proof": "The future faith community does not rely on memory. <strong>It routes care.</strong>"
+    },
+    "country-clubs": {
+      "kicker": "Country clubs",
+      "title": "Day one feels like <em>you already belong.</em>",
+      "sub": "Onboarding becomes an invitation engine: golf, dinner, family, service, and introductions.",
+      "steps": [["Survey","Family. interests. pace."],["Feed","Golf with relevant members."],["Belong","Dinner before awkward months."]],
+      "profile": ["new member","golf","dinner","family"],
+      "feed": [["Golf","Saturday foursome"],["Dinner","Relevant table"],["Family","Clinic invite"]],
+      "moments": ["golf partner","dinner table","welcoming couple","club life"],
+      "proof": "The future country club is a <strong>personalized invitation feed</strong>, not a directory."
+    }
+  }</script>
 </section>
 </div>
 
@@ -31510,8 +31870,6 @@ const SLIDE_ORDER = [
   // [Codex 2026-05-26] cs-community-business moved to TRASH_ORDER per Dave: slide 5 / 20 and its alt were blank.
   // [Dave 2026-05-26] cs-samecourt MOVED EARLIER. The Munger/incentive-system thesis now lands before cultural/product reveal so investors understand the core behavior-change mechanism first.
   'cs-gnr',   //  4 Introducing GnR - invitation matchmaking
-  'cs-club-os',
-  'cs-club-social-loop',
   'cs-club-anti-dupr',
   'cs-samecourt',
   // [Dave 2026-05-24 LATER] cs-18-vd4 MOVED LATER. Founder/Steve Jobs wheelhouse beat was interrupting the product reveal here; investor needs the product before founder philosophy.
@@ -31526,7 +31884,7 @@ const SLIDE_ORDER = [
   'cs-11d','cs-11e','cs-11',
   // [Codex 2026-05-27] cs-3 restored after Dave flagged the pickleball wedge slide missing from the active deck.
   'cs-3',
-  'cs-magnetic-reciprocity-system',
+  // [Codex 2026-05-29] cs-magnetic-reciprocity-system moved to TRASH_ORDER per Dave screenshot request.
   'cs-gnr-business-outcomes', // [Codex 2026-05-29] Simplified community-business stakes slide moved next to the cs-magnetic white-dot concept cluster.
   // [Codex 2026-05-28] Active outlier slide moved into the post-24-social-experiences cluster while preserving the social-pull move.
   'cs-wedgepb-codex',
@@ -31539,7 +31897,7 @@ const SLIDE_ORDER = [
   'cs-wedge1',     // "The next great network is the one that helps us find ourselves and find each other."
   'cs-mv6-merge', // HUMANITY'S ENDGAME - mission/demand curve moved to final-quarter vision section.
   'cs-value-choice', // [Codex 2026-05-28] New active brainstorm slide: most valuable product is abundant human connection.
-  'cs-value-screen',
+  // [Codex 2026-05-29] cs-value-screen moved to TRASH_ORDER per Dave screenshot delete request. HTML remains as rollback source.
   'cs-app-store-people',
   // [Codex 2026-05-29] cs-value-product removed from active main flow per Dave screenshot delete request. HTML remains as rollback source.
   // [Codex 2026-05-27] cs-18-vd4 removed from active main flow per Dave screenshot delete request. HTML remains as rollback source.
@@ -31575,6 +31933,8 @@ const SLIDE_ORDER = [
   'cs-fw1',        // Restored after brand promise — flywheel · 'Drop GnR into any pickleball club. It just works. And compounds forever — at AI speed.'
   // [Codex 2026-05-28] Active end-of-flow candidates so the silliness attempts are visible without shifting existing slot-indexed alts.
   'cs-pb-silliness-feature',
+  'cs-club-os',
+  'cs-club-social-loop',
   // [Codex 2026-05-29] cs-pb-silliness-scroll moved to TRASH_ORDER per Dave screenshot delete request. HTML remains as rollback source.
   // [Codex 2026-05-29] cs-pb-silliness-dupr removed from active main flow per Dave screenshot delete request. HTML remains as rollback source.
   // ===== ORANGE REVIEW SECTION · HC PARADIGM CANDIDATES (Dave 2026-05-04) =====
@@ -31654,8 +32014,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18] Brand-slide review batch — 4 PURPLE-DOT alts of cs-brand-V8 originally.
   // [Dave 2026-05-18 LATEST] Dave deleted att1 (The Question), att2 (Tech & Open Heart), att4 (Humanity/Community/Technology) via 3 separate 'delete this slide' messages. Only att3 (Four Truths) survives as the purple-dot alt. HTML for the deleted attempts retained as silent backups.
   // [Dave 2026-05-18 LATEST v4] cs-brand-V8 alts MOVED to key 18 (above). Slot 23 now = cs-27 (CTO Steve Callan) with no alts.
-  // [Dave 2026-05-18 LATEST v9] cs-fw1 was slot 24; now slot 23 after cs-a7m1 demotion (was 25 before cs-brand-V8 v6). cs-16 stays as PINK-DOT alt.
-  25: ['cs-16'],
+  // [Codex 2026-05-30] After completed publish-order merges, cs-fw1 is active slot 22; keep cs-16 as the pink-dot training-data alt immediately left of flywheel.
+  22: ['cs-16'],
   // [Dave 2026-05-17 LATEST] NEW slot 2 = cs-givefirst-slide2 (give-first duplicate). No alts. All keys past slot 1 shifted +1.
   // [Dave 2026-05-18 LATEST v6] Brand pink-dot alts for cs-1m8 (slot 2). cs-brand-V8 demoted from main slot 3 → leftmost pink-dot alt here. cs-1m8-codexmerge + cs-1m8-envelopes added (codex-merge variants). cs-brand-mono REMOVED.
   // [Dave 2026-05-18 LATEST v9] cs-a7m1 added as a RED-DOT alt at the FAR LEFT of the slot-2 dot strip (furthest from primary). It's the old "Social media is an extremely narrow view" slide that just demoted from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'.
@@ -31679,9 +32039,9 @@ const SLIDE_ALTS = {
   // Slot 6 (cs-thegap) - old like-button headline saved as pink-dot backup before 2026-05-24 rewrite.
   // [Dave 2026-05-25] Disconnected-community blue alt DELETED per Dave: 'delete this slide'. Removed from this slot and blue-dot classification; HTML retained as hidden rollback stub.
   // [Dave 2026-05-25] Like-button slide promoted back to main cs-thegap; digitized rewrite thrown away.
-  9: ['cs-emotion-smile', 'cs-emotion-help', 'cs-emotion-uncaptured'],
-  // [Codex 2026-05-29] Community incentive systems promoted to active slot 10; human-value market retained as same-slot alt.
-  10: ['cs-magnetic-human-value-market', 'cs-magnetic'],
+  8: ['cs-emotion-smile', 'cs-emotion-help', 'cs-emotion-uncaptured'],
+  // [Codex 2026-05-30] Community incentive system was moved to trash; keep the human-value market/magnetic variants attached to the current outcomes slide slot.
+  11: ['cs-magnetic-human-value-market', 'cs-magnetic'],
   // Slot 12 (cs-samecourt — was slot 12) — no alts.
 
   // [Dave 2026-05-19] cs-givefirst-art now owns slot 14 after Munger; cs-magnetic alts moved to slot 15 below.
@@ -31736,13 +32096,13 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v5] All brand pink-dot alts RELOCATED from slot 3 (cs-brand-V8) → slot 2 (cs-1m8) per Dave 'move these two slides and any new brand slide you are working on as pink dot slides next to the slide with the text below: What we give fuels our communities.' That's cs-1m8 — which sits at slot 2 in SLIDE_ORDER. cs-1m8-fuels (the new particle-galaxy variant anchored to "What we give fuels our communities.") also added here. Slot 3 (cs-brand-V8) now carries no alts; if Dave wants the brand alts to live under the brand slide again later, just move them back.
   // [Dave 2026-05-19] Slot 14 = cs-fv6-img after Munger; slot 15 = cs-givefirst-art; slot 16 = cs-magnetic.
   16: [], // [Dave 2026-05-26] cs-givefirst-brand detached after cs-givefirst-art moved to appendix.
-  17: ['cs-unmeasured-value'],
+  16: ['cs-unmeasured-value'],
   // [Codex 2026-05-27] Slot-13/14 alts detached after cs-3 and cs-19 were removed from the active flow.
-  12: ['cs-racketeer-padel-club-pink'],
+  15: ['cs-racketeer-padel-club-pink'],
   13: [],
   14: [],
   // [Dave 2026-05-26] Racketeer proof slide moved to appendix; detach same-slot Racketeer path alts from the main flow.
-  13: ['cs-2c-measure-loop', 'cs-2c-invisible-layer'],
+  12: ['cs-2c-measure-loop', 'cs-2c-invisible-layer'],
   20: [],
   // [Dave 2026-05-19] Three new pink-dot Racketeer path attempts. Main Racketeer slide stays unchanged.
   21: [],
@@ -31750,7 +32110,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-25] cs-mv6-networked removed from live slot-5 alts after rendering as a blank cream slide. HTML retained below as hidden rollback only.
   5: [],
   // [Dave 2026-05-20] Dinner/Torch VC alt moved to TRASH_ORDER so it stays recoverable without occupying the deck/appendix review system.
-  24: [],
+  // [Codex 2026-05-30] Pink-dot image-led silliness variants for current active cs-pb-silliness-feature slot.
+  23: ['cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink'],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
   // [Dave 2026-05-15] Key shifted 20 → 21 after cs-givefirst inserted at slot 18 (after the Wheelhouse slide). cs-16 is now at slot 21.
   // [Dave 2026-05-14 PM v4 c] cs-funnel added as second red-dot alt (further LEFT than cs-16old) per Dave: 'create a new red dot slide to the left of this one, and rethink it, reimagine it as a SALES FUNNEL — a human value sales funnel which is exactly what GnR is.'
@@ -31978,6 +32339,8 @@ const TRASH_ORDER = [
   'cs-1m8-title-C',
   'cs-pb-silliness-scroll',
   'cs-frontier-brand-bg-pink',
+  'cs-value-screen',
+  'cs-magnetic-reciprocity-system',
 ];
 const TRASH_TOTAL = TRASH_ORDER.length;
 // Concept review rail. Separate from main deck, appendix, trash, and slot alts.
@@ -32385,11 +32748,99 @@ window.cs2cReverse = function() {
   return true;
 };
 
-window.C2C_STORIES = {"social-sports":{"kicker":"Social sports","title":"Better games become <em>repeat people.</em>","sub":"Skill gets the match started. Chemistry makes people come back.","steps":[["Signal","Level. Vibe. Availability."],["Match","Right game. Right people."],["Return","More play. More belonging."]],"nodes":["skill","vibe","trust","repeat","fun"],"proof":"Not just fair games. <strong>Coordinated belonging.</strong>"},"hobbies":{"kicker":"Hobbies","title":"Shared interest becomes <em>shared momentum.</em>","sub":"The right beginner, guide, host, and peer find each other faster.","steps":[["Signal","Taste. Skill. Goals."],["Gather","Make the small group."],["Repeat","Turn interest into habit."]],"nodes":["learn","make","guide","peer","return"],"proof":"A hobby becomes easier to <strong>keep choosing.</strong>"},"college":{"kicker":"College","title":"Students find their <em>people</em> faster.","sub":"Belonging cannot wait for luck, dorms, or extroversion.","steps":[["Signal","Interests. Values. Schedule."],["Invite","Meal. Club. Mentor. Team."],["Belong","Less lonely, sooner."]],"nodes":["mentor","meal","study","club","team"],"proof":"Campus becomes an <strong>active belonging engine.</strong>"},"neighborhoods":{"kicker":"Neighborhoods, cities & schools","title":"A place stops being <em>strangers nearby.</em>","sub":"Local gifts, needs, parents, helpers, and organizers become visible.","steps":[["See","Who can help."],["Connect","Trusted local introductions."],["Strengthen","The place works better."]],"nodes":["parents","helpers","schools","neighbors","service"],"proof":"Useful connection, <strong>coordinated locally.</strong>"},"fitness":{"kicker":"Fitness & gym groups","title":"The gym becomes a place people <em>return to.</em>","sub":"Habits stick when the room knows you and expects you back.","steps":[["Signal","Goals. Comfort. Energy."],["Pair","Buddy. Coach. Class."],["Return","Showing up gets easier."]],"nodes":["goals","buddy","class","coach","return"],"proof":"Fitness becomes <strong>community momentum.</strong>"},"homeschool":{"kicker":"Homeschool groups","title":"Families find the <em>right circle</em> faster.","sub":"Kids, parents, mentors, pods, and support fit together.","steps":[["See","Ages. Needs. Capacity."],["Fit","Pods. Projects. Partners."],["Abundance","Less alone. More help."]],"nodes":["kids","parents","pods","mentors","support"],"proof":"Easier to enter. Easier to trust. <strong>Easier to sustain.</strong>"},"faith":{"kicker":"Faith communities","title":"Care becomes <em>visible and coordinated.</em>","sub":"Gifts, needs, hosts, small groups, and service find their right place.","steps":[["See","Needs and gifts."],["Invite","Care. Serve. Host."],["Welcome","More people noticed."]],"nodes":["care","serve","host","mentor","welcome"],"proof":"People become <strong>gifts to each other.</strong>"},"country-clubs":{"kicker":"Country clubs","title":"New members are <em>welcomed immediately.</em>","sub":"The club knows who they are and who should invite them first.","steps":[["Know","Family. Interests. Schedule."],["Welcome","Three right members."],["Belong","Club life starts now."]],"nodes":["new member","welcomer","golf","family","club life"],"proof":"From slow social discovery to <strong>intentional belonging.</strong>"}};
+window.C2C_STORIES = {
+  "social-sports": {
+    "kicker": "Social sports",
+    "title": "Every match becomes the <em>next right invitation.</em>",
+    "sub": "GnR learns level, vibe, schedule, and who makes people want to come back.",
+    "steps": [["Learn","Skill. vibe. availability."],["Invite","Right game. right people."],["Compound","Repeat people, not random games."]],
+    "profile": ["level","vibe","availability","chemistry"],
+    "feed": [["Game","Balanced Tuesday match"],["Welcome","Newcomer + welcomer"],["Return","Post-game table"]],
+    "moments": ["fair game","fun foursome","repeat crew","league captain"],
+    "proof": "The future of social sports is not a bracket. <strong>It is a personalized invitation feed.</strong>"
+  },
+  "hobbies": {
+    "kicker": "Hobbies",
+    "title": "Interest becomes <em>shared momentum.</em>",
+    "sub": "Beginners, guides, peers, projects, and hosts find each other faster.",
+    "steps": [["Learn","Taste. skill. goals."],["Gather","Guide, peer, host."],["Repeat","Interest turns into habit."]],
+    "profile": ["taste","skill","project","pace"],
+    "feed": [["Start","Beginner circle"],["Guide","Mentor maker"],["Share","Show-and-tell night"]],
+    "moments": ["learn","make","teach","return"],
+    "proof": "The future hobby community makes it easier to <strong>keep showing up.</strong>"
+  },
+  "college": {
+    "kicker": "College",
+    "title": "Belonging starts before <em>loneliness hardens.</em>",
+    "sub": "Students get meals, clubs, study groups, and mentors by fit, not luck.",
+    "steps": [["Know","Interests. values. schedule."],["Invite","Meal. club. mentor."],["Belong","Less lonely, sooner."]],
+    "profile": ["major","values","schedule","interests"],
+    "feed": [["Meal","First-week table"],["Club","Right room intro"],["Mentor","Alumni coffee"]],
+    "moments": ["meal table","study group","club intro","mentor coffee"],
+    "proof": "The future campus is an <strong>active belonging engine.</strong>"
+  },
+  "neighborhoods": {
+    "kicker": "Neighborhoods, cities & schools",
+    "title": "A place stops being <em>strangers nearby.</em>",
+    "sub": "Parents, helpers, schools, elders, and organizers become visible through trusted invitations.",
+    "steps": [["Map","Kids. needs. local gifts."],["Invite","Walk, meal, project."],["Strengthen","The place works better."]],
+    "profile": ["kids","needs","skills","nearby"],
+    "feed": [["School","Pickup walk"],["Home","Tool-lending intro"],["Block","Small dinner"]],
+    "moments": ["parents","helpers","schools","neighbors"],
+    "proof": "The future neighborhood is a <strong>trusted local invitation layer.</strong>"
+  },
+  "fitness": {
+    "kicker": "Fitness & gym groups",
+    "title": "The gym becomes a room that <em>expects you back.</em>",
+    "sub": "Goals, comfort, schedule, and energy become buddy, class, and coach invitations.",
+    "steps": [["Learn","Goals. comfort. energy."],["Pair","Buddy, coach, class."],["Return","Showing up gets easier."]],
+    "profile": ["goal","comfort","energy","schedule"],
+    "feed": [["Buddy","Beginner partner"],["Class","Right-energy group"],["Coach","Check-in moment"]],
+    "moments": ["buddy","coach","class","return"],
+    "proof": "The future fitness business retains people by matching them into <strong>community momentum.</strong>"
+  },
+  "homeschool": {
+    "kicker": "Homeschool groups",
+    "title": "Families find the <em>right circle</em> faster.",
+    "sub": "Ages, learning goals, parent capacity, pods, mentors, and support fit together.",
+    "steps": [["See","Ages. needs. capacity."],["Fit","Pods, projects, partners."],["Support","Less alone. more help."]],
+    "profile": ["ages","needs","capacity","interests"],
+    "feed": [["Pod","Project group"],["Parent","Swap support"],["Mentor","One-hour help"]],
+    "moments": ["kids","parents","pods","support"],
+    "proof": "The future homeschool group turns isolated families into a <strong>support graph.</strong>"
+  },
+  "faith": {
+    "kicker": "Faith communities",
+    "title": "Care finds the <em>person who needs it.</em>",
+    "sub": "Gifts, needs, hosts, service, and small groups route to the right invitation.",
+    "steps": [["See","Needs and gifts."],["Invite","Care. serve. host."],["Welcome","People are noticed sooner."]],
+    "profile": ["season","need","gift","capacity"],
+    "feed": [["Care","Meal train"],["Serve","Right team"],["Host","Small group table"]],
+    "moments": ["care","serve","host","welcome"],
+    "proof": "The future faith community does not rely on memory. <strong>It routes care.</strong>"
+  },
+  "country-clubs": {
+    "kicker": "Country clubs",
+    "title": "Day one feels like <em>you already belong.</em>",
+    "sub": "Onboarding becomes an invitation engine: golf, dinner, family, service, and introductions.",
+    "steps": [["Survey","Family. interests. pace."],["Feed","Golf with relevant members."],["Belong","Dinner before awkward months."]],
+    "profile": ["new member","golf","dinner","family"],
+    "feed": [["Golf","Saturday foursome"],["Dinner","Relevant table"],["Family","Clinic invite"]],
+    "moments": ["golf partner","dinner table","welcoming couple","club life"],
+    "proof": "The future country club is a <strong>personalized invitation feed</strong>, not a directory."
+  }
+};
 (function setupC2cStoryOverlay() {
   const slide = document.getElementById('cs-2c');
   if (!slide) return;
-  const stories = window.C2C_STORIES || {};
+  let stories = window.C2C_STORIES || {};
+  const storySource = slide.querySelector('#c2cStorySource');
+  if (storySource && storySource.textContent) {
+    try {
+      stories = JSON.parse(storySource.textContent);
+      window.C2C_STORIES = stories;
+    } catch (error) {}
+  }
   const layer = document.getElementById('c2cStoryLayer');
   const title = document.getElementById('c2cStoryTitle');
   const kicker = document.getElementById('c2cStoryKicker');
@@ -32401,22 +32852,24 @@ window.C2C_STORIES = {"social-sports":{"kicker":"Social sports","title":"Better 
   if (!layer || !title || !kicker || !sub || !flow || !graphic || !proof || !close) return;
   function esc(text) { return String(text || '').replace(/[&<>"']/g, function(ch) { return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[ch]; }); }
   function stepHtml(step, index) { return '<div class="c2c-story-step"><div class="c2c-story-num">' + (index + 1) + '</div><h3>' + esc(step[0]) + '</h3><p>' + esc(step[1]) + '</p></div>'; }
+  function tokenHtml(text) { return '<span class="c2c-story-token">' + esc(text) + '</span>'; }
+  function feedHtml(item) {
+    const label = Array.isArray(item) ? item[0] : 'Invite';
+    const text = Array.isArray(item) ? item[1] : item;
+    return '<div class="c2c-story-feed-card"><strong>' + esc(label) + '</strong>' + esc(text) + '</div>';
+  }
+  function momentHtml(text) { return '<div class="c2c-story-moment">' + esc(text) + '</div>'; }
   function renderGraphic(story) {
-    const nodes = story.nodes || [];
-    const positions = [[50,18],[82,40],[70,77],[30,77],[18,40]];
-    let lines = '';
-    for (let i = 0; i < nodes.length && i < positions.length; i++) {
-      const x = positions[i][0], y = positions[i][1], dx = 50 - x, dy = 50 - y;
-      const len = Math.sqrt(dx * dx + dy * dy) * 4.3;
-      const angle = Math.atan2(dy, dx) * 180 / Math.PI;
-      lines += '<div class="c2c-story-line" style="left:' + x + '%;top:' + y + '%;width:' + len + 'px;transform:rotate(' + angle + 'deg)"></div>';
-    }
-    let nodeHtml = '';
-    for (let i = 0; i < nodes.length && i < positions.length; i++) {
-      const ring = i % 3 === 0 ? '#5B8FD4' : (i % 3 === 1 ? '#b8954a' : '#c8462c');
-      nodeHtml += '<div class="c2c-story-node" style="--ring:' + ring + ';left:calc(' + positions[i][0] + '% - 39px);top:calc(' + positions[i][1] + '% - 39px)">' + esc(nodes[i]) + '</div>';
-    }
-    return '<div class="c2c-story-orbit"></div>' + lines + '<div class="c2c-story-hub">Give<br>n<br>Receive</div>' + nodeHtml;
+    const profile = story.profile || [];
+    const feed = story.feed || [];
+    const moments = story.moments || story.nodes || [];
+    return '<div class="c2c-story-route">' +
+      '<div class="c2c-story-block c2c-story-profile"><h4>Onboard</h4><div class="c2c-story-tokens">' + profile.map(tokenHtml).join('') + '</div><div class="c2c-story-note">learns who this person is</div></div>' +
+      '<div class="c2c-story-arrow">&rarr;</div>' +
+      '<div class="c2c-story-block c2c-story-feed"><h4>Personalized invitation feed</h4>' + feed.map(feedHtml).join('') + '</div>' +
+      '<div class="c2c-story-arrow">&rarr;</div>' +
+      '<div class="c2c-story-block c2c-story-moments"><h4>Real-world moments</h4><div class="c2c-story-moment-grid">' + moments.map(momentHtml).join('') + '</div><div class="c2c-story-note">the community gets easier to enter</div></div>' +
+      '</div>';
   }
   window.c2cOpenStory = function(key, event) {
     if (event) { event.preventDefault(); event.stopPropagation(); }
@@ -32441,6 +32894,9 @@ window.C2C_STORIES = {"social-sports":{"kicker":"Social sports","title":"Better 
   };
   slide.querySelectorAll('.c2c-card[data-c2c-story]').forEach(function(card) {
     card.addEventListener('click', function(event) { return window.c2cOpenStory(card.getAttribute('data-c2c-story'), event); });
+    card.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter' || event.key === ' ') return window.c2cOpenStory(card.getAttribute('data-c2c-story'), event);
+    });
   });
   close.addEventListener('click', window.c2cCloseStory);
   layer.addEventListener('click', function(event) { if (event.target === layer) window.c2cCloseStory(event); });
@@ -33662,7 +34118,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 → pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-padel-club-pink' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-padel-club-pink' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
