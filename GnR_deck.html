@@ -12967,6 +12967,63 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] .psb-slide .psb-version-sub,
   html[data-export="1"] .psb-slide .psb-side-note,
   html[data-export="1"] .psb-slide .psb-step { opacity:1 !important; transform:none !important; transition:none !important; }
+  #cs-pb-silliness-image-net-pink,
+  #cs-pb-silliness-image-open-pink,
+  #cs-pb-silliness-image-map-pink {
+    background:#1a1612 !important; overflow:hidden; position:absolute; inset:0; color:#fbf7ef;
+  }
+  #cs-pb-silliness-image-net-pink.active,
+  #cs-pb-silliness-image-open-pink.active,
+  #cs-pb-silliness-image-map-pink.active { display:block !important; }
+  .psg-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+  .psg-scrim { position:absolute; inset:0; z-index:1; pointer-events:none; }
+  #cs-pb-silliness-image-net-pink .psg-scrim {
+    background:linear-gradient(90deg, rgba(11,20,31,.78) 0%, rgba(11,20,31,.36) 34%, rgba(11,20,31,.04) 62%),
+      linear-gradient(0deg, rgba(11,20,31,.82) 0%, rgba(11,20,31,.28) 38%, transparent 70%);
+  }
+  #cs-pb-silliness-image-open-pink .psg-scrim {
+    background:linear-gradient(90deg, rgba(251,247,239,.92) 0%, rgba(251,247,239,.58) 34%, transparent 66%);
+  }
+  #cs-pb-silliness-image-map-pink .psg-scrim {
+    background:linear-gradient(90deg, transparent 0%, rgba(11,20,31,.12) 49%, rgba(11,20,31,.86) 72%, rgba(11,20,31,.94) 100%);
+  }
+  .psg-eye {
+    position:absolute; top:28px; left:48px; z-index:5;
+    font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em;
+    text-transform:uppercase; color:#c8462c;
+  }
+  .psg-copy { position:absolute; z-index:3; max-width:760px; }
+  .psg-copy h1 {
+    margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.65rem,5.2vw,5.8rem);
+    line-height:.94; letter-spacing:0; font-weight:900; color:inherit;
+  }
+  .psg-copy h1 em { font-style:italic; color:#f7df9a; }
+  .psg-copy p {
+    margin:22px 0 0; max-width:660px; font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:1.38rem; line-height:1.18; font-weight:650;
+  }
+  .psg-copy.dark p,
+  .psg-copy.right p { color:rgba(251,247,239,.84); }
+  .psg-copy.dark { left:78px; bottom:76px; color:#fbf7ef; text-shadow:0 3px 22px rgba(0,0,0,.48); }
+  .psg-copy.paper { left:78px; top:104px; color:#1a1612; text-shadow:0 1px 0 rgba(251,247,239,.72); }
+  .psg-copy.paper h1 em { color:#5B8FD4; }
+  .psg-copy.paper p { color:rgba(26,22,18,.74); }
+  .psg-copy.right { right:82px; top:132px; max-width:620px; color:#fbf7ef; text-shadow:0 3px 22px rgba(0,0,0,.52); }
+  .psg-tags { margin-top:24px; display:flex; flex-wrap:wrap; gap:10px; }
+  .psg-tags span {
+    display:inline-flex; align-items:center; min-height:36px; padding:0 12px;
+    border:1px solid rgba(247,223,154,.38); background:rgba(26,22,18,.36);
+    font-family:'Manrope',sans-serif; font-size:.63rem; font-weight:900; letter-spacing:.15em;
+    text-transform:uppercase; color:#fbf7ef;
+  }
+  .psg-copy.paper .psg-tags span { color:#1a1612; background:rgba(251,247,239,.76); border-color:rgba(184,149,74,.38); }
+  .psg-slide .psg-bg,
+  .psg-slide .psg-copy { opacity:0; transform:scale(1.018); transition:opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
+  .psg-slide .psg-copy { transform:translateY(16px); }
+  .psg-slide.casey-entered .psg-bg,
+  .psg-slide.casey-entered .psg-copy { opacity:1; transform:none; }
+  html[data-export="1"] .psg-slide .psg-bg,
+  html[data-export="1"] .psg-slide .psg-copy { opacity:1 !important; transform:none !important; transition:none !important; }
 </style>
 
 <div class="casey-slide ds-focus psj-slide psb-slide" id="cs-pb-silliness-feature" style="display:none">
@@ -13032,6 +13089,39 @@ window.cs1m7Reverse = function() {
   <div class="psb-step" style="left:480px;bottom:214px"><b>02 mixed partners</b><span>new people become safe fast</span></div>
   <div class="psb-step" style="right:518px;bottom:168px"><b>03 lucky shot</b><span>the apology is part of the charm</span></div>
   <div class="psb-step" style="right:142px;bottom:246px"><b>04 paddle tap</b><span>the room decides who it wants again</span></div>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psg-slide" id="cs-pb-silliness-image-net-pink" style="display:none">
+  <div class="psg-eye slide-eyebrow">why pickleball works</div>
+  <img class="psg-bg" src="assets/cs-pb-silliness-image-net-tap.png" alt="Image-generated pickleball club scene: lucky net shot, laughing players, paddle tap, and open-play community." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png'"/>
+  <div class="psg-scrim" aria-hidden="true"></div>
+  <div class="psg-copy dark">
+    <h1>The joke is the <em>wedge.</em></h1>
+    <p>A goofy game makes strangers laugh before they posture. That is the opening GnR can measure.</p>
+    <div class="psg-tags"><span>net drip</span><span>paddle tap</span><span>guard down</span></div>
+  </div>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psg-slide" id="cs-pb-silliness-image-open-pink" style="display:none">
+  <div class="psg-eye slide-eyebrow">why pickleball works</div>
+  <img class="psg-bg" src="assets/cs-pb-silliness-image-open-play.png" alt="Image-generated open-play pickleball scene: mixed partners laughing through silly rituals and social rotation." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png'"/>
+  <div class="psg-scrim" aria-hidden="true"></div>
+  <div class="psg-copy paper">
+    <h1>Silliness turns competition into <em>belonging.</em></h1>
+    <p>The room keeps rotating: beginners, obsessives, retirees, founders, friends. The absurdity makes everyone legible.</p>
+    <div class="psg-tags"><span>kitchen</span><span>dink</span><span>rematch</span></div>
+  </div>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psg-slide" id="cs-pb-silliness-image-map-pink" style="display:none">
+  <div class="psg-eye slide-eyebrow">why pickleball works</div>
+  <img class="psg-bg" src="assets/cs-pb-silliness-image-social-map.png" alt="Image-generated pickleball social-map scene: playful court rituals become visible community signals." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png'"/>
+  <div class="psg-scrim" aria-hidden="true"></div>
+  <div class="psg-copy right">
+    <h1>A social machine disguised as a <em>joke.</em></h1>
+    <p>Every funny ritual creates a visible signal: who includes, who welcomes, who gets invited back.</p>
+    <div class="psg-tags"><span>laugh</span><span>rotate</span><span>invite back</span></div>
+  </div>
 </div>
 
 <div class="casey-slide ds-focus psj-slide" id="cs-pb-silliness-scroll" style="display:none">
@@ -32111,7 +32201,7 @@ const SLIDE_ALTS = {
   5: [],
   // [Dave 2026-05-20] Dinner/Torch VC alt moved to TRASH_ORDER so it stays recoverable without occupying the deck/appendix review system.
   // [Codex 2026-05-30] Pink-dot image-led silliness variants for current active cs-pb-silliness-feature slot.
-  23: ['cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink'],
+  23: ['cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink', 'cs-pb-silliness-image-net-pink', 'cs-pb-silliness-image-open-pink', 'cs-pb-silliness-image-map-pink'],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
   // [Dave 2026-05-15] Key shifted 20 → 21 after cs-givefirst inserted at slot 18 (after the Wheelhouse slide). cs-16 is now at slot 21.
   // [Dave 2026-05-14 PM v4 c] cs-funnel added as second red-dot alt (further LEFT than cs-16old) per Dave: 'create a new red dot slide to the left of this one, and rethink it, reimagine it as a SALES FUNNEL — a human value sales funnel which is exactly what GnR is.'
@@ -34118,7 +34208,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 → pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-padel-club-pink' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-padel-club-pink' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
