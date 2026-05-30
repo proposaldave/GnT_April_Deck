@@ -30,6 +30,15 @@ BRANCH UNIVERSE
 - Before DONE, the count of clean or non-checked-out local deck/* branches not contained in origin/main must be zero unless each remaining branch is listed under BLOCKED / CONFLICTS / NOT VERIFIED with evidence.
 - Report the exact unpublished-branch audit line, for example: `UNPUBLISHED_LOCAL_DECK_REFS=0`.
 
+FAILED-EDIT PHRASE TRACE
+- If Dave names old visible text, new visible text, a screenshot, or says "didn't I ask you to change/move/delete this", do not rely on branch names.
+- Search current `GnR_deck.html`, `index.html`, raw GitHub, and Pages source for the visible text.
+- Search every local deck/* branch content and diff for the exact phrase and nearby slide ID:
+  `git grep -n -i "<visible phrase>" <branch> -- GnR_deck.html`
+  `git diff $(git merge-base main <branch>) <branch> -- GnR_deck.html`
+- A branch that contains the requested replacement or removes the old phrase is a publish candidate even if it is not checked out and even if the branch name does not mention the phrase.
+- If the intent is a tiny copy/layout/registry change, port it to current main, verify old text absent/new text present or selector/registry updated, then mark the source branch integrated.
+
 BRANCH INVENTORY
 - List all local deck/* branches.
 - Classify each as already merged, safe candidate, conflict, risky/delete/trash, likely inactive-variant edit, unrelated, broken ref, or unknown.

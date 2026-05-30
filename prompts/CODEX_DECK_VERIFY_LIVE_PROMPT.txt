@@ -21,6 +21,15 @@ CHECKS
 6. Verify whether the target slide ID is active through SLIDE_ORDER, SLIDE_ALTS, or STAFF_ORDER.
 7. If needed for a visual/layout issue, open/render the active visible slide and compare against the source.
 
+FAILED-EDIT PHRASE TRACE
+- If Dave says "didn't I ask..." or names a visible phrase, trace the phrase across all local deck/* branches, not only checked-out worktrees.
+- Search by exact old text, likely replacement text, nearby slide ID, and screenshot context.
+- Use branch content and branch diffs:
+  `git grep -n -i "<visible phrase>" <branch> -- GnR_deck.html`
+  `git diff $(git merge-base main <branch>) <branch> -- GnR_deck.html`
+- If a local branch contains the requested change but it is not in origin/main, classify as `skipped branch` and identify the branch.
+- If the branch intent is tiny and safe, the next action is to publish/port that exact intent, not to ask Dave to find the branch again.
+
 TRACE REQUIREMENT
 - Given a requested edit or branch, trace:
   request

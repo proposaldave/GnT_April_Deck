@@ -52,6 +52,9 @@ Before declaring a publish pass done, run a completed-session audit: compare `gi
 Unpublished-local-branch rule:
 `git worktree list --porcelain` is not enough. A finished branch can exist without a checked-out worktree. Before `DONE`, prove `UNPUBLISHED_LOCAL_DECK_REFS=0` for local `deck/*` branches not contained in `origin/main`, or list every remaining branch under `BLOCKED`, `CONFLICTS`, or `NOT VERIFIED` with the next action.
 
+Failed-visible-phrase rule:
+When Dave reports a missed visible phrase or asks "didn't I ask...", search all local `deck/*` branch contents and diffs for the exact old text, likely replacement, nearby slide ID, and screenshot context. If a branch contains the requested tiny copy/layout/registry intent, port it to current `main`, verify the active source/render result, then mark the source branch integrated. Do not ask Dave to find the branch again.
+
 Branch-intent audit:
 For every completed-session branch, diff the branch against its merge-base and extract the actual intent: visible text, active slide IDs, selectors, JavaScript hooks, assets, and registry edits. Verify that intent exists in current `main` before calling it integrated. An `ours` merge is allowed only after the intent has already been ported and verified. If a branch is an ancestor of `main` but the visible result is absent, treat it as a failed publish and repair it before reporting `DONE`.
 
