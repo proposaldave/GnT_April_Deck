@@ -19831,8 +19831,9 @@ window.csBrandV8Reverse = function() {
   #cs-value-choice .vc-icon.iphone { background:linear-gradient(180deg,#f8f3ea,#8b908f); }
   #cs-value-choice .vc-icon.iphone::before { content:""; width:20px; height:32px; border-radius:5px; border:2px solid #1a1612; background:linear-gradient(180deg,#2d3235,#0e1012); box-shadow:0 0 0 2px rgba(251,247,239,0.52); }
   #cs-value-choice .vc-icon.google { background:conic-gradient(from -45deg,#4285f4 0 25%,#34a853 0 50%,#fbbc05 0 75%,#ea4335 0); color:#fbf7ef; font-size:1.2rem; }
-  #cs-value-choice .vc-icon.ai { background:radial-gradient(circle at 50% 46%, rgba(91,143,212,0.90), rgba(26,22,18,0.88) 64%); }
-  #cs-value-choice .vc-icon.ai::before, #cs-value-choice .vc-icon.room::before { content:""; width:24px; height:24px; border-radius:50%; border:1px solid rgba(251,247,239,0.62); box-shadow:0 -14px 0 -8px #fbf7ef, 13px 8px 0 -8px #fbf7ef, -13px 8px 0 -8px #fbf7ef; }
+  #cs-value-choice .vc-icon.ai { gap:2px; background:linear-gradient(135deg, rgba(251,247,239,0.92), rgba(184,149,74,0.30)); }
+  #cs-value-choice .vc-icon.ai svg { display:block; flex:0 0 auto; }
+  #cs-value-choice .vc-icon.room::before { content:""; width:24px; height:24px; border-radius:50%; border:1px solid rgba(251,247,239,0.62); box-shadow:0 -14px 0 -8px #fbf7ef, 13px 8px 0 -8px #fbf7ef, -13px 8px 0 -8px #fbf7ef; }
   #cs-value-choice .vc-icon.coke { background:#c8462c; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.45rem; font-style:italic; }
   #cs-value-choice .vc-icon.room { background:radial-gradient(circle, rgba(184,149,74,0.82), rgba(26,22,18,0.78) 68%); }
   #cs-value-choice .vc-item.answer { background:rgba(184,149,74,0.22); border-color:rgba(184,149,74,0.72); color:#fbf7ef; box-shadow:0 12px 38px rgba(184,149,74,0.18); }
@@ -19924,7 +19925,19 @@ window.csBrandV8Reverse = function() {
         <div class="vc-item"><div class="vc-icon netflix">N</div><div class="vc-copy"><b>Netflix</b><small>streaming subscription</small></div><div class="vc-dollars">$300B+ sold</div></div>
         <div class="vc-item"><div class="vc-icon iphone"></div><div class="vc-copy"><b>iPhone</b><small>3B devices shipped</small></div><div class="vc-dollars">$2T+ sold</div></div>
         <div class="vc-item"><div class="vc-icon google">G</div><div class="vc-copy"><b>Google Ads</b><small>the world's information</small></div><div class="vc-dollars">$3T+ sold</div></div>
-        <div class="vc-item"><div class="vc-icon ai"></div><div class="vc-copy"><b>AI</b><small>the world's intelligence</small></div><div class="vc-dollars">$2.5T spend</div></div>
+        <div class="vc-item"><div class="vc-icon ai" title="OpenAI · Anthropic" aria-label="OpenAI and Anthropic logos">
+          <svg viewBox="0 0 36 36" width="24" height="24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g fill="none" stroke="#1a1612" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(0 18 18)"/>
+              <ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(60 18 18)"/>
+              <ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(120 18 18)"/>
+            </g>
+          </svg>
+          <svg viewBox="0 0 64 64" width="19" height="19" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M27.4 13.6h9.2L52 50.4h-9.2l-3.1-7.6H22.3l-3.1 7.6H10z" fill="#c8462c"/>
+            <path d="M32 23.2 25.4 39h13.2z" fill="#fbf7ef"/>
+          </svg>
+        </div><div class="vc-copy"><b>AI</b><small>the world's intelligence</small></div><div class="vc-dollars">$2.5T spend</div></div>
         <div class="vc-item"><div class="vc-icon coke">C</div><div class="vc-copy"><b>Coca-Cola</b><small>iconic everyday consumption</small></div><div class="vc-dollars">$1T+ sold</div></div>
         <div class="vc-item answer"><div class="vc-icon room"></div><div class="vc-copy"><b>Abundant human connection</b><div class="vc-gnr-line"><span class="vc-gnr-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span><span>the room people remember</span></div></div><div class="vc-dollars">?</div></div>
       </div>
