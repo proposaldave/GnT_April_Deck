@@ -27104,58 +27104,101 @@ window.csBrandV8Reverse = function() {
 <!-- ===== cs-gnr-business-outcomes · Community-business stakes [Codex 2026-05-28] ===== -->
 <style>
   #cs-gnr-business-outcomes{background:#f3ead8!important;overflow:hidden}
-  #cs-gnr-business-outcomes .gbo-stage{position:relative;min-height:100%;width:100%;box-sizing:border-box;padding:88px 76px 56px;display:flex;align-items:center;justify-content:center}
-  #cs-gnr-business-outcomes .gbo-shell{width:min(1480px,100%);margin:0 auto;display:flex;flex-direction:column;gap:28px}
-  #cs-gnr-business-outcomes .gbo-title{margin:0 auto;text-align:center;max-width:1160px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:4.55rem;font-weight:850;line-height:.98;color:#1a1612}
+  #cs-gnr-business-outcomes .gbo-stage{position:relative;min-height:100%;width:100%;box-sizing:border-box;padding:78px 72px 50px;display:flex;align-items:center;justify-content:center}
+  #cs-gnr-business-outcomes .gbo-stage:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(184,149,74,.10) 1px,transparent 1px),linear-gradient(0deg,rgba(184,149,74,.08) 1px,transparent 1px);background-size:180px 100%,100% 128px;opacity:.34;pointer-events:none}
+  #cs-gnr-business-outcomes .gbo-shell{position:relative;z-index:1;width:min(1510px,100%);margin:0 auto;display:flex;flex-direction:column;gap:22px}
+  #cs-gnr-business-outcomes .gbo-title{margin:0 auto;text-align:center;max-width:1280px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:4.28rem;font-weight:850;line-height:.98;color:#1a1612}
   #cs-gnr-business-outcomes .gbo-title em{font-style:italic;color:#b8954a;font-weight:850}
-  #cs-gnr-business-outcomes .gbo-sub{font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,.54);text-align:center}
-  #cs-gnr-business-outcomes .gbo-compare{display:grid;grid-template-columns:minmax(0,1fr) 126px minmax(0,1fr);gap:30px;align-items:stretch}
-  #cs-gnr-business-outcomes .gbo-panel{position:relative;min-height:326px;padding:42px 48px;box-sizing:border-box;background:rgba(251,247,239,.82);border:1.4px solid rgba(184,149,74,.28);border-radius:8px;display:flex;flex-direction:column;justify-content:center;gap:26px;box-shadow:0 18px 50px rgba(26,22,18,.06)}
-  #cs-gnr-business-outcomes .gbo-panel.low{border-left:7px solid #c8462c}
-  #cs-gnr-business-outcomes .gbo-panel.high{border-left:7px solid #5B8FD4;background:linear-gradient(180deg,rgba(251,247,239,.94),rgba(251,247,239,.78));box-shadow:0 20px 58px rgba(91,143,212,.10),0 0 0 1px rgba(184,149,74,.12) inset}
-  #cs-gnr-business-outcomes .gbo-label{font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;letter-spacing:.30em;text-transform:uppercase}
+  #cs-gnr-business-outcomes .gbo-title .blue{color:#5B8FD4;font-style:normal}
+  #cs-gnr-business-outcomes .gbo-sub{font-family:'Manrope',sans-serif;font-size:.76rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,.56);text-align:center}
+  #cs-gnr-business-outcomes .gbo-compare{display:grid;grid-template-columns:minmax(0,.94fr) 162px minmax(0,1fr);gap:24px;align-items:stretch}
+  #cs-gnr-business-outcomes .gbo-panel{position:relative;min-height:508px;padding:32px 36px 30px;box-sizing:border-box;background:rgba(251,247,239,.88);border:1.4px solid rgba(184,149,74,.28);border-radius:8px;display:grid;grid-template-rows:auto 190px auto auto;gap:18px;box-shadow:0 18px 50px rgba(26,22,18,.07);overflow:hidden}
+  #cs-gnr-business-outcomes .gbo-panel:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,247,239,.20),rgba(184,149,74,.08));pointer-events:none}
+  #cs-gnr-business-outcomes .gbo-panel>*{position:relative;z-index:1}
+  #cs-gnr-business-outcomes .gbo-panel.low{border-left:8px solid #c8462c}
+  #cs-gnr-business-outcomes .gbo-panel.high{border-left:8px solid #5B8FD4;box-shadow:0 24px 68px rgba(91,143,212,.16),0 0 0 1px rgba(184,149,74,.14) inset}
+  #cs-gnr-business-outcomes .gbo-label{font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:900;letter-spacing:.30em;text-transform:uppercase}
   #cs-gnr-business-outcomes .gbo-panel.low .gbo-label{color:#c8462c}
   #cs-gnr-business-outcomes .gbo-panel.high .gbo-label{color:#5B8FD4}
-  #cs-gnr-business-outcomes .gbo-panel h2{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:3.1rem;font-weight:850;line-height:1.02;color:#1a1612}
+  #cs-gnr-business-outcomes .gbo-network{width:100%;height:190px;border:1px solid rgba(184,149,74,.24);border-radius:7px;background:rgba(251,247,239,.58)}
+  #cs-gnr-business-outcomes .gbo-panel h2{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.86rem;font-weight:850;line-height:1.02;color:#1a1612}
   #cs-gnr-business-outcomes .gbo-panel h2 em{font-style:italic;font-weight:750}
   #cs-gnr-business-outcomes .gbo-panel.low h2 em{color:#c8462c}
   #cs-gnr-business-outcomes .gbo-panel.high h2 em{color:#b8954a}
-  #cs-gnr-business-outcomes .gbo-proof{font-family:'Manrope',sans-serif;font-size:1.08rem;font-weight:850;letter-spacing:0;text-transform:none;color:rgba(26,22,18,.62);padding:18px 0 0;border-top:1px solid rgba(184,149,74,.26)}
-  #cs-gnr-business-outcomes .gbo-center{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px;color:#1a1612}
-  #cs-gnr-business-outcomes .gbo-mark{width:116px;height:116px;border-radius:50%;display:grid;place-items:center;background:#fbf7ef;border:1.8px solid rgba(184,149,74,.55);box-shadow:0 18px 44px rgba(184,149,74,.18)}
-  #cs-gnr-business-outcomes .gbo-mark span{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:3.05rem;font-weight:900;line-height:1}
+  #cs-gnr-business-outcomes .gbo-proof{font-family:'Manrope',sans-serif;font-size:1.02rem;font-weight:820;line-height:1.35;color:rgba(26,22,18,.68);padding:17px 0 0;border-top:1px solid rgba(184,149,74,.28)}
+  #cs-gnr-business-outcomes .gbo-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+  #cs-gnr-business-outcomes .gbo-chip{font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;padding:8px 10px;border-radius:999px;background:rgba(251,247,239,.82);border:1px solid rgba(184,149,74,.32);color:rgba(26,22,18,.62)}
+  #cs-gnr-business-outcomes .gbo-panel.low .gbo-chip{border-color:rgba(200,70,44,.30);color:#c8462c}
+  #cs-gnr-business-outcomes .gbo-panel.high .gbo-chip{border-color:rgba(91,143,212,.34);color:#5B8FD4}
+  #cs-gnr-business-outcomes .gbo-center{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;color:#1a1612}
+  #cs-gnr-business-outcomes .gbo-arrow{width:152px;height:76px}
+  #cs-gnr-business-outcomes .gbo-mark{width:106px;height:106px;border-radius:50%;display:grid;place-items:center;background:#fbf7ef;border:1.8px solid rgba(184,149,74,.58);box-shadow:0 18px 44px rgba(184,149,74,.20)}
+  #cs-gnr-business-outcomes .gbo-mark span{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.9rem;font-weight:900;line-height:1}
   #cs-gnr-business-outcomes .gbo-mark .g{color:#5B8FD4}.gbo-mark .n{color:#b8954a;font-style:italic;font-weight:600}.gbo-mark .r{color:#c8462c}
-  #cs-gnr-business-outcomes .gbo-center-line{width:1px;height:92px;background:linear-gradient(180deg,rgba(200,70,44,.55),rgba(184,149,74,.75),rgba(91,143,212,.55))}
-  #cs-gnr-business-outcomes .gbo-footer{margin:0 auto;max-width:1180px;text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.72rem;font-weight:760;line-height:1.18;color:#1a1612;padding:16px 26px;border-top:1px solid rgba(184,149,74,.36);border-bottom:1px solid rgba(184,149,74,.36)}
+  #cs-gnr-business-outcomes .gbo-center-copy{font-family:'Manrope',sans-serif;font-size:.64rem;font-weight:900;line-height:1.35;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,.58);max-width:140px}
+  #cs-gnr-business-outcomes .gbo-center-copy strong{display:block;color:#1a1612;font-size:.76rem;letter-spacing:.13em}
+  #cs-gnr-business-outcomes .gbo-footer{margin:0 auto;max-width:1260px;text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.74rem;font-weight:760;line-height:1.18;color:#1a1612;padding:15px 26px;border-top:1px solid rgba(184,149,74,.36);border-bottom:1px solid rgba(184,149,74,.36)}
   #cs-gnr-business-outcomes .gbo-footer strong{font-weight:850;color:#b8954a}
+  #cs-gnr-business-outcomes svg text{font-family:'Manrope',sans-serif;letter-spacing:.12em;text-transform:uppercase}
   html[data-export="1"] #cs-gnr-business-outcomes *{animation:none!important;transition:none!important}
 </style>
 <div class="casey-slide ds-focus" id="cs-gnr-business-outcomes">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Community business health</div>
   <section class="gbo-stage">
     <div class="gbo-shell">
-      <h1 class="gbo-title"><em>GnR makes a club irreplaceable.</em></h1>
-      <div class="gbo-sub">Same courts. Different social physics.</div>
+      <h1 class="gbo-title">Humans go where <em>GnR connection</em> is <span class="blue">highest.</span></h1>
+      <div class="gbo-sub">Same courts. Same sport. Different social gravity.</div>
       <div class="gbo-compare">
         <div class="gbo-panel low">
-          <div class="gbo-label">Low GnR</div>
-          <h2>A place people <em>use.</em></h2>
-          <div class="gbo-proof">People shop on price.</div>
+          <div class="gbo-label">Low GnR connection</div>
+          <svg class="gbo-network" viewBox="0 0 560 220" role="img" aria-label="Low GnR club: scattered players on interchangeable courts.">
+            <rect x="18" y="20" width="524" height="180" rx="6" fill="rgba(251,247,239,.34)" stroke="rgba(184,149,74,.34)" stroke-width="2"/>
+            <path d="M280 20V200M18 110H542M150 20V200M410 20V200" stroke="rgba(184,149,74,.30)" stroke-width="2"/>
+            <path d="M78 74 C118 42 160 42 198 76M96 150 C142 184 176 180 214 142M350 72 C392 40 438 46 478 80" fill="none" stroke="#c8462c" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 9" opacity=".38"/>
+            <circle cx="82" cy="72" r="8" fill="#c8462c"/><circle cx="202" cy="76" r="7" fill="rgba(26,22,18,.42)"/>
+            <circle cx="96" cy="150" r="7" fill="rgba(26,22,18,.38)"/><circle cx="218" cy="142" r="8" fill="#c8462c"/>
+            <circle cx="354" cy="72" r="8" fill="rgba(26,22,18,.36)"/><circle cx="480" cy="80" r="7" fill="#c8462c"/>
+            <circle cx="452" cy="154" r="7" fill="rgba(26,22,18,.34)"/>
+            <text x="280" y="194" text-anchor="middle" font-size="12" font-weight="900" fill="rgba(26,22,18,.44)">interchangeable utility</text>
+          </svg>
+          <h2>A club people can <em>replace.</em></h2>
+          <div class="gbo-proof">The value is the court. Members compare price, distance, and open time slots.</div>
+          <div class="gbo-chips"><span class="gbo-chip">book and leave</span><span class="gbo-chip">price sensitive</span><span class="gbo-chip">no memory</span></div>
         </div>
 
         <div class="gbo-center" aria-hidden="true">
-          <div class="gbo-center-line"></div>
+          <svg class="gbo-arrow" viewBox="0 0 180 82">
+            <path d="M14 44 C54 12 112 12 158 44" fill="none" stroke="#b8954a" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M143 28 L162 44 L143 60" fill="none" stroke="#b8954a" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="26" cy="46" r="5" fill="#c8462c"/><circle cx="70" cy="24" r="5" fill="#b8954a"/><circle cx="118" cy="25" r="5" fill="#5B8FD4"/>
+          </svg>
           <div class="gbo-mark"><span><span class="g">G</span><span class="n">n</span><span class="r">R</span></span></div>
-          <div class="gbo-center-line"></div>
+          <div class="gbo-center-copy">raises <strong>connection density</strong></div>
+          <svg class="gbo-arrow" viewBox="0 0 180 82">
+            <path d="M14 38 C56 72 116 72 158 38" fill="none" stroke="#5B8FD4" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M143 22 L162 38 L143 54" fill="none" stroke="#5B8FD4" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="34" cy="44" r="5" fill="#b8954a"/><circle cx="83" cy="62" r="5" fill="#5B8FD4"/><circle cx="126" cy="56" r="5" fill="#c8462c"/>
+          </svg>
         </div>
 
         <div class="gbo-panel high">
-          <div class="gbo-label">High GnR</div>
-          <h2>A place people <em>belong.</em></h2>
-          <div class="gbo-proof">Leaving feels expensive.</div>
+          <div class="gbo-label">High GnR connection</div>
+          <svg class="gbo-network" viewBox="0 0 560 220" role="img" aria-label="High GnR club: connected players pulled into one dense community.">
+            <rect x="18" y="20" width="524" height="180" rx="6" fill="rgba(251,247,239,.34)" stroke="rgba(184,149,74,.34)" stroke-width="2"/>
+            <path d="M280 20V200M18 110H542M150 20V200M410 20V200" stroke="rgba(184,149,74,.25)" stroke-width="2"/>
+            <path d="M92 128L172 86L260 112L340 58L442 92L470 152L350 166L260 112L172 154L92 128M172 86L172 154M340 58L350 166M442 92L350 166M260 112L470 152" fill="none" stroke="#5B8FD4" stroke-width="3.1" stroke-linecap="round" opacity=".72"/>
+            <path d="M122 48 C218 22 314 24 424 54" fill="none" stroke="#b8954a" stroke-width="4" stroke-linecap="round" opacity=".58"/>
+            <circle cx="92" cy="128" r="9" fill="#5B8FD4"/><circle cx="172" cy="86" r="9" fill="#b8954a"/><circle cx="260" cy="112" r="11" fill="#c8462c"/>
+            <circle cx="340" cy="58" r="9" fill="#5B8FD4"/><circle cx="442" cy="92" r="9" fill="#b8954a"/><circle cx="470" cy="152" r="9" fill="#5B8FD4"/>
+            <circle cx="350" cy="166" r="9" fill="#b8954a"/><circle cx="172" cy="154" r="9" fill="#5B8FD4"/>
+            <text x="280" y="194" text-anchor="middle" font-size="12" font-weight="900" fill="#5B8FD4">compounding social gravity</text>
+          </svg>
+          <h2>A club people will <em>follow.</em></h2>
+          <div class="gbo-proof">The value is the people. Members feel known, invited, missed, and needed.</div>
+          <div class="gbo-chips"><span class="gbo-chip">known by name</span><span class="gbo-chip">invited into fit</span><span class="gbo-chip">missed when absent</span></div>
         </div>
       </div>
-      <div class="gbo-footer"><strong>Social energy</strong> becomes retention, referrals, and pricing power.</div>
+      <div class="gbo-footer"><strong>The future:</strong> people rearrange their lives around the communities where their GnR connection is highest.</div>
     </div>
   </section>
 </div>
