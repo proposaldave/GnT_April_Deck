@@ -17,6 +17,8 @@
   .dot{width:8px;height:8px;border-radius:50%;border:0;background:rgba(26,22,18,.28);cursor:pointer;transition:all .18s ease}
   .dot.on{height:18px;border-radius:5px;background:var(--gold);box-shadow:0 0 12px rgba(184,149,74,.70)}
   .count{position:fixed;right:32px;bottom:24px;z-index:55;font-size:.62rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,.50)}
+  .trash-btn{position:fixed;right:32px;top:26px;z-index:65;border:1px solid rgba(200,70,44,.38);border-radius:999px;background:rgba(251,247,239,.82);color:var(--red);padding:9px 14px;font-size:.62rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;box-shadow:0 12px 30px rgba(26,22,18,.08);backdrop-filter:blur(8px)}
+  .trash-btn:hover{background:rgba(200,70,44,.10);border-color:rgba(200,70,44,.62)}
   .slide{position:fixed;inset:0;display:none;place-items:center;background:#f3ead8}
   .slide.active{display:grid}
   .canvas{position:relative;width:min(100vw,177.7778vh);height:min(100vh,56.25vw);overflow:hidden;background:#f3ead8;box-shadow:0 0 0 1px rgba(26,22,18,.04)}
@@ -243,6 +245,7 @@
 <div class="progress" id="progress"></div>
 <nav class="nav" id="nav"></nav>
 <div class="count" id="count"></div>
+<button class="trash-btn" id="trashBtn" type="button">Trash</button>
 
 <main id="deck">
   <section class="slide active" data-slot="11"><div class="canvas">
@@ -256,30 +259,6 @@
         <div class="visual-sub">Prepaid restaurant value becomes dining demand. Prepaid court value becomes curated social demand. The extra layer is the Invitation Graph.</div>
       </div>
       <div class="visual-proof"><div class="visual-chip blue">Prepaid capacity</div><div class="visual-chip">Curated demand</div><div class="visual-chip red">Invitation graph</div></div>
-    </div>
-  </div></section>
-
-  <section class="slide" data-slot="2"><div class="canvas">
-    <div class="compare-clean">
-      <img src="assets/inkind/nepc_site/middleton_interior_1.webp" alt="Players on indoor courts at New England Pickleball Club">
-      <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
-      <div class="eyebrow">inKind translation</div>
-      <div class="compare-title"><span class="gold">Cash now</span> for capacity that becomes <span class="red">demand later.</span></div>
-      <div class="compare-sub">Same operator wedge: cash now for controlled future capacity. New twist: GnR does not just resell the slot: GnR invitation-based-matchmaking creates the group.</div>
-      <div class="compare-panels">
-        <div class="compare-panel">
-          <div class="compare-label">inKind</div>
-          <div class="compare-line">Pre-buy future F&amp;B value.</div>
-          <div class="compare-caption">Restaurant gets capital. Diners redeem later. Empty tables become app-driven demand.</div>
-        </div>
-        <div class="compare-panel red">
-          <div class="compare-label">Give n Receive</div>
-          <div class="compare-line">Pre-buy off-peak court value.</div>
-          <div class="compare-caption">Club gets guaranteed revenue. Players receive curated games with people they actually want to see.</div>
-        </div>
-      </div>
-      <div class="compare-arrow">&rarr;</div>
-      <div class="compare-signal"><div class="visual-chip blue">Capital</div><div class="visual-chip">Capacity</div><div class="visual-chip red">Curated group</div></div>
     </div>
   </div></section>
 
@@ -408,10 +387,33 @@
       <div class="operator-dollar"><strong>$10K</strong><span>trial capital<br>off-peak only</span></div>
     </div>
   </div></section>
+  <section class="slide trash-slide" data-trash-title="inKind translation"><div class="canvas">
+    <div class="compare-clean">
+      <img src="assets/inkind/nepc_site/middleton_interior_1.webp" alt="Players on indoor courts at New England Pickleball Club">
+      <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="eyebrow">inKind translation</div>
+      <div class="compare-title"><span class="gold">Cash now</span> for capacity that becomes <span class="red">demand later.</span></div>
+      <div class="compare-sub">Same operator wedge: cash now for controlled future capacity. New twist: GnR does not just resell the slot: GnR invitation-based-matchmaking creates the group.</div>
+      <div class="compare-panels">
+        <div class="compare-panel">
+          <div class="compare-label">inKind</div>
+          <div class="compare-line">Pre-buy future F&amp;B value.</div>
+          <div class="compare-caption">Restaurant gets capital. Diners redeem later. Empty tables become app-driven demand.</div>
+        </div>
+        <div class="compare-panel red">
+          <div class="compare-label">Give n Receive</div>
+          <div class="compare-line">Pre-buy off-peak court value.</div>
+          <div class="compare-caption">Club gets guaranteed revenue. Players receive curated games with people they actually want to see.</div>
+        </div>
+      </div>
+      <div class="compare-arrow">&rarr;</div>
+      <div class="compare-signal"><div class="visual-chip blue">Capital</div><div class="visual-chip">Capacity</div><div class="visual-chip red">Curated group</div></div>
+    </div>
+  </div></section>
 </div>
 
 <script>
-const deck=document.getElementById('deck'),trashBin=document.getElementById('trash-bin'),nav=document.getElementById('nav'),count=document.getElementById('count'),progress=document.getElementById('progress');
+const deck=document.getElementById('deck'),trashBin=document.getElementById('trash-bin'),nav=document.getElementById('nav'),count=document.getElementById('count'),progress=document.getElementById('progress'),trashBtn=document.getElementById('trashBtn');
 const mainSlides=[...deck.querySelectorAll(':scope > .slide')].filter(s=>!s.dataset.altFor),trashSlides=[...trashBin.querySelectorAll('.trash-slide')],allSlides=[...deck.querySelectorAll('.slide'),...trashSlides],altsBySlot=new Map();let currentSlot=0,currentAlt=-1,currentTrash=-1;
 allSlides.filter(s=>s.dataset.altFor).forEach(s=>{const slot=Number(s.dataset.altFor)-1;if(!altsBySlot.has(slot))altsBySlot.set(slot,[]);altsBySlot.get(slot).push(s)});
 const rows=[];
@@ -470,6 +472,7 @@ document.addEventListener('keydown',e=>{
   if(['ArrowDown',' ','d','D','PageDown'].includes(e.key)){e.preventDefault();next();return}
   if(['ArrowUp','a','A','w','W','PageUp'].includes(e.key)){e.preventDefault();prev();return}
 });
+trashBtn.addEventListener('click',()=>{currentTrash>=0?showMain(currentSlot):showTrash(0)});
 let wheelLock=false;
 document.addEventListener('wheel',e=>{
   e.preventDefault();
