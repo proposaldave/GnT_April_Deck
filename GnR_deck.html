@@ -23216,16 +23216,24 @@ window.csBrandV8Reverse = function() {
   #cs-referral-loop-pink .flow-step p{font-family:'Manrope',sans-serif;font-size:.87rem;line-height:1.32;font-weight:800;color:rgba(26,22,18,.64);margin:0}
   #cs-referral-loop-pink .refalt-bottom{margin-top:28px;padding:15px 30px;border-top:1px solid rgba(184,149,74,.34);border-bottom:1px solid rgba(184,149,74,.34);font-family:'Manrope',sans-serif;font-size:1.02rem;font-weight:900;color:#1a1612}
 
-  #cs-referral-data-pink .refalt-stage{display:grid;grid-template-columns:.82fr 1.18fr;gap:50px;align-items:center}
-  #cs-referral-data-pink .equation-stack{display:grid;gap:16px;margin-top:34px}
-  #cs-referral-data-pink .equation{display:grid;grid-template-columns:170px 1fr;align-items:center;gap:20px;padding:17px 22px;border-left:5px solid #b8954a;background:rgba(251,247,239,.80);border-radius:8px;box-shadow:0 12px 32px rgba(26,22,18,.07)}
-  #cs-referral-data-pink .equation b{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.55rem;color:#c8462c}
-  #cs-referral-data-pink .equation span{font-family:'Manrope',sans-serif;font-size:1rem;font-weight:900;color:#1a1612}
-  #cs-referral-data-pink .data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  #cs-referral-data-pink .data-card{min-height:235px;padding:28px 30px;display:flex;flex-direction:column;justify-content:space-between}
-  #cs-referral-data-pink .data-card h2{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.2rem;line-height:1.02;margin:0;color:#1a1612}
-  #cs-referral-data-pink .data-card p{font-family:'Manrope',sans-serif;font-size:.96rem;line-height:1.38;font-weight:820;color:rgba(26,22,18,.66);margin:18px 0 0}
-  #cs-referral-data-pink .data-value{font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:950;text-transform:uppercase;color:#5B8FD4}
+  #cs-referral-data-pink .refalt-stage{display:grid;grid-template-columns:.74fr 1.26fr;gap:54px;align-items:center}
+  #cs-referral-data-pink .refalt-title{font-size:clamp(3.4rem,5.25vw,6rem)}
+  #cs-referral-data-pink .refalt-sub{max-width:640px}
+  #cs-referral-data-pink .proof-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px;max-width:660px}
+  #cs-referral-data-pink .proof-chip{padding:15px 16px;border-top:4px solid #b8954a;background:rgba(251,247,239,.82);border-radius:8px;box-shadow:0 12px 30px rgba(26,22,18,.07);font-family:'Manrope',sans-serif;font-size:.82rem;line-height:1.18;font-weight:950;color:#1a1612}
+  #cs-referral-data-pink .proof-chip b{display:block;margin-bottom:6px;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:#5B8FD4}
+  #cs-referral-data-pink .referral-graph{position:relative;min-height:720px;padding:48px 52px;overflow:hidden}
+  #cs-referral-data-pink .referral-graph:before{content:"";position:absolute;inset:36px;border:1px solid rgba(184,149,74,.22);border-radius:8px;background:linear-gradient(135deg,rgba(91,143,212,.08),rgba(200,70,44,.05));z-index:0}
+  #cs-referral-data-pink .graph-svg{position:absolute;inset:52px;width:calc(100% - 104px);height:calc(100% - 104px);z-index:1}
+  #cs-referral-data-pink .graph-node{position:absolute;z-index:2;width:150px;height:150px;opacity:1!important;transform:none!important;border-radius:50%;display:grid;place-items:center;text-align:center;background:#fbf7ef;border:2px solid rgba(184,149,74,.48);box-shadow:0 18px 44px rgba(26,22,18,.10);font-family:'Manrope',sans-serif;font-size:.75rem;line-height:1.15;font-weight:950;text-transform:uppercase;color:#1a1612}
+  #cs-referral-data-pink .graph-node strong{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.15rem;line-height:.9;color:#c8462c;text-transform:none}
+  #cs-referral-data-pink .node-host{left:9%;top:39%}
+  #cs-referral-data-pink .node-guest{left:36%;top:14%}
+  #cs-referral-data-pink .node-match{right:10%;top:39%}
+  #cs-referral-data-pink .node-data{left:36%;bottom:12%}
+  #cs-referral-data-pink .graph-center{position:absolute;left:50%;top:50%;z-index:3;width:164px;height:164px;border-radius:50%;transform:translate(-50%,-50%);display:grid;place-items:center;text-align:center;background:#1a1612;color:#fbf7ef;box-shadow:0 24px 60px rgba(26,22,18,.20);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.75rem;font-weight:850}
+  #cs-referral-data-pink .data-badge{position:absolute;z-index:4;right:7%;bottom:7%;width:280px;padding:18px 20px;border-left:5px solid #c8462c;background:#fffaf0;border-radius:8px;box-shadow:0 20px 50px rgba(26,22,18,.12);font-family:'Manrope',sans-serif;font-size:.92rem;line-height:1.28;font-weight:900;color:#1a1612}
+  #cs-referral-data-pink .data-badge b{display:block;margin-bottom:5px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#b8954a}
 
   #cs-referral-roadmap-pink .refalt-stage{display:grid;grid-template-columns:.96fr 1.04fr;gap:48px;align-items:center}
   #cs-referral-roadmap-pink .roadmap{position:relative;padding:42px 38px;display:grid;gap:18px}
@@ -23330,18 +23338,35 @@ window.csBrandV8Reverse = function() {
     <div class="refalt-animate refalt-d1">
       <p class="refalt-kicker">why this is not just growth</p>
       <h1 class="refalt-title">A referral is <em>social proof with data exhaust.</em></h1>
-      <div class="equation-stack">
-        <div class="equation refalt-animate refalt-d2"><b>Referral =</b><span>an invitation from someone trusted.</span></div>
-        <div class="equation refalt-animate refalt-d3"><b>Referral =</b><span>built-in vitality for every open social event.</span></div>
-        <div class="equation refalt-animate refalt-d4"><b>Referral =</b><span>word of mouth productized inside the workflow.</span></div>
-        <div class="equation refalt-animate refalt-d5"><b>Referral =</b><span>new social graph data the club could never collect by hand.</span></div>
+      <p class="refalt-sub">Every invite carries trust, match signal, and a living map of who makes the community better.</p>
+      <div class="proof-strip">
+        <div class="proof-chip refalt-animate refalt-d2"><b>Pull</b>trusted players bring the next players</div>
+        <div class="proof-chip refalt-animate refalt-d3"><b>Signal</b>the guest reveals the inviter</div>
+        <div class="proof-chip refalt-animate refalt-d4"><b>Moat</b>each round trains the next group</div>
       </div>
     </div>
-    <div class="data-grid">
-      <div class="data-card refalt-panel refalt-animate refalt-d2"><div class="data-value">distribution</div><h2>Players pull the next players.</h2><p>The best social events spread through relationships, not ads or generic club announcements.</p></div>
-      <div class="data-card refalt-panel refalt-animate refalt-d3"><div class="data-value">match quality</div><h2>The guest reveals the inviter.</h2><p>Who someone brings tells GnR who they trust, who they want near them, and what kind of group they create.</p></div>
-      <div class="data-card refalt-panel refalt-animate refalt-d4"><div class="data-value">event design</div><h2>Rounds become feedback loops.</h2><p>Favorite rounds and favorite foursomes turn the social event format into a learning system.</p></div>
-      <div class="data-card refalt-panel refalt-animate refalt-d5"><div class="data-value">club value</div><h2>The community gets easier to form.</h2><p>Each successful invite makes the next event stronger, more personal, and less dependent on one organizer.</p></div>
+    <div class="referral-graph refalt-panel refalt-animate refalt-d2" aria-label="Referral data graph">
+      <svg class="graph-svg" viewBox="0 0 760 610" aria-hidden="true">
+        <defs>
+          <marker id="refDataArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#b8954a"/></marker>
+        </defs>
+        <g fill="none" stroke="#b8954a" stroke-width="5" stroke-linecap="round" marker-end="url(#refDataArrow)" opacity=".86">
+          <path d="M180 305 C238 178 315 120 388 112"/>
+          <path d="M450 130 C566 180 622 239 637 309"/>
+          <path d="M622 360 C570 478 492 524 390 520"/>
+          <path d="M326 506 C232 460 181 400 172 335"/>
+        </g>
+        <g fill="none" stroke="#5B8FD4" stroke-width="2.5" stroke-dasharray="6 9" opacity=".7">
+          <path d="M384 142 L384 468"/>
+          <path d="M226 306 L586 306"/>
+        </g>
+      </svg>
+      <div class="graph-node node-host"><span><strong>1</strong>Host invite</span></div>
+      <div class="graph-node node-guest"><span><strong>2</strong>Trusted guest</span></div>
+      <div class="graph-node node-match"><span><strong>3</strong>Better match</span></div>
+      <div class="graph-node node-data"><span><strong>4</strong>Next group</span></div>
+      <div class="graph-center">GnR</div>
+      <div class="data-badge refalt-animate refalt-d5"><b>Data exhaust</b>Relationship, vibe, repeat demand, and foursome quality become product signal.</div>
     </div>
   </section>
 </div>
