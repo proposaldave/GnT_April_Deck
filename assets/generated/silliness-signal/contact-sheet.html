@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Silliness Signal Candidates</title>
+  <style>
+    body { margin:0; background:#fbf7ef; color:#1a1612; font-family:Manrope, Arial, sans-serif; }
+    main { max-width:1440px; margin:0 auto; padding:32px; }
+    h1 { margin:0 0 8px; font-family:Georgia, serif; font-size:42px; line-height:1; letter-spacing:0; }
+    p { margin:0 0 24px; max-width:820px; color:rgba(26,22,18,.72); font-size:16px; line-height:1.45; }
+    .grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; }
+    .card { background:white; border:1px solid rgba(184,149,74,.35); box-shadow:0 18px 48px rgba(26,22,18,.08); }
+    .card.selected { outline:4px solid #c8462c; }
+    img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; }
+    .meta { padding:14px 16px 16px; display:grid; gap:6px; }
+    strong { font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:#c8462c; }
+    span { font-size:13px; line-height:1.4; color:rgba(26,22,18,.72); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Silliness Signal Candidates</h1>
+    <p>Candidate A is wired into the deck as final.png. Run the generator again with OPENAI_API_KEY set to replace these seed assets with fresh image-model candidates.</p>
+    <section class="grid"><article class="card selected">
+      <img src="candidate-a.png" alt="Candidate A - Social Diorama">
+      <div class="meta">
+        <strong>Candidate A - Social Diorama</strong>
+        <span>Wide-angle court-level view. Main court and lounge both visible. Strong left negative space. Best default candidate.</span>
+      </div>
+    </article>
+<article class="card">
+      <img src="candidate-b.png" alt="Candidate B - Court as Social Map">
+      <div class="meta">
+        <strong>Candidate B - Court as Social Map</strong>
+        <span>Slightly elevated angle looking down at the court, but still warm and human. Signal threads follow court lines. Avoid sterile top-down diagram.</span>
+      </div>
+    </article>
+<article class="card">
+      <img src="candidate-c.png" alt="Candidate C - Hero Moment">
+      <div class="meta">
+        <strong>Candidate C - Hero Moment</strong>
+        <span>One strong foreground silly moment - net-cord apology or awkward dink - with other social rituals visible in background. More emotional, less explanatory.</span>
+      </div>
+    </article></section>
+  </main>
+</body>
+</html>
